@@ -17,6 +17,9 @@ public class LoginTest extends Base {
 		loginPage.clickLogin();
 
 		// Add assertions here to verify login success
+		
+		// Add assertions here to verify login success
+
 	}
 
 }
