@@ -6,6 +6,7 @@ import utils.DriverSetup; // Make sure this import matches your package structur
 public class Base {
 
 	public static void main(String[] args) {
+		
         // Initialize WebDriver using DriverSetup
         WebDriver driver = DriverSetup.initDriver();
 
