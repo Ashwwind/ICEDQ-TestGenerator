@@ -1,52 +1,80 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import base.Base;
 import config.ConfigReader;
 import pages.LoginPage;
 
 public class LoginTest extends Base {
 
-	@BeforeClass
+	// String baseUrl = "https://192.168.100.102:32222/";
+	String baseUrl = ConfigReader.getProperty("baseUrl");
 
-	@Test
+	@Test(dependsOnMethods = { "validateLoginPage" })
 	public void testValidLogin() {
-		try {
-
-			LoginPage loginPage = new LoginPage(driver);
-			loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
-			Thread.sleep(5000);
-			loginPage.clickLogin();
-
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
-
+		
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
 	}
 
 	@Test
-	public void validateDashboardPage() throws InterruptedException {
-		// Validate welcome message
-		WebElement welcomeMessage = driver.findElement(By.xpath("//*[contains(text(),'Hi Ashwin, welcome to iceDQ')]"));
-		Assert.assertTrue(welcomeMessage.isDisplayed(), "Welcome message not displayed");
+	public void validateLoginPage() {
+		driver.get(baseUrl);
 
-		// Validate dashboard icons
-		String[] expectedModules = { "Data testing", "BI Report testing", "Test Generator", "Dashboard", "Connectors",
-				"Administration", "Scheduler" };
+		// URL validation
+		String currentUrl = driver.getCurrentUrl();
+		Assert.assertTrue(currentUrl.contains(("icedq")));
 
-		for (String module : expectedModules) {
-			WebElement moduleElement = driver.findElement(By.xpath("//*[contains(text(),'" + module + "')]"));
-			Assert.assertTrue(moduleElement.isDisplayed(), module + " not displayed");
-		}
-		Thread.sleep(500);
+		// Title validation
+		String actualTitle = driver.getTitle();
+		String expectedTitle = "Sign in to iCEDQ DataOps Platform";
+		Assert.assertTrue(actualTitle.equals(expectedTitle), "Title mismatch! Actual title: " + actualTitle);
 
-		System.out.println("Dashboard validation successful.");
+		// Validate logo
+		WebElement logo = driver.findElement(By.xpath("/html/body/div/div[1]/div"));
+		Assert.assertTrue(logo.isDisplayed(), "Logo not displayed.");
+
+		// Validate username and password fields
+		WebElement usernameField = driver.findElement(By.id("username"));
+		WebElement passwordField = driver.findElement(By.id("password"));
+		Assert.assertTrue(usernameField.isDisplayed() && passwordField.isDisplayed(), "Text fields not displayed.");
+
+		// Validate checkbox
+		WebElement checkbox = driver.findElement(By.xpath("//input[@type='checkbox']"));
+		Assert.assertTrue(checkbox.isDisplayed(), "Remember Me checkbox not found.");
+
+		// Validate Sign In and Forgot Password
+		WebElement signInButton;
+		signInButton = driver.findElement(By.xpath("//input[@id='kc-login']"));
+		WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
+		Assert.assertTrue(signInButton.isDisplayed(), "Sign In button not displayed.");
+		Assert.assertTrue(forgotPasswordLink.isDisplayed(), "Forgot Password link not displayed.");
+
 	}
+
+//	@Test
+//	public void validateInvalidLoginError()
+//	{
+//		WebElement usernameField = driver.findElement(By.id("username"));
+//        WebElement passwordField = driver.findElement(By.id("password"));
+//        WebElement signInButton = driver.findElement(By.xpath("//button[contains(text(),'Sign In')]"));
+//
+//        usernameField.clear();
+//        usernameField.sendKeys("wrong_user");
+//        passwordField.clear();
+//        passwordField.sendKeys("wrong_pass");
+//        signInButton.click();
+//
+//        // Wait briefly for error message (can replace with WebDriverWait)
+//        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+//
+//        // Validate error message
+//        WebElement errorMsg = driver.findElement(By.xpath("//*[contains(text(),'Invalid username or password') or contains(@class,'alert')]"));
+//        Assert.assertTrue(errorMsg.isDisplayed(), "Error message not displayed after invalid login.");
+//		
+//	}
 
 }

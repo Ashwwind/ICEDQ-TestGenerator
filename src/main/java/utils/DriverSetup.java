@@ -3,11 +3,10 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverSetup {
-	private static WebDriver driver;
+	public static WebDriver driver;
 
 	public static WebDriver initDriver() {
 
@@ -15,7 +14,7 @@ public class DriverSetup {
 			WebDriverManager.chromedriver().setup();
 
 			ChromeOptions options = new ChromeOptions();
-			options.setAcceptInsecureCerts(true); // Accept untrusted certificates
+			options.setAcceptInsecureCerts(true);
 
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
