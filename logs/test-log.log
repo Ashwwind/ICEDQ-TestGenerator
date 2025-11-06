@@ -1,0 +1,6 @@
+2025-11-06 18:25:48 INFO  TestGeneratorTest:20 - The test generator module is clickable..
+2025-11-06 18:25:53 INFO  TestGeneratorTest:32 - The 'Checksum' rule wizard is clickable..
+2025-11-06 18:25:59 INFO  TestGeneratorTest:44 - The search field is clickable..
+2025-11-06 18:25:59 INFO  TestGeneratorTest:46 - The serach button icon is clickable..
+2025-11-06 18:26:04 INFO  TestGeneratorTest:55 - The exiting templated selected
+2025-11-06 18:26:09 INFO  TestGeneratorTest:64 - The workspace is selected..
