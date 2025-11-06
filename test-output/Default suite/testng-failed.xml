@@ -6,8 +6,8 @@
       <class name="tests.LoginTest">
         <methods>
           <include name="testValidLogin"/>
-          <include name="testValidLogin"/>
           <include name="launchBrowser"/>
+          <include name="validateDashboardPage"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>

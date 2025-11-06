@@ -1,8 +1,12 @@
 package tests;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -23,9 +27,11 @@ public class LoginTest extends Base {
 			loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
 			Thread.sleep(5000);
 			loginPage.clickLogin();
+			System.out.println("Login successful.");
 
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();
+			System.out.println("Login failed.");
 		}
 
 	}
@@ -48,5 +54,24 @@ public class LoginTest extends Base {
 
 		System.out.println("Dashboard validation successful.");
 	}
+	
+	@Test
+	public void selectTestGeneratorModule()
+	{
+		WebElement testGeneratorModule = driver.findElement(By.xpath("//*[contains(text(),'Test Generator')]"));
+		testGeneratorModule.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		
+		WebElement testGeneratorHeader = wait.until(ExpectedConditions.visibilityOfElementLocated
+				(By.xpath("//h1[contains(text(),'Test Generator')]")));
+		
+		Assert.assertTrue(testGeneratorHeader.isDisplayed(), "Test Generator page not displayed");
+	    System.out.println("Test Generator page validation successful.");
 
+	}
+	
+	
+   
+   
 }
