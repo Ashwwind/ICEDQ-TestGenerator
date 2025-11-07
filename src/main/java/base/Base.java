@@ -1,31 +1,98 @@
 package base;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Properties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
-import utils.DriverSetup; // Make sure this import matches your package structure
+
+import com.google.common.io.Files;
+
+import config.ConfigReader;
+import utils.DriverSetup;
 
 public class Base {
 
 	protected static WebDriver driver;
+	private static final Logger log = LogManager.getLogger(Base.class);
+	protected static final Properties prop = new Properties();
 
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	public WebDriver launchBrowser() {
 
+		locatotFind();
+
 		driver = DriverSetup.initDriver();
-		driver.get("https://192.168.100.102:32222/");
+		driver.get(ConfigReader.getProperty("baseUrl"));
 
 		return driver;
 	}
-	
+
+	// 🖼️ Screenshot utility method
+	public String captureScreenshot(String testName) {
+		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+		String screenshotPath = "screenshots/" + testName + "_" + timestamp + ".png";
+		try {
+			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			Files.createDirectories(Paths.get("screenshots"));
+			Files.copy(src.toPath(), Paths.get(screenshotPath));
+			log.info("Screenshot saved at: " + screenshotPath);
+		} catch (IOException e) {
+			log.error("Failed to capture screenshot: " + e.getMessage());
+		}
+		return screenshotPath;
+	}
+
+	/// vipul
+
+	public static void locatotFind() {
+		String locatorDirPath = System.getProperty("user.dir") + "/src/main/resources/locator/";
+		File folder = new File(locatorDirPath);
+
+		if (!folder.exists() || !folder.isDirectory()) {
+			log.error("Locator directory not found: {}", locatorDirPath);
+
+		}
+
+		File[] listOfFiles = folder.listFiles((dir, name) -> name.endsWith(".properties"));
+		if (listOfFiles == null || listOfFiles.length == 0) {
+			log.warn("No locator property files found in {}", locatorDirPath);
+			return;
+		}
+
+		log.info("Loading locator files from directory: {}", locatorDirPath);
+
+		for (File file : listOfFiles) {
+			log.info("Loading locator file: {}", file.getName());
+
+			try (FileInputStream fis = new FileInputStream(file)) {
+				Properties tempProps = new Properties();
+				tempProps.load(fis);
+				prop.putAll(tempProps);
+				log.info("Loaded {} locators from {}", tempProps.size(), file.getName());
+			} catch (IOException e) {
+				log.error("Failed to load locator file '{}': {}", file.getName(), e.getMessage());
+			}
+		}
+
+		log.info("Total locators loaded: {}", prop.size());
+	}
+
 	// Driver getter method
-	public WebDriver getDriver()
-	{
+	public WebDriver getDriver() {
 		return driver;
 	}
-	
+
 	// Driver setter method
-	public void setDriver(WebDriver driver)
-	{
+	public void setDriver(WebDriver driver) {
 		Base.driver = driver;
 	}
 
