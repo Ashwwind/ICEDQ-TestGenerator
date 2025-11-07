@@ -4,6 +4,7 @@
 	<test thread-count="1" name="Test">
 		<classes>
 			<class name="tests.LoginTest" />
+			<!-- -->
 			<class name="tests.HomePageTest" />
 			<class name="tests.TestGeneratorTest" />
 		</classes>

@@ -1,6 +1,17 @@
-2025-11-06 18:25:48 INFO  TestGeneratorTest:20 - The test generator module is clickable..
-2025-11-06 18:25:53 INFO  TestGeneratorTest:32 - The 'Checksum' rule wizard is clickable..
-2025-11-06 18:25:59 INFO  TestGeneratorTest:44 - The search field is clickable..
-2025-11-06 18:25:59 INFO  TestGeneratorTest:46 - The serach button icon is clickable..
-2025-11-06 18:26:04 INFO  TestGeneratorTest:55 - The exiting templated selected
-2025-11-06 18:26:09 INFO  TestGeneratorTest:64 - The workspace is selected..
+2025-11-07 16:58:39 INFO  Base:48 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-07 16:58:39 INFO  Base:51 - Loading locator file: Login.properties
+2025-11-07 16:58:39 INFO  Base:57 - Loaded 4 locators from Login.properties
+2025-11-07 16:58:39 INFO  Base:51 - Loading locator file: Template.properties
+2025-11-07 16:58:39 INFO  Base:57 - Loaded 2 locators from Template.properties
+2025-11-07 16:58:39 INFO  Base:63 - Total locators loaded: 5
+2025-11-07 16:58:49 ERROR TestGeneratorTest:22 - The test generator module is not clickable..Cannot invoke "String.split(String, int)" because "locator" is null
+2025-11-07 16:58:54 ERROR TestGeneratorTest:34 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=141.0.7390.123)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b366676bd863072338f9f1a80a8a452c, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 141.0.7390.123, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59583}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59583/devtoo..., se:cdpVersion: 141.0.7390.123, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b366676bd863072338f9f1a80a8a452c
+2025-11-07 16:59:09 INFO  TestGeneratorTest:64 - The workspace is selected..

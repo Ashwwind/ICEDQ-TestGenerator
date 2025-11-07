@@ -5,6 +5,8 @@
     <classes>
       <class name="tests.TestGeneratorTest">
         <methods>
+          <include name="selectTemplate"/>
+          <include name="clickSearchField"/>
           <include name="launchBrowser"/>
           <include name="clickOnFolderFiled"/>
         </methods>

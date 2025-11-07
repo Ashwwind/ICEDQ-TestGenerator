@@ -2,20 +2,26 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import base.Base;
 import utils.PageUtil;
 
-public class TestGeneratorPage {
+public class TestGeneratorPage extends Base {
 	WebDriver driver;
+	
+	// Locator
+			By testGenerator = PageUtil.getElementLocator(prop.getProperty("home.testgenerator"));
 
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
+
 	}
 
 	// Page method
 	public void clickTestGenerator() {
-		PageUtil.waitForTheElementToBeClickable(driver,By.xpath("//*[@id='imaster']/app-home/div[3]/div/ul[1]/li[3]/button"),
-				"TestGenerator");	PageUtil.clickOnElement(driver, By.xpath("//*[@id='imaster']/app-home/div[3]/div/ul[1]/li[3]/button"),
-			"TestGenerator");
+		PageUtil.getElementLocator(null);
+		PageUtil.waitForTheElementToBeClickable(driver, By.xpath("testGenerator"), "Test Generator module...");
+		//PageUtil.clickOnElement(driver, By.xpath("//*[@id='imaster']/app-home/div[3]/div/ul[1]/li[3]/button"),"TestGenerator");
 	}
 
 	// Click the Checksum rule type from the wizard page.
@@ -59,12 +65,11 @@ public class TestGeneratorPage {
 //				By.xpath("//*[@id=\"ej2_dropdownlist_3_options\"]/li[contains(text(), 'TestGenerator-workspace')]"),
 //				"The Workspace selected");
 //	}
-	
+
 	// Test workspace selection.
-	public void clickOnWorkspaceField123()
-	{
+	public void clickOnWorkspaceField123() {
 		PageUtil.waitForElement(driver, 50);
-		PageUtil.waitForTheElementToBeClickable(driver, By.xpath("//input[@placeholder='Select workspace']"),
+		PageUtil.waitForTheElementToBeClickable(driver, By.xpath("//*[@id=\"ej2_dropdownlist_0\"]/span"),
 				"Click the Workspace field");
 		PageUtil.waitForElement(driver, 50);
 		PageUtil.waitForTheElementToBeClickable(driver,
