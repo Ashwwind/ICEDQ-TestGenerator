@@ -1,7 +1,11 @@
 package tests;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import base.Base;
@@ -15,8 +19,13 @@ public class LoginTest extends Base {
 
 	@Test(dependsOnMethods = { "validateLoginPage" })
 	public void testValidLogin() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 496fe17ab67b67ab6d96799d149c3e1545ff0060
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
+
 	}
 
 	@Test
@@ -24,6 +33,19 @@ public class LoginTest extends Base {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginPageValidation();	
 	}
+
+	@Test
+	public void selectTestGeneratorModule() {
+		WebElement testGeneratorModule = driver.findElement(By.xpath("//*[contains(text(),'Test Generator')]"));
+		testGeneratorModule.click();
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		WebElement testGeneratorHeader = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Test Generator')]")));
+
+		Assert.assertTrue(testGeneratorHeader.isDisplayed(), "Test Generator page not displayed");
+		System.out.println("Test Generator page validation successful.");
 
 //	@Test
 //	public void validateInvalidLoginError()
@@ -47,4 +69,5 @@ public class LoginTest extends Base {
 //		
 //	}
 
+	}
 }

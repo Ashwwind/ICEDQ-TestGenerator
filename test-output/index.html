@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,8 +21,7 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -50,8 +49,13 @@
             <div class="suite-section-content">
               <ul>
                 <li>
+<<<<<<< HEAD
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\Ashwin\AppData\Local\Temp\testng-eclipse-1329015677\testng-customsuite.xml</span>
+=======
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
                     <span>D:\Eclipse\ICEDQ\TestGenerator\testng.xml</span>
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,8 +107,13 @@
                     </span>
                     <div class="method-list-content failed suite-Suite">
                       <span>
+<<<<<<< HEAD
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="tests.LoginTest" class="method navigator-link" hash-for-method="validateDashboardPage">validateDashboardPage</a> <!-- method navigator-link -->
+=======
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="tests.TestGeneratorTest" class="method navigator-link" hash-for-method="clickOnFolderFiled">clickOnFolderFiled</a> <!-- method navigator-link -->
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
                       </span>
                       <br/>
                       <span>
@@ -283,6 +292,67 @@ Session ID: b366676bd863072338f9f1a80a8a452c
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
+                  <a name="validateDashboardPage">
+                  </a> <!-- validateDashboardPage -->
+                  <span class="method-name">validateDashboardPage</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=140.0.7339.128)
+Build info: version: &apos;4.36.0&apos;, revision: &apos;6d115cfd87&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [73165205dfb3754efcbe8a6f0dfcc268, findElement {value=username, using=name}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52239}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52239/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73165205dfb3754efcbe8a6f0dfcc268
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at pages.LoginPage.enterUsername(LoginPage.java:18)
+	at pages.LoginPage.login(LoginPage.java:30)
+	at tests.LoginTest.testValidLogin(LoginTest.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+=======
                   <a name="testValidLogin">
                   </a> <!-- testValidLogin -->
                   <span class="method-name">testValidLogin</span>
@@ -293,6 +363,7 @@ Session ID: b366676bd863072338f9f1a80a8a452c
                   <a name="validateLoginPage">
                   </a> <!-- validateLoginPage -->
                   <span class="method-name">validateLoginPage</span>
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -344,7 +415,11 @@ Session ID: b366676bd863072338f9f1a80a8a452c
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
+            <span class="header-content">C:\Users\Ashwin\AppData\Local\Temp\testng-eclipse-1329015677\testng-customsuite.xml</span>
+=======
             <span class="header-content">D:\Eclipse\ICEDQ\TestGenerator\testng.xml</span>
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -353,9 +428,17 @@ Session ID: b366676bd863072338f9f1a80a8a452c
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
+<<<<<<< HEAD
+      &lt;class name=&quot;tests.LoginTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;validateDashboardPage&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- tests.LoginTest --&gt;
+=======
       &lt;class name=&quot;tests.LoginTest&quot;/&gt;
       &lt;class name=&quot;tests.HomePageTest&quot;/&gt;
       &lt;class name=&quot;tests.TestGeneratorTest&quot;/&gt;
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -397,7 +480,7 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testValidLogin')
+data.setCell(0, 1, 'validateDashboardPage')
 data.setCell(0, 2, 'tests.LoginTest')
 data.setCell(0, 3, 5552);
 data.setCell(1, 0, 1)
@@ -451,6 +534,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
+            <span class="header-content">1 ignored method</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.LoginTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">testValidLogin</span>
+=======
             <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
@@ -465,6 +557,7 @@ return data;
               <span class="ignored-class-name">tests.HomePageTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">launchBrowser</span>
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -481,6 +574,14 @@ return data;
                 <span class="method-name">launchBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+<<<<<<< HEAD
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testValidLogin</span>
+                <span class="method-start">22213 ms</span>
+              </div> <!-- configuration-class before -->
+=======
               <div class="test-method">
                 <span class="method-name">validateLoginPage</span>
                 <span class="method-start">2667 ms</span>
@@ -529,6 +630,7 @@ return data;
                 <span class="method-name">clickOnFolderFiled</span>
                 <span class="method-start">29764 ms</span>
               </div> <!-- test-method -->
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

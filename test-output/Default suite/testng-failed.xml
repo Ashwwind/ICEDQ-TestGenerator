@@ -5,8 +5,13 @@
     <classes>
       <class name="tests.TestGeneratorTest">
         <methods>
+<<<<<<< HEAD
+          <include name="testValidLogin"/>
+=======
           <include name="selectChecksum"/>
+>>>>>>> 9e5a13c54bcdfca126144bfab68aafc913c6ec04
           <include name="launchBrowser"/>
+          <include name="validateDashboardPage"/>
         </methods>
       </class> <!-- tests.TestGeneratorTest -->
     </classes>
