@@ -31,6 +31,7 @@ public class LoginPage extends Base{
 	}
 
 	public void clickLogin() {
+		PageUtil.waitForPageToLoad(driver, 20);
 			PageUtil.waitForElement(driver, 10);
 			PageUtil.clickOnElement(driver, loginButton, "Sign In");
 	}
@@ -38,6 +39,7 @@ public class LoginPage extends Base{
 	public void login(String username, String password) {
 		enterUsername(username);
 		enterPassword(password);
+		PageUtil.waitForElement(driver, 10);
 		clickLogin();
 	}
 	

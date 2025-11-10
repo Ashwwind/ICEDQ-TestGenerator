@@ -9,10 +9,9 @@ import org.apache.logging.log4j.Logger;
 public class TestGeneratorTest extends Base {
 
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
-	private TestGeneratorPage testGeneratorPage;
 
 	// Creating a checksum rule using default dynamic template
-	@Test(priority=1)
+	@Test(priority = 1)
 	public void selectTestGenrator() throws InterruptedException {
 		try {
 			TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
@@ -23,7 +22,7 @@ public class TestGeneratorTest extends Base {
 		}
 	}
 
-	@Test(priority=2)
+	@Test(priority = 2)
 	public void selectChecksum() {
 		try {
 			TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
@@ -35,9 +34,9 @@ public class TestGeneratorTest extends Base {
 		}
 	}
 
-	@Test(priority=3)
+	@Test(priority = 3)
 	public void clickSearchField() throws InterruptedException {
-		Thread.sleep(5000);
+		// Thread.sleep(5000);
 		TestGeneratorPage testGeneratorPage;
 		testGeneratorPage = new TestGeneratorPage(driver);
 		testGeneratorPage.clickOnSearchField();
@@ -46,7 +45,7 @@ public class TestGeneratorTest extends Base {
 		logger.info("The serach button icon is clickable..");
 	}
 
-	@Test(priority=4)
+	@Test(priority = 4)
 	public void selectTemplate() throws InterruptedException {
 		Thread.sleep(5000);
 		TestGeneratorPage testGeneratorPage;
@@ -55,21 +54,78 @@ public class TestGeneratorTest extends Base {
 		logger.info("The exiting templated selected");
 	}
 
-	@Test(priority=5)
+	@Test(priority = 5)
 	public void clickOnWorkspace() throws InterruptedException {
 		Thread.sleep(5000);
 		TestGeneratorPage testGeneratorPage;
 		testGeneratorPage = new TestGeneratorPage(driver);
 		testGeneratorPage.clickOnWorkspaceField123();
 		logger.info("The workspace is selected..");
+		testGeneratorPage.clickOnFolderFiled();
+		
 
 	}
 
-	@Test(priority=6)
-	public void clickOnFolderFiled() throws InterruptedException {
+//	@Test(priority = 6)
+//	public void clickOnFolderFiled() throws InterruptedException {
+//		// Thread.sleep(5000);
+//		TestGeneratorPage testGeneratorPage;
+//		testGeneratorPage = new TestGeneratorPage(driver);
+//		testGeneratorPage.clickOnFolderFiled();
+//		logger.info("The folder is selected..");
+//	}
+
+	@Test(priority = 7)
+	public void clickOnworkspaceNextbtn() throws InterruptedException {
+		// Thread.sleep(5000);
 		TestGeneratorPage testGeneratorPage;
 		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.clickOnFolderFiled();
-		logger.info("The folder is selected..");
+		testGeneratorPage.gotoWorkspaceNextbtn();
+		logger.info("Clicing the next button..");
+	}
+
+	@Test(priority = 8)
+	public void clickOnmetadataNextbtn() throws InterruptedException {
+		// Thread.sleep(5000);
+		TestGeneratorPage testGeneratorPage;
+		testGeneratorPage = new TestGeneratorPage(driver);
+		testGeneratorPage.gotoDAtaMetadataNextbtn();
+		logger.info("Clicing the next button..");
+	}
+
+	@Test(priority = 9)
+	public void clickOnRulemetadataNextbtn() throws InterruptedException {
+		// Thread.sleep(5000);
+		TestGeneratorPage testGeneratorPage;
+		testGeneratorPage = new TestGeneratorPage(driver);
+		testGeneratorPage.gotoRuleMetadataNextbtn();
+		logger.info("Clicing the next button..");
+	}
+	
+	@Test(priority = 9)
+	public void clickOnCheckmetadataNextbtn() throws InterruptedException {
+		// Thread.sleep(5000);
+		TestGeneratorPage testGeneratorPage;
+		testGeneratorPage = new TestGeneratorPage(driver);
+		testGeneratorPage.gotoRuleMetadataNextbtn();
+		logger.info("Clicing the next button..");
+	}
+	
+	@Test(priority = 10)
+	public void clickOnNotificationNextbtn() throws InterruptedException {
+		// Thread.sleep(5000);
+		TestGeneratorPage testGeneratorPage;
+		testGeneratorPage = new TestGeneratorPage(driver);
+		testGeneratorPage.gotoNotificationNextbtn();
+		logger.info("Clicing the next button..");
+	}
+	
+	@Test(priority = 10)
+	public void selectConnecton() throws InterruptedException {
+		// Thread.sleep(5000);
+		TestGeneratorPage testGeneratorPage;
+		testGeneratorPage = new TestGeneratorPage(driver);
+		testGeneratorPage.seectConnection();
+		logger.info("Clicing the next button..");
 	}
 }

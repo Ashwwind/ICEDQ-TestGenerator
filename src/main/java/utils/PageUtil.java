@@ -8,22 +8,36 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageUtil {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 10; // short wait = 10 seconds
-	private WebDriver driver;
+	public static final int SHOTW = 50; // short wait = 10 seconds
 	private static WebDriverWait wait;
+	private WebDriver driver;
 
 	public PageUtil(WebDriver driver) {
 		this.driver = driver;
 		PageUtil.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 
+	
+	// Wait for the element to be visible.
+	public static void waitForTheElementToBeVisible(WebDriver driver, By by, String label)
+	{
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+			System.out.println("Element is visible: " + label);
+		} catch (Exception e) {
+			System.out.println("Element is not visiblle");
+		}
+	}
 	// Wait for the element to be clickable.
 	public static void waitForTheElementToBeClickable(WebDriver driver, By by, String label) {
 		try {
@@ -41,6 +55,44 @@ public class PageUtil {
 		System.out.println("Clicking on " + label);
 		driver.findElement(locator).click();
 		System.out.println("Clicked on " + label);
+	}
+
+	// Ashwin
+	public static void clickElementSafely(WebDriver driver, By locator, String elementName) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		try {
+			// Wait for page load
+			waitForPageToLoad(driver, 10);
+
+			// Wait for element to be present and visible
+			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+			// Wait until clickable
+			element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+
+			// Scroll into view (sometimes needed if element is off-screen)
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+
+			try {
+				element.click();
+				System.out.println("✅ Clicked on element: " + elementName);
+			} catch (ElementClickInterceptedException e) {
+				System.out.println("⚠️ Element click intercepted for: " + elementName + ". Retrying with JS click...");
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+			}
+
+		} catch (TimeoutException e) {
+			System.out.println("❌ Timeout waiting for element to be clickable: " + elementName);
+			throw e;
+		} catch (NoSuchElementException e) {
+			System.out.println("❌ Element not found: " + elementName);
+			throw e;
+		} catch (Exception e) {
+			System.out.println("❌ Unexpected error clicking element: " + elementName);
+			e.printStackTrace();
+			throw e;
+		}
 	}
 
 	// Enter data in the filed.
@@ -81,6 +133,20 @@ public class PageUtil {
 		return wait;
 	}
 
+	// Waits until the page is completely loaded with a custom timeout
+
+	public static void waitForPageToLoad(WebDriver driver, int timeout) {
+		new WebDriverWait(driver, Duration.ofSeconds(timeout))
+				.until((ExpectedCondition<Boolean>) wd -> ((JavascriptExecutor) wd)
+						.executeScript("return document.readyState").equals("complete"));
+	}
+
+	public static void waitForTheElementToBeClickable1(WebDriver driver, By locator, String elementName) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
+		System.out.println(elementName + " is clickable.");
+	}
+
 	// vipul
 
 	/**
@@ -110,4 +176,5 @@ public class PageUtil {
 			throw new IllegalArgumentException("Unknown locator type: " + type);
 		}
 	}
+
 }

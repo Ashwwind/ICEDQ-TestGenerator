@@ -1,0 +1,611 @@
+2025-11-09 11:01:09 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 11:01:09 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 11:01:09 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 11:01:09 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 11:01:09 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 11:01:10 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 11:05:43 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 11:05:43 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 11:05:43 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 11:05:43 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 11:05:43 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 11:05:43 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 11:06:08 ERROR TestGeneratorTest:22 - The test generator module is not clickable..Cannot invoke "String.split(String, int)" because "locator" is null
+2025-11-09 11:06:13 ERROR TestGeneratorTest:34 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [17731c0d705e132992b7de926ef029b7, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56549}, goog:processID: 21584, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56549/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 17731c0d705e132992b7de926ef029b7
+2025-11-09 11:06:29 INFO  TestGeneratorTest:64 - The workspace is selected..
+2025-11-09 11:30:49 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 11:30:49 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 11:30:49 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 11:30:49 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 11:30:49 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 11:30:49 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 11:31:16 INFO  TestGeneratorTest:20 - The test generator module is clickable..
+2025-11-09 11:31:22 ERROR TestGeneratorTest:34 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3bdb36f760c9c3240f5466ce8ca653aa, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62828}, goog:processID: 27788, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62828/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3bdb36f760c9c3240f5466ce8ca653aa
+2025-11-09 11:31:37 INFO  TestGeneratorTest:64 - The workspace is selected..
+2025-11-09 12:01:24 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 12:01:24 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 12:01:24 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 12:01:24 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 12:01:24 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 12:01:24 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 12:01:46 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 12:01:51 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fe96fac6f714d01a294121550428ebf4, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63877}, goog:processID: 27360, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63877/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fe96fac6f714d01a294121550428ebf4
+2025-11-09 12:02:06 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 12:02:31 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 12:02:31 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 12:02:31 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 12:02:31 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 12:02:31 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 12:02:31 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 12:02:51 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 12:02:56 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [508c519e1d1540754e1ecc1ff3466890, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63951}, goog:processID: 20932, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63951/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 508c519e1d1540754e1ecc1ff3466890
+2025-11-09 12:03:11 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 12:09:05 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 12:09:05 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 12:09:05 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 12:09:05 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 12:09:05 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 12:09:05 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 12:09:29 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 12:09:34 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [40c3ace58f555869810850393243b64f, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64317}, goog:processID: 25812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64317/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 40c3ace58f555869810850393243b64f
+2025-11-09 12:09:49 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 12:13:00 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 12:13:00 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 12:13:00 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 12:13:00 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 12:13:00 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 12:13:00 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 12:13:23 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 12:13:28 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 12:13:44 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 12:26:18 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 12:26:18 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 12:26:18 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 12:26:18 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 12:26:18 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 12:26:18 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 12:26:42 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 12:26:47 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 12:27:04 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 12:40:37 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 12:40:37 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 12:40:37 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 12:40:37 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 12:40:37 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 12:40:37 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 12:41:00 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 12:41:06 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 12:41:11 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 12:41:11 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-09 12:41:16 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 12:41:21 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 13:02:02 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 13:02:02 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 13:02:02 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 13:02:02 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 13:02:02 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 13:02:02 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 13:02:32 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 13:02:37 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 13:02:54 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 13:05:38 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 13:05:38 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 13:05:38 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 13:05:38 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 13:05:38 INFO  Base:66 - Loaded 2 locators from Template.properties
+2025-11-09 13:05:38 INFO  Base:72 - Total locators loaded: 5
+2025-11-09 13:05:58 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 13:06:03 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 13:06:20 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 13:38:43 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 13:38:43 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 13:38:43 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 13:38:43 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 13:38:43 INFO  Base:66 - Loaded 3 locators from Template.properties
+2025-11-09 13:38:43 INFO  Base:72 - Total locators loaded: 6
+2025-11-09 13:39:10 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 13:39:15 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 13:39:21 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 13:39:21 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-09 13:39:31 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 13:48:50 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 13:48:50 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 13:48:50 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 13:48:50 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 13:48:50 INFO  Base:66 - Loaded 3 locators from Template.properties
+2025-11-09 13:48:50 INFO  Base:72 - Total locators loaded: 6
+2025-11-09 13:49:15 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 13:49:21 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 13:49:27 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 13:49:39 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 13:54:52 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 13:54:52 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 13:54:52 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 13:54:52 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 13:54:52 INFO  Base:66 - Loaded 3 locators from Template.properties
+2025-11-09 13:54:52 INFO  Base:72 - Total locators loaded: 6
+2025-11-09 13:55:15 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 13:55:21 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 13:55:26 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 13:55:27 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-09 13:55:37 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 14:04:10 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 14:04:10 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 14:04:10 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 14:04:10 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 14:04:10 INFO  Base:66 - Loaded 3 locators from Template.properties
+2025-11-09 14:04:10 INFO  Base:72 - Total locators loaded: 6
+2025-11-09 14:04:38 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 14:04:44 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 14:04:50 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 14:04:57 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 14:05:02 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 14:09:37 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 14:09:37 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 14:09:37 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 14:09:37 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 14:09:37 INFO  Base:66 - Loaded 3 locators from Template.properties
+2025-11-09 14:09:37 INFO  Base:72 - Total locators loaded: 6
+2025-11-09 14:10:07 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 14:10:13 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 14:10:19 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 14:10:26 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 14:10:31 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 14:22:28 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 14:22:28 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 14:22:28 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 14:22:28 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 14:22:28 INFO  Base:66 - Loaded 4 locators from Template.properties
+2025-11-09 14:22:28 INFO  Base:72 - Total locators loaded: 7
+2025-11-09 14:22:57 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 14:23:02 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 14:23:07 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 14:23:08 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-09 14:23:13 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 14:23:18 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 14:28:53 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 14:28:53 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 14:28:53 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 14:28:53 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 14:28:53 INFO  Base:66 - Loaded 5 locators from Template.properties
+2025-11-09 14:28:53 INFO  Base:72 - Total locators loaded: 8
+2025-11-09 14:29:23 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 14:29:28 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 14:29:33 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 14:29:34 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-09 14:29:39 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 14:51:36 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 14:51:36 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 14:51:36 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 14:51:36 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 14:51:36 INFO  Base:66 - Loaded 5 locators from Template.properties
+2025-11-09 14:51:36 INFO  Base:72 - Total locators loaded: 8
+2025-11-09 14:51:59 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 14:52:04 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1b0bd40d7473820832b15768b1cffe19, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58784}, goog:processID: 11852, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58784/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1b0bd40d7473820832b15768b1cffe19
+2025-11-09 14:52:56 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 14:52:56 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 14:52:56 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 14:52:56 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 14:52:56 INFO  Base:66 - Loaded 5 locators from Template.properties
+2025-11-09 14:52:56 INFO  Base:72 - Total locators loaded: 8
+2025-11-09 14:53:21 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 14:53:26 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 14:53:33 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 14:55:11 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 14:55:11 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 14:55:11 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 14:55:11 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 14:55:11 INFO  Base:66 - Loaded 5 locators from Template.properties
+2025-11-09 14:55:11 INFO  Base:72 - Total locators loaded: 8
+2025-11-09 14:55:34 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 14:55:39 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 14:55:45 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 14:55:45 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-09 14:55:51 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 14:55:56 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-09 15:05:23 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 15:05:23 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 15:05:23 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 15:05:23 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 15:05:23 INFO  Base:66 - Loaded 5 locators from Template.properties
+2025-11-09 15:05:23 INFO  Base:72 - Total locators loaded: 8
+2025-11-09 15:05:57 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 15:06:02 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 15:06:08 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 15:06:08 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-09 15:06:13 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 15:09:30 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-09 15:09:30 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-09 15:09:30 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-09 15:09:30 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-09 15:09:30 INFO  Base:66 - Loaded 5 locators from Template.properties
+2025-11-09 15:09:30 INFO  Base:72 - Total locators loaded: 8
+2025-11-09 15:09:52 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-09 15:09:57 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-09 15:10:03 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-09 15:10:10 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-09 15:10:15 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-10 04:39:33 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 04:39:33 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 04:39:33 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 04:39:33 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 04:39:33 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 04:39:33 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 04:40:01 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 04:40:07 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 04:40:13 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 04:40:13 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-10 04:40:18 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 04:40:24 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-10 04:44:06 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 04:44:06 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 04:44:06 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 04:44:06 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 04:44:06 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 04:44:06 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 04:44:23 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 04:44:28 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 04:44:34 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 04:44:41 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 04:44:46 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-10 04:54:22 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 04:54:22 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 04:54:22 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 04:54:22 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 04:54:22 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 04:54:22 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 04:54:49 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 04:54:54 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 04:55:00 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 04:55:07 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 04:55:12 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-10 05:01:07 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:01:07 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:01:07 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:01:07 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:01:07 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:01:07 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:01:20 ERROR TestGeneratorTest:21 - The test generator module is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//button[.//h2[text()='Test Generator']]"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [34e3db970104ecfe739e92ee39d7ea56, findElement {using=xpath, value=//button[.//h2[text()='Test Generator']]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58787}, goog:processID: 29152, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58787/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 34e3db970104ecfe739e92ee39d7ea56
+2025-11-10 05:01:25 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [34e3db970104ecfe739e92ee39d7ea56, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58787}, goog:processID: 29152, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58787/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 34e3db970104ecfe739e92ee39d7ea56
+2025-11-10 05:01:59 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:01:59 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:01:59 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:01:59 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:01:59 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:01:59 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:02:19 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5525f97ac32c03fbcd3fd78baa05c72a, clickElement {id=f.60CD5B3526565111DC19F9DD35EDEEC2.d.31AC9FBBA67396E967A7CB9EA76E39FC.e.43}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58858}, goog:processID: 18976, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58858/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (5525f97ac32c03fbcd3fd78baa05c72a)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: 5525f97ac32c03fbcd3fd78baa05c72a
+2025-11-10 05:02:25 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5525f97ac32c03fbcd3fd78baa05c72a, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58858}, goog:processID: 18976, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58858/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5525f97ac32c03fbcd3fd78baa05c72a
+2025-11-10 05:03:43 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:03:43 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:03:43 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:03:43 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:03:43 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:03:43 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:04:03 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:04:08 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:04:15 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:04:21 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 05:04:27 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-10 05:12:17 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:12:17 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:12:17 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:12:17 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:12:17 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:12:17 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:12:48 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e52d06a529fa02d7e7226f424f7f61c0, clickElement {id=f.2FCF4B4AA33A9984CFD6B59496F5FDE6.d.F4F59C120CFCDD025CC983C1B974CE57.e.53}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59464}, goog:processID: 19412, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59464/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e52d06a529fa02d7e7226f424f7f61c0)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: e52d06a529fa02d7e7226f424f7f61c0
+2025-11-10 05:12:53 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e52d06a529fa02d7e7226f424f7f61c0, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59464}, goog:processID: 19412, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59464/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e52d06a529fa02d7e7226f424f7f61c0
+2025-11-10 05:13:21 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:13:21 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:13:21 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:13:21 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:13:21 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:13:21 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:13:43 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:13:49 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:13:55 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:14:01 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 05:14:07 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-10 05:21:22 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:21:22 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:21:22 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:21:22 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:21:22 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:21:22 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:21:45 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:21:51 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:21:56 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:21:56 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-10 05:22:01 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 05:23:43 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:23:43 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:23:43 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:23:43 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:23:43 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:23:43 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:24:02 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:24:07 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:24:14 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:24:20 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 05:28:02 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:28:02 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:28:02 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:28:02 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:28:02 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:28:02 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:28:29 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:28:34 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:28:41 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:28:47 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 05:38:13 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:38:13 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:38:13 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:38:13 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:38:13 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:38:13 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:38:47 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9b49ff6e7fea5c133471112df8ebfabc, clickElement {id=f.3A08C68EE4AA32FA3DF0F3D354AD21AB.d.40C8AE59FCD549C0DFD37A2C7EB661FB.e.51}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49526}, goog:processID: 24348, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49526/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (9b49ff6e7fea5c133471112df8ebfabc)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: 9b49ff6e7fea5c133471112df8ebfabc
+2025-11-10 05:38:52 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9b49ff6e7fea5c133471112df8ebfabc, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49526}, goog:processID: 24348, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49526/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9b49ff6e7fea5c133471112df8ebfabc
+2025-11-10 05:39:11 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:39:11 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:39:11 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:39:11 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:39:11 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:39:11 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:39:31 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:39:36 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:39:42 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:46:00 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:46:00 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:46:00 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:46:00 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:46:00 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:46:00 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:46:37 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6b0ed5b1946a656feea9255817379c0d, clickElement {id=f.8E173F78C7840DA7499F979F6A919FE3.d.5A2981F30AF0789A86D45CA25C6374EC.e.52}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50331}, goog:processID: 8644, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50331/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (6b0ed5b1946a656feea9255817379c0d)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: 6b0ed5b1946a656feea9255817379c0d
+2025-11-10 05:46:37 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6b0ed5b1946a656feea9255817379c0d, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50331}, goog:processID: 8644, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50331/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6b0ed5b1946a656feea9255817379c0d
+2025-11-10 05:47:32 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:47:32 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:47:32 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:47:32 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:47:32 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:47:32 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:47:55 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a4134f121b7b47cade6e0b77d2ceaf35, clickElement {id=f.AE37D1F0FDE318947ADFECAB89CA4B8F.d.A1D64D46DF47BF36EAD8C66DB580DAEF.e.49}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50447}, goog:processID: 29796, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50447/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (a4134f121b7b47cade6e0b77d2ceaf35)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: a4134f121b7b47cade6e0b77d2ceaf35
+2025-11-10 05:47:55 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a4134f121b7b47cade6e0b77d2ceaf35, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50447}, goog:processID: 29796, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50447/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a4134f121b7b47cade6e0b77d2ceaf35
+2025-11-10 05:48:45 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:48:45 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:48:45 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:48:45 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:48:45 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:48:45 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:49:08 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:49:08 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df16f64ffc07c59dcfc9d3fb793c5677, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50539}, goog:processID: 2004, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50539/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: df16f64ffc07c59dcfc9d3fb793c5677
+2025-11-10 05:50:05 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:50:05 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:50:05 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:50:05 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:50:05 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:50:05 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:50:30 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:50:31 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8be1d77ca7b58472fbfbbd065ab78bb8, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50629}, goog:processID: 29516, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50629/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8be1d77ca7b58472fbfbbd065ab78bb8
+2025-11-10 05:52:21 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:52:21 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:52:21 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:52:21 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:52:21 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:52:21 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:52:47 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4d624eb5c10c633890475159c68e10ba, clickElement {id=f.43A578894B350918DF9EC19B52B39F90.d.1A479390262016279CFE5D8487934CE4.e.53}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50767}, goog:processID: 14264, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50767/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (4d624eb5c10c633890475159c68e10ba)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: 4d624eb5c10c633890475159c68e10ba
+2025-11-10 05:52:53 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.60)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4d624eb5c10c633890475159c68e10ba, findElement {using=xpath, value=//h6[text()='Checksum']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50767}, goog:processID: 14264, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50767/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4d624eb5c10c633890475159c68e10ba
+2025-11-10 05:53:06 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:53:06 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:53:06 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:53:06 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:53:06 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:53:06 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:53:28 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:53:33 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:53:36 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:54:29 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:54:29 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:54:29 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:54:29 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:54:29 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:54:29 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:54:48 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:54:53 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:54:58 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:55:05 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 05:56:15 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 05:56:15 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 05:56:15 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 05:56:15 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 05:56:15 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 05:56:15 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 05:56:44 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 05:56:49 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 05:56:53 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 05:56:59 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 07:16:59 INFO  Base:57 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-10 07:16:59 INFO  Base:60 - Loading locator file: Login.properties
+2025-11-10 07:16:59 INFO  Base:66 - Loaded 4 locators from Login.properties
+2025-11-10 07:16:59 INFO  Base:60 - Loading locator file: Template.properties
+2025-11-10 07:16:59 INFO  Base:66 - Loaded 6 locators from Template.properties
+2025-11-10 07:16:59 INFO  Base:72 - Total locators loaded: 9
+2025-11-10 07:17:28 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 07:17:33 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 07:17:38 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 07:17:45 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 07:18:00 INFO  TestGeneratorTest:84 - Clicing the next button..
