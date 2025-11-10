@@ -2,6 +2,8 @@ package utils;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
+
+import org.apache.commons.logging.Log;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -26,6 +28,19 @@ public class PageUtil {
 		this.driver = driver;
 		PageUtil.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
+	
+	public static WebDriverWait waitForElements(WebDriver driver, int timeoutInSeconds) {
+		 
+		wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		wait.ignoring(NoSuchElementException.class);
+		wait.ignoring(StaleElementReferenceException.class);
+		wait.ignoring(ElementClickInterceptedException.class);
+		
+	
+ 
+		return wait;
+ 
+	}
 
 	
 	// Wait for the element to be visible.
@@ -38,6 +53,26 @@ public class PageUtil {
 			System.out.println("Element is not visiblle");
 		}
 	}
+	
+	// Wait for the element to be visible.
+		public static boolean isDisplayed(WebDriver driver, By by,int timeout)
+		{
+			try {
+				
+				return waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
+				
+			}catch(TimeoutException te) {
+				
+				return new WebDriverWait(driver, Duration.ofSeconds(timeout+10)).until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed(); //fallback technique
+				
+			}
+			catch (Exception e) {
+				System.out.println("Element is not visiblle");
+			}
+			return false;
+			
+		}
+		
 	// Wait for the element to be clickable.
 	public static void waitForTheElementToBeClickable(WebDriver driver, By by, String label) {
 		try {
@@ -49,17 +84,31 @@ public class PageUtil {
 			System.out.println("Element is not clickable");
 		}
 	}
+	
+	public static void clickOnElement(WebDriver driver, By by,int timeout) {
+		try {
+			
+			boolean state = isDisplayed(driver, by, timeout);
+			if(state) {
+				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();;
+			}else {
+				log.info("Element not visible : "+by);
+			}
+		} catch (Exception e) {
+			System.out.println("Element is not clickable");
+		}
+	}
 
 	// Click method.
 	public static void clickOnElement(WebDriver driver, By locator, String label) {
 		System.out.println("Clicking on " + label);
-		driver.findElement(locator).click();
+		clickOnElement(driver, locator, 10);
 		System.out.println("Clicked on " + label);
 	}
 
 	// Ashwin
 	public static void clickElementSafely(WebDriver driver, By locator, String elementName) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 		try {
 			// Wait for page load
@@ -98,7 +147,7 @@ public class PageUtil {
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		System.out.println("Entering value on " + label + " input : " + input);
-		driver.findElement(locator).sendKeys(input);
+		waitForElements(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
 		System.out.println("Entered value on " + label + " input : " + input);
 	}
 
