@@ -3,12 +3,22 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="selectTestGeneratorModule"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
       <class name="tests.TestGeneratorTest">
         <methods>
-          <include name="selectTemplate"/>
+          <include name="clickOnCheckmetadataNextbtn"/>
+          <include name="clickOnRulemetadataNextbtn"/>
           <include name="clickSearchField"/>
+          <include name="clickOnNotificationNextbtn"/>
+          <include name="clickOnmetadataNextbtn"/>
           <include name="launchBrowser"/>
-          <include name="clickOnFolderFiled"/>
+          <include name="selectConnecton"/>
+          <include name="clickOnWorkspace"/>
         </methods>
       </class> <!-- tests.TestGeneratorTest -->
     </classes>

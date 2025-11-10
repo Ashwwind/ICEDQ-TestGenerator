@@ -1,7 +1,6 @@
 package tests;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,15 +13,11 @@ import pages.LoginPage;
 
 public class LoginTest extends Base {
 
-	// String baseUrl = "https://192.168.100.102:32222/";
 	String baseUrl = ConfigReader.getProperty("baseUrl");
 
 	@Test(dependsOnMethods = { "validateLoginPage" })
 	public void testValidLogin() {
-<<<<<<< HEAD
-=======
 
->>>>>>> 496fe17ab67b67ab6d96799d149c3e1545ff0060
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
 
@@ -31,7 +26,7 @@ public class LoginTest extends Base {
 	@Test
 	public void validateLoginPage() {
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginPageValidation();	
+		loginPage.loginPageValidation();
 	}
 
 	@Test
