@@ -19,10 +19,6 @@ public class LoginTest extends Base {
 
 	@Test(dependsOnMethods = { "validateLoginPage" })
 	public void testValidLogin() {
-<<<<<<< HEAD
-=======
-
->>>>>>> 496fe17ab67b67ab6d96799d149c3e1545ff0060
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
 

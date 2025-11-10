@@ -36,20 +36,20 @@ public class Base {
 		return driver;
 	}
 
-	// 🖼️ Screenshot utility method
-	public String captureScreenshot(String testName) {
-		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-		String screenshotPath = "screenshots/" + testName + "_" + timestamp + ".png";
-		try {
-			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			Files.createDirectories(Paths.get("screenshots"));
-			Files.copy(src.toPath(), Paths.get(screenshotPath));
-			log.info("Screenshot saved at: " + screenshotPath);
-		} catch (IOException e) {
-			log.error("Failed to capture screenshot: " + e.getMessage());
-		}
-		return screenshotPath;
-	}
+//	// 🖼️ Screenshot utility method
+//	public String captureScreenshot(String testName) {
+//		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//		String screenshotPath = "screenshots/" + testName + "_" + timestamp + ".png";
+//		try {
+//			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//			Files.createDirectories(Paths.get("screenshots"));
+//			Files.copy(src.toPath(), Paths.get(screenshotPath));
+//			log.info("Screenshot saved at: " + screenshotPath);
+//		} catch (IOException e) {
+//			log.error("Failed to capture screenshot: " + e.getMessage());
+//		}
+//		return screenshotPath;
+//	}
 
 	/// vipul
 
