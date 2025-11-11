@@ -31,8 +31,8 @@ public class LoginPage extends Base{
 	}
 
 	public void clickLogin() {
-		PageUtil.waitForPageToLoad(driver, 20);
-			PageUtil.waitForElement(driver, 10);
+			PageUtil.isDisplayed(driver, usernameField, 10);
+			PageUtil.isDisplayed(driver, passwordField, 10);
 			PageUtil.clickOnElement(driver, loginButton, "Sign In");
 	}
 

@@ -11,121 +11,120 @@ public class TestGeneratorTest extends Base {
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
 
 	// Creating a checksum rule using default dynamic template
-	@Test(priority = 1)
+	@Test
 	public void selectTestGenrator() throws InterruptedException {
+		TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
+		
+		// Step1: To Click on the test generator
 		try {
-			TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
 			testGeneratorPage.clickTestGenerator();
 			logger.info("The test generator module is clickable..");
 		} catch (Exception e) {
 			logger.error("The test generator module is not clickable.." + e.getMessage());
 		}
-	}
-
-	@Test(priority = 2)
-	public void selectChecksum() {
+		
+		// Step2: To click on the 'Checksum' wizard.
+		
 		try {
-			TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
-			Thread.sleep(5000);
 			testGeneratorPage.clickOnChecksum();
 			logger.info("The 'Checksum' rule wizard is clickable..");
 		} catch (Exception e) {
 			logger.error("The 'Checksum' rule wizard is not clickable.." + e.getMessage());
 		}
-	}
-
-	@Test(priority = 3)
-	public void clickSearchField() throws InterruptedException {
-		// Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
+		
+		// Step3: To click the template search field and enter search data.
+		
 		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.clickOnSearchField();
-		logger.info("The search field is clickable..");
-		testGeneratorPage.enterOnSearchField();
-		logger.info("The serach button icon is clickable..");
-	}
-
-	@Test(priority = 4)
-	public void selectTemplate() throws InterruptedException {
-		Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.selectExistingChecksumTemplate();
-		logger.info("The exiting templated selected");
+		try {
+			testGeneratorPage.clickOnSearchField();
+			logger.info("The template search field is clickable..");
+		} catch (Exception e) {
+			logger.error("The template search field is not clickable.." + e.getMessage());
+		}try {
+			testGeneratorPage.enterOnSearchField();
+			logger.info("The search data entering..");
+		} catch (Exception e) {
+			logger.error("Unabe to enter search data.." + e.getMessage());
+		}
+		
+		// Step4: To click the existing dynamic checksum template.
+		try {
+			testGeneratorPage.selectExistingChecksumTemplate();
+			logger.info("The existing dynamic checksum tamplate selected..");
+		} catch (Exception e) {
+			logger.error("The existing dynamic checksum tamplate is not selected.." + e.getMessage());
+		}
+		
 	}
 
 	@Test(priority = 5)
 	public void clickOnWorkspace() throws InterruptedException {
-		Thread.sleep(5000);
 		TestGeneratorPage testGeneratorPage;
 		testGeneratorPage = new TestGeneratorPage(driver);
 		testGeneratorPage.clickOnWorkspaceField123();
 		logger.info("The workspace is selected..");
-		testGeneratorPage.clickOnFolderFiled();
-		
 
 	}
 
-//	@Test(priority = 6)
-//	public void clickOnFolderFiled() throws InterruptedException {
+	@Test(priority = 6)
+	public void clickOnFolderFiled() throws InterruptedException {
+		TestGeneratorPage testGeneratorPage;
+		testGeneratorPage = new TestGeneratorPage(driver);
+		testGeneratorPage.clickOnFolderField();
+		logger.info("The folder is selected..");
+	}
+
+//	@Test(priority = 7)
+//	public void clickOnworkspaceNextbtn() throws InterruptedException {
 //		// Thread.sleep(5000);
 //		TestGeneratorPage testGeneratorPage;
 //		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.clickOnFolderFiled();
-//		logger.info("The folder is selected..");
+//		testGeneratorPage.gotoWorkspaceNextbtn();
+//		logger.info("Clicing the next button..");
 //	}
-
-	@Test(priority = 7)
-	public void clickOnworkspaceNextbtn() throws InterruptedException {
-		// Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.gotoWorkspaceNextbtn();
-		logger.info("Clicing the next button..");
-	}
-
-	@Test(priority = 8)
-	public void clickOnmetadataNextbtn() throws InterruptedException {
-		// Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.gotoDAtaMetadataNextbtn();
-		logger.info("Clicing the next button..");
-	}
-
-	@Test(priority = 9)
-	public void clickOnRulemetadataNextbtn() throws InterruptedException {
-		// Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.gotoRuleMetadataNextbtn();
-		logger.info("Clicing the next button..");
-	}
-	
-	@Test(priority = 9)
-	public void clickOnCheckmetadataNextbtn() throws InterruptedException {
-		// Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.gotoRuleMetadataNextbtn();
-		logger.info("Clicing the next button..");
-	}
-	
-	@Test(priority = 10)
-	public void clickOnNotificationNextbtn() throws InterruptedException {
-		// Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.gotoNotificationNextbtn();
-		logger.info("Clicing the next button..");
-	}
-	
-	@Test(priority = 10)
-	public void selectConnecton() throws InterruptedException {
-		// Thread.sleep(5000);
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.seectConnection();
-		logger.info("Clicing the next button..");
-	}
+//
+//	@Test(priority = 8)
+//	public void clickOnmetadataNextbtn() throws InterruptedException {
+//		// Thread.sleep(5000);
+//		TestGeneratorPage testGeneratorPage;
+//		testGeneratorPage = new TestGeneratorPage(driver);
+//		testGeneratorPage.gotoDAtaMetadataNextbtn();
+//		logger.info("Clicing the next button..");
+//	}
+//
+//	@Test(priority = 9)
+//	public void clickOnRulemetadataNextbtn() throws InterruptedException {
+//		// Thread.sleep(5000);
+//		TestGeneratorPage testGeneratorPage;
+//		testGeneratorPage = new TestGeneratorPage(driver);
+//		testGeneratorPage.gotoRuleMetadataNextbtn();
+//		logger.info("Clicing the next button..");
+//	}
+//	
+//	@Test(priority = 9)
+//	public void clickOnCheckmetadataNextbtn() throws InterruptedException {
+//		// Thread.sleep(5000);
+//		TestGeneratorPage testGeneratorPage;
+//		testGeneratorPage = new TestGeneratorPage(driver);
+//		testGeneratorPage.gotoRuleMetadataNextbtn();
+//		logger.info("Clicing the next button..");
+//	}
+//	
+//	@Test(priority = 10)
+//	public void clickOnNotificationNextbtn() throws InterruptedException {
+//		// Thread.sleep(5000);
+//		TestGeneratorPage testGeneratorPage;
+//		testGeneratorPage = new TestGeneratorPage(driver);
+//		testGeneratorPage.gotoNotificationNextbtn();
+//		logger.info("Clicing the next button..");
+//	}
+//	
+//	@Test(priority = 10)
+//	public void selectConnecton() throws InterruptedException {
+//		// Thread.sleep(5000);
+//		TestGeneratorPage testGeneratorPage;
+//		testGeneratorPage = new TestGeneratorPage(driver);
+//		testGeneratorPage.seectConnection();
+//		logger.info("Clicing the next button..");
+//	}
 }

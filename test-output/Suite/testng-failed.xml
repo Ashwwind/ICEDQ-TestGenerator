@@ -5,20 +5,16 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
+          <include name="locatotFind"/>
           <include name="launchBrowser"/>
           <include name="selectTestGeneratorModule"/>
         </methods>
       </class> <!-- tests.LoginTest -->
       <class name="tests.TestGeneratorTest">
         <methods>
-          <include name="clickOnCheckmetadataNextbtn"/>
-          <include name="clickOnRulemetadataNextbtn"/>
-          <include name="clickSearchField"/>
-          <include name="clickOnNotificationNextbtn"/>
-          <include name="clickOnmetadataNextbtn"/>
+          <include name="locatotFind"/>
           <include name="launchBrowser"/>
-          <include name="selectConnecton"/>
-          <include name="clickOnWorkspace"/>
+          <include name="clickOnFolderFiled"/>
         </methods>
       </class> <!-- tests.TestGeneratorTest -->
     </classes>

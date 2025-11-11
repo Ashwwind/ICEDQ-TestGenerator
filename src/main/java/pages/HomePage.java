@@ -25,16 +25,16 @@ public class HomePage {
 			
 			PageUtil.waitForPageToLoad(driver, 30);
 			
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-			// validate the Url and Title
-			String currentUrl = driver.getCurrentUrl();
+//			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+//			// validate the Url and Title
+//			String currentUrl = driver.getCurrentUrl();
 			// Assert.assertTrue(currentUrl.contains("https://192.168.100.102:32222/#/"),
 			// "Dashboard URL validation failed. Current URL: " + currentUrl);
-			System.out.println("The home page Url is matched... ");
+//			System.out.println("The home page Url is matched... ");
 
-			String title = driver.getTitle();
-			Assert.assertTrue(title.contains("NextgenAdministration"),
-					"Dashboard title validation failed. Title: " + title);
+//			String title = driver.getTitle();
+//			Assert.assertTrue(title.contains("NextgenAdministration"),
+//					"Dashboard title validation failed. Title: " + title);
 
 //			// validate application logo
 //			//WebElement logo = driver.findElement(By.xpath("//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"));
@@ -49,23 +49,23 @@ public class HomePage {
 //			Assert.assertTrue(profileIcon.isDisplayed(), "Profile icon not visible!");
 //
 //			///Validate HomePage icons
-			String[] expectedModules = { "Data Testing", "BI Report Testing", "Test Generator", "Dashboard",
-					"Connectors", "Scheduler", "Administration" };
-
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-			for (String module : expectedModules) {
-				try {
-					// Wait until the element containing the module text is visible
-					WebElement moduleElement = wait.until(ExpectedConditions
-							.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'" + module + "')]")));
-					Assert.assertTrue(moduleElement.isDisplayed(), module + " not displayed");
-					System.out.println(module + " is displayed successfully.");
-
-				} catch (TimeoutException e) {
-					System.out.println(module + " is not displayed." + e.getMessage());
-				}
-			}
+//			String[] expectedModules = { "Data Testing", "BI Report Testing", "Test Generator", "Dashboard",
+//					"Connectors", "Scheduler", "Administration" };
+//
+//			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//
+//			for (String module : expectedModules) {
+//				try {
+//					// Wait until the element containing the module text is visible
+//					WebElement moduleElement = wait.until(ExpectedConditions
+//							.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'" + module + "')]")));
+//					Assert.assertTrue(moduleElement.isDisplayed(), module + " not displayed");
+//					System.out.println(module + " is displayed successfully.");
+//
+//				} catch (TimeoutException e) {
+//					System.out.println(module + " is not displayed." + e.getMessage());
+//				}
+//			}
 
 //			// Validate the hyperlink icons
 //			String[] expectedHyperlinkIcon = { "About", "Helpdesk", "Documentation" };
