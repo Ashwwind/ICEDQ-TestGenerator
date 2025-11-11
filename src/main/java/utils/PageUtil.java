@@ -52,7 +52,8 @@ public class PageUtil {
 	// Wait for the element to be visible.
 	public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
 		try {
-			isInvisible(driver, By.xpath("//div[@class='e-spinner-pane e-spin-show']//div"));
+			isInvisibleLoader(driver, By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+			isInvisibleLoader(driver, By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
 			return waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by))
 					.isDisplayed();
 
@@ -86,7 +87,6 @@ public class PageUtil {
 			boolean state = isDisplayed(driver, by, timeout);
 			if (state) {
 				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
-				;
 			} else {
 				log.info("Element not visible : " + by);
 			}
@@ -96,7 +96,7 @@ public class PageUtil {
 	}
 
 	//
-	public static void isInvisible(WebDriver driver, By locator) {
+	public static void isInvisibleLoader(WebDriver driver, By locator) {
 		waitForElements(driver, 120).until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 

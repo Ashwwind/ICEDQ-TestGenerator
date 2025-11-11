@@ -4,47 +4,55 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import base.Base;
 import utils.PageUtil;
 import config.ConfigReader;
 
-public class LoginPage extends Base{
-	private WebDriver driver;
+public class LoginPage {
+	WebDriver driver;
 
-	// Vipul
-	
-	By usernameField = PageUtil.getElementLocator(prop.getProperty("login.username"));
-	By passwordField = PageUtil.getElementLocator(prop.getProperty("login.password"));
-	By loginButton = PageUtil.getElementLocator(prop.getProperty("login.submit"));
+	private By usernameField;
+	private By passwordField;
+	private By loginButton;
+	private By loader;
+	private By testGeneratorModule;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		usernameField = PageUtil.getElementLocator(ConfigReader.getProperty("login.username"));
+		passwordField = PageUtil.getElementLocator(ConfigReader.getProperty("login.password"));
+		loginButton = PageUtil.getElementLocator(ConfigReader.getProperty("login.submit"));
+		loader = PageUtil.getElementLocator(ConfigReader.getProperty("loderIsDisplayed"));
+		testGeneratorModule = PageUtil.getElementLocator(ConfigReader.getProperty("home.testGenerator"));
 	}
+
+//	By usernameField = PageUtil.getElementLocator(prop.getProperty("login.username"));
+//	By passwordField = PageUtil.getElementLocator(prop.getProperty("login.password"));
+//	By loginButton = PageUtil.getElementLocator(prop.getProperty("login.submit"));
+//	By loader = PageUtil.getElementLocator(prop.getProperty("loderIsDisplayed"));
+//	By testGeneratorModule = PageUtil.getElementLocator(prop.getProperty("home.testGenerator"));
 
 	public void enterUsername(String username) {
 		PageUtil.sendkeysToElement(driver, usernameField, "Username", username);
 	}
 
 	public void enterPassword(String password) {
-		
 		PageUtil.sendkeysToElement(driver, passwordField, "password", password);
 	}
 
 	public void clickLogin() {
-			PageUtil.isDisplayed(driver, usernameField, 10);
-			PageUtil.isDisplayed(driver, passwordField, 10);
-			PageUtil.clickOnElement(driver, loginButton, "Sign In");
+		PageUtil.isDisplayed(driver, usernameField, 0);
+		PageUtil.isDisplayed(driver, passwordField, 0);
+		PageUtil.clickOnElement(driver, loginButton, "Sign In");
+		PageUtil.isInvisibleLoader(driver, loader);
 	}
 
 	public void login(String username, String password) {
 		enterUsername(username);
 		enterPassword(password);
-		PageUtil.waitForElement(driver, 10);
 		clickLogin();
 	}
-	
-	public void loginPageValidation()
-	{
+
+	public void loginPageValidation() {
 		driver.get(ConfigReader.getProperty("baseUrl"));
 
 		// URL validation
@@ -77,9 +85,9 @@ public class LoginPage extends Base{
 		Assert.assertTrue(forgotPasswordLink.isDisplayed(), "Forgot Password link not displayed.");
 
 	}
-	
-	
 
-	
-	
+	public void clickTestGeneratorModuleFromHome() {
+		PageUtil.clickOnElement(driver, testGeneratorModule, 10);
+	}
+
 }

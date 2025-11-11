@@ -19,18 +19,14 @@ public class Base {
 
 	@BeforeSuite
 	public WebDriver launchBrowser() {
-
 		locatotFind();
-
 		driver = DriverSetup.initDriver();
 		driver.get(ConfigReader.getProperty("baseUrl"));
-
 		return driver;
 
 	}
 
-	/// vipul
-	@BeforeSuite(alwaysRun = true)
+
 	public static void locatotFind() {
 		String locatorDirPath = System.getProperty("user.dir") + "/src/main/resources/locator/";
 		File folder = new File(locatorDirPath);

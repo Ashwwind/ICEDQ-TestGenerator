@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.TestGeneratorTest">
+      <class name="tests.LoginTest">
         <methods>
-          <include name="selectTemplate"/>
-          <include name="clickSearchField"/>
+          <include name="locatotFind"/>
           <include name="launchBrowser"/>
-          <include name="clickOnWorkspace"/>
-          <include name="clickOnFolderFiled"/>
+          <include name="selectTestGeneratorModule"/>
         </methods>
-      </class> <!-- tests.TestGeneratorTest -->
+      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

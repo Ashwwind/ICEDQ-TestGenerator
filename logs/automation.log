@@ -944,3 +944,315 @@ Session ID: caf870f4fc2360ff2a6625c8932e1f21
 2025-11-11 10:03:51 INFO  TestGeneratorTest:45 - The search data entering..
 2025-11-11 10:04:02 INFO  TestGeneratorTest:53 - The existing dynamic checksum tamplate selected..
 2025-11-11 10:04:04 INFO  TestGeneratorTest:65 - The workspace is selected..
+2025-11-11 13:14:18 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 13:14:18 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 13:14:18 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 13:14:18 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 13:14:18 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-11 13:14:18 INFO  Base:64 - Total locators loaded: 9
+2025-11-11 13:14:25 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 13:14:25 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 13:14:25 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 13:14:25 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 13:14:25 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-11 13:14:25 INFO  Base:64 - Total locators loaded: 9
+2025-11-11 13:14:34 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 13:14:36 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 13:14:38 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 13:14:39 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 13:14:40 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 13:15:52 ERROR TestGeneratorTest:65 - The workspace is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //input[@class='e-input-filter e-input e-lib e-keyboard'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52833}, goog:processID: 85596, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52833/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53f279aa6b8532189100aa64b05e0e7b
+2025-11-11 13:17:13 ERROR TestGeneratorTest:74 - The folder is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52833}, goog:processID: 85596, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52833/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53f279aa6b8532189100aa64b05e0e7b
+2025-11-11 14:23:54 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 14:23:54 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 14:23:54 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 14:23:54 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 14:23:54 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 14:23:54 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 14:24:00 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 14:24:00 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 14:24:00 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 14:24:00 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 14:24:00 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 14:24:00 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 14:24:23 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 14:24:23 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 14:24:23 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 14:24:23 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 14:24:23 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 14:24:23 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 14:24:28 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 14:24:28 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 14:24:28 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 14:24:28 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 14:24:28 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 14:24:28 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 14:24:34 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 14:24:36 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 14:24:38 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 14:24:40 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 14:24:46 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 14:24:47 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-11 14:24:58 ERROR TestGeneratorTest:74 - The folder is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52015}, goog:processID: 105880, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52015/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1c752b07059be8f406ece4e237372eae
+2025-11-11 14:44:25 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 14:44:25 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 14:44:25 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 14:44:25 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 14:44:25 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 14:44:25 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 14:44:30 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 14:44:30 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 14:44:30 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 14:44:30 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 14:44:30 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 14:44:30 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 14:44:44 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 14:44:47 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 14:44:49 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 14:44:51 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 14:44:53 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 14:44:54 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-11 14:45:06 ERROR TestGeneratorTest:74 - The folder is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61830}, goog:processID: 108696, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61830/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cc000c688239f3ed23c033e482a5a07b
+2025-11-11 15:24:18 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 15:24:18 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 15:24:18 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 15:24:18 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 15:24:18 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 15:24:18 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 15:24:24 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 15:24:24 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 15:24:24 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 15:24:24 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 15:24:24 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 15:24:24 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 15:24:34 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 15:24:36 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 15:24:38 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 15:24:40 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 15:24:55 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 15:24:55 INFO  PageUtil:90 - Element not visible : By.xpath: //span[./input[contains(@class, 'e-input')]]
+2025-11-11 15:24:55 INFO  PageUtil:90 - Element not visible : By.xpath: //input[@class='e-input-filter e-input e-lib e-keyboard']
+2025-11-11 15:24:55 ERROR TestGeneratorTest:65 - The workspace is selected..invalid session id
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2bafffc04aeb4e5a554872f058a8a0ad, findElement {using=xpath, value=//input[@class='e-input-filter e-input e-lib e-keyboard']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58854}, goog:processID: 111500, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58854/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2bafffc04aeb4e5a554872f058a8a0ad
+2025-11-11 15:24:55 INFO  PageUtil:90 - Element not visible : By.xpath: //button[@aria-label='Folder']
+2025-11-11 15:24:55 ERROR TestGeneratorTest:74 - The folder is selected..invalid session id
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2bafffc04aeb4e5a554872f058a8a0ad, findElement {using=xpath, value=//div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58854}, goog:processID: 111500, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58854/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2bafffc04aeb4e5a554872f058a8a0ad
+2025-11-11 15:25:02 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 15:25:02 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 15:25:02 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 15:25:02 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 15:25:03 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 15:25:03 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 15:25:07 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 15:25:07 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 15:25:07 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 15:25:07 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 15:25:07 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 15:25:07 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 15:25:14 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 15:25:17 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 15:25:19 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 15:25:20 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 15:25:27 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 15:25:28 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-11 15:25:38 ERROR TestGeneratorTest:74 - The folder is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59051}, goog:processID: 116388, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59051/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6140d240d6d495e65ae067ce9d00cfc1
+2025-11-11 15:26:58 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 15:26:58 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 15:26:58 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 15:26:58 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 15:26:58 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 15:26:58 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 15:27:03 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 15:27:03 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 15:27:03 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 15:27:03 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 15:27:03 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 15:27:03 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 15:27:12 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 15:27:14 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 15:27:16 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 15:27:17 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 15:27:24 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 15:27:25 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-11 15:27:37 ERROR TestGeneratorTest:74 - The folder is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51735}, goog:processID: 115536, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51735/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a5df2987f8234e9ae71609a65fc4912e
+2025-11-11 16:10:27 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:10:27 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:10:27 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:10:27 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:10:27 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:10:27 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:10:31 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:10:31 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:10:31 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:10:31 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:10:31 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:10:31 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:10:38 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 16:10:40 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 16:10:42 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 16:10:43 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 16:10:48 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 16:10:49 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-11 16:11:01 ERROR TestGeneratorTest:74 - The folder is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55627}, goog:processID: 119044, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55627/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 395eb9b86ca4de9dc6ca1b1ffc6f9a65
+2025-11-11 16:16:20 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:16:20 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:16:20 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:16:20 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:16:20 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:16:20 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:16:25 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:16:25 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:16:25 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:16:25 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:16:25 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:16:25 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:16:36 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 16:16:38 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 16:16:40 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 16:16:41 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 16:16:42 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 16:17:50 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:17:50 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:17:50 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:17:50 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:17:50 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:17:50 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:17:55 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:17:55 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:17:55 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:17:55 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:17:55 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:17:55 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:18:21 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 16:18:29 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 16:19:01 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 16:19:09 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 16:19:17 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 16:19:47 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-11 16:21:56 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:21:56 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:21:56 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:21:56 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:21:56 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:21:56 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:22:00 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:22:00 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:22:00 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:22:00 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:22:00 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:22:00 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:22:09 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 16:22:12 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 16:22:14 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 16:22:15 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 16:22:16 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 16:25:23 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:25:23 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:25:23 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:25:23 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:25:23 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:25:23 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:25:30 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:25:30 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:25:30 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:25:30 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:25:30 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:25:30 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:26:14 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 16:26:16 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 16:26:18 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 16:26:18 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 16:26:19 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 16:30:21 ERROR TestGeneratorTest:65 - The workspace is selected..java.util.concurrent.TimeoutException
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e53589d58ce05f02f9ce63c3a02a46b1, findElement {value=//input[@class='e-input-filter e-input e-lib e-keyboard'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58307}, goog:processID: 121072, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58307/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e53589d58ce05f02f9ce63c3a02a46b1
+2025-11-11 16:33:21 ERROR TestGeneratorTest:74 - The folder is selected..java.util.concurrent.TimeoutException
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e53589d58ce05f02f9ce63c3a02a46b1, findElement {value=//div[@class='e-spinner-pane e-spin-show']//div, using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58307}, goog:processID: 121072, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58307/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e53589d58ce05f02f9ce63c3a02a46b1
+2025-11-11 16:34:14 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:34:14 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:34:14 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:34:14 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:34:14 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:34:14 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:34:19 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 16:34:19 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-11 16:34:19 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-11 16:34:19 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-11 16:34:19 INFO  Base:58 - Loaded 7 locators from Template.properties
+2025-11-11 16:34:19 INFO  Base:64 - Total locators loaded: 10
+2025-11-11 16:35:02 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 16:35:04 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 16:35:07 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 16:35:07 INFO  TestGeneratorTest:46 - The search data entering..
+2025-11-11 16:35:09 INFO  TestGeneratorTest:54 - The existing dynamic checksum tamplate selected..
+2025-11-11 16:35:10 INFO  TestGeneratorTest:63 - The workspace is selected..
+2025-11-11 16:35:42 INFO  TestGeneratorTest:72 - The folder is selected..
+2025-11-11 18:42:10 INFO  Base:48 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-11 18:42:10 INFO  Base:51 - Loading locator file: Login.properties
+2025-11-11 18:42:10 INFO  Base:57 - Loaded 4 locators from Login.properties
+2025-11-11 18:42:10 INFO  Base:51 - Loading locator file: Template.properties
+2025-11-11 18:42:10 INFO  Base:57 - Loaded 7 locators from Template.properties
+2025-11-11 18:42:10 INFO  Base:63 - Total locators loaded: 10
+2025-11-11 18:43:03 INFO  TestGeneratorTest:21 - The test generator module is clickable..
+2025-11-11 18:43:17 INFO  TestGeneratorTest:30 - The 'Checksum' rule wizard is clickable..
+2025-11-11 18:43:48 INFO  TestGeneratorTest:40 - The template search field is clickable..
+2025-11-11 18:43:58 ERROR TestGeneratorTest:48 - Unabe to enter search data..Expected condition failed: waiting for visibility of element located by By.xpath: //input[contains(@placeholder,'Search template')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55076}, goog:processID: 119616, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55076/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b27df0e1214e33f5f199a00640778c69

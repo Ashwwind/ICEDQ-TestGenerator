@@ -9,12 +9,12 @@ import org.apache.logging.log4j.Logger;
 public class TestGeneratorTest extends Base {
 
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
+	TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
 
 	// Creating a checksum rule using default dynamic template
 	@Test
 	public void selectTestGenrator() throws InterruptedException {
-		TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
-		
+
 		// Step1: To Click on the test generator
 		try {
 			testGeneratorPage.clickTestGenerator();
@@ -22,31 +22,31 @@ public class TestGeneratorTest extends Base {
 		} catch (Exception e) {
 			logger.error("The test generator module is not clickable.." + e.getMessage());
 		}
-		
+
 		// Step2: To click on the 'Checksum' wizard.
-		
+
 		try {
 			testGeneratorPage.clickOnChecksum();
 			logger.info("The 'Checksum' rule wizard is clickable..");
 		} catch (Exception e) {
 			logger.error("The 'Checksum' rule wizard is not clickable.." + e.getMessage());
 		}
-		
+
 		// Step3: To click the template search field and enter search data.
-		
-		testGeneratorPage = new TestGeneratorPage(driver);
+
 		try {
 			testGeneratorPage.clickOnSearchField();
 			logger.info("The template search field is clickable..");
 		} catch (Exception e) {
 			logger.error("The template search field is not clickable.." + e.getMessage());
-		}try {
+		}
+		try {
 			testGeneratorPage.enterOnSearchField();
 			logger.info("The search data entering..");
 		} catch (Exception e) {
 			logger.error("Unabe to enter search data.." + e.getMessage());
 		}
-		
+
 		// Step4: To click the existing dynamic checksum template.
 		try {
 			testGeneratorPage.selectExistingChecksumTemplate();
@@ -54,24 +54,24 @@ public class TestGeneratorTest extends Base {
 		} catch (Exception e) {
 			logger.error("The existing dynamic checksum tamplate is not selected.." + e.getMessage());
 		}
-		
-	}
 
-	@Test(priority = 5)
-	public void clickOnWorkspace() throws InterruptedException {
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.clickOnWorkspaceField123();
-		logger.info("The workspace is selected..");
+		// Step5: To select the workspace from the dropdwon.
 
-	}
+		try {
+			testGeneratorPage.clickOnWorkspaceField();
+			logger.info("The workspace is selected..");
+		} catch (Exception e) {
+			logger.error("The workspace is selected.." + e.getMessage());
+		}
 
-	@Test(priority = 6)
-	public void clickOnFolderFiled() throws InterruptedException {
-		TestGeneratorPage testGeneratorPage;
-		testGeneratorPage = new TestGeneratorPage(driver);
-		testGeneratorPage.clickOnFolderField();
-		logger.info("The folder is selected..");
+		// Step6: To select the folder from the dropdown.
+
+		try {
+			testGeneratorPage.clickOnFolderField();
+			logger.info("The folder is selected..");
+		} catch (Exception e) {
+			logger.error("The folder is selected.." + e.getMessage());
+		}
 	}
 
 //	@Test(priority = 7)

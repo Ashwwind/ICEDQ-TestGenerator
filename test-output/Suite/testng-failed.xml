@@ -10,13 +10,6 @@
           <include name="selectTestGeneratorModule"/>
         </methods>
       </class> <!-- tests.LoginTest -->
-      <class name="tests.TestGeneratorTest">
-        <methods>
-          <include name="locatotFind"/>
-          <include name="launchBrowser"/>
-          <include name="clickOnFolderFiled"/>
-        </methods>
-      </class> <!-- tests.TestGeneratorTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
