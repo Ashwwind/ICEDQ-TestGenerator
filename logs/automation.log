@@ -609,3 +609,150 @@ Session ID: 4d624eb5c10c633890475159c68e10ba
 2025-11-10 07:17:38 INFO  TestGeneratorTest:43 - The search field is clickable..
 2025-11-10 07:17:45 INFO  TestGeneratorTest:54 - The exiting templated selected
 2025-11-10 07:18:00 INFO  TestGeneratorTest:84 - Clicing the next button..
+2025-11-10 15:24:46 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:24:46 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:24:46 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:24:46 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:24:46 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:24:46 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:25:06 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:25:11 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:25:13 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:26:07 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:26:07 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:26:07 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:26:07 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:26:07 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:26:07 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:26:13 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:26:18 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:26:20 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:26:21 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-10 15:27:19 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:27:19 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:27:19 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:27:19 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:27:19 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:27:19 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:27:29 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:27:34 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:27:37 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:29:04 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:29:04 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:29:04 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:29:04 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:29:04 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:29:04 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:29:17 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:29:22 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:29:24 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:29:31 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 15:29:57 INFO  TestGeneratorTest:83 - Clicing the next button..
+2025-11-10 15:31:57 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:31:57 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:31:57 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:31:57 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:31:57 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:31:57 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:32:26 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.134)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5ec18c9ab709d6db818a20019ebb8287, clickElement {id=f.D00DA1FFFAE22B303BBDAAA9AF1A025B.d.2C24884BDA69FA1582C4F172E24A3A34.e.50}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56982}, goog:processID: 46392, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56982/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (5ec18c9ab709d6db818a20019ebb8287)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: 5ec18c9ab709d6db818a20019ebb8287
+2025-11-10 15:32:31 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.134)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5ec18c9ab709d6db818a20019ebb8287, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56982}, goog:processID: 46392, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56982/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5ec18c9ab709d6db818a20019ebb8287
+2025-11-10 15:32:41 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:32:41 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:32:41 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:32:41 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:32:41 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:32:41 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:32:53 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:32:58 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:33:01 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:33:02 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-10 15:33:07 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 15:33:53 INFO  TestGeneratorTest:83 - Clicing the next button..
+2025-11-10 15:41:29 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:41:29 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:41:29 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:41:29 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:41:29 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:41:29 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:41:50 ERROR TestGeneratorTest:21 - The test generator module is not clickable..timeout: Timed out receiving message from renderer: 5.000
+  (Session info: chrome=142.0.7444.134)
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [caf870f4fc2360ff2a6625c8932e1f21, clickElement {id=f.E965FA82CDBE802E02763FE6EA939893.d.5EB6746FCAC3B54543ED6A230E2F2953.e.52}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53707}, goog:processID: 48404, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53707/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (caf870f4fc2360ff2a6625c8932e1f21)] -> xpath: //button[.//h2[text()='Test Generator']]]
+Session ID: caf870f4fc2360ff2a6625c8932e1f21
+2025-11-10 15:41:55 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Checksum']"}
+  (Session info: chrome=142.0.7444.134)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [caf870f4fc2360ff2a6625c8932e1f21, findElement {value=//h6[text()='Checksum'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.134, chrome: {chromedriverVersion: 142.0.7444.61 (9884f628acbc..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53707}, goog:processID: 48404, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53707/devtoo..., se:cdpVersion: 142.0.7444.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: caf870f4fc2360ff2a6625c8932e1f21
+2025-11-10 15:42:04 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:42:04 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:42:04 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:42:04 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:42:04 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:42:04 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:42:15 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:42:21 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:42:23 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:42:59 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:42:59 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:42:59 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:42:59 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:42:59 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:42:59 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:43:11 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:43:17 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:43:20 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:43:26 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 15:44:12 INFO  TestGeneratorTest:83 - Clicing the next button..
+2025-11-10 15:51:36 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 15:51:36 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 15:51:36 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 15:51:36 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 15:51:36 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 15:51:36 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 15:51:53 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 15:51:58 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 15:52:01 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 15:52:08 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 15:52:33 INFO  TestGeneratorTest:83 - Clicing the next button..
+2025-11-10 17:32:30 INFO  Base:49 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-10 17:32:30 INFO  Base:52 - Loading locator file: Login.properties
+2025-11-10 17:32:30 INFO  Base:58 - Loaded 4 locators from Login.properties
+2025-11-10 17:32:30 INFO  Base:52 - Loading locator file: Template.properties
+2025-11-10 17:32:30 INFO  Base:58 - Loaded 6 locators from Template.properties
+2025-11-10 17:32:30 INFO  Base:64 - Total locators loaded: 9
+2025-11-10 17:33:07 INFO  TestGeneratorTest:19 - The test generator module is clickable..
+2025-11-10 17:33:16 INFO  TestGeneratorTest:31 - The 'Checksum' rule wizard is clickable..
+2025-11-10 17:33:19 INFO  TestGeneratorTest:43 - The search field is clickable..
+2025-11-10 17:33:20 INFO  TestGeneratorTest:45 - The serach button icon is clickable..
+2025-11-10 17:33:57 INFO  TestGeneratorTest:54 - The exiting templated selected
+2025-11-10 17:36:55 INFO  TestGeneratorTest:83 - Clicing the next button..
+2025-11-10 17:37:36 INFO  TestGeneratorTest:92 - Clicing the next button..
+2025-11-10 17:38:17 INFO  TestGeneratorTest:110 - Clicing the next button..
+2025-11-10 17:38:58 INFO  TestGeneratorTest:101 - Clicing the next button..
+2025-11-10 17:39:39 INFO  TestGeneratorTest:119 - Clicing the next button..
+2025-11-10 17:41:01 INFO  TestGeneratorTest:128 - Clicing the next button..

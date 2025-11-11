@@ -36,7 +36,7 @@ public class TestGeneratorTest extends Base {
 
 	@Test(priority = 3)
 	public void clickSearchField() throws InterruptedException {
-		// Thread.sleep(5000);
+		Thread.sleep(500);
 		TestGeneratorPage testGeneratorPage;
 		testGeneratorPage = new TestGeneratorPage(driver);
 		testGeneratorPage.clickOnSearchField();
@@ -61,19 +61,18 @@ public class TestGeneratorTest extends Base {
 		testGeneratorPage = new TestGeneratorPage(driver);
 		testGeneratorPage.clickOnWorkspaceField123();
 		logger.info("The workspace is selected..");
-		testGeneratorPage.clickOnFolderFiled();
 		
 
 	}
 
-//	@Test(priority = 6)
-//	public void clickOnFolderFiled() throws InterruptedException {
-//		// Thread.sleep(5000);
-//		TestGeneratorPage testGeneratorPage;
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.clickOnFolderFiled();
-//		logger.info("The folder is selected..");
-//	}
+	@Test(priority = 6)
+	public void clickOnFolderFiled() throws InterruptedException {
+		// Thread.sleep(5000);
+		TestGeneratorPage testGeneratorPage;
+		testGeneratorPage = new TestGeneratorPage(driver);
+		testGeneratorPage.clickOnFolderField();
+		logger.info("The folder is selected..");
+	}
 
 	@Test(priority = 7)
 	public void clickOnworkspaceNextbtn() throws InterruptedException {

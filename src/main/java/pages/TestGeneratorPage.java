@@ -80,48 +80,118 @@ public class TestGeneratorPage extends Base {
 //	}
 
 	// Test workspace selection.
+//	public void clickOnWorkspaceField123() {
+//		PageUtil.waitForPageToLoad(driver, 20);
+//		PageUtil.waitForElement(driver, 10);
+//		// PageUtil.waitForTheElementToBeClickable(driver,
+//		// By.xpath("//span[./input[contains(@class, 'e-input')]]"), // "Click the
+//		// Workspace field"); PageUtil.clickElementSafely(driver, selectWorkspace,
+//		// "Click the Workspace field"); PageUtil.waitForElement(driver, 20); //
+//		PageUtil.waitForTheElementToBeVisible(driver, By.xpath("//span[./input[contains(@class, 'e-input')]]"),
+//				"Workspace");
+//		PageUtil.clickOnElement(driver, By.xpath("//span[./input[contains(@class, 'e-input')]]"),
+//				"workspace dropdown field.");
+//		PageUtil.waitForTheElementToBeClickable(driver,
+//				By.xpath("//span[./input[contains(@class, 'e-input')]], 'Test_Generator-WIP')]"),
+//				"The Workspace selected");
+//		PageUtil.waitForElement(driver, 10);
+//		PageUtil.waitForTheElementToBeVisible(driver, selectSearchWorkspace, "The Workspaceselected");
+//		PageUtil.clickElementSafely(driver, selectSearchWorkspace, "The Workspaceselected");
+//		PageUtil.waitForElement(driver, 10);
+//		PageUtil.waitForTheElementToBeVisible(driver, selectSearchWorkspace, "Select the workspce field");
+//		PageUtil.sendkeysToElement(driver, selectSearchWorkspace, "select workspace field",
+//				"Test_Generator-WIP" + Keys.ENTER);
+//		// PageUtil.clickOnElement(driver,
+//		// By.xpath("//ul[@id='ej2_dropdownlist_7_options']/li[1]"), "workspace
+//		// name.."); PageUtil.waitForElement(driver, 50);
+//		System.out.println("The worspace is selected...");
+//	}
+	
 	public void clickOnWorkspaceField123() {
-		PageUtil.waitForPageToLoad(driver, 20);
-		PageUtil.waitForElement(driver, 10);
-		// PageUtil.waitForTheElementToBeClickable(driver,
-		// By.xpath("//span[./input[contains(@class, 'e-input')]]"), // "Click the
-		// Workspace field"); PageUtil.clickElementSafely(driver, selectWorkspace,
-		// "Click the Workspace field"); PageUtil.waitForElement(driver, 20); //
-		PageUtil.waitForTheElementToBeClickable(driver,
-				By.xpath("//span[./input[contains(@class, 'e-input')]], 'Test_Generator-WIP')]"),
-				"The Workspace selected");
-		PageUtil.clickElementSafely(driver, selectSearchWorkspace, "The Workspaceselected");
-		PageUtil.sendkeysToElement(driver, selectSearchWorkspace, "select workspace field",
-				"Test_Generator-WIP" + Keys.ENTER);
-		// PageUtil.clickOnElement(driver,
-		// By.xpath("//ul[@id='ej2_dropdownlist_7_options']/li[1]"), "workspace
-		// name.."); PageUtil.waitForElement(driver, 50);
-		System.out.println("The worspace is selected...");
+	    // Wait for page and base elements
+	    PageUtil.waitForPageToLoad(driver, 20);
+	    PageUtil.waitForElement(driver, 10);
+
+	    // Wait for workspace field to be visible and clickable
+	    By workspaceField = By.xpath("//span[./input[contains(@class, 'e-input')]]");
+	    PageUtil.waitForTheElementToBeVisible(driver, workspaceField, "Workspace field");
+	    PageUtil.waitForTheElementToBeClickable(driver, workspaceField, "Workspace field clickable");
+
+	    // Click workspace dropdown
+	    PageUtil.clickOnElement(driver, workspaceField, "Workspace dropdown field");
+	    PageUtil.waitForElement(driver, 5);
+
+	    // Locate workspace search input field
+	    By workspaceSearchField = selectSearchWorkspace; // assuming this is already defined
+	    PageUtil.waitForTheElementToBeVisible(driver, workspaceSearchField, "Workspace search field");
+
+	    // Type and select workspace name
+	    String workspaceName = "Test_Generator-WIP";
+	    PageUtil.sendkeysToElement(driver, workspaceSearchField, "Select workspace field", workspaceName + Keys.ENTER);
+	    PageUtil.waitForElement(driver, 5);
+
+	    System.out.println("Workspace '" + workspaceName + "' is selected successfully.");
 	}
+
 
 	// Click on the Folder selector field
 
-	public void clickOnFolderFiled() throws InterruptedException {
-		PageUtil.waitForElement(driver, 20);
-		PageUtil.clickOnElement(driver,
-				By.xpath("//div[@class='dropdown__trigger' and following-sibling::div[@id='pathtree']]"),
-				"Click the Folder field");
-		PageUtil.waitForPageToLoad(driver, 10);
-		PageUtil.waitForElement(driver, 20);
-		PageUtil.sendkeysToElement(driver,
-				By.xpath("//div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder']"),
-				"searching folder name.", "MJ_DND");
-		PageUtil.waitForPageToLoad(driver, 10);
-		PageUtil.waitForElement(driver, 20);
-		PageUtil.clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"),
-				"search folder name.");
-		PageUtil.waitForPageToLoad(driver, 10);
-		PageUtil.waitForElement(driver, 20);
-		PageUtil.clickElementSafely(driver, selectSearchFolder, "select the folder.");
-		PageUtil.clickOnElement(driver, selectSearchFolder, "select the folder.");
+//	public void clickOnFolderField() throws InterruptedException {
+//		PageUtil.waitForElement(driver, 20);
+//		PageUtil.clickOnElement(driver,
+//				By.xpath("//div[@class='dropdown__trigger' and following-sibling::div[@id='pathtree']]"),
+//				"Click the Folder field");
+//		PageUtil.waitForPageToLoad(driver, 10);
+//		PageUtil.waitForElement(driver, 20);
+//		PageUtil.sendkeysToElement(driver,
+//				By.xpath("//div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder']"),
+//				"searching folder name.", "MJ_DND");
+//		PageUtil.waitForPageToLoad(driver, 10);
+//		PageUtil.waitForElement(driver, 20);
+//		PageUtil.clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"),
+//				"search folder name.");
+//		PageUtil.waitForPageToLoad(driver, 10);
+//		PageUtil.waitForElement(driver, 20);
+//		PageUtil.clickElementSafely(driver, selectSearchFolder, "select the folder.");
+//		PageUtil.clickOnElement(driver, selectSearchFolder, "select the folder.");
+//
+//		System.out.println("The folder is selected...");
+//	}
+	
+	public void clickOnFolderField() throws InterruptedException {
+	    // Wait for the base page to load
+	    PageUtil.waitForPageToLoad(driver, 20);
+	    PageUtil.waitForElement(driver, 10);
 
-		System.out.println("The folder is selected...");
+	    // Define locators clearly
+	    By folderDropdown = By.xpath("//div[@class='dropdown__trigger' and following-sibling::div[@id='pathtree']]");
+	    By searchInput = By.xpath("//div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder']");
+	    By searchButton = By.xpath("//div[@id='pathtree']//span[@title='Search']");
+
+	    String folderName = "MJ_DND";
+
+	    // Click folder dropdown
+	    PageUtil.waitForTheElementToBeClickable(driver, folderDropdown, "Folder dropdown");
+	    PageUtil.clickOnElement(driver, folderDropdown, "Click the folder field");
+	    PageUtil.waitForElement(driver, 5);
+
+	    // Enter folder name into search input
+	    PageUtil.waitForTheElementToBeVisible(driver, searchInput, "Search folder input");
+	    PageUtil.sendkeysToElement(driver, searchInput, "Enter folder name", folderName);
+	    PageUtil.waitForElement(driver, 2);
+
+	    // Click search icon
+	    PageUtil.waitForTheElementToBeClickable(driver, searchButton, "Folder search button");
+	    PageUtil.clickOnElement(driver, searchButton, "Click search button");
+	    PageUtil.waitForPageToLoad(driver, 10);
+
+	    // Wait and select the folder from search results
+	    PageUtil.waitForTheElementToBeVisible(driver, selectSearchFolder, "Folder search result");
+	    PageUtil.clickElementSafely(driver, selectSearchFolder, "Select the folder");
+
+	    System.out.println("The folder '" + folderName + "' is selected successfully.");
 	}
+
 
 	public void gotoWorkspaceNextbtn() {
 		PageUtil.waitForTheElementToBeVisible(driver, By.xpath("//button[@id='workspaceNextbtn']"), "Next button");
