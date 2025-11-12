@@ -5,13 +5,13 @@
 	<groupId>ICEDQ</groupId>
 	<artifactId>TestGenerator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.36.0</version>
+			<version>4.38.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
