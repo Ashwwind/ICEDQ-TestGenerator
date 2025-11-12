@@ -5,7 +5,6 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="locatotFind"/>
           <include name="launchBrowser"/>
           <include name="selectTestGeneratorModule"/>
         </methods>

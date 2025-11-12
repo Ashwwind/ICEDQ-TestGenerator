@@ -36,7 +36,6 @@ public class PageUtil {
 		wait.ignoring(StaleElementReferenceException.class);
 		wait.ignoring(ElementClickInterceptedException.class);
 		return wait;
-
 	}
 
 	// Wait for the element to be visible.
@@ -52,8 +51,10 @@ public class PageUtil {
 	// Wait for the element to be visible.
 	public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
 		try {
-			isInvisibleLoader(driver, By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
-			isInvisibleLoader(driver, By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+			isInvisibleLoader(driver,
+					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+			isInvisibleLoader(driver,
+					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
 			return waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by))
 					.isDisplayed();
 

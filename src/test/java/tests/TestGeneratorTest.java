@@ -9,9 +9,10 @@ import org.apache.logging.log4j.Logger;
 public class TestGeneratorTest extends Base {
 
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
-	TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
+	TestGeneratorPage testGeneratorPage;
 
 	// Creating a checksum rule using default dynamic template
+	
 	@Test
 	public void selectTestGenrator() throws InterruptedException {
 

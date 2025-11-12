@@ -7,7 +7,7 @@ import base.Base;
 import utils.PageUtil;
 
 public class TestGeneratorPage extends Base {
-	WebDriver driver;
+	private WebDriver driver;
 
 	// Locator
 	By testGeneratorModue = PageUtil.getElementLocator(prop.getProperty("home.testgenerator"));
@@ -17,6 +17,16 @@ public class TestGeneratorPage extends Base {
 	By selectSearchFolder = PageUtil.getElementLocator(prop.getProperty("select.searchedfolder"));
 	By loader = PageUtil.getElementLocator(prop.getProperty("loderIsDisplayed"));
 
+	
+	///
+	
+//	By testGeneratorModue = By.xpath("//button[.//h2[text()='Test Generator']]");
+//	By templateSearch = By.xpath("//input[contains(@placeholder,'Search template')]");
+//	By selectWorkspace = By.xpath("//span[./input[contains(@class, 'e-input')]]");
+//	By selectSearchWorkspace = By.xpath("//input[@class='e-input-filter e-input e-lib e-keyboard']");
+//	By selectSearchFolder = By.xpath("//button[@aria-label=\"Select folder\"]");
+//	By loader = By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div");
+
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
 
@@ -24,12 +34,15 @@ public class TestGeneratorPage extends Base {
 
 	// Page method
 	public void clickTestGenerator() {
-		PageUtil.clickOnElement(driver, By.xpath("//button[.//h2[text()='Test Generator']]"), 10);
+		PageUtil.isInvisibleLoader(driver, loader);
+		PageUtil.clickOnElement(driver, testGeneratorModue, 10);
 	}
 
 	// Click the Checksum rule type from the wizard page.
 	public void clickOnChecksum() {
+		PageUtil.isInvisibleLoader(driver, loader);
 		PageUtil.clickOnElement(driver, By.xpath("//h6[text()='Checksum']"), 10);
+		PageUtil.isInvisibleLoader(driver, loader);
 	}
 
 	// Click on the search field box
@@ -62,7 +75,7 @@ public class TestGeneratorPage extends Base {
 		// Click workspace dropdown // Click workspace dropdown
 		String workspaceName = "Test_Generator-WIP";
 		PageUtil.sendkeysToElement(driver, selectSearchWorkspace, "Select workspace field", workspaceName + Keys.ENTER);
-
+		PageUtil.isInvisibleLoader(driver, loader);
 		System.out.println("Workspace '" + workspaceName + "' is selected successfully.");
 	}
 
@@ -75,6 +88,7 @@ public class TestGeneratorPage extends Base {
 				By.xpath("//div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder']"),
 				"searching folder name.", "MJ_DND");
 		PageUtil.clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), 30);
+		PageUtil.isInvisibleLoader(driver, loader);
 		PageUtil.clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), 10);
 		PageUtil.clickOnElement(driver, By.xpath("//span[@class='e-icons e-check']//parent::button"), 10);
 
@@ -115,17 +129,75 @@ public class TestGeneratorPage extends Base {
 //		PageUtil.waitForElement(driver, 20);
 //	}
 //
-//	public void seectConnection() {
+//	public void selectConnection() {
 //		PageUtil.waitForPageToLoad(driver, 50);
-//		PageUtil.waitForTheElementToBeVisible(driver, By.xpath("//ejs-dropdownlist[@id='ej2_dropdownlist_27']/span[1]"),
-//				"Next button");
-//		PageUtil.clickOnElement(driver, By.xpath("//ejs-dropdownlist[@id='ej2_dropdownlist_27']/span[1]"),
-//				"Next button");
-//		// Wait
-//		PageUtil.waitForTheElementToBeVisible(driver, By.xpath("//ul[@id='ej2_dropdownlist_27_options']/*[2]"),
-//				"Next butto	n");
-//		PageUtil.clickOnElement(driver, By.xpath("//ul[@id='ej2_dropdownlist_27_options']/*[2]"), "Next button");
+	
+	/// Click on the source connection type.
+//		PageUtil.clickOnElement(driver, By.xpath("//span[@aria-label="dropdownlist"]/parent::*[@id="ej2_dropdownlist_45"]"),"the source connection type.");
+	
+	/// Select the source connection type as database.
+//		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"),"the database connection type.");
+//		
+	/// Select the connection.
+	//PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']") ,"the database connection type.");
+	
+	// Entering the connection name
+	//PageUtil.sendkeysToElement(driver, By.xpath("//div[@id=\"ej2_dropdownlist_161_popup\"]//input[@type=\"text\"]"),"", "postgreSQL"  +  Keys.ENTER);
+	
+	
+	// Click  on the schema dropdown
+	//PageUtil.clickOnElement(driver, By.xpath("//span[@aria-label="dropdownlist"]/parent::*[@id="ej2_dropdownlist_162"]") ,"the schema.");
+	
+	// Entering the schema name
+	//PageUtil.sendkeysToElement(driver, By.xpath("//div[@id="ej2_dropdownlist_162_popup"]//input[@type="text"]"), "", "public"  +  Keys.ENTER);
+	
+	/////////////////////////////////////////
+	
+	/// Click on the target connection type.
+//	PageUtil.clickOnElement(driver, By.xpath("//span[@aria-label="dropdownlist"]/parent::*[@id="ej2_dropdownlist_45"]"),"the target connection type.");
+
+/// Select the target connection type as database.
+//	PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"),"the database connection type.");
+//	
+/// Select the connection.
+//PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']") ,"the database connection type.");
+
+// Entering the connection name
+//PageUtil.sendkeysToElement(driver, By.xpath("//div[@id=\"ej2_dropdownlist_161_popup\"]//input[@type=\"text\"]"),"", "postgreSQL"  +  Keys.ENTER);
+
+
+// Click  on the schema dropdown
+//PageUtil.clickOnElement(driver, By.xpath("//span[@aria-label="dropdownlist"]/parent::*[@id="ej2_dropdownlist_162"]") ,"the schema.");
+
+// Entering the schema name
+//PageUtil.sendkeysToElement(driver, By.xpath("//div[@id="ej2_dropdownlist_162_popup"]//input[@type="text"]"), "", "public"  +  Keys.ENTER);
+
+//	}
+	
+	///  Click on thre 'Select Dataset' next button.
+//	public void gotoDatasetNextbtn() {
+//		PageUtil.waitForPageToLoad(driver, 50);
+//		PageUtil.waitForTheElementToBeVisible(driver, By.xpath("//button[@id='datasetNextbtn']"), "Next button");
+//		PageUtil.clickOnElement(driver, By.xpath("//button[@id='notificationNextbtn']"), "Next button");
 //		PageUtil.waitForElement(driver, 20);
 //	}
 
+	////
+	
+	//Click on the available table search field
+	
+	//PageUtil.clickOnElement(driver, By.xpath("//input[@placeholder="Search available table"]") ,"the search available table field.");
+	
+	// Entering the available table name
+	//PageUtil.sendkeysToElement(driver, By.xpath("//input[@placeholder="Search available table"]"), "", "staff"  +  Keys.ENTER);
+	
+	
+	// Select the table checkbox from the list.
+	//PageUtil.clickOnElement(driver, By.xpath("//ul//li[@id="staff"]") ,"the table name from the list.");
+	
+	
+	// Click on the 'Movee to' button
+	//PageUtil.clickOnElement(driver, By.xpath("//button[@aria-label="Move To"]") ,"the table name from the list.");
+	
+	
 }
