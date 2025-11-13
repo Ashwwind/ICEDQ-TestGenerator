@@ -31,15 +31,12 @@ public class LoginPage extends Base{
 	}
 
 	public void clickLogin() {
-		PageUtil.waitForPageToLoad(driver, 20);
-			PageUtil.waitForElement(driver, 10);
-			PageUtil.clickOnElement(driver, loginButton, "Sign In");
+			PageUtil.clickOnElement(driver, loginButton, 10);
 	}
 
 	public void login(String username, String password) {
 		enterUsername(username);
 		enterPassword(password);
-		PageUtil.waitForElement(driver, 10);
 		clickLogin();
 	}
 	
@@ -77,9 +74,4 @@ public class LoginPage extends Base{
 		Assert.assertTrue(forgotPasswordLink.isDisplayed(), "Forgot Password link not displayed.");
 
 	}
-	
-	
-
-	
-	
 }

@@ -10,10 +10,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import base.Base;
 import utils.PageUtil;
 
-public class HomePage {
-	WebDriver driver;
+public class HomePage extends Base{
+	private WebDriver driver;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -22,8 +23,6 @@ public class HomePage {
 	public void validateHomePage() {
 
 		try {
-			
-			PageUtil.waitForPageToLoad(driver, 30);
 			
 //			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 //			// validate the Url and Title

@@ -1410,3 +1410,149 @@ Session ID: b27df0e1214e33f5f199a00640778c69
 2025-11-12 17:12:38 ERROR TestGeneratorTest:56 - The existing dynamic checksum tamplate is not selected..Cannot invoke "pages.TestGeneratorPage.selectExistingChecksumTemplate()" because "this.testGeneratorPage" is null
 2025-11-12 17:12:38 ERROR TestGeneratorTest:65 - The workspace is selected..Cannot invoke "pages.TestGeneratorPage.clickOnWorkspaceField()" because "this.testGeneratorPage" is null
 2025-11-12 17:12:38 ERROR TestGeneratorTest:74 - The folder is selected..Cannot invoke "pages.TestGeneratorPage.clickOnFolderField()" because "this.testGeneratorPage" is null
+2025-11-13 11:09:34 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 11:09:34 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 11:09:34 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 11:09:34 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 11:09:34 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 11:09:34 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 11:09:40 ERROR TestGeneratorTest:24 - The test generator module is not clickable..Cannot invoke "pages.TestGeneratorPage.clickTestGenerator()" because "this.testGeneratorPage" is null
+2025-11-13 11:09:40 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnChecksum()" because "this.testGeneratorPage" is null
+2025-11-13 11:09:40 ERROR TestGeneratorTest:42 - The template search field is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:09:40 ERROR TestGeneratorTest:48 - Unabe to enter search data..Cannot invoke "pages.TestGeneratorPage.enterOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:09:40 ERROR TestGeneratorTest:56 - The existing dynamic checksum tamplate is not selected..Cannot invoke "pages.TestGeneratorPage.selectExistingChecksumTemplate()" because "this.testGeneratorPage" is null
+2025-11-13 11:09:40 ERROR TestGeneratorTest:65 - The workspace is selected..Cannot invoke "pages.TestGeneratorPage.clickOnWorkspaceField()" because "this.testGeneratorPage" is null
+2025-11-13 11:09:40 ERROR TestGeneratorTest:74 - The folder is selected..Cannot invoke "pages.TestGeneratorPage.clickOnFolderField()" because "this.testGeneratorPage" is null
+2025-11-13 11:25:19 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 11:25:19 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 11:25:19 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 11:25:19 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 11:25:19 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 11:25:19 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 11:25:23 ERROR TestGeneratorTest:24 - The test generator module is not clickable..Cannot invoke "pages.TestGeneratorPage.clickTestGenerator()" because "this.testGeneratorPage" is null
+2025-11-13 11:25:23 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnChecksum()" because "this.testGeneratorPage" is null
+2025-11-13 11:25:23 ERROR TestGeneratorTest:42 - The template search field is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:25:23 ERROR TestGeneratorTest:48 - Unabe to enter search data..Cannot invoke "pages.TestGeneratorPage.enterOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:25:23 ERROR TestGeneratorTest:56 - The existing dynamic checksum tamplate is not selected..Cannot invoke "pages.TestGeneratorPage.selectExistingChecksumTemplate()" because "this.testGeneratorPage" is null
+2025-11-13 11:25:23 ERROR TestGeneratorTest:65 - The workspace is selected..Cannot invoke "pages.TestGeneratorPage.clickOnWorkspaceField()" because "this.testGeneratorPage" is null
+2025-11-13 11:25:23 ERROR TestGeneratorTest:74 - The folder is selected..Cannot invoke "pages.TestGeneratorPage.clickOnFolderField()" because "this.testGeneratorPage" is null
+2025-11-13 11:47:42 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 11:47:42 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 11:47:42 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 11:47:42 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 11:47:42 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 11:47:42 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 11:47:46 ERROR TestGeneratorTest:24 - The test generator module is not clickable..Cannot invoke "pages.TestGeneratorPage.clickTestGenerator()" because "this.testGeneratorPage" is null
+2025-11-13 11:47:46 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnChecksum()" because "this.testGeneratorPage" is null
+2025-11-13 11:47:46 ERROR TestGeneratorTest:42 - The template search field is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:47:46 ERROR TestGeneratorTest:48 - Unabe to enter search data..Cannot invoke "pages.TestGeneratorPage.enterOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:47:46 ERROR TestGeneratorTest:56 - The existing dynamic checksum tamplate is not selected..Cannot invoke "pages.TestGeneratorPage.selectExistingChecksumTemplate()" because "this.testGeneratorPage" is null
+2025-11-13 11:47:46 ERROR TestGeneratorTest:65 - The workspace is selected..Cannot invoke "pages.TestGeneratorPage.clickOnWorkspaceField()" because "this.testGeneratorPage" is null
+2025-11-13 11:47:46 ERROR TestGeneratorTest:74 - The folder is selected..Cannot invoke "pages.TestGeneratorPage.clickOnFolderField()" because "this.testGeneratorPage" is null
+2025-11-13 11:52:43 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 11:52:43 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 11:52:43 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 11:52:43 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 11:52:43 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 11:52:43 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 11:52:46 ERROR TestGeneratorTest:24 - The test generator module is not clickable..Cannot invoke "pages.TestGeneratorPage.clickTestGenerator()" because "this.testGeneratorPage" is null
+2025-11-13 11:52:46 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnChecksum()" because "this.testGeneratorPage" is null
+2025-11-13 11:52:46 ERROR TestGeneratorTest:42 - The template search field is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:52:46 ERROR TestGeneratorTest:48 - Unabe to enter search data..Cannot invoke "pages.TestGeneratorPage.enterOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:52:46 ERROR TestGeneratorTest:56 - The existing dynamic checksum tamplate is not selected..Cannot invoke "pages.TestGeneratorPage.selectExistingChecksumTemplate()" because "this.testGeneratorPage" is null
+2025-11-13 11:52:46 ERROR TestGeneratorTest:65 - The workspace is selected..Cannot invoke "pages.TestGeneratorPage.clickOnWorkspaceField()" because "this.testGeneratorPage" is null
+2025-11-13 11:52:46 ERROR TestGeneratorTest:74 - The folder is selected..Cannot invoke "pages.TestGeneratorPage.clickOnFolderField()" because "this.testGeneratorPage" is null
+2025-11-13 11:57:52 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 11:57:52 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 11:57:52 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 11:57:52 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 11:57:52 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 11:57:52 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 11:57:57 ERROR TestGeneratorTest:24 - The test generator module is not clickable..Cannot invoke "pages.TestGeneratorPage.clickTestGenerator()" because "this.testGeneratorPage" is null
+2025-11-13 11:57:57 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnChecksum()" because "this.testGeneratorPage" is null
+2025-11-13 11:57:57 ERROR TestGeneratorTest:42 - The template search field is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:57:57 ERROR TestGeneratorTest:48 - Unabe to enter search data..Cannot invoke "pages.TestGeneratorPage.enterOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:57:57 ERROR TestGeneratorTest:56 - The existing dynamic checksum tamplate is not selected..Cannot invoke "pages.TestGeneratorPage.selectExistingChecksumTemplate()" because "this.testGeneratorPage" is null
+2025-11-13 11:57:57 ERROR TestGeneratorTest:65 - The workspace is selected..Cannot invoke "pages.TestGeneratorPage.clickOnWorkspaceField()" because "this.testGeneratorPage" is null
+2025-11-13 11:57:57 ERROR TestGeneratorTest:74 - The folder is selected..Cannot invoke "pages.TestGeneratorPage.clickOnFolderField()" because "this.testGeneratorPage" is null
+2025-11-13 11:59:33 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 11:59:33 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 11:59:33 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 11:59:33 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 11:59:33 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 11:59:33 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 11:59:37 ERROR TestGeneratorTest:24 - The test generator module is not clickable..Cannot invoke "pages.TestGeneratorPage.clickTestGenerator()" because "this.testGeneratorPage" is null
+2025-11-13 11:59:37 ERROR TestGeneratorTest:33 - The 'Checksum' rule wizard is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnChecksum()" because "this.testGeneratorPage" is null
+2025-11-13 11:59:37 ERROR TestGeneratorTest:42 - The template search field is not clickable..Cannot invoke "pages.TestGeneratorPage.clickOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:59:37 ERROR TestGeneratorTest:48 - Unabe to enter search data..Cannot invoke "pages.TestGeneratorPage.enterOnSearchField()" because "this.testGeneratorPage" is null
+2025-11-13 11:59:37 ERROR TestGeneratorTest:56 - The existing dynamic checksum tamplate is not selected..Cannot invoke "pages.TestGeneratorPage.selectExistingChecksumTemplate()" because "this.testGeneratorPage" is null
+2025-11-13 11:59:37 ERROR TestGeneratorTest:65 - The workspace is selected..Cannot invoke "pages.TestGeneratorPage.clickOnWorkspaceField()" because "this.testGeneratorPage" is null
+2025-11-13 11:59:37 ERROR TestGeneratorTest:74 - The folder is selected..Cannot invoke "pages.TestGeneratorPage.clickOnFolderField()" because "this.testGeneratorPage" is null
+2025-11-13 12:03:53 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 12:03:53 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 12:03:53 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 12:03:53 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 12:03:53 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 12:03:53 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 12:04:00 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-13 12:04:11 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-13 12:04:12 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-13 12:04:14 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-13 16:47:11 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 16:47:11 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 16:47:11 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 16:47:11 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 16:47:11 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 16:47:11 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 16:48:12 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 16:48:12 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 16:48:12 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 16:48:12 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 16:48:12 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 16:48:12 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 16:48:19 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-13 16:48:19 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-13 16:48:21 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-13 16:48:22 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-13 16:49:21 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 16:49:21 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 16:49:21 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 16:49:21 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 16:49:21 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 16:49:21 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 16:49:38 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-13 16:49:40 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-13 16:49:42 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-13 16:49:45 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-13 16:49:47 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-13 16:49:49 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-13 16:49:51 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-13 17:07:31 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 17:07:31 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 17:07:31 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 17:07:31 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 17:07:31 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 17:07:31 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 17:07:48 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-13 17:07:51 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-13 17:07:52 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-13 17:07:58 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-13 17:07:59 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-13 17:08:01 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-13 17:08:03 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-13 19:19:33 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-13 19:19:33 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-13 19:19:34 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-13 19:19:34 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-13 19:19:34 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-13 19:19:34 INFO  Base:70 - Total locators loaded: 10
+2025-11-13 19:19:46 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-13 19:19:48 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-13 19:19:50 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-13 19:19:56 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-13 19:19:57 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-13 19:20:15 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-13 19:20:29 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-13 19:20:42 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-13 19:20:54 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-13 19:21:49 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..

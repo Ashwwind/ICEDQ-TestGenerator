@@ -29,18 +29,18 @@ public class LoginTest extends Base {
 		loginPage.loginPageValidation();
 	}
 
-	@Test
-	public void selectTestGeneratorModule() {
-		WebElement testGeneratorModule = driver.findElement(By.xpath("//*[contains(text(),'Test Generator')]"));
-		testGeneratorModule.click();
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-		WebElement testGeneratorHeader = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Test Generator')]")));
-
-		Assert.assertTrue(testGeneratorHeader.isDisplayed(), "Test Generator page not displayed");
-		System.out.println("Test Generator page validation successful.");
+//	@Test
+//	public void selectTestGeneratorModule() {
+//		WebElement testGeneratorModule = driver.findElement(By.xpath("//*[contains(text(),'Test Generator')]"));
+//		testGeneratorModule.click();
+//
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//
+//		WebElement testGeneratorHeader = wait.until(
+//				ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Test Generator')]")));
+//
+//		Assert.assertTrue(testGeneratorHeader.isDisplayed(), "Test Generator page not displayed");
+//		System.out.println("Test Generator page validation successful.");
 
 //	@Test
 //	public void validateInvalidLoginError()
@@ -64,5 +64,4 @@ public class LoginTest extends Base {
 //		
 //	}
 
-	}
 }

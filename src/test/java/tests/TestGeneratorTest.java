@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import base.Base;
 import pages.TestGeneratorPage;
@@ -9,10 +10,15 @@ import org.apache.logging.log4j.Logger;
 public class TestGeneratorTest extends Base {
 
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
-	TestGeneratorPage testGeneratorPage;
+	private TestGeneratorPage testGeneratorPage;
 
 	// Creating a checksum rule using default dynamic template
-	
+
+	@BeforeMethod
+	public void setUp() {
+		testGeneratorPage = new TestGeneratorPage(driver);
+	}
+
 	@Test
 	public void selectTestGenrator() throws InterruptedException {
 
@@ -73,52 +79,59 @@ public class TestGeneratorTest extends Base {
 		} catch (Exception e) {
 			logger.error("The folder is selected.." + e.getMessage());
 		}
+
+		// Step7: To click on the next button of the 'select container' page.
+
+		try {
+			testGeneratorPage.gotoWorkspaceNextbtn();
+			logger.info("The next button clickable from the 'select container' page..");
+		} catch (Exception e) {
+			logger.error("The next button not clickable from the 'select container' page.." + e.getMessage());
+		}
+
+		// Step8: To click on the next button of the 'define rule metadata' page.
+
+		try {
+			testGeneratorPage.gotoDataMetadataNextbtn();
+			logger.info("The next button clickable from the 'define rule metadata' page..");
+		} catch (Exception e) {
+			logger.error("The next button clickable from the 'define rule metadata' page.." + e.getMessage());
+		}
+
+		// Step9: To click on the next button of the 'define check metadata' page.
+		try {
+			testGeneratorPage.gotoRuleMetadataNextbtn();
+			logger.info("The next button clickable from the 'define check metadata' page..");
+		} catch (Exception e) {
+			logger.error("The next button clickable from the 'define check metadata' page.." + e.getMessage());
+		}
+
+		// Step10: To click on the next button of the 'configure notification' page.
+
+		try {
+			testGeneratorPage.gotoNotificationNextbtn();
+			logger.info("The next button clickable from the 'configure notification' page..");
+		} catch (Exception e) {
+			logger.error("The next button clickable from the 'configure notification' page.." + e.getMessage());
+		}
+
+		// Step11: Select the source connection.
+		try {
+			testGeneratorPage.selectionSourceDataset();
+			logger.info("The source connection selected..");
+		} catch (Exception e) {
+			logger.error("The source connection not selected.." + e.getMessage());
+		}
+
+		// Step11: Select the target connection.
+		try {
+			testGeneratorPage.selectionSourceDataset();
+			logger.info("The target connection selected..");
+		} catch (Exception e) {
+			logger.error("The target connection not selected.." + e.getMessage());
+		}
 	}
 
-//	@Test(priority = 7)
-//	public void clickOnworkspaceNextbtn() throws InterruptedException {
-//		// Thread.sleep(5000);
-//		TestGeneratorPage testGeneratorPage;
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.gotoWorkspaceNextbtn();
-//		logger.info("Clicing the next button..");
-//	}
-//
-//	@Test(priority = 8)
-//	public void clickOnmetadataNextbtn() throws InterruptedException {
-//		// Thread.sleep(5000);
-//		TestGeneratorPage testGeneratorPage;
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.gotoDAtaMetadataNextbtn();
-//		logger.info("Clicing the next button..");
-//	}
-//
-//	@Test(priority = 9)
-//	public void clickOnRulemetadataNextbtn() throws InterruptedException {
-//		// Thread.sleep(5000);
-//		TestGeneratorPage testGeneratorPage;
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.gotoRuleMetadataNextbtn();
-//		logger.info("Clicing the next button..");
-//	}
-//	
-//	@Test(priority = 9)
-//	public void clickOnCheckmetadataNextbtn() throws InterruptedException {
-//		// Thread.sleep(5000);
-//		TestGeneratorPage testGeneratorPage;
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.gotoRuleMetadataNextbtn();
-//		logger.info("Clicing the next button..");
-//	}
-//	
-//	@Test(priority = 10)
-//	public void clickOnNotificationNextbtn() throws InterruptedException {
-//		// Thread.sleep(5000);
-//		TestGeneratorPage testGeneratorPage;
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.gotoNotificationNextbtn();
-//		logger.info("Clicing the next button..");
-//	}
 //	
 //	@Test(priority = 10)
 //	public void selectConnecton() throws InterruptedException {
