@@ -1,8 +1,12 @@
 Manifest-Version: 1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 Build-Jdk-Spec: 17
 =======
 Build-Jdk-Spec: 21
 >>>>>>> 3313434 (today code changes at office 10-11-25)
+=======
+Build-Jdk-Spec: 21
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 Created-By: Maven Integration for Eclipse
 

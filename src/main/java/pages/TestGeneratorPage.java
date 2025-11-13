@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
 import base.Base;
 import utils.PageUtil;
 
@@ -16,6 +15,7 @@ public class TestGeneratorPage extends Base {
 	By selectWorkspace = PageUtil.getElementLocator(prop.getProperty("select.Workspace"));
 	By selectSearchWorkspace = PageUtil.getElementLocator(prop.getProperty("select.searchedWorspace"));
 	By selectSearchFolder = PageUtil.getElementLocator(prop.getProperty("select.searchedfolder"));
+	By loader = PageUtil.getElementLocator(prop.getProperty("loderIsDisplayed"));
 
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
@@ -24,61 +24,84 @@ public class TestGeneratorPage extends Base {
 
 	// Page method
 	public void clickTestGenerator() {
+<<<<<<< HEAD
 		PageUtil.waitForPageToLoad(driver, 10);
 		// PageUtil.waitForTheElementToBeClickable1(driver, testGeneratorModue, "Test
 		// Generator module...");
 		PageUtil.clickOnElement(driver, By.xpath("//button[.//h2[text()='Test Generator']]"), "TestGenerator");
+=======
+		PageUtil.clickOnElement(driver, By.xpath("//button[.//h2[text()='Test Generator']]"), 10);
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 	}
 
 	// Click the Checksum rule type from the wizard page.
 	public void clickOnChecksum() {
+<<<<<<< HEAD
 		PageUtil.waitForPageToLoad(driver, 10);
 		PageUtil.waitMethod(driver);
 		PageUtil.clickOnElement(driver, By.xpath("//h6[text()='Checksum']"), "select checksum rule from wizard");
+=======
+		PageUtil.clickOnElement(driver, By.xpath("//h6[text()='Checksum']"), 10);
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 	}
 
 	// Click on the search field box
 	public void clickOnSearchField() {
+<<<<<<< HEAD
 		PageUtil.waitForPageToLoad(driver, 10);
 		PageUtil.waitMethod(driver);
 //		PageUtil.clickOnElement(driver, By.xpath("//input[contains(@placeholder,'Search template')]"),
 //				"Search template");
 		PageUtil.clickElementSafely(driver, templateSearch, "Search template");
+=======
+		PageUtil.isInvisibleLoader(driver, loader);
+		PageUtil.clickOnElement(driver, templateSearch, 10);
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 	}
 
 	// Enter the data on the search field
 	public void enterOnSearchField() {
+<<<<<<< HEAD
 		PageUtil.waitForPageToLoad(driver, 60);
 		PageUtil.sendkeysToElement(driver, By.xpath("//input[contains(@placeholder,'Search template')]"),
 				"Search template", "Compare Record Counts - Dynamic SQL");
 		PageUtil.waitForPageToLoad(driver, 50);
 		PageUtil.clickOnElement(driver, By.xpath("//*[@title='Search']"), "the search button icon");
+=======
+		PageUtil.sendkeysToElement(driver, By.xpath("//input[contains(@placeholder,'Search template')]"),
+				"Search template", "Compare Record Counts - Dynamic SQL");
+		PageUtil.clickOnElement(driver, By.xpath("//*[@title='Search']"), 10);
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 	}
 
 	// Select the existing checksum template form the list
 	public void selectExistingChecksumTemplate() {
+<<<<<<< HEAD
 		PageUtil.waitForPageToLoad(driver, 50);
 		PageUtil.waitMethod(driver);
 		PageUtil.waitForElement(driver, 20);
 		PageUtil.clickOnElement(driver, By.xpath(
 				"//td[@class='e-rowcell e-templatecell e-lastrowcell']/span[@class='dib'][contains(., 'Compare Record Counts - Dynamic SQL')]"),
 				"Selected existing checksum rule template");
+=======
+		PageUtil.isInvisibleLoader(driver, loader);
+		PageUtil.clickOnElement(driver, By.xpath(
+				"//td[@class='e-rowcell e-templatecell e-lastrowcell']/span[@class='dib'][contains(., 'Compare Record Counts - Dynamic SQL')]"),
+				10);
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 	}
 
-//	// Click on the Workspace selector field
-//	public void clickOnWorkspaceField() throws InterruptedException {
-//		PageUtil.waitForElement(driver, 50);
-//		Thread.sleep(500);
-//		PageUtil.clickOnElement(driver, By.xpath("//input[@placeholder='Select workspace']"),
-//				"Click the Workspace field");
-//		Thread.sleep(500);
-//		PageUtil.waitForElement(driver, 50);
-//		Thread.sleep(500);
-//		PageUtil.clickOnElement(driver,
-//				By.xpath("//*[@id=\"ej2_dropdownlist_3_options\"]/li[contains(text(), 'TestGenerator-workspace')]"),
-//				"The Workspace selected");
-//	}
+	public void clickOnWorkspaceField() {
+		PageUtil.isInvisibleLoader(driver, loader);
+		// Wait for workspace field to be visible and clickable
+		PageUtil.clickOnElement(driver, By.xpath("//span[./input[contains(@class, 'e-input')]]"), 10);
+		// Click workspace dropdown
+		PageUtil.clickOnElement(driver, selectSearchWorkspace, 10);
+		// Click workspace dropdown // Click workspace dropdown
+		String workspaceName = "Test_Generator-WIP";
+		PageUtil.sendkeysToElement(driver, selectSearchWorkspace, "Select workspace field", workspaceName + Keys.ENTER);
 
+<<<<<<< HEAD
 	// Test workspace selection.
 //	public void clickOnWorkspaceField123() {
 //		PageUtil.waitForPageToLoad(driver, 20);
@@ -131,11 +154,14 @@ public class TestGeneratorPage extends Base {
 	    PageUtil.waitForElement(driver, 5);
 
 	    System.out.println("Workspace '" + workspaceName + "' is selected successfully.");
+=======
+		System.out.println("Workspace '" + workspaceName + "' is selected successfully.");
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 	}
-
 
 	// Click on the Folder selector field
 
+<<<<<<< HEAD
 //	public void clickOnFolderField() throws InterruptedException {
 //		PageUtil.waitForElement(driver, 20);
 //		PageUtil.clickOnElement(driver,
@@ -192,6 +218,20 @@ public class TestGeneratorPage extends Base {
 	    System.out.println("The folder '" + folderName + "' is selected successfully.");
 	}
 
+=======
+	public void clickOnFolderField() throws InterruptedException {
+		PageUtil.isInvisibleLoader(driver, loader);
+		PageUtil.clickOnElement(driver, By.xpath("//button[@aria-label='Folder']//parent::div"), 30);
+		PageUtil.sendkeysToElement(driver,
+				By.xpath("//div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder']"),
+				"searching folder name.", "MJ_DND");
+		PageUtil.clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), 30);
+		PageUtil.clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), 10);
+		PageUtil.clickOnElement(driver, By.xpath("//span[@class='e-icons e-check']//parent::button"), 10);
+
+		System.out.println("The folder is selected...");
+	}
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 
 	public void gotoWorkspaceNextbtn() {
 		PageUtil.waitForTheElementToBeVisible(driver, By.xpath("//button[@id='workspaceNextbtn']"), "Next button");

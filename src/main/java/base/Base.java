@@ -19,17 +19,17 @@ public class Base {
 
 	@BeforeSuite(alwaysRun = true)
 	public WebDriver launchBrowser() {
-
 		locatotFind();
-
 		driver = DriverSetup.initDriver();
 		driver.get(ConfigReader.getProperty("baseUrl"));
-
 		return driver;
 
 	}
 
+<<<<<<< HEAD
 	/// vipul
+=======
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 
 	public static void locatotFind() {
 		String locatorDirPath = System.getProperty("user.dir") + "/src/main/resources/locator/";

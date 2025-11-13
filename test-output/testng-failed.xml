@@ -9,6 +9,7 @@
           <include name="selectTestGeneratorModule"/>
         </methods>
       </class> <!-- tests.LoginTest -->
+<<<<<<< HEAD
       <class name="tests.TestGeneratorTest">
         <methods>
           <include name="launchBrowser"/>
@@ -16,6 +17,8 @@
           <include name="clickOnFolderFiled"/>
         </methods>
       </class> <!-- tests.TestGeneratorTest -->
+=======
+>>>>>>> 36350c3 (Code change done from Office at 11-11-25)
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
