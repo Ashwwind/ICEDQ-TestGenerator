@@ -55,24 +55,7 @@ public class PageUtil {
 	}
 	
 	// Wait for the element to be visible.
-<<<<<<< HEAD
-		public static boolean isDisplayed(WebDriver driver, By by,int timeout)
-		{
-			try {
-				
-				return waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
-				
-			}catch(TimeoutException te) {
-				
-				return new WebDriverWait(driver, Duration.ofSeconds(timeout+10)).until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed(); //fallback technique
-				
-			}
-			catch (Exception e) {
-				System.out.println("Element is not visiblle");
-			}
-			return false;
-			
-=======
+
 	public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
 		try {
 			isInvisibleLoader(driver, By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
@@ -87,7 +70,8 @@ public class PageUtil {
 
 		} catch (Exception e) {
 			System.out.println("Element is not visiblle");
->>>>>>> 36350c3 (Code change done from Office at 11-11-25)
+		}
+		return false;
 		}
 		
 	// Wait for the element to be clickable.
@@ -106,31 +90,23 @@ public class PageUtil {
 		try {
 			
 			boolean state = isDisplayed(driver, by, timeout);
-<<<<<<< HEAD
-			if(state) {
-				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();;
-			}else {
-				log.info("Element not visible : "+by);
-=======
+
 			if (state) {
 				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
 			} else {
 				log.info("Element not visible : " + by);
->>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 			}
 		} catch (Exception e) {
 			System.out.println("Element is not clickable");
 		}
 	}
 
-<<<<<<< HEAD
-=======
+
 	//
 	public static void isInvisibleLoader(WebDriver driver, By locator) {
 		waitForElements(driver, 120).until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 
->>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 	// Click method.
 	public static void clickOnElement(WebDriver driver, By locator, String label) {
 		System.out.println("Clicking on " + label);

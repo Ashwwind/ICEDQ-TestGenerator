@@ -26,10 +26,6 @@ public class Base {
 
 	}
 
-<<<<<<< HEAD
-	/// vipul
-=======
->>>>>>> 36350c3 (Code change done from Office at 11-11-25)
 
 	public static void locatotFind() {
 		String locatorDirPath = System.getProperty("user.dir") + "/src/main/resources/locator/";

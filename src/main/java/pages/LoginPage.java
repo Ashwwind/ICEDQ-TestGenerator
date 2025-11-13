@@ -40,16 +40,12 @@ public class LoginPage {
 	}
 
 	public void clickLogin() {
-<<<<<<< HEAD
-		PageUtil.waitForPageToLoad(driver, 20);
-			PageUtil.waitForElement(driver, 10);
-			PageUtil.clickOnElement(driver, loginButton, "Sign In");
-=======
+
 		PageUtil.isDisplayed(driver, usernameField, 0);
 		PageUtil.isDisplayed(driver, passwordField, 0);
 		PageUtil.clickOnElement(driver, loginButton, "Sign In");
 		PageUtil.isInvisibleLoader(driver, loader);
->>>>>>> 36350c3 (Code change done from Office at 11-11-25)
+
 	}
 
 	public void login(String username, String password) {
