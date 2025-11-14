@@ -95,10 +95,6 @@ public class TestGeneratorPage extends Base {
 		PageUtil.clickOnElement(driver, By.xpath("//button[@id='workspaceNextbtn']"), 20);
 	}
 
-	public void gotoDataMetadataNextbtn() {
-		PageUtil.clickOnElement(driver, By.xpath("//button[@id='metadataNextbtn']"), 20);
-	}
-
 	public void gotoRuleMetadataNextbtn() {
 		PageUtil.clickOnElement(driver, By.xpath("//button[@id='metadataNextbtn']"), 20);
 	}
@@ -113,16 +109,17 @@ public class TestGeneratorPage extends Base {
 
 	/// ********* Select the source dataset ********** ///
 	public void selectionSourceDataset() {
-		// Click on the source connection type.
 
-		PageUtil.clickOnElement(driver,
-				By.xpath("//span[@aria-label='dropdownlist']/parent::*[@id='ej2_dropdownlist_45']"), 10);
+		// Click on the source connection type.
+		PageUtil.clickOnElement(driver, By.xpath(
+				"(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection type']//span[@formcontrolname='connectionType'])[1]"),
+				10);
 
 		// Select the source connection type as database.
 		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
 
 		// Select the connection.
-		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
+		PageUtil.clickOnElement(driver, By.xpath("//*[@id='ej2_dropdownlist_27']/span"), 20);
 
 		// Entering the connection name
 		PageUtil.sendkeysToElement(driver, By.xpath("//div[@id='ej2_dropdownlist_161_popup']//input[@type='text']"),
@@ -144,14 +141,15 @@ public class TestGeneratorPage extends Base {
 	public void selectionTargetDataset() {
 
 		/// Click on the target connection type.
-		PageUtil.clickOnElement(driver,
-				By.xpath("//span[@aria-label='dropdownlist']/parent::*[@id='ej2_dropdownlist_45']"), 10);
+		PageUtil.clickOnElement(driver, By.xpath(
+				"(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection type']//span[@formcontrolname='connectionType'])[2]"),
+				10);
 
 		// Select the target connection type as database.
 		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
 
 		// Select the connection.
-		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
+		PageUtil.clickOnElement(driver, By.xpath("//*[@id='ej2_dropdownlist_28']/span"), 20);
 
 		// Entering the connection name
 		PageUtil.sendkeysToElement(driver, By.xpath("//div[@id='ej2_dropdownlist_161_popup']//input[@type='text']"),
@@ -167,31 +165,41 @@ public class TestGeneratorPage extends Base {
 
 	}
 
-	/// Click on thre 'Select Dataset' next button.
-//	public void gotoDatasetNextbtn() {
-//		PageUtil.waitForPageToLoad(driver, 50);
-//		PageUtil.waitForTheElementToBeVisible(driver, By.xpath("//button[@id='datasetNextbtn']"), "Next button");
-//		PageUtil.clickOnElement(driver, By.xpath("//button[@id='notificationNextbtn']"), "Next button");
-//		PageUtil.waitForElement(driver, 20);
-//	}
+	// Click on the next button of 'select dataset' page.
 
-	////
+	public void gotoDatasetNextbtn() {
+		PageUtil.clickOnElement(driver, By.xpath("//button[@id='datasetNextbtn']"), 20);
+	}
 
-	// Click on the available table search field
+	/// ********* Select the Available Table ********** ///.
 
-	// PageUtil.clickOnElement(driver, By.xpath("//input[@placeholder="Search
-	// available table"]") ,"the search available table field.");
+	public void selectionAvailabeTable() {
 
-	// Entering the available table name
-	// PageUtil.sendkeysToElement(driver, By.xpath("//input[@placeholder="Search
-	// available table"]"), "", "staff" + Keys.ENTER);
+		// Click on the available table search field
+		PageUtil.clickOnElement(driver, By.xpath("//input[@placeholder='Search available table']"), 20);
 
-	// Select the table checkbox from the list.
-	// PageUtil.clickOnElement(driver, By.xpath("//ul//li[@id="staff"]") ,"the table
-	// name from the list.");
+		// Entering the available table name
+		PageUtil.sendkeysToElement(driver, By.xpath("//input[@placeholder='Search available table']"),
+				"staff table name", "staff" + Keys.ENTER);
 
-	// Click on the 'Movee to' button
-	// PageUtil.clickOnElement(driver, By.xpath("//button[@aria-label="Move To"]")
-	// ,"the table name from the list.");
+		// Select the table checkbox from the list.
+		PageUtil.clickOnElement(driver, By.xpath("//ul//li[@id='staff']"), 20);
+
+		// Click on the 'Move to' button
+		PageUtil.clickOnElement(driver, By.xpath("//button[@aria-label='Move To']"), 20);
+	}
+
+	// Click on the next button of 'select table' page.
+
+	public void gotoSelettableNextbtn() {
+		PageUtil.clickOnElement(driver, By.xpath("//div[@id='e-content-element_6']//button[normalize-space()='Next']"),
+				20);
+	}
+
+	// Click on the 'Generate' button.
+
+	public void cickOnGenerate() {
+		PageUtil.clickOnElement(driver, By.xpath("//button[@id='reviewNextbtn']"), 20);
+	}
 
 }

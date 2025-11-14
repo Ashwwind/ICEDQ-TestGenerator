@@ -10,18 +10,18 @@ import org.apache.logging.log4j.Logger;
 public class TestGeneratorTest extends Base {
 
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
-	private TestGeneratorPage testGeneratorPage;
-
+//	private TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
+	
 	// Creating a checksum rule using default dynamic template
 
-	@BeforeMethod
-	public void setUp() {
-		testGeneratorPage = new TestGeneratorPage(driver);
-	}
+//	@BeforeMethod
+//	public void setUp() {
+//		testGeneratorPage = new TestGeneratorPage(driver);
+//	}
 
 	@Test
 	public void selectTestGenrator() throws InterruptedException {
-
+		TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
 		// Step1: To Click on the test generator
 		try {
 			testGeneratorPage.clickTestGenerator();
@@ -92,7 +92,7 @@ public class TestGeneratorTest extends Base {
 		// Step8: To click on the next button of the 'define rule metadata' page.
 
 		try {
-			testGeneratorPage.gotoDataMetadataNextbtn();
+			testGeneratorPage.gotoRuleMetadataNextbtn();
 			logger.info("The next button clickable from the 'define rule metadata' page..");
 		} catch (Exception e) {
 			logger.error("The next button clickable from the 'define rule metadata' page.." + e.getMessage());
@@ -100,7 +100,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step9: To click on the next button of the 'define check metadata' page.
 		try {
-			testGeneratorPage.gotoRuleMetadataNextbtn();
+			testGeneratorPage.gotoCheckMetadataNextbtn();
 			logger.info("The next button clickable from the 'define check metadata' page..");
 		} catch (Exception e) {
 			logger.error("The next button clickable from the 'define check metadata' page.." + e.getMessage());
@@ -115,7 +115,7 @@ public class TestGeneratorTest extends Base {
 			logger.error("The next button clickable from the 'configure notification' page.." + e.getMessage());
 		}
 
-		// Step11: Select the source connection.
+		// Step11: To Select the source connection.
 		try {
 			testGeneratorPage.selectionSourceDataset();
 			logger.info("The source connection selected..");
@@ -123,22 +123,49 @@ public class TestGeneratorTest extends Base {
 			logger.error("The source connection not selected.." + e.getMessage());
 		}
 
-		// Step11: Select the target connection.
+		// Step11: To Select the target connection.
 		try {
-			testGeneratorPage.selectionSourceDataset();
+			testGeneratorPage.selectionTargetDataset();
 			logger.info("The target connection selected..");
 		} catch (Exception e) {
 			logger.error("The target connection not selected.." + e.getMessage());
 		}
+
+		// Step12: To click on the next button of the 'select dataset' page.
+		try {
+			testGeneratorPage.gotoDatasetNextbtn();
+			logger.info("The next button clickable from the 'select dataset' page..");
+		} catch (Exception e) {
+			logger.error("The next button not clickable from the 'select dataset' page.." + e.getMessage());
+		}
+
+		// Step13: To select the available table name.
+
+		try {
+			testGeneratorPage.selectionAvailabeTable();
+			logger.info("The available table name selected..");
+		} catch (Exception e) {
+			logger.error("The available table name not selected.." + e.getMessage());
+		}
+
+		// Step14: click on the next button of the 'select table' page.
+
+		try {
+			testGeneratorPage.gotoSelettableNextbtn();
+			logger.info("The next button clickable from the 'select table' page.");
+		} catch (Exception e) {
+			logger.error("The next button not clickable from the 'select table' page." + e.getMessage());
+		}
+
+		// Step15: click on the Generate button.
+
+		try {
+			testGeneratorPage.cickOnGenerate();
+			logger.info("The generate button is clickable..");
+		} catch (Exception e) {
+			logger.error("The generate button is not clickable.." + e.getMessage());
+		}
+
 	}
 
-//	
-//	@Test(priority = 10)
-//	public void selectConnecton() throws InterruptedException {
-//		// Thread.sleep(5000);
-//		TestGeneratorPage testGeneratorPage;
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//		testGeneratorPage.seectConnection();
-//		logger.info("Clicing the next button..");
-//	}
 }

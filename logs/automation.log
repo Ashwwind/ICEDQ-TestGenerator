@@ -1556,3 +1556,115 @@ Session ID: b27df0e1214e33f5f199a00640778c69
 2025-11-13 19:20:42 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
 2025-11-13 19:20:54 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
 2025-11-13 19:21:49 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 08:48:28 INFO  Base:55 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-14 08:48:28 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 08:48:28 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 08:48:29 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 08:48:29 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 08:48:29 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 08:49:04 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 08:49:09 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 08:49:11 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 08:49:15 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 08:49:17 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 08:49:20 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 08:49:22 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 08:49:22 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 08:49:24 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 08:49:24 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 08:49:25 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //li[text()='Database']
+2025-11-14 08:50:59 ERROR TestGeneratorTest:123 - The source connection not selected..invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [351f155a8ae029a5c2d7293db0aa6199, findElement {value=//div[@id='ej2_dropdownlist_161_popup']//input[@type='text'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59981}, goog:processID: 2812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59981/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 351f155a8ae029a5c2d7293db0aa6199
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //span[@aria-label='dropdownlist']/parent::*[@id='ej2_dropdownlist_45']
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //li[text()='Database']
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //li[text()='Database']
+2025-11-14 08:50:59 ERROR TestGeneratorTest:131 - The target connection not selected..invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [351f155a8ae029a5c2d7293db0aa6199, findElement {value=//div[@id='ej2_dropdownlist_161_popup']//input[@type='text'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59981}, goog:processID: 2812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59981/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 351f155a8ae029a5c2d7293db0aa6199
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //button[@id='datasetNextbtn']
+2025-11-14 08:50:59 INFO  TestGeneratorTest:137 - The next button clickable from the 'select dataset' page..
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //input[@placeholder='Search available table']
+2025-11-14 08:50:59 ERROR TestGeneratorTest:148 - The available table name not selected..invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [351f155a8ae029a5c2d7293db0aa6199, findElement {value=//input[@placeholder='Search available table'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59981}, goog:processID: 2812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59981/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 351f155a8ae029a5c2d7293db0aa6199
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //div[@id='e-content-element_6']//button[normalize-space()='Next']
+2025-11-14 08:50:59 INFO  TestGeneratorTest:155 - The next button clickable from the 'select table' page.
+2025-11-14 08:50:59 INFO  PageUtil:82 - Element not visible : By.xpath: //button[@id='reviewNextbtn']
+2025-11-14 08:50:59 INFO  TestGeneratorTest:164 - The generate button is clickable..
+2025-11-14 08:54:33 INFO  Base:55 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-14 08:54:33 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 08:54:33 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 08:54:33 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 08:54:33 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 08:54:33 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 08:54:58 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 08:55:00 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 08:55:03 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 08:55:04 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 08:55:06 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 08:55:09 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 08:55:11 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 08:55:12 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 08:55:18 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 08:55:19 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 08:55:20 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 08:57:41 ERROR TestGeneratorTest:123 - The source connection not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='ej2_dropdownlist_161_popup']//input[@type='text'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60327}, goog:processID: 25992, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60327/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15f3b2835f0643d482036ce40bef3d12
+2025-11-14 09:01:58 INFO  Base:55 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-14 09:01:58 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 09:01:58 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 09:01:58 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 09:01:58 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 09:01:58 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 09:02:21 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 09:02:23 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 09:02:26 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 09:02:28 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 09:02:29 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 09:02:32 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 09:02:34 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 09:02:34 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 09:02:41 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 09:02:42 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 09:02:44 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 09:04:26 ERROR TestGeneratorTest:123 - The source connection not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='ej2_dropdownlist_161_popup']//input[@type='text'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60725}, goog:processID: 32400, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60725/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f2625332a5be1c0fa28ccbd9b6a316d7
+2025-11-14 09:21:40 INFO  Base:55 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-14 09:21:40 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 09:21:40 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 09:21:40 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 09:21:40 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 09:21:40 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 09:22:07 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 09:22:11 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 09:22:13 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 09:22:15 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 09:22:17 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 09:22:20 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 09:22:23 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 09:22:24 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 09:22:30 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 09:22:31 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 09:22:32 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
