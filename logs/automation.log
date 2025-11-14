@@ -1668,3 +1668,217 @@ Session ID: f2625332a5be1c0fa28ccbd9b6a316d7
 2025-11-14 09:22:30 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
 2025-11-14 09:22:31 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
 2025-11-14 09:22:32 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 11:23:52 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-14 11:23:52 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 11:23:52 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 11:23:52 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 11:23:52 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 11:23:52 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 11:24:04 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 11:24:06 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 11:24:09 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 11:24:22 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 11:24:23 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 11:24:28 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 11:24:30 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 11:24:30 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 11:24:31 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 11:24:32 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 11:24:32 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 11:24:44 ERROR TestGeneratorTest:123 - The source connection not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='ej2_dropdownlist_161_popup']//input[@type='text'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49717}, goog:processID: 169216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49717/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6a83d11d2bdc59592d052752199b968
+2025-11-14 11:24:55 ERROR TestGeneratorTest:131 - The target connection not selected..Expected condition failed: waiting for visibility of element located by By.xpath: (//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[2] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49717}, goog:processID: 169216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49717/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6a83d11d2bdc59592d052752199b968
+2025-11-14 11:25:15 INFO  TestGeneratorTest:137 - The next button clickable from the 'select dataset' page..
+2025-11-14 11:26:16 ERROR TestGeneratorTest:148 - The available table name not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49717}, goog:processID: 169216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49717/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6a83d11d2bdc59592d052752199b968
+2025-11-14 11:27:06 INFO  TestGeneratorTest:155 - The next button clickable from the 'select table' page.
+2025-11-14 11:27:57 INFO  TestGeneratorTest:164 - The generate button is clickable..
+2025-11-14 11:50:40 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-14 11:50:40 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 11:50:40 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 11:50:40 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 11:50:40 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 11:50:40 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 11:50:55 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 11:50:57 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 11:50:59 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 11:51:07 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 11:51:08 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 11:51:10 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 11:51:12 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 11:51:12 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 11:52:09 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 11:52:10 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 11:52:10 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 11:52:12 ERROR TestGeneratorTest:123 - The source connection not selected..element not interactable
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d87f47634b8d38fe3b50dd8bbc4806a7, sendKeysToElement {id=f.165F27ADCD9318482C4094D2EF0830E5.d.7E4BFEFF4EFB9BDBCCBA815721F3A545.e.276, value=[Ljava.lang.CharSequence;@b022551}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57177}, goog:processID: 170104, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57177/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d87f47634b8d38fe3b50dd8bbc4806a7)] -> xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: d87f47634b8d38fe3b50dd8bbc4806a7
+2025-11-14 11:52:13 ERROR TestGeneratorTest:131 - The target connection not selected..element not interactable
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d87f47634b8d38fe3b50dd8bbc4806a7, sendKeysToElement {id=f.165F27ADCD9318482C4094D2EF0830E5.d.7E4BFEFF4EFB9BDBCCBA815721F3A545.e.284, value=[Ljava.lang.CharSequence;@76e4212}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57177}, goog:processID: 170104, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57177/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d87f47634b8d38fe3b50dd8bbc4806a7)] -> xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: d87f47634b8d38fe3b50dd8bbc4806a7
+2025-11-14 11:52:34 INFO  TestGeneratorTest:137 - The next button clickable from the 'select dataset' page..
+2025-11-14 11:53:35 ERROR TestGeneratorTest:148 - The available table name not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57177}, goog:processID: 170104, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57177/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d87f47634b8d38fe3b50dd8bbc4806a7
+2025-11-14 11:54:19 INFO  TestGeneratorTest:155 - The next button clickable from the 'select table' page.
+2025-11-14 11:54:19 INFO  TestGeneratorTest:164 - The generate button is clickable..
+2025-11-14 12:00:32 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-14 12:00:32 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 12:00:32 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 12:00:32 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 12:00:32 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 12:00:32 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 12:00:42 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-14 12:00:42 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 12:00:42 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 12:00:42 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 12:00:42 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 12:00:42 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 12:01:04 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 12:01:06 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 12:01:08 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 12:01:09 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 12:01:11 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 12:01:13 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 12:01:15 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 12:01:15 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 12:01:17 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 12:01:17 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 12:01:18 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 12:02:37 ERROR TestGeneratorTest:30 - The test generator module is not clickable..Expected condition failed: waiting for element to no longer be visible: By.xpath: //div[@id="sp-container"]//div[@class='e-spinner-pane e-spin-show']//div (tried for 120 second(s) with 500 milliseconds interval)
+2025-11-14 12:04:01 INFO  TestGeneratorTest:121 - The source connection selected..
+2025-11-14 12:04:21 INFO  TestGeneratorTest:129 - The target connection selected..
+2025-11-14 12:04:38 ERROR TestGeneratorTest:39 - The 'Checksum' rule wizard is not clickable..Expected condition failed: waiting for element to no longer be visible: By.xpath: //div[@id="sp-container"]//div[@class='e-spinner-pane e-spin-show']//div (tried for 120 second(s) with 500 milliseconds interval)
+2025-11-14 12:05:55 INFO  TestGeneratorTest:137 - The next button clickable from the 'select dataset' page..
+2025-11-14 12:06:17 INFO  TestGeneratorTest:146 - The available table name selected..
+2025-11-14 12:06:25 INFO  TestGeneratorTest:155 - The next button clickable from the 'select table' page.
+2025-11-14 12:06:38 ERROR TestGeneratorTest:48 - The template search field is not clickable..Expected condition failed: waiting for element to no longer be visible: By.xpath: //div[@id="sp-container"]//div[@class='e-spinner-pane e-spin-show']//div (tried for 120 second(s) with 500 milliseconds interval)
+2025-11-14 12:06:43 INFO  TestGeneratorTest:164 - The generate button is clickable..
+2025-11-14 12:06:49 ERROR TestGeneratorTest:54 - Unabe to enter search data..Expected condition failed: waiting for visibility of element located by By.xpath: //input[contains(@placeholder,'Search template')] (tried for 10 second(s) with 500 milliseconds interval)
+2025-11-14 12:08:49 ERROR TestGeneratorTest:62 - The existing dynamic checksum tamplate is not selected..Expected condition failed: waiting for element to no longer be visible: By.xpath: //div[@id="sp-container"]//div[@class='e-spinner-pane e-spin-show']//div (tried for 120 second(s) with 500 milliseconds interval)
+2025-11-14 12:10:49 ERROR TestGeneratorTest:71 - The workspace is selected..Expected condition failed: waiting for element to no longer be visible: By.xpath: //div[@id="sp-container"]//div[@class='e-spinner-pane e-spin-show']//div (tried for 120 second(s) with 500 milliseconds interval)
+2025-11-14 12:11:10 INFO  Base:55 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-14 12:11:10 INFO  Base:58 - Loading locator file: Login.properties
+2025-11-14 12:11:10 INFO  Base:64 - Loaded 4 locators from Login.properties
+2025-11-14 12:11:10 INFO  Base:58 - Loading locator file: Template.properties
+2025-11-14 12:11:10 INFO  Base:64 - Loaded 7 locators from Template.properties
+2025-11-14 12:11:10 INFO  Base:70 - Total locators loaded: 10
+2025-11-14 12:11:24 INFO  TestGeneratorTest:28 - The test generator module is clickable..
+2025-11-14 12:11:26 INFO  TestGeneratorTest:37 - The 'Checksum' rule wizard is clickable..
+2025-11-14 12:11:28 INFO  TestGeneratorTest:46 - The template search field is clickable..
+2025-11-14 12:11:41 INFO  TestGeneratorTest:52 - The search data entering..
+2025-11-14 12:11:43 INFO  TestGeneratorTest:60 - The existing dynamic checksum tamplate selected..
+2025-11-14 12:11:47 INFO  TestGeneratorTest:69 - The workspace is selected..
+2025-11-14 12:11:49 INFO  TestGeneratorTest:78 - The folder is selected..
+2025-11-14 12:11:49 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 12:11:50 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 12:11:51 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 12:11:52 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 12:11:53 ERROR TestGeneratorTest:123 - The source connection not selected..element not interactable
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e9a859b4ea26122a56673d9be3f9e541, sendKeysToElement {value=[Ljava.lang.CharSequence;@7e5b621b, id=f.9FEDC88C78B725C5BA515B08DC089AAD.d.0320EDDA99F7A744614B9041EFF2C431.e.169}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63870}, goog:processID: 170000, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63870/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e9a859b4ea26122a56673d9be3f9e541)] -> xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: e9a859b4ea26122a56673d9be3f9e541
+2025-11-14 12:11:54 ERROR TestGeneratorTest:131 - The target connection not selected..element not interactable
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e9a859b4ea26122a56673d9be3f9e541, sendKeysToElement {value=[Ljava.lang.CharSequence;@6aa5974e, id=f.9FEDC88C78B725C5BA515B08DC089AAD.d.0320EDDA99F7A744614B9041EFF2C431.e.177}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63870}, goog:processID: 170000, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63870/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e9a859b4ea26122a56673d9be3f9e541)] -> xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: e9a859b4ea26122a56673d9be3f9e541
+2025-11-14 12:12:14 INFO  TestGeneratorTest:137 - The next button clickable from the 'select dataset' page..
+2025-11-14 12:12:49 INFO  TestGeneratorTest:146 - The available table name selected..
+2025-11-14 12:12:49 INFO  TestGeneratorTest:155 - The next button clickable from the 'select table' page.
+2025-11-14 12:12:49 INFO  TestGeneratorTest:164 - The generate button is clickable..
+2025-11-14 12:12:50 ERROR TestGeneratorTest:80 - The folder is selected..Expected condition failed: waiting for element to no longer be visible: By.xpath: //div[@id="sp-container"]//div[@class='e-spinner-pane e-spin-show']//div (tried for 120 second(s) with 500 milliseconds interval)
+2025-11-14 12:13:10 INFO  TestGeneratorTest:173 - The 'go to preview' button is clickable..
+2025-11-14 12:15:20 INFO  TestGeneratorTest:87 - The next button clickable from the 'select container' page..
+2025-11-14 12:17:50 INFO  TestGeneratorTest:96 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 12:20:21 INFO  TestGeneratorTest:104 - The next button clickable from the 'define check metadata' page..
+2025-11-14 12:22:52 INFO  TestGeneratorTest:113 - The next button clickable from the 'configure notification' page..
+2025-11-14 12:30:24 ERROR TestGeneratorTest:123 - The source connection not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text'] (tried for 10 second(s) with 500 milliseconds interval)
+2025-11-14 12:37:56 ERROR TestGeneratorTest:131 - The target connection not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text'] (tried for 10 second(s) with 500 milliseconds interval)
+2025-11-14 12:40:26 INFO  TestGeneratorTest:137 - The next button clickable from the 'select dataset' page..
+2025-11-14 12:43:07 ERROR TestGeneratorTest:148 - The available table name not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 10 second(s) with 500 milliseconds interval)
+2025-11-14 12:45:38 INFO  TestGeneratorTest:155 - The next button clickable from the 'select table' page.
+2025-11-14 12:48:08 INFO  TestGeneratorTest:164 - The generate button is clickable..
+2025-11-14 12:50:38 INFO  TestGeneratorTest:173 - The 'go to preview' button is clickable..
+2025-11-14 15:31:50 INFO  Base:54 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-14 15:31:50 INFO  Base:57 - Loading locator file: Login.properties
+2025-11-14 15:31:50 INFO  Base:63 - Loaded 4 locators from Login.properties
+2025-11-14 15:31:51 INFO  Base:57 - Loading locator file: Template.properties
+2025-11-14 15:31:51 INFO  Base:63 - Loaded 7 locators from Template.properties
+2025-11-14 15:31:51 INFO  Base:69 - Total locators loaded: 10
+2025-11-14 15:32:10 INFO  TestGeneratorTest:30 - The test generator module is clickable..
+2025-11-14 15:32:15 INFO  TestGeneratorTest:39 - The 'Checksum' rule wizard is clickable..
+2025-11-14 15:32:17 INFO  TestGeneratorTest:48 - The template search field is clickable..
+2025-11-14 15:32:19 INFO  TestGeneratorTest:54 - The search data entering..
+2025-11-14 15:32:20 INFO  TestGeneratorTest:62 - The existing dynamic checksum tamplate selected..
+2025-11-14 15:32:22 INFO  TestGeneratorTest:71 - The workspace is selected..
+2025-11-14 15:32:24 INFO  TestGeneratorTest:80 - The folder is selected..
+2025-11-14 15:32:24 INFO  TestGeneratorTest:89 - The next button clickable from the 'select container' page..
+2025-11-14 15:32:25 INFO  TestGeneratorTest:98 - The next button clickable from the 'define rule metadata' page..
+2025-11-14 15:32:26 INFO  TestGeneratorTest:106 - The next button clickable from the 'define check metadata' page..
+2025-11-14 15:32:27 INFO  TestGeneratorTest:115 - The next button clickable from the 'configure notification' page..
+2025-11-14 15:32:28 ERROR TestGeneratorTest:125 - The source connection not selected..element not interactable
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e5c15ffbfab5f2c822ef5f6852af89fb, sendKeysToElement {value=[Ljava.lang.CharSequence;@4b41587d, id=f.2E748EBC2F285C7B0C8B82543C71AF07.d.68A573EF74583BDCF7B57558AD4E12A8.e.170}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60984}, goog:processID: 197476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60984/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e5c15ffbfab5f2c822ef5f6852af89fb)] -> xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: e5c15ffbfab5f2c822ef5f6852af89fb
+2025-11-14 15:32:29 ERROR TestGeneratorTest:133 - The target connection not selected..element not interactable
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e5c15ffbfab5f2c822ef5f6852af89fb, sendKeysToElement {value=[Ljava.lang.CharSequence;@78e68401, id=f.2E748EBC2F285C7B0C8B82543C71AF07.d.68A573EF74583BDCF7B57558AD4E12A8.e.178}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60984}, goog:processID: 197476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60984/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e5c15ffbfab5f2c822ef5f6852af89fb)] -> xpath: //ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: e5c15ffbfab5f2c822ef5f6852af89fb
+2025-11-14 15:32:49 INFO  TestGeneratorTest:139 - The next button clickable from the 'select dataset' page..
+2025-11-14 15:34:39 ERROR TestGeneratorTest:150 - The available table name not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 60 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60984}, goog:processID: 197476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60984/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5c15ffbfab5f2c822ef5f6852af89fb
+2025-11-14 15:35:29 INFO  TestGeneratorTest:157 - The next button clickable from the 'select table' page.
+2025-11-14 15:36:20 INFO  TestGeneratorTest:166 - The generate button is clickable..
+2025-11-14 15:37:10 INFO  TestGeneratorTest:175 - The 'go to preview' button is clickable..

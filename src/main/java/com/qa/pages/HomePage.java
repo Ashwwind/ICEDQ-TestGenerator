@@ -1,4 +1,4 @@
-package pages;
+package com.qa.pages;
 
 import java.time.Duration;
 
@@ -10,8 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import base.Base;
-import utils.PageUtil;
+import com.qa.base.Base;
+import com.qa.utils.PageUtil;
 
 public class HomePage extends Base{
 	private WebDriver driver;

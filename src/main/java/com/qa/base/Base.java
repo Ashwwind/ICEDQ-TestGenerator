@@ -1,4 +1,4 @@
-package base;
+package com.qa.base;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,10 +15,9 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
 
 import com.google.common.io.Files;
-
-import config.ConfigReader;
-import pages.TestGeneratorPage;
-import utils.DriverSetup;
+import com.qa.config.ConfigReader;
+import com.qa.pages.TestGeneratorPage;
+import com.qa.utils.DriverSetup;
 
 public class Base {
 

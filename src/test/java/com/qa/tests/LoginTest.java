@@ -1,4 +1,4 @@
-package tests;
+package com.qa.tests;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
@@ -7,9 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import base.Base;
-import config.ConfigReader;
-import pages.LoginPage;
+
+import com.qa.base.Base;
+import com.qa.config.ConfigReader;
+import com.qa.pages.LoginPage;
 
 public class LoginTest extends Base {
 

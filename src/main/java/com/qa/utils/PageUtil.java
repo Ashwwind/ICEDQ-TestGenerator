@@ -1,4 +1,4 @@
-package utils;
+package com.qa.utils;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
@@ -95,7 +95,7 @@ public class PageUtil {
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		System.out.println("Entering value on " + label + " input : " + input);
-		waitForElements(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
+		waitForElements(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
 		System.out.println("Entered value on " + label + " input : " + input);
 	}
 

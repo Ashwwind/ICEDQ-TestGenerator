@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="2" total="6" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-14T08:48:48 IST" name="Suite" finished-at="2025-11-14T08:50:59 IST" duration-ms="130803">
+  <suite started-at="2025-11-14T15:31:57 IST" name="Suite" finished-at="2025-11-14T15:37:10 IST" duration-ms="312594">
     <groups>
     </groups>
-    <test started-at="2025-11-14T08:48:48 IST" name="Test" finished-at="2025-11-14T08:50:59 IST" duration-ms="130803">
-      <class name="tests.LoginTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:tests.LoginTest@2ad3a1bb]" started-at="2025-11-14T08:48:28 IST" name="launchBrowser" finished-at="2025-11-14T08:48:48 IST" duration-ms="19947" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="validateLoginPage()[pri:0, instance:tests.LoginTest@2ad3a1bb]" started-at="2025-11-14T08:48:48 IST" name="validateLoginPage" finished-at="2025-11-14T08:48:52 IST" duration-ms="3084" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateLoginPage -->
-        <test-method signature="testValidLogin()[pri:0, instance:tests.LoginTest@2ad3a1bb]" started-at="2025-11-14T08:48:52 IST" name="testValidLogin" finished-at="2025-11-14T08:48:54 IST" depends-on-methods="tests.LoginTest.validateLoginPage" duration-ms="2427" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidLogin -->
-      </class> <!-- tests.LoginTest -->
-      <class name="tests.TestGeneratorTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TestGeneratorTest@2555fff0]" started-at="2025-11-14T08:48:54 IST" name="setUp" finished-at="2025-11-14T08:48:54 IST" duration-ms="5" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectTestGenrator()[pri:0, instance:tests.TestGeneratorTest@2555fff0]" started-at="2025-11-14T08:48:54 IST" name="selectTestGenrator" finished-at="2025-11-14T08:50:59 IST" duration-ms="125054" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectTestGenrator -->
-      </class> <!-- tests.TestGeneratorTest -->
-      <class name="tests.HomePageTest">
-        <test-method signature="homePageValidation()[pri:0, instance:tests.HomePageTest@aec50a1]" started-at="2025-11-14T08:48:54 IST" name="homePageValidation" finished-at="2025-11-14T08:48:54 IST" duration-ms="107" status="PASS">
+    <test started-at="2025-11-14T15:31:57 IST" name="Test" finished-at="2025-11-14T15:37:10 IST" duration-ms="312594">
+      <class name="com.qa.tests.HomePageTest">
+        <test-method signature="homePageValidation()[pri:0, instance:com.qa.tests.HomePageTest@f478a81]" started-at="2025-11-14T15:32:01 IST" name="homePageValidation" finished-at="2025-11-14T15:32:01 IST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- homePageValidation -->
-      </class> <!-- tests.HomePageTest -->
+      </class> <!-- com.qa.tests.HomePageTest -->
+      <class name="com.qa.tests.TestGeneratorTest">
+        <test-method signature="selectTestGenrator()[pri:0, instance:com.qa.tests.TestGeneratorTest@19553973]" started-at="2025-11-14T15:32:01 IST" name="selectTestGenrator" finished-at="2025-11-14T15:37:10 IST" duration-ms="309072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTestGenrator -->
+      </class> <!-- com.qa.tests.TestGeneratorTest -->
+      <class name="com.qa.tests.LoginTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.qa.tests.LoginTest@4e858e0a]" started-at="2025-11-14T15:31:50 IST" name="launchBrowser" finished-at="2025-11-14T15:31:57 IST" duration-ms="6964" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@4e858e0a]" started-at="2025-11-14T15:31:57 IST" name="validateLoginPage" finished-at="2025-11-14T15:31:59 IST" duration-ms="1151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLoginPage -->
+        <test-method signature="testValidLogin()[pri:0, instance:com.qa.tests.LoginTest@4e858e0a]" started-at="2025-11-14T15:31:59 IST" name="testValidLogin" finished-at="2025-11-14T15:32:01 IST" depends-on-methods="com.qa.tests.LoginTest.validateLoginPage" duration-ms="2337" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+      </class> <!-- com.qa.tests.LoginTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

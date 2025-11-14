@@ -1,10 +1,11 @@
-package pages;
+package com.qa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import base.Base;
-import utils.PageUtil;
+
+import com.qa.base.Base;
+import com.qa.utils.PageUtil;
 
 public class TestGeneratorPage extends Base {
 	private WebDriver driver;
@@ -118,19 +119,21 @@ public class TestGeneratorPage extends Base {
 		// Select the source connection type as database.
 		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
 
-		// Select the connection.
-		PageUtil.clickOnElement(driver, By.xpath("//*[@id='ej2_dropdownlist_27']/span"), 20);
+		// Click the source connection.
+		PageUtil.clickOnElement(driver, By.xpath(
+				"(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[1]"),
+				50);
 
 		// Entering the connection name
-		PageUtil.sendkeysToElement(driver, By.xpath("//div[@id='ej2_dropdownlist_161_popup']//input[@type='text']"),
+		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
 				"source connection name", "postgreSQL" + Keys.ENTER);
 
 		// Click on the schema dropdown
 		PageUtil.clickOnElement(driver,
-				By.xpath("//span[@aria-label='dropdownlist']/parent::*[@id='ej2_dropdownlist_162']"), 20);
+				By.xpath("(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[1]"), 50);
 
 		// Entering the schema name
-		PageUtil.sendkeysToElement(driver, By.xpath("//div[@id='ej2_dropdownlist_162_popup']//input[@type='text']"),
+		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
 				"source shema name", "public" + Keys.ENTER);
 
 	}
@@ -148,25 +151,24 @@ public class TestGeneratorPage extends Base {
 		// Select the target connection type as database.
 		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
 
-		// Select the connection.
-		PageUtil.clickOnElement(driver, By.xpath("//*[@id='ej2_dropdownlist_28']/span"), 20);
+		// Click the target connection.
+		PageUtil.clickOnElement(driver, By.xpath("(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[2]"), 50);
 
 		// Entering the connection name
-		PageUtil.sendkeysToElement(driver, By.xpath("//div[@id='ej2_dropdownlist_161_popup']//input[@type='text']"),
+		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
 				"target connection name", "postgreSQL" + Keys.ENTER);
-
+		
 		// Click on the schema dropdown.
 		PageUtil.clickOnElement(driver,
-				By.xpath("//span[@aria-label='dropdownlist']/parent::*[@id='ej2_dropdownlist_162']"), 20);
+				By.xpath("(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[2]"), 50);
 
 		// Entering the schema name.
-		PageUtil.sendkeysToElement(driver, By.xpath("//div[@id='ej2_dropdownlist_162_popup']//input[@type='text']"),
+		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
 				"target schema name", "public" + Keys.ENTER);
 
 	}
 
 	// Click on the next button of 'select dataset' page.
-
 	public void gotoDatasetNextbtn() {
 		PageUtil.clickOnElement(driver, By.xpath("//button[@id='datasetNextbtn']"), 20);
 	}
@@ -197,9 +199,14 @@ public class TestGeneratorPage extends Base {
 	}
 
 	// Click on the 'Generate' button.
-
 	public void cickOnGenerate() {
 		PageUtil.clickOnElement(driver, By.xpath("//button[@id='reviewNextbtn']"), 20);
+	}
+	
+	// Click on the 'Go To Preview' button.
+	public void clickOnGoToPreview()
+	{
+		PageUtil.clickOnElement(driver, By.xpath("//button[normalize-space()= 'Go To Preview']"), 20);
 	}
 
 }

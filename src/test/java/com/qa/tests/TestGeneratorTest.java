@@ -1,23 +1,18 @@
-package tests;
+package com.qa.tests;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import base.Base;
-import pages.TestGeneratorPage;
+
+import com.qa.base.Base;
+import com.qa.pages.TestGeneratorPage;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class TestGeneratorTest extends Base {
 
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
-//	private TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
-	
-	// Creating a checksum rule using default dynamic template
 
-//	@BeforeMethod
-//	public void setUp() {
-//		testGeneratorPage = new TestGeneratorPage(driver);
-//	}
+	// Creating a checksum rule using default dynamic template
 
 	@Test
 	public void selectTestGenrator() throws InterruptedException {
@@ -164,6 +159,15 @@ public class TestGeneratorTest extends Base {
 			logger.info("The generate button is clickable..");
 		} catch (Exception e) {
 			logger.error("The generate button is not clickable.." + e.getMessage());
+		}
+
+		// Step16: click on the Go To Preview button.
+
+		try {
+			testGeneratorPage.clickOnGoToPreview();
+			logger.info("The 'go to preview' button is clickable..");
+		} catch (Exception e) {
+			logger.error("The 'go to preview' button is not clickable.." + e.getMessage());
 		}
 
 	}

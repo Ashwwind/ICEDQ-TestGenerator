@@ -1,8 +1,9 @@
-package tests;
+package com.qa.tests;
 
 import org.testng.annotations.Test;
-import base.Base;
-import pages.HomePage;
+
+import com.qa.base.Base;
+import com.qa.pages.HomePage;
 
 public class HomePageTest extends Base {
 

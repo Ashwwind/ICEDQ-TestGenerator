@@ -1,12 +1,13 @@
-package pages;
+package com.qa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import base.Base;
-import utils.PageUtil;
-import config.ConfigReader;
+
+import com.qa.base.Base;
+import com.qa.config.ConfigReader;
+import com.qa.utils.PageUtil;
 
 public class LoginPage extends Base{
 	private WebDriver driver;
