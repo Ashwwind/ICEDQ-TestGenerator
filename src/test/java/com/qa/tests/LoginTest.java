@@ -30,6 +30,49 @@ public class LoginTest extends Base {
 		loginPage.loginPageValidation();
 	}
 
+//	//// Anotatin  ////
+//	
+//	//public class LoginTest extends Base {
+//
+//	    String baseUrl = ConfigReader.getProperty("baseUrl");
+//
+//	    @Test(dependsOnMethods = { "validateLoginPage" })
+//	    public void testValidLogin() {
+//
+//	        ExtentTestManager.getTest().log(Status.INFO, "Starting Test: Valid Login");
+//	        LoginPage loginPage = new LoginPage(driver);
+//
+//	        ExtentTestManager.getTest().log(Status.INFO,
+//	                "Logging in with Username: " + ConfigReader.getProperty("username"));
+//
+//	        loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
+//
+//	        // You can validate login using title, URL or some element
+//	        String expectedTitle = "Dashboard";
+//	        String actualTitle = driver.getTitle();
+//
+//	        if (actualTitle.contains(expectedTitle)) {
+//	            ExtentTestManager.getTest().pass("Login test passed. Dashboard displayed.");
+//	        } else {
+//	            ExtentTestManager.getTest().fail("Login failed. Expected title: " + expectedTitle 
+//	                + ", but found: " + actualTitle);
+//	        }
+//
+//	        Assert.assertTrue(actualTitle.contains(expectedTitle), "Login Validation Failed");
+//	    }
+//
+//	    @Test
+//	    public void validateLoginPage() {
+//
+//	        ExtentTestManager.getTest().log(Status.INFO, "Starting Test: Validate Login Page");
+//
+//	        LoginPage loginPage = new LoginPage(driver);
+//	        loginPage.loginPageValidation();
+//
+//	        ExtentTestManager.getTest().pass("Login page validation successful.");
+//	    }
+//	}
+
 //	@Test
 //	public void selectTestGeneratorModule() {
 //		WebElement testGeneratorModule = driver.findElement(By.xpath("//*[contains(text(),'Test Generator')]"));

@@ -155,7 +155,7 @@ public class TestGeneratorTest extends Base {
 		// Step15: click on the Generate button.
 
 		try {
-			testGeneratorPage.cickOnGenerate();
+			testGeneratorPage.clickOnGenerate();
 			logger.info("The generate button is clickable..");
 		} catch (Exception e) {
 			logger.error("The generate button is not clickable.." + e.getMessage());
@@ -170,6 +170,38 @@ public class TestGeneratorTest extends Base {
 			logger.error("The 'go to preview' button is not clickable.." + e.getMessage());
 		}
 
+		// Step17: Select the generated entity.
+		try {
+			testGeneratorPage.selectGeneratedEntity();
+			logger.info("The generated entity is clickable..");
+		} catch (Exception e) {
+			logger.error("The generated entity is not clickable.." + e.getMessage());
+		}
+
+		// Step18: Click on the 'Publish' button.
+		try {
+			testGeneratorPage.clickOnPublish();
+			logger.info("The 'Publish' button is clickable..");
+		} catch (Exception e) {
+			logger.error("The 'Publish' button is not clickable.." + e.getMessage());
+		}
+
+		// Step19: Click on the 'Go To Publish' button.
+		try {
+			testGeneratorPage.clickOnPublish();
+			logger.info("The 'Go To Publish' button is clickable..");
+		} catch (Exception e) {
+			logger.error("The 'Go To Publish' button is not clickable.." + e.getMessage());
+		}
+
+		// Step20: Click on the Publish rule.
+
+		try {
+			testGeneratorPage.clickOnPublishedRule();
+			logger.info("The published rule hyperlink is clickable..");
+		} catch (Exception e) {
+			logger.error("The published rule hyperlink is not clickable.." + e.getMessage());
+		}
 	}
 
 }

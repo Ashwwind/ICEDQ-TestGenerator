@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -50,7 +51,7 @@ public class PageUtil {
 
 		} catch (TimeoutException te) {
 
-			return new WebDriverWait(driver, Duration.ofSeconds(timeout + 10))
+			return new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
 					.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed(); // fallback technique
 
 		} catch (Exception e) {
@@ -68,7 +69,7 @@ public class PageUtil {
 			driver.findElement(by).click();
 			System.out.println("Clicked on " + label);
 		} catch (Exception e) {
-			System.out.println("Element is not clickable");
+			System.out.println("Element is not clickable :"+by);
 		}
 	}
 
@@ -82,7 +83,7 @@ public class PageUtil {
 				log.info("Element not visible : " + by);
 			}
 		} catch (Exception e) {
-			System.out.println("Element is not clickable");
+			System.out.println("Element is not clickable : "+by);
 		}
 	}
 
@@ -91,13 +92,21 @@ public class PageUtil {
 		waitForElements(driver, 120).until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 
-
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
+		clickOnElement(driver, locator, 10);
 		System.out.println("Entering value on " + label + " input : " + input);
-		waitForElements(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
+		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
 		System.out.println("Entered value on " + label + " input : " + input);
 	}
+	
+	// Enter data in the filed.
+		public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
+			clickOnElement(driver, locator, 10);
+			System.out.println("Clicking enter on " + label);
+			waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
+			System.out.println("Clicked enter on " + label);
+		}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {
 
@@ -109,7 +118,6 @@ public class PageUtil {
 				.equals("complete"));
 		return wait;
 	}
-
 
 	/**
 	 * Returns a Selenium By locator object from a formatted string. Supported

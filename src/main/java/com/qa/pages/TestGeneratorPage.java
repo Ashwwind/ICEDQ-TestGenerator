@@ -1,14 +1,15 @@
 package com.qa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
 import com.qa.base.Base;
 import com.qa.utils.PageUtil;
 
 public class TestGeneratorPage extends Base {
 	private WebDriver driver;
+	// Scrolling
 
 	// Locator
 	By testGeneratorModue = PageUtil.getElementLocator(prop.getProperty("home.testgenerator"));
@@ -17,13 +18,8 @@ public class TestGeneratorPage extends Base {
 	By selectSearchWorkspace = PageUtil.getElementLocator(prop.getProperty("select.searchedWorspace"));
 	By selectSearchFolder = PageUtil.getElementLocator(prop.getProperty("select.searchedfolder"));
 	By loader = PageUtil.getElementLocator(prop.getProperty("loderIsDisplayed"));
-
-//	By testGeneratorModue = By.xpath("//button[.//h2[text()='Test Generator']]");
-//	By templateSearch = By.xpath("//input[contains(@placeholder,'Search template')]");
-//	By selectWorkspace = By.xpath("//span[./input[contains(@class, 'e-input')]]");
-//	By selectSearchWorkspace = By.xpath("//input[@class='e-input-filter e-input e-lib e-keyboard']");
-//	By selectSearchFolder = By.xpath("//button[@aria-label=\"Select folder\"]");
-//	By loader = By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div");
+	By sourceSchemaDropdown = PageUtil.getElementLocator(prop.getProperty("source.schema.dropdown"));
+	By targetSchemaDropdown = PageUtil.getElementLocator(prop.getProperty("target.schema.dropdown"));
 
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
@@ -109,39 +105,71 @@ public class TestGeneratorPage extends Base {
 	}
 
 	/// ********* Select the source dataset ********** ///
-	public void selectionSourceDataset() {
+
+///// *******************************/////
+/////////////// ********************************* ////////////////
+///// *******************************/////
+	public void selectionSourceDataset() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		// Click on the source connection type.
 		PageUtil.clickOnElement(driver, By.xpath(
 				"(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection type']//span[@formcontrolname='connectionType'])[1]"),
 				10);
 
-		// Select the source connection type as database.
+		// Select "Database"
 		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
 
-		// Click the source connection.
-		PageUtil.clickOnElement(driver, By.xpath(
-				"(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[1]"),
-				50);
+		// Click Source Connection
+		try {
+			PageUtil.clickOnElement(driver, By.xpath(
+					"(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[1]"),
+					20);
+			System.out.println("source connection is clickable");
+		} catch (Exception e) {
+			System.out.println("source connection is not clickable");
+		}
 
-		// Entering the connection name
-		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
-				"source connection name", "postgreSQL" + Keys.ENTER);
+		// Enter connection name
+		try {
+			PageUtil.sendkeysToElement(driver, By.xpath(
+					"//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+					"source connection name", "postgreSQL");
+			PageUtil.sendkeysToEnter(driver, By.xpath(
+					"//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+					"source connection name");
+			System.out.println("the postgresql source connection is clickable");
+		} catch (Exception e) {
+			System.out.println("the postgresql source connection is not clickable");
+		}
 
-		// Click on the schema dropdown
-		PageUtil.clickOnElement(driver,
-				By.xpath("(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[1]"), 50);
+		// Scroll & click schema dropdown
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(sourceSchemaDropdown));
+		
+		PageUtil.clickOnElement(driver, sourceSchemaDropdown, 20);
 
-		// Entering the schema name
-		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
-				"source shema name", "public" + Keys.ENTER);
+		// Enter schema name
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(By.xpath(
+						"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']")));
+
+		PageUtil.sendkeysToElement(driver, By.xpath(
+				"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+				"source schema name", "public");
+
+		PageUtil.sendkeysToEnter(driver, By.xpath(
+				"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+				"source schema name");
 
 	}
-	/////////////////////////////////////////
 
 	/// ********* Select the target dataset ********** ///
 
-	public void selectionTargetDataset() {
+///// *******************************/////
+/////////////// ********************************* ////////////////
+///// *******************************/////
+	public void selectionTargetDataset() throws InterruptedException {
 
 		/// Click on the target connection type.
 		PageUtil.clickOnElement(driver, By.xpath(
@@ -152,19 +180,38 @@ public class TestGeneratorPage extends Base {
 		PageUtil.clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
 
 		// Click the target connection.
-		PageUtil.clickOnElement(driver, By.xpath("(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[2]"), 50);
+		PageUtil.clickOnElement(driver, By.xpath(
+				"(//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[2]"),
+				20);
 
-		// Entering the connection name
-		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
-				"target connection name", "postgreSQL" + Keys.ENTER);
-		
-		// Click on the schema dropdown.
-		PageUtil.clickOnElement(driver,
-				By.xpath("(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[2]"), 50);
+		// Entering the target connection name
+		PageUtil.sendkeysToElement(driver, By.xpath(
+				"//ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+				"target connection name", "postgreSQL");
+
+		PageUtil.sendkeysToEnter(driver, By.xpath(
+				"//ejs-dropdownlist[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+				"target connection name");
+
+		// Scroll & click schema dropdown
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(targetSchemaDropdown));
+
+		PageUtil.clickOnElement(driver, targetSchemaDropdown, 20);
+
+		// Enter schema name
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(By.xpath(
+						"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']")));
 
 		// Entering the schema name.
-		PageUtil.sendkeysToElement(driver, By.xpath("//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
-				"target schema name", "public" + Keys.ENTER);
+		PageUtil.sendkeysToElement(driver, By.xpath(
+				"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+				"target schema name", "public");
+		// Click the schema name
+		PageUtil.sendkeysToEnter(driver, By.xpath(
+				"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']"),
+				"target schema name");
 
 	}
 
@@ -182,7 +229,9 @@ public class TestGeneratorPage extends Base {
 
 		// Entering the available table name
 		PageUtil.sendkeysToElement(driver, By.xpath("//input[@placeholder='Search available table']"),
-				"staff table name", "staff" + Keys.ENTER);
+				"staff table name", "staff");
+		// Click to enter
+		PageUtil.sendkeysToEnter(driver, By.xpath("//input[@placeholder='Search available table']"),"staff table name");
 
 		// Select the table checkbox from the list.
 		PageUtil.clickOnElement(driver, By.xpath("//ul//li[@id='staff']"), 20);
@@ -199,14 +248,33 @@ public class TestGeneratorPage extends Base {
 	}
 
 	// Click on the 'Generate' button.
-	public void cickOnGenerate() {
+	public void clickOnGenerate() {
 		PageUtil.clickOnElement(driver, By.xpath("//button[@id='reviewNextbtn']"), 20);
 	}
-	
+
 	// Click on the 'Go To Preview' button.
-	public void clickOnGoToPreview()
-	{
+	public void clickOnGoToPreview() {
 		PageUtil.clickOnElement(driver, By.xpath("//button[normalize-space()= 'Go To Preview']"), 20);
 	}
 
+	// Select the generated entity from the 'Preview' page.
+	public void selectGeneratedEntity() {
+		PageUtil.clickOnElement(driver,
+				By.xpath("//tbody[@role='rowgroup']/tr/td/div/input[@type='checkbox']/following-sibling::span[1]"), 20);
+	}
+
+	// Click on the 'Publish' button.
+	public void clickOnPublish() {
+		PageUtil.clickOnElement(driver, By.xpath("//button[@title='Publish']"), 50);
+	}
+
+	// Click on the 'Go To Publish' button.
+	public void clickOnGoToPublish() {
+		PageUtil.clickOnElement(driver, By.xpath("//button[normalize-space(text()) = 'Go To Publish']"), 50);
+	}
+
+	// Click on the hyperlink of the published rule to navigate to the data testing.
+	public void clickOnPublishedRule() {
+		PageUtil.clickOnElement(driver, By.xpath("//tbody[@role='rowgroup']/tr/td/span/following-sibling::a[1]"), 10);
+	}
 }
