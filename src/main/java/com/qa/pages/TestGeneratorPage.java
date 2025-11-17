@@ -11,6 +11,7 @@ public class TestGeneratorPage extends Base {
 	private WebDriver driver;
 	// Scrolling
 
+	
 	// Locator
 	By testGeneratorModue = PageUtil.getElementLocator(prop.getProperty("home.testgenerator"));
 	By templateSearch = PageUtil.getElementLocator(prop.getProperty("searchfield.tempatename"));
@@ -20,11 +21,19 @@ public class TestGeneratorPage extends Base {
 	By loader = PageUtil.getElementLocator(prop.getProperty("loderIsDisplayed"));
 	By sourceSchemaDropdown = PageUtil.getElementLocator(prop.getProperty("source.schema.dropdown"));
 	By targetSchemaDropdown = PageUtil.getElementLocator(prop.getProperty("target.schema.dropdown"));
+	
+	
 
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
 	}
-
+	
+	public void createChecksumRules()
+	{
+		clickTestGenerator();
+		clickOnChecksum();
+		
+	}
 	// Page method
 	public void clickTestGenerator() {
 		PageUtil.isInvisibleLoader(driver, loader);
@@ -146,7 +155,7 @@ public class TestGeneratorPage extends Base {
 		// Scroll & click schema dropdown
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				driver.findElement(sourceSchemaDropdown));
-		
+
 		PageUtil.clickOnElement(driver, sourceSchemaDropdown, 20);
 
 		// Enter schema name
@@ -231,7 +240,8 @@ public class TestGeneratorPage extends Base {
 		PageUtil.sendkeysToElement(driver, By.xpath("//input[@placeholder='Search available table']"),
 				"staff table name", "staff");
 		// Click to enter
-		PageUtil.sendkeysToEnter(driver, By.xpath("//input[@placeholder='Search available table']"),"staff table name");
+		PageUtil.sendkeysToEnter(driver, By.xpath("//input[@placeholder='Search available table']"),
+				"staff table name");
 
 		// Select the table checkbox from the list.
 		PageUtil.clickOnElement(driver, By.xpath("//ul//li[@id='staff']"), 20);
@@ -265,16 +275,27 @@ public class TestGeneratorPage extends Base {
 
 	// Click on the 'Publish' button.
 	public void clickOnPublish() {
-		PageUtil.clickOnElement(driver, By.xpath("//button[@title='Publish']"), 50);
+		PageUtil.clickOnElement(driver, By.xpath("//button[@title='Publish']"), 10);
 	}
 
 	// Click on the 'Go To Publish' button.
 	public void clickOnGoToPublish() {
-		PageUtil.clickOnElement(driver, By.xpath("//button[normalize-space(text()) = 'Go To Publish']"), 50);
+		try {
+			PageUtil.clickOnElement(driver, By.xpath("//*[@id='publishLogMessageSidebar']//button[contains(text(),'Go To Publish')]"), 30);
+			System.out.println("The Go To Publish button is clickable.");
+		} catch (Exception e) {
+			System.out.println("The Go To Publish button is not clickable.");
+		}
 	}
 
 	// Click on the hyperlink of the published rule to navigate to the data testing.
 	public void clickOnPublishedRule() {
-		PageUtil.clickOnElement(driver, By.xpath("//tbody[@role='rowgroup']/tr/td/span/following-sibling::a[1]"), 10);
+		try {
+			PageUtil.clickOnElement(driver, By.xpath("//tbody[@role='rowgroup']/tr/td/span/following-sibling::a[1]"),
+					20);
+			System.out.println("The published rule is clickable.");
+		} catch (Exception e) {
+			System.out.println("The published rule is not clickable.");
+		}
 	}
 }

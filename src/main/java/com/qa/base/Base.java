@@ -14,6 +14,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.google.common.io.Files;
 import com.qa.config.ConfigReader;
 import com.qa.pages.TestGeneratorPage;
@@ -24,9 +26,11 @@ public class Base {
 	protected static WebDriver driver;
 	private static final Logger log = LogManager.getLogger(Base.class);
 	protected static final Properties prop = new Properties();
+	static ExtentTest test;
+	static ExtentReports report;
 
 	@BeforeSuite(alwaysRun = true)
-	public WebDriver launchBrowser() {
+	protected WebDriver launchBrowser() {
 		locatotFind();
 		driver = DriverSetup.initDriver();
 		driver.get(ConfigReader.getProperty("baseUrl"));
