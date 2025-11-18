@@ -1,23 +1,22 @@
-2025-11-17 11:30:15 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 11:30:24 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 11:30:24 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 12:25:27 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 12:25:27 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 13:05:26 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 13:05:26 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 13:06:22 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 13:06:22 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 13:09:00 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 13:09:00 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 15:09:34 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 15:09:34 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 16:09:58 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 16:09:58 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 16:28:26 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 16:28:26 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 17:15:57 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 17:15:57 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 17:17:07 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 17:17:08 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
-2025-11-17 18:10:05 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.162 (resolved driver for Chrome 142)
-2025-11-17 18:10:05 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.162\chromedriver.exe
+2025-11-18 12:21:35 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 12:21:35 INFO  i.g.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.175/win64/chromedriver-win64.zip
+2025-11-18 12:21:37 INFO  i.g.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-win64.zip
+2025-11-18 12:21:37 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 13:02:05 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 13:02:05 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 13:15:22 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 13:15:22 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 14:49:38 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 14:49:38 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 14:50:01 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 14:50:01 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 14:52:52 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 14:52:52 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 16:05:29 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 16:05:29 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 16:24:58 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 16:24:58 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 16:40:17 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 16:40:17 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+2025-11-18 16:51:37 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+2025-11-18 16:51:37 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\AshwinDoye\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
