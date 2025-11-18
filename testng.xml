@@ -3,9 +3,8 @@
 <suite name="Suite">
 
 	<listeners>
-		<listener class-name="com.qa.extentreportlistener.ExtentReportNG" />
+		<listener class-name="com.qa.extentreportlistener.ExtentListener" />
 	</listeners>
-
 
 	<test thread-count="1" name="Test">
 		<classes>

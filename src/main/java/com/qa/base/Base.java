@@ -3,22 +3,16 @@ package com.qa.base;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.google.common.io.Files;
 import com.qa.config.ConfigReader;
-import com.qa.pages.TestGeneratorPage;
+import com.qa.extentreportlistener.ExtentListener;
 import com.qa.utils.DriverSetup;
 
 public class Base {
@@ -37,6 +31,10 @@ public class Base {
 		return driver;
 	}
 
+	public void startSuite() {
+		ExtentListener.initReport();
+	}
+
 	/// vipul
 
 	public static void locatotFind() {
@@ -45,7 +43,6 @@ public class Base {
 
 		if (!folder.exists() || !folder.isDirectory()) {
 			log.error("Locator directory not found: {}", locatorDirPath);
-
 		}
 
 		File[] listOfFiles = folder.listFiles((dir, name) -> name.endsWith(".properties"));
@@ -82,4 +79,16 @@ public class Base {
 		Base.driver = driver;
 	}
 
+	@AfterSuite(alwaysRun = true)
+	public void tearDown() {
+		System.out.println("===== Closing Browser =====");
+
+		if (driver != null) {
+			driver.quit();
+		}
+	}
+
+	public void endSuite() {
+		ExtentListener.flushReport();
+	}
 }

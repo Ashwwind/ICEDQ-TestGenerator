@@ -11,29 +11,34 @@ public class TestGeneratorPage extends Base {
 	private WebDriver driver;
 	// Scrolling
 
-	
 	// Locator
 	By testGeneratorModue = PageUtil.getElementLocator(prop.getProperty("home.testgenerator"));
-	By templateSearch = PageUtil.getElementLocator(prop.getProperty("searchfield.tempatename"));
+	By selectChecksumWizard = PageUtil.getElementLocator(prop.getProperty("wizard.checksumRule"));
+	By clickSearchTemplateField = PageUtil.getElementLocator(prop.getProperty("wizard.searchfield.tempatename"));
+	By enterTemplateName = PageUtil.getElementLocator(prop.getProperty("wizard.searchfield.enter.tempatename"));
+	By clickSearchButtonIcon = PageUtil.getElementLocator(prop.getProperty("wizard.searchfield.searchButtonIcon"));
+	By selectExistingDynamicChecksumTemplate = PageUtil.getElementLocator(prop.getProperty("wizard.existing.dymanic.template"));
+	By clickOnWorkspaceDropdown = PageUtil.getElementLocator(prop.getProperty("wizard.workspace.dropdown"));
 	By selectWorkspace = PageUtil.getElementLocator(prop.getProperty("select.Workspace"));
 	By selectSearchWorkspace = PageUtil.getElementLocator(prop.getProperty("select.searchedWorspace"));
+	By clickOnFolderDropdown = PageUtil.getElementLocator(prop.getProperty("wizard.folder.dropdown"));
+	By searchFolderName =  PageUtil.getElementLocator(prop.getProperty("wizard.search.folderName"));
+
 	By selectSearchFolder = PageUtil.getElementLocator(prop.getProperty("select.searchedfolder"));
 	By loader = PageUtil.getElementLocator(prop.getProperty("loderIsDisplayed"));
 	By sourceSchemaDropdown = PageUtil.getElementLocator(prop.getProperty("source.schema.dropdown"));
 	By targetSchemaDropdown = PageUtil.getElementLocator(prop.getProperty("target.schema.dropdown"));
-	
-	
 
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
-	public void createChecksumRules()
-	{
+
+	public void createChecksumRules(String templateName) {
 		clickTestGenerator();
 		clickOnChecksum();
-		
+
 	}
+
 	// Page method
 	public void clickTestGenerator() {
 		PageUtil.isInvisibleLoader(driver, loader);
@@ -43,41 +48,38 @@ public class TestGeneratorPage extends Base {
 	// Click the Checksum rule type from the wizard page.
 	public void clickOnChecksum() {
 		PageUtil.isInvisibleLoader(driver, loader);
-		PageUtil.clickOnElement(driver, By.xpath("//h6[text()='Checksum']"), 30);
-		PageUtil.isInvisibleLoader(driver, loader);
+		PageUtil.clickOnElement(driver, selectChecksumWizard, 30);
 	}
 
 	// Click on the search field box
 	public void clickOnSearchField() {
 		PageUtil.isInvisibleLoader(driver, loader);
-		PageUtil.clickOnElement(driver, templateSearch, 30);
+		PageUtil.clickOnElement(driver, clickSearchTemplateField, 30);
 	}
 
 	// Enter the data on the search field
 	public void enterOnSearchField() {
-		PageUtil.sendkeysToElement(driver, By.xpath("//input[contains(@placeholder,'Search template')]"),
-				"Search template", "Compare Record Counts - Dynamic SQL");
-		PageUtil.clickOnElement(driver, By.xpath("//*[@title='Search']"), 30);
+		PageUtil.sendkeysToElement(driver, enterTemplateName, "Search template", "Compare Record Counts - Dynamic SQL");
+		PageUtil.clickOnElement(driver, clickSearchButtonIcon, 30);
 	}
 
 	// Select the existing checksum template form the list
 	public void selectExistingChecksumTemplate() {
 		PageUtil.isInvisibleLoader(driver, loader);
-		PageUtil.clickOnElement(driver, By.xpath(
-				"//td[@class='e-rowcell e-templatecell e-lastrowcell']/span[@class='dib'][contains(., 'Compare Record Counts - Dynamic SQL')]"),
-				30);
+		PageUtil.clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
 	}
 
 	public void clickOnWorkspaceField() {
 		PageUtil.isInvisibleLoader(driver, loader);
 		// Wait for workspace field to be visible and clickable
-		PageUtil.clickOnElement(driver, By.xpath("//span[./input[contains(@class, 'e-input')]]"), 30);
+		PageUtil.clickOnElement(driver, clickOnWorkspaceDropdown, 30);
 		// Click workspace dropdown
 		PageUtil.clickOnElement(driver, selectSearchWorkspace, 30);
 		// Click workspace dropdown // Click workspace dropdown
 		String workspaceName = "Test_Generator-WIP";
 		PageUtil.sendkeysToElement(driver, selectSearchWorkspace, "Select workspace field", workspaceName + Keys.ENTER);
 		PageUtil.isInvisibleLoader(driver, loader);
+		
 		System.out.println("Workspace '" + workspaceName + "' is selected successfully.");
 	}
 
@@ -85,10 +87,8 @@ public class TestGeneratorPage extends Base {
 
 	public void clickOnFolderField() throws InterruptedException {
 		PageUtil.isInvisibleLoader(driver, loader);
-		PageUtil.clickOnElement(driver, By.xpath("//button[@aria-label='Folder']//parent::div"), 30);
-		PageUtil.sendkeysToElement(driver,
-				By.xpath("//div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder']"),
-				"searching folder name.", "MJ_DND");
+		PageUtil.clickOnElement(driver, clickOnFolderDropdown, 30);
+		PageUtil.sendkeysToElement(driver, searchFolderName, "searching folder name.", "MJ_DND");
 		PageUtil.clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), 30);
 		PageUtil.isInvisibleLoader(driver, loader);
 		PageUtil.clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), 10);
@@ -281,7 +281,8 @@ public class TestGeneratorPage extends Base {
 	// Click on the 'Go To Publish' button.
 	public void clickOnGoToPublish() {
 		try {
-			PageUtil.clickOnElement(driver, By.xpath("//*[@id='publishLogMessageSidebar']//button[contains(text(),'Go To Publish')]"), 30);
+			PageUtil.clickOnElement(driver,
+					By.xpath("//*[@id='publishLogMessageSidebar']//button[contains(text(),'Go To Publish')]"), 30);
 			System.out.println("The Go To Publish button is clickable.");
 		} catch (Exception e) {
 			System.out.println("The Go To Publish button is not clickable.");

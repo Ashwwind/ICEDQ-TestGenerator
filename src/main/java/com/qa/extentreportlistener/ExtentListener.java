@@ -1,69 +1,110 @@
 package com.qa.extentreportlistener;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-
 import com.aventstack.extentreports.*;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-//import com.fasterxml.jackson.databind.deser.Deserializers.Base;
-import com.qa.base.Base;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.openqa.selenium.*;
+import org.testng.ITestListener;
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-
-public class ExtentListener implements ITestListener {
+public class ExtentListener implements ITestListener{
 
 	private static ExtentReports extent;
-	public static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+	private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+	public static WebDriver driver;
+	public static String buildId = "BUILD_" + System.currentTimeMillis();
 
-	@Override
-	public void onStart(ITestContext context) {
-		ExtentSparkReporter spark = new ExtentSparkReporter("ExtentReport.html");
-		extent = new ExtentReports();
-		extent.attachReporter(spark);
-	}
+	// Initialize report
+	public static void initReport() {
+		if (extent == null) {
+			String reportPath = Paths.get("").toAbsolutePath().toString() + "/reports/" + buildId
+					+ "/ExtentReport.html";
 
-	@Override
-	public void onTestStart(ITestResult result) {
-		ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
-		test.set(extentTest);
-	}
+			File reportFile = new File(reportPath);
+			File reportDir = reportFile.getParentFile();
+			if (!reportDir.exists()) {
+				reportDir.mkdirs();
+			}
 
-	@Override
-	public void onTestFailure(ITestResult result) {
+			ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);
+			spark.config().setDocumentTitle("Automation Test Report");
+			spark.config().setReportName("Execution Results");
+			spark.config().setTheme(Theme.STANDARD);
 
-		test.get().fail(result.getThrowable());
+			extent = new ExtentReports();
+			extent.attachReporter(spark);
 
-		try {
-			WebDriver driver = ((Base) result.getInstance()).getDriver();
-			String screenshot = captureScreenshot(driver, result.getMethod().getMethodName());
-			test.get().addScreenCaptureFromBase64String(screenshot);
-		} catch (Exception e) {
-			test.get().warning("Screenshot capture failed: " + e.getMessage());
+			extent.setSystemInfo("OS", System.getProperty("os.name"));
+			extent.setSystemInfo("Environment", "QA");
 		}
 	}
 
-	@Override
-	public void onTestSuccess(ITestResult result) {
-		test.get().pass("Test Passed Successfully");
+	// Flush report
+	public static void flushReport() {
+		if (extent != null) {
+			extent.flush();
+		}
 	}
 
-	@Override
-	public void onTestSkipped(ITestResult result) {
-		test.get().skip(result.getThrowable());
+	// Start test
+	public static void startTest(String testName) {
+		ExtentTest extentTest = extent.createTest(testName);
+		test.set(extentTest);
+		System.out.println("Starting Test: " + testName);
 	}
 
-	@Override
-	public void onFinish(ITestContext context) {
-		extent.flush();
+	// Log test pass
+	public static void pass(String message) {
+		test.get().log(Status.PASS, MarkupHelper.createLabel(message, ExtentColor.GREEN));
 	}
 
-	// Optional - Add screenshot utility here
-	public static String captureScreenshot(WebDriver driver, String testName) {
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		return ts.getScreenshotAs(OutputType.BASE64);
+	// Log test fail with screenshot
+	public static void fail(String message) {
+		test.get().log(Status.FAIL, MarkupHelper.createLabel(message, ExtentColor.RED));
+		String screenshot = captureScreenshot(test.get().getModel().getName());
+		if (screenshot != null) {
+			try {
+				test.get().fail("Screenshot:",
+						MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
+	// Log test skipped
+	public static void skip(String message) {
+		test.get().log(Status.SKIP, MarkupHelper.createLabel(message, ExtentColor.ORANGE));
+	}
+
+	// Capture screenshot
+	private static String captureScreenshot(String methodName) {
+		try {
+			String timestamp = new SimpleDateFormat("HH.mm.ss-MM-dd-yyyy").format(new Date());
+			TakesScreenshot ts = (TakesScreenshot) driver;
+
+			String base64 = ts.getScreenshotAs(OutputType.BASE64);
+
+			File src = ts.getScreenshotAs(OutputType.FILE);
+			String folderPath = Paths.get("").toAbsolutePath().toString() + "/reports/" + buildId + "/Screenshots/"
+					+ methodName;
+			File folder = new File(folderPath);
+			if (!folder.exists())
+				folder.mkdirs();
+
+			File dest = new File(folder + "/" + methodName + "-" + timestamp + ".png");
+			FileUtils.copyFile(src, dest);
+
+			return base64;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

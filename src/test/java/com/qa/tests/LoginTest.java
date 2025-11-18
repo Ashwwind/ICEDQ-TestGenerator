@@ -6,15 +6,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.qa.base.Base;
 import com.qa.config.ConfigReader;
 import com.qa.pages.LoginPage;
 
+@Listeners({ com.qa.extentreportlistener.ExtentListener.class })
+
 public class LoginTest extends Base {
 
 	String baseUrl = ConfigReader.getProperty("baseUrl");
+	
+	@Test
+	public void validateLoginPage() {
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginPageValidation();
+	}
 
 	@Test(dependsOnMethods = { "validateLoginPage" })
 	public void testValidLogin() {
@@ -24,11 +32,7 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test
-	public void validateLoginPage() {
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginPageValidation();
-	}
+	
 
 //	//// Anotatin  ////
 //	
