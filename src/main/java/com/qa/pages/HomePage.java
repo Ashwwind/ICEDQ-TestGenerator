@@ -13,10 +13,11 @@ import org.testng.Assert;
 import com.qa.base.Base;
 import com.qa.utils.PageUtil;
 
-public class HomePage extends Base{
-	private WebDriver driver;
-
-	public HomePage(WebDriver driver) {
+public class HomePage extends PageUtil{
+	
+	WebDriver driver;
+	public HomePage(WebDriver driver)
+	{
 		this.driver = driver;
 	}
 

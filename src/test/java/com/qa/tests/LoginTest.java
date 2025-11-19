@@ -12,8 +12,6 @@ import com.qa.base.Base;
 import com.qa.config.ConfigReader;
 import com.qa.pages.LoginPage;
 
-@Listeners({ com.qa.extentreportlistener.ExtentListener.class })
-
 public class LoginTest extends Base {
 
 	String baseUrl = ConfigReader.getProperty("baseUrl");

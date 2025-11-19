@@ -1,7 +1,11 @@
 package com.qa.utils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.NoSuchElementException;
+import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,11 +25,40 @@ public class PageUtil {
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
 	public static final int SHOTW = 50; // short wait = 10 seconds
 	private static WebDriverWait wait;
-	private WebDriver driver;
+	public static Properties prop;
 
-	public PageUtil(WebDriver driver) {
-		this.driver = driver;
-		PageUtil.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+	// Locator file loading
+	public static void locatotFind() {
+		String locatorDirPath = System.getProperty("user.dir") + "/src/main/resources/locator/";
+		File folder = new File(locatorDirPath);
+
+		if (!folder.exists() || !folder.isDirectory()) {
+			log.error("Locator directory not found: {}", locatorDirPath);
+		}
+
+		File[] listOfFiles = folder.listFiles((dir, name) -> name.endsWith(".properties"));
+		if (listOfFiles == null || listOfFiles.length == 0) {
+			log.warn("No locator property files found in {}", locatorDirPath);
+			return;
+		}
+
+		log.info("Loading locator files from directory: {}", locatorDirPath);
+
+		for (File file : listOfFiles) {
+			log.info("Loading locator file: {}", file.getName());
+
+			try (FileInputStream fis = new FileInputStream(file)) {
+				Properties tempProps = new Properties();
+				tempProps.load(fis);
+				prop.putAll(tempProps);
+				log.info("Loaded {} locators from {}", tempProps.size(), file.getName());
+			} catch (IOException e) {
+				log.error("Failed to load locator file '{}': {}", file.getName(), e.getMessage());
+			}
+		}
+
+		log.info("Total locators loaded: {}", prop.size());
 	}
 
 	public static WebDriverWait waitForElements(WebDriver driver, int timeoutInSeconds) {
@@ -69,7 +102,7 @@ public class PageUtil {
 			driver.findElement(by).click();
 			System.out.println("Clicked on " + label);
 		} catch (Exception e) {
-			System.out.println("Element is not clickable :"+by);
+			System.out.println("Element is not clickable :" + by);
 		}
 	}
 
@@ -83,7 +116,7 @@ public class PageUtil {
 				log.info("Element not visible : " + by);
 			}
 		} catch (Exception e) {
-			System.out.println("Element is not clickable : "+by);
+			System.out.println("Element is not clickable : " + by);
 		}
 	}
 
@@ -99,14 +132,14 @@ public class PageUtil {
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
 		System.out.println("Entered value on " + label + " input : " + input);
 	}
-	
+
 	// Enter data in the filed.
-		public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
-			clickOnElement(driver, locator, 10);
-			System.out.println("Clicking enter on " + label);
-			waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
-			System.out.println("Clicked enter on " + label);
-		}
+	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
+		clickOnElement(driver, locator, 10);
+		System.out.println("Clicking enter on " + label);
+		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
+		System.out.println("Clicked enter on " + label);
+	}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {
 

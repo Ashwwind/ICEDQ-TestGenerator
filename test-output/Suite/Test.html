@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/4</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Nov 18 16:51:42 IST 2025</td>
+<td>Started on:</td><td>Wed Nov 19 09:48:32 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>146 seconds (146572 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (68 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,33 +67,177 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.qa.tests.LoginTest.testValidLogin()'><b>testValidLogin</b><br>Test class: com.qa.tests.LoginTest</td>
-<td></td>
+<td title='com.qa.tests.LoginTest.startSuite()'><b>startSuite</b><br>Test class: com.qa.tests.LoginTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1720746883", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1720746883'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
 <td>0</td>
-<td>com.qa.tests.LoginTest@1c3146bc</td></tr>
-<tr>
-<td title='com.qa.tests.HomePageTest.homePageValidation()'><b>homePageValidation</b><br>Test class: com.qa.tests.HomePageTest</td>
-<td></td>
-<td>0</td>
-<td>com.qa.tests.HomePageTest@32c8e539</td></tr>
-<tr>
-<td title='com.qa.tests.LoginTest.validateLoginPage()'><b>validateLoginPage</b><br>Test class: com.qa.tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>com.qa.tests.LoginTest@1c3146bc</td></tr>
+<td>com.qa.tests.LoginTest@63998bf4</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
 <td title='com.qa.tests.TestGeneratorTest.selectTestGenrator()'><b>selectTestGenrator</b><br>Test class: com.qa.tests.TestGeneratorTest</td>
-<td></td>
-<td>144</td>
-<td>com.qa.tests.TestGeneratorTest@73dce0e6</td></tr>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace253380088", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace253380088'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.qa.tests.TestGeneratorTest@5f5b5ca4</td></tr>
+<tr>
+<td title='com.qa.tests.HomePageTest.homePageValidation()'><b>homePageValidation</b><br>Test class: com.qa.tests.HomePageTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace790538253", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace790538253'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.qa.tests.HomePageTest@2e6ba49a</td></tr>
+<tr>
+<td title='com.qa.tests.LoginTest.validateLoginPage()'><b>validateLoginPage</b><br>Test class: com.qa.tests.LoginTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace569959775", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace569959775'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
+	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
+	at com.qa.base.Base.startSuite(Base.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.qa.tests.LoginTest@63998bf4</td></tr>
+<tr>
+<td title='com.qa.tests.LoginTest.testValidLogin()'><b>testValidLogin</b><br>Test class: com.qa.tests.LoginTest</td>
+<td><div><pre>java.lang.Throwable: Method com.qa.tests.LoginTest.testValidLogin() on instance com.qa.tests.LoginTest@63998bf4 depends on not successfully finished methods 
+[com.qa.tests.LoginTest.validateLoginPage() on instance com.qa.tests.LoginTest@63998bf4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1299885218", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1299885218'><pre>java.lang.Throwable: Method com.qa.tests.LoginTest.testValidLogin() on instance com.qa.tests.LoginTest@63998bf4 depends on not successfully finished methods 
+[com.qa.tests.LoginTest.validateLoginPage() on instance com.qa.tests.LoginTest@63998bf4]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.qa.tests.LoginTest@63998bf4</td></tr>
 </table><p>
 </body>
 </html>

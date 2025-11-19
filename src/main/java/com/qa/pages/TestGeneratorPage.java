@@ -7,9 +7,8 @@ import org.openqa.selenium.WebDriver;
 import com.qa.base.Base;
 import com.qa.utils.PageUtil;
 
-public class TestGeneratorPage extends Base {
+public class TestGeneratorPage extends PageUtil {
 	private WebDriver driver;
-	// Scrolling
 
 	// Locator
 	By testGeneratorModue = PageUtil.getElementLocator(prop.getProperty("home.testgenerator"));
@@ -23,7 +22,6 @@ public class TestGeneratorPage extends Base {
 	By selectSearchWorkspace = PageUtil.getElementLocator(prop.getProperty("select.searchedWorspace"));
 	By clickOnFolderDropdown = PageUtil.getElementLocator(prop.getProperty("wizard.folder.dropdown"));
 	By searchFolderName =  PageUtil.getElementLocator(prop.getProperty("wizard.search.folderName"));
-
 	By selectSearchFolder = PageUtil.getElementLocator(prop.getProperty("select.searchedfolder"));
 	By loader = PageUtil.getElementLocator(prop.getProperty("loderIsDisplayed"));
 	By sourceSchemaDropdown = PageUtil.getElementLocator(prop.getProperty("source.schema.dropdown"));
@@ -33,10 +31,31 @@ public class TestGeneratorPage extends Base {
 		this.driver = driver;
 	}
 
-	public void createChecksumRules(String templateName) {
+	public void createChecksumRules(String templateName) throws InterruptedException {
 		clickTestGenerator();
 		clickOnChecksum();
-
+		
+		clickOnSearchField();
+		enterOnSearchField();
+		selectExistingChecksumTemplate();
+		
+		clickOnWorkspaceField();
+		clickOnFolderField();
+		gotoWorkspaceNextbtn();
+		gotoRuleMetadataNextbtn();
+		gotoCheckMetadataNextbtn();
+		gotoNotificationNextbtn();
+		selectionSourceDataset();
+		selectionTargetDataset();
+		gotoDatasetNextbtn();
+		selectionAvailabeTable();
+		gotoSelettableNextbtn();
+		clickOnGenerate();
+		clickOnGoToPreview();
+		clickOnPublishedRule();
+		selectGeneratedEntity();
+		clickOnGoToPublish();
+		
 	}
 
 	// Page method
@@ -85,7 +104,7 @@ public class TestGeneratorPage extends Base {
 
 	// Click on the Folder selector field
 
-	public void clickOnFolderField() throws InterruptedException {
+	public void clickOnFolderField() {
 		PageUtil.isInvisibleLoader(driver, loader);
 		PageUtil.clickOnElement(driver, clickOnFolderDropdown, 30);
 		PageUtil.sendkeysToElement(driver, searchFolderName, "searching folder name.", "MJ_DND");

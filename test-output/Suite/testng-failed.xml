@@ -8,12 +8,26 @@
     <classes>
       <class name="com.qa.tests.LoginTest">
         <methods>
+          <include name="endSuite"/>
           <include name="validateLoginPage"/>
-          <include name="launchBrowser"/>
+          <include name="startSuite"/>
           <include name="testValidLogin"/>
-          <include name="tearDown"/>
         </methods>
       </class> <!-- com.qa.tests.LoginTest -->
+      <class name="com.qa.tests.TestGeneratorTest">
+        <methods>
+          <include name="selectTestGenrator"/>
+          <include name="endSuite"/>
+          <include name="startSuite"/>
+        </methods>
+      </class> <!-- com.qa.tests.TestGeneratorTest -->
+      <class name="com.qa.tests.HomePageTest">
+        <methods>
+          <include name="endSuite"/>
+          <include name="startSuite"/>
+          <include name="homePageValidation"/>
+        </methods>
+      </class> <!-- com.qa.tests.HomePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
