@@ -4,16 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
-import com.qa.base.Base;
 import com.qa.config.ConfigReader;
 import com.qa.utils.PageUtil;
 
-public class LoginPage extends Base{
+public class LoginPage extends PageUtil {
 	private WebDriver driver;
 
-	// Vipul
-	
 	By usernameField = PageUtil.getElementLocator(prop.getProperty("login.username"));
 	By passwordField = PageUtil.getElementLocator(prop.getProperty("login.password"));
 	By loginButton = PageUtil.getElementLocator(prop.getProperty("login.submit"));
@@ -27,12 +23,12 @@ public class LoginPage extends Base{
 	}
 
 	public void enterPassword(String password) {
-		
+
 		PageUtil.sendkeysToElement(driver, passwordField, "password", password);
 	}
 
 	public void clickLogin() {
-			PageUtil.clickOnElement(driver, loginButton, 10);
+		PageUtil.clickOnElement(driver, loginButton, 10);
 	}
 
 	public void login(String username, String password) {
@@ -40,9 +36,8 @@ public class LoginPage extends Base{
 		enterPassword(password);
 		clickLogin();
 	}
-	
-	public void loginPageValidation()
-	{
+
+	public void loginPageValidation() {
 		driver.get(ConfigReader.getProperty("baseUrl"));
 
 		// URL validation

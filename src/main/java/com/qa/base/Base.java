@@ -1,6 +1,5 @@
 package com.qa.base;
 
-import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -14,16 +13,16 @@ import com.qa.utils.PageUtil;
 public class Base {
 
 	protected static WebDriver driver;
-	private static final Logger log = LogManager.getLogger(Base.class);
-	protected static final Properties prop = new Properties();
+	// private static final Logger log = LogManager.getLogger(Base.class);
 
 	@BeforeSuite(alwaysRun = true)
 	protected void startSuite() {
-		// Initialize report
-		ExtentListener.initReport();
 
 		// Load locators once for the suite
 		PageUtil.locatotFind();
+
+		// Initialize report
+		ExtentListener.initReport();
 
 		// Launch browser
 		driver = DriverSetup.initDriver();

@@ -20,6 +20,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.Status;
+import com.qa.extentreportlistener.ExtentListener;
+
 public class PageUtil {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
@@ -30,6 +33,11 @@ public class PageUtil {
 
 	// Locator file loading
 	public static void locatotFind() {
+
+	    if (prop == null) {
+	        prop = new Properties();
+	    }
+	    
 		String locatorDirPath = System.getProperty("user.dir") + "/src/main/resources/locator/";
 		File folder = new File(locatorDirPath);
 
@@ -88,7 +96,7 @@ public class PageUtil {
 					.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed(); // fallback technique
 
 		} catch (Exception e) {
-			System.out.println("Element is not visiblle");
+			ExtentListener.test.get().log(Status.INFO,"Element is not visiblle");
 		}
 		return false;
 
@@ -98,11 +106,11 @@ public class PageUtil {
 	public static void waitForTheElementToBeClickable(WebDriver driver, By by, String label) {
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(by));
-			System.out.println("Clicking on " + label);
+			ExtentListener.test.get().log(Status.INFO,"Clicking on " + label);
 			driver.findElement(by).click();
-			System.out.println("Clicked on " + label);
+			ExtentListener.test.get().log(Status.INFO,"Clicked on " + label );
 		} catch (Exception e) {
-			System.out.println("Element is not clickable :" + by);
+			ExtentListener.test.get().log(Status.INFO,"Element is not clickable :" + by );
 		}
 	}
 
@@ -116,7 +124,7 @@ public class PageUtil {
 				log.info("Element not visible : " + by);
 			}
 		} catch (Exception e) {
-			System.out.println("Element is not clickable : " + by);
+			ExtentListener.test.get().log(Status.INFO,"Element is not clickable : " + by);
 		}
 	}
 
@@ -128,17 +136,17 @@ public class PageUtil {
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		clickOnElement(driver, locator, 10);
-		System.out.println("Entering value on " + label + " input : " + input);
+		ExtentListener.test.get().log(Status.PASS,"Entering value on " + label + " input : " + input);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
-		System.out.println("Entered value on " + label + " input : " + input);
+		ExtentListener.test.get().log(Status.FAIL,"Entered value on " + label + " input : " + input);
 	}
 
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
 		clickOnElement(driver, locator, 10);
-		System.out.println("Clicking enter on " + label);
+		ExtentListener.test.get().log(Status.INFO,"Clicking enter on " + label);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
-		System.out.println("Clicked enter on " + label);
+		ExtentListener.test.get().log(Status.INFO,"Clicked enter on " + label);
 	}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {

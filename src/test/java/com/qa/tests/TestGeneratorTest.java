@@ -1,13 +1,14 @@
 package com.qa.tests;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.qa.base.Base;
+import com.qa.extentreportlistener.ExtentListener;
 import com.qa.pages.TestGeneratorPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.Listeners;
 
-
+@Listeners(ExtentListener.class)
 public class TestGeneratorTest extends Base {
 
 	///
@@ -30,13 +31,14 @@ public class TestGeneratorTest extends Base {
 		// Step1: To Click on the test generator
 		try {
 			testGeneratorPage.clickTestGenerator();
-			//ExtentListener.test.get().pass("Clicked on Test Generator");
-			//ExtentListener.test.get().addScreenCaptureFromBase64String("BASE64");
+			// ExtentListener.test.get().pass("Clicked on Test Generator");
+			// ExtentListener.test.get().addScreenCaptureFromBase64String("BASE64");
 			logger.info("Clicked on Test Generator module.");
 
 		} catch (Exception e) {
-			//ExtentListener.test.get().fail("Unable to click Test Generator: " + e.getMessage());
-			//ExtentListener.test.get().addScreenCaptureFromBase64String("BASE64");
+			// ExtentListener.test.get().fail("Unable to click Test Generator: " +
+			// e.getMessage());
+			// ExtentListener.test.get().addScreenCaptureFromBase64String("BASE64");
 			logger.error("Unable to click Test Generator:" + e.getMessage());
 		}
 
@@ -45,12 +47,13 @@ public class TestGeneratorTest extends Base {
 		try {
 			testGeneratorPage.clickOnChecksum();
 			logger.info("The 'Checksum' rule wizard is clickable..");
-			//ExtentListener.test.get().pass("The 'Checksum' rule wizard is clickable..");
-			//ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
+			// ExtentListener.test.get().pass("The 'Checksum' rule wizard is clickable..");
+			// ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
 		} catch (Exception e) {
 			logger.error("The 'Checksum' rule wizard is not clickable.." + e.getMessage());
-			//ExtentListener.test.get().fail("The 'Checksum' rule wizard is not clickable..");
-			//ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
+			// ExtentListener.test.get().fail("The 'Checksum' rule wizard is not
+			// clickable..");
+			// ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
 		}
 
 		// Step3: To click the template search field and enter search data.
@@ -58,12 +61,13 @@ public class TestGeneratorTest extends Base {
 		try {
 			testGeneratorPage.clickOnSearchField();
 			logger.info("The template search field is clickable..");
-			//ExtentListener.test.get().pass("The template search field is clickable..");
-			//ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
+			// ExtentListener.test.get().pass("The template search field is clickable..");
+			// ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
 		} catch (Exception e) {
 			logger.error("The template search field is not clickable.." + e.getMessage());
-			//ExtentListener.test.get().fail("template search field is is not clickable..");
-			//ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
+			// ExtentListener.test.get().fail("template search field is is not
+			// clickable..");
+			// ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
 		}
 		try {
 			testGeneratorPage.enterOnSearchField();

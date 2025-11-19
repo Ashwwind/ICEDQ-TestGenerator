@@ -1,21 +1,17 @@
 package com.qa.tests;
 
-import java.time.Duration;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.qa.base.Base;
 import com.qa.config.ConfigReader;
+import com.qa.extentreportlistener.ExtentListener;
 import com.qa.pages.LoginPage;
 
+@Listeners(ExtentListener.class)
 public class LoginTest extends Base {
 
 	String baseUrl = ConfigReader.getProperty("baseUrl");
-	
+
 	@Test
 	public void validateLoginPage() {
 		LoginPage loginPage = new LoginPage(driver);
@@ -29,8 +25,7 @@ public class LoginTest extends Base {
 		loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
 
 	}
-
-	
+}
 
 //	//// Anotatin  ////
 //	
@@ -109,5 +104,3 @@ public class LoginTest extends Base {
 //        Assert.assertTrue(errorMsg.isDisplayed(), "Error message not displayed after invalid login.");
 //		
 //	}
-
-}

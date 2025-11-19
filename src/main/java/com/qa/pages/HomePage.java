@@ -1,30 +1,20 @@
 package com.qa.pages;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import com.qa.base.Base;
-import com.qa.utils.PageUtil;
 
-public class HomePage extends PageUtil{
-	
+public class HomePage extends Base {
+
 	WebDriver driver;
-	public HomePage(WebDriver driver)
-	{
+
+	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	public void validateHomePage() {
 
 		try {
-			
+
 //			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 //			// validate the Url and Title
 //			String currentUrl = driver.getCurrentUrl();

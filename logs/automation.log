@@ -3700,3 +3700,137 @@ Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 14
 2025-11-19 09:47:02 INFO  PageUtil:49 - Loading locator file: Login.properties
 2025-11-19 09:48:32 INFO  PageUtil:46 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
 2025-11-19 09:48:32 INFO  PageUtil:49 - Loading locator file: Login.properties
+2025-11-19 11:03:48 INFO  PageUtil:46 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 11:03:48 INFO  PageUtil:49 - Loading locator file: Login.properties
+2025-11-19 11:04:33 INFO  PageUtil:46 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 11:04:33 INFO  PageUtil:49 - Loading locator file: Login.properties
+2025-11-19 11:05:13 INFO  PageUtil:46 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 11:05:13 INFO  PageUtil:49 - Loading locator file: Login.properties
+2025-11-19 11:15:19 INFO  PageUtil:46 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 11:15:19 INFO  PageUtil:49 - Loading locator file: Login.properties
+2025-11-19 11:31:58 INFO  PageUtil:51 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 11:31:58 INFO  PageUtil:54 - Loading locator file: Login.properties
+2025-11-19 11:31:58 INFO  PageUtil:60 - Loaded 4 locators from Login.properties
+2025-11-19 11:31:58 INFO  PageUtil:54 - Loading locator file: Template.properties
+2025-11-19 11:31:58 INFO  PageUtil:60 - Loaded 16 locators from Template.properties
+2025-11-19 11:31:58 INFO  PageUtil:66 - Total locators loaded: 19
+2025-11-19 15:52:51 INFO  PageUtil:51 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 15:52:51 INFO  PageUtil:54 - Loading locator file: Login.properties
+2025-11-19 15:52:51 INFO  PageUtil:60 - Loaded 4 locators from Login.properties
+2025-11-19 15:52:51 INFO  PageUtil:54 - Loading locator file: Template.properties
+2025-11-19 15:52:51 INFO  PageUtil:60 - Loaded 16 locators from Template.properties
+2025-11-19 15:52:51 INFO  PageUtil:66 - Total locators loaded: 19
+2025-11-19 15:53:10 INFO  TestGeneratorTest:33 - Clicked on Test Generator module.
+2025-11-19 15:53:13 INFO  TestGeneratorTest:46 - The 'Checksum' rule wizard is clickable..
+2025-11-19 15:53:14 INFO  TestGeneratorTest:60 - The template search field is clickable..
+2025-11-19 15:53:22 INFO  TestGeneratorTest:71 - The search data entering..
+2025-11-19 15:53:23 INFO  TestGeneratorTest:79 - The existing dynamic checksum tamplate selected..
+2025-11-19 15:53:25 INFO  TestGeneratorTest:88 - The workspace is selected..
+2025-11-19 15:53:27 INFO  TestGeneratorTest:97 - The folder is selected..
+2025-11-19 15:53:27 INFO  TestGeneratorTest:106 - The next button clickable from the 'select container' page..
+2025-11-19 15:53:28 INFO  TestGeneratorTest:115 - The next button clickable from the 'define rule metadata' page..
+2025-11-19 15:53:29 INFO  TestGeneratorTest:123 - The next button clickable from the 'define check metadata' page..
+2025-11-19 15:53:30 INFO  TestGeneratorTest:132 - The next button clickable from the 'configure notification' page..
+2025-11-19 15:53:37 INFO  TestGeneratorTest:140 - The source connection selected..
+2025-11-19 15:54:08 ERROR TestGeneratorTest:150 - The target connection not selected..no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[2]"}
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3e6462285689853b8dc79a31ff2e0c27, findElement {using=xpath, value=(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[2]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59472}, goog:processID: 271244, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59472/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3e6462285689853b8dc79a31ff2e0c27
+2025-11-19 15:54:29 INFO  TestGeneratorTest:156 - The next button clickable from the 'select dataset' page..
+2025-11-19 15:54:45 INFO  TestGeneratorTest:165 - The available table name selected..
+2025-11-19 15:54:45 INFO  TestGeneratorTest:174 - The next button clickable from the 'select table' page.
+2025-11-19 15:54:45 INFO  TestGeneratorTest:183 - The generate button is clickable..
+2025-11-19 15:55:45 INFO  TestGeneratorTest:192 - The 'go to preview' button is clickable..
+2025-11-19 15:55:48 INFO  TestGeneratorTest:200 - The generated entity is clickable..
+2025-11-19 15:55:48 INFO  TestGeneratorTest:208 - The 'Publish' button is clickable..
+2025-11-19 15:55:52 INFO  TestGeneratorTest:216 - The 'Go To Publish' button is clickable..
+2025-11-19 15:55:53 INFO  TestGeneratorTest:225 - The published rule hyperlink is clickable..
+2025-11-19 16:01:00 INFO  PageUtil:51 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 16:01:00 INFO  PageUtil:54 - Loading locator file: Login.properties
+2025-11-19 16:01:00 INFO  PageUtil:60 - Loaded 4 locators from Login.properties
+2025-11-19 16:01:00 INFO  PageUtil:54 - Loading locator file: Template.properties
+2025-11-19 16:01:00 INFO  PageUtil:60 - Loaded 16 locators from Template.properties
+2025-11-19 16:01:00 INFO  PageUtil:66 - Total locators loaded: 19
+2025-11-19 16:01:18 INFO  TestGeneratorTest:36 - Clicked on Test Generator module.
+2025-11-19 16:01:20 INFO  TestGeneratorTest:49 - The 'Checksum' rule wizard is clickable..
+2025-11-19 16:01:21 INFO  TestGeneratorTest:63 - The template search field is clickable..
+2025-11-19 16:01:25 INFO  TestGeneratorTest:74 - The search data entering..
+2025-11-19 16:01:26 INFO  TestGeneratorTest:82 - The existing dynamic checksum tamplate selected..
+2025-11-19 16:01:28 INFO  TestGeneratorTest:91 - The workspace is selected..
+2025-11-19 16:01:30 INFO  TestGeneratorTest:100 - The folder is selected..
+2025-11-19 16:01:30 INFO  TestGeneratorTest:109 - The next button clickable from the 'select container' page..
+2025-11-19 16:01:31 INFO  TestGeneratorTest:118 - The next button clickable from the 'define rule metadata' page..
+2025-11-19 16:01:32 INFO  TestGeneratorTest:126 - The next button clickable from the 'define check metadata' page..
+2025-11-19 16:01:33 INFO  TestGeneratorTest:135 - The next button clickable from the 'configure notification' page..
+2025-11-19 16:01:39 INFO  TestGeneratorTest:143 - The source connection selected..
+2025-11-19 16:01:43 INFO  TestGeneratorTest:151 - The target connection selected..
+2025-11-19 16:01:43 INFO  TestGeneratorTest:159 - The next button clickable from the 'select dataset' page..
+2025-11-19 16:02:10 INFO  TestGeneratorTest:168 - The available table name selected..
+2025-11-19 16:02:10 INFO  TestGeneratorTest:177 - The next button clickable from the 'select table' page.
+2025-11-19 16:02:10 INFO  TestGeneratorTest:186 - The generate button is clickable..
+2025-11-19 16:02:28 INFO  TestGeneratorTest:195 - The 'go to preview' button is clickable..
+2025-11-19 16:02:31 INFO  TestGeneratorTest:203 - The generated entity is clickable..
+2025-11-19 16:02:31 INFO  TestGeneratorTest:211 - The 'Publish' button is clickable..
+2025-11-19 16:02:33 INFO  TestGeneratorTest:219 - The 'Go To Publish' button is clickable..
+2025-11-19 16:02:33 INFO  TestGeneratorTest:228 - The published rule hyperlink is clickable..
+2025-11-19 16:06:59 INFO  PageUtil:51 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 16:06:59 INFO  PageUtil:54 - Loading locator file: Login.properties
+2025-11-19 16:06:59 INFO  PageUtil:60 - Loaded 4 locators from Login.properties
+2025-11-19 16:06:59 INFO  PageUtil:54 - Loading locator file: Template.properties
+2025-11-19 16:06:59 INFO  PageUtil:60 - Loaded 16 locators from Template.properties
+2025-11-19 16:06:59 INFO  PageUtil:66 - Total locators loaded: 19
+2025-11-19 16:07:14 INFO  TestGeneratorTest:36 - Clicked on Test Generator module.
+2025-11-19 16:07:17 INFO  TestGeneratorTest:49 - The 'Checksum' rule wizard is clickable..
+2025-11-19 16:07:18 INFO  TestGeneratorTest:63 - The template search field is clickable..
+2025-11-19 16:07:19 INFO  TestGeneratorTest:74 - The search data entering..
+2025-11-19 16:07:20 INFO  TestGeneratorTest:82 - The existing dynamic checksum tamplate selected..
+2025-11-19 16:07:22 INFO  TestGeneratorTest:91 - The workspace is selected..
+2025-11-19 16:07:24 INFO  TestGeneratorTest:100 - The folder is selected..
+2025-11-19 16:07:24 INFO  TestGeneratorTest:109 - The next button clickable from the 'select container' page..
+2025-11-19 16:07:25 INFO  TestGeneratorTest:118 - The next button clickable from the 'define rule metadata' page..
+2025-11-19 16:07:26 INFO  TestGeneratorTest:126 - The next button clickable from the 'define check metadata' page..
+2025-11-19 16:07:26 INFO  TestGeneratorTest:135 - The next button clickable from the 'configure notification' page..
+2025-11-19 16:07:34 INFO  TestGeneratorTest:143 - The source connection selected..
+2025-11-19 16:07:38 INFO  TestGeneratorTest:151 - The target connection selected..
+2025-11-19 16:07:38 INFO  TestGeneratorTest:159 - The next button clickable from the 'select dataset' page..
+2025-11-19 16:08:10 INFO  TestGeneratorTest:168 - The available table name selected..
+2025-11-19 16:08:11 INFO  TestGeneratorTest:177 - The next button clickable from the 'select table' page.
+2025-11-19 16:08:11 INFO  TestGeneratorTest:186 - The generate button is clickable..
+2025-11-19 16:08:29 INFO  TestGeneratorTest:195 - The 'go to preview' button is clickable..
+2025-11-19 16:08:32 INFO  TestGeneratorTest:203 - The generated entity is clickable..
+2025-11-19 16:08:32 INFO  TestGeneratorTest:211 - The 'Publish' button is clickable..
+2025-11-19 16:08:35 INFO  TestGeneratorTest:219 - The 'Go To Publish' button is clickable..
+2025-11-19 16:08:36 INFO  TestGeneratorTest:228 - The published rule hyperlink is clickable..
+2025-11-19 16:13:02 INFO  PageUtil:54 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-19 16:13:02 INFO  PageUtil:57 - Loading locator file: Login.properties
+2025-11-19 16:13:02 INFO  PageUtil:63 - Loaded 4 locators from Login.properties
+2025-11-19 16:13:02 INFO  PageUtil:57 - Loading locator file: Template.properties
+2025-11-19 16:13:02 INFO  PageUtil:63 - Loaded 16 locators from Template.properties
+2025-11-19 16:13:02 INFO  PageUtil:69 - Total locators loaded: 19
+2025-11-19 16:13:29 INFO  TestGeneratorTest:36 - Clicked on Test Generator module.
+2025-11-19 16:13:33 INFO  TestGeneratorTest:49 - The 'Checksum' rule wizard is clickable..
+2025-11-19 16:13:35 INFO  TestGeneratorTest:63 - The template search field is clickable..
+2025-11-19 16:13:47 INFO  TestGeneratorTest:74 - The search data entering..
+2025-11-19 16:13:48 INFO  TestGeneratorTest:82 - The existing dynamic checksum tamplate selected..
+2025-11-19 16:13:51 INFO  TestGeneratorTest:91 - The workspace is selected..
+2025-11-19 16:13:54 INFO  TestGeneratorTest:100 - The folder is selected..
+2025-11-19 16:13:54 INFO  TestGeneratorTest:109 - The next button clickable from the 'select container' page..
+2025-11-19 16:14:00 INFO  TestGeneratorTest:118 - The next button clickable from the 'define rule metadata' page..
+2025-11-19 16:14:01 INFO  TestGeneratorTest:126 - The next button clickable from the 'define check metadata' page..
+2025-11-19 16:14:02 INFO  TestGeneratorTest:135 - The next button clickable from the 'configure notification' page..
+2025-11-19 16:14:08 INFO  TestGeneratorTest:143 - The source connection selected..
+2025-11-19 16:14:13 INFO  TestGeneratorTest:151 - The target connection selected..
+2025-11-19 16:14:13 INFO  TestGeneratorTest:159 - The next button clickable from the 'select dataset' page..
+2025-11-19 16:14:26 INFO  TestGeneratorTest:168 - The available table name selected..
+2025-11-19 16:14:26 INFO  TestGeneratorTest:177 - The next button clickable from the 'select table' page.
+2025-11-19 16:14:26 INFO  TestGeneratorTest:186 - The generate button is clickable..
+2025-11-19 16:14:44 INFO  TestGeneratorTest:195 - The 'go to preview' button is clickable..
+2025-11-19 16:14:47 INFO  TestGeneratorTest:203 - The generated entity is clickable..
+2025-11-19 16:14:47 INFO  TestGeneratorTest:211 - The 'Publish' button is clickable..
+2025-11-19 16:14:59 INFO  TestGeneratorTest:219 - The 'Go To Publish' button is clickable..
+2025-11-19 16:15:00 INFO  TestGeneratorTest:228 - The published rule hyperlink is clickable..

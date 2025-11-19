@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,7 +21,8 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -39,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>E:\New-automation\ICEDQ-TestGenerator\testng.xml</span>
+                    <span>D:\Eclipse\ICEDQ\TestGenerator\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,36 +93,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,  4 skipped,  </span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Suite">
+                    <div class="method-list-content passed suite-Suite">
                       <span>
-                        <img src="skipped.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.qa.tests.HomePageTest" class="method navigator-link" hash-for-method="homePageValidation">homePageValidation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="skipped.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.qa.tests.TestGeneratorTest" class="method navigator-link" hash-for-method="selectTestGenrator">selectTestGenrator</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="skipped.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.qa.tests.LoginTest" class="method navigator-link" hash-for-method="testValidLogin">testValidLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="skipped.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.qa.tests.LoginTest" class="method navigator-link" hash-for-method="validateLoginPage">validateLoginPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Suite -->
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -133,9 +134,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-skipped">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.qa.tests.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -144,11 +145,6 @@
                   <a name="testValidLogin">
                   </a> <!-- testValidLogin -->
                   <span class="method-name">testValidLogin</span>
-                  <div class="stack-trace">java.lang.Throwable: Method com.qa.tests.LoginTest.testValidLogin() on instance com.qa.tests.LoginTest@63998bf4 depends on not successfully finished methods 
-[com.qa.tests.LoginTest.validateLoginPage() on instance com.qa.tests.LoginTest@63998bf4]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 18 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -156,38 +152,13 @@
                   <a name="validateLoginPage">
                   </a> <!-- validateLoginPage -->
                   <span class="method-name">validateLoginPage</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
-	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
-	at com.qa.base.Base.startSuite(Base.java:26)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-skipped -->
-          <div class="suite-Suite-class-skipped">
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.qa.tests.TestGeneratorTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="selectTestGenrator">
-                  </a> <!-- selectTestGenrator -->
-                  <span class="method-name">selectTestGenrator</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
-	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
-	at com.qa.base.Base.startSuite(Base.java:26)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-skipped -->
-          <div class="suite-Suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.qa.tests.HomePageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -196,28 +167,35 @@
                   <a name="homePageValidation">
                   </a> <!-- homePageValidation -->
                   <span class="method-name">homePageValidation</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.Properties.putAll(java.util.Map)&quot; because &quot;com.qa.utils.PageUtil.prop&quot; is null
-	at com.qa.utils.PageUtil.locatotFind(PageUtil.java:54)
-	at com.qa.base.Base.startSuite(Base.java:26)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-skipped -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.tests.TestGeneratorTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="selectTestGenrator">
+                  </a> <!-- selectTestGenrator -->
+                  <span class="method-name">selectTestGenrator</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\New-automation\ICEDQ-TestGenerator\testng.xml</span>
+            <span class="header-content">D:\Eclipse\ICEDQ\TestGenerator\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.qa.extentreportlistener.ExtentListener&quot;/&gt;
-  &lt;/listeners&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.qa.tests.LoginTest&quot;/&gt;
@@ -266,24 +244,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'selectTestGenrator')
 data.setCell(0, 2, 'com.qa.tests.TestGeneratorTest')
-data.setCell(0, 3, 1);
+data.setCell(0, 3, 101037);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'homePageValidation')
-data.setCell(1, 2, 'com.qa.tests.HomePageTest')
-data.setCell(1, 3, 0);
+data.setCell(1, 1, 'validateLoginPage')
+data.setCell(1, 2, 'com.qa.tests.LoginTest')
+data.setCell(1, 3, 3275);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'validateLoginPage')
+data.setCell(2, 1, 'testValidLogin')
 data.setCell(2, 2, 'com.qa.tests.LoginTest')
-data.setCell(2, 3, 0);
+data.setCell(2, 3, 2778);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testValidLogin')
-data.setCell(3, 2, 'com.qa.tests.LoginTest')
-data.setCell(3, 3, 0);
+data.setCell(3, 1, 'homePageValidation')
+data.setCell(3, 2, 'com.qa.tests.HomePageTest')
+data.setCell(3, 3, 13);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 ms</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -302,7 +280,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.qa.tests.TestGeneratorTest</span>
+              <span class="ignored-class-name">com.qa.tests.HomePageTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">endSuite</span>
                 <br/>
@@ -311,11 +289,11 @@ return data;
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.qa.tests.HomePageTest</span>
+              <span class="ignored-class-name">com.qa.tests.TestGeneratorTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">startSuite</span>
-                <br/>
                 <span class="ignored-method-name">endSuite</span>
+                <br/>
+                <span class="ignored-method-name">startSuite</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -329,14 +307,37 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.qa.tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">startSuite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+              <div class="test-method">
+                <span class="method-name">validateLoginPage</span>
+                <span class="method-start">11580 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testValidLogin</span>
+                <span class="method-start">14880 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.tests.HomePageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">homePageValidation</span>
+                <span class="method-start">17662 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.tests.TestGeneratorTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">selectTestGenrator</span>
+                <span class="method-start">17678 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">endSuite</span>
-                <span class="method-start">346 ms</span>
+                <span class="method-start">119286 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
