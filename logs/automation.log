@@ -3834,3 +3834,50 @@ Session ID: 3e6462285689853b8dc79a31ff2e0c27
 2025-11-19 16:14:47 INFO  TestGeneratorTest:211 - The 'Publish' button is clickable..
 2025-11-19 16:14:59 INFO  TestGeneratorTest:219 - The 'Go To Publish' button is clickable..
 2025-11-19 16:15:00 INFO  TestGeneratorTest:228 - The published rule hyperlink is clickable..
+2025-11-20 12:20:37 INFO  PageUtil:54 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-20 12:20:37 INFO  PageUtil:57 - Loading locator file: Login.properties
+2025-11-20 12:20:37 INFO  PageUtil:63 - Loaded 4 locators from Login.properties
+2025-11-20 12:20:37 INFO  PageUtil:57 - Loading locator file: Template.properties
+2025-11-20 12:20:37 INFO  PageUtil:63 - Loaded 29 locators from Template.properties
+2025-11-20 12:20:37 INFO  PageUtil:69 - Total locators loaded: 32
+2025-11-20 12:20:53 INFO  TestGeneratorTest:36 - Clicked on Test Generator module.
+2025-11-20 12:20:56 INFO  TestGeneratorTest:49 - The 'Checksum' rule wizard is clickable..
+2025-11-20 12:20:58 INFO  TestGeneratorTest:63 - The template search field is clickable..
+2025-11-20 12:20:59 INFO  TestGeneratorTest:74 - The search data entering..
+2025-11-20 12:21:00 INFO  TestGeneratorTest:82 - The existing dynamic checksum tamplate selected..
+2025-11-20 12:21:03 INFO  TestGeneratorTest:91 - The workspace is selected..
+2025-11-20 12:21:05 INFO  TestGeneratorTest:100 - The folder is selected..
+2025-11-20 12:21:05 INFO  TestGeneratorTest:109 - The next button clickable from the 'select container' page..
+2025-11-20 12:21:11 INFO  TestGeneratorTest:118 - The next button clickable from the 'define rule metadata' page..
+2025-11-20 12:21:11 INFO  TestGeneratorTest:126 - The next button clickable from the 'define check metadata' page..
+2025-11-20 12:21:12 INFO  TestGeneratorTest:135 - The next button clickable from the 'configure notification' page..
+2025-11-20 12:21:17 INFO  TestGeneratorTest:143 - The source connection selected..
+2025-11-20 12:21:21 INFO  TestGeneratorTest:151 - The target connection selected..
+2025-11-20 12:21:22 INFO  TestGeneratorTest:159 - The next button clickable from the 'select dataset' page..
+2025-11-20 12:21:29 INFO  TestGeneratorTest:168 - The available table name selected..
+2025-11-20 12:21:29 INFO  TestGeneratorTest:177 - The next button clickable from the 'select table' page.
+2025-11-20 12:21:29 INFO  TestGeneratorTest:186 - The generate button is clickable..
+2025-11-20 12:21:48 INFO  TestGeneratorTest:195 - The 'go to preview' button is clickable..
+2025-11-20 12:21:50 INFO  TestGeneratorTest:203 - The generated entity is clickable..
+2025-11-20 12:21:51 INFO  TestGeneratorTest:211 - The 'Publish' button is clickable..
+2025-11-20 12:21:53 INFO  TestGeneratorTest:219 - The 'Go To Publish' button is clickable..
+2025-11-20 12:21:54 INFO  TestGeneratorTest:228 - The published rule hyperlink is clickable..
+2025-11-21 17:14:53 INFO  PageUtil:54 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-21 17:14:53 INFO  PageUtil:57 - Loading locator file: Login.properties
+2025-11-21 17:14:53 INFO  PageUtil:63 - Loaded 4 locators from Login.properties
+2025-11-21 17:14:53 INFO  PageUtil:57 - Loading locator file: Template.properties
+2025-11-21 17:14:53 INFO  PageUtil:63 - Loaded 40 locators from Template.properties
+2025-11-21 17:14:53 INFO  PageUtil:69 - Total locators loaded: 43
+2025-11-21 17:16:18 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-21 17:17:00 ERROR TestGeneratorTest:55 - Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61334}, goog:processID: 47092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61334/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d058f5ac65a78c06cae4aa0853280117
+2025-11-21 17:17:40 ERROR TestGeneratorTest:66 - The 'Checksum' rule wizard is not clickable..Expected condition failed: waiting for visibility of element located by By.xpath: //h6[text()='Checksum'] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61334}, goog:processID: 47092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61334/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d058f5ac65a78c06cae4aa0853280117

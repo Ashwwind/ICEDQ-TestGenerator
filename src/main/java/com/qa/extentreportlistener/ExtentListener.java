@@ -36,6 +36,7 @@ public class ExtentListener implements ITestListener {
             }
 
             ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);
+            spark.config().setTheme(Theme.DARK);
             spark.config().setDocumentTitle("Automation Test Report");
             spark.config().setReportName("Execution Results");
             spark.config().setTheme(Theme.STANDARD);

@@ -1,5 +1,6 @@
 package com.qa.tests;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.qa.base.Base;
@@ -21,31 +22,43 @@ public class TestGeneratorTest extends Base {
 
 	private static final Logger logger = LogManager.getLogger(TestGeneratorTest.class);
 
+	// Use Data provider
+	@DataProvider(name = "ruleData")
+	public Object[][] ruleDataProvider() {
+		return new Object[][] {
+				{ "checksum", "Compare Record Counts - Dynamic SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL",
+						"public", "staff" },
+				{ "recon", "Compare Record Counts - Dynamic SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL",
+						"public", "staff" },
+				{ "validation", "Compare Record Counts - Dynamic SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL",
+						"public", "staff" },
+				{ "pushdown", "Compare Record Counts - Dynamic SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL",
+						"public", "staff" } };
+	}
+
 	// Creating a checksum rule using default dynamic template
+	@Test(dataProvider = "ruleData")
+	public void createRuleTest(String ruleType, String templateName, String workspaceName, String folderName,
+			String connectionName, String schemaName, String tableName) throws InterruptedException {
 
-	@Test
-	public void selectTestGenrator() throws InterruptedException {
+		TestGeneratorPage page = new TestGeneratorPage(driver);
 
-		TestGeneratorPage testGeneratorPage = new TestGeneratorPage(driver);
+		page.createRule(ruleType, templateName, workspaceName, folderName, connectionName, schemaName, tableName);
+
+		logger.info("Rule created successfully for rule type: " + ruleType);
 
 		// Step1: To Click on the test generator
 		try {
-			testGeneratorPage.clickTestGenerator();
-			// ExtentListener.test.get().pass("Clicked on Test Generator");
-			// ExtentListener.test.get().addScreenCaptureFromBase64String("BASE64");
+			page.clickTestGenerator();
 			logger.info("Clicked on Test Generator module.");
-
 		} catch (Exception e) {
-			// ExtentListener.test.get().fail("Unable to click Test Generator: " +
-			// e.getMessage());
-			// ExtentListener.test.get().addScreenCaptureFromBase64String("BASE64");
-			logger.error("Unable to click Test Generator:" + e.getMessage());
+			logger.error(e.getMessage());
 		}
 
 		// Step2: To click on the 'Checksum' wizard.
 
 		try {
-			testGeneratorPage.clickOnChecksum();
+			page.clickOnChecksum();
 			logger.info("The 'Checksum' rule wizard is clickable..");
 			// ExtentListener.test.get().pass("The 'Checksum' rule wizard is clickable..");
 			// ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
@@ -59,10 +72,8 @@ public class TestGeneratorTest extends Base {
 		// Step3: To click the template search field and enter search data.
 
 		try {
-			testGeneratorPage.clickOnSearchField();
+			page.clickOnSearchField();
 			logger.info("The template search field is clickable..");
-			// ExtentListener.test.get().pass("The template search field is clickable..");
-			// ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
 		} catch (Exception e) {
 			logger.error("The template search field is not clickable.." + e.getMessage());
 			// ExtentListener.test.get().fail("template search field is is not
@@ -70,7 +81,7 @@ public class TestGeneratorTest extends Base {
 			// ExtentListener.test.get().addScreenCaptureFromBase64String("Checksum");
 		}
 		try {
-			testGeneratorPage.enterOnSearchField();
+			page.enterOnSearchField(templateName);
 			logger.info("The search data entering..");
 		} catch (Exception e) {
 			logger.error("Unabe to enter search data.." + e.getMessage());
@@ -78,7 +89,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step4: To click the existing dynamic checksum template.
 		try {
-			testGeneratorPage.selectExistingChecksumTemplate();
+			page.selectExistingChecksumTemplate();
 			logger.info("The existing dynamic checksum tamplate selected..");
 		} catch (Exception e) {
 			logger.error("The existing dynamic checksum tamplate is not selected.." + e.getMessage());
@@ -87,7 +98,7 @@ public class TestGeneratorTest extends Base {
 		// Step5: To select the workspace from the dropdwon.
 
 		try {
-			testGeneratorPage.clickOnWorkspaceField();
+			page.clickOnWorkspaceField(workspaceName);
 			logger.info("The workspace is selected..");
 		} catch (Exception e) {
 			logger.error("The workspace is selected.." + e.getMessage());
@@ -96,7 +107,7 @@ public class TestGeneratorTest extends Base {
 		// Step6: To select the folder from the dropdown.
 
 		try {
-			testGeneratorPage.clickOnFolderField();
+			page.clickOnFolderField(folderName);
 			logger.info("The folder is selected..");
 		} catch (Exception e) {
 			logger.error("The folder is selected.." + e.getMessage());
@@ -105,7 +116,7 @@ public class TestGeneratorTest extends Base {
 		// Step7: To click on the next button of the 'select container' page.
 
 		try {
-			testGeneratorPage.gotoWorkspaceNextbtn();
+			page.gotoWorkspaceNextbtn();
 			logger.info("The next button clickable from the 'select container' page..");
 		} catch (Exception e) {
 			logger.error("The next button not clickable from the 'select container' page.." + e.getMessage());
@@ -114,7 +125,7 @@ public class TestGeneratorTest extends Base {
 		// Step8: To click on the next button of the 'define rule metadata' page.
 
 		try {
-			testGeneratorPage.gotoRuleMetadataNextbtn();
+			page.gotoRuleMetadataNextbtn();
 			logger.info("The next button clickable from the 'define rule metadata' page..");
 		} catch (Exception e) {
 			logger.error("The next button clickable from the 'define rule metadata' page.." + e.getMessage());
@@ -122,7 +133,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step9: To click on the next button of the 'define check metadata' page.
 		try {
-			testGeneratorPage.gotoCheckMetadataNextbtn();
+			page.gotoCheckMetadataNextbtn();
 			logger.info("The next button clickable from the 'define check metadata' page..");
 		} catch (Exception e) {
 			logger.error("The next button clickable from the 'define check metadata' page.." + e.getMessage());
@@ -131,7 +142,7 @@ public class TestGeneratorTest extends Base {
 		// Step10: To click on the next button of the 'configure notification' page.
 
 		try {
-			testGeneratorPage.gotoNotificationNextbtn();
+			page.gotoNotificationNextbtn();
 			logger.info("The next button clickable from the 'configure notification' page..");
 		} catch (Exception e) {
 			logger.error("The next button clickable from the 'configure notification' page.." + e.getMessage());
@@ -139,7 +150,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step11: To Select the source connection.
 		try {
-			testGeneratorPage.selectionSourceDataset();
+			page.selectionSourceDataset(tableName, schemaName);
 			logger.info("The source connection selected..");
 		} catch (Exception e) {
 			logger.error("The source connection not selected.." + e.getMessage());
@@ -147,7 +158,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step11: To Select the target connection.
 		try {
-			testGeneratorPage.selectionTargetDataset();
+			page.selectionTargetDataset(tableName, schemaName);
 			logger.info("The target connection selected..");
 		} catch (Exception e) {
 			logger.error("The target connection not selected.." + e.getMessage());
@@ -155,7 +166,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step12: To click on the next button of the 'select dataset' page.
 		try {
-			testGeneratorPage.gotoDatasetNextbtn();
+			page.gotoDatasetNextbtn();
 			logger.info("The next button clickable from the 'select dataset' page..");
 		} catch (Exception e) {
 			logger.error("The next button not clickable from the 'select dataset' page.." + e.getMessage());
@@ -164,7 +175,7 @@ public class TestGeneratorTest extends Base {
 		// Step13: To select the available table name.
 
 		try {
-			testGeneratorPage.selectionAvailabeTable();
+			page.selectionAvailabeTable(tableName);
 			logger.info("The available table name selected..");
 		} catch (Exception e) {
 			logger.error("The available table name not selected.." + e.getMessage());
@@ -173,7 +184,7 @@ public class TestGeneratorTest extends Base {
 		// Step14: click on the next button of the 'select table' page.
 
 		try {
-			testGeneratorPage.gotoSelettableNextbtn();
+			page.gotoSelettableNextbtn();
 			logger.info("The next button clickable from the 'select table' page.");
 		} catch (Exception e) {
 			logger.error("The next button not clickable from the 'select table' page." + e.getMessage());
@@ -182,7 +193,7 @@ public class TestGeneratorTest extends Base {
 		// Step15: click on the Generate button.
 
 		try {
-			testGeneratorPage.clickOnGenerate();
+			page.clickOnGenerate();
 			logger.info("The generate button is clickable..");
 		} catch (Exception e) {
 			logger.error("The generate button is not clickable.." + e.getMessage());
@@ -191,7 +202,7 @@ public class TestGeneratorTest extends Base {
 		// Step16: click on the Go To Preview button.
 
 		try {
-			testGeneratorPage.clickOnGoToPreview();
+			page.clickOnGoToPreview();
 			logger.info("The 'go to preview' button is clickable..");
 		} catch (Exception e) {
 			logger.error("The 'go to preview' button is not clickable.." + e.getMessage());
@@ -199,7 +210,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step17: Select the generated entity.
 		try {
-			testGeneratorPage.selectGeneratedEntity();
+			page.selectGeneratedEntity();
 			logger.info("The generated entity is clickable..");
 		} catch (Exception e) {
 			logger.error("The generated entity is not clickable.." + e.getMessage());
@@ -207,7 +218,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step18: Click on the 'Publish' button.
 		try {
-			testGeneratorPage.clickOnPublish();
+			page.clickOnPublish();
 			logger.info("The 'Publish' button is clickable..");
 		} catch (Exception e) {
 			logger.error("The 'Publish' button is not clickable.." + e.getMessage());
@@ -215,7 +226,7 @@ public class TestGeneratorTest extends Base {
 
 		// Step19: Click on the 'Go To Publish' button.
 		try {
-			testGeneratorPage.clickOnGoToPublish();
+			page.clickOnGoToPublish();
 			logger.info("The 'Go To Publish' button is clickable..");
 		} catch (Exception e) {
 			logger.error("The 'Go To Publish' button is not clickable.." + e.getMessage());
@@ -224,7 +235,7 @@ public class TestGeneratorTest extends Base {
 		// Step20: Click on the hyperlink text of Publish rule.
 
 		try {
-			testGeneratorPage.clickOnPublishedRule();
+			page.clickOnPublishedRule();
 			logger.info("The published rule hyperlink is clickable..");
 		} catch (Exception e) {
 			logger.error("The published rule hyperlink is not clickable.." + e.getMessage());
