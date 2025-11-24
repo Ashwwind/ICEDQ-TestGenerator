@@ -10,7 +10,7 @@ import com.qa.utils.PageUtil;
 
 public class Base {
 
-	protected static WebDriver driver;
+	public static WebDriver driver;
 	// private static final Logger log = LogManager.getLogger(Base.class);
 
 	@BeforeSuite(alwaysRun = true)

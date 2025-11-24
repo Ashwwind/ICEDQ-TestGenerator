@@ -5,6 +5,8 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.qa.base.Base;
+
 import org.openqa.selenium.*;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -20,7 +22,6 @@ public class ExtentListener implements ITestListener {
 
     private static ExtentReports extent;
     public static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
-    public static WebDriver driver;
     public static String buildId = "BUILD";
 
     // Initialize report
@@ -91,7 +92,7 @@ public class ExtentListener implements ITestListener {
     private static String captureScreenshot(String methodName) {
         try {
             String timestamp = new SimpleDateFormat("HH.mm.ss-MM-dd-yyyy").format(new Date());
-            TakesScreenshot ts = (TakesScreenshot) driver;
+            TakesScreenshot ts = (TakesScreenshot) Base.driver;
 
             String base64 = ts.getScreenshotAs(OutputType.BASE64);
 

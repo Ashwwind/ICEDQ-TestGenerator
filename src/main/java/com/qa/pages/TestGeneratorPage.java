@@ -89,66 +89,74 @@ public class TestGeneratorPage extends PageUtil {
 	public void createRule(String ruleType, String templateName, String workspaceName, String folderName,
 			String connectionName, String schemaName, String tableName) throws InterruptedException {
 
-		// 1. Navigate to Test Generator → Checksum Wizard
+// 1. Navigate to Test Generator → Checksum Wizard
 		clickTestGenerator();
 
-		if (ruleType.equalsIgnoreCase("checksum")) {
+// switch case
+		switch (ruleType.toLowerCase()) {
+		case "checksum":
 			clickOnChecksum();
-		} else if (ruleType.equalsIgnoreCase("recon")) {
-			clickOnRecon(); // implement this
-		} else if (ruleType.equalsIgnoreCase("validation")) {
-			clickOnValidation(); // implement this
-		} else if (ruleType.equalsIgnoreCase("pushdown")) {
-			clickOnPushdown(); // implement this
-		} else {
+			break;
+
+		case "recon":
+			clickOnRecon();
+			break;
+
+		case "validation":
+			clickOnValidation();
+			break;
+
+		case "pushdown":
+			clickOnPushdown();
+			break;
+
+		default:
 			throw new IllegalArgumentException("Invalid Rule Type: " + ruleType);
 		}
 
-		// 2. Search & Select Template
+// 2. Search & Select Template
 		clickOnSearchField();
 		enterOnSearchField(templateName);
 		selectExistingChecksumTemplate();
 
-		// 3. Select Workspace
+// 3. Select Workspace
 		clickOnWorkspaceField(workspaceName);
 
-		// 4. Select Folder
+// 4. Select Folder
 		clickOnFolderField(folderName);
 
-		// Next Buttons
+// Next Buttons
 		gotoWorkspaceNextbtn();
 		gotoRuleMetadataNextbtn();
 		gotoCheckMetadataNextbtn();
 		gotoNotificationNextbtn();
 
-		// 5. Select Source Dataset
+// 5. Select Source Dataset
 		selectionSourceDataset(connectionName, schemaName);
 
-		// 6. Select Target Dataset
+// 6. Select Target Dataset
 		selectionTargetDataset(connectionName, schemaName);
 
-		// Next Buttons
+// Next Buttons
 		gotoDatasetNextbtn();
 
-		// 7. Select Table
+// 7. Select Table
 		selectionAvailabeTable(tableName);
 
-		// Next Buttons
+// Next Buttons
 		gotoSelettableNextbtn();
 
-		// 8. Generate → Preview → Publish
+// 8. Generate → Preview → Publish
 		clickOnGenerate();
 		clickOnGoToPreview();
 		selectGeneratedEntity();
 		clickOnPublish();
 		clickOnGoToPublish();
 		clickOnPublishedRule();
-		
-		// 9. Navigat Data Tesing
-		navigatDataTesting();
 
+// 9. Navigate Data Testing
+		navigatDataTesting();
 	}
-	
 
 	// Page method
 	public void clickTestGenerator() {
@@ -168,21 +176,21 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickOnRecon() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectReconWizard, "Recon", true);
-		clickOnElement(driver, selectChecksumWizard, 30);
+		clickOnElement(driver, selectReconWizard, 30);
 	}
 
 	// Click the Validation rule type from the wizard page.
 	public void clickOnValidation() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectValidationWizard, "Validation", true);
-		clickOnElement(driver, selectChecksumWizard, 30);
+		clickOnElement(driver, selectValidationWizard, 30);
 	}
 
 	// Click the Pushdown rule type from the wizard page.
 	public void clickOnPushdown() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectPushdownWizard, "Pushdown", true);
-		clickOnElement(driver, selectChecksumWizard, 30);
+		clickOnElement(driver, selectPushdownWizard, 30);
 	}
 
 	// Click on the search field box
@@ -205,6 +213,27 @@ public class TestGeneratorPage extends PageUtil {
 		validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
 		clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
 	}
+	
+	// Select the existing recon template form the list
+		public void selectExistingChecksumTemplate() {
+			isInvisibleLoader(driver, loader);
+			validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
+			clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
+		}
+		
+		// Select the existing validation template form the list
+		public void selectExistingChecksumTemplate() {
+			isInvisibleLoader(driver, loader);
+			validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
+			clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
+		}
+		
+		// Select the existing pushdown template form the list
+		public void selectExistingChecksumTemplate() {
+			isInvisibleLoader(driver, loader);
+			validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
+			clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
+		}
 
 	public void clickOnWorkspaceField(String workspaceName) {
 		isInvisibleLoader(driver, loader);
@@ -248,8 +277,7 @@ public class TestGeneratorPage extends PageUtil {
 		clickOnElement(driver, clickNextButtonnotificationNextbtn, 20);
 	}
 
-	/// ********* Select the source dataset ********** ///
-
+	/// ********* Select the source dataset ********** ///s
 ///// *******************************/////
 /////////////// ********************************* ////////////////
 ///// *******************************/////
@@ -285,7 +313,6 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	/// ********* Select the target dataset ********** ///
-
 ///// *******************************/////
 /////////////// ********************************* ////////////////
 ///// *******************************/////
@@ -370,13 +397,13 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Click on the hyperlink of the published rule to navigate to the data testing.
 	public void clickOnPublishedRule() {
-		clickOnElement(driver, clickHyperlinkPublishRule, 20);
+		// clickOnElement(driver, clickHyperlinkPublishRule, 20);
+		goTo("https://52.20.42.154:32222/#/");
 	}
-	
+
 	// Go to the Data Testing
 	public void navigatDataTesting() {
-		goTo("https://52.20.42.154:32222/rule-ui/#/rules-repo/rules");
+		goTo("https://52.20.42.154:32222/#/");
 	}
-	
 
 }

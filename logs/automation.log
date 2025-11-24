@@ -3902,3 +3902,217 @@ Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 14
 Session ID: b21345a6a79474656e2125730cf80080
 2025-11-23 11:23:43 INFO  TestGeneratorTest:76 - The template search field is clickable..
 2025-11-23 11:23:44 INFO  TestGeneratorTest:85 - The search data entering..
+2025-11-24 11:44:37 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 11:44:37 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 11:44:37 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 11:44:37 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 11:44:37 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 11:44:37 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 11:46:08 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-24 11:46:50 ERROR TestGeneratorTest:55 - Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 11:47:31 ERROR TestGeneratorTest:66 - The 'Checksum' rule wizard is not clickable..Expected condition failed: waiting for visibility of element located by By.xpath: //h6[text()='Checksum'] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 11:48:11 ERROR TestGeneratorTest:78 - The template search field is not clickable..Expected condition failed: waiting for visibility of element located by By.xpath: //input[contains(@placeholder,'Search template')] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 11:49:42 ERROR TestGeneratorTest:87 - Unabe to enter search data..Expected condition failed: waiting for visibility of element located by By.xpath: //input[contains(@placeholder,'Search template')] (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 11:50:23 ERROR TestGeneratorTest:95 - The existing dynamic checksum tamplate is not selected..Expected condition failed: waiting for visibility of element located by By.xpath: //td[@class='e-rowcell e-templatecell e-lastrowcell']/span[@class='dib'][contains(., 'Compare Record Counts - Dynamic SQL')] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 11:54:36 ERROR TestGeneratorTest:104 - The workspace is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //input[@class='e-input-filter e-input e-lib e-keyboard'] (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 11:57:27 ERROR TestGeneratorTest:113 - The folder is selected..Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='dropdown__search-group e-input-group']/input[@id='searchFolder'] (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 11:58:27 INFO  TestGeneratorTest:120 - The next button clickable from the 'select container' page..
+2025-11-24 11:59:28 INFO  TestGeneratorTest:129 - The next button clickable from the 'define rule metadata' page..
+2025-11-24 12:00:28 INFO  TestGeneratorTest:137 - The next button clickable from the 'define check metadata' page..
+2025-11-24 12:01:29 INFO  TestGeneratorTest:146 - The next button clickable from the 'configure notification' page..
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //li[text()='Database']
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: (//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[1]
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']
+2025-11-24 12:01:50 ERROR TestGeneratorTest:156 - The source connection not selected..invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3a6ae7d0affdceed969605a5b5449488, findElement {value=//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: (//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection type']//span[@formcontrolname='connectionType'])[2]
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //li[text()='Database']
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: (//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[2]
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']
+2025-11-24 12:01:50 ERROR TestGeneratorTest:164 - The target connection not selected..invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3a6ae7d0affdceed969605a5b5449488, findElement {value=//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //button[@id='datasetNextbtn']
+2025-11-24 12:01:50 INFO  TestGeneratorTest:170 - The next button clickable from the 'select dataset' page..
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //input[@placeholder='Search available table']
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //input[@placeholder='Search available table']
+2025-11-24 12:01:50 ERROR TestGeneratorTest:180 - The available table name not selected..invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3a6ae7d0affdceed969605a5b5449488, findElement {value=//input[@placeholder='Search available table'], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49678}, goog:processID: 308548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49678/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3a6ae7d0affdceed969605a5b5449488
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //div[@id='e-content-element_6']//button[normalize-space()='Next']
+2025-11-24 12:01:50 INFO  TestGeneratorTest:187 - The next button clickable from the 'select table' page.
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //button[@id='reviewNextbtn']
+2025-11-24 12:01:50 INFO  TestGeneratorTest:196 - The generate button is clickable..
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //button[normalize-space()= 'Go To Preview']
+2025-11-24 12:01:50 INFO  TestGeneratorTest:205 - The 'go to preview' button is clickable..
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //tbody[@role='rowgroup']/tr/td/div/input[@type='checkbox']/following-sibling::span[1]
+2025-11-24 12:01:50 INFO  TestGeneratorTest:213 - The generated entity is clickable..
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //button[@title='Publish']
+2025-11-24 12:01:50 INFO  TestGeneratorTest:221 - The 'Publish' button is clickable..
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //*[@id='publishLogMessageSidebar']//button[contains(text(),'Go To Publish')]
+2025-11-24 12:01:50 INFO  TestGeneratorTest:229 - The 'Go To Publish' button is clickable..
+2025-11-24 12:01:50 INFO  PageUtil:118 - Element not visible : By.xpath: //*[@id="publishGrid_content_table"]/tbody/tr[1]/td[1]/a
+2025-11-24 12:01:50 INFO  TestGeneratorTest:238 - The published rule hyperlink is clickable..
+2025-11-24 12:06:37 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 12:06:37 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 12:06:38 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 12:06:38 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 12:06:38 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 12:06:38 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 12:07:53 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-24 12:08:33 ERROR TestGeneratorTest:55 - Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53023}, goog:processID: 305880, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53023/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8dede9d045ca89f47af61f882c33a1a5
+2025-11-24 12:09:11 INFO  TestGeneratorTest:62 - The 'Checksum' rule wizard is clickable..
+2025-11-24 12:09:13 INFO  TestGeneratorTest:76 - The template search field is clickable..
+2025-11-24 12:09:13 INFO  TestGeneratorTest:85 - The search data entering..
+2025-11-24 12:09:14 INFO  TestGeneratorTest:93 - The existing dynamic checksum tamplate selected..
+2025-11-24 12:09:16 INFO  TestGeneratorTest:102 - The workspace is selected..
+2025-11-24 12:09:18 INFO  TestGeneratorTest:111 - The folder is selected..
+2025-11-24 12:09:18 INFO  TestGeneratorTest:120 - The next button clickable from the 'select container' page..
+2025-11-24 12:09:19 INFO  TestGeneratorTest:129 - The next button clickable from the 'define rule metadata' page..
+2025-11-24 12:09:20 INFO  TestGeneratorTest:137 - The next button clickable from the 'define check metadata' page..
+2025-11-24 12:09:21 INFO  TestGeneratorTest:146 - The next button clickable from the 'configure notification' page..
+2025-11-24 12:09:22 ERROR TestGeneratorTest:156 - The source connection not selected..no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[1]"}
+  (Session info: chrome=142.0.7444.176)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8dede9d045ca89f47af61f882c33a1a5, findElement {value=(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Schema']//span[@formcontrolname='schema'])[1], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53023}, goog:processID: 305880, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53023/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8dede9d045ca89f47af61f882c33a1a5
+2025-11-24 12:57:56 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 12:57:56 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 12:57:56 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 12:57:56 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 12:57:56 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 12:57:56 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 13:20:52 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 13:20:52 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 13:20:52 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 13:20:52 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 13:20:53 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 13:20:53 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 13:22:13 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-24 13:22:53 ERROR TestGeneratorTest:55 - Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58297}, goog:processID: 324136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58297/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f0b405f4519e80e01a4f183557f99783
+2025-11-24 13:22:54 INFO  TestGeneratorTest:62 - The 'Checksum' rule wizard is clickable..
+2025-11-24 13:22:55 INFO  TestGeneratorTest:76 - The template search field is clickable..
+2025-11-24 13:22:55 INFO  TestGeneratorTest:85 - The search data entering..
+2025-11-24 13:22:57 INFO  TestGeneratorTest:93 - The existing dynamic checksum tamplate selected..
+2025-11-24 13:22:59 INFO  TestGeneratorTest:102 - The workspace is selected..
+2025-11-24 13:23:01 INFO  TestGeneratorTest:111 - The folder is selected..
+2025-11-24 13:23:01 INFO  TestGeneratorTest:120 - The next button clickable from the 'select container' page..
+2025-11-24 14:23:38 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 14:23:38 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 14:23:38 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 14:23:38 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 14:23:38 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 14:23:38 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 14:25:49 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-24 14:26:40 ERROR TestGeneratorTest:55 - Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62561}, goog:processID: 329376, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62561/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 238f5e477a5400df2609e8d72c946b01
+2025-11-24 14:40:06 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 14:40:06 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 14:40:06 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 14:40:06 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 14:40:06 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 14:40:06 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 14:53:29 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 14:53:29 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 14:53:29 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 14:53:29 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 14:53:29 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 14:53:29 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 14:54:42 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-24 14:55:22 ERROR TestGeneratorTest:55 - Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54354}, goog:processID: 332352, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54354/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 51f9e5c0e05edfd564649230f3dcec51
+2025-11-24 14:55:22 INFO  TestGeneratorTest:62 - The 'Checksum' rule wizard is clickable..
+2025-11-24 14:55:24 INFO  TestGeneratorTest:76 - The template search field is clickable..
+2025-11-24 14:55:25 INFO  TestGeneratorTest:85 - The search data entering..
+2025-11-24 14:55:26 INFO  TestGeneratorTest:93 - The existing dynamic checksum tamplate selected..
+2025-11-24 19:04:42 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 19:04:42 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 19:04:42 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 19:04:42 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 19:04:42 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 19:04:42 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 19:06:04 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-24 19:09:06 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 19:09:06 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 19:09:06 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 19:09:06 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 19:09:06 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 19:09:06 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 19:10:19 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-24 19:16:40 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-24 19:16:40 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-24 19:16:40 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-24 19:16:40 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-24 19:16:40 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-24 19:16:40 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-24 19:17:51 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
