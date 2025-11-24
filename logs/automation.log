@@ -3881,3 +3881,24 @@ System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.v
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61334}, goog:processID: 47092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61334/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: d058f5ac65a78c06cae4aa0853280117
+2025-11-23 11:19:44 INFO  PageUtil:54 - Loading locator files from directory: E:\New-automation\ICEDQ-TestGenerator/src/main/resources/locator/
+2025-11-23 11:19:44 INFO  PageUtil:57 - Loading locator file: Login.properties
+2025-11-23 11:19:44 INFO  PageUtil:63 - Loaded 4 locators from Login.properties
+2025-11-23 11:19:44 INFO  PageUtil:57 - Loading locator file: Template.properties
+2025-11-23 11:19:44 INFO  PageUtil:63 - Loaded 43 locators from Template.properties
+2025-11-23 11:19:44 INFO  PageUtil:69 - Total locators loaded: 46
+2025-11-23 11:21:45 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-23 11:22:27 ERROR TestGeneratorTest:55 - Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50438}, goog:processID: 18736, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50438/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b21345a6a79474656e2125730cf80080
+2025-11-23 11:23:07 ERROR TestGeneratorTest:66 - The 'Checksum' rule wizard is not clickable..Expected condition failed: waiting for visibility of element located by By.xpath: //h6[text()='Checksum'] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Ashwin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50438}, goog:processID: 18736, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50438/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b21345a6a79474656e2125730cf80080
+2025-11-23 11:23:43 INFO  TestGeneratorTest:76 - The template search field is clickable..
+2025-11-23 11:23:44 INFO  TestGeneratorTest:85 - The search data entering..

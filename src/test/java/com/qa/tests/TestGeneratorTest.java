@@ -240,6 +240,11 @@ public class TestGeneratorTest extends Base {
 		} catch (Exception e) {
 			logger.error("The published rule hyperlink is not clickable.." + e.getMessage());
 		}
+		
+		// Step21: Navigate Data Testing
+		
+		page.navigatDataTesting();
+		
 	}
 
 }

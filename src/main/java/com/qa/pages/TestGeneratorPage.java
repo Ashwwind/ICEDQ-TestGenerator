@@ -106,11 +106,11 @@ public class TestGeneratorPage extends PageUtil {
 
 		// 2. Search & Select Template
 		clickOnSearchField();
-		enterOnSearchField(templateName); // UPDATED WITH PARAMETER
+		enterOnSearchField(templateName);
 		selectExistingChecksumTemplate();
 
 		// 3. Select Workspace
-		clickOnWorkspaceField(workspaceName); // UPDATED WITH PARAMETER
+		clickOnWorkspaceField(workspaceName);
 
 		// 4. Select Folder
 		clickOnFolderField(folderName);
@@ -122,10 +122,10 @@ public class TestGeneratorPage extends PageUtil {
 		gotoNotificationNextbtn();
 
 		// 5. Select Source Dataset
-		selectionSourceDataset(connectionName, "public");
+		selectionSourceDataset(connectionName, schemaName);
 
 		// 6. Select Target Dataset
-		selectionTargetDataset(connectionName, "public");
+		selectionTargetDataset(connectionName, schemaName);
 
 		// Next Buttons
 		gotoDatasetNextbtn();
@@ -143,8 +143,12 @@ public class TestGeneratorPage extends PageUtil {
 		clickOnPublish();
 		clickOnGoToPublish();
 		clickOnPublishedRule();
+		
+		// 9. Navigat Data Tesing
+		navigatDataTesting();
 
 	}
+	
 
 	// Page method
 	public void clickTestGenerator() {
@@ -266,14 +270,13 @@ public class TestGeneratorPage extends PageUtil {
 		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
 
 		// Scroll & click schema dropdown
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-//				driver.findElement(sourceSchemaDropdown));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(clickSourceSchemaDropdown));
 
 		clickOnElement(driver, clickSourceSchemaDropdown, 20);
 
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-//				driver.findElement(By.xpath(
-//						"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']")));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(clickSourceSchemaDropdown));
 
 		// Enter schema name
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
@@ -302,15 +305,14 @@ public class TestGeneratorPage extends PageUtil {
 		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
 
 		// Scroll & click schema dropdown
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-//				driver.findElement(targetSchemaDropdown));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(clickTargetSchemaDropdown));
 
 		clickOnElement(driver, clickTargetSchemaDropdown, 20);
 
 		// Enter schema name
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-//				driver.findElement(By.xpath(
-//						"//ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']")));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(clickTargetSchemaDropdown));
 
 		// Entering the schema name.
 		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
@@ -370,4 +372,11 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickOnPublishedRule() {
 		clickOnElement(driver, clickHyperlinkPublishRule, 20);
 	}
+	
+	// Go to the Data Testing
+	public void navigatDataTesting() {
+		goTo("https://52.20.42.154:32222/rule-ui/#/rules-repo/rules");
+	}
+	
+
 }
