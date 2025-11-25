@@ -217,5 +217,11 @@ public class PageUtil extends Base {
 	public void refresh() {
 		driver.navigate().refresh();
 	}
+	
+	// Read the Import File
+	public String getImportFilePath(String fileName) {
+	    return System.getProperty("user.dir") + "/ImportFiles/Database" + fileName;
+	}
+
 
 }

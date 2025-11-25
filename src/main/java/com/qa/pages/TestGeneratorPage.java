@@ -135,7 +135,13 @@ public class TestGeneratorPage extends PageUtil {
 		selectionSourceDataset(connectionName, schemaName);
 
 // 6. Select Target Dataset
-		selectionTargetDataset(connectionName, schemaName);
+		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
+
+			selectionTargetDataset(connectionName, schemaName);
+
+		} else {
+			System.out.println("Skipping Target Dataset for rule type: " + ruleType);
+		}
 
 // Next Buttons
 		gotoDatasetNextbtn();
@@ -213,27 +219,6 @@ public class TestGeneratorPage extends PageUtil {
 		validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
 		clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
 	}
-	
-	// Select the existing recon template form the list
-		public void selectExistingChecksumTemplate() {
-			isInvisibleLoader(driver, loader);
-			validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
-			clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
-		}
-		
-		// Select the existing validation template form the list
-		public void selectExistingChecksumTemplate() {
-			isInvisibleLoader(driver, loader);
-			validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
-			clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
-		}
-		
-		// Select the existing pushdown template form the list
-		public void selectExistingChecksumTemplate() {
-			isInvisibleLoader(driver, loader);
-			validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
-			clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
-		}
 
 	public void clickOnWorkspaceField(String workspaceName) {
 		isInvisibleLoader(driver, loader);
@@ -392,7 +377,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Click on the 'Go To Publish' button.
 	public void clickOnGoToPublish() {
-		clickOnElement(driver, clickGoToPublishButton, 30);
+		clickOnElement(driver, clickGoToPublishButton, 50);
 	}
 
 	// Click on the hyperlink of the published rule to navigate to the data testing.

@@ -4116,3 +4116,37 @@ Session ID: 51f9e5c0e05edfd564649230f3dcec51
 2025-11-24 19:16:40 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
 2025-11-24 19:16:40 INFO  PageUtil:67 - Total locators loaded: 46
 2025-11-24 19:17:51 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-25 10:38:40 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-25 10:38:40 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-25 10:38:40 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-25 10:38:40 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-25 10:38:40 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-25 10:38:40 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-25 10:52:05 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-25 10:52:05 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-25 10:52:05 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-25 10:52:05 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-25 10:52:05 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-25 10:52:05 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-25 10:54:19 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-25 10:58:45 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: recon
+2025-11-25 11:57:13 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-25 11:57:13 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-25 11:57:13 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-25 11:57:13 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-25 11:57:13 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-25 11:57:13 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-25 11:58:28 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: checksum
+2025-11-25 11:59:54 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: recon
+2025-11-25 12:00:47 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: validation
+2025-11-25 12:01:36 INFO  TestGeneratorTest:48 - Rule created successfully for rule type: pushdown
+2025-11-25 16:25:02 INFO  PageUtil:52 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-11-25 16:25:02 INFO  PageUtil:55 - Loading locator file: Login.properties
+2025-11-25 16:25:02 INFO  PageUtil:61 - Loaded 4 locators from Login.properties
+2025-11-25 16:25:02 INFO  PageUtil:55 - Loading locator file: Template.properties
+2025-11-25 16:25:02 INFO  PageUtil:61 - Loaded 43 locators from Template.properties
+2025-11-25 16:25:02 INFO  PageUtil:67 - Total locators loaded: 46
+2025-11-25 16:26:17 INFO  TestGeneratorTest:40 - Rule created successfully for rule type: checksum
+2025-11-25 16:27:41 INFO  TestGeneratorTest:40 - Rule created successfully for rule type: recon
+2025-11-25 16:28:39 INFO  TestGeneratorTest:40 - Rule created successfully for rule type: validation
+2025-11-25 16:29:28 INFO  TestGeneratorTest:40 - Rule created successfully for rule type: pushdown

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.qa.tests.TestGeneratorTest">
+      <class name="com.qa.tests.HomePageTest">
         <methods>
-          <include name="createRuleTest" invocation-numbers="1 2 3"/>
           <include name="endSuite"/>
           <include name="startSuite"/>
+          <include name="homePageValidation"/>
         </methods>
-      </class> <!-- com.qa.tests.TestGeneratorTest -->
+      </class> <!-- com.qa.tests.HomePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

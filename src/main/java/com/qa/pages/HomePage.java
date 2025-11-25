@@ -1,9 +1,21 @@
 package com.qa.pages;
 
-import org.openqa.selenium.WebDriver;
-import com.qa.base.Base;
+import java.time.Duration;
 
-public class HomePage extends Base {
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import com.aventstack.extentreports.Status;
+import com.qa.base.Base;
+import com.qa.extentreportlistener.ExtentListener;
+import com.qa.utils.PageUtil;
+
+public class HomePage extends PageUtil {
 
 	WebDriver driver;
 
@@ -15,67 +27,144 @@ public class HomePage extends Base {
 
 		try {
 
-//			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-//			// validate the Url and Title
-//			String currentUrl = driver.getCurrentUrl();
-			// Assert.assertTrue(currentUrl.contains("https://192.168.100.102:32222/#/"),
-			// "Dashboard URL validation failed. Current URL: " + currentUrl);
-//			System.out.println("The home page Url is matched... ");
+			// ============================
+			// URL VALIDATION
+			// ============================
+			String actualUrl = null;
+			String expectedUrl = "https://192.168.100.102:32222/#/";
 
-//			String title = driver.getTitle();
-//			Assert.assertTrue(title.contains("NextgenAdministration"),
-//					"Dashboard title validation failed. Title: " + title);
+			try {
+				actualUrl = driver.getCurrentUrl();
+				Assert.assertTrue(actualUrl.contains(expectedUrl));
 
-//			// validate application logo
-//			//WebElement logo = driver.findElement(By.xpath("//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"));
-//			//Assert.assertTrue(logo.isDisplayed(), "Application logo not displayed!");
-//
-//			// validate welcome message
-//			//WebElement welcomeMessage = driver.findElement(By.xpath("//*[contains(text(),'Hi')]"));
-//			//Assert.assertTrue(welcomeMessage.isDisplayed(), "Welcome message not displayed");
-//
-//			// validate profile icon
-//			WebElement profileIcon = driver.findElement(By.xpath("//button[@aria-label ='ad']"));
-//			Assert.assertTrue(profileIcon.isDisplayed(), "Profile icon not visible!");
-//
-//			///Validate HomePage icons
-//			String[] expectedModules = { "Data Testing", "BI Report Testing", "Test Generator", "Dashboard",
-//					"Connectors", "Scheduler", "Administration" };
-//
-//			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//
-//			for (String module : expectedModules) {
-//				try {
-//					// Wait until the element containing the module text is visible
-//					WebElement moduleElement = wait.until(ExpectedConditions
-//							.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'" + module + "')]")));
-//					Assert.assertTrue(moduleElement.isDisplayed(), module + " not displayed");
-//					System.out.println(module + " is displayed successfully.");
-//
-//				} catch (TimeoutException e) {
-//					System.out.println(module + " is not displayed." + e.getMessage());
-//				}
-//			}
+				ExtentListener.test.get().log(Status.PASS, "The actual URL: " + actualUrl);
+			} catch (Exception e) {
+				ExtentListener.test.get().log(Status.FAIL,
+						"The actual URL: " + actualUrl + " | The expected URL: " + expectedUrl);
+			}
 
-//			// Validate the hyperlink icons
-//			String[] expectedHyperlinkIcon = { "About", "Helpdesk", "Documentation" };
-//
-//			for (String icon : expectedHyperlinkIcon) {
-//				try {
-//					WebElement hyperlinkIcon = (WebElement) wait.until(ExpectedConditions
-//							.visibilityOfAllElementsLocatedBy(By.xpath("//a[@title='" + expectedHyperlinkIcon + "']")));
-//					Assert.assertTrue(hyperlinkIcon.isDisplayed(), icon + " link is not displayed");
-//					System.out.println(title + " link is displayed successfully.");
-//				} catch (Exception e) {
-//					System.out.println("link not found or not visible within timeout" + e.getMessage());
-//				}
-//
-//			}
+			// ============================
+			// TITLE VALIDATION
+			// ============================
+			String actualTitle = null;
+			String expectedTitle = "NextgenAdministration";
 
-			System.out.println("Dashboard validation successful.");
+			try {
+				actualTitle = driver.getTitle();
+				Assert.assertTrue(actualTitle.contains(expectedTitle));
+
+				ExtentListener.test.get().log(Status.PASS, "The actual title: " + actualTitle);
+			} catch (Exception e) {
+				ExtentListener.test.get().log(Status.FAIL,
+						"The actual title: " + actualTitle + " | The expected title: " + expectedTitle);
+			}
+
+			// ============================
+			// LOGO VALIDATION
+			// ============================
+			WebElement logo = null;
+			String expectedLogo = "Application logo should be visible";
+
+			try {
+				logo = driver.findElement(By.xpath("//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"));
+				Assert.assertTrue(logo.isDisplayed());
+
+				ExtentListener.test.get().log(Status.PASS, "Logo is displayed");
+			} catch (Exception e) {
+				ExtentListener.test.get().log(Status.FAIL, "Logo NOT displayed | Expected: " + expectedLogo);
+			}
+
+			// ============================
+			// WELCOME MESSAGE
+			// ============================
+			WebElement welcomeMessage = null;
+			String expectedWelcome = "Welcome message should be visible";
+
+			try {
+				welcomeMessage = driver.findElement(By.xpath("//*[contains(text(),'Hi')]"));
+				Assert.assertTrue(welcomeMessage.isDisplayed());
+
+				ExtentListener.test.get().log(Status.PASS, "Welcome message is displayed");
+			} catch (Exception e) {
+				ExtentListener.test.get().log(Status.FAIL,
+						"Welcome message NOT displayed | Expected: " + expectedWelcome);
+			}
+
+			// ============================
+			// PROFILE ICON
+			// ============================
+			WebElement profileIcon = null;
+			String expectedProfile = "Profile icon should be visible";
+
+			try {
+				profileIcon = driver.findElement(By.xpath("//button[@aria-label ='ad']"));
+				Assert.assertTrue(profileIcon.isDisplayed());
+
+				ExtentListener.test.get().log(Status.PASS, "Profile icon is displayed");
+			} catch (Exception e) {
+				ExtentListener.test.get().log(Status.FAIL, "Profile icon NOT displayed | Expected: " + expectedProfile);
+			}
+
+			// ============================
+			// MODULES VALIDATION
+			// ============================
+			String[] expectedModules = { "Data Testing", "BI Report Testing", "Test Generator", "Dashboard",
+					"Connectors", "Scheduler", "Administration" };
+
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+			for (String module : expectedModules) {
+
+				String actualModule = null;
+				String expectedModule = module;
+
+				try {
+					WebElement moduleElement = wait.until(ExpectedConditions
+							.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'" + module + "')]")));
+
+					actualModule = moduleElement.getText();
+
+					Assert.assertTrue(moduleElement.isDisplayed());
+
+					ExtentListener.test.get().log(Status.PASS, "Module displayed: " + actualModule);
+				} catch (Exception e) {
+					ExtentListener.test.get().log(Status.FAIL,
+							"Module NOT displayed. Actual: " + actualModule + " | Expected: " + expectedModule);
+				}
+			}
+
+			// ============================
+			// HYPERLINK ICONS
+			// ============================
+			String[] expectedHyperlinkIcon = { "About", "Helpdesk", "Documentation" };
+
+			for (String icon : expectedHyperlinkIcon) {
+
+				String actualIcon = null;
+				String expectedIcon = icon;
+
+				try {
+
+					WebElement hyperlink = wait.until(
+							ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='" + icon + "']")));
+
+					actualIcon = hyperlink.getAttribute("title");
+
+					Assert.assertTrue(hyperlink.isDisplayed());
+
+					ExtentListener.test.get().log(Status.PASS, "Hyperlink displayed: " + actualIcon);
+
+				} catch (Exception e) {
+					ExtentListener.test.get().log(Status.FAIL,
+							"Hyperlink NOT displayed. Actual: " + actualIcon + " | Expected: " + expectedIcon);
+				}
+			}
+
 		} catch (Exception e) {
-			System.out.println("error occurs while validateDashboardPage " + e.getMessage());
+			ExtentListener.test.get().log(Status.FAIL,
+					"Unexpected error during dashboard validation: " + e.getMessage());
 		}
+
 	}
 
 }
