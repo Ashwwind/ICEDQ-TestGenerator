@@ -35,7 +35,7 @@ public class LoginPage extends PageUtil {
 	}
 
 	public void clickLogin() {
-		PageUtil.clickOnElement(driver, loginButton, 10);
+		PageUtil.clickOnElement(driver, loginButton, "SingIn button",10);
 	}
 
 	public void login(String username, String password) {

@@ -1,9 +1,16 @@
 package com.qa.pages;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import com.aventstack.extentreports.Status;
+import com.qa.extentreportlistener.ExtentListener;
 import com.qa.utils.PageUtil;
 
 public class TestGeneratorPage extends PageUtil {
@@ -86,10 +93,10 @@ public class TestGeneratorPage extends PageUtil {
 		this.driver = driver;
 	}
 
-	public void createRule(String ruleType, String templateName, String workspaceName, String folderName,
+	public void createRuleUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName, String folderName,
 			String connectionName, String schemaName, String tableName) throws InterruptedException {
 
-// 1. Navigate to Test Generator → Checksum Wizard
+// 1. Navigate to Test Generator → Wizard
 		clickTestGenerator();
 
 // switch case
@@ -168,67 +175,116 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickTestGenerator() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, testGeneratorModue, "Test Generator", true);
-		clickOnElement(driver, testGeneratorModue, 30);
+		clickOnElement(driver, testGeneratorModue, "Test Generator", 30);
 	}
 
 	// Click the Checksum rule type from the wizard page.
 	public void clickOnChecksum() {
+
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectChecksumWizard, "Checksum", true);
-		clickOnElement(driver, selectChecksumWizard, 30);
+		clickOnElement(driver, selectChecksumWizard, "Checksum wizard", 50);
+
+//		// validate URl
+//		String expectedUrl = "https://qa.onprem.icedq.com/rulegen-ui/#/wizard/checksum";
+//		String actualUrl = driver.getCurrentUrl();
+//
+//		if (actualUrl.equals(expectedUrl)) {
+//			ExtentListener.test.get().log(Status.PASS, "URL matched: " + actualUrl);
+//		} else {
+//			ExtentListener.test.get().log(Status.FAIL, "URL mismatch. Actual: " + actualUrl);
+//		}
+//
+//		// Validate page title
+//
+//		WebElement title = driver.findElement(By.xpath("/html/body/app-root/div[2]/div/app-rule/div[2]/span[normalize-space(text())='Checksum Rule Wizard']"));
+//
+//		if (title.isDisplayed()) {
+//			ExtentListener.test.get().log(Status.PASS, "Page title displayed: " + title.getText());
+//		} else {
+//			ExtentListener.test.get().log(Status.FAIL, "Page title not displayed");
+//		}
+//
+//		// Validate search field
+//		WebElement searchInput = driver.findElement(By.xpath("//input[contains(@placeholder,'Search template')]"));
+//
+//		if (searchInput.isDisplayed()) {
+//			ExtentListener.test.get().log(Status.PASS, "Search field is displayed.");
+//		} else {
+//			ExtentListener.test.get().log(Status.FAIL, "Search field not visible.");
+//		}
+//
+//		// Validate table columns
+//		List<String> expectedHeaders = Arrays.asList("Name", "Description", "Type", "Last Updated");
+//
+//		List<WebElement> headers = driver.findElements(By.xpath("//table//th"));
+//
+//		for (int i = 0; i < expectedHeaders.size(); i++) {
+//			if (headers.get(i).getText().equals(expectedHeaders.get(i))) {
+//				ExtentListener.test.get().log(Status.PASS, "Header matched: " + headers.get(i).getText());
+//			} else {
+//				ExtentListener.test.get().log(Status.FAIL, "Header mismatch!");
+//			}
+//		}
 	}
 
 	// Click the Recon rule type from the wizard page.
 	public void clickOnRecon() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectReconWizard, "Recon", true);
-		clickOnElement(driver, selectReconWizard, 30);
+		clickOnElement(driver, selectReconWizard, "Recon wizard", 50);
+
 	}
 
 	// Click the Validation rule type from the wizard page.
 	public void clickOnValidation() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectValidationWizard, "Validation", true);
-		clickOnElement(driver, selectValidationWizard, 30);
+		clickOnElement(driver, selectValidationWizard, "Validation wizard", 50);
+
 	}
 
 	// Click the Pushdown rule type from the wizard page.
 	public void clickOnPushdown() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectPushdownWizard, "Pushdown", true);
-		clickOnElement(driver, selectPushdownWizard, 30);
+		clickOnElement(driver, selectPushdownWizard, "Pushdown wizard", 50);
+
 	}
 
 	// Click on the search field box
 	public void clickOnSearchField() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, clickSearchTemplateField, "Search template", true);
-		clickOnElement(driver, clickSearchTemplateField, 30);
+		clickOnElement(driver, clickSearchTemplateField, "Search template", 30);
 	}
 
 	// Enter the data on the search field
 	public void enterOnSearchField(String templateName) {
 		sendkeysToElement(driver, enterTemplateName, "Search template", templateName);
 		validateElementIsVisible(driver, clickSearchButtonIcon, "Search button icon on search template ", true);
-		clickOnElement(driver, clickSearchButtonIcon, 30);
+		clickOnElement(driver, clickSearchButtonIcon, "Search button icon", 30);
 	}
 
 	// Select the existing checksum template form the list
 	public void selectExistingChecksumTemplate() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectExistingDynamicChecksumTemplate, "The searched template", true);
-		clickOnElement(driver, selectExistingDynamicChecksumTemplate, 30);
+		clickOnElement(driver, selectExistingDynamicChecksumTemplate, "Searched item from the list", 30);
 	}
 
 	public void clickOnWorkspaceField(String workspaceName) {
 		isInvisibleLoader(driver, loader);
 		// Wait for workspace field to be visible and clickable
-		clickOnElement(driver, clickOnWorkspaceDropdown, 30);
+		clickOnElement(driver, clickOnWorkspaceDropdown, "Select workspace dropdown", 30);
+		ExtentListener.test.get().info("Workspace dropdown opened");
 		// Click workspace dropdown
-		clickOnElement(driver, selectSearchWorkspace, 30);
+		clickOnElement(driver, selectSearchWorkspace, "Searched workspace", 30);
+
 		// Click workspace dropdown // Click workspace dropdown
 		sendkeysToElement(driver, selectSearchWorkspace, "Select workspace field", workspaceName + Keys.ENTER);
 		isInvisibleLoader(driver, loader);
+		ExtentListener.test.get().pass("Workspace name selected");
 		System.out.println("Workspace '" + workspaceName + "' is selected successfully.");
 	}
 
@@ -236,33 +292,35 @@ public class TestGeneratorPage extends PageUtil {
 
 	public void clickOnFolderField(String folderName) {
 		isInvisibleLoader(driver, loader);
-		clickOnElement(driver, clickOnFolderDropdown, 30);
+		clickOnElement(driver, clickOnFolderDropdown, "Folder dropdown", 30);
+		ExtentListener.test.get().info("Workspace dropdown opened");
 		sendkeysToElement(driver, searchFolderName, "searching folder name.", folderName);
-		clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), 30);
+		clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), "Search folder", 30);
 		isInvisibleLoader(driver, loader);
-		clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), 10);
-		clickOnElement(driver, By.xpath("//span[@class='e-icons e-check']//parent::button"), 10);
+		clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), "Search button icon", 10);
+		clickOnElement(driver, By.xpath("//span[@class='e-icons e-check']//parent::button"), "Seached folder name", 10);
+		ExtentListener.test.get().pass("Folder name selected");
 
 		System.out.println("Folder '" + folderName + "' selected.");
 	}
 
 	public void gotoWorkspaceNextbtn() {
-		clickOnElement(driver, clickNextButtonWorkspaceNextbtn, 20);
+		clickOnElement(driver, clickNextButtonWorkspaceNextbtn, "next button of 'Select Container' page", 20);
 	}
 
 	public void gotoRuleMetadataNextbtn() {
-		clickOnElement(driver, clickNextButtonmetadataNextbtn, 20);
+		clickOnElement(driver, clickNextButtonmetadataNextbtn, "next button of 'Define Rule Metadata' page", 20);
 	}
 
 	public void gotoCheckMetadataNextbtn() {
-		clickOnElement(driver, clickNextButtoncheckNextbtn, 20);
+		clickOnElement(driver, clickNextButtoncheckNextbtn, "next button of 'Define Check Metadata' page", 20);
 	}
 
 	public void gotoNotificationNextbtn() {
-		clickOnElement(driver, clickNextButtonnotificationNextbtn, 20);
+		clickOnElement(driver, clickNextButtonnotificationNextbtn, "next button of 'Configure Notifications' page", 20);
 	}
 
-	/// ********* Select the source dataset ********** ///s
+	/// ********* Select the source dataset ********** ///
 ///// *******************************/////
 /////////////// ********************************* ////////////////
 ///// *******************************/////
@@ -270,13 +328,13 @@ public class TestGeneratorPage extends PageUtil {
 		// JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		// Click on the source connection type.
-		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, 10);
+		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type", 10);
 
 		// Select "Database"
-		clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
+		clickOnElement(driver, By.xpath("//li[text()='Database']"), "source database connection", 20);
 
 		// Click Source Connection
-		clickOnElement(driver, clickSourcedatasetConnectionDropdown, 20);
+		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown", 20);
 
 		// Enter connection name
 		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
@@ -286,7 +344,7 @@ public class TestGeneratorPage extends PageUtil {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				driver.findElement(clickSourceSchemaDropdown));
 
-		clickOnElement(driver, clickSourceSchemaDropdown, 20);
+		clickOnElement(driver, clickSourceSchemaDropdown, "choose schema dropdown", 20);
 
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				driver.findElement(clickSourceSchemaDropdown));
@@ -304,13 +362,13 @@ public class TestGeneratorPage extends PageUtil {
 	public void selectionTargetDataset(String connectionName, String schemaName) throws InterruptedException {
 
 		/// Click on the target connection type.
-		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, 10);
+		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type", 10);
 
 		// Select the target connection type as database.
-		clickOnElement(driver, By.xpath("//li[text()='Database']"), 20);
+		clickOnElement(driver, By.xpath("//li[text()='Database']"), "target database connection", 20);
 
 		// Click the target connection.
-		clickOnElement(driver, clickTargetdatasetConnectionDropdown, 20);
+		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown", 20);
 
 		// Entering the target connection name
 		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
@@ -320,7 +378,7 @@ public class TestGeneratorPage extends PageUtil {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				driver.findElement(clickTargetSchemaDropdown));
 
-		clickOnElement(driver, clickTargetSchemaDropdown, 20);
+		clickOnElement(driver, clickTargetSchemaDropdown, "choose schema dropdown", 20);
 
 		// Enter schema name
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
@@ -334,50 +392,50 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Click on the next button of 'select dataset' page.
 	public void gotoDatasetNextbtn() {
-		clickOnElement(driver, clickNextButtondatasetNextbtn, 20);
+		clickOnElement(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page", 20);
 	}
 
 	/// ********* Select the Available Table ********** ///.
 
 	public void selectionAvailabeTable(String tableName) {
 		// Click on the available table search field
-		clickOnElement(driver, clickAvailableTable, 20);
+		clickOnElement(driver, clickAvailableTable, "search available table", 20);
 		// Entering the available table name
 		sendkeysToElement(driver, clickAvailableTable, "staff table name", tableName);
 		// Select the table checkbox from the list.
-		clickOnElement(driver, selectAvailableTable, 20);
+		clickOnElement(driver, selectAvailableTable, "seach button icon", 20);
 		// Click on the 'Move to' button
-		clickOnElement(driver, clickMoveToButton, 20);
+		clickOnElement(driver, clickMoveToButton, "Move to button", 20);
 	}
 
 	// Click on the next button of 'select table' page.
 	public void gotoSelettableNextbtn() {
-		clickOnElement(driver, clickNextButtonSelettableNextbtn, 20);
+		clickOnElement(driver, clickNextButtonSelettableNextbtn, "next button of 'Select Teables' page", 20);
 	}
 
 	// Click on the 'Generate' button.
 	public void clickOnGenerate() {
-		clickOnElement(driver, clickGenerateButton, 20);
+		clickOnElement(driver, clickGenerateButton, "generate button", 20);
 	}
 
 	// Click on the 'Go To Preview' button.
 	public void clickOnGoToPreview() {
-		clickOnElement(driver, clickGoToPreviewButton, 20);
+		clickOnElement(driver, clickGoToPreviewButton, "go to preview button", 20);
 	}
 
 	// Select the generated entity from the 'Preview' page.
 	public void selectGeneratedEntity() {
-		clickOnElement(driver, selectEntity, 20);
+		clickOnElement(driver, selectEntity, "check for selection", 20);
 	}
 
 	// Click on the 'Publish' button.
 	public void clickOnPublish() {
-		clickOnElement(driver, clikPublishButton, 10);
+		clickOnElement(driver, clikPublishButton, "publish button", 10);
 	}
 
 	// Click on the 'Go To Publish' button.
 	public void clickOnGoToPublish() {
-		clickOnElement(driver, clickGoToPublishButton, 50);
+		clickOnElement(driver, clickGoToPublishButton, "go to publish button", 50);
 	}
 
 	// Click on the hyperlink of the published rule to navigate to the data testing.

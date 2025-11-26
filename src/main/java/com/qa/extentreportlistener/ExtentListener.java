@@ -131,8 +131,12 @@ public class ExtentListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        startTest(result.getMethod().getMethodName());
+        // If no test already created (manually), create with method name
+        if (test.get() == null) {
+            startTest(result.getMethod().getMethodName());
+        }
     }
+
 
     @Override
     public void onTestSuccess(ITestResult result) {

@@ -107,18 +107,18 @@ public class PageUtil extends Base {
 		}
 	}
 
-	public static void clickOnElement(WebDriver driver, By by, int timeout) {
+	public static void clickOnElement(WebDriver driver, By by, String label, int timeout) {
 		try {
 
 			boolean state = isDisplayed(driver, by, timeout);
 			if (state) {
 				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
-				ExtentListener.test.get().log(Status.INFO, "Element is clickable ");
+				ExtentListener.test.get().log(Status.INFO, "Clicking on " + label);
 			} else {
 				log.info("Element not visible : " + by);
 			}
 		} catch (Exception e) {
-			ExtentListener.test.get().log(Status.INFO, "Element is not clickable " + by);
+			ExtentListener.test.get().log(Status.INFO, "Element is not clickable " + label);
 		}
 	}
 
@@ -145,7 +145,7 @@ public class PageUtil extends Base {
 
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
-		clickOnElement(driver, locator, 10);
+		clickOnElement(driver, locator,"", 10);
 		ExtentListener.test.get().log(Status.INFO, "Entering value on " + label + " input : " + input);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
 		ExtentListener.test.get().log(Status.PASS, "Entered value on " + label + " input : " + input);
@@ -153,7 +153,7 @@ public class PageUtil extends Base {
 
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
-		clickOnElement(driver, locator, 10);
+		clickOnElement(driver, locator, "", 10);
 		ExtentListener.test.get().log(Status.INFO, "Clicking enter on " + label);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
 		ExtentListener.test.get().log(Status.INFO, "Clicked enter on " + label);
