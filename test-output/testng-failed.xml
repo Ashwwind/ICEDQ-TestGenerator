@@ -10,6 +10,13 @@
           <include name="homePageValidation"/>
         </methods>
       </class> <!-- com.qa.tests.HomePageTest -->
+      <class name="com.qa.tests.TestGeneratorTest">
+        <methods>
+          <include name="endSuite"/>
+          <include name="startSuite"/>
+          <include name="createRuleTest1" invocation-numbers="2 3"/>
+        </methods>
+      </class> <!-- com.qa.tests.TestGeneratorTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

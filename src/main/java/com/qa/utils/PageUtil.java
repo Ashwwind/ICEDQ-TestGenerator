@@ -3,6 +3,9 @@ package com.qa.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.Properties;
@@ -15,6 +18,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -218,10 +222,40 @@ public class PageUtil extends Base {
 		driver.navigate().refresh();
 	}
 	
-	// Read the Import File
-	public String getImportFilePath(String fileName) {
-	    return System.getProperty("user.dir") + "/ImportFiles/Database" + fileName;
-	}
+//	// Read the Import File
+//	public String getImportFilePath(String fileName) {
+//	    return System.getProperty("user.dir") + "/ImportFiles/Database" + fileName;
+//	}
 
+	/**
+     * Upload a file stored in the project folder.
+     *
+     * @param driver       WebDriver instance
+     * @param fileInputLoc Locator for <input type="file"> element
+     * @param relativePath Relative path inside project (example: "/src/test/resources/testdata.xlsx")
+     */
+	 public static void uploadFile(WebDriver driver, By fileInputLocator, String fileName) {
+	        try {
+	            // Build full path
+	            String fullPath = System.getProperty("user.dir")
+	                    + "/src/test/resources/ImportTemplate/" + fileName;
+
+	            // Validate file existence
+	            Path path = Paths.get(fullPath);
+	            if (!Files.exists(path)) {
+	                throw new RuntimeException("❌ File does not exist: " + fullPath);
+	            }
+
+	            // Find hidden input
+	            WebElement fileInput = driver.findElement(fileInputLocator);
+
+	            // Upload the file
+	            fileInput.sendKeys(fullPath);
+
+	            System.out.println("✅ Uploaded file: " + fullPath);
+	        } catch (Exception e) {
+	            throw new RuntimeException("File upload failed: " + e.getMessage());
+	        }
+	 }
 
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="11" passed="6" failed="1" skipped="0">
+<testng-results ignored="4" total="15" passed="8" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-26T19:22:23 IST" name="Suite" finished-at="2025-11-26T19:26:37 IST" duration-ms="253698">
+  <suite started-at="2025-11-27T19:15:01 IST" name="Suite" finished-at="2025-11-27T19:21:26 IST" duration-ms="384725">
     <groups>
     </groups>
-    <test started-at="2025-11-26T19:22:23 IST" name="Test" finished-at="2025-11-26T19:26:37 IST" duration-ms="253698">
+    <test started-at="2025-11-27T19:15:01 IST" name="Test" finished-at="2025-11-27T19:21:26 IST" duration-ms="384725">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="homePageValidation()[pri:0, instance:com.qa.tests.HomePageTest@131774fe]" started-at="2025-11-26T19:22:26 IST" name="homePageValidation" finished-at="2025-11-26T19:22:27 IST" duration-ms="12" status="FAIL">
+        <test-method signature="homePageValidation()[pri:0, instance:com.qa.tests.HomePageTest@77847718]" started-at="2025-11-27T19:15:03 IST" name="homePageValidation" finished-at="2025-11-27T19:15:04 IST" duration-ms="1033" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -54,7 +54,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- homePageValidation -->
       </class> <!-- com.qa.tests.HomePageTest -->
       <class name="com.qa.tests.TestGeneratorTest">
-        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@4b7e96a]" started-at="2025-11-26T19:22:27 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-26T19:23:40 IST" duration-ms="73235" status="PASS">
+        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:15:04 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-27T19:16:05 IST" duration-ms="60980" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -95,7 +95,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleTest -->
-        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@4b7e96a]" started-at="2025-11-26T19:23:40 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-26T19:25:03 IST" duration-ms="83170" status="PASS">
+        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:16:05 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-27T19:17:27 IST" duration-ms="82046" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -136,7 +136,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleTest -->
-        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@4b7e96a]" started-at="2025-11-26T19:25:03 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-26T19:25:50 IST" duration-ms="46601" status="PASS">
+        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:17:27 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-27T19:18:15 IST" duration-ms="47821" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -177,7 +177,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleTest -->
-        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@4b7e96a]" started-at="2025-11-26T19:25:50 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-26T19:26:37 IST" duration-ms="46923" status="PASS">
+        <test-method signature="createRuleTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:18:15 IST" name="createRuleTest" data-provider="ruleDataForDynamicTemplate" finished-at="2025-11-27T19:19:06 IST" duration-ms="50348" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -218,21 +218,252 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleTest -->
+        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:19:06 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-11-27T19:19:34 IST" duration-ms="28077" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[MJ_DND]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleTest1 -->
+        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:19:34 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-11-27T19:20:22 IST" duration-ms="48874" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[MJ_DND]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleTest1 -->
+        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:20:22 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-11-27T19:20:45 IST" duration-ms="22219" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[MJ_DND]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[File upload failed: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='file'][name='UploadFiles']"}
+  (Session info: chrome=142.0.7444.176)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [110139f42510b79073e4dde5a767ee2c, findElement {value=input[type='file'][name='UploadFiles'], using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 110139f42510b79073e4dde5a767ee2c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='file'][name='UploadFiles']"}
+  (Session info: chrome=142.0.7444.176)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [110139f42510b79073e4dde5a767ee2c, findElement {value=input[type='file'][name='UploadFiles'], using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 110139f42510b79073e4dde5a767ee2c
+at com.qa.utils.PageUtil.uploadFile(PageUtil.java:257)
+at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:522)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:246)
+at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleTest1 -->
+        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@7f3b84b8]" started-at="2025-11-27T19:20:45 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-11-27T19:21:25 IST" duration-ms="40563" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[MJ_DND]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 110139f42510b79073e4dde5a767ee2c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()='Test Generator']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 110139f42510b79073e4dde5a767ee2c
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.utils.PageUtil.isDisplayed(PageUtil.java:94)
+at com.qa.utils.PageUtil.validateElementIsVisible(PageUtil.java:134)
+at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:270)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:181)
+at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleTest1 -->
       </class> <!-- com.qa.tests.TestGeneratorTest -->
       <class name="com.qa.tests.LoginTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.LoginTest@49ec71f8]" started-at="2025-11-26T19:22:17 IST" name="startSuite" finished-at="2025-11-26T19:22:23 IST" duration-ms="6386" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.LoginTest@36902638]" started-at="2025-11-27T19:14:54 IST" name="startSuite" finished-at="2025-11-27T19:15:01 IST" duration-ms="6794" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@49ec71f8]" started-at="2025-11-26T19:22:23 IST" name="validateLoginPage" finished-at="2025-11-26T19:22:25 IST" duration-ms="1925" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@36902638]" started-at="2025-11-27T19:15:01 IST" name="validateLoginPage" finished-at="2025-11-27T19:15:03 IST" duration-ms="1502" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="testValidLogin()[pri:0, instance:com.qa.tests.LoginTest@49ec71f8]" started-at="2025-11-26T19:22:25 IST" name="testValidLogin" finished-at="2025-11-26T19:22:26 IST" depends-on-methods="com.qa.tests.LoginTest.validateLoginPage" duration-ms="1523" status="PASS">
+        <test-method signature="testValidLogin()[pri:0, instance:com.qa.tests.LoginTest@36902638]" started-at="2025-11-27T19:15:03 IST" name="testValidLogin" finished-at="2025-11-27T19:15:03 IST" depends-on-methods="com.qa.tests.LoginTest.validateLoginPage" duration-ms="536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.LoginTest@49ec71f8]" started-at="2025-11-26T19:26:37 IST" name="endSuite" finished-at="2025-11-26T19:26:37 IST" duration-ms="248" status="PASS">
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.LoginTest@36902638]" started-at="2025-11-27T19:21:26 IST" name="endSuite" finished-at="2025-11-27T19:21:26 IST" duration-ms="255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->

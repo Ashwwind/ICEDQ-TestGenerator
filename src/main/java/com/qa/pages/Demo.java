@@ -64,7 +64,7 @@ public class Demo {
 		//waitForElement(signInButtonLocator).click();
 		Assert.assertTrue(driver.getTitle().contains("Dashboard"));
 
-//		waitForElement(dataTestingLinkLocator).click();
+	waitForElement(By.xpath("//button[.//h2[text()='Data Testing']]")).click();
 //		waitForElement(workspaceSelectLocator).sendKeys("QA_DND");
 //		waitForElement(createReconButtonLocator).click();
 

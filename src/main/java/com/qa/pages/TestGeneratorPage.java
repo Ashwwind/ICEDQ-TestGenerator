@@ -1,5 +1,8 @@
 package com.qa.pages;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -93,8 +96,8 @@ public class TestGeneratorPage extends PageUtil {
 		this.driver = driver;
 	}
 
-	public void createRuleUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName, String folderName,
-			String connectionName, String schemaName, String tableName) throws InterruptedException {
+	public void createRuleUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
+			String folderName, String connectionName, String schemaName, String tableName) throws InterruptedException {
 
 // 1. Navigate to Test Generator → Wizard
 		clickTestGenerator();
@@ -158,6 +161,96 @@ public class TestGeneratorPage extends PageUtil {
 
 // Next Buttons
 		gotoSelettableNextbtn();
+
+// 8. Generate → Preview → Publish
+		clickOnGenerate();
+		clickOnGoToPreview();
+		selectGeneratedEntity();
+		clickOnPublish();
+		clickOnGoToPublish();
+		clickOnPublishedRule();
+
+// 9. Navigate Data Testing
+		navigatDataTesting();
+	}
+
+	public void createRuleUsingDefaultImportTemplate(String ruleType, String templateName, String workspaceName,
+			String folderName, String connectionName) throws InterruptedException {
+
+// 1. Navigate to Test Generator → Wizard
+		clickTestGenerator();
+
+// switch case
+		switch (ruleType.toLowerCase()) {
+		case "checksum":
+			clickOnChecksum();
+			break;
+
+		case "recon":
+			clickOnRecon();
+			break;
+
+		case "validation":
+			clickOnValidation();
+			break;
+
+		case "pushdown":
+			clickOnPushdown();
+			break;
+
+		default:
+			throw new IllegalArgumentException("InvaRule Type: " + ruleType);
+		}
+
+// 2. Search & Select Template
+		clickOnSearchField();
+		enterOnSearchField(templateName);
+		selectExistingChecksumTemplate();
+
+// 3. Select Workspace
+		clickOnWorkspaceField(workspaceName);
+
+// 4. Select Folder
+		clickOnFolderField(folderName);
+
+// Next Buttons
+		gotoWorkspaceNextbtn();
+		gotoRuleMetadataNextbtn();
+		gotoCheckMetadataNextbtn();
+		gotoNotificationNextbtn();
+
+// 5. Select Source Dataset
+		selectionSourceDatasetForImport(connectionName);
+
+// 6. Select Target Dataset
+		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
+
+			selectionTargetDatasetForImport(connectionName);
+
+		} else {
+			System.out.println("Skipping Target Dataset for rule type: " + ruleType);
+		}
+
+// Next Buttons
+		gotoDatasetNextbtn();
+
+// 7. Import SQL
+		if (ruleType == "checksum") {
+			uploadingFiles("Checksum.xlsx");
+		}
+
+		if (ruleType == "recon") {
+			uploadingFiles("Recon.xlsx");
+		}
+		if (ruleType == "validation") {
+			uploadingFiles("Validation.xlsx");
+		}
+		if (ruleType == "pushdown") {
+			uploadingFiles("Pushdwon.xlsx");
+		}
+
+// Next Buttons
+		gotoImportSQLNextbtn();
 
 // 8. Generate → Preview → Publish
 		clickOnGenerate();
@@ -355,6 +448,23 @@ public class TestGeneratorPage extends PageUtil {
 
 	}
 
+	public void selectionSourceDatasetForImport(String connectionName) throws InterruptedException {
+		// JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		// Click on the source connection type.
+		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type", 10);
+
+		// Select "Database"
+		clickOnElement(driver, By.xpath("//li[text()='Database']"), "source database connection", 20);
+
+		// Click Source Connection
+		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown", 20);
+
+		// Enter connection name
+		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
+		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+	}
+
 	/// ********* Select the target dataset ********** ///
 ///// *******************************/////
 /////////////// ********************************* ////////////////
@@ -390,6 +500,34 @@ public class TestGeneratorPage extends PageUtil {
 
 	}
 
+	public void selectionTargetDatasetForImport(String connectionName) throws InterruptedException {
+
+		/// Click on the target connection type.
+		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type", 10);
+
+		// Select the target connection type as database.
+		clickOnElement(driver, By.xpath("//li[text()='Database']"), "target database connection", 20);
+
+		// Click the target connection.
+		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown", 20);
+
+		// Entering the target connection name
+		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
+		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+	}
+
+	// Import SQL Files
+	public void uploadingFiles(String fileName) {
+		
+		uploadFile(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), fileName);
+		// Optional: verify the uploaded file appears in list
+
+		WebElement uploadedFileLabel = driver.findElement(By.cssSelector("li.e-upload-file-list"));
+
+		String uploadedName = uploadedFileLabel.getAttribute("data-file-name");
+		System.out.println("✔ File shown in UI: " + uploadedName);
+	}
+
 	// Click on the next button of 'select dataset' page.
 	public void gotoDatasetNextbtn() {
 		clickOnElement(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page", 20);
@@ -411,6 +549,12 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the next button of 'select table' page.
 	public void gotoSelettableNextbtn() {
 		clickOnElement(driver, clickNextButtonSelettableNextbtn, "next button of 'Select Teables' page", 20);
+	}
+
+	// Click on the next button of 'select table' page.
+	public void gotoImportSQLNextbtn() {
+		clickOnElement(driver, By.xpath("//*[@id='e-content-element_6']/div/div[1]/button[2]"),
+				"next button of 'Select Teables' page", 20);
 	}
 
 	// Click on the 'Generate' button.
