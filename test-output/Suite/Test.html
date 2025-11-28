@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>8/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Nov 27 19:15:01 IST 2025</td>
+<td>Started on:</td><td>Fri Nov 28 18:45:33 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>384 seconds (384725 ms)</td>
+<tr><td>Total time:</td><td>481 seconds (481166 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,34 +75,93 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleTest1()'><b>createRuleTest1</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, MJ_DND, postgreSQL</td>
+<td><div><pre>java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;]&quot;}
+  (Session info: chrome=142.0.7444.176)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1d06d6ef096d404cbbc11c4bad82b7ae, findElement {value=input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;], using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60996}, goog:processID: 379360, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60996/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d06d6ef096d404cbbc11c4bad82b7ae
+	at com.qa.utils.PageUtil.uploadFile(PageUtil.java:260)
+	at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:515)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:239)
+	at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace172783967", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace172783967'><pre>java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;]&quot;}
+  (Session info: chrome=142.0.7444.176)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1d06d6ef096d404cbbc11c4bad82b7ae, findElement {value=input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;], using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60996}, goog:processID: 379360, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60996/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d06d6ef096d404cbbc11c4bad82b7ae
+	at com.qa.utils.PageUtil.uploadFile(PageUtil.java:260)
+	at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:515)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:239)
+	at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>23</td>
+<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
+<tr>
 <td title='com.qa.tests.TestGeneratorTest.createRuleTest1()'><b>createRuleTest1</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Import SQL, Test_Generator-WIP, MJ_DND, postgreSQL</td>
 <td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()=&apos;Test Generator&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 110139f42510b79073e4dde5a767ee2c
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60996}, goog:processID: 379360, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60996/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d06d6ef096d404cbbc11c4bad82b7ae
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.qa.utils.PageUtil.isDisplayed(PageUtil.java:94)
-	at com.qa.utils.PageUtil.validateElementIsVisible(PageUtil.java:134)
-	at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:270)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:181)
+	at com.qa.utils.PageUtil.isDisplayed(PageUtil.java:97)
+	at com.qa.utils.PageUtil.validateElementIsVisible(PageUtil.java:137)
+	at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:263)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:174)
 	at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1110242894", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1110242894'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()=&apos;Test Generator&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1579837981", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1579837981'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[.//h2[text()=&apos;Test Generator&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 110139f42510b79073e4dde5a767ee2c
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60996}, goog:processID: 379360, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60996/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d06d6ef096d404cbbc11c4bad82b7ae
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.qa.utils.PageUtil.isDisplayed(PageUtil.java:94)
-	at com.qa.utils.PageUtil.validateElementIsVisible(PageUtil.java:134)
-	at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:270)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:181)
+	at com.qa.utils.PageUtil.isDisplayed(PageUtil.java:97)
+	at com.qa.utils.PageUtil.validateElementIsVisible(PageUtil.java:137)
+	at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:263)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:174)
 	at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -134,72 +193,13 @@ Session ID: 110139f42510b79073e4dde5a767ee2c
 <td>40</td>
 <td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleTest1()'><b>createRuleTest1</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, MJ_DND, postgreSQL</td>
-<td><div><pre>java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;]&quot;}
-  (Session info: chrome=142.0.7444.176)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [110139f42510b79073e4dde5a767ee2c, findElement {value=input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;], using=css selector}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 110139f42510b79073e4dde5a767ee2c
-	at com.qa.utils.PageUtil.uploadFile(PageUtil.java:257)
-	at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:522)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:246)
-	at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace726201202", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace726201202'><pre>java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;]&quot;}
-  (Session info: chrome=142.0.7444.176)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [110139f42510b79073e4dde5a767ee2c, findElement {value=input[type=&apos;file&apos;][name=&apos;UploadFiles&apos;], using=css selector}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54111}, goog:processID: 230016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54111/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 110139f42510b79073e4dde5a767ee2c
-	at com.qa.utils.PageUtil.uploadFile(PageUtil.java:257)
-	at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:522)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:246)
-	at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:80)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>22</td>
-<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
-<tr>
 <td title='com.qa.tests.HomePageTest.homePageValidation()'><b>homePageValidation</b><br>Test class: com.qa.tests.HomePageTest</td>
 <td><div><pre>java.lang.AssertionError: expected [true] but found [false]
 	at com.qa.pages.HomePage.validateHomePage(HomePage.java:38)
 	at com.qa.tests.HomePageTest.homePageValidation(HomePageTest.java:16)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace263233676", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace263233676'><pre>java.lang.AssertionError: expected [true] but found [false]
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace107632469", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace107632469'><pre>java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertTrue(Assert.java:45)
@@ -233,7 +233,7 @@ Session ID: 110139f42510b79073e4dde5a767ee2c
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>1</td>
+<td>0</td>
 <td>com.qa.tests.HomePageTest@77847718</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -244,44 +244,44 @@ Session ID: 110139f42510b79073e4dde5a767ee2c
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleTest1()'><b>createRuleTest1</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, MJ_DND, postgreSQL</td>
+<td title='com.qa.tests.TestGeneratorTest.createRuleTest()'><b>createRuleTest</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Dynamic SQL, Test_Generator-WIP, MJ_DND, postgreSQL, public, staff</td>
 <td></td>
-<td>28</td>
+<td>76</td>
 <td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleTest()'><b>createRuleTest</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Specify Column for Diff - Full Data Compare Dynamic SQL, Test_Generator-WIP, MJ_DND, postgreSQL, public, staff</td>
+<td></td>
+<td>75</td>
+<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleTest1()'><b>createRuleTest1</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, MJ_DND, postgreSQL</td>
+<td></td>
+<td>63</td>
+<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleTest()'><b>createRuleTest</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Dynamic SQL, Test_Generator-WIP, MJ_DND, postgreSQL, public, staff</td>
+<td></td>
+<td>62</td>
+<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
+<tr>
+<td title='com.qa.tests.LoginTest.validateLoginPage()'><b>validateLoginPage</b><br>Test class: com.qa.tests.LoginTest</td>
+<td></td>
+<td>0</td>
+<td>com.qa.tests.LoginTest@36902638</td></tr>
 <tr>
 <td title='com.qa.tests.LoginTest.testValidLogin()'><b>testValidLogin</b><br>Test class: com.qa.tests.LoginTest</td>
 <td></td>
 <td>0</td>
 <td>com.qa.tests.LoginTest@36902638</td></tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleTest()'><b>createRuleTest</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Dynamic SQL, Test_Generator-WIP, MJ_DND, postgreSQL, public, staff</td>
-<td></td>
-<td>60</td>
-<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleTest()'><b>createRuleTest</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Specify Column for Diff - Full Data Compare Dynamic SQL, Test_Generator-WIP, MJ_DND, postgreSQL, public, staff</td>
-<td></td>
-<td>82</td>
-<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleTest1()'><b>createRuleTest1</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, MJ_DND, postgreSQL</td>
-<td></td>
-<td>48</td>
-<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
-<tr>
-<td title='com.qa.tests.LoginTest.validateLoginPage()'><b>validateLoginPage</b><br>Test class: com.qa.tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>com.qa.tests.LoginTest@36902638</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleTest()'><b>createRuleTest</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Dynamic SQL, Test_Generator-WIP, MJ_DND, postgreSQL, public, staff</td>
-<td></td>
-<td>47</td>
-<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
-<tr>
 <td title='com.qa.tests.TestGeneratorTest.createRuleTest()'><b>createRuleTest</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Dynamic SQL, Test_Generator-WIP, MJ_DND, postgreSQL, public, staff</td>
 <td></td>
-<td>50</td>
+<td>68</td>
+<td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleTest1()'><b>createRuleTest1</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, MJ_DND, postgreSQL</td>
+<td></td>
+<td>67</td>
 <td>com.qa.tests.TestGeneratorTest@7f3b84b8</td></tr>
 </table><p>
 </body>

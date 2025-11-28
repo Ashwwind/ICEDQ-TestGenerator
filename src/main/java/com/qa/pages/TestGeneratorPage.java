@@ -1,17 +1,10 @@
 package com.qa.pages;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
-import java.util.Arrays;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import com.aventstack.extentreports.Status;
 import com.qa.extentreportlistener.ExtentListener;
 import com.qa.utils.PageUtil;
@@ -171,7 +164,7 @@ public class TestGeneratorPage extends PageUtil {
 		clickOnPublishedRule();
 
 // 9. Navigate Data Testing
-		navigatDataTesting();
+		navigatHomePage();
 	}
 
 	public void createRuleUsingDefaultImportTemplate(String ruleType, String templateName, String workspaceName,
@@ -261,7 +254,7 @@ public class TestGeneratorPage extends PageUtil {
 		clickOnPublishedRule();
 
 // 9. Navigate Data Testing
-		navigatDataTesting();
+		navigatHomePage();
 	}
 
 	// Page method
@@ -434,17 +427,19 @@ public class TestGeneratorPage extends PageUtil {
 		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
 
 		// Scroll & click schema dropdown
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-				driver.findElement(clickSourceSchemaDropdown));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+//				driver.findElement(clickSourceSchemaDropdown));
 
 		clickOnElement(driver, clickSourceSchemaDropdown, "choose schema dropdown", 20);
 
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-				driver.findElement(clickSourceSchemaDropdown));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+//				driver.findElement(clickSourceSchemaDropdown));
 
 		// Enter schema name
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
 		sendkeysToEnter(driver, enterSourceSchemaName, "source schema name");
+		
+		Thread.sleep(5000);
 
 	}
 
@@ -452,7 +447,7 @@ public class TestGeneratorPage extends PageUtil {
 		// JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		// Click on the source connection type.
-		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type", 10);
+		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type", 30);
 
 		// Select "Database"
 		clickOnElement(driver, By.xpath("//li[text()='Database']"), "source database connection", 20);
@@ -472,7 +467,7 @@ public class TestGeneratorPage extends PageUtil {
 	public void selectionTargetDataset(String connectionName, String schemaName) throws InterruptedException {
 
 		/// Click on the target connection type.
-		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type", 10);
+		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type", 30);
 
 		// Select the target connection type as database.
 		clickOnElement(driver, By.xpath("//li[text()='Database']"), "target database connection", 20);
@@ -485,14 +480,14 @@ public class TestGeneratorPage extends PageUtil {
 		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
 
 		// Scroll & click schema dropdown
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-				driver.findElement(clickTargetSchemaDropdown));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+//				driver.findElement(clickTargetSchemaDropdown));
 
 		clickOnElement(driver, clickTargetSchemaDropdown, "choose schema dropdown", 20);
 
 		// Enter schema name
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-				driver.findElement(clickTargetSchemaDropdown));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+//				driver.findElement(clickTargetSchemaDropdown));
 
 		// Entering the schema name.
 		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
@@ -517,11 +512,14 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	// Import SQL Files
-	public void uploadingFiles(String fileName) {
+	public void uploadingFiles(String fileName) throws InterruptedException {
 		
+		Thread.sleep(500);
+		isDisplayed(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), 30);
+		Thread.sleep(500);
 		uploadFile(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), fileName);
 		// Optional: verify the uploaded file appears in list
-
+		Thread.sleep(500);
 		WebElement uploadedFileLabel = driver.findElement(By.cssSelector("li.e-upload-file-list"));
 
 		String uploadedName = uploadedFileLabel.getAttribute("data-file-name");
@@ -570,6 +568,8 @@ public class TestGeneratorPage extends PageUtil {
 	// Select the generated entity from the 'Preview' page.
 	public void selectGeneratedEntity() {
 		clickOnElement(driver, selectEntity, "check for selection", 20);
+		// String str =
+		// driver.findElement(By.xpath("//*[@id=\"previewGrid_content_table\"]/tbody/tr[4]/td[2]/a")).getText();
 	}
 
 	// Click on the 'Publish' button.
@@ -583,14 +583,44 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	// Click on the hyperlink of the published rule to navigate to the data testing.
-	public void clickOnPublishedRule() {
-		// clickOnElement(driver, clickHyperlinkPublishRule, 20);
-		goTo("https://52.20.42.154:32222/#/");
+	public void clickOnPublishedRule() throws InterruptedException {
+		// Capture parent window
+		String parent = PageUtil.getParentWindow(driver);
+		
+		String ruleNamePublishPage = driver.findElement(By.xpath("//tbody[@role=\"rowgroup\"]/tr/td/a")).getText();
+		ExtentListener.test.get().log(Status.INFO, "Rule Name is from the Published Page.. " + ruleNamePublishPage);
+
+		clickOnElement(driver, clickHyperlinkPublishRule, "published rule", 30);
+		ExtentListener.test.get().log(Status.INFO, "Navigated to new tab");
+
+		// Switch to child
+		String child = switchToNewWindow(driver, parent, 60);
+		Thread.sleep(500);
+		isDisplayed(driver, By.xpath("//*[@placeholder='Enter rule name']"), 10);
+		WebElement ruleName2 = driver.findElement(By.xpath("//*[@placeholder='Enter rule name']"));
+		String ruleNameDataTestingPage = ruleName2.getAttribute("value");
+		ExtentListener.test.get().log(Status.INFO, "Rule Name is from the Data Testing Page.. " + ruleNameDataTestingPage);
+		
+		
+		// === Perform child validations ===
+		Thread.sleep(500);
+		if (ruleNamePublishPage.equals(ruleNameDataTestingPage)) {
+			ExtentListener.test.get().log(Status.PASS,
+					"Rule Name is validated successfully. " + ruleNameDataTestingPage);
+		} else {
+			Thread.sleep(500);
+			ExtentListener.test.get().log(Status.FAIL, "Rule Name is mismatch.   Expectd:   " + ruleNameDataTestingPage + "but found:  " + ruleNameDataTestingPage);
+		}
+
+		Thread.sleep(500);
+		// Close child
+		closeChildAndReturn(driver, child, parent);
+		Thread.sleep(500);
 	}
 
 	// Go to the Data Testing
-	public void navigatDataTesting() {
-		goTo("https://52.20.42.154:32222/#/");
+	public void navigatHomePage() {
+		goTo("https://qa.onprem.icedq.com/#/");
 	}
 
 }

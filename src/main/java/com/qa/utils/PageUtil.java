@@ -9,12 +9,15 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.Properties;
+import java.util.Set;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -149,7 +152,7 @@ public class PageUtil extends Base {
 
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
-		clickOnElement(driver, locator,"", 10);
+		clickOnElement(driver, locator, "", 10);
 		ExtentListener.test.get().log(Status.INFO, "Entering value on " + label + " input : " + input);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
 		ExtentListener.test.get().log(Status.PASS, "Entered value on " + label + " input : " + input);
@@ -221,41 +224,102 @@ public class PageUtil extends Base {
 	public void refresh() {
 		driver.navigate().refresh();
 	}
-	
+
 //	// Read the Import File
 //	public String getImportFilePath(String fileName) {
 //	    return System.getProperty("user.dir") + "/ImportFiles/Database" + fileName;
 //	}
 
 	/**
-     * Upload a file stored in the project folder.
-     *
-     * @param driver       WebDriver instance
-     * @param fileInputLoc Locator for <input type="file"> element
-     * @param relativePath Relative path inside project (example: "/src/test/resources/testdata.xlsx")
-     */
-	 public static void uploadFile(WebDriver driver, By fileInputLocator, String fileName) {
-	        try {
-	            // Build full path
-	            String fullPath = System.getProperty("user.dir")
-	                    + "/src/test/resources/ImportTemplate/" + fileName;
+	 * Upload a file stored in the project folder.
+	 *
+	 * @param driver       WebDriver instance
+	 * @param fileInputLoc Locator for <input type="file"> element
+	 * @param relativePath Relative path inside project (example:
+	 *                     "/src/test/resources/testdata.xlsx")
+	 */
+	public static void uploadFile(WebDriver driver, By fileInputLocator, String fileName) {
+		try {
+			// Build full path
+			String fullPath = System.getProperty("user.dir") + "/src/test/resources/ImportTemplate/" + fileName;
 
-	            // Validate file existence
-	            Path path = Paths.get(fullPath);
-	            if (!Files.exists(path)) {
-	                throw new RuntimeException("❌ File does not exist: " + fullPath);
-	            }
+			// Validate file existence
+			Path path = Paths.get(fullPath);
+			if (!Files.exists(path)) {
+				throw new RuntimeException("❌ File does not exist: " + fullPath);
+			}
 
-	            // Find hidden input
-	            WebElement fileInput = driver.findElement(fileInputLocator);
+			// Find hidden input
+			WebElement fileInput = driver.findElement(fileInputLocator);
 
-	            // Upload the file
-	            fileInput.sendKeys(fullPath);
+			// Upload the file
+			fileInput.sendKeys(fullPath);
 
-	            System.out.println("✅ Uploaded file: " + fullPath);
-	        } catch (Exception e) {
-	            throw new RuntimeException("File upload failed: " + e.getMessage());
-	        }
-	 }
+			System.out.println("✅ Uploaded file: " + fullPath);
+		} catch (Exception e) {
+			throw new RuntimeException("File upload failed: " + e.getMessage());
+		}
+	}
+
+	// Get parent window handle
+	public static String getParentWindow(WebDriver driver) {
+		log.info("Capturing parent window handle");
+		return driver.getWindowHandle();
+	}
+
+	// Wait for new window to open and switch to it
+	public static String switchToNewWindow(WebDriver driver, String parentWindow, int SHOTW) {
+		log.info("Waiting for new window to open...");
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(SHOTW));
+
+		// Wait until window count > 1
+		wait.until(driverObj -> driverObj.getWindowHandles().size() > 1);
+
+		Set<String> allWindows = driver.getWindowHandles();
+
+		for (String window : allWindows) {
+			if (!window.equals(parentWindow)) {
+				log.info("Switching to child window: " + window);
+				driver.switchTo().window(window);
+				return window; // return child window handle
+			}
+		}
+		throw new RuntimeException("Child window not found!");
+	}
+
+	// Switch back to parent window
+	public static void switchBackToParent(WebDriver driver, String parentWindow) {
+		log.info("Switching back to parent window: " + parentWindow);
+		driver.switchTo().window(parentWindow);
+	}
+
+	// Close child & return to parent
+	public static void closeChildAndReturn(WebDriver driver, String childWindow, String parentWindow) {
+		log.info("Closing child window and switching back to parent.");
+
+		try {
+			// First, switch to child
+			driver.switchTo().window(childWindow);
+		} catch (NoSuchWindowException e) {
+			log.warn("Child window already closed. Skipping close.");
+		}
+
+		try {
+			driver.close(); // safely close child
+		} catch (Exception e) {
+			log.warn("Error closing child window: " + e.getMessage());
+		}
+
+		// Now switch back to parent
+		for (String win : driver.getWindowHandles()) {
+			if (win.equals(parentWindow)) {
+				driver.switchTo().window(parentWindow);
+				return;
+			}
+		}
+
+		throw new RuntimeException("Parent window not found after closing child!");
+	}
 
 }
