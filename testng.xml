@@ -8,10 +8,27 @@
 -->
 	<test thread-count="1" name="Test">
 		<classes>
-			<class name="com.qa.tests.LoginTest" />
+			<class name="com.qa.tests.LoginTest">
+				<methods>
+					<include name="validateLoginPage"></include>
+					<include name="testValidLogin"></include>
+				</methods>
+			</class>
+
 			<!-- -->
-			<class name="com.qa.tests.HomePageTest" />
-			<class name="com.qa.tests.TestGeneratorTest" />
+			<class name="com.qa.tests.HomePageTest">
+				<methods>
+					<include name="homePageValidation"></include>
+				</methods>
+			</class>
+
+			<class name="com.qa.tests.TestGeneratorTest">
+				<methods>
+					<exclude name="createRuleTest" />
+					<include name="createRuleTest1" />
+				</methods>
+			</class>
+
 		</classes>
 	</test> <!--
 	Test -->
