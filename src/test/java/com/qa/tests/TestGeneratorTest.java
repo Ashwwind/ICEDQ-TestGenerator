@@ -9,10 +9,8 @@ import com.qa.pages.TestGeneratorPage;
 
 @Listeners(ExtentListener.class)
 public class TestGeneratorTest extends Base {
-
-
 	// Use Data provider
-	
+
 	@DataProvider(name = "ruleDataForDynamicTemplate")
 	public Object[][] ruleDataProvider() {
 		return new Object[][] {
@@ -27,13 +25,11 @@ public class TestGeneratorTest extends Base {
 	}
 
 	// Creating a rule using default dynamic template
-	
+
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
 	public void createRuleTest(String ruleType, String templateName, String workspaceName, String folderName,
 			String connectionName, String schemaName, String tableName) throws InterruptedException {
 
-		// Create a test in Extent Report based on ruleType
-		
 		ExtentListener.startTest("Create rule using default Dynamic template for - " + ruleType);
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
@@ -53,7 +49,7 @@ public class TestGeneratorTest extends Base {
 	////// ************************** //////
 
 	// Use Data provider
-	
+
 	@DataProvider(name = "ruleDataForImportTemplate")
 	public Object[][] ruleDataProvider1() {
 		return new Object[][] {
@@ -64,14 +60,10 @@ public class TestGeneratorTest extends Base {
 				{ "pushdown", "Data Pushdown Validation - Import SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL" } };
 	}
 
-	// Creating a rule using default Import template
-	
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleTest1(String ruleType, String templateName, String workspaceName, String folderName,
 			String connectionName) throws InterruptedException {
 
-		// Create a test in Extent Report based on ruleType
-		
 		ExtentListener.startTest("Create rule using default Import template for - " + ruleType);
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);

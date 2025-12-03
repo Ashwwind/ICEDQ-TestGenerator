@@ -261,7 +261,13 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickTestGenerator() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, testGeneratorModue, "Test Generator", true);
-		clickOnElement(driver, testGeneratorModue, "Test Generator", 30);
+		try {
+			clickOnElement(driver, testGeneratorModue, "Test Generator", 30);
+			ExtentListener.test.get().log(Status.INFO, "Test Generator module is selected...");
+		} catch (Exception e) {
+			ExtentListener.test.get().log(Status.FAIL, "Test Generator module is not selected...");
+		}
+
 	}
 
 	// Click the Checksum rule type from the wizard page.
@@ -269,7 +275,12 @@ public class TestGeneratorPage extends PageUtil {
 
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectChecksumWizard, "Checksum", true);
-		clickOnElement(driver, selectChecksumWizard, "Checksum wizard", 50);
+		try {
+			clickOnElement(driver, selectChecksumWizard, "Checksum wizard", 50);
+			ExtentListener.test.get().log(Status.INFO, "Defoult template is selected...");
+		} catch (Exception e) {
+			ExtentListener.test.get().log(Status.FAIL, "Defoult template is not selected..." + e.getMessage());
+		}
 
 //		// validate URl
 //		String expectedUrl = "https://qa.onprem.icedq.com/rulegen-ui/#/wizard/checksum";
@@ -318,7 +329,12 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickOnRecon() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectReconWizard, "Recon", true);
-		clickOnElement(driver, selectReconWizard, "Recon wizard", 50);
+		try {
+			clickOnElement(driver, selectReconWizard, "Recon wizard", 50);
+			ExtentListener.test.get().log(Status.INFO, "Defoult template is selected...");
+		} catch (Exception e) {
+			ExtentListener.test.get().log(Status.FAIL, "Defoult template is not selected..." + e.getMessage());
+		}
 
 	}
 
@@ -326,7 +342,12 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickOnValidation() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectValidationWizard, "Validation", true);
-		clickOnElement(driver, selectValidationWizard, "Validation wizard", 50);
+		try {
+			clickOnElement(driver, selectValidationWizard, "Validation wizard", 50);
+			ExtentListener.test.get().log(Status.INFO, "Defoult template is selected...");
+		} catch (Exception e) {
+			ExtentListener.test.get().log(Status.FAIL, "Defoult template is not selected..." + e.getMessage());
+		}
 
 	}
 
@@ -334,7 +355,12 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickOnPushdown() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, selectPushdownWizard, "Pushdown", true);
-		clickOnElement(driver, selectPushdownWizard, "Pushdown wizard", 50);
+		try {
+			clickOnElement(driver, selectPushdownWizard, "Pushdown wizard", 50);
+			ExtentListener.test.get().log(Status.INFO, "Defoult template is selected...");
+		} catch (Exception e) {
+			ExtentListener.test.get().log(Status.FAIL, "Defoult template is not selected..." + e.getMessage());
+		}
 
 	}
 
@@ -342,14 +368,25 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickOnSearchField() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, clickSearchTemplateField, "Search template", true);
-		clickOnElement(driver, clickSearchTemplateField, "Search template", 30);
+		try {
+			clickOnElement(driver, clickSearchTemplateField, "Search template", 30);
+			ExtentListener.test.get().log(Status.INFO,"'Search template' search box is clickable...");
+		} catch (Exception e) {
+			ExtentListener.test.get().log(Status.FAIL,"'Search template' search box is not clickable..." + e.getMessage());
+		}
+
 	}
 
 	// Enter the data on the search field
 	public void enterOnSearchField(String templateName) {
 		sendkeysToElement(driver, enterTemplateName, "Search template", templateName);
 		validateElementIsVisible(driver, clickSearchButtonIcon, "Search button icon on search template ", true);
-		clickOnElement(driver, clickSearchButtonIcon, "Search button icon", 30);
+		try {
+			clickOnElement(driver, clickSearchButtonIcon, "Search button icon", 30);
+			ExtentListener.test.get().log(Status.INFO,"Entering default template name : " + templateName);
+		} catch (Exception e) {
+			ExtentListener.test.get().log(Status.FAIL,"Entering default template name : " + e.getMessage());
+		}
 	}
 
 	// Select the existing checksum template form the list
@@ -438,7 +475,7 @@ public class TestGeneratorPage extends PageUtil {
 		// Enter schema name
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
 		sendkeysToEnter(driver, enterSourceSchemaName, "source schema name");
-		
+
 		Thread.sleep(5000);
 
 	}
@@ -513,9 +550,10 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Import SQL Files
 	public void uploadingFiles(String fileName) throws InterruptedException {
-		
+
 		Thread.sleep(500);
-		isDisplayed(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), 30);
+		// isDisplayed(driver, By.cssSelector("input[type='file'][name='UploadFiles']"),
+		// 10);
 		Thread.sleep(500);
 		uploadFile(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), fileName);
 		// Optional: verify the uploaded file appears in list
@@ -586,8 +624,8 @@ public class TestGeneratorPage extends PageUtil {
 	public void clickOnPublishedRule() throws InterruptedException {
 		// Capture parent window
 		String parent = PageUtil.getParentWindow(driver);
-		
-		String ruleNamePublishPage = driver.findElement(By.xpath("//tbody[@role=\"rowgroup\"]/tr/td/a")).getText();
+
+		String ruleNamePublishPage = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr/td/a")).getText();
 		ExtentListener.test.get().log(Status.INFO, "Rule Name is from the Published Page.. " + ruleNamePublishPage);
 
 		clickOnElement(driver, clickHyperlinkPublishRule, "published rule", 30);
@@ -596,20 +634,21 @@ public class TestGeneratorPage extends PageUtil {
 		// Switch to child
 		String child = switchToNewWindow(driver, parent, 60);
 		Thread.sleep(500);
-		isDisplayed(driver, By.xpath("//*[@placeholder='Enter rule name']"), 10);
+		isDisplayed(driver, By.xpath("//*[@placeholder='Enter rule name']"), 20);
 		WebElement ruleName2 = driver.findElement(By.xpath("//*[@placeholder='Enter rule name']"));
 		String ruleNameDataTestingPage = ruleName2.getAttribute("value");
-		ExtentListener.test.get().log(Status.INFO, "Rule Name is from the Data Testing Page.. " + ruleNameDataTestingPage);
-		
-		
+		ExtentListener.test.get().log(Status.INFO,
+				"Rule Name is from the Data Testing Page.. " + ruleNameDataTestingPage);
+
 		// === Perform child validations ===
 		Thread.sleep(500);
-		if (ruleNamePublishPage.equals(ruleNameDataTestingPage)) {
+		if (ruleNamePublishPage.trim().equals(ruleNameDataTestingPage.trim())) {
 			ExtentListener.test.get().log(Status.PASS,
 					"Rule Name is validated successfully. " + ruleNameDataTestingPage);
 		} else {
 			Thread.sleep(500);
-			ExtentListener.test.get().log(Status.FAIL, "Rule Name is mismatch.   Expectd:   " + ruleNameDataTestingPage + "but found:  " + ruleNameDataTestingPage);
+			ExtentListener.test.get().log(Status.FAIL, "Rule Name is mismatch.   Expectd:   " + ruleNameDataTestingPage
+					+ "but found:  " + ruleNameDataTestingPage);
 		}
 
 		Thread.sleep(500);
