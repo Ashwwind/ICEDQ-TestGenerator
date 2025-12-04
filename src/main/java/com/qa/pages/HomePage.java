@@ -1,17 +1,14 @@
 package com.qa.pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import com.aventstack.extentreports.Status;
-import com.qa.base.Base;
+import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentListener;
 import com.qa.utils.PageUtil;
 
@@ -31,7 +28,7 @@ public class HomePage extends PageUtil {
 			// URL VALIDATION
 			// ============================
 			String actualUrl = null;
-			String expectedUrl = "https://192.168.100.102:32222/#/";
+			String expectedUrl = ConfigReader.getProperty("https://qa.onprem.icedq.com/#/");
 
 			try {
 				actualUrl = driver.getCurrentUrl();
@@ -97,7 +94,7 @@ public class HomePage extends PageUtil {
 			String expectedProfile = "Profile icon should be visible";
 
 			try {
-				profileIcon = driver.findElement(By.xpath("//button[@aria-label ='ad']"));
+				profileIcon = driver.findElement(By.xpath("//*[@role='menuitem']/span[1]"));
 				Assert.assertTrue(profileIcon.isDisplayed());
 
 				ExtentListener.test.get().log(Status.PASS, "Profile icon is displayed");

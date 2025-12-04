@@ -11,21 +11,21 @@
 			<class name="com.qa.tests.LoginTest">
 				<methods>
 					<include name="validateLoginPage"></include>
-					<include name="testValidLogin"></include>
+					<include name="Login"></include>
 				</methods>
 			</class>
 
 			<!-- -->
 			<class name="com.qa.tests.HomePageTest">
 				<methods>
-					<include name="homePageValidation"></include>
+					<include name="validateHomePage"></include>
 				</methods>
 			</class>
 
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
-					<exclude name="createRuleTest" />
-					<include name="createRuleTest1" />
+					<exclude name="createRuleUsingDynamicTemplate" />
+					<include name="createRuleUsingImportTemplate" />
 				</methods>
 			</class>
 

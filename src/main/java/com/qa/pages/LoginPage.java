@@ -61,7 +61,7 @@ public class LoginPage extends PageUtil {
 		try {
 			actualTitle = driver.getTitle();
 			expectedTitle = "Sign in to iCEDQ DataOps Platform";
-			ExtentListener.test.get().log(Status.PASS, "The actual page title." + actualTitle);
+			ExtentListener.test.get().log(Status.PASS, "The actual page title. '" + actualTitle + "'");
 		} catch (Exception e) {
 			ExtentListener.test.get().log(Status.FAIL, "The actual page title. " + actualTitle + "The expected page title. " + expectedTitle);
 		}
@@ -71,7 +71,7 @@ public class LoginPage extends PageUtil {
 		try {
 		    WebElement logo = driver.findElement(By.xpath("/html/body/div/div[1]/div"));
 		    Assert.assertTrue(logo.isDisplayed(), "Logo is not displayed.");
-		    ExtentListener.test.get().log(Status.PASS, "Logo is displayed.");
+		    ExtentListener.test.get().log(Status.PASS, "Logo is displayed. " );
 		} catch (Exception e) {
 		    ExtentListener.test.get().log(Status.FAIL, "Logo validation failed. Error: " + e.getMessage());
 		}

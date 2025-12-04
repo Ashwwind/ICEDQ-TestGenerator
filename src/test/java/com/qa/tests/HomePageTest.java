@@ -10,7 +10,7 @@ import com.qa.pages.HomePage;
 public class HomePageTest extends Base {
 
 	@Test
-	public void homePageValidation()
+	public void validateHomePage()
 	{
 	HomePage home = new HomePage(driver);
 	home.validateHomePage(); 

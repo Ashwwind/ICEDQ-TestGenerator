@@ -119,8 +119,9 @@ public class PageUtil extends Base {
 
 			boolean state = isDisplayed(driver, by, timeout);
 			if (state) {
-				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
 				ExtentListener.test.get().log(Status.INFO, "Clicking on " + label);
+				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
+				ExtentListener.test.get().log(Status.INFO, "Clicked on " + label);
 			} else {
 				log.info("Element not visible : " + by);
 			}
@@ -131,19 +132,32 @@ public class PageUtil extends Base {
 
 	// Validate the element is visible or not.
 
-	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label, boolean expected) {
-		boolean flag = true;
+//	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label, boolean expected) {
+//		boolean flag = true;
+//
+//		if (isDisplayed(driver, locator, 10) && expected) {
+//			ExtentListener.test.get().log(Status.PASS, label + " is visible as expected : " + expected);
+//		} else if (expected) {
+//			ExtentListener.test.get().log(Status.FAIL, label + " is not visible as expected : " + expected);
+//			flag = false;
+//		} else {
+//			ExtentListener.test.get().log(Status.FAIL, label + " is not visible as expected : " + expected);
+//		}
+//		return flag;
+//	}
+	
+	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
+	    boolean isVisible = isDisplayed(driver, locator, 10);
 
-		if (isDisplayed(driver, locator, 10) && expected) {
-			ExtentListener.test.get().log(Status.PASS, label + " is visible as expected : " + expected);
-		} else if (expected) {
-			ExtentListener.test.get().log(Status.FAIL, label + " is not visible as expected : " + expected);
-			flag = false;
-		} else {
-			ExtentListener.test.get().log(Status.FAIL, label + " is not visible as expected : " + expected);
-		}
-		return flag;
+	    if (isVisible) {
+	        ExtentListener.test.get().log(Status.PASS, label + " is visible.");
+	    } else {
+	        ExtentListener.test.get().log(Status.FAIL, label + " is NOT visible.");
+	    }
+
+	    return isVisible;
 	}
+
 
 	//
 	public static void isInvisibleLoader(WebDriver driver, By locator) {
@@ -161,9 +175,9 @@ public class PageUtil extends Base {
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
 		clickOnElement(driver, locator, "", 10);
-		ExtentListener.test.get().log(Status.INFO, "Clicking enter on " + label);
+		ExtentListener.test.get().log(Status.INFO, "Entering value on " + label);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
-		ExtentListener.test.get().log(Status.INFO, "Clicked enter on " + label);
+		ExtentListener.test.get().log(Status.INFO, "Entered value on " + label);
 	}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {

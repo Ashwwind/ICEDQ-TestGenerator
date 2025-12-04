@@ -15,15 +15,12 @@ public class LoginTest extends Base {
 	@Test
 	public void validateLoginPage() {
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginPageValidation();
-		
+		loginPage.loginPageValidation();	
 	}
 
 	@Test(dependsOnMethods = { "validateLoginPage" })
-	public void testValidLogin() {
-
+	public void Login() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
-
 	}
 }

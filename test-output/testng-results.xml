@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="12" passed="5" failed="2" skipped="0">
+<testng-results ignored="5" total="9" passed="2" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-03T13:06:22 IST" name="Suite" finished-at="2025-12-03T13:33:58 IST" duration-ms="1656012">
+  <suite started-at="2025-12-04T18:41:14 IST" name="Suite" finished-at="2025-12-04T18:41:16 IST" duration-ms="2132">
     <groups>
     </groups>
-    <test started-at="2025-12-03T13:06:22 IST" name="Test" finished-at="2025-12-03T13:33:58 IST" duration-ms="1656012">
+    <test started-at="2025-12-04T18:41:14 IST" name="Test" finished-at="2025-12-04T18:41:16 IST" duration-ms="2132">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="homePageValidation()[pri:0, instance:com.qa.tests.HomePageTest@235ecd9f]" started-at="2025-12-03T13:06:23 IST" name="homePageValidation" finished-at="2025-12-03T13:06:25 IST" duration-ms="1357" status="FAIL">
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@72967906]" started-at="2025-12-04T18:41:16 IST" name="validateHomePage" finished-at="2025-12-04T18:41:16 IST" duration-ms="12" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -18,8 +18,8 @@ at org.testng.Assert.fail(Assert.java:99)
 at org.testng.Assert.failNotEquals(Assert.java:1037)
 at org.testng.Assert.assertTrue(Assert.java:45)
 at org.testng.Assert.assertTrue(Assert.java:55)
-at com.qa.pages.HomePage.validateHomePage(HomePage.java:38)
-at com.qa.tests.HomePageTest.homePageValidation(HomePageTest.java:16)
+at com.qa.pages.HomePage.validateHomePage(HomePage.java:35)
+at com.qa.tests.HomePageTest.validateHomePage(HomePageTest.java:16)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -51,147 +51,23 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- homePageValidation -->
+        </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
       <class name="com.qa.tests.TestGeneratorTest">
-        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1ca3b418]" started-at="2025-12-03T13:06:25 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-12-03T13:21:49 IST" duration-ms="923695" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleTest1 -->
-        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1ca3b418]" started-at="2025-12-03T13:21:49 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-12-03T13:25:49 IST" duration-ms="240288" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[recon]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleTest1 -->
-        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1ca3b418]" started-at="2025-12-03T13:25:49 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-12-03T13:33:35 IST" duration-ms="465941" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Validation - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleTest1 -->
-        <test-method signature="createRuleTest1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1ca3b418]" started-at="2025-12-03T13:33:35 IST" name="createRuleTest1" data-provider="ruleDataForImportTemplate" finished-at="2025-12-03T13:33:58 IST" duration-ms="23056" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pushdown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Pushdown Validation - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@5b8dfcc1]" started-at="2025-12-04T18:41:16 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-04T18:41:16 IST" duration-ms="0" status="SKIP">
           <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[File upload failed: ❌ File does not exist: D:\Eclipse\ICEDQ\TestGenerator/src/test/resources/ImportTemplate/Pushdwon.xlsx]]>
+              <![CDATA[java.lang.RuntimeException: Excel read failed: Cannot invoke "org.apache.poi.ss.usermodel.Sheet.getPhysicalNumberOfRows()" because "sheet" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: File upload failed: ❌ File does not exist: D:\Eclipse\ICEDQ\TestGenerator/src/test/resources/ImportTemplate/Pushdwon.xlsx
-at com.qa.utils.PageUtil.uploadFile(PageUtil.java:260)
-at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:520)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:242)
-at com.qa.tests.TestGeneratorTest.createRuleTest1(TestGeneratorTest.java:72)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+              <![CDATA[java.lang.RuntimeException: java.lang.RuntimeException: Excel read failed: Cannot invoke "org.apache.poi.ss.usermodel.Sheet.getPhysicalNumberOfRows()" because "sheet" is null
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
+at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:798)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -211,27 +87,36 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: Excel read failed: Cannot invoke "org.apache.poi.ss.usermodel.Sheet.getPhysicalNumberOfRows()" because "sheet" is null
+at com.qa.utils.ExcelReader.readExcel(ExcelReader.java:36)
+at com.qa.tests.TestGeneratorTest.ruleDataProviderExcel(TestGeneratorTest.java:30)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
+... 25 more
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRuleTest1 -->
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
       </class> <!-- com.qa.tests.TestGeneratorTest -->
       <class name="com.qa.tests.LoginTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.LoginTest@3e8c3cb]" started-at="2025-12-03T13:06:18 IST" name="startSuite" finished-at="2025-12-03T13:06:22 IST" duration-ms="4245" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.LoginTest@49139829]" started-at="2025-12-04T18:41:09 IST" name="startSuite" finished-at="2025-12-04T18:41:14 IST" duration-ms="5107" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@3e8c3cb]" started-at="2025-12-03T13:06:22 IST" name="validateLoginPage" finished-at="2025-12-03T13:06:23 IST" duration-ms="547" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@49139829]" started-at="2025-12-04T18:41:14 IST" name="validateLoginPage" finished-at="2025-12-04T18:41:15 IST" duration-ms="569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="testValidLogin()[pri:0, instance:com.qa.tests.LoginTest@3e8c3cb]" started-at="2025-12-03T13:06:23 IST" name="testValidLogin" finished-at="2025-12-03T13:06:23 IST" depends-on-methods="com.qa.tests.LoginTest.validateLoginPage" duration-ms="570" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@49139829]" started-at="2025-12-04T18:41:15 IST" name="Login" finished-at="2025-12-04T18:41:16 IST" depends-on-methods="com.qa.tests.LoginTest.validateLoginPage" duration-ms="841" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.LoginTest@3e8c3cb]" started-at="2025-12-03T13:33:59 IST" name="endSuite" finished-at="2025-12-03T13:33:59 IST" duration-ms="329" status="PASS">
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.LoginTest@49139829]" started-at="2025-12-04T18:41:16 IST" name="endSuite" finished-at="2025-12-04T18:41:17 IST" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->

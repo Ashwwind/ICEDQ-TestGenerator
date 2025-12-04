@@ -7,14 +7,14 @@
         <methods>
           <include name="endSuite"/>
           <include name="startSuite"/>
-          <include name="createRuleTest1" invocation-numbers="3"/>
+          <include name="createRuleUsingDynamicTemplate"/>
         </methods>
       </class> <!-- com.qa.tests.TestGeneratorTest -->
       <class name="com.qa.tests.HomePageTest">
         <methods>
           <include name="endSuite"/>
           <include name="startSuite"/>
-          <include name="homePageValidation"/>
+          <include name="validateHomePage"/>
         </methods>
       </class> <!-- com.qa.tests.HomePageTest -->
     </classes>
