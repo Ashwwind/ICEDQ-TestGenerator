@@ -40,6 +40,9 @@ public class TestGeneratorPage extends PageUtil {
 			prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
 
 	// Source Dataset
+	By selectDatabaseConnectionType = getElementLocator(prop.getProperty("wizard.Database.connectionType"));
+	By selectCloudDataWarehouseConnectionType = getElementLocator(
+			prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
 	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(
 			prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
 	By clickSourcedatasetConnectionDropdown = getElementLocator(
@@ -58,7 +61,8 @@ public class TestGeneratorPage extends PageUtil {
 	By enterTargetSchemaName = getElementLocator(prop.getProperty("wizard.target.schema.input"));
 
 	By clickNextButtondatasetNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.datasetNextbtn"));
-	By ClickNextButtonimportSQLNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
+	By ClickNextButtonimportSQLNextbtn = getElementLocator(
+			prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
 
 	// Available Table
 	By clickAvailableTable = getElementLocator(prop.getProperty("availableTable.click"));
@@ -90,7 +94,8 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public void createRuleUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionName, String schemaName, String tableName) throws InterruptedException {
+			String folderName, String connectionType, String connectionName, String schemaName, String tableName)
+			throws InterruptedException {
 
 // 1. Navigate to Test Generator → Wizard
 		clickTestGenerator();
@@ -135,12 +140,12 @@ public class TestGeneratorPage extends PageUtil {
 		gotoNotificationNextbtn();
 
 // 5. Select Source Dataset
-		selectionSourceDataset(connectionName, schemaName);
+		selectionSourceDataset(connectionType, connectionName, schemaName);
 
 // 6. Select Target Dataset
 		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
 
-			selectionTargetDataset(connectionName, schemaName);
+			selectionTargetDataset(connectionType, connectionName, schemaName);
 
 		} else {
 			System.out.println("Skipping Target Dataset for rule type: " + ruleType);
@@ -166,17 +171,17 @@ public class TestGeneratorPage extends PageUtil {
 // 9. Navigate Data Testing
 		navigatHomePage();
 	}
-	
-	            // ============================
-				     // Import Template
-				// ============================
+
+	// ============================
+	// Import Template
+	// ============================
 
 	public void createRuleUsingDefaultImportTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionName) throws InterruptedException {
+			String folderName, String connectionType, String connectionName) throws InterruptedException {
 
 // 1. Navigate to Test Generator → Wizard
 		clickTestGenerator();
-
+		boolean isReconOrChecksum = ruleType.equalsIgnoreCase("checksum") || ruleType.equalsIgnoreCase("recon");
 // switch case
 		switch (ruleType.toLowerCase()) {
 		case "checksum":
@@ -217,12 +222,12 @@ public class TestGeneratorPage extends PageUtil {
 		gotoNotificationNextbtn();
 
 // 5. Select Source Dataset
-		selectionSourceDatasetForImport(connectionName);
+		selectionSourceDatasetForImport(connectionType, connectionName);
 
 // 6. Select Target Dataset
-		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
+		if (isReconOrChecksum) {
 
-			selectionTargetDatasetForImport(connectionName);
+			selectionTargetDatasetForImport(connectionType, connectionName);
 
 		} else {
 			System.out.println("Skipping Target Dataset for rule type: " + ruleType);
@@ -231,19 +236,26 @@ public class TestGeneratorPage extends PageUtil {
 // Next Buttons
 		gotoDatasetNextbtn();
 
-// 7. Import SQL
-		if (ruleType == "checksum") {
+		// 7. Import SQL (upload file based on ruleType)
+		switch (ruleType.toLowerCase()) {
+		case "checksum":
 			uploadingFiles("Checksum.xlsx");
-		}
+			break;
 
-		if (ruleType == "recon") {
+		case "recon":
 			uploadingFiles("Recon.xlsx");
-		}
-		if (ruleType == "validation") {
+			break;
+
+		case "validation":
 			uploadingFiles("Validation.xlsx");
-		}
-		if (ruleType == "pushdown") {
-			uploadingFiles("Pushdwon.xlsx");
+			break;
+
+		case "pushdown":
+			uploadingFiles("Pushdown.xlsx");
+			break;
+
+		default:
+			throw new IllegalArgumentException("Invalid rule type: " + ruleType);
 		}
 
 // Next Buttons
@@ -459,8 +471,7 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public void gotoWorkspaceNextbtn() {
-		validateElementIsVisible(driver, clickNextButtonWorkspaceNextbtn,
-				"Next button of 'Select Container' page");
+		validateElementIsVisible(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page");
 		try {
 			clickOnElement(driver, clickNextButtonWorkspaceNextbtn, "next button of 'Select Container' page", 20);
 			ExtentListener.test.get().log(Status.INFO, "Next button of 'Select Container' page is clickable.");
@@ -471,8 +482,7 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public void gotoRuleMetadataNextbtn() {
-		validateElementIsVisible(driver, clickNextButtonmetadataNextbtn,
-				"Next button of 'Define Rule Metadata' page ");
+		validateElementIsVisible(driver, clickNextButtonmetadataNextbtn, "Next button of 'Define Rule Metadata' page ");
 		try {
 			clickOnElement(driver, clickNextButtonmetadataNextbtn, "next button of 'Define Rule Metadata' page", 20);
 			ExtentListener.test.get().log(Status.INFO, "Next button of 'Define Rule Metadata' page is clickable.");
@@ -483,8 +493,7 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public void gotoCheckMetadataNextbtn() {
-		validateElementIsVisible(driver, clickNextButtoncheckNextbtn,
-				"Next button of 'Define Rule Metadata' page ");
+		validateElementIsVisible(driver, clickNextButtoncheckNextbtn, "Next button of 'Define Rule Metadata' page ");
 		try {
 			clickOnElement(driver, clickNextButtoncheckNextbtn, "next button of 'Define Check Metadata' page", 20);
 			ExtentListener.test.get().log(Status.INFO, "Next button of 'Define Check Metadata' page is clickable.");
@@ -511,25 +520,53 @@ public class TestGeneratorPage extends PageUtil {
 ///// *******************************/////
 /////////////// ********************************* ////////////////
 ///// *******************************/////
-	public void selectionSourceDataset(String connectionName, String schemaName) throws InterruptedException {
+	public void selectionSourceDataset(String connectionType, String connectionName, String schemaName)
+			throws InterruptedException {
 		// JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		// Click on the source connection type.
 		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", 30);
 
 		// Select "Database"
-		clickOnElement(driver, By.xpath("//li[text()='Database']"), "source database connection.", 20);
+		// clickOnElement(driver, selectConnectionType, "source database connection.",
+		// 20);
+		if (connectionType.equalsIgnoreCase("Database")) {
+			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
 
-		// Click Source Connection
-		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+			// Click Source Connection
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
 
-		// Enter connection name
-		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			// Enter connection name
+			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
+			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+
+		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",
+					20);
+
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+
+			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
+			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+
+			clickOnElement(driver, By.xpath(
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
+					"database dropdown.", 20);
+
+			sendkeysToElement(driver, By.xpath(
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
+					"source databse name", "icedrs");
+			sendkeysToEnter(driver, By.xpath(
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
+					"source database name");
+			
+		}
 
 		// Scroll & click schema dropdown
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickSourceSchemaDropdown));
+		
+		Thread.sleep(500);
 
 		clickOnElement(driver, clickSourceSchemaDropdown, "choose schema dropdown.", 20);
 
@@ -544,12 +581,14 @@ public class TestGeneratorPage extends PageUtil {
 
 	}
 
-	public void selectionSourceDatasetForImport(String connectionName) throws InterruptedException {
+	public void selectionSourceDatasetForImport(String connectionType, String connectionName) throws InterruptedException {
 		// Click on the source connection type.
 		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", 30);
 
 		// Select "Database"
-		clickOnElement(driver, By.xpath("//li[text()='Database']"), "source database connection.", 20);
+		if(connectionType.equalsIgnoreCase("Database"))
+		{
+		clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
 
 		// Click Source Connection
 		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
@@ -557,26 +596,64 @@ public class TestGeneratorPage extends PageUtil {
 		// Enter connection name
 		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+		}
+		else if(connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
+		{
+		clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source database connection.", 20);
+
+		// Click Source Connection
+		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+
+		// Enter connection name
+		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
+		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+		}
 	}
 
 	/// ********* Select the target dataset ********** ///
 ///// *******************************/////
 /////////////// ********************************* ////////////////
 ///// *******************************/////
-	public void selectionTargetDataset(String connectionName, String schemaName) throws InterruptedException {
+	public void selectionTargetDataset(String connectionType, String connectionName, String schemaName)
+			throws InterruptedException {
 
 		/// Click on the target connection type.
 		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type.", 30);
 
 		// Select the target connection type as database.
-		clickOnElement(driver, By.xpath("//li[text()='Database']"), "target database connection.", 20);
+		// clickOnElement(driver, By.xpath("//li[text()='Database']"), "target database
+		// connection.", 20);
+		if (connectionType.equalsIgnoreCase("Database")) {
+			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
 
-		// Click the target connection.
-		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
+			// Click the target connection.
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
 
-		// Entering the target connection name
-		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+			// Entering the target connection name
+			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
+			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+
+		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",
+					20);
+
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
+
+			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
+			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+
+			clickOnElement(driver, By.xpath(
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
+					"database dropdown.", 20);
+
+			sendkeysToElement(driver, By.xpath(
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
+					"source databse name", "icedrs");
+			sendkeysToEnter(driver, By.xpath(
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
+					"source databse name");
+
+		}
 
 		// Scroll & click schema dropdown
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
@@ -594,12 +671,13 @@ public class TestGeneratorPage extends PageUtil {
 
 	}
 
-	public void selectionTargetDatasetForImport(String connectionName) throws InterruptedException {
+	public void selectionTargetDatasetForImport(String connectionType, String connectionName) throws InterruptedException {
 		/// Click on the target connection type.
 		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type.", 30);
 
 		// Select the target connection type as database.
-		clickOnElement(driver, By.xpath("//li[text()='Database']"), "target database connection.", 20);
+		if (connectionType.equalsIgnoreCase("Databse")) {
+		clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 20);
 
 		// Click the target connection.
 		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
@@ -607,13 +685,26 @@ public class TestGeneratorPage extends PageUtil {
 		// Entering the target connection name
 		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+		}
+		else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "target database connection.", 20);
+
+			// Click the target connection.
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
+
+			// Entering the target connection name
+			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
+			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+			}
+		
 	}
 
 	// Import SQL Files
 	public void uploadingFiles(String fileName) throws InterruptedException {
 
 		Thread.sleep(500);
-		//validateElementIsVisible(driver, By.xpath("//*[@name='UploadFiles']"), fileName);
+		// validateElementIsVisible(driver, By.xpath("//*[@name='UploadFiles']"),
+		// fileName);
 		Thread.sleep(500);
 		uploadFile(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), fileName);
 		// Optional: verify the uploaded file appears in list
@@ -626,8 +717,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Click on the next button of 'select dataset' page.
 	public void gotoDatasetNextbtn() {
-		validateElementIsVisible(driver, clickNextButtondatasetNextbtn,
-				"Next button of 'Select Dataset' page ");
+		validateElementIsVisible(driver, clickNextButtondatasetNextbtn, "Next button of 'Select Dataset' page ");
 		try {
 			clickOnElement(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page.", 20);
 			ExtentListener.test.get().log(Status.INFO, "Next button of 'Select Dataset' page is clickable.");
@@ -651,8 +741,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Click on the next button of 'select table' page.
 	public void gotoSelettableNextbtn() {
-		validateElementIsVisible(driver, clickNextButtonSelettableNextbtn,
-				"Next button of 'Select Dataset' page ");
+		validateElementIsVisible(driver, clickNextButtonSelettableNextbtn, "Next button of 'Select Dataset' page ");
 		try {
 			clickOnElement(driver, clickNextButtonSelettableNextbtn, "next button of 'Select Teables' page", 20);
 			ExtentListener.test.get().log(Status.INFO, "Next button of 'Select Teables' page is clickable.");
@@ -664,8 +753,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Click on the next button of 'select table' page.
 	public void gotoImportSQLNextbtn() {
-		validateElementIsVisible(driver, ClickNextButtonimportSQLNextbtn,
-				"Next button of 'Import SQL' page ");
+		validateElementIsVisible(driver, ClickNextButtonimportSQLNextbtn, "Next button of 'Import SQL' page ");
 		try {
 			clickOnElement(driver, ClickNextButtonimportSQLNextbtn, "next button of 'Import SQL' page.", 20);
 			ExtentListener.test.get().log(Status.INFO, "Next button of 'Import SQL' page is clickable.");
@@ -734,6 +822,7 @@ public class TestGeneratorPage extends PageUtil {
 		// Switch to child
 		String child = switchToNewWindow(driver, parent, 60);
 		Thread.sleep(500);
+		isInvisibleLoader(driver, loader);
 		isDisplayed(driver, By.xpath("//*[@placeholder='Enter rule name']"), 20);
 		WebElement ruleName2 = driver.findElement(By.xpath("//*[@placeholder='Enter rule name']"));
 		String ruleNameDataTestingPage = ruleName2.getAttribute("value");

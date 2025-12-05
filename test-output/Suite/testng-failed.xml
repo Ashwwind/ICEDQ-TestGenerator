@@ -7,16 +7,9 @@
         <methods>
           <include name="endSuite"/>
           <include name="startSuite"/>
-          <include name="createRuleUsingDynamicTemplate"/>
+          <include name="createRuleUsingImportTemplate" invocation-numbers="3"/>
         </methods>
       </class> <!-- com.qa.tests.TestGeneratorTest -->
-      <class name="com.qa.tests.HomePageTest">
-        <methods>
-          <include name="endSuite"/>
-          <include name="startSuite"/>
-          <include name="validateHomePage"/>
-        </methods>
-      </class> <!-- com.qa.tests.HomePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

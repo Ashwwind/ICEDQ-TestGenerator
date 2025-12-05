@@ -9,23 +9,30 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">2</td><td class="num attn">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">2,132</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">384,657</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qa.tests.HomePageTest</td><td><a href="#m0">validateHomePage</a></td><td rowspan="1">1764853876020</td><td rowspan="1">12</td></tr><tr><th colspan="4">Test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.qa.tests.TestGeneratorTest</td><td><a href="#m1">createRuleUsingDynamicTemplate</a></td><td rowspan="1">1764853876711</td><td rowspan="1">0</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.qa.tests.LoginTest</td><td><a href="#m2">Login</a></td><td rowspan="1">1764853875177</td><td rowspan="1">841</td></tr><tr class="passedeven"><td><a href="#m3">validateLoginPage</a></td><td rowspan="1">1764853874599</td><td rowspan="1">569</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qa.tests.TestGeneratorTest</td><td><a href="#m0">createRuleUsingImportTemplate</a></td><td rowspan="1">1764921939495</td><td rowspan="1">72105</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.tests.HomePageTest</td><td><a href="#m1">validateHomePage</a></td><td rowspan="1">1764921628723</td><td rowspan="1">10724</td></tr><tr class="passedodd"><td rowspan="2">com.qa.tests.LoginTest</td><td><a href="#m2">Login</a></td><td rowspan="1">1764921627762</td><td rowspan="1">958</td></tr><tr class="passedodd"><td><a href="#m3">validateLoginPage</a></td><td rowspan="1">1764921627168</td><td rowspan="1">587</td></tr><tr class="passedeven"><td rowspan="3">com.qa.tests.TestGeneratorTest</td><td><a href="#m4">createRuleUsingImportTemplate</a></td><td rowspan="3">1764921885027</td><td rowspan="3">54467</td></tr><tr class="passedeven"><td><a href="#m5">createRuleUsingImportTemplate</a></td></tr><tr class="passedeven"><td><a href="#m6">createRuleUsingImportTemplate</a></td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.qa.tests.HomePageTest#validateHomePage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at com.qa.pages.HomePage.validateHomePage(HomePage.java:35)
-	at com.qa.tests.HomePageTest.validateHomePage(HomePageTest.java:16)
+<h2>Test</h2><h3 id="m0">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>pushdown</td><td>Data Pushdown Validation - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr><tr><th colspan="5">Exception</th></tr><tr><td colspan="5"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[normalize-space()= &apos;Go To Preview&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54553}, goog:processID: 82608, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54553/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 887ea32c5fe902b73e64c1b2403c1d9b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.qa.utils.PageUtil.isDisplayed(PageUtil.java:97)
+	at com.qa.utils.PageUtil.validateElementIsVisible(PageUtil.java:150)
+	at com.qa.pages.TestGeneratorPage.clickOnGoToPreview(TestGeneratorPage.java:731)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:265)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:98)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.RuntimeException: Excel read failed: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getPhysicalNumberOfRows()&quot; because &quot;sheet&quot; is null
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.lang.RuntimeException: Excel read failed: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getPhysicalNumberOfRows()&quot; because &quot;sheet&quot; is null
-	at com.qa.utils.ExcelReader.readExcel(ExcelReader.java:36)
-	at com.qa.tests.TestGeneratorTest.ruleDataProviderExcel(TestGeneratorTest.java:30)
-	... 25 more
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.qa.tests.HomePageTest#validateHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">com.qa.tests.LoginTest#Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m3">com.qa.tests.LoginTest#validateLoginPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>validation</td><td>Data Validation - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>checksum</td><td>Compare Record Counts - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>recon</td><td>Diff and Expression based on Column Position - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

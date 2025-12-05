@@ -38,15 +38,22 @@ public class TestGeneratorTest extends Base {
 
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionName, String schemaName, String tableName) throws InterruptedException {
+			String folderName, String connectionType,String connectionName, String schemaName, String tableName) throws InterruptedException {
 
 		ExtentListener.startTest("Create rule using default Dynamic template for - " + ruleType);
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
 		try {
-			page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,
+			if(connectionType.equalsIgnoreCase("Database")) {
+			page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
 					connectionName, schemaName, tableName);
+			}
+			else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
+			{
+				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
+						connectionName, schemaName, tableName);
+			}
 
 			ExtentListener.pass("Rule created successfully for rule type: " + ruleType);
 
@@ -82,14 +89,20 @@ public class TestGeneratorTest extends Base {
 
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName,
-	        String workspaceName, String folderName, String connectionName) throws InterruptedException {
+	        String workspaceName, String folderName, String connectionType, String connectionName) throws InterruptedException {
 		ExtentListener.startTest("Create rule using default Import template for - " + ruleType);
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
 		try {
-			page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,
+			if(connectionType.equalsIgnoreCase("Database")) {
+			page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
 					connectionName);
+			}
+			else if(connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
+						connectionName);
+			}
 
 			ExtentListener.pass("Rule created successfully for rule type: " + ruleType);
 
