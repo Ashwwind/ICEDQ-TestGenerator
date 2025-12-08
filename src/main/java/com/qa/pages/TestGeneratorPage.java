@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.aventstack.extentreports.Status;
+import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentListener;
 import com.qa.utils.PageUtil;
 
@@ -32,44 +33,37 @@ public class TestGeneratorPage extends PageUtil {
 	By clickOnFolderDropdown = getElementLocator(prop.getProperty("wizard.folder.dropdown"));
 	By searchFolderName = getElementLocator(prop.getProperty("wizard.search.folderName"));
 	By selectSearchFolder = getElementLocator(prop.getProperty("select.searchedfolder"));
-	By clickNextButtonWorkspaceNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
+	By clickNextButtonWorkspaceNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
 	By clickNextButtonmetadataNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.metadataNextbtn"));
 	By clickNextButtoncheckNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.checkNextbtn"));
-	By clickNextButtonnotificationNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
+	By clickNextButtonnotificationNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
 
 	// Source Dataset
 	By selectDatabaseConnectionType = getElementLocator(prop.getProperty("wizard.Database.connectionType"));
-	By selectCloudDataWarehouseConnectionType = getElementLocator(
-			prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
-	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(
-			prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
-	By clickSourcedatasetConnectionDropdown = getElementLocator(
-			prop.getProperty("wizard.click.sourceConnectionDropdown"));
+	By selectCloudDataWarehouseConnectionType = getElementLocator(prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
+	By selectFileConnectionType = getElementLocator(prop.getProperty("wizard.File.connectionType"));
+	
+	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
+	By clickSourcedatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionDropdown"));
 	By enterSourceConnectionName = getElementLocator(prop.getProperty("wizard.source.connection.input"));
 	By clickSourceSchemaDropdown = getElementLocator(prop.getProperty("wizard.source.schema.dropdown"));
 	By enterSourceSchemaName = getElementLocator(prop.getProperty("wizard.source.schema.input"));
 
 	// Target Dataset
-	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(
-			prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
-	By clickTargetdatasetConnectionDropdown = getElementLocator(
-			prop.getProperty("wizard.click.targetConnectionDropdown"));
+	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
+	By clickTargetdatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionDropdown"));
 	By enterTargetConnectionName = getElementLocator(prop.getProperty("wizard.target.connection.input"));
 	By clickTargetSchemaDropdown = getElementLocator(prop.getProperty("wizard.target.schema.dropdown"));
 	By enterTargetSchemaName = getElementLocator(prop.getProperty("wizard.target.schema.input"));
 
 	By clickNextButtondatasetNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.datasetNextbtn"));
-	By ClickNextButtonimportSQLNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
+	By ClickNextButtonimportSQLNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
 
 	// Available Table
 	By clickAvailableTable = getElementLocator(prop.getProperty("availableTable.click"));
 	By selectAvailableTable = getElementLocator(prop.getProperty("availableTable.select.table"));
 	By clickMoveToButton = getElementLocator(prop.getProperty("availableTable.moveto.click"));
-	By clickNextButtonSelettableNextbtn = getElementLocator(
-			prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
+	By clickNextButtonSelettableNextbtn = getElementLocator(prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
 
 	// Click on Generate
 	By clickGenerateButton = getElementLocator(prop.getProperty("generateButton.click"));
@@ -239,19 +233,43 @@ public class TestGeneratorPage extends PageUtil {
 		// 7. Import SQL (upload file based on ruleType)
 		switch (ruleType.toLowerCase()) {
 		case "checksum":
-			uploadingFiles("Checksum.xlsx");
+			if (connectionType.equalsIgnoreCase("Database")) {
+				uploadingFiles("Checksum.xlsx");
+			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+				uploadingFiles("Checksum - Redshift.xlsx");
+			} else if (connectionType.equalsIgnoreCase("File")) {
+				uploadingFiles("Checksum - Flat File-SQL.xlsx");
+			}
 			break;
 
 		case "recon":
-			uploadingFiles("Recon.xlsx");
+			if (connectionType.equalsIgnoreCase("Database")) {
+				uploadingFiles("Recon.xlsx");
+			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+				uploadingFiles("Recon - Redshift.xlsx");
+			} else if (connectionType.equalsIgnoreCase("File")) {
+				uploadingFiles("Recon - Flat File-SQL.xlsx");
+			}
 			break;
 
 		case "validation":
-			uploadingFiles("Validation.xlsx");
+			if (connectionType.equalsIgnoreCase("Database")) {
+				uploadingFiles("Validation.xlsx");
+			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+				uploadingFiles("Validation - Redshift.xlsx");
+			} else if (connectionType.equalsIgnoreCase("File")) {
+				uploadingFiles("Validation - Flat File-SQL.xlsx");
+			}
 			break;
 
 		case "pushdown":
-			uploadingFiles("Pushdown.xlsx");
+			if (connectionType.equalsIgnoreCase("Database")) {
+				uploadingFiles("Pushdown.xlsx");
+			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+				uploadingFiles("Pushdown - Redshift.xlsx");
+			} else if (connectionType.equalsIgnoreCase("File")) {
+				uploadingFiles("Pushdown - Flat File-SQL.xlsx");
+			}
 			break;
 
 		default:
@@ -540,9 +558,10 @@ public class TestGeneratorPage extends PageUtil {
 			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
 
+			Thread.sleep(500);
+
 		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",
-					20);
+			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.", 20);
 
 			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
 
@@ -550,63 +569,72 @@ public class TestGeneratorPage extends PageUtil {
 			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
 
 			clickOnElement(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
-					"database dropdown.", 20);
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"), "database dropdown.", 20);
 
 			sendkeysToElement(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
-					"source databse name", "icedrs");
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"), "source databse name", "icedrs");
 			sendkeysToEnter(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
-					"source database name");
-			
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"), "source database name");
+
+			Thread.sleep(5000);
 		}
 
 		// Scroll & click schema dropdown
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickSourceSchemaDropdown));
-		
-		Thread.sleep(500);
 
-		clickOnElement(driver, clickSourceSchemaDropdown, "choose schema dropdown.", 20);
+
+		clickOnElement(driver, clickSourceSchemaDropdown, "choose schema dropdown.", 40);
 
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickSourceSchemaDropdown));
 
+		Thread.sleep(500);
 		// Enter schema name
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
 		sendkeysToEnter(driver, enterSourceSchemaName, "source schema name");
 
-		Thread.sleep(5000);
-
 	}
 
-	public void selectionSourceDatasetForImport(String connectionType, String connectionName) throws InterruptedException {
+	public void selectionSourceDatasetForImport(String connectionType, String connectionName)
+			throws InterruptedException {
 		// Click on the source connection type.
 		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", 30);
 
 		// Select "Database"
-		if(connectionType.equalsIgnoreCase("Database"))
-		{
-		clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
+		if (connectionType.equalsIgnoreCase("Database")) {
+			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
 
-		// Click Source Connection
-		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+			// Click Source Connection
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
 
-		// Enter connection name
-		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			// Enter connection name
+			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
+			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			Thread.sleep(500);
+
+		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source database connection.", 20);
+
+			// Click Source Connection
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+
+			// Enter connection name
+			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
+			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			Thread.sleep(500);
 		}
-		else if(connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
-		{
-		clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source database connection.", 20);
 
-		// Click Source Connection
-		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+		else if (connectionType.equalsIgnoreCase("File")) {
+			clickOnElement(driver, selectFileConnectionType, "source database connection.", 20);
 
-		// Enter connection name
-		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			// Click the target connection.
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
+
+			// Entering the target connection name
+			sendkeysToElement(driver, enterTargetConnectionName, "source connection name", connectionName);
+			sendkeysToEnter(driver, enterTargetConnectionName, "source connection name");
+			Thread.sleep(500);
 		}
 	}
 
@@ -633,6 +661,8 @@ public class TestGeneratorPage extends PageUtil {
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
 
+			Thread.sleep(500);
+
 		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
 			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",
 					20);
@@ -653,40 +683,46 @@ public class TestGeneratorPage extends PageUtil {
 					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
 					"source databse name");
 
+			Thread.sleep(5000);
+
 		}
 
 		// Scroll & click schema dropdown
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickTargetSchemaDropdown));
 
-		clickOnElement(driver, clickTargetSchemaDropdown, "choose schema dropdown.", 20);
+		clickOnElement(driver, clickTargetSchemaDropdown, "choose schema dropdown.", 40);
 
 		// Enter schema name
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickTargetSchemaDropdown));
 
+		Thread.sleep(500);
 		// Entering the schema name.
 		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
 		sendkeysToEnter(driver, enterSourceSchemaName, "target schema name");
 
 	}
 
-	public void selectionTargetDatasetForImport(String connectionType, String connectionName) throws InterruptedException {
+	public void selectionTargetDatasetForImport(String connectionType, String connectionName)
+			throws InterruptedException {
 		/// Click on the target connection type.
 		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type.", 30);
 
 		// Select the target connection type as database.
-		if (connectionType.equalsIgnoreCase("Databse")) {
-		clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 20);
+		if (connectionType.equalsIgnoreCase("Database")) {
+			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
 
-		// Click the target connection.
-		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
+			// Click the target connection.
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
 
-		// Entering the target connection name
-		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-		}
-		else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+			// Entering the target connection name
+			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
+			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+			
+			Thread.sleep(500);
+
+		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
 			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "target database connection.", 20);
 
 			// Click the target connection.
@@ -695,8 +731,20 @@ public class TestGeneratorPage extends PageUtil {
 			// Entering the target connection name
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-			}
-		
+			Thread.sleep(500);
+
+		} else if (connectionType.equalsIgnoreCase("File")) {
+			clickOnElement(driver, selectFileConnectionType, "target database connection.", 20);
+
+			// Click the target connection.
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
+
+			// Entering the target connection name
+			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
+			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+			Thread.sleep(500);
+		}
+
 	}
 
 	// Import SQL Files
@@ -848,7 +896,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Go to the Data Testing
 	public void navigatHomePage() {
-		goTo("https://qa.onprem.icedq.com/#/");
+		goTo(ConfigReader.getProperty("homePageUrl"));
 	}
 
 }

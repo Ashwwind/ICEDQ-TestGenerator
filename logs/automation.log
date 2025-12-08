@@ -4863,3 +4863,177 @@ Session ID: 51f9e5c0e05edfd564649230f3dcec51
 2025-12-05 18:58:30 INFO  PageUtil:286 - Waiting for new window to open...
 2025-12-05 18:58:30 INFO  PageUtil:297 - Switching to child window: 2D3BD896DADDB9F219AB99EF9EA6C9F6
 2025-12-05 18:58:35 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 11:53:02 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 11:53:02 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 11:53:02 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 11:53:02 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 11:53:02 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 11:53:02 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 11:55:59 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 11:56:07 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 11:56:07 INFO  PageUtil:297 - Switching to child window: 3ED7B576AC9F9B06BFF7E95CE4957B4E
+2025-12-08 11:56:13 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 11:58:51 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 11:58:58 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 11:58:58 INFO  PageUtil:297 - Switching to child window: 8F4B0F77010BF7BFA7716A9958878857
+2025-12-08 11:59:07 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 12:06:15 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 12:06:15 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 12:06:15 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 12:06:15 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 12:06:15 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 12:06:15 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 12:07:24 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 12:07:28 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 12:07:28 INFO  PageUtil:297 - Switching to child window: 0BAB857830A69062BCECA41362686C97
+2025-12-08 12:07:35 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 12:11:42 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 12:11:47 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 12:11:47 INFO  PageUtil:297 - Switching to child window: 611AB233CE39ED3269FC65731A8218BD
+2025-12-08 12:11:51 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 12:12:34 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 12:12:38 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 12:12:38 INFO  PageUtil:297 - Switching to child window: 3E43FCA68C5EBC2B9266035FDC1E2AA2
+2025-12-08 12:12:43 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 12:50:53 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 12:50:53 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 12:50:53 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 12:50:53 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 12:50:53 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 12:50:53 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 12:56:36 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 12:56:40 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 12:56:40 INFO  PageUtil:297 - Switching to child window: A5334D49B321C552CE156178E3AF7862
+2025-12-08 12:56:45 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 13:03:18 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 13:03:18 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 13:03:18 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 13:03:18 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 13:03:18 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 13:03:18 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 13:05:18 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 13:05:23 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 13:05:23 INFO  PageUtil:297 - Switching to child window: 12460244E269B9E5A11EF530BD934BDE
+2025-12-08 13:05:28 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 13:06:28 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 13:06:33 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 13:06:33 INFO  PageUtil:297 - Switching to child window: 17E6322360592438D954621E9D1A7768
+2025-12-08 13:06:38 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 13:07:35 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 13:07:39 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 13:07:39 INFO  PageUtil:297 - Switching to child window: 2995B257F620D8A90814647E18FED44A
+2025-12-08 13:07:44 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 13:08:40 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 13:08:44 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 13:08:44 INFO  PageUtil:297 - Switching to child window: 850CDAC4F282E1026799EE69BD62407B
+2025-12-08 13:08:49 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 13:10:39 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 13:10:44 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 13:10:44 INFO  PageUtil:297 - Switching to child window: D4A94CEEF3ADF5CAEC377FBA524F74B8
+2025-12-08 13:10:51 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 13:12:24 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 13:12:27 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 13:12:27 INFO  PageUtil:297 - Switching to child window: 6E97090431F4B5B35C589274009754A0
+2025-12-08 13:12:33 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:21:00 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 16:21:00 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 16:21:00 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 16:21:00 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 16:21:00 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 16:21:00 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 16:22:04 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:22:08 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:22:08 INFO  PageUtil:297 - Switching to child window: 223B5E45B58FBC3B5CE101F541C08E09
+2025-12-08 16:22:13 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:22:59 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:23:04 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:23:04 INFO  PageUtil:297 - Switching to child window: 7D6095DEEA714BA4C7350CEBC0E6CAFF
+2025-12-08 16:23:09 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:23:59 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:24:12 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:24:12 INFO  PageUtil:297 - Switching to child window: BBB3EFE0BC1A87B6FDC3ED9A6152766C
+2025-12-08 16:24:18 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:25:06 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:25:11 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:25:11 INFO  PageUtil:297 - Switching to child window: 5C23BFB60745DDDC3EE3DEA1D51A9E3E
+2025-12-08 16:25:16 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:26:03 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:26:06 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:26:06 INFO  PageUtil:297 - Switching to child window: 60DB3425DC934D0B9E5B7EB7F2E99648
+2025-12-08 16:26:12 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:27:40 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:27:45 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:27:45 INFO  PageUtil:297 - Switching to child window: 4460F932B956E0B3516077B52F0C3AF8
+2025-12-08 16:27:51 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:28:57 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:29:03 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:29:03 INFO  PageUtil:297 - Switching to child window: 4EEED11884C91BBA714D2B1B36021EDF
+2025-12-08 16:29:08 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:30:15 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 16:30:19 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 16:30:19 INFO  PageUtil:297 - Switching to child window: B738EC0B13EA9C95BE37CAAE538D18AE
+2025-12-08 16:30:25 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 16:53:37 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 16:53:37 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 16:53:37 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 16:53:37 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 16:53:38 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 16:53:38 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 17:04:26 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 17:04:26 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 17:04:26 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 17:04:26 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 17:04:26 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 17:04:26 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 17:07:22 INFO  PageUtil:280 - Capturing parent window handle
+2025-12-08 17:07:27 INFO  PageUtil:286 - Waiting for new window to open...
+2025-12-08 17:07:27 INFO  PageUtil:297 - Switching to child window: 90F7FA1121B562A9D13FFEBFAC1B7CA6
+2025-12-08 17:07:34 INFO  PageUtil:313 - Closing child window and switching back to parent.
+2025-12-08 17:12:36 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 17:12:36 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 17:12:36 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 17:12:36 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 17:12:36 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 17:12:36 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 17:56:41 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 17:56:41 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 17:56:41 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 17:56:41 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 17:56:41 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 17:56:41 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 18:01:21 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 18:01:21 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 18:01:21 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 18:01:21 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 18:01:21 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 18:01:21 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 18:02:39 INFO  PageUtil:126 - Element not visible : By.xpath: //input[@placeholder='Search available table']
+2025-12-08 18:02:39 INFO  PageUtil:126 - Element not visible : By.xpath: //input[@placeholder='Search available table']
+2025-12-08 19:08:29 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 19:08:29 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 19:08:29 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 19:08:29 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 19:08:29 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 19:08:29 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 19:14:47 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 19:14:47 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 19:14:47 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 19:14:47 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 19:14:47 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 19:14:47 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 19:15:12 INFO  PageUtil:126 - Element not visible : By.xpath: (//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection type']//span[@formcontrolname='connectionType'])[2]
+2025-12-08 19:15:12 INFO  PageUtil:126 - Element not visible : By.xpath: //li[text()='Cloud Data Warehouse']
+2025-12-08 19:15:12 INFO  PageUtil:126 - Element not visible : By.xpath: (//div[contains(text(),'Source Dataset')]//parent::form//following::ejs-dropdownlist[@placeholder='Select connection']//span[@formcontrolname='connectionId'])[2]
+2025-12-08 19:15:12 INFO  PageUtil:126 - Element not visible : By.xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']
+2025-12-08 19:18:56 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 19:18:56 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 19:18:56 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 19:18:56 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 19:18:56 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 19:18:56 INFO  PageUtil:74 - Total locators loaded: 50
+2025-12-08 19:22:13 INFO  PageUtil:59 - Loading locator files from directory: D:\Eclipse\ICEDQ\TestGenerator/src/main/resources/locator/
+2025-12-08 19:22:13 INFO  PageUtil:62 - Loading locator file: Login.properties
+2025-12-08 19:22:13 INFO  PageUtil:68 - Loaded 4 locators from Login.properties
+2025-12-08 19:22:13 INFO  PageUtil:62 - Loading locator file: Template.properties
+2025-12-08 19:22:13 INFO  PageUtil:68 - Loaded 47 locators from Template.properties
+2025-12-08 19:22:13 INFO  PageUtil:74 - Total locators loaded: 50

@@ -9,30 +9,124 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">384,657</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">4,775,296</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qa.tests.TestGeneratorTest</td><td><a href="#m0">createRuleUsingImportTemplate</a></td><td rowspan="1">1764921939495</td><td rowspan="1">72105</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.tests.HomePageTest</td><td><a href="#m1">validateHomePage</a></td><td rowspan="1">1764921628723</td><td rowspan="1">10724</td></tr><tr class="passedodd"><td rowspan="2">com.qa.tests.LoginTest</td><td><a href="#m2">Login</a></td><td rowspan="1">1764921627762</td><td rowspan="1">958</td></tr><tr class="passedodd"><td><a href="#m3">validateLoginPage</a></td><td rowspan="1">1764921627168</td><td rowspan="1">587</td></tr><tr class="passedeven"><td rowspan="3">com.qa.tests.TestGeneratorTest</td><td><a href="#m4">createRuleUsingImportTemplate</a></td><td rowspan="3">1764921885027</td><td rowspan="3">54467</td></tr><tr class="passedeven"><td><a href="#m5">createRuleUsingImportTemplate</a></td></tr><tr class="passedeven"><td><a href="#m6">createRuleUsingImportTemplate</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="4">com.qa.tests.TestGeneratorTest</td><td><a href="#m0">createRuleUsingDynamicTemplate</a></td><td rowspan="4">1765201522909</td><td rowspan="4">337</td></tr><tr class="failedeven"><td><a href="#m1">createRuleUsingDynamicTemplate</a></td></tr><tr class="failedeven"><td><a href="#m2">createRuleUsingDynamicTemplate</a></td></tr><tr class="failedeven"><td><a href="#m3">createRuleUsingDynamicTemplate</a></td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.tests.HomePageTest</td><td><a href="#m4">validateHomePage</a></td><td rowspan="1">1765196811519</td><td rowspan="1">11276</td></tr><tr class="passedodd"><td rowspan="2">com.qa.tests.LoginTest</td><td><a href="#m5">Login</a></td><td rowspan="1">1765196810152</td><td rowspan="1">1364</td></tr><tr class="passedodd"><td><a href="#m6">validateLoginPage</a></td><td rowspan="1">1765196809141</td><td rowspan="1">996</td></tr><tr class="passedeven"><td rowspan="4">com.qa.tests.TestGeneratorTest</td><td><a href="#m7">createRuleUsingDynamicTemplate</a></td><td rowspan="4">1765196846999</td><td rowspan="4">232</td></tr><tr class="passedeven"><td><a href="#m8">createRuleUsingDynamicTemplate</a></td></tr><tr class="passedeven"><td><a href="#m9">createRuleUsingDynamicTemplate</a></td></tr><tr class="passedeven"><td><a href="#m10">createRuleUsingDynamicTemplate</a></td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>pushdown</td><td>Data Pushdown Validation - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr><tr><th colspan="5">Exception</th></tr><tr><td colspan="5"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[normalize-space()= &apos;Go To Preview&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+<h2>Test</h2><h3 id="m0">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>recon</td><td>Specify Column for Diff - Full Data Compare Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Cloud Data Warehouse</td><td>Redshift-with-jdbc-UserConn</td><td>regression_database</td><td>staff</td></tr><tr><th colspan="8">Exception</th></tr><tr><td colspan="8"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54553}, goog:processID: 82608, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54553/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 887ea32c5fe902b73e64c1b2403c1d9b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.qa.utils.PageUtil.isDisplayed(PageUtil.java:97)
-	at com.qa.utils.PageUtil.validateElementIsVisible(PageUtil.java:150)
-	at com.qa.pages.TestGeneratorPage.clickOnGoToPreview(TestGeneratorPage.java:731)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:265)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:98)
+Command: [ad11f6b448f4087b2c24c29e4b365e01, findElement {using=xpath, value=//div[@id=&quot;sp-container&quot;]//div[@class=&apos;e-spinner-pane e-spin-show&apos;]//div}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63299}, goog:processID: 227892, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63299/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad11f6b448f4087b2c24c29e4b365e01
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:574)
+	at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:570)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.qa.utils.PageUtil.isInvisibleLoader(PageUtil.java:164)
+	at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:296)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:95)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:54)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.qa.tests.HomePageTest#validateHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.qa.tests.LoginTest#Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.qa.tests.LoginTest#validateLoginPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>validation</td><td>Data Validation - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>checksum</td><td>Compare Record Counts - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.qa.tests.TestGeneratorTest#createRuleUsingImportTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>recon</td><td>Diff and Expression based on Column Position - Import SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>postgreSQL</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>checksum</td><td>Compare Record Counts - Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Cloud Data Warehouse</td><td>Redshift-with-jdbc-UserConn</td><td>regression_database</td><td>staff</td></tr><tr><th colspan="8">Exception</th></tr><tr><td colspan="8"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ad11f6b448f4087b2c24c29e4b365e01, findElement {using=xpath, value=//*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63299}, goog:processID: 227892, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63299/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad11f6b448f4087b2c24c29e4b365e01
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:198)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:171)
+	at com.qa.pages.TestGeneratorPage.selectionTargetDataset(TestGeneratorPage.java:673)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(Unknown Source)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>pushdown</td><td>Data Pushdown Validation - Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Cloud Data Warehouse</td><td>Redshift-with-jdbc-UserConn</td><td>regression_database</td><td>staff</td></tr><tr><th colspan="8">Exception</th></tr><tr><td colspan="8"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ad11f6b448f4087b2c24c29e4b365e01, findElement {using=xpath, value=//div[@id=&quot;sp-container&quot;]//div[@class=&apos;e-spinner-pane e-spin-show&apos;]//div}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63299}, goog:processID: 227892, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63299/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad11f6b448f4087b2c24c29e4b365e01
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:574)
+	at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:570)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.qa.utils.PageUtil.isInvisibleLoader(PageUtil.java:164)
+	at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:296)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:95)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>validation</td><td>Data Validation - Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Cloud Data Warehouse</td><td>Redshift-with-jdbc-UserConn</td><td>regression_database</td><td>staff</td></tr><tr><th colspan="8">Exception</th></tr><tr><td colspan="8"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ad11f6b448f4087b2c24c29e4b365e01, findElement {using=xpath, value=//div[@id=&quot;sp-container&quot;]//div[@class=&apos;e-spinner-pane e-spin-show&apos;]//div}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63299}, goog:processID: 227892, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63299/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad11f6b448f4087b2c24c29e4b365e01
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:574)
+	at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:570)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.qa.utils.PageUtil.isInvisibleLoader(PageUtil.java:164)
+	at com.qa.pages.TestGeneratorPage.clickTestGenerator(TestGeneratorPage.java:296)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:95)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.qa.tests.HomePageTest#validateHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.qa.tests.LoginTest#Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.qa.tests.LoginTest#validateLoginPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>validation</td><td>Data Validation - Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Database</td><td>postgreSQL</td><td>public</td><td>staff</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>checksum</td><td>Compare Record Counts - Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Database</td><td>postgreSQL</td><td>public</td><td>staff</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>pushdown</td><td>Data Pushdown Validation - Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Database</td><td>postgreSQL</td><td>public</td><td>staff</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.qa.tests.TestGeneratorTest#createRuleUsingDynamicTemplate</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>recon</td><td>Specify Column for Diff - Full Data Compare Dynamic SQL</td><td>Test_Generator-WIP</td><td>MJ_DND</td><td>Database</td><td>postgreSQL</td><td>public</td><td>staff</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
