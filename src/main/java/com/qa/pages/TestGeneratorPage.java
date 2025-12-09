@@ -33,37 +33,46 @@ public class TestGeneratorPage extends PageUtil {
 	By clickOnFolderDropdown = getElementLocator(prop.getProperty("wizard.folder.dropdown"));
 	By searchFolderName = getElementLocator(prop.getProperty("wizard.search.folderName"));
 	By selectSearchFolder = getElementLocator(prop.getProperty("select.searchedfolder"));
-	By clickNextButtonWorkspaceNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
+	By clickNextButtonWorkspaceNextbtn = getElementLocator(
+			prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
 	By clickNextButtonmetadataNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.metadataNextbtn"));
 	By clickNextButtoncheckNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.checkNextbtn"));
-	By clickNextButtonnotificationNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
+	By clickNextButtonnotificationNextbtn = getElementLocator(
+			prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
 
 	// Source Dataset
 	By selectDatabaseConnectionType = getElementLocator(prop.getProperty("wizard.Database.connectionType"));
-	By selectCloudDataWarehouseConnectionType = getElementLocator(prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
+	By selectCloudDataWarehouseConnectionType = getElementLocator(
+			prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
 	By selectFileConnectionType = getElementLocator(prop.getProperty("wizard.File.connectionType"));
-	
-	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
-	By clickSourcedatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionDropdown"));
+
+	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(
+			prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
+	By clickSourcedatasetConnectionDropdown = getElementLocator(
+			prop.getProperty("wizard.click.sourceConnectionDropdown"));
 	By enterSourceConnectionName = getElementLocator(prop.getProperty("wizard.source.connection.input"));
 	By clickSourceSchemaDropdown = getElementLocator(prop.getProperty("wizard.source.schema.dropdown"));
 	By enterSourceSchemaName = getElementLocator(prop.getProperty("wizard.source.schema.input"));
 
 	// Target Dataset
-	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
-	By clickTargetdatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionDropdown"));
+	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(
+			prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
+	By clickTargetdatasetConnectionDropdown = getElementLocator(
+			prop.getProperty("wizard.click.targetConnectionDropdown"));
 	By enterTargetConnectionName = getElementLocator(prop.getProperty("wizard.target.connection.input"));
 	By clickTargetSchemaDropdown = getElementLocator(prop.getProperty("wizard.target.schema.dropdown"));
 	By enterTargetSchemaName = getElementLocator(prop.getProperty("wizard.target.schema.input"));
 
 	By clickNextButtondatasetNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.datasetNextbtn"));
-	By ClickNextButtonimportSQLNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
+	By ClickNextButtonimportSQLNextbtn = getElementLocator(
+			prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
 
 	// Available Table
 	By clickAvailableTable = getElementLocator(prop.getProperty("availableTable.click"));
 	By selectAvailableTable = getElementLocator(prop.getProperty("availableTable.select.table"));
 	By clickMoveToButton = getElementLocator(prop.getProperty("availableTable.moveto.click"));
-	By clickNextButtonSelettableNextbtn = getElementLocator(prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
+	By clickNextButtonSelettableNextbtn = getElementLocator(
+			prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
 
 	// Click on Generate
 	By clickGenerateButton = getElementLocator(prop.getProperty("generateButton.click"));
@@ -291,7 +300,10 @@ public class TestGeneratorPage extends PageUtil {
 		navigatHomePage();
 	}
 
+	// ============================
 	// Page method
+	// ============================
+
 	public void clickTestGenerator() {
 		isInvisibleLoader(driver, loader);
 		validateElementIsVisible(driver, testGeneratorModue, "Test Generator");
@@ -460,8 +472,7 @@ public class TestGeneratorPage extends PageUtil {
 		}
 		isInvisibleLoader(driver, loader);
 		ExtentListener.test.get().pass("Workspace name selected.");
-		// System.out.println("Workspace '" + workspaceName + "' is selected
-		// successfully.");
+
 	}
 
 	// Click on the Folder selector field
@@ -485,7 +496,7 @@ public class TestGeneratorPage extends PageUtil {
 		clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), "Search button icon", 10);
 		clickOnElement(driver, By.xpath("//span[@class='e-icons e-check']//parent::button"), "Seached folder name", 10);
 		ExtentListener.test.get().pass("Folder name selected");
-		// System.out.println("Folder '" + folderName + "' selected.");
+
 	}
 
 	public void gotoWorkspaceNextbtn() {
@@ -538,6 +549,7 @@ public class TestGeneratorPage extends PageUtil {
 ///// *******************************/////
 /////////////// ********************************* ////////////////
 ///// *******************************/////
+
 	public void selectionSourceDataset(String connectionType, String connectionName, String schemaName)
 			throws InterruptedException {
 		// JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -561,7 +573,7 @@ public class TestGeneratorPage extends PageUtil {
 			Thread.sleep(500);
 
 		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.", 20);
+			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",20);
 
 			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
 
@@ -569,29 +581,29 @@ public class TestGeneratorPage extends PageUtil {
 			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
 
 			clickOnElement(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"), "database dropdown.", 20);
+					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
+					"database dropdown.", 20);
 
-			sendkeysToElement(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"), "source databse name", "icedrs");
-			sendkeysToEnter(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"), "source database name");
+			sendkeysToElement(driver, By.xpath("//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),"source databse name", "icedqrs");
+			sendkeysToEnter(driver, By.xpath("//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),"source database name");
 
-			Thread.sleep(5000);
+			Thread.sleep(500);
 		}
 
 		// Scroll & click schema dropdown
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickSourceSchemaDropdown));
 
+		validateElementIsVisible(driver, clickSourceSchemaDropdown, "schemaName dropdown");
 
 		clickOnElement(driver, clickSourceSchemaDropdown, "choose schema dropdown.", 40);
 
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickSourceSchemaDropdown));
 
-		Thread.sleep(500);
 		// Enter schema name
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
+
 		sendkeysToEnter(driver, enterSourceSchemaName, "source schema name");
 
 	}
@@ -629,11 +641,11 @@ public class TestGeneratorPage extends PageUtil {
 			clickOnElement(driver, selectFileConnectionType, "source database connection.", 20);
 
 			// Click the target connection.
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
 
 			// Entering the target connection name
-			sendkeysToElement(driver, enterTargetConnectionName, "source connection name", connectionName);
-			sendkeysToEnter(driver, enterTargetConnectionName, "source connection name");
+			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
+			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
 			Thread.sleep(500);
 		}
 	}
@@ -676,14 +688,10 @@ public class TestGeneratorPage extends PageUtil {
 					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
 					"database dropdown.", 20);
 
-			sendkeysToElement(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
-					"source databse name", "icedrs");
-			sendkeysToEnter(driver, By.xpath(
-					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
-					"source databse name");
+			sendkeysToElement(driver, By.xpath("//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),"source databse name", "icedqrs");
+			sendkeysToEnter(driver, By.xpath("//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']"),"source databse name");
 
-			Thread.sleep(5000);
+			Thread.sleep(500);
 
 		}
 
@@ -691,15 +699,17 @@ public class TestGeneratorPage extends PageUtil {
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickTargetSchemaDropdown));
 
+		validateElementIsVisible(driver, clickTargetSchemaDropdown, "schemaName dropdown");
+
 		clickOnElement(driver, clickTargetSchemaDropdown, "choose schema dropdown.", 40);
 
 		// Enter schema name
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 //				driver.findElement(clickTargetSchemaDropdown));
 
-		Thread.sleep(500);
 		// Entering the schema name.
 		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
+
 		sendkeysToEnter(driver, enterSourceSchemaName, "target schema name");
 
 	}
@@ -719,7 +729,7 @@ public class TestGeneratorPage extends PageUtil {
 			// Entering the target connection name
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-			
+
 			Thread.sleep(500);
 
 		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
@@ -863,7 +873,8 @@ public class TestGeneratorPage extends PageUtil {
 
 		String ruleNamePublishPage = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr/td/a")).getText();
 		ExtentListener.test.get().log(Status.INFO, "Rule Name is from the Published Page.. " + ruleNamePublishPage);
-
+		
+		Thread.sleep(500);
 		clickOnElement(driver, clickHyperlinkPublishRule, "published rule", 30);
 		ExtentListener.test.get().log(Status.INFO, "Navigated to new tab");
 
@@ -872,6 +883,7 @@ public class TestGeneratorPage extends PageUtil {
 		Thread.sleep(500);
 		isInvisibleLoader(driver, loader);
 		isDisplayed(driver, By.xpath("//*[@placeholder='Enter rule name']"), 20);
+		Thread.sleep(500);
 		WebElement ruleName2 = driver.findElement(By.xpath("//*[@placeholder='Enter rule name']"));
 		String ruleNameDataTestingPage = ruleName2.getAttribute("value");
 		ExtentListener.test.get().log(Status.INFO,
@@ -884,7 +896,7 @@ public class TestGeneratorPage extends PageUtil {
 					"Rule Name is validated successfully. " + ruleNameDataTestingPage);
 		} else {
 			Thread.sleep(500);
-			ExtentListener.test.get().log(Status.FAIL, "Rule Name is mismatch.   Expectd:   " + ruleNameDataTestingPage
+			ExtentListener.test.get().log(Status.FAIL, "Rule Name is mismatch.   Expectd:   " + ruleNamePublishPage
 					+ "but found:  " + ruleNameDataTestingPage);
 		}
 

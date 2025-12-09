@@ -46,8 +46,8 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if(connectionType.equalsIgnoreCase("Database")) {
-			//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-					//connectionName, schemaName, tableName);
+			page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
+					connectionName, schemaName, tableName);
 			}
 			else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
 			{
@@ -96,12 +96,12 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if(connectionType.equalsIgnoreCase("Database")) {
-			page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-					connectionName);
+//			page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
+//					connectionName);
 			}
 			else if(connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-						connectionName);
+//				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
+//						connectionName);
 			}
 			else if(connectionType.equalsIgnoreCase("File")) {
 				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
