@@ -33,7 +33,6 @@ public class TestGeneratorTest extends Base {
 		);
 	}
 
-
 	// Creating a rule using default dynamic template
 
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
@@ -96,12 +95,12 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if(connectionType.equalsIgnoreCase("Database")) {
-//			page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-//					connectionName);
+			page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
+					connectionName);
 			}
 			else if(connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-//				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-//						connectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
+						connectionName);
 			}
 			else if(connectionType.equalsIgnoreCase("File")) {
 				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,

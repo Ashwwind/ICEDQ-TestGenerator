@@ -20,7 +20,7 @@ public class HomePage extends PageUtil {
 		this.driver = driver;
 	}
 
-	public void validateHomePage() {
+	public void homepageValidation() {
 
 		try {
 

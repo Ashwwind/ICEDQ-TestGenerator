@@ -1,9 +1,14 @@
 package com.qa.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.aventstack.extentreports.Status;
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentListener;
@@ -856,7 +861,7 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	// Click on the 'Go To Publish' button.
-	public void clickOnGoToPublish() {
+	public void clickOnGoToPublish() throws InterruptedException {
 		validateElementIsVisible(driver, clickGoToPublishButton, "'Go To Publish' button ");
 		try {
 			clickOnElement(driver, clickGoToPublishButton, "go to publish button.", 50);
@@ -864,47 +869,76 @@ public class TestGeneratorPage extends PageUtil {
 		} catch (Exception e) {
 			ExtentListener.test.get().log(Status.FAIL, "Go To Publish button is not clickable." + e.getMessage());
 		}
+		Thread.sleep(5000);
 	}
 
 	// Click on the hyperlink of the published rule to navigate to the data testing.
 	public void clickOnPublishedRule() throws InterruptedException {
+		Thread.sleep(500);
 		// Capture parent window
 		String parent = PageUtil.getParentWindow(driver);
-
-		String ruleNamePublishPage = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr/td/a")).getText();
-		ExtentListener.test.get().log(Status.INFO, "Rule Name is from the Published Page.. " + ruleNamePublishPage);
 		
-		Thread.sleep(500);
-		clickOnElement(driver, clickHyperlinkPublishRule, "published rule", 30);
+		isInvisibleLoader(driver, loader);
+		//isDisplayed(driver, By.xpath("//tbody[@role='rowgroup']/tr/td/a"), 100);
+		By ruleNameLocator1 = By.xpath("//tbody[@role='rowgroup']/tr/td/a");
+
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(2000));
+
+		WebElement ruleElement = wait1.until(
+		        ExpectedConditions.visibilityOfElementLocated(ruleNameLocator1)
+		);
+
+		wait1.until(d -> !ruleElement.getText().trim().isEmpty());
+
+		String ruleNamePublishPage = ruleElement.getText();
+
+		ExtentListener.test.get().log(Status.INFO,
+		        "Rule Name from the Published Page.. " + ruleNamePublishPage);
+
+		System.out.println("Rule Name from Published Page: " + ruleNamePublishPage);
+
+		
+
+		clickOnElement(driver, clickHyperlinkPublishRule, "published rule", 100);
 		ExtentListener.test.get().log(Status.INFO, "Navigated to new tab");
 
 		// Switch to child
-		String child = switchToNewWindow(driver, parent, 60);
+		String child = switchToNewWindow(driver, parent, 30);
 		Thread.sleep(500);
 		isInvisibleLoader(driver, loader);
-		isDisplayed(driver, By.xpath("//*[@placeholder='Enter rule name']"), 20);
-		Thread.sleep(500);
-		WebElement ruleName2 = driver.findElement(By.xpath("//*[@placeholder='Enter rule name']"));
-		String ruleNameDataTestingPage = ruleName2.getAttribute("value");
+		//isDisplayed(driver, By.xpath("//*[@placeholder='Enter rule name']"), 100);
+		
+		By ruleNameLocator2 = By.xpath("//*[@placeholder='Enter rule name']");
+
+		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebElement ruleName2 = wait2.until(ExpectedConditions.presenceOfElementLocated(ruleNameLocator2));
+
+		// Wait until input value is not empty
+		wait2.until(d -> !ruleName2.getDomProperty("value").isEmpty());
+
+		String ruleNameDataTestingPage = ruleName2.getDomProperty("value");
+
 		ExtentListener.test.get().log(Status.INFO,
-				"Rule Name is from the Data Testing Page.. " + ruleNameDataTestingPage);
+		        "Rule Name is from the Data Testing Page.. " + ruleNameDataTestingPage);
+
+		System.out.println("Rule Name from Data Testing Page: " + ruleNameDataTestingPage);
 
 		// === Perform child validations ===
 		Thread.sleep(500);
 		if (ruleNamePublishPage.trim().equals(ruleNameDataTestingPage.trim())) {
-			ExtentListener.test.get().log(Status.PASS,
-					"Rule Name is validated successfully. " + ruleNameDataTestingPage);
+			ExtentListener.test.get().log(Status.PASS,"Rule Name is validated successfully. " + ruleNameDataTestingPage);
+			System.out.println("Rule Name is matched....");
+
 		} else {
-			Thread.sleep(500);
-			ExtentListener.test.get().log(Status.FAIL, "Rule Name is mismatch.   Expectd:   " + ruleNamePublishPage
-					+ "but found:  " + ruleNameDataTestingPage);
+			ExtentListener.test.get().log(Status.FAIL, "Rule Name is mismatch.   Expectd:   " + ruleNamePublishPage + "but found:  " + ruleNameDataTestingPage);
+			System.out.println("Rule Name is not matched....");
 		}
 
 		Thread.sleep(500);
 		// Close child
 		closeChildAndReturn(driver, child, parent);
-		Thread.sleep(500);
 	}
+
 
 	// Go to the Data Testing
 	public void navigatHomePage() {
