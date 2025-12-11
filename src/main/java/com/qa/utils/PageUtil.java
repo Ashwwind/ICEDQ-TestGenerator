@@ -166,7 +166,7 @@ public class PageUtil extends Base {
 
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
-		clickOnElement(driver, locator, "", 10);
+		clickOnElement(driver, locator, "", 20);
 		ExtentListener.test.get().log(Status.INFO, "Entering value on " + label + " input : " + input);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
 		ExtentListener.test.get().log(Status.PASS, "Entered value on " + label + " input : " + input);

@@ -13,7 +13,7 @@ public class HomePageTest extends Base {
 	public void validateHomePage()
 	{
 	HomePage home = new HomePage(driver);
-	home.validateHomePage(); 
+	home.homepageValidation(); 
 	}
 	
 
