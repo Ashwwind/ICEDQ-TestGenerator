@@ -335,5 +335,31 @@ public class PageUtil extends Base {
 
 		throw new RuntimeException("Parent window not found after closing child!");
 	}
+	
+	// Capture error message
+	public static void captureErrorIfPresent() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+
+	    try {
+	        WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(
+	                By.xpath("//div[contains(@class,'e-toast-container') or contains(@class,'e-toast-message') or contains(@class,'e-toast-content') or contains(@class,'e-toast')]")
+	        ));
+
+	        WebElement message = errorMsg.findElement(By.xpath(".//div[contains(@class,'e-toast-content')]"));
+	        String toastText = message.getText().trim();
+
+	        Thread.sleep(300); // give toast time to appear visually
+
+	        // Capture only ONE screenshot
+	        String base64 = ExtentListener.captureScreenshot("ToastError");
+
+	        // Use special method that does NOT take a second screenshot
+	        ExtentListener.failWithScreenshot("Toast Error Message: " + toastText, base64);
+
+	    } catch (Exception e) {
+	        System.out.println("No toast error appeared.");
+	    }
+	}
+
 
 }
