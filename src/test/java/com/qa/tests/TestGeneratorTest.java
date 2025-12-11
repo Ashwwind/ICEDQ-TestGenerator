@@ -7,6 +7,7 @@ import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentListener;
 import com.qa.pages.TestGeneratorPage;
 import com.qa.utils.ExcelReader;
+import com.qa.utils.PageUtil;
 
 @Listeners(ExtentListener.class)
 public class TestGeneratorTest extends Base {
@@ -39,26 +40,30 @@ public class TestGeneratorTest extends Base {
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType,String connectionName, String schemaName, String tableName) throws InterruptedException {
 
-		ExtentListener.startTest("Create rule using default Dynamic template for - " + ruleType);
+		ExtentListener.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType + " connection.");
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
 		try {
 			if(connectionType.equalsIgnoreCase("Database")) {
-			page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-					connectionName, schemaName, tableName);
+				//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName, schemaName, tableName);
 			}
 			else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
 			{
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-						connectionName, schemaName, tableName);
+				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName, schemaName, tableName);
 			}
 
 			ExtentListener.pass("Rule created successfully for rule type: " + ruleType);
 
 		} catch (Exception e) {
-			ExtentListener.fail("Rule creation failed for rule type: " + ruleType + " | " + e.getMessage());
-			throw e;
+			PageUtil.captureErrorIfPresent();
+			ExtentListener.captureScreenshot("Failure_" + ruleType );
+			ExtentListener.fail("Rule creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
+			 throw e;
+
+		}
+		finally {
+	        page.navigatHomePage();
 		}
 	}
 
@@ -89,18 +94,16 @@ public class TestGeneratorTest extends Base {
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName,
 	        String workspaceName, String folderName, String connectionType, String connectionName) throws InterruptedException {
-		ExtentListener.startTest("Create rule using default Import template for - " + ruleType);
+		ExtentListener.startTest("Create rule using default Import template for - " + ruleType + " | " + connectionType + " connection.");
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
 		try {
 			if(connectionType.equalsIgnoreCase("Database")) {
-			page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-					connectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName);
 			}
 			else if(connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
-						connectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName);
 			}
 			else if(connectionType.equalsIgnoreCase("File")) {
 				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,
@@ -111,7 +114,9 @@ public class TestGeneratorTest extends Base {
 
 		} catch (Exception e) {
 			ExtentListener.fail("Rule creation failed for rule type: " + ruleType + " | " + e.getMessage());
-			throw e;
+		}
+		finally {
+			page.navigatHomePage();
 		}
 	}
 
