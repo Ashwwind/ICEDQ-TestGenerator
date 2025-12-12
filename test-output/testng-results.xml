@@ -2,18 +2,18 @@
 <testng-results ignored="5" total="16" passed="7" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-11T18:31:41 IST" name="Suite" finished-at="2025-12-11T18:46:54 IST" duration-ms="912459">
+  <suite started-at="2025-12-12T10:30:27 IST" name="Suite" finished-at="2025-12-12T10:45:41 IST" duration-ms="913456">
     <groups>
     </groups>
-    <test started-at="2025-12-11T18:31:41 IST" name="Test" finished-at="2025-12-11T18:46:54 IST" duration-ms="912459">
+    <test started-at="2025-12-12T10:30:27 IST" name="Test" finished-at="2025-12-12T10:45:41 IST" duration-ms="913456">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@2f9f7dcf]" started-at="2025-12-11T18:31:43 IST" name="validateHomePage" finished-at="2025-12-11T18:31:54 IST" duration-ms="10758" status="PASS">
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@2f9f7dcf]" started-at="2025-12-12T10:30:29 IST" name="validateHomePage" finished-at="2025-12-12T10:30:41 IST" duration-ms="11161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
       <class name="com.qa.tests.TestGeneratorTest">
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:31:55 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:31:55 IST" duration-ms="28" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:30:41 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:30:41 IST" duration-ms="18" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -59,7 +59,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:31:55 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:31:55 IST" duration-ms="14" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:30:41 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:30:41 IST" duration-ms="16" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -105,7 +105,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:31:55 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:31:55 IST" duration-ms="21" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:30:41 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:30:41 IST" duration-ms="16" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -151,7 +151,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:31:55 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:31:55 IST" duration-ms="17" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:30:41 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:30:41 IST" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -197,7 +197,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:31:55 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:35:40 IST" duration-ms="225421" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:30:41 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:34:29 IST" duration-ms="227792" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -246,20 +246,20 @@
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e]]>
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:171)
-at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:819)
+at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:826)
 at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
 at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:53)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -294,7 +294,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:35:41 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:39:29 IST" duration-ms="228319" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:34:30 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:38:14 IST" duration-ms="224808" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -343,20 +343,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e]]>
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:171)
-at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:819)
+at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:826)
 at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
 at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:53)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -391,7 +391,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:39:29 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:43:10 IST" duration-ms="220200" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:38:15 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:41:57 IST" duration-ms="222091" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -440,20 +440,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e]]>
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:171)
-at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:819)
+at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:826)
 at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
 at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:53)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -488,7 +488,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-11T18:43:10 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-11T18:46:53 IST" duration-ms="222944" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@747ddf94]" started-at="2025-12-12T10:41:58 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-12T10:45:40 IST" duration-ms="222221" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -537,20 +537,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e]]>
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60539}, goog:processID: 664756, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60539/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca817537f353fafd6505ed3ee085d55e
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:171)
-at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:819)
+at com.qa.pages.TestGeneratorPage.selectionAvailabeTable(TestGeneratorPage.java:826)
 at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
 at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:53)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -587,19 +587,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- createRuleUsingDynamicTemplate -->
       </class> <!-- com.qa.tests.TestGeneratorTest -->
       <class name="com.qa.tests.LoginTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-11T18:31:35 IST" name="startSuite" finished-at="2025-12-11T18:31:41 IST" duration-ms="6313" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-12T10:30:21 IST" name="startSuite" finished-at="2025-12-12T10:30:27 IST" duration-ms="6164" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-11T18:31:41 IST" name="validateLoginPage" finished-at="2025-12-11T18:31:42 IST" duration-ms="988" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-12T10:30:27 IST" name="validateLoginPage" finished-at="2025-12-12T10:30:28 IST" duration-ms="729" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-11T18:31:42 IST" name="Login" finished-at="2025-12-11T18:31:43 IST" duration-ms="1103" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-12T10:30:28 IST" name="Login" finished-at="2025-12-12T10:30:29 IST" duration-ms="1634" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-11T18:46:54 IST" name="endSuite" finished-at="2025-12-11T18:46:54 IST" duration-ms="316" status="PASS">
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.LoginTest@6069db50]" started-at="2025-12-12T10:45:41 IST" name="endSuite" finished-at="2025-12-12T10:45:42 IST" duration-ms="466" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->

@@ -7,9 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.aventstack.extentreports.Status;
 import com.qa.config.ConfigReader;
-import com.qa.extentreportlistener.ExtentListener;
+import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 
 public class LoginPage extends PageUtil {
@@ -50,9 +49,9 @@ public class LoginPage extends PageUtil {
 	    try {
 	        String currentUrl = driver.getCurrentUrl();
 	        Assert.assertTrue(currentUrl.contains("icedq"), "Base URL does not contain 'icedq'.");
-	        ExtentListener.test.get().log(Status.PASS, "Base URL loaded correctly: " + currentUrl);
+	       ExtentManager.logInfo("Base URL loaded correctly: " + currentUrl);
 	    } catch (Exception e) {
-	        ExtentListener.test.get().log(Status.FAIL, "Base URL validation failed. Error: " + e.getMessage());
+	    	ExtentManager.logFail("Base URL validation failed. Error: " + e.getMessage());
 	    }
 
 	    // Title validation
@@ -61,9 +60,9 @@ public class LoginPage extends PageUtil {
 		try {
 			actualTitle = driver.getTitle();
 			expectedTitle = "Sign in to iCEDQ DataOps Platform";
-			ExtentListener.test.get().log(Status.PASS, "The actual page title. '" + actualTitle + "'");
+			 ExtentManager.logInfo("The actual page title. '" + actualTitle + "'");
 		} catch (Exception e) {
-			ExtentListener.test.get().log(Status.FAIL, "The actual page title. " + actualTitle + "The expected page title. " + expectedTitle);
+			 ExtentManager.logFail("The actual page title. " + actualTitle + "The expected page title. " + expectedTitle);
 		}
 	   
 
@@ -71,9 +70,9 @@ public class LoginPage extends PageUtil {
 		try {
 		    WebElement logo = driver.findElement(By.xpath("/html/body/div/div[1]/div"));
 		    Assert.assertTrue(logo.isDisplayed(), "Logo is not displayed.");
-		    ExtentListener.test.get().log(Status.PASS, "Logo is displayed. " );
+		    ExtentManager.logPass("Logo is displayed. " );
 		} catch (Exception e) {
-		    ExtentListener.test.get().log(Status.FAIL, "Logo validation failed. Error: " + e.getMessage());
+		    ExtentManager.logFail("Logo validation failed. Error: " + e.getMessage());
 		}
 		
 		
@@ -85,18 +84,18 @@ public class LoginPage extends PageUtil {
 		    Assert.assertTrue(usernameField.isDisplayed(), "Username field is not displayed.");
 		    Assert.assertTrue(passwordField.isDisplayed(), "Password field is not displayed.");
 
-		    ExtentListener.test.get().log(Status.PASS, "Username and password fields are displayed.");
+		    ExtentManager.logPass("Username and password fields are displayed.");
 		} catch (Exception e) {
-		    ExtentListener.test.get().log(Status.FAIL, "Username/Password field validation failed. Error: " + e.getMessage());
+		    ExtentManager.logFail("Username/Password field validation failed. Error: " + e.getMessage());
 		}
 
 		// Checkbox validation
 		try {
 		    WebElement checkbox = driver.findElement(By.xpath("//input[@type='checkbox']"));
 		    Assert.assertTrue(checkbox.isDisplayed(), "Remember Me checkbox is not displayed.");
-		    ExtentListener.test.get().log(Status.PASS, "Remember Me checkbox is displayed.");
+		    ExtentManager.logPass("Remember Me checkbox is displayed.");
 		} catch (Exception e) {
-		    ExtentListener.test.get().log(Status.FAIL, "Checkbox validation failed. Error: " + e.getMessage());
+		    ExtentManager.logFail("Checkbox validation failed. Error: " + e.getMessage());
 		}
 
 		// Sign In button and Forgot Password link validation
@@ -107,9 +106,9 @@ public class LoginPage extends PageUtil {
 		    Assert.assertTrue(signInButton.isDisplayed(), "Sign In button is not displayed.");
 		    Assert.assertTrue(forgotPasswordLink.isDisplayed(), "Forgot Password link is not displayed.");
 
-		    ExtentListener.test.get().log(Status.PASS, "Sign In button and Forgot Password link are displayed.");
+		    ExtentManager.logPass("Sign In button and Forgot Password link are displayed.");
 		} catch (Exception e) {
-		    ExtentListener.test.get().log(Status.FAIL, "Sign In or Forgot Password validation failed. Error: " + e.getMessage());
+		    ExtentManager.logFail("Sign In or Forgot Password validation failed. Error: " + e.getMessage());
 		}
 
 	}

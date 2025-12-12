@@ -27,7 +27,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.Status;
 import com.qa.base.Base;
-import com.qa.extentreportlistener.ExtentListener;
+import com.qa.extentreportlistener.ExtentManager;
 
 public class PageUtil extends Base {
 
@@ -86,47 +86,60 @@ public class PageUtil extends Base {
 	// Wait for the element to be visible.
 	public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
 		try {
+			// Wait for any loader to disappear (only once)
 			isInvisibleLoader(driver,
 					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
-			isInvisibleLoader(driver,
-					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+
+			// Wait for element to be visible
 			return waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by))
 					.isDisplayed();
-		} catch (TimeoutException te) {
-			return new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
-					.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed(); // fallback technique
-		} catch (Exception e) {
-			ExtentListener.test.get().log(Status.INFO, "Element is not visiblle");
-		}
-		return false;
 
+		} catch (TimeoutException te) {
+			// Fallback: extra wait
+			try {
+				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
+						.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
+			} catch (Exception e) {
+				ExtentManager.logInfo("Element not visible after extended wait: " + by);
+				return false;
+			}
+
+		} catch (Exception e) {
+			ExtentManager.logInfo("Error while checking visibility of element: " + by + " ➝ " + e.getMessage());
+			return false;
+		}
 	}
 
 	// Wait for the element to be clickable.
-	public static void waitForTheElementToBeClickable(WebDriver driver, By by, String label) {
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(by));
-			ExtentListener.test.get().log(Status.INFO, "Clicking on " + label);
-			driver.findElement(by).click();
-			ExtentListener.test.get().log(Status.INFO, "Clicked on " + label);
-		} catch (Exception e) {
-			ExtentListener.test.get().log(Status.INFO, "Element is not clickable :" + by);
-		}
-	}
+//	public static void waitForTheElementToBeClickable(WebDriver driver, By by, String label) {
+//		try {
+//			wait.until(ExpectedConditions.elementToBeClickable(by));
+//			ExtentListener.test.get().log(Status.INFO, "Clicking on " + label);
+//			driver.findElement(by).click();
+//			ExtentListener.test.get().log(Status.INFO, "Clicked on " + label);
+//		} catch (Exception e) {
+//			ExtentListener.test.get().log(Status.INFO, "Element is not clickable :" + by);
+//		}
+//	}
 
 	public static void clickOnElement(WebDriver driver, By by, String label, int timeout) {
 		try {
-
+			// Check if element is displayed
 			boolean state = isDisplayed(driver, by, timeout);
 			if (state) {
-				ExtentListener.test.get().log(Status.INFO, "Clicking on " + label);
+				// Log before clicking
+				ExtentManager.logInfo("Clicking on " + label);
+
+				// Wait until clickable and click
 				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
-				ExtentListener.test.get().log(Status.INFO, "Clicked on " + label);
+
+				// Log after clicking
+				ExtentManager.logPass("Clicked on " + label);
 			} else {
-				log.info("Element not visible : " + by);
+				ExtentManager.logFail("Element not visible: " + label);
 			}
 		} catch (Exception e) {
-			ExtentListener.test.get().log(Status.INFO, "Element is not clickable " + label);
+			ExtentManager.logFail("Element is not clickable: " + label + " ➝ Exception: " + e.getMessage());
 		}
 	}
 
@@ -145,19 +158,18 @@ public class PageUtil extends Base {
 //		}
 //		return flag;
 //	}
-	
+
 	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
-	    boolean isVisible = isDisplayed(driver, locator, 10);
+		boolean isVisible = isDisplayed(driver, locator, 10);
 
-	    if (isVisible) {
-	        ExtentListener.test.get().log(Status.PASS, label + " is visible.");
-	    } else {
-	        ExtentListener.test.get().log(Status.FAIL, label + " is NOT visible.");
-	    }
+		if (isVisible) {
+			ExtentManager.logPass(label + " is visible.");
+		} else {
+			ExtentManager.logFail(label + " is NOT visible.");
+		}
 
-	    return isVisible;
+		return isVisible;
 	}
-
 
 	//
 	public static void isInvisibleLoader(WebDriver driver, By locator) {
@@ -167,17 +179,17 @@ public class PageUtil extends Base {
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		clickOnElement(driver, locator, "", 20);
-		ExtentListener.test.get().log(Status.INFO, "Entering value on " + label + " input : " + input);
+		ExtentManager.logInfo("Entering value on " + label + " input : " + input);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
-		ExtentListener.test.get().log(Status.PASS, "Entered value on " + label + " input : " + input);
+		ExtentManager.logFail("Failed to enter value on " + label + " input : " + input);
 	}
 
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
 		clickOnElement(driver, locator, "", 10);
-		ExtentListener.test.get().log(Status.INFO, "Entering value on " + label);
+		ExtentManager.logInfo("Pressing ENTER on " + label);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
-		ExtentListener.test.get().log(Status.INFO, "Entered value on " + label);
+		ExtentManager.logFail("Failed to press ENTER on " + label);
 	}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {
@@ -335,31 +347,5 @@ public class PageUtil extends Base {
 
 		throw new RuntimeException("Parent window not found after closing child!");
 	}
-	
-	// Capture error message
-	public static void captureErrorIfPresent() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
-
-	    try {
-	        WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(
-	                By.xpath("//div[contains(@class,'e-toast-container') or contains(@class,'e-toast-message') or contains(@class,'e-toast-content') or contains(@class,'e-toast')]")
-	        ));
-
-	        WebElement message = errorMsg.findElement(By.xpath(".//div[contains(@class,'e-toast-content')]"));
-	        String toastText = message.getText().trim();
-
-	        Thread.sleep(300); // give toast time to appear visually
-
-	        // Capture only ONE screenshot
-	        String base64 = ExtentListener.captureScreenshot("ToastError");
-
-	        // Use special method that does NOT take a second screenshot
-	        ExtentListener.failWithScreenshot("Toast Error Message: " + toastText, base64);
-
-	    } catch (Exception e) {
-	        System.out.println("No toast error appeared.");
-	    }
-	}
-
 
 }

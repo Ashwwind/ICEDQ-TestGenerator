@@ -4,12 +4,14 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.qa.base.Base;
-import com.qa.extentreportlistener.ExtentListener;
+import com.qa.extentreportlistener.ExtentManager;
 import com.qa.pages.TestGeneratorPage;
 import com.qa.utils.ExcelReader;
 import com.qa.utils.PageUtil;
+import com.qa.extentreportlistener.ExtentReportListener;
 
-@Listeners(ExtentListener.class)
+
+@Listeners(ExtentReportListener.class)
 public class TestGeneratorTest extends Base {
 	// Use Data provider for Dynamic
 
@@ -40,7 +42,7 @@ public class TestGeneratorTest extends Base {
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType,String connectionName, String schemaName, String tableName) throws InterruptedException {
 
-		ExtentListener.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType + " connection.");
+		ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType + " connection.");
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
@@ -53,12 +55,11 @@ public class TestGeneratorTest extends Base {
 				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName, schemaName, tableName);
 			}
 
-			ExtentListener.pass("Rule created successfully for rule type: " + ruleType);
+			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);;
 
 		} catch (Exception e) {
-			PageUtil.captureErrorIfPresent();
-			ExtentListener.captureScreenshot("Failure_" + ruleType );
-			ExtentListener.fail("Rule creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
+			ExtentManager.captureScreenshot("Failure_" + ruleType );
+			ExtentManager.logFail("Rule creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
 			 throw e;
 
 		}
@@ -94,7 +95,7 @@ public class TestGeneratorTest extends Base {
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName,
 	        String workspaceName, String folderName, String connectionType, String connectionName) throws InterruptedException {
-		ExtentListener.startTest("Create rule using default Import template for - " + ruleType + " | " + connectionType + " connection.");
+		ExtentManager.startTest("Create rule using default Import template for - " + ruleType + " | " + connectionType + " connection.");
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
@@ -110,10 +111,10 @@ public class TestGeneratorTest extends Base {
 						connectionName);
 			}
 
-			ExtentListener.pass("Rule created successfully for rule type: " + ruleType);
+			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
 
 		} catch (Exception e) {
-			ExtentListener.fail("Rule creation failed for rule type: " + ruleType + " | " + e.getMessage());
+			ExtentManager.logFail("Rule creation failed for rule type: " + ruleType + " | " + e.getMessage());
 		}
 		finally {
 			page.navigatHomePage();

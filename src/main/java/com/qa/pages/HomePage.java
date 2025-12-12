@@ -7,9 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import com.aventstack.extentreports.Status;
 import com.qa.config.ConfigReader;
-import com.qa.extentreportlistener.ExtentListener;
+import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 
 public class HomePage extends PageUtil {
@@ -34,10 +33,9 @@ public class HomePage extends PageUtil {
 				actualUrl = driver.getCurrentUrl();
 				Assert.assertTrue(actualUrl.contains(expectedUrl));
 
-				ExtentListener.test.get().log(Status.PASS, "The actual URL: " + actualUrl);
+				ExtentManager.logPass( "The actual URL: " + actualUrl);
 			} catch (Exception e) {
-				ExtentListener.test.get().log(Status.FAIL,
-						"The actual URL: " + actualUrl + " | The expected URL: " + expectedUrl);
+				ExtentManager.logFail("The actual URL: " + actualUrl + " | The expected URL: " + expectedUrl);
 			}
 
 			// ============================
@@ -50,10 +48,9 @@ public class HomePage extends PageUtil {
 				actualTitle = driver.getTitle();
 				Assert.assertTrue(actualTitle.contains(expectedTitle));
 
-				ExtentListener.test.get().log(Status.PASS, "The actual title: " + actualTitle);
+				ExtentManager.logPass( "The actual title: " + actualTitle);
 			} catch (Exception e) {
-				ExtentListener.test.get().log(Status.FAIL,
-						"The actual title: " + actualTitle + " | The expected title: " + expectedTitle);
+				ExtentManager.logFail("The actual title: " + actualTitle + " | The expected title: " + expectedTitle);
 			}
 
 			// ============================
@@ -66,9 +63,9 @@ public class HomePage extends PageUtil {
 				logo = driver.findElement(By.xpath("//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"));
 				Assert.assertTrue(logo.isDisplayed());
 
-				ExtentListener.test.get().log(Status.PASS, "Logo is displayed");
+				ExtentManager.logPass( "Logo is displayed");
 			} catch (Exception e) {
-				ExtentListener.test.get().log(Status.FAIL, "Logo NOT displayed | Expected: " + expectedLogo);
+				ExtentManager.logFail("Logo NOT displayed | Expected: " + expectedLogo);
 			}
 
 			// ============================
@@ -81,10 +78,9 @@ public class HomePage extends PageUtil {
 				welcomeMessage = driver.findElement(By.xpath("//*[contains(text(),'Hi')]"));
 				Assert.assertTrue(welcomeMessage.isDisplayed());
 
-				ExtentListener.test.get().log(Status.PASS, "Welcome message is displayed");
+				ExtentManager.logPass( "Welcome message is displayed");
 			} catch (Exception e) {
-				ExtentListener.test.get().log(Status.FAIL,
-						"Welcome message NOT displayed | Expected: " + expectedWelcome);
+				ExtentManager.logFail("Welcome message NOT displayed | Expected: " + expectedWelcome);
 			}
 
 			// ============================
@@ -97,9 +93,9 @@ public class HomePage extends PageUtil {
 				profileIcon = driver.findElement(By.xpath("//*[@role='menuitem']/span[1]"));
 				Assert.assertTrue(profileIcon.isDisplayed());
 
-				ExtentListener.test.get().log(Status.PASS, "Profile icon is displayed");
+				ExtentManager.logPass( "Profile icon is displayed");
 			} catch (Exception e) {
-				ExtentListener.test.get().log(Status.FAIL, "Profile icon NOT displayed | Expected: " + expectedProfile);
+				ExtentManager.logFail("Profile icon NOT displayed | Expected: " + expectedProfile);
 			}
 
 			// ============================
@@ -123,10 +119,9 @@ public class HomePage extends PageUtil {
 
 					Assert.assertTrue(moduleElement.isDisplayed());
 
-					ExtentListener.test.get().log(Status.PASS, "Module displayed: " + actualModule);
+					ExtentManager.logPass( "Module displayed: " + actualModule);
 				} catch (Exception e) {
-					ExtentListener.test.get().log(Status.FAIL,
-							"Module NOT displayed. Actual: " + actualModule + " | Expected: " + expectedModule);
+					ExtentManager.logFail("Module NOT displayed. Actual: " + actualModule + " | Expected: " + expectedModule);
 				}
 			}
 
@@ -149,17 +144,15 @@ public class HomePage extends PageUtil {
 
 					Assert.assertTrue(hyperlink.isDisplayed());
 
-					ExtentListener.test.get().log(Status.PASS, "Hyperlink displayed: " + actualIcon);
+					ExtentManager.logPass( "Hyperlink displayed: " + actualIcon);
 
 				} catch (Exception e) {
-					ExtentListener.test.get().log(Status.FAIL,
-							"Hyperlink NOT displayed. Actual: " + actualIcon + " | Expected: " + expectedIcon);
+					ExtentManager.logFail("Hyperlink NOT displayed. Actual: " + actualIcon + " | Expected: " + expectedIcon);
 				}
 			}
 
 		} catch (Exception e) {
-			ExtentListener.test.get().log(Status.FAIL,
-					"Unexpected error during dashboard validation: " + e.getMessage());
+			ExtentManager.logFail("Unexpected error during dashboard validation: " + e.getMessage());
 		}
 
 	}
