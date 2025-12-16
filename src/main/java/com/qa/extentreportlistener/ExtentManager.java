@@ -3,6 +3,7 @@ package com.qa.extentreportlistener;
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.model.Media;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.qa.base.Base;
@@ -93,9 +94,15 @@ public class ExtentManager {
 		String consoleMessage = String.format("[%s] INFO  %s - %s", timestamp, className, message);
 
 		// Log to Extent
-		test.get().log(Status.INFO, MarkupHelper.createLabel(consoleMessage, ExtentColor.TRANSPARENT));
+		//test.get().log(Status.INFO, MarkupHelper.createLabel(consoleMessage, ExtentColor.BLACK));
+		test.get().log(Status.INFO, createLabel(consoleMessage, ExtentColor.BLACK));
 		// Print to console
 		System.out.println(consoleMessage);
+	}
+
+	private static Media createLabel(String consoleMessage, ExtentColor black) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public static void logPass(String message) {
@@ -132,6 +139,14 @@ public class ExtentManager {
 		String consoleMessage = String.format("[%s] SKIP  %s - %s", timestamp, className, message);
 
 		test.get().log(Status.SKIP, MarkupHelper.createLabel(consoleMessage, ExtentColor.ORANGE));
+		System.out.println(consoleMessage);
+	}
+	public static void logError(String message) {
+		String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		String className = Thread.currentThread().getStackTrace()[2].getClassName();
+		String consoleMessage = String.format("[%s] SKIP  %s - %s", timestamp, className, message);
+
+		test.get().log(Status.WARNING, MarkupHelper.createLabel(consoleMessage, ExtentColor.GREY));
 		System.out.println(consoleMessage);
 	}
 }

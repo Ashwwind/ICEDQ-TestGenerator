@@ -25,7 +25,7 @@
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
 					<include name="createRuleUsingDynamicTemplate" />
-					<exclude name="createRuleUsingImportTemplate" />
+					<include name="createRuleUsingImportTemplate" />
 				</methods>
 			</class>
 

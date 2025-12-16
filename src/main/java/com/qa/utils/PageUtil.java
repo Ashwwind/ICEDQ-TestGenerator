@@ -186,7 +186,7 @@ public class PageUtil extends Base {
 
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
-		clickOnElement(driver, locator, "", 10);
+		//clickOnElement(driver, locator, "", 10);
 		ExtentManager.logInfo("Pressing ENTER on " + label);
 		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
 		ExtentManager.logFail("Failed to press ENTER on " + label);
@@ -346,6 +346,26 @@ public class PageUtil extends Base {
 		}
 
 		throw new RuntimeException("Parent window not found after closing child!");
+	}
+
+	// Click the Checksum rule type from the wizard page.
+	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
+		boolean flag = true;
+		try {
+			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+
+			if (validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
+
+				clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
+				ExtentManager.logInfo(fieldName + " " + fieldType + " is validated...");
+			} else {
+				flag = false;
+			}
+		} catch (Exception e) {
+			ExtentManager.logError("error occured while :" + fieldName + " " + fieldType);
+		}
+		return flag;
+
 	}
 
 }

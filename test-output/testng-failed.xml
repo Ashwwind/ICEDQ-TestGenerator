@@ -7,7 +7,7 @@
         <methods>
           <include name="endSuite"/>
           <include name="startSuite"/>
-          <include name="createRuleUsingDynamicTemplate" invocation-numbers="4 5 6 7"/>
+          <include name="createRuleUsingDynamicTemplate" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.qa.tests.TestGeneratorTest -->
     </classes>
