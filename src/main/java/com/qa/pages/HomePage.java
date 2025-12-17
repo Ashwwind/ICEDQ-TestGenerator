@@ -20,141 +20,188 @@ public class HomePage extends PageUtil {
 	}
 
 	public void homepageValidation() {
-
-		try {
+		
+		// URL VALIDATION
+		verifyUrlOfPage();
+		
+		// TITLE VALIDATION
+		verifyTitleOfPage();
+		
+		// LOGO VALIDATION
+		verifyLogoIsDisplayed();
+		
+		// WELCOME MESSAGE VALIDATION
+		verifyWelcomeMessage();
+		
+		// USER PROFILE VALIDATION
+		verifyProfileIcon();
+		
+		// MODULES VALIDATION
+		verifyModules();
+		
+		// Hyperlinks ICON BUTTON VALIDATION
+		verifyHyperlinkIcons();
+		
+	}
 
 			// ============================
 			// URL VALIDATION
 			// ============================
-			String actualUrl = null;
-			String expectedUrl = ConfigReader.getProperty("https://qa.onprem.icedq.com/#/");
+			public void verifyUrlOfPage() {
 
-			try {
-				actualUrl = driver.getCurrentUrl();
-				Assert.assertTrue(actualUrl.contains(expectedUrl));
+			    String expectedUrl = ConfigReader.getProperty("homePageUrl");
+			    String actualUrl = driver.getCurrentUrl();
 
-				ExtentManager.logPass( "The actual URL: " + actualUrl);
-			} catch (Exception e) {
-				ExtentManager.logFail("The actual URL: " + actualUrl + " | The expected URL: " + expectedUrl);
+			    // check point
+			    if (actualUrl.contains(expectedUrl)) {
+			        System.out.println("The actual URL is correct.");
+			        ExtentManager.logPass("The actual URL is correct: " + actualUrl);
+			    } else {
+			        System.out.println("The actual URL is incorrect.");
+			        ExtentManager.logFail(
+			            "The actual URL is incorrect. Expected to contain: "
+			            + expectedUrl + " | Actual URL: " + actualUrl
+			        );
+			    }
 			}
+
 
 			// ============================
 			// TITLE VALIDATION
 			// ============================
-			String actualTitle = null;
-			String expectedTitle = "NextgenAdministration";
+			public void verifyTitleOfPage() {
 
-			try {
-				actualTitle = driver.getTitle();
-				Assert.assertTrue(actualTitle.contains(expectedTitle));
+			    String expectedTitle = "NextgenAdministration";
+			    String actualTitle = driver.getTitle();
 
-				ExtentManager.logPass( "The actual title: " + actualTitle);
-			} catch (Exception e) {
-				ExtentManager.logFail("The actual title: " + actualTitle + " | The expected title: " + expectedTitle);
+			    // check point
+			    if (actualTitle.contains(expectedTitle)) {
+			        System.out.println("The page title is correct.");
+			        ExtentManager.logPass("The page title is correct: " + actualTitle);
+			    } else {
+			        System.out.println("The page title is incorrect.");
+			        ExtentManager.logFail(
+			            "The page title is incorrect. Expected to contain: "
+			            + expectedTitle + " | Actual title: " + actualTitle
+			        );
+			    }
 			}
+
 
 			// ============================
 			// LOGO VALIDATION
 			// ============================
-			WebElement logo = null;
-			String expectedLogo = "Application logo should be visible";
+			public void verifyLogoIsDisplayed() {
 
-			try {
-				logo = driver.findElement(By.xpath("//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"));
-				Assert.assertTrue(logo.isDisplayed());
+			    WebElement logo = driver.findElement(By.xpath("//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"));
+			    String expectedLogo = "Application logo should be visible";
 
-				ExtentManager.logPass( "Logo is displayed");
-			} catch (Exception e) {
-				ExtentManager.logFail("Logo NOT displayed | Expected: " + expectedLogo);
+			    // check point
+			    if (logo.isDisplayed()) {
+			        System.out.println("Logo is displayed.");
+			        ExtentManager.logPass("Logo is displayed.");
+			    } else {
+			        System.out.println("Logo is NOT displayed.");
+			        ExtentManager.logFail("Logo is NOT displayed | Expected: " + expectedLogo);
+			    }
 			}
+
 
 			// ============================
 			// WELCOME MESSAGE
 			// ============================
-			WebElement welcomeMessage = null;
-			String expectedWelcome = "Welcome message should be visible";
+			public void verifyWelcomeMessage() {
 
-			try {
-				welcomeMessage = driver.findElement(By.xpath("//*[contains(text(),'Hi')]"));
-				Assert.assertTrue(welcomeMessage.isDisplayed());
+			    WebElement welcomeMessage = driver.findElement(By.xpath("//*[contains(text(),'Hi')]"));
+			    String expectedMessagePart = "welcome to iceDQ";
 
-				ExtentManager.logPass( "Welcome message is displayed");
-			} catch (Exception e) {
-				ExtentManager.logFail("Welcome message NOT displayed | Expected: " + expectedWelcome);
+			    // check point
+			    if (welcomeMessage.isDisplayed() && welcomeMessage.getText().contains(expectedMessagePart)) {
+			        System.out.println("Welcome message is displayed: " + welcomeMessage.getText());
+			        ExtentManager.logPass("Welcome message is displayed: " + welcomeMessage.getText());
+			    } else {
+			        System.out.println("Welcome message is NOT displayed or text is incorrect.");
+			        ExtentManager.logFail("Welcome message is NOT displayed or does not contain expected text: " + expectedMessagePart);
+			    }
 			}
+
 
 			// ============================
 			// PROFILE ICON
 			// ============================
-			WebElement profileIcon = null;
-			String expectedProfile = "Profile icon should be visible";
+			public void verifyProfileIcon() {
 
-			try {
-				profileIcon = driver.findElement(By.xpath("//*[@role='menuitem']/span[1]"));
-				Assert.assertTrue(profileIcon.isDisplayed());
+			    WebElement profileIcon = driver.findElement(By.xpath("//*[@role='menuitem']/span[1]"));
+			    String expectedProfile = "Profile icon should be visible";
 
-				ExtentManager.logPass( "Profile icon is displayed");
-			} catch (Exception e) {
-				ExtentManager.logFail("Profile icon NOT displayed | Expected: " + expectedProfile);
+			    // check point
+			    if (profileIcon.isDisplayed()) {
+			        System.out.println("Profile icon is displayed.");
+			        ExtentManager.logPass("Profile icon is displayed.");
+			    } else {
+			        System.out.println("Profile icon is NOT displayed.");
+			        ExtentManager.logFail("Profile icon NOT displayed | Expected: " + expectedProfile);
+			    }
 			}
+
 
 			// ============================
 			// MODULES VALIDATION
 			// ============================
-			String[] expectedModules = { "Data Testing", "BI Report Testing", "Test Generator", "Dashboard",
-					"Connectors", "Scheduler", "Administration" };
+			public void verifyModules() {
 
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			    String[] expectedModules = { "Data Testing", "BI Report Testing", "Test Generator", "Dashboard",
+			            "Connectors", "Scheduler", "Administration" };
 
-			for (String module : expectedModules) {
+			    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-				String actualModule = null;
-				String expectedModule = module;
+			    for (String module : expectedModules) {
 
-				try {
-					WebElement moduleElement = wait.until(ExpectedConditions
-							.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'" + module + "')]")));
+			        String expectedModule = module;
 
-					actualModule = moduleElement.getText();
+			        WebElement moduleElement = wait.until(
+			                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'" + module + "')]"))
+			        );
 
-					Assert.assertTrue(moduleElement.isDisplayed());
-
-					ExtentManager.logPass( "Module displayed: " + actualModule);
-				} catch (Exception e) {
-					ExtentManager.logFail("Module NOT displayed. Actual: " + actualModule + " | Expected: " + expectedModule);
-				}
+			        // check point
+			        if (moduleElement.isDisplayed()) {
+			            String actualModule = moduleElement.getText();
+			            System.out.println("Module displayed: " + actualModule);
+			            ExtentManager.logPass("Module displayed: " + actualModule);
+			        } else {
+			            System.out.println("Module NOT displayed: " + expectedModule);
+			            ExtentManager.logFail("Module NOT displayed | Expected: " + expectedModule);
+			        }
+			    }
 			}
 
-			// ============================
+			/// ============================
 			// HYPERLINK ICONS
 			// ============================
-			String[] expectedHyperlinkIcon = { "About", "Helpdesk", "Documentation" };
+			public void verifyHyperlinkIcons() {
 
-			for (String icon : expectedHyperlinkIcon) {
+			    String[] expectedHyperlinkIcons = { "About", "Helpdesk", "Documentation" };
+			    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-				String actualIcon = null;
-				String expectedIcon = icon;
+			    for (String icon : expectedHyperlinkIcons) {
 
-				try {
+			        String expectedIcon = icon;
 
-					WebElement hyperlink = wait.until(
-							ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='" + icon + "']")));
+			        WebElement hyperlink = wait.until(
+			                ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='" + icon + "']"))
+			        );
 
-					actualIcon = hyperlink.getAttribute("title");
-
-					Assert.assertTrue(hyperlink.isDisplayed());
-
-					ExtentManager.logPass( "Hyperlink displayed: " + actualIcon);
-
-				} catch (Exception e) {
-					ExtentManager.logFail("Hyperlink NOT displayed. Actual: " + actualIcon + " | Expected: " + expectedIcon);
-				}
+			        // check point
+			        if (hyperlink.isDisplayed()) {
+			            String actualIcon = hyperlink.getAttribute("title");
+			            System.out.println("Hyperlink displayed: " + actualIcon);
+			            ExtentManager.logPass("Hyperlink displayed: " + actualIcon);
+			        } else {
+			            System.out.println("Hyperlink NOT displayed: " + expectedIcon);
+			            ExtentManager.logFail("Hyperlink NOT displayed | Expected: " + expectedIcon);
+			        }
+			    }
 			}
 
-		} catch (Exception e) {
-			ExtentManager.logFail("Unexpected error during dashboard validation: " + e.getMessage());
-		}
-
-	}
 
 }

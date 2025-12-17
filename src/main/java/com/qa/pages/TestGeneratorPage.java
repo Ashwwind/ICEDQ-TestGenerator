@@ -39,46 +39,37 @@ public class TestGeneratorPage extends PageUtil {
 	By clickOnFolderDropdown = getElementLocator(prop.getProperty("wizard.folder.dropdown"));
 	By searchFolderName = getElementLocator(prop.getProperty("wizard.search.folderName"));
 	By selectSearchFolder = getElementLocator(prop.getProperty("select.searchedfolder"));
-	By clickNextButtonWorkspaceNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
+	By clickNextButtonWorkspaceNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
 	By clickNextButtonmetadataNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.metadataNextbtn"));
 	By clickNextButtoncheckNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.checkNextbtn"));
-	By clickNextButtonnotificationNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
+	By clickNextButtonnotificationNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
 
 	// Source Dataset
 	By selectDatabaseConnectionType = getElementLocator(prop.getProperty("wizard.Database.connectionType"));
-	By selectCloudDataWarehouseConnectionType = getElementLocator(
-			prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
+	By selectCloudDataWarehouseConnectionType = getElementLocator(prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
 	By selectFileConnectionType = getElementLocator(prop.getProperty("wizard.File.connectionType"));
 
-	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(
-			prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
-	By clickSourcedatasetConnectionDropdown = getElementLocator(
-			prop.getProperty("wizard.click.sourceConnectionDropdown"));
+	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
+	By clickSourcedatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionDropdown"));
 	By enterSourceConnectionName = getElementLocator(prop.getProperty("wizard.source.connection.input"));
 	By clickSourceSchemaDropdown = getElementLocator(prop.getProperty("wizard.source.schema.dropdown"));
 	By enterSourceSchemaName = getElementLocator(prop.getProperty("wizard.source.schema.input"));
 
 	// Target Dataset
-	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(
-			prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
-	By clickTargetdatasetConnectionDropdown = getElementLocator(
-			prop.getProperty("wizard.click.targetConnectionDropdown"));
+	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
+	By clickTargetdatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionDropdown"));
 	By enterTargetConnectionName = getElementLocator(prop.getProperty("wizard.target.connection.input"));
 	By clickTargetSchemaDropdown = getElementLocator(prop.getProperty("wizard.target.schema.dropdown"));
 	By enterTargetSchemaName = getElementLocator(prop.getProperty("wizard.target.schema.input"));
 
 	By clickNextButtondatasetNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.datasetNextbtn"));
-	By ClickNextButtonimportSQLNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
+	By ClickNextButtonimportSQLNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
 
 	// Available Table
 	By clickAvailableTable = getElementLocator(prop.getProperty("availableTable.click"));
 	By selectAvailableTable = getElementLocator(prop.getProperty("availableTable.select.table"));
 	By clickMoveToButton = getElementLocator(prop.getProperty("availableTable.moveto.click"));
-	By clickNextButtonSelettableNextbtn = getElementLocator(
-			prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
+	By clickNextButtonSelettableNextbtn = getElementLocator(prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
 
 	// Click on Generate
 	By clickGenerateButton = getElementLocator(prop.getProperty("generateButton.click"));
@@ -109,7 +100,7 @@ public class TestGeneratorPage extends PageUtil {
 
 			// Log failure
 			ExtentManager.logFail(stepName + " -> FAILED due to: " + e.getMessage());
-
+			navigatHomePage();
 			return false; // important → stop further execution of that step
 		}
 	}
@@ -177,10 +168,9 @@ public class TestGeneratorPage extends PageUtil {
 
 	public void createRuleUsingDefaultImportTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String connectionName) throws InterruptedException {
-
-		if (clickTestGenerator()) { // 1. Navigate to Test Generator → Wizard
-			return;
-		}
+		
+		clickTestGenerator();
+		
 		boolean isReconOrChecksum = ruleType.equalsIgnoreCase("checksum") || ruleType.equalsIgnoreCase("recon");
 
 		clickOnRuleType(ruleType); // switch case
@@ -276,14 +266,12 @@ public class TestGeneratorPage extends PageUtil {
 	public boolean clickTestGenerator() {
 
 		return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
-
 	}
 
 	// Click the Checksum rule type from the wizard page.
 	public boolean clickOnChecksum() {
 
 		return clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab");
-
 	}
 
 	public boolean clickOnRuleType(String ruleType) {
@@ -381,18 +369,16 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Enter the data on the search field
 	public boolean enterOnSearchField(String templateName) {
-		return executeStep("Enter the template name.", () -> {
-			sendkeysToElement(driver, enterTemplateName, "Search template", templateName);
-			validateElementIsVisible(driver, clickSearchButtonIcon, "Search button icon on search template");
-			clickOnElement(driver, clickSearchButtonIcon, "search button icon.", 30);
-			ExtentManager.logInfo("Initiating action: Press Enter on element '" + templateName + "'");
-			ExtentManager.logPass(templateName);
-			// ExtentManager.logInfo("Action successful: Enter key pressed on element '" +
-			// templateName + "'");
-			// Base.extentReportFail(driver, "enterOnSearchField", "Failed to press Enter on
-			// element '" + templateName + "'" + e.getMessage());
-		});
+
+	    boolean isTextEntered = sendkeysToElement1(
+	            driver, enterTemplateName, templateName, templateName);
+
+	    boolean isSearchClicked = clickOnField(
+	            driver, clickSearchButtonIcon, "search button icon", "search button icon");
+
+	    return isTextEntered && isSearchClicked;
 	}
+
 
 	// Select the existing template form the list
 	public boolean selectExistingChecksumTemplate() {
@@ -431,9 +417,6 @@ public class TestGeneratorPage extends PageUtil {
 			sendkeysToElement(driver, searchFolderName, "searching folder name.", folderName);
 			ExtentManager.logInfo("Initiating action: Press Enter on element '" + folderName + "'");
 			ExtentManager.logPass("Action successful: Enter key pressed on element '" + folderName + "'");
-			// Base.extentReportFail(driver, "clickOnFolderField","Failed to press Enter on
-			// element '" + folderName + "'" + e.getMessage());
-
 			clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), "Search folder", 30);
 			isInvisibleLoader(driver, loader);
 			clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), "Search button icon", 10);

@@ -367,5 +367,35 @@ public class PageUtil extends Base {
 		return flag;
 
 	}
+	
+	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
+		boolean flag = true;
+		try {
+			// Wait for loader to disappear
+			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+
+			// Validate element visibility
+			if (validateElementIsVisible(driver, locator, fieldName)) {
+
+				// Click before sending keys
+				clickOnElement(driver, locator, fieldName, 20);
+
+				// Send keys
+				waitForElements(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(locator))
+						.sendKeys(input);
+
+				ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
+			} else {
+				flag = false;
+			}
+
+		} catch (Exception e) {
+			flag = false;
+			ExtentManager.logError("Error occurred while entering value on " + fieldName + " : " + e.getMessage());
+		}
+		return flag;
+	}
+
 
 }
