@@ -3,6 +3,7 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="tests.LoginTest">
         <methods>
           <include name="launchBrowser"/>
@@ -10,13 +11,15 @@
         </methods>
       </class> <!-- tests.LoginTest -->
       <class name="tests.TestGeneratorTest">
+=======
+      <class name="com.qa.tests.TestGeneratorTest">
+>>>>>>> f09ff6887cb3c37cf5011b5c158070ea229b2760
         <methods>
-          <include name="selectTemplate"/>
-          <include name="clickSearchField"/>
-          <include name="launchBrowser"/>
-          <include name="clickOnFolderFiled"/>
+          <include name="endSuite"/>
+          <include name="startSuite"/>
+          <include name="createRuleUsingDynamicTemplate" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- tests.TestGeneratorTest -->
+      </class> <!-- com.qa.tests.TestGeneratorTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
