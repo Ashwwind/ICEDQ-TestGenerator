@@ -22,6 +22,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -397,5 +398,48 @@ public class PageUtil extends Base {
 		return flag;
 	}
 
+	// 	Error Capture
+	public void captureUIErrorIfPresent() {
+
+	    By errorLocator = By.xpath(
+	        "//div[contains(@class,'error') or contains(@class,'toast') or @role='alert']"
+	    );
+
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+	        WebElement errorElement =
+	                wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
+
+	        Actions actions = new Actions(driver);
+
+	        // Hover + double click to select text
+	        actions.moveToElement(errorElement)
+	               .pause(Duration.ofMillis(300))
+	               .doubleClick(errorElement)
+	               .perform();
+
+	        String errorText = errorElement.getText().trim();
+
+	        if (!errorText.isEmpty()) {
+	            System.out.println("❌ UI ERROR MESSAGE: " + errorText);
+	            ExtentManager.logError("UI Error Message: " + errorText);
+	        }
+
+	        // Small wait so selected text is visible in screenshot
+	        Thread.sleep(800);
+
+	    } catch (TimeoutException e) {
+	        // No UI error – safe to ignore
+	    } catch (Exception e) {
+	        System.out.println("Error while capturing UI error: " + e.getMessage());
+	    }
+	}
+
+
+	// UI validation
+	public void validateElement(WebDriver driver, By locator, String lable, String type)
+	{
+		
+	}
 
 }

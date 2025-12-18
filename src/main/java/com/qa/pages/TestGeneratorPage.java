@@ -39,37 +39,46 @@ public class TestGeneratorPage extends PageUtil {
 	By clickOnFolderDropdown = getElementLocator(prop.getProperty("wizard.folder.dropdown"));
 	By searchFolderName = getElementLocator(prop.getProperty("wizard.search.folderName"));
 	By selectSearchFolder = getElementLocator(prop.getProperty("select.searchedfolder"));
-	By clickNextButtonWorkspaceNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
+	By clickNextButtonWorkspaceNextbtn = getElementLocator(
+			prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
 	By clickNextButtonmetadataNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.metadataNextbtn"));
 	By clickNextButtoncheckNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.checkNextbtn"));
-	By clickNextButtonnotificationNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
+	By clickNextButtonnotificationNextbtn = getElementLocator(
+			prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
 
 	// Source Dataset
 	By selectDatabaseConnectionType = getElementLocator(prop.getProperty("wizard.Database.connectionType"));
-	By selectCloudDataWarehouseConnectionType = getElementLocator(prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
+	By selectCloudDataWarehouseConnectionType = getElementLocator(
+			prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
 	By selectFileConnectionType = getElementLocator(prop.getProperty("wizard.File.connectionType"));
 
-	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
-	By clickSourcedatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.sourceConnectionDropdown"));
+	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(
+			prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
+	By clickSourcedatasetConnectionDropdown = getElementLocator(
+			prop.getProperty("wizard.click.sourceConnectionDropdown"));
 	By enterSourceConnectionName = getElementLocator(prop.getProperty("wizard.source.connection.input"));
 	By clickSourceSchemaDropdown = getElementLocator(prop.getProperty("wizard.source.schema.dropdown"));
 	By enterSourceSchemaName = getElementLocator(prop.getProperty("wizard.source.schema.input"));
 
 	// Target Dataset
-	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
-	By clickTargetdatasetConnectionDropdown = getElementLocator(prop.getProperty("wizard.click.targetConnectionDropdown"));
+	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(
+			prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
+	By clickTargetdatasetConnectionDropdown = getElementLocator(
+			prop.getProperty("wizard.click.targetConnectionDropdown"));
 	By enterTargetConnectionName = getElementLocator(prop.getProperty("wizard.target.connection.input"));
 	By clickTargetSchemaDropdown = getElementLocator(prop.getProperty("wizard.target.schema.dropdown"));
 	By enterTargetSchemaName = getElementLocator(prop.getProperty("wizard.target.schema.input"));
 
 	By clickNextButtondatasetNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.datasetNextbtn"));
-	By ClickNextButtonimportSQLNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
+	By ClickNextButtonimportSQLNextbtn = getElementLocator(
+			prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
 
 	// Available Table
 	By clickAvailableTable = getElementLocator(prop.getProperty("availableTable.click"));
 	By selectAvailableTable = getElementLocator(prop.getProperty("availableTable.select.table"));
 	By clickMoveToButton = getElementLocator(prop.getProperty("availableTable.moveto.click"));
-	By clickNextButtonSelettableNextbtn = getElementLocator(prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
+	By clickNextButtonSelettableNextbtn = getElementLocator(
+			prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
 
 	// Click on Generate
 	By clickGenerateButton = getElementLocator(prop.getProperty("generateButton.click"));
@@ -96,81 +105,79 @@ public class TestGeneratorPage extends PageUtil {
 			ExtentManager.logPass(stepName + " ➝ PASSED");
 			return true;
 
-		} catch (Exception e) {
+		} catch (Throwable e) {
 
-			// Log failure
-			ExtentManager.logFail(stepName + " -> FAILED due to: " + e.getMessage());
-			navigatHomePage();
-			return false; // important → stop further execution of that step
+			// 👇 Capture UI error message if shown
+			captureUIErrorIfPresent();
+
+			ExtentManager.logFail(stepName + " ➝ FAILED due to: " + e.getMessage());
+
+			navigatHomePage(); // recover for next flow
+			return false;
 		}
 	}
-	
+
+
+	private void stopIfFailed(boolean stepStatus) {
+		if (!stepStatus) {
+			throw new RuntimeException("Stopping flow due to step failure");
+		}
+	}
+
 	/// ************* ///
-	// Default Dynamic Template 
+	// Default Dynamic Template
 	/// ************* ///
 
 	public void createRuleUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String connectionName, String schemaName, String tableName)
 			throws InterruptedException {
 
-		clickTestGenerator(); // 1. Navigate to Test Generator → Wizard
+		stopIfFailed(clickTestGenerator());
+	    stopIfFailed(clickOnRuleType(ruleType));
 
-		clickOnRuleType(ruleType); // switch case
+	    stopIfFailed(clickOnSearchField());
+	    stopIfFailed(enterOnSearchField(templateName));
+	    stopIfFailed(selectExistingChecksumTemplate());
 
-		clickOnSearchField(); // 2. Search & Select Template
-		enterOnSearchField(templateName);
-		selectExistingChecksumTemplate();
+	    stopIfFailed(clickOnWorkspaceField(workspaceName));
+	    stopIfFailed(clickOnFolderField(folderName));
 
-		clickOnWorkspaceField(workspaceName); // 3. Select Workspace
+	    stopIfFailed(gotoWorkspaceNextbtn());
+	    stopIfFailed(gotoRuleMetadataNextbtn());
+	    stopIfFailed(gotoCheckMetadataNextbtn());
+	    stopIfFailed(gotoNotificationNextbtn());
 
-		clickOnFolderField(folderName); // 4. Select Folder
+	    stopIfFailed(selectionSourceDataset1(connectionType, connectionName, schemaName));
 
-		gotoWorkspaceNextbtn(); // Next Buttons
-		gotoRuleMetadataNextbtn();
-		gotoCheckMetadataNextbtn();
-		gotoNotificationNextbtn();
+	    if (!ruleType.equalsIgnoreCase("validation")
+	            && !ruleType.equalsIgnoreCase("pushdown")) {
+	        stopIfFailed(selectionTargetDataset(connectionType, connectionName, schemaName));
+	    }
 
-		selectionSourceDataset(connectionType, connectionName, schemaName); // 5. Select Source Dataset
+	    stopIfFailed(gotoDatasetNextbtn());
+	    stopIfFailed(selectionAvailabeTable(tableName));
+	    stopIfFailed(gotoSelettableNextbtn());
 
-		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) { // 6. Select Target
-																									// Dataset
-
-			selectionTargetDataset(connectionType, connectionName, schemaName);
-
-		} else {
-			System.out.println("Skipping Target Dataset for rule type: " + ruleType);
-		}
-
-		gotoDatasetNextbtn(); // Next Buttons
-
-		selectionAvailabeTable(tableName); // 7. Select Table
-
-		gotoSelettableNextbtn();// Next Buttons
-
-		clickOnGenerate(); // 8. Generate → Preview → Publish
-		clickOnGoToPreview();
-		selectGeneratedEntity();
-		clickOnPublish();
-		clickOnGoToPublish();
-		clickOnPublishedRule();
+	    stopIfFailed(clickOnGenerate());
+	    stopIfFailed(clickOnGoToPreview());
+	    stopIfFailed(selectGeneratedEntity());
+	    stopIfFailed(clickOnPublish());
+	    stopIfFailed(clickOnGoToPublish());
+	    
+	    stopIfFailed(clickOnPublishedRule());
 
 		navigatHomePage();// 9. Navigate Data Testing
 	}
-	
-	
-	
-	
-	
-	
+
 	// ============================
 	// Default Import Template
 	// ============================
 
 	public void createRuleUsingDefaultImportTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String connectionName) throws InterruptedException {
-		
+
 		clickTestGenerator();
-		
+
 		boolean isReconOrChecksum = ruleType.equalsIgnoreCase("checksum") || ruleType.equalsIgnoreCase("recon");
 
 		clickOnRuleType(ruleType); // switch case
@@ -256,8 +263,6 @@ public class TestGeneratorPage extends PageUtil {
 
 		navigatHomePage(); // 9. Navigate Data Testing
 	}
-	
-	
 
 	// ============================
 	// Page method
@@ -269,9 +274,24 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	// Click the Checksum rule type from the wizard page.
-	public boolean clickOnChecksum() {
-
-		return clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab");
+//	public boolean clickOnChecksum() {
+//
+//		return clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab");
+//	}
+	
+	public boolean clickOnChecksum1() {
+		boolean flag=true;
+		
+		try {
+			if (flag)
+			{
+				clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab");
+			}
+		} catch (Exception e) {
+			ExtentManager.logFail(e + " clickOnChecksum1 :: " + e.toString());
+			flag=false;
+		}
+		return flag;
 	}
 
 	public boolean clickOnRuleType(String ruleType) {
@@ -370,19 +390,17 @@ public class TestGeneratorPage extends PageUtil {
 	// Enter the data on the search field
 	public boolean enterOnSearchField(String templateName) {
 
-	    boolean isTextEntered = sendkeysToElement1(
-	            driver, enterTemplateName, templateName, templateName);
+		boolean isTextEntered = sendkeysToElement1(driver, enterTemplateName, templateName, templateName);
 
-	    boolean isSearchClicked = clickOnField(
-	            driver, clickSearchButtonIcon, "search button icon", "search button icon");
+		boolean isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "search button icon",
+				"search button icon");
 
-	    return isTextEntered && isSearchClicked;
+		return isTextEntered && isSearchClicked;
 	}
-
 
 	// Select the existing template form the list
 	public boolean selectExistingChecksumTemplate() {
-		
+
 		return clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item", "serarch item");
 	}
 
@@ -429,7 +447,8 @@ public class TestGeneratorPage extends PageUtil {
 
 	public boolean gotoWorkspaceNextbtn() {
 
-		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page", "button");
+		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page",
+				"button");
 	}
 
 	public boolean gotoRuleMetadataNextbtn() {
@@ -529,6 +548,30 @@ public class TestGeneratorPage extends PageUtil {
 			ExtentManager.logInfo("Schema selected successfully.");
 		});
 	}
+	
+	public boolean selectionSourceDataset1(String connectionType,
+			String connectionName,
+			String schemaName) {
+		boolean flag = true;
+
+		try {
+			clickOnElement(driver, selectDatabaseConnectionType,"source database connection.", 20);
+
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown,"select connection dropdown.", 20);
+
+			sendkeysToElement(driver, enterSourceConnectionName,"source connection name", connectionName);
+
+			sendkeysToEnter(driver, enterSourceConnectionName,"source connection name");
+
+		} catch (Exception e) {
+			ExtentManager.logFail("selectionSourceDataset1 failed: " + e.toString());
+			flag = false;
+		}
+
+		return flag;
+	}
+
+		
 
 	public void selectionSourceDatasetForImport(String connectionType, String connectionName)
 			throws InterruptedException {
@@ -695,15 +738,12 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	// Click on the next button of 'select dataset' page.
-	public void gotoDatasetNextbtn() {
-		validateElementIsVisible(driver, clickNextButtondatasetNextbtn, "Next button of 'Select Dataset' page ");
-		try {
+	public boolean gotoDatasetNextbtn() {
+		return executeStep("Click the Next button of 'Select Dataset' page", () -> {
+			validateElementIsVisible(driver, clickNextButtondatasetNextbtn, "Next button of 'Select Dataset' page ");
 			clickOnElement(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page.", 20);
 			ExtentManager.logInfo("Next button of 'Select Dataset' page is clickable.");
-		} catch (Exception e) {
-			// Base.extentReportFail(driver, "gotoDatasetNextbtn","Next button of 'Select
-			// Dataset' page is not clickable.");
-		}
+		});	
 	}
 
 	/// ********* Select the Available Table ********** ///.
@@ -730,7 +770,6 @@ public class TestGeneratorPage extends PageUtil {
 			ExtentManager.logInfo("Next button of 'Select Teables' page is clickable.");
 			// Base.extentReportFail(driver, "gotoSelettableNextbtn","Next button of 'Select
 			// Teables' page is not clickable." + e.getMessage());
-
 		});
 	}
 
@@ -796,64 +835,59 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	// Click on the hyperlink of the published rule to navigate to the data testing.
-	public void clickOnPublishedRule() throws InterruptedException {
-		Thread.sleep(500);
-		// Capture parent window
-		String parent = PageUtil.getParentWindow(driver);
+	public boolean clickOnPublishedRule() {
 
-		isInvisibleLoader(driver, loader);
-		By ruleNameLocator1 = By.xpath("//tbody[@role='rowgroup']/tr/td/a");
+		return executeStep("Validate published rule and navigate to Data Testing page.", () -> {
 
-		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(2000));
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
 
-		WebElement ruleElement = wait1.until(ExpectedConditions.visibilityOfElementLocated(ruleNameLocator1));
+			// Capture parent window
+			String parent = PageUtil.getParentWindow(driver);
 
-		// Wait until input value is not empty
-		wait1.until(d -> !ruleElement.getText().trim().isEmpty());
+			isInvisibleLoader(driver, loader);
 
-		String ruleNamePublishPage = ruleElement.getText();
+			By ruleNameLocator1 = By.xpath("//tbody[@role='rowgroup']/tr/td/a");
 
-		ExtentManager.logInfo("Rule Name from the Published Page.. " + ruleNamePublishPage);
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
+			WebElement ruleElement = wait1.until(ExpectedConditions.visibilityOfElementLocated(ruleNameLocator1));
 
-		System.out.println("Rule Name from Published Page: " + ruleNamePublishPage);
+			wait1.until(d -> !ruleElement.getText().trim().isEmpty());
 
-		// Click on the hyperlink.
-		clickOnElement(driver, clickHyperlinkPublishRule, "published rule", 100);
-		ExtentManager.logInfo("Navigated to new tab");
+			String ruleNamePublishPage = ruleElement.getText();
+			ExtentManager.logInfo("Rule Name from Published Page: " + ruleNamePublishPage);
 
-		// Switch to child
-		String child = switchToNewWindow(driver, parent, 30);
-		Thread.sleep(500);
-		isInvisibleLoader(driver, loader);
-		By ruleNameLocator2 = By.xpath("//*[@placeholder='Enter rule name']");
+			// Click hyperlink
+			clickOnElement(driver, clickHyperlinkPublishRule, "published rule", 60);
 
-		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
-		WebElement ruleName2 = wait2.until(ExpectedConditions.presenceOfElementLocated(ruleNameLocator2));
+			// Switch to child window
+			String child = switchToNewWindow(driver, parent, 30);
+			isInvisibleLoader(driver, loader);
 
-		// Wait until input value is not empty
-		wait2.until(d -> !ruleName2.getDomProperty("value").isEmpty());
+			By ruleNameLocator2 = By.xpath("//*[@placeholder='Enter rule name']");
+			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		String ruleNameDataTestingPage = ruleName2.getDomProperty("value");
+			WebElement ruleName2 = wait2.until(ExpectedConditions.presenceOfElementLocated(ruleNameLocator2));
 
-		ExtentManager.logInfo("Rule Name is from the Data Testing Page.. " + ruleNameDataTestingPage);
+			wait2.until(d -> !ruleName2.getDomProperty("value").isEmpty());
 
-		System.out.println("Rule Name from Data Testing Page: " + ruleNameDataTestingPage);
+			String ruleNameDataTestingPage = ruleName2.getDomProperty("value");
+			ExtentManager.logInfo("Rule Name from Data Testing Page: " + ruleNameDataTestingPage);
 
-		// === Perform child validations ===
-		Thread.sleep(500);
-		if (ruleNamePublishPage.trim().equals(ruleNameDataTestingPage.trim())) {
-			ExtentManager.logPass("Rule Name is validated successfully. " + ruleNameDataTestingPage);
-			System.out.println("Rule Name is matched....");
+			// Validation
+			if (!ruleNamePublishPage.trim().equals(ruleNameDataTestingPage.trim())) {
+				throw new AssertionError("Rule name mismatch. Expected: " + ruleNamePublishPage + " but found: "
+						+ ruleNameDataTestingPage);
+			}
 
-		} else {
-			ExtentManager.logFail("Rule Name is mismatch.   Expectd:   " + ruleNamePublishPage + "but found:  "
-					+ ruleNameDataTestingPage);
-			System.out.println("Rule Name is not matched....");
-		}
+			ExtentManager.logPass("Rule Name validated successfully.");
 
-		Thread.sleep(500);
-		// Close child
-		closeChildAndReturn(driver, child, parent);
+			// Close child window
+			closeChildAndReturn(driver, child, parent);
+		});
 	}
 
 	// Go to the Data Testing

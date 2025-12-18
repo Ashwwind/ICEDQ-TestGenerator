@@ -31,9 +31,9 @@ public class TestGeneratorTest extends Base {
 	@DataProvider(name = "ruleDataForDynamicTemplate")
 	public Object[][] ruleDataProviderExcel() {
 		return ExcelReader.readExcel(
-			"./src/test/resources/Database/ruleData.xlsx",
-			"Dynamic Template"
-		);
+				"./src/test/resources/Database/ruleData.xlsx",
+				"Dynamic Template"
+				);
 	}
 
 	// Creating a rule using default dynamic template
@@ -52,7 +52,7 @@ public class TestGeneratorTest extends Base {
 			}
 			else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
 			{
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName, schemaName, tableName);
+				//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName, schemaName, tableName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);;
@@ -60,11 +60,7 @@ public class TestGeneratorTest extends Base {
 		} catch (Exception e) {
 			ExtentManager.captureScreenshot("Failure_" + ruleType );
 			ExtentManager.logFail("Rule creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
-			 throw e;
-
-		}
-		finally {
-	        page.navigatHomePage();
+			throw e;
 		}
 	}
 
@@ -101,7 +97,7 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if(connectionType.equalsIgnoreCase("Database")) {
-				//page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName);
 			}
 			else if(connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
 				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName);
