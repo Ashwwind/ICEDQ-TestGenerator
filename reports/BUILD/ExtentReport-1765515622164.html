@@ -1,0 +1,4568 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Test Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Execution Results</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Dec 12, 2025 10:30:22 am</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">validateLoginPage</p>
+            <p class="text-sm">
+              <span>10:30:27 am</span> / <span>00:00:13:533</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">validateLoginPage</h5>
+<span class='badge badge-success'>12.12.2025 10:30:27 am</span>
+<span class='badge badge-danger'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-default'>00:00:13:533</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Base URL loaded correctly: https://qa.onprem.icedq.com/auth/realms/icedq.qa/protocol/openid-connect/auth?client_id=icedq.admin-ui&redirect_uri=https%3A%2F%2Fqa.onprem.icedq.com%2F&state=01376450-3c48-4b55-805b-937c560e16a9&response_mode=fragment&response_type=code&scope=openid&nonce=6b4b627f-3a05-4094-824e-43e96316f433&code_challenge=-vkSXWMwgrOTAtG-tN0oJZNT3qZCmDAth7NUYyCtvx0&code_challenge_method=S256
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          The actual page title. 'Sign in to iCEDQ DataOps Platform'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Logo is displayed. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Username and password fields are displayed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Remember Me checkbox is displayed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Sign In button and Forgot Password link are displayed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          <span class='badge white-text green'>Test Passed: validateLoginPage</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Entering value on Username input : ashwin.d
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Entered value on Username input : ashwin.d
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Entering value on password input : Admin@1234
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:28 am</td>
+        <td>
+          Entered value on password input : Admin@1234
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:29 am</td>
+        <td>
+          Clicking on SingIn button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:29 am</td>
+        <td>
+          Clicked on SingIn button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:29 am</td>
+        <td>
+          <span class='badge white-text green'>Test Passed: Login</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          The actual URL: https://qa.onprem.icedq.com/ | The expected URL: null
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          The actual title: NextgenAdministration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Logo NOT displayed | Expected: Application logo should be visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Welcome message NOT displayed | Expected: Welcome message should be visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Profile icon NOT displayed | Expected: Profile icon should be visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Module displayed: Data Testing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Module displayed: BI Report Testing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Module displayed: Test Generator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Module displayed: Dashboard
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Module displayed: Connectors
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Module displayed: Scheduler
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Module displayed: Administration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:30 am</td>
+        <td>
+          Hyperlink displayed: About
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          Hyperlink NOT displayed. Actual: null | Expected: Helpdesk
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          Hyperlink displayed: Documentation
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Test Passed: validateHomePage</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - checksum | Database connection.</p>
+            <p class="text-sm">
+              <span>10:30:41 am</span> / <span>00:00:00:014</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create rule using default Dynamic Template for - checksum | Database connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-danger'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-default'>00:00:00:014</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Rule created successfully for rule type: checksum</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Test Passed: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - recon | Database connection.</p>
+            <p class="text-sm">
+              <span>10:30:41 am</span> / <span>00:00:00:015</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create rule using default Dynamic Template for - recon | Database connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-danger'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-default'>00:00:00:015</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Rule created successfully for rule type: recon</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Test Passed: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - validation | Database connection.</p>
+            <p class="text-sm">
+              <span>10:30:41 am</span> / <span>00:00:00:014</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create rule using default Dynamic Template for - validation | Database connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-danger'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-default'>00:00:00:014</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Rule created successfully for rule type: validation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Test Passed: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - pushdown | Database connection.</p>
+            <p class="text-sm">
+              <span>10:30:41 am</span> / <span>00:00:00:013</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create rule using default Dynamic Template for - pushdown | Database connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-danger'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-default'>00:00:00:013</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Rule created successfully for rule type: pushdown</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:41 am</td>
+        <td>
+          <span class='badge white-text green'>Test Passed: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - checksum | Cloud Data Warehouse connection.</p>
+            <p class="text-sm">
+              <span>10:30:41 am</span> / <span>00:03:47:790</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Create rule using default Dynamic Template for - checksum | Cloud Data Warehouse connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:30:41 am</span>
+<span class='badge badge-danger'>12.12.2025 10:34:29 am</span>
+<span class='badge badge-default'>00:03:47:790</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:42 am</td>
+        <td>
+          Test Generator is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:42 am</td>
+        <td>
+          Clicking on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:43 am</td>
+        <td>
+          Clicked on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:43 am</td>
+        <td>
+          <span class='badge white-text transparent'>Test Generator module is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:45 am</td>
+        <td>
+          Checksum rule type is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:45 am</td>
+        <td>
+          Clicking on Checksum rule wizard.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:45 am</td>
+        <td>
+          Clicked on Checksum rule wizard.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:45 am</td>
+        <td>
+          <span class='badge white-text transparent'>Defoult template is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:46 am</td>
+        <td>
+          'Search template' search field  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Clicking on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Clicked on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          <span class='badge white-text transparent'>'Search template' search box is clickable...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Entering value on Search template input : Compare Record Counts - Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Entered value on Search template input : Compare Record Counts - Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Search button icon on search template is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Clicking on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          Clicked on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Compare Record Counts - Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:50 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Compare Record Counts - Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:54 am</td>
+        <td>
+          The searched template name is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:54 am</td>
+        <td>
+          Clicking on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:54 am</td>
+        <td>
+          Clicked on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:54 am</td>
+        <td>
+          <span class='badge white-text transparent'>Searched item is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Clicking on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Clicked on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Workspace dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Clicking on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Clicked on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Entering value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          Entered value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:56 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:58 am</td>
+        <td>
+          Workspace name selected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Clicking on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Clicked on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Folder dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Entering value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Entered value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Clicking on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:30:59 am</td>
+        <td>
+          Clicked on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:00 am</td>
+        <td>
+          Clicking on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:00 am</td>
+        <td>
+          Clicked on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:00 am</td>
+        <td>
+          Clicking on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:01 am</td>
+        <td>
+          Clicked on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:01 am</td>
+        <td>
+          Folder name selected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:01 am</td>
+        <td>
+          Next button of 'Select Container' page is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:01 am</td>
+        <td>
+          Clicking on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:01 am</td>
+        <td>
+          Clicked on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:01 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Container' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:03 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:04 am</td>
+        <td>
+          Clicking on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:04 am</td>
+        <td>
+          Clicked on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:04 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Rule Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:04 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:04 am</td>
+        <td>
+          Clicking on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:04 am</td>
+        <td>
+          Clicked on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:04 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Check Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:05 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:05 am</td>
+        <td>
+          Clicking on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:05 am</td>
+        <td>
+          Clicked on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:05 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Configure Notifications' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:05 am</td>
+        <td>
+          Clicking on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:05 am</td>
+        <td>
+          Clicked on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:06 am</td>
+        <td>
+          Clicking on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:06 am</td>
+        <td>
+          Clicked on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:06 am</td>
+        <td>
+          Clicking on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:06 am</td>
+        <td>
+          Clicked on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:06 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          Entering value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          Entered value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          Entering value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          Entered value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:07 am</td>
+        <td>
+          <span class='badge white-text transparent'>Connection name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Clicking on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Clicked on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Entering value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Entered value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Entering value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          Entered value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:08 am</td>
+        <td>
+          <span class='badge white-text transparent'>Database name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          schemaName dropdown is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Clicking on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Clicked on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Entering value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Entered value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Entering value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Entered value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:09 am</td>
+        <td>
+          Clicking on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:10 am</td>
+        <td>
+          Clicked on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:10 am</td>
+        <td>
+          Clicking on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:10 am</td>
+        <td>
+          Clicked on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:10 am</td>
+        <td>
+          Clicking on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:10 am</td>
+        <td>
+          Clicked on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Entering value on target connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Entered value on target connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Entering value on target connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:11 am</td>
+        <td>
+          Entered value on target connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Clicking on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Clicked on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Entering value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Entered value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Entering value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          Entered value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:12 am</td>
+        <td>
+          <span class='badge white-text transparent'>Connection name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          schemaName dropdown is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          Clicking on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          Clicked on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          Entering value on target schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          Entered value on target schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:13 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:14 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:14 am</td>
+        <td>
+          Entering value on target schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:14 am</td>
+        <td>
+          Entered value on target schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:31:14 am</td>
+        <td>
+          Next button of 'Select Dataset' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:14 am</td>
+        <td>
+          Clicking on next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:34 am</td>
+        <td>
+          Element is not clickable next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:31:34 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Dataset' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:32:35 am</td>
+        <td>
+          Element is not clickable search available table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:33:36 am</td>
+        <td>
+          Element is not clickable 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:33:36 am</td>
+        <td>
+          Entering value on staff table name input : staff
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:34:27 am</td>
+        <td>
+          <span class='badge white-text red'>Rule creation failed for rule type: checksum | Error: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:34:29 am</td>
+        <td>
+          <span class='badge white-text red'>Test FAILED: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - recon | Cloud Data Warehouse connection.</p>
+            <p class="text-sm">
+              <span>10:34:30 am</span> / <span>00:03:44:807</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Create rule using default Dynamic Template for - recon | Cloud Data Warehouse connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:34:30 am</span>
+<span class='badge badge-danger'>12.12.2025 10:38:14 am</span>
+<span class='badge badge-default'>00:03:44:807</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:30 am</td>
+        <td>
+          Test Generator is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:30 am</td>
+        <td>
+          Clicking on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:31 am</td>
+        <td>
+          Clicked on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:31 am</td>
+        <td>
+          <span class='badge white-text transparent'>Test Generator module is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:31 am</td>
+        <td>
+          Recon rule type is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:32 am</td>
+        <td>
+          Clicking on Recon rule wizard.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:32 am</td>
+        <td>
+          Clicked on Recon rule wizard.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:32 am</td>
+        <td>
+          <span class='badge white-text transparent'>Defoult template is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:35 am</td>
+        <td>
+          'Search template' search field  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:35 am</td>
+        <td>
+          Clicking on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:35 am</td>
+        <td>
+          Clicked on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:35 am</td>
+        <td>
+          <span class='badge white-text transparent'>'Search template' search box is clickable...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:35 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          Entering value on Search template input : Specify Column for Diff - Full Data Compare Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          Entered value on Search template input : Specify Column for Diff - Full Data Compare Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          Search button icon on search template is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          Clicking on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          Clicked on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Specify Column for Diff - Full Data Compare Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:36 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Specify Column for Diff - Full Data Compare Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:39 am</td>
+        <td>
+          The searched template name is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:39 am</td>
+        <td>
+          Clicking on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:39 am</td>
+        <td>
+          Clicked on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:39 am</td>
+        <td>
+          <span class='badge white-text transparent'>Searched item is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:41 am</td>
+        <td>
+          Clicking on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:41 am</td>
+        <td>
+          Clicked on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:41 am</td>
+        <td>
+          Workspace dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:41 am</td>
+        <td>
+          Clicking on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:41 am</td>
+        <td>
+          Clicked on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:41 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:42 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:42 am</td>
+        <td>
+          Entering value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:42 am</td>
+        <td>
+          Entered value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:42 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:42 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:43 am</td>
+        <td>
+          Workspace name selected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:43 am</td>
+        <td>
+          Clicking on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:43 am</td>
+        <td>
+          Clicked on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:43 am</td>
+        <td>
+          Folder dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          Entering value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          Entered value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          Clicking on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          Clicked on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:44 am</td>
+        <td>
+          Clicking on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:45 am</td>
+        <td>
+          Clicked on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:45 am</td>
+        <td>
+          Clicking on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:45 am</td>
+        <td>
+          Clicked on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:45 am</td>
+        <td>
+          Folder name selected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:45 am</td>
+        <td>
+          Next button of 'Select Container' page is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:45 am</td>
+        <td>
+          Clicking on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:46 am</td>
+        <td>
+          Clicked on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:46 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Container' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:49 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:49 am</td>
+        <td>
+          Clicking on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:50 am</td>
+        <td>
+          Clicked on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:50 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Rule Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:50 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:50 am</td>
+        <td>
+          Clicking on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:50 am</td>
+        <td>
+          Clicked on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:50 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Check Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          Clicking on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          Clicked on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Configure Notifications' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          Clicking on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          Clicked on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          Clicking on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:51 am</td>
+        <td>
+          Clicked on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:52 am</td>
+        <td>
+          Clicking on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:52 am</td>
+        <td>
+          Clicked on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:52 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:52 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:52 am</td>
+        <td>
+          Entering value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          Entered value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          Entering value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          Entered value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          <span class='badge white-text transparent'>Connection name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          Clicking on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:53 am</td>
+        <td>
+          Clicked on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Entering value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Entered value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Entering value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          Entered value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:54 am</td>
+        <td>
+          <span class='badge white-text transparent'>Database name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          schemaName dropdown is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicking on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicked on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Entering value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Entered value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Entering value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Entered value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicking on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:55 am</td>
+        <td>
+          Clicked on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:56 am</td>
+        <td>
+          Clicking on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:56 am</td>
+        <td>
+          Clicked on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:56 am</td>
+        <td>
+          Clicking on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:56 am</td>
+        <td>
+          Clicked on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:56 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:57 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:57 am</td>
+        <td>
+          Entering value on target connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:57 am</td>
+        <td>
+          Entered value on target connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:57 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:57 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:57 am</td>
+        <td>
+          Entering value on target connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:57 am</td>
+        <td>
+          Entered value on target connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Clicking on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Clicked on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Entering value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Entered value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Entering value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          Entered value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:58 am</td>
+        <td>
+          <span class='badge white-text transparent'>Connection name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          schemaName dropdown is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Clicking on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Clicked on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Entering value on target schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Entered value on target schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:34:59 am</td>
+        <td>
+          Entering value on target schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:35:00 am</td>
+        <td>
+          Entered value on target schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:35:00 am</td>
+        <td>
+          Next button of 'Select Dataset' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:35:00 am</td>
+        <td>
+          Clicking on next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:35:20 am</td>
+        <td>
+          Element is not clickable next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:35:20 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Dataset' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:36:21 am</td>
+        <td>
+          Element is not clickable search available table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:37:21 am</td>
+        <td>
+          Element is not clickable 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:37:21 am</td>
+        <td>
+          Entering value on staff table name input : staff
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:38:13 am</td>
+        <td>
+          <span class='badge white-text red'>Rule creation failed for rule type: recon | Error: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:38:14 am</td>
+        <td>
+          <span class='badge white-text red'>Test FAILED: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - validation | Cloud Data Warehouse connection.</p>
+            <p class="text-sm">
+              <span>10:38:15 am</span> / <span>00:03:42:090</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Create rule using default Dynamic Template for - validation | Cloud Data Warehouse connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:38:15 am</span>
+<span class='badge badge-danger'>12.12.2025 10:41:57 am</span>
+<span class='badge badge-default'>00:03:42:090</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:15 am</td>
+        <td>
+          Test Generator is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:15 am</td>
+        <td>
+          Clicking on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:16 am</td>
+        <td>
+          Clicked on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:16 am</td>
+        <td>
+          <span class='badge white-text transparent'>Test Generator module is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:17 am</td>
+        <td>
+          Validation rule type is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:17 am</td>
+        <td>
+          Clicking on Validation rule wizard.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:17 am</td>
+        <td>
+          Clicked on Validation rule wizard.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:17 am</td>
+        <td>
+          <span class='badge white-text transparent'>Defoult template is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:20 am</td>
+        <td>
+          'Search template' search field  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:20 am</td>
+        <td>
+          Clicking on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:20 am</td>
+        <td>
+          Clicked on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:20 am</td>
+        <td>
+          <span class='badge white-text transparent'>'Search template' search box is clickable...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:20 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          Entering value on Search template input : Data Validation - Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          Entered value on Search template input : Data Validation - Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          Search button icon on search template is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          Clicking on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          Clicked on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Data Validation - Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:21 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Data Validation - Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:24 am</td>
+        <td>
+          The searched template name is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:24 am</td>
+        <td>
+          Clicking on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:24 am</td>
+        <td>
+          Clicked on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:24 am</td>
+        <td>
+          <span class='badge white-text transparent'>Searched item is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:25 am</td>
+        <td>
+          Clicking on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Clicked on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Workspace dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Clicking on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Clicked on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Entering value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          Entered value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:26 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Workspace name selected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Clicking on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Clicked on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Folder dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Entering value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Entered value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Clicking on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:28 am</td>
+        <td>
+          Clicked on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:29 am</td>
+        <td>
+          Clicking on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:29 am</td>
+        <td>
+          Clicked on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:30 am</td>
+        <td>
+          Clicking on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:30 am</td>
+        <td>
+          Clicked on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:30 am</td>
+        <td>
+          Folder name selected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:30 am</td>
+        <td>
+          Next button of 'Select Container' page is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:30 am</td>
+        <td>
+          Clicking on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:30 am</td>
+        <td>
+          Clicked on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:30 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Container' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:33 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:33 am</td>
+        <td>
+          Clicking on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:33 am</td>
+        <td>
+          Clicked on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:33 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Rule Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:34 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:34 am</td>
+        <td>
+          Clicking on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:34 am</td>
+        <td>
+          Clicked on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:34 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Check Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          Clicking on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          Clicked on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Configure Notifications' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          Clicking on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          Clicked on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          Clicking on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:35 am</td>
+        <td>
+          Clicked on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Clicking on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Clicked on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Entering value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Entered value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:36 am</td>
+        <td>
+          Entering value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:37 am</td>
+        <td>
+          Entered value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:37 am</td>
+        <td>
+          <span class='badge white-text transparent'>Connection name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Clicking on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Clicked on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Entering value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Entered value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Entering value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          Entered value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:38 am</td>
+        <td>
+          <span class='badge white-text transparent'>Database name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          schemaName dropdown is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Clicking on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Clicked on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Entering value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Entered value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Entering value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:39 am</td>
+        <td>
+          Entered value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:38:40 am</td>
+        <td>
+          Next button of 'Select Dataset' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:38:40 am</td>
+        <td>
+          Clicking on next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:39:00 am</td>
+        <td>
+          Element is not clickable next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:39:00 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Dataset' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:40:01 am</td>
+        <td>
+          Element is not clickable search available table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:41:01 am</td>
+        <td>
+          Element is not clickable 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:41:01 am</td>
+        <td>
+          Entering value on staff table name input : staff
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:41:53 am</td>
+        <td>
+          <span class='badge white-text red'>Rule creation failed for rule type: validation | Error: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:41:57 am</td>
+        <td>
+          <span class='badge white-text red'>Test FAILED: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create rule using default Dynamic Template for - pushdown | Cloud Data Warehouse connection.</p>
+            <p class="text-sm">
+              <span>10:41:58 am</span> / <span>00:03:42:220</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Create rule using default Dynamic Template for - pushdown | Cloud Data Warehouse connection.</h5>
+<span class='badge badge-success'>12.12.2025 10:41:58 am</span>
+<span class='badge badge-danger'>12.12.2025 10:45:40 am</span>
+<span class='badge badge-default'>00:03:42:220</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:41:59 am</td>
+        <td>
+          Test Generator is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:41:59 am</td>
+        <td>
+          Clicking on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:00 am</td>
+        <td>
+          Clicked on Test Generator module.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:00 am</td>
+        <td>
+          <span class='badge white-text transparent'>Test Generator module is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:01 am</td>
+        <td>
+          Pushdown rule type is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:01 am</td>
+        <td>
+          Clicking on Pushdown rule wizard
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:01 am</td>
+        <td>
+          Clicked on Pushdown rule wizard
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:01 am</td>
+        <td>
+          <span class='badge white-text transparent'>Defoult template is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          'Search template' search field  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Clicking on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Clicked on Search template.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          <span class='badge white-text transparent'>'Search template' search box is clickable...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Entering value on Search template input : Data Pushdown Validation - Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Entered value on Search template input : Data Pushdown Validation - Dynamic SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Search button icon on search template is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Clicking on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          Clicked on search button icon.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Data Pushdown Validation - Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:05 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Data Pushdown Validation - Dynamic SQL'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:09 am</td>
+        <td>
+          The searched template name is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:09 am</td>
+        <td>
+          Clicking on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:09 am</td>
+        <td>
+          Clicked on searched item from the list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:09 am</td>
+        <td>
+          <span class='badge white-text transparent'>Searched item is selected...</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:10 am</td>
+        <td>
+          Clicking on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Clicked on select workspace dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Workspace dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Clicking on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Clicked on searched workspace.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Entering value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          Entered value on Select workspace field input : Test_Generator-WIP
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:11 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'Test_Generator-WIP'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:13 am</td>
+        <td>
+          Workspace name selected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:13 am</td>
+        <td>
+          Clicking on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:13 am</td>
+        <td>
+          Clicked on Folder dropdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:13 am</td>
+        <td>
+          Folder dropdown opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:13 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:13 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:13 am</td>
+        <td>
+          Entering value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:14 am</td>
+        <td>
+          Entered value on searching folder name. input : MJ_DND
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:14 am</td>
+        <td>
+          <span class='badge white-text transparent'>Initiating action: Press Enter on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:14 am</td>
+        <td>
+          <span class='badge white-text green'>Action successful: Enter key pressed on element 'MJ_DND'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:14 am</td>
+        <td>
+          Clicking on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:14 am</td>
+        <td>
+          Clicked on Search folder
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:14 am</td>
+        <td>
+          Clicking on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:14 am</td>
+        <td>
+          Clicked on Search button icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:15 am</td>
+        <td>
+          Clicking on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:15 am</td>
+        <td>
+          Clicked on Seached folder name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:15 am</td>
+        <td>
+          Folder name selected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:15 am</td>
+        <td>
+          Next button of 'Select Container' page is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:15 am</td>
+        <td>
+          Clicking on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:15 am</td>
+        <td>
+          Clicked on next button of 'Select Container' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:15 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Container' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          Clicking on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          Clicked on next button of 'Define Rule Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Rule Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          Clicking on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          Clicked on next button of 'Define Check Metadata' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:19 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Define Check Metadata' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:20 am</td>
+        <td>
+          Next button of 'Define Rule Metadata' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:20 am</td>
+        <td>
+          Clicking on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:20 am</td>
+        <td>
+          Clicked on next button of 'Configure Notifications' page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:20 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Configure Notifications' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:20 am</td>
+        <td>
+          Clicking on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:20 am</td>
+        <td>
+          Clicked on select connection type.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:21 am</td>
+        <td>
+          Clicking on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:21 am</td>
+        <td>
+          Clicked on source cloud data warehouse connection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:21 am</td>
+        <td>
+          Clicking on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:21 am</td>
+        <td>
+          Clicked on select connection dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:21 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          Entering value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          Entered value on source connection name input : Redshift-with-jdbc-UserConn
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          Entering value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          Entered value on source connection name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:22 am</td>
+        <td>
+          <span class='badge white-text transparent'>Connection name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Clicking on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Clicked on database dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Entering value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Entered value on source database name input : icedqrs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Entering value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          Entered value on source database name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:23 am</td>
+        <td>
+          <span class='badge white-text transparent'>Database name is found.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          schemaName dropdown is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Clicking on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Clicked on choose schema dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Entering value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Entered value on source schema name input : regression_database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Clicking on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Clicked on 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Entering value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:24 am</td>
+        <td>
+          Entered value on source schema name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:42:25 am</td>
+        <td>
+          Next button of 'Select Dataset' page  is visible.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:25 am</td>
+        <td>
+          Clicking on next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:45 am</td>
+        <td>
+          Element is not clickable next button of 'Select Dataset' page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:42:45 am</td>
+        <td>
+          <span class='badge white-text transparent'>Next button of 'Select Dataset' page is clickable.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:43:46 am</td>
+        <td>
+          Element is not clickable search available table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:44:46 am</td>
+        <td>
+          Element is not clickable 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:44:46 am</td>
+        <td>
+          Entering value on staff table name input : staff
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:45:38 am</td>
+        <td>
+          <span class='badge white-text red'>Rule creation failed for rule type: pushdown | Error: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Search available table'] (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59673}, goog:processID: 749444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59673/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889c7af8455a37c7aa7b712f4709f0d9</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:45:40 am</td>
+        <td>
+          <span class='badge white-text red'>Test FAILED: createRuleUsingDynamicTemplate</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Dec 12, 2025 10:30:22 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Dec 12, 2025 10:45:41 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>4</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>5</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='44%'>
+<b>4</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='55%'><b>5</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='21%'><b>125</b> events passed</small></div>
+<div>
+<small data-tooltip='2%'><b>13</b> events failed,
+<b data-tooltip='%'>436</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"validateLoginPage":13.533,"Create rule using default Dynamic Template for - checksum | Database connection.":0.014,"Create rule using default Dynamic Template for - recon | Database connection.":0.015,"Create rule using default Dynamic Template for - validation | Database connection.":0.014,"Create rule using default Dynamic Template for - pushdown | Database connection.":0.013,"Create rule using default Dynamic Template for - checksum | Cloud Data Warehouse connection.":227.79,"Create rule using default Dynamic Template for - recon | Cloud Data Warehouse connection.":224.807,"Create rule using default Dynamic Template for - validation | Cloud Data Warehouse connection.":222.09,"Create rule using default Dynamic Template for - pushdown | Cloud Data Warehouse connection.":222.22
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>QA</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 4,
+failParent: 5,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 125,
+failEvents: 13,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 436
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
