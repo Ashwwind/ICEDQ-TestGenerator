@@ -3,10 +3,10 @@ package com.qa.tests;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.qa.base.Base;
-import com.qa.extentreportlistener.ExtentListener;
+import com.qa.extentreportlistener.ExtentReportListener;
 import com.qa.pages.HomePage;
 
-@Listeners(ExtentListener.class)
+@Listeners(ExtentReportListener.class)
 public class HomePageTest extends Base {
 
 	@Test
