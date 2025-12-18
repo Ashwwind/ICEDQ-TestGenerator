@@ -22,6 +22,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -395,6 +396,42 @@ public class PageUtil extends Base {
 			ExtentManager.logError("Error occurred while entering value on " + fieldName + " : " + e.getMessage());
 		}
 		return flag;
+	}
+
+	// 	Error Capture
+	public void captureUIErrorIfPresent() {
+
+		By errorLocator = By.xpath(
+				"//div[contains(@class,'error') or contains(@class,'toast') or @role='alert']"
+				);
+
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			WebElement errorElement =
+					wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
+
+			// Hover on error
+			new Actions(driver).moveToElement(errorElement).perform();
+
+			String errorText = errorElement.getText().trim();
+
+			if (!errorText.isEmpty()) {
+				// Console
+				System.out.println("❌ UI ERROR MESSAGE: " + errorText);
+
+				// Extent
+				ExtentManager.logError("UI Error Message: " + errorText);
+
+				// Screenshot (logFail will attach it)
+			}
+
+			Thread.sleep(1000);
+
+		} catch (TimeoutException e) {
+			// No UI error – safe to ignore
+		} catch (Exception e) {
+			System.out.println("Error while capturing UI error: " + e.getMessage());
+		}
 	}
 
 

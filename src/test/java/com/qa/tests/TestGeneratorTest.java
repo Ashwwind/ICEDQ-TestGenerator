@@ -31,9 +31,9 @@ public class TestGeneratorTest extends Base {
 	@DataProvider(name = "ruleDataForDynamicTemplate")
 	public Object[][] ruleDataProviderExcel() {
 		return ExcelReader.readExcel(
-			"./src/test/resources/Database/ruleData.xlsx",
-			"Dynamic Template"
-		);
+				"./src/test/resources/Database/ruleData.xlsx",
+				"Dynamic Template"
+				);
 	}
 
 	// Creating a rule using default dynamic template
@@ -60,11 +60,7 @@ public class TestGeneratorTest extends Base {
 		} catch (Exception e) {
 			ExtentManager.captureScreenshot("Failure_" + ruleType );
 			ExtentManager.logFail("Rule creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
-			 throw e;
-
-		}
-		finally {
-	        page.navigatHomePage();
+			throw e;
 		}
 	}
 
