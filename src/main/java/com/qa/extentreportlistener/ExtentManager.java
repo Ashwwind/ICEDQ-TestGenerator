@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 
 import java.io.File;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -21,6 +22,11 @@ public class ExtentManager {
     private static ExtentReports extent;
     public static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
     public static String buildId = "BUILD";
+    
+    // ===== CONSOLE TIMESTAMP =====
+    private static String consoleTimestamp() {
+    	return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+    }
 
     // ===================== INIT REPORT =====================
     public static ExtentReports getExtentReports() {
@@ -63,130 +69,108 @@ public class ExtentManager {
     }
 
     // ===================== SCREENSHOT =====================
-    public static String captureScreenshot(String name) {
+	public static String captureScreenshot(String name) {
+		try {
+			// Sanitize name to remove invalid file characters
+			String safeName = name.replaceAll("[\\\\/:*?\"<>|]", "_");
 
-        try {
-            String timestamp =
-                    new SimpleDateFormat("HH.mm.ss-dd-MM-yyyy").format(new Date());
+			// Timestamp for uniqueness
+			String timestamp = new SimpleDateFormat("HH.mm.ss-dd-MM-yyyy").format(new Date());
 
-            TakesScreenshot ts = (TakesScreenshot) Base.driver;
-            String base64 = ts.getScreenshotAs(OutputType.BASE64);
+			// Take screenshot as BASE64
+			TakesScreenshot ts = (TakesScreenshot) Base.driver;
+			String base64 = ts.getScreenshotAs(OutputType.BASE64);
 
-            File src = ts.getScreenshotAs(OutputType.FILE);
-            String folderPath = Paths.get("").toAbsolutePath()
-                    + "/reports/" + buildId + "/Screenshots/" + name;
+			// Take screenshot as FILE
+			File src = ts.getScreenshotAs(OutputType.FILE);
 
-            File folder = new File(folderPath);
-            folder.mkdirs();
+			// Build folder path in an OS-independent way
+			Path folderPath = Paths.get("", "reports", buildId, "Screenshots", safeName);
+			File folder = folderPath.toFile();
+			if (!folder.exists())
+				folder.mkdirs();
 
-            File dest = new File(folder, name + "-" + timestamp + ".png");
-            FileUtils.copyFile(src, dest);
+			// Build file path
+			File dest = folderPath.resolve(safeName + "-" + timestamp + ".png").toFile();
 
-            return base64;
+			// Copy screenshot file
+			FileUtils.copyFile(src, dest);
 
-        } catch (Exception e) {
-            System.out.println("Screenshot capture failed: " + e.getMessage());
-            return null;
-        }
-    }
+			return base64;
+
+		} catch (Exception e) {
+			System.out.println("Screenshot capture failed: " + e.getMessage());
+			return null;
+		}
+	}
+
 
     // ===================== LOG INFO =====================
-    public static void logInfo(String message) {
+	public static void logInfo(String message) {
 
-        String timestamp = LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		// Extent → ONLY message
+		 test.get().info("<span style='color:black'>" + message + "</span>");
 
-        String className =
-                Thread.currentThread().getStackTrace()[2].getClassName();
+		// Console → full details
+		System.out.println("[" + consoleTimestamp() + "] INFO " + Thread.currentThread().getStackTrace()[2].getClassName() + " - " + message);
+	}
 
-        String log = String.format("[%s] INFO  %s - %s",
-                timestamp, className, message);
 
-        test.get().log(Status.INFO,
-                MarkupHelper.createLabel(log, ExtentColor.BLUE));
 
-        System.out.println(log);
-    }
 
-    // ===================== LOG PASS =====================
-    public static void logPass(String message) {
+	// ===================== LOG PASS =====================
+	public static void logPass(String message) {
+		String html = "<span style='" + "background-color: #a8e6a1;" + "color:#000;" + "padding:0.25em 0.6em;" 																																																																								
+				+ "border-radius:0.4em;" // rounded corners relative to font
+				+ "font-weight:500;" + "line-height:1.2;" // compact vertical height
+				+ "display:inline-block;" // box hugs text, no full-row width
+				+ "max-width:100%;" + "white-space:normal;" + "word-break:break-word;'>" + message + "</span>";
 
-        String timestamp = LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		test.get().pass(html);
 
-        String className =
-                Thread.currentThread().getStackTrace()[2].getClassName();
+		System.out.println("[" + consoleTimestamp() + "] PASS "
+				+ Thread.currentThread().getStackTrace()[2].getClassName() + " - " + message);
+	}
 
-        String log = String.format("[%s] PASS  %s - %s",
-                timestamp, className, message);
+	// ===================== LOG FAIL =====================
+	public static void logFail(String message) {
+		String html = "<span style='" + "background-color:#dc3545;" + "color:#000;" + "padding:0.25em 0.6em;"
+				+ "border-radius:0.4em;" + "font-weight:500;" + "line-height:1.2;" + "display:inline-block;"
+				+ "max-width:100%;" + "white-space:normal;" + "word-break:break-word;'>" + message + "</span>";
 
-        test.get().log(Status.PASS,
-                MarkupHelper.createLabel(log, ExtentColor.GREEN));
+		test.get().fail(html);
 
-        System.out.println(log);
-    }
+		System.out.println("[" + consoleTimestamp() + "] FAIL "
+				+ Thread.currentThread().getStackTrace()[2].getClassName() + " - " + message);
 
-    // ===================== LOG FAIL =====================
-    public static void logFail(String message) {
+		String screenshot = captureScreenshot(test.get().getModel().getName());
+		if (screenshot != null) {
+			test.get().fail("Screenshot", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
+		}
+	}
 
-        String timestamp = LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+	// ===================== LOG SKIP =====================
+	public static void logSkip(String message) {
 
-        String className =
-                Thread.currentThread().getStackTrace()[2].getClassName();
+		String className = Thread.currentThread().getStackTrace()[2].getClassName();
 
-        String log = String.format("[%s] FAIL  %s - %s",
-                timestamp, className, message);
+		// Extent → message only (standard size)
+		test.get().skip("<span style='color:gray; font-weight:normal;'>" + message + "</span>");
 
-        test.get().log(Status.FAIL,
-                MarkupHelper.createLabel(log, ExtentColor.RED));
+		// Console → timestamp + status + class
+		System.out.println("[" + consoleTimestamp() + "] SKIP  " + className + " - " + message);
+	}
 
-        System.out.println(log);
+	// ===================== LOG UI ERROR =====================
+	public static void logError(String message) {
 
-        // Attach screenshot ONCE
-        String screenshot = captureScreenshot(test.get().getModel().getName());
+		String className = Thread.currentThread().getStackTrace()[2].getClassName();
 
-        if (screenshot != null) {
-            test.get().fail("Screenshot",
-                    MediaEntityBuilder
-                            .createScreenCaptureFromBase64String(screenshot)
-                            .build());
-        }
-    }
+		// Extent → message only (standard size)
+		test.get().warning("<span style='color:orange; font-weight:normal;'>" + message + "</span>");
 
-    // ===================== LOG SKIP =====================
-    public static void logSkip(String message) {
+		// Console → timestamp + status + class
+		System.out.println("[" + consoleTimestamp() + "] ERROR " + className + " - " + message);
+	}
 
-        String timestamp = LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
-        String className =
-                Thread.currentThread().getStackTrace()[2].getClassName();
-
-        String log = String.format("[%s] SKIP  %s - %s",
-                timestamp, className, message);
-
-        test.get().log(Status.SKIP,
-                MarkupHelper.createLabel(log, ExtentColor.ORANGE));
-
-        System.out.println(log);
-    }
-
-    // ===================== LOG UI ERROR =====================
-    public static void logError(String message) {
-
-        String timestamp = LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
-        String className =
-                Thread.currentThread().getStackTrace()[2].getClassName();
-
-        String log = String.format("[%s] ERROR %s - %s",
-                timestamp, className, message);
-
-        test.get().log(Status.WARNING,
-                MarkupHelper.createLabel(log, ExtentColor.GREY));
-
-        System.out.println(log);
-    }
 }

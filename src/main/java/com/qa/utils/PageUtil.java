@@ -179,18 +179,25 @@ public class PageUtil extends Base {
 
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
-		clickOnElement(driver, locator, "", 20);
-		ExtentManager.logInfo("Entering value on " + label + " input : " + input);
-		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
-		ExtentManager.logFail("Failed to enter value on " + label + " input : " + input);
+		try {
+			ExtentManager.logInfo("Entering value on " + label + " input : " + input);
+			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
+			
+		} catch (Exception e) {
+			ExtentManager.logFail("Failed to enter value on " + label + " input : " + input);
+		}
 	}
 
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
-		//clickOnElement(driver, locator, "", 10);
-		ExtentManager.logInfo("Pressing ENTER on " + label);
-		waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
-		ExtentManager.logFail("Failed to press ENTER on " + label);
+		try {
+			ExtentManager.logInfo("Pressing ENTER on " + label);
+			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
+		
+		} catch (Exception e) {
+			ExtentManager.logFail("Failed to press ENTER on " + label);
+			captureUIErrorIfPresent();
+		}
 	}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {
@@ -285,6 +292,7 @@ public class PageUtil extends Base {
 			System.out.println("✅ Uploaded file: " + fullPath);
 		} catch (Exception e) {
 			throw new RuntimeException("File upload failed: " + e.getMessage());
+			
 		}
 	}
 
@@ -399,40 +407,33 @@ public class PageUtil extends Base {
 	}
 
 	// 	Error Capture
-	public void captureUIErrorIfPresent() {
+	public static void captureUIErrorIfPresent() {
+		By errorLocator = By.xpath("//div[contains(@class,'error') or contains(@class,'toast') or @role='alert']");
 
-	    By errorLocator = By.xpath(
-	        "//div[contains(@class,'error') or contains(@class,'toast') or @role='alert']"
-	    );
+		try {
+			// Wait a short time for the toast to appear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			WebElement errorElement = wait.until(ExpectedConditions.presenceOfElementLocated(errorLocator));
 
-	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-	        WebElement errorElement =
-	                wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
+			// Get the text immediately
+			String errorText = errorElement.getText().trim();
 
-	        Actions actions = new Actions(driver);
+			if (!errorText.isEmpty()) {
+				System.out.println("❌ UI ERROR MESSAGE: " + errorText);
+				ExtentManager.logError("UI Error Message: " + errorText);
+			}
 
-	        // Hover + double click to select text
-	        actions.moveToElement(errorElement)
-	               .pause(Duration.ofMillis(300))
-	               .doubleClick(errorElement)
-	               .perform();
+			// Optional: highlight element for screenshot
+			((JavascriptExecutor) driver).executeScript("arguments[0].style.border='2px solid red'", errorElement);
 
-	        String errorText = errorElement.getText().trim();
+			// Small wait for visibility in screenshot
+			Thread.sleep(500);
 
-	        if (!errorText.isEmpty()) {
-	            System.out.println("❌ UI ERROR MESSAGE: " + errorText);
-	            ExtentManager.logError("UI Error Message: " + errorText);
-	        }
-
-	        // Small wait so selected text is visible in screenshot
-	        Thread.sleep(800);
-
-	    } catch (TimeoutException e) {
-	        // No UI error – safe to ignore
-	    } catch (Exception e) {
-	        System.out.println("Error while capturing UI error: " + e.getMessage());
-	    }
+		} catch (TimeoutException e) {
+			// No toast appeared – safe to ignore
+		} catch (Exception e) {
+			System.out.println("Error while capturing UI error: " + e.getMessage());
+		}
 	}
 
 

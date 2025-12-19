@@ -1,188 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="27" passed="21" failed="2" skipped="0">
+<testng-results ignored="1" total="12" passed="6" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-16T18:57:08 IST" name="Suite" finished-at="2025-12-16T19:14:01 IST" duration-ms="1012787">
+  <suite started-at="2025-12-19T19:19:24 IST" name="Suite" finished-at="2025-12-19T19:49:12 IST" duration-ms="1787379">
     <groups>
     </groups>
-    <test started-at="2025-12-16T18:57:08 IST" name="Test" finished-at="2025-12-16T19:14:01 IST" duration-ms="1012787">
+    <test started-at="2025-12-19T19:19:24 IST" name="Login Tests" finished-at="2025-12-19T19:19:26 IST" duration-ms="1297">
+      <class name="com.qa.tests.LoginTest">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@16d04d3d]" started-at="2025-12-19T19:19:24 IST" name="validateLoginPage" finished-at="2025-12-19T19:19:25 IST" duration-ms="759" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLoginPage -->
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@16d04d3d]" started-at="2025-12-19T19:19:25 IST" name="Login" finished-at="2025-12-19T19:19:26 IST" duration-ms="493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+      </class> <!-- com.qa.tests.LoginTest -->
+    </test> <!-- Login Tests -->
+    <test started-at="2025-12-19T19:19:26 IST" name="Home Page Tests" finished-at="2025-12-19T19:19:37 IST" duration-ms="11428">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@67c27493]" started-at="2025-12-16T18:57:11 IST" name="validateHomePage" finished-at="2025-12-16T18:57:23 IST" duration-ms="12246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateHomePage -->
-      </class> <!-- com.qa.tests.HomePageTest -->
-      <class name="com.qa.tests.TestGeneratorTest">
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T18:57:24 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T18:58:47 IST" duration-ms="82902" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.110)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [20137351f8562c1b246a539af3babed2, getElementDomProperty {name=value, id=f.77905CB3159929C40313E0A83FA3E0F6.d.E117E8B41EBAA1CD70D2FC76AFF1CAB4.e.445}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.110, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62743}, goog:processID: 186516, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62743/devtoo..., se:cdpVersion: 143.0.7499.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (20137351f8562c1b246a539af3babed2)] -> xpath: //*[@placeholder='Enter rule name']]
-Session ID: 20137351f8562c1b246a539af3babed2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.110)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [20137351f8562c1b246a539af3babed2, getElementDomProperty {name=value, id=f.77905CB3159929C40313E0A83FA3E0F6.d.E117E8B41EBAA1CD70D2FC76AFF1CAB4.e.445}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.110, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62743}, goog:processID: 186516, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62743/devtoo..., se:cdpVersion: 143.0.7499.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (20137351f8562c1b246a539af3babed2)] -> xpath: //*[@placeholder='Enter rule name']]
-Session ID: 20137351f8562c1b246a539af3babed2
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.getDomProperty(RemoteWebElement.java:139)
-at com.qa.pages.TestGeneratorPage.lambda$18(TestGeneratorPage.java:851)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:851)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:51)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T18:58:47 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T19:00:19 IST" duration-ms="92310" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[recon]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Specify Column for Diff - Full Data Compare Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@55182842]" started-at="2025-12-19T19:19:26 IST" name="validateHomePage" finished-at="2025-12-19T19:19:37 IST" duration-ms="11191" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //a[@title='Helpdesk'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.110, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63666}, goog:processID: 10336, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63666/devtoo..., se:cdpVersion: 143.0.7499.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a901e23e95bf832a23297adcf1e0763]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[@title='Helpdesk'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.110, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63666}, goog:processID: 10336, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63666/devtoo..., se:cdpVersion: 143.0.7499.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a901e23e95bf832a23297adcf1e0763
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:848)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:51)
+at com.qa.pages.HomePage.verifyHyperlinkIcons(HomePage.java:181)
+at com.qa.pages.HomePage.homepageValidation(HomePage.java:42)
+at com.qa.tests.HomePageTest.validateHomePage(HomePageTest.java:16)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -209,132 +67,21 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@placeholder='Enter rule name']"}
-  (Session info: chrome=143.0.7499.110)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [20137351f8562c1b246a539af3babed2, findElement {value=//*[@placeholder='Enter rule name'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.110, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62743}, goog:processID: 186516, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62743/devtoo..., se:cdpVersion: 143.0.7499.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 20137351f8562c1b246a539af3babed2
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 29 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:00:20 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T19:01:50 IST" duration-ms="89832" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- validateHomePage -->
+      </class> <!-- com.qa.tests.HomePageTest -->
+    </test> <!-- Home Page Tests -->
+    <test started-at="2025-12-19T19:19:37 IST" name="Test Generator Page Tests" finished-at="2025-12-19T19:49:12 IST" duration-ms="1774291">
+      <class name="com.qa.tests.TestGeneratorTest">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:19:17 IST" name="startSuite" finished-at="2025-12-19T19:19:24 IST" duration-ms="7114" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:01:50 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T19:03:04 IST" duration-ms="74243" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pushdown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:03:04 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T19:06:49 IST" duration-ms="225061" status="PASS">
+        </test-method> <!-- startSuite -->
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:19:38 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:45:13 IST" duration-ms="1534686" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -353,22 +100,22 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="3">
               <value>
-                <![CDATA[MJ_DND]]>
+                <![CDATA[TestGenerator]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Cloud Data Warehouse]]>
+                <![CDATA[Database]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Redshift-with-jdbc-UserConn]]>
+                <![CDATA[postgreSQL]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[regression_database]]>
+                <![CDATA[public]]>
               </value>
             </param>
             <param index="7">
@@ -377,10 +124,48 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
               </value>
             </param>
           </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Stopping flow due to step failure]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Stopping flow due to step failure
+at com.qa.pages.TestGeneratorPage.stopIfFailed(TestGeneratorPage.java:123)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:06:49 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T19:09:40 IST" duration-ms="170757" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:45:13 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:49:12 IST" duration-ms="238663" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -399,22 +184,22 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="3">
               <value>
-                <![CDATA[MJ_DND]]>
+                <![CDATA[TestGenerator]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Cloud Data Warehouse]]>
+                <![CDATA[Database]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Redshift-with-jdbc-UserConn]]>
+                <![CDATA[postgreSQL]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[regression_database]]>
+                <![CDATA[public]]>
               </value>
             </param>
             <param index="7">
@@ -423,10 +208,75 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8a901e23e95bf832a23297adcf1e0763, get {url=https://qa.onprem.icedq.com/}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.110, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63666}, goog:processID: 10336, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63666/devtoo..., se:cdpVersion: 143.0.7499.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a901e23e95bf832a23297adcf1e0763]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8a901e23e95bf832a23297adcf1e0763, get {url=https://qa.onprem.icedq.com/}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.110, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63666}, goog:processID: 10336, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63666/devtoo..., se:cdpVersion: 143.0.7499.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a901e23e95bf832a23297adcf1e0763
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:1093)
+at com.qa.utils.PageUtil.goTo(PageUtil.java:244)
+at com.qa.pages.TestGeneratorPage.navigatHomePage(TestGeneratorPage.java:893)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:115)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:838)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:09:40 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T19:11:44 IST" duration-ms="124489" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:49:12 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:49:12 IST" duration-ms="15" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -445,22 +295,22 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="3">
               <value>
-                <![CDATA[MJ_DND]]>
+                <![CDATA[TestGenerator]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Cloud Data Warehouse]]>
+                <![CDATA[Database]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Redshift-with-jdbc-UserConn]]>
+                <![CDATA[postgreSQL]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[regression_database]]>
+                <![CDATA[public]]>
               </value>
             </param>
             <param index="7">
@@ -469,10 +319,48 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
               </value>
             </param>
           </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Stopping flow due to step failure]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Stopping flow due to step failure
+at com.qa.pages.TestGeneratorPage.stopIfFailed(TestGeneratorPage.java:123)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:139)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:11:44 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-16T19:13:31 IST" duration-ms="106633" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:49:12 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:49:12 IST" duration-ms="18" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -491,7 +379,91 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="3">
               <value>
-                <![CDATA[MJ_DND]]>
+                <![CDATA[TestGenerator]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[public]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[staff]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Stopping flow due to step failure]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Stopping flow due to step failure
+at com.qa.pages.TestGeneratorPage.stopIfFailed(TestGeneratorPage.java:123)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:139)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:49:12 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:49:12 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[TestGenerator]]>
               </value>
             </param>
             <param index="4">
@@ -518,43 +490,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:31 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:34 IST" duration-ms="3220" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:34 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:35 IST" duration-ms="1096" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:49:12 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:49:12 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -563,7 +499,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="1">
               <value>
-                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+                <![CDATA[Specify Column for Diff - Full Data Compare Dynamic SQL]]>
               </value>
             </param>
             <param index="2">
@@ -573,24 +509,34 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="3">
               <value>
-                <![CDATA[MJ_DND]]>
+                <![CDATA[TestGenerator]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Database]]>
+                <![CDATA[Cloud Data Warehouse]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[postgreSQL]]>
+                <![CDATA[Redshift-with-jdbc-UserConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[regression_database]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[staff]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:35 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:37 IST" duration-ms="1261" status="PASS">
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:49:12 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:49:12 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -599,7 +545,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="1">
               <value>
-                <![CDATA[Data Validation - Import SQL]]>
+                <![CDATA[Data Validation - Dynamic SQL]]>
               </value>
             </param>
             <param index="2">
@@ -609,24 +555,34 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="3">
               <value>
-                <![CDATA[MJ_DND]]>
+                <![CDATA[TestGenerator]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Database]]>
+                <![CDATA[Cloud Data Warehouse]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[postgreSQL]]>
+                <![CDATA[Redshift-with-jdbc-UserConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[regression_database]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[staff]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:37 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:40 IST" duration-ms="3068" status="PASS">
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:49:12 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-19T19:49:12 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -635,7 +591,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="1">
               <value>
-                <![CDATA[Data Pushdown Validation - Import SQL]]>
+                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
               </value>
             </param>
             <param index="2">
@@ -645,43 +601,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="3">
               <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:40 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:41 IST" duration-ms="1498" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
+                <![CDATA[TestGenerator]]>
               </value>
             </param>
             <param index="4">
@@ -694,281 +614,25 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
                 <![CDATA[Redshift-with-jdbc-UserConn]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:41 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:44 IST" duration-ms="2488" status="PASS">
-          <params>
-            <param index="0">
+            <param index="6">
               <value>
-                <![CDATA[recon]]>
+                <![CDATA[regression_database]]>
               </value>
             </param>
-            <param index="1">
+            <param index="7">
               <value>
-                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-with-jdbc-UserConn]]>
+                <![CDATA[staff]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:44 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:46 IST" duration-ms="2255" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Validation - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-with-jdbc-UserConn]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:46 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:50 IST" duration-ms="4309" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pushdown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Pushdown Validation - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-with-jdbc-UserConn]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:50 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:53 IST" duration-ms="2803" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[File]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:53 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:55 IST" duration-ms="1558" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[recon]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[File]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:55 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:13:57 IST" duration-ms="2579" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Validation - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[File]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@1a482e36]" started-at="2025-12-16T19:13:57 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-16T19:14:01 IST" duration-ms="3604" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pushdown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Pushdown Validation - Import SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MJ_DND]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[File]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingImportTemplate -->
-      </class> <!-- com.qa.tests.TestGeneratorTest -->
-      <class name="com.qa.tests.LoginTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.LoginTest@4ec4f3a0]" started-at="2025-12-16T18:57:04 IST" name="startSuite" finished-at="2025-12-16T18:57:08 IST" duration-ms="4274" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startSuite -->
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@4ec4f3a0]" started-at="2025-12-16T18:57:08 IST" name="validateLoginPage" finished-at="2025-12-16T18:57:09 IST" duration-ms="567" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@4ec4f3a0]" started-at="2025-12-16T18:57:09 IST" name="Login" finished-at="2025-12-16T18:57:11 IST" duration-ms="2478" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.LoginTest@4ec4f3a0]" started-at="2025-12-16T19:14:01 IST" name="endSuite" finished-at="2025-12-16T19:14:02 IST" duration-ms="486" status="PASS">
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@765d7657]" started-at="2025-12-19T19:49:12 IST" name="endSuite" finished-at="2025-12-19T19:49:12 IST" duration-ms="63" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->
-      </class> <!-- com.qa.tests.LoginTest -->
-    </test> <!-- Test -->
+      </class> <!-- com.qa.tests.TestGeneratorTest -->
+    </test> <!-- Test Generator Page Tests -->
   </suite> <!-- Suite -->
 </testng-results>

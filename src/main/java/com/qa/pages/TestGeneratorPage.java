@@ -147,10 +147,10 @@ public class TestGeneratorPage extends PageUtil {
 	    stopIfFailed(gotoCheckMetadataNextbtn());
 	    stopIfFailed(gotoNotificationNextbtn());
 
-	    stopIfFailed(selectionSourceDataset1(connectionType, connectionName, schemaName));
+	    stopIfFailed(selectionSourceDataset(connectionType, connectionName, schemaName));
 
-	    if (!ruleType.equalsIgnoreCase("validation")
-	            && !ruleType.equalsIgnoreCase("pushdown")) {
+	    if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
+	    	
 	        stopIfFailed(selectionTargetDataset(connectionType, connectionName, schemaName));
 	    }
 
@@ -495,7 +495,7 @@ public class TestGeneratorPage extends PageUtil {
 		return executeStep("Select source dataset details.", () -> {
 
 			// Click on the source connection type dropdown
-			clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", 30);
+			clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select source connection type.", 30);
 
 			if (connectionType.equalsIgnoreCase("Database")) {
 
@@ -539,7 +539,7 @@ public class TestGeneratorPage extends PageUtil {
 			// Schema selection
 			validateElementIsVisible(driver, clickSourceSchemaDropdown, "schemaName dropdown");
 
-			clickOnElement(driver, clickSourceSchemaDropdown, "choose schema dropdown.", 40);
+			clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 40);
 
 			sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
 
@@ -549,9 +549,7 @@ public class TestGeneratorPage extends PageUtil {
 		});
 	}
 	
-	public boolean selectionSourceDataset1(String connectionType,
-			String connectionName,
-			String schemaName) {
+	public boolean selectionSourceDataset1(String connectionType,String connectionName,String schemaName) {
 		boolean flag = true;
 
 		try {

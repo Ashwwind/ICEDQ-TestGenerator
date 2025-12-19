@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
 <suite name="Suite">
 
-	<!-- <listeners>
-		<listener class-name="com.qa.extentreportlistener.ExtentListener" />
-	</listeners>
--->
-	<test thread-count="1" name="Test">
+	<!--
+    <listeners>
+        <listener class-name="com.qa.extentreportlistener.ExtentListener" />
+    </listeners>
+    -->
+
+	<test name="Login Tests">
 		<classes>
 			<class name="com.qa.tests.LoginTest">
 				<methods>
-					<include name="validateLoginPage"></include>
-					<include name="Login"></include>
+					<include name="validateLoginPage" />
+					<include name="Login" />
 				</methods>
 			</class>
+		</classes>
+	</test>
 
-			<!-- -->
+	<test name="Home Page Tests">
+		<classes>
 			<class name="com.qa.tests.HomePageTest">
 				<methods>
-					<include name="validateHomePage"></include>
+					<include name="validateHomePage" />
 				</methods>
 			</class>
+		</classes>
+	</test>
 
+	<test name="Test Generator Page Tests">
+		<classes>
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
 					<include name="createRuleUsingDynamicTemplate" />
 					<exclude name="createRuleUsingImportTemplate" />
 				</methods>
 			</class>
-
 		</classes>
-	</test> <!--
-	Test -->
-</suite> <!--
-Suite -->
+	</test>
 
+</suite>

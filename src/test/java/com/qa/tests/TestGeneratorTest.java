@@ -15,19 +15,6 @@ import com.qa.extentreportlistener.ExtentReportListener;
 public class TestGeneratorTest extends Base {
 	// Use Data provider for Dynamic
 
-//	@DataProvider(name = "ruleDataForDynamicTemplate")
-//	public Object[][] ruleDataProvider1() {
-//		return new Object[][] {
-//				{ "checksum", "Compare Record Counts - Dynamic SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL",
-//						"public", "staff" },
-//				{ "recon", "Specify Column for Diff - Full Data Compare Dynamic SQL", "Test_Generator-WIP", "MJ_DND",
-//						"postgreSQL", "public", "staff" },
-//				{ "validation", "Data Validation - Dynamic SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL", "public",
-//						"staff" },
-//				{ "pushdown", "Data Pushdown Validation - Dynamic SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL",
-//						"public", "staff" } };
-//	}
-	
 	@DataProvider(name = "ruleDataForDynamicTemplate")
 	public Object[][] ruleDataProviderExcel() {
 		return ExcelReader.readExcel(
@@ -67,16 +54,6 @@ public class TestGeneratorTest extends Base {
 	////// ************************** //////
 
 	// Use Data provider For Import
-
-//	@DataProvider(name = "ruleDataForImportTemplate")
-//	public Object[][] ruleDataProvider2() {
-//		return new Object[][] {
-//			{ "checksum", "Compare Record Counts - Import SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL" },
-//			{ "recon", "Diff and Expression based on Column Position - Import SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL" },
-//			{ "validation", "Data Validation - Import SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL" },
-//			{ "pushdown", "Data Pushdown Validation - Import SQL", "Test_Generator-WIP", "MJ_DND", "postgreSQL" }
-//		};
-//	}
 	
 	@DataProvider(name = "ruleDataForImportTemplate")
 	public Object[][] ruleDataProviderImportExcel() {
@@ -86,7 +63,6 @@ public class TestGeneratorTest extends Base {
 		);
 	}
 
-	
 
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName,

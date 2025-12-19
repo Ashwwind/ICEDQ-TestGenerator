@@ -25,16 +25,17 @@ public class LoginPage extends PageUtil {
 	}
 
 	public void enterUsername(String username) {
-		PageUtil.sendkeysToElement(driver, usernameField, "Username", username);
+		clickOnElement(driver, usernameField, "username or email field.", 10);
+		sendkeysToElement(driver, usernameField, "Username", username);
 	}
 
 	public void enterPassword(String password) {
-
-		PageUtil.sendkeysToElement(driver, passwordField, "password", password);
+		clickOnElement(driver, passwordField, "password field.", 10);
+		sendkeysToElement(driver, passwordField, "password", password);
 	}
 
 	public void clickLogin() {
-		PageUtil.clickOnElement(driver, loginButton, "SingIn button", 10);
+		clickOnElement(driver, loginButton, "SingIn button.", 10);
 	}
 
 	public void login(String username, String password) {
@@ -79,15 +80,6 @@ public class LoginPage extends PageUtil {
 		}
 	}
 
-	// URL validation
-//	    try {
-//	        String currentUrl = driver.getCurrentUrl();
-//	        Assert.assertTrue(currentUrl.contains("icedq"), "Base URL does not contain 'icedq'.");
-//	       ExtentManager.logInfo("Base URL loaded correctly: " + currentUrl);
-//	    } catch (Exception e) {
-//	    	ExtentManager.logFail("Base URL validation failed. Error: " + e.getMessage());
-//	    }
-
 	// Title validation
 	public void verifyTitleOfPage() {
 		String expectedTitle = "Sign in to iCEDQ DataOps Platform";
@@ -103,17 +95,6 @@ public class LoginPage extends PageUtil {
 		}
 	}
 
-//	    String actualTitle = null;
-//		String expectedTitle = null;
-//		try {
-//			actualTitle = driver.getTitle();
-//			expectedTitle = "Sign in to iCEDQ DataOps Platform";
-//			 ExtentManager.logInfo("The actual page title. '" + actualTitle + "'");
-//		} catch (Exception e) {
-//			 ExtentManager.logFail("The actual page title. " + actualTitle + "The expected page title. " + expectedTitle);
-//		}
-//	   
-
 	// Logo validation
 	public void verifyLogoIsDisplayed() {
 		WebElement logo = driver.findElement(By.xpath("/html/body/div/div[1]/div"));
@@ -127,14 +108,6 @@ public class LoginPage extends PageUtil {
 			ExtentManager.logFail("Logo is not displayed.");
 		}
 	}
-
-//		try {
-//		    WebElement logo = driver.findElement(By.xpath("/html/body/div/div[1]/div"));
-//		    Assert.assertTrue(logo.isDisplayed(), "Logo is not displayed.");
-//		    ExtentManager.logPass("Logo is displayed. " );
-//		} catch (Exception e) {
-//		    ExtentManager.logFail("Logo validation failed. Error: " + e.getMessage());
-//		}
 
 	// Username and Password validation
 	public void verifyUsernameAndPasswordFields() {
@@ -152,21 +125,6 @@ public class LoginPage extends PageUtil {
 		}
 	}
 
-//	try
-//	{
-//		WebElement usernameField = driver.findElement(By.id("username"));
-//		WebElement passwordField = driver.findElement(By.id("password"));
-//
-//		Assert.assertTrue(usernameField.isDisplayed(), "Username field is not displayed.");
-//		Assert.assertTrue(passwordField.isDisplayed(), "Password field is not displayed.");
-//
-//		ExtentManager.logPass("Username and password fields are displayed.");
-//	}catch(
-//	Exception e)
-//	{
-//		ExtentManager.logFail("Username/Password field validation failed. Error: " + e.getMessage());
-//	}
-
 	// Checkbox validation
 	public void verifyRememberMeCheckbox() {
 
@@ -181,17 +139,6 @@ public class LoginPage extends PageUtil {
 			ExtentManager.logFail("Remember Me checkbox is not displayed.");
 		}
 	}
-
-//	try
-//	{
-//		WebElement checkbox = driver.findElement(By.xpath("//input[@type='checkbox']"));
-//		Assert.assertTrue(checkbox.isDisplayed(), "Remember Me checkbox is not displayed.");
-//		ExtentManager.logPass("Remember Me checkbox is displayed.");
-//	}catch(
-//	Exception e)
-//	{
-//		ExtentManager.logFail("Checkbox validation failed. Error: " + e.getMessage());
-//	}
 
 	// Sign In button and Forgot Password link validation
 	public void verifySignInButtonAndForgotPasswordLink() {
@@ -209,18 +156,4 @@ public class LoginPage extends PageUtil {
 		}
 	}
 
-//	try
-//	{
-//		WebElement signInButton = driver.findElement(By.id("kc-login"));
-//		WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
-//
-//		Assert.assertTrue(signInButton.isDisplayed(), "Sign In button is not displayed.");
-//		Assert.assertTrue(forgotPasswordLink.isDisplayed(), "Forgot Password link is not displayed.");
-//
-//		ExtentManager.logPass("Sign In button and Forgot Password link are displayed.");
-//	}catch(
-//	Exception e)
-//	{
-//		ExtentManager.logFail("Sign In or Forgot Password validation failed. Error: " + e.getMessage());
-//	}
 }
