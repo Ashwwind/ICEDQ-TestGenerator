@@ -100,29 +100,42 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public boolean executeStep(String stepName, Runnable action) {
-		try {
-			action.run();
-			ExtentManager.logPass(stepName + " ➝ PASSED");
-			return true;
+	    try {
+	        action.run();
 
-		} catch (Throwable e) {
+	        // 🔥 Detect toast AFTER action
+	        String uiError = captureUIErrorIfPresent(driver);
+	        if (uiError != null) {
+	            throw new RuntimeException(uiError);
+	        }
 
-			// 👇 Capture UI error message if shown
-			captureUIErrorIfPresent();
+	        ExtentManager.logPass(stepName + " ➝ PASSED");
+	        return true;
 
-			ExtentManager.logFail(stepName + " ➝ FAILED due to: " + e.getMessage());
+	    } catch (Throwable e) {
 
-			navigatHomePage(); // recover for next flow
-			return false;
-		}
+	        ExtentManager.logFail(stepName + " ➝ FAILED due to: " + e.getMessage());
+
+	        // Exit flow
+	        navigatHomePage();
+
+	        return false;
+	    }
 	}
 
 
-	private void stopIfFailed(boolean stepStatus) {
-		if (!stepStatus) {
-			throw new RuntimeException("Stopping flow due to step failure");
-		}
+	public void stopIfFailed(boolean stepResult) {
+	    if (!stepResult) {
+	        throw new FlowAbortException("Flow aborted due to UI error or step failure");
+	    }
 	}
+
+	public static class FlowAbortException extends RuntimeException {
+	    public FlowAbortException(String message) {
+	        super(message);
+	    }
+	}
+
 
 	/// ************* ///
 	// Default Dynamic Template
@@ -132,137 +145,243 @@ public class TestGeneratorPage extends PageUtil {
 			String folderName, String connectionType, String connectionName, String schemaName, String tableName)
 			throws InterruptedException {
 
-		stopIfFailed(clickTestGenerator());
-	    stopIfFailed(clickOnRuleType(ruleType));
+		// Step 1: Click Test Generator
+		stopIfFailed(executeStep("Click Test Generator", this::clickTestGenerator));
 
-	    stopIfFailed(clickOnSearchField());
-	    stopIfFailed(enterOnSearchField(templateName));
-	    stopIfFailed(selectExistingChecksumTemplate());
+		// Step 2: Click on Rule Type
+		stopIfFailed(executeStep("Click On Rule Type: " + ruleType, () -> clickOnRuleType(ruleType)));
 
-	    stopIfFailed(clickOnWorkspaceField(workspaceName));
-	    stopIfFailed(clickOnFolderField(folderName));
+		// Step 3: Search and select template
+		stopIfFailed(executeStep("Search Template: " + templateName, () -> {
+			clickOnSearchField();
+			enterOnSearchField(templateName);
+			selectExistingChecksumTemplate();
+		}));
 
-	    stopIfFailed(gotoWorkspaceNextbtn());
-	    stopIfFailed(gotoRuleMetadataNextbtn());
-	    stopIfFailed(gotoCheckMetadataNextbtn());
-	    stopIfFailed(gotoNotificationNextbtn());
+		// Step 4: Workspace & Folder selection
+		stopIfFailed(executeStep("Select Workspace: " + workspaceName, () -> clickOnWorkspaceField(workspaceName)));
+		stopIfFailed(executeStep("Select Folder: " + folderName, () -> clickOnFolderField(folderName)));
 
-	    stopIfFailed(selectionSourceDataset(connectionType, connectionName, schemaName));
+		// Step 5: Navigate Next buttons
+		stopIfFailed(executeStep("Workspace Next", this::gotoWorkspaceNextbtn));
+		stopIfFailed(executeStep("Rule Metadata Next", this::gotoRuleMetadataNextbtn));
+		stopIfFailed(executeStep("Check Metadata Next", this::gotoCheckMetadataNextbtn));
+		stopIfFailed(executeStep("Notification Next", this::gotoNotificationNextbtn));
 
-	    if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
-	    	
-	        stopIfFailed(selectionTargetDataset(connectionType, connectionName, schemaName));
-	    }
+		// Step 6: Source Dataset selection
+		stopIfFailed(executeStep("Select Source Dataset: " + connectionType + "/" + connectionName + "/" + schemaName,
+				() -> selectionSourceDataset(connectionType, connectionName, schemaName)));
 
-	    stopIfFailed(gotoDatasetNextbtn());
-	    stopIfFailed(selectionAvailabeTable(tableName));
-	    stopIfFailed(gotoSelettableNextbtn());
+		// Step 7: Target Dataset selection for non-validation & non-pushdown
+		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
+			stopIfFailed(
+					executeStep("Select Target Dataset: " + connectionType + "/" + connectionName + "/" + schemaName,
+							() -> selectionTargetDataset(connectionType, connectionName, schemaName)));
+		}
 
-	    stopIfFailed(clickOnGenerate());
-	    stopIfFailed(clickOnGoToPreview());
-	    stopIfFailed(selectGeneratedEntity());
-	    stopIfFailed(clickOnPublish());
-	    stopIfFailed(clickOnGoToPublish());
-	    
-	    stopIfFailed(clickOnPublishedRule());
+		// Step 8: Dataset & Table selection
+		stopIfFailed(executeStep("Dataset Next", this::gotoDatasetNextbtn));
+		stopIfFailed(executeStep("Select Available Table: " + tableName, () -> selectionAvailabeTable(tableName)));
+		stopIfFailed(executeStep("Table Next", this::gotoSelettableNextbtn));
 
-		navigatHomePage();// 9. Navigate Data Testing
+		// Step 9: Generate & Preview
+		stopIfFailed(executeStep("Click Generate", this::clickOnGenerate));
+		stopIfFailed(executeStep("Go To Preview", this::clickOnGoToPreview));
+		stopIfFailed(executeStep("Select Generated Entity", this::selectGeneratedEntity));
+
+		// Step 10: Publish
+		stopIfFailed(executeStep("Click Publish", this::clickOnPublish));
+		stopIfFailed(executeStep("Go To Publish", () -> {
+			try {
+				clickOnGoToPublish();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}));
+
+		// Step 11: Verify Published Rule
+		stopIfFailed(executeStep("Click On Published Rule", this::clickOnPublishedRule));
+
+		// Step 12: Navigate back to Home Page for next flow
+		navigatHomePage();
 	}
+
 
 	// ============================
 	// Default Import Template
 	// ============================
 
 	public void createRuleUsingDefaultImportTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String connectionName) throws InterruptedException {
+	        String folderName, String connectionType, String connectionName) throws InterruptedException {
 
-		clickTestGenerator();
+	    boolean isReconOrChecksum = ruleType.equalsIgnoreCase("checksum") || ruleType.equalsIgnoreCase("recon");
 
-		boolean isReconOrChecksum = ruleType.equalsIgnoreCase("checksum") || ruleType.equalsIgnoreCase("recon");
+	    // Step 1: Click Test Generator
+	    stopIfFailed(executeStep("Click Test Generator", this::clickTestGenerator));
 
-		clickOnRuleType(ruleType); // switch case
+	    // Step 2: Click on Rule Type
+	    stopIfFailed(executeStep("Click On Rule Type: " + ruleType, () -> clickOnRuleType(ruleType)));
 
-		clickOnSearchField(); // 2. Search & Select Template
-		enterOnSearchField(templateName);
-		selectExistingChecksumTemplate();
+	    // Step 3: Search Template
+	    stopIfFailed(executeStep("Search Template: " + templateName, () -> {
+	        clickOnSearchField();
+	        enterOnSearchField(templateName);
+	        selectExistingChecksumTemplate();
+	    }));
 
-		clickOnWorkspaceField(workspaceName); // 3. Select Workspace
+	    // Step 4: Workspace & Folder selection
+	    stopIfFailed(executeStep("Select Workspace: " + workspaceName, () -> clickOnWorkspaceField(workspaceName)));
+	    stopIfFailed(executeStep("Select Folder: " + folderName, () -> clickOnFolderField(folderName)));
 
-		clickOnFolderField(folderName); // 4. Select Folder
+	    // Step 5: Navigate Next Buttons
+	    stopIfFailed(executeStep("Workspace Next", this::gotoWorkspaceNextbtn));
+	    stopIfFailed(executeStep("Rule Metadata Next", this::gotoRuleMetadataNextbtn));
+	    stopIfFailed(executeStep("Check Metadata Next", this::gotoCheckMetadataNextbtn));
+	    stopIfFailed(executeStep("Notification Next", this::gotoNotificationNextbtn));
 
-		gotoWorkspaceNextbtn(); // Next Buttons
-		gotoRuleMetadataNextbtn();
-		gotoCheckMetadataNextbtn();
-		gotoNotificationNextbtn();
+	    // Step 6: Source Dataset selection
+	    stopIfFailed(executeStep("Select Source Dataset for Import: " + connectionType + "/" + connectionName,
+	            () -> selectionSourceDatasetForImport(connectionType, connectionName)));
 
-		selectionSourceDatasetForImport(connectionType, connectionName); // 5. Select Source Dataset
+	    // Step 7: Target Dataset selection for checksum/recon
+	    if (isReconOrChecksum) {
+	        stopIfFailed(executeStep("Select Target Dataset for Import: " + connectionType + "/" + connectionName,
+	                () -> selectionTargetDatasetForImport(connectionType, connectionName)));
+	    }
 
-		if (isReconOrChecksum) { // 6. Select Target Dataset
+	    // Step 8: Dataset Next button
+	    stopIfFailed(executeStep("Dataset Next", this::gotoDatasetNextbtn));
 
-			selectionTargetDatasetForImport(connectionType, connectionName);
+	    // Step 9: Upload files based on ruleType and connectionType
+	    stopIfFailed(executeStep("Upload Files for Rule Type: " + ruleType, () -> {
+	        switch (ruleType.toLowerCase()) {
+	            case "checksum":
+	                if (connectionType.equalsIgnoreCase("Database"))
+						try {
+							uploadingFiles("Checksum.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
+						try {
+							uploadingFiles("Checksum - Redshift.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("File"))
+						try {
+							uploadingFiles("Checksum - Flat File-SQL.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+	                break;
 
-		} else {
-			System.out.println("Skipping Target Dataset for rule type: " + ruleType);
-		}
+	            case "recon":
+	                if (connectionType.equalsIgnoreCase("Database"))
+						try {
+							uploadingFiles("Recon.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
+						try {
+							uploadingFiles("Recon - Redshift.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("File"))
+						try {
+							uploadingFiles("Recon - Flat File-SQL.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+	                break;
 
-		gotoDatasetNextbtn(); // Next Buttons
+	            case "validation":
+	                if (connectionType.equalsIgnoreCase("Database"))
+						try {
+							uploadingFiles("Validation.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
+						try {
+							uploadingFiles("Validation - Redshift.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("File"))
+						try {
+							uploadingFiles("Validation - Flat File-SQL.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+	                break;
 
-		switch (ruleType.toLowerCase()) { // 7. Import SQL (upload file based on ruleType)
-		case "checksum":
-			if (connectionType.equalsIgnoreCase("Database")) {
-				uploadingFiles("Checksum.xlsx");
-			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				uploadingFiles("Checksum - Redshift.xlsx");
-			} else if (connectionType.equalsIgnoreCase("File")) {
-				uploadingFiles("Checksum - Flat File-SQL.xlsx");
+	            case "pushdown":
+	                if (connectionType.equalsIgnoreCase("Database"))
+						try {
+							uploadingFiles("Pushdown.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
+						try {
+							uploadingFiles("Pushdown - Redshift.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					else if (connectionType.equalsIgnoreCase("File"))
+						try {
+							uploadingFiles("Pushdown - Flat File-SQL.xlsx");
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+	                break;
+
+	            default:
+	                throw new IllegalArgumentException("Invalid rule type: " + ruleType);
+	        }
+	    }));
+
+	    // Step 10: Import SQL Next button
+	    stopIfFailed(executeStep("Import SQL Next", this::gotoImportSQLNextbtn));
+
+	    // Step 11: Generate, Preview, Publish
+	    stopIfFailed(executeStep("Click Generate", this::clickOnGenerate));
+	    stopIfFailed(executeStep("Go To Preview", this::clickOnGoToPreview));
+	    stopIfFailed(executeStep("Select Generated Entity", this::selectGeneratedEntity));
+	    stopIfFailed(executeStep("Click Publish", this::clickOnPublish));
+	    stopIfFailed(executeStep("Go To Publish", () -> {
+			try {
+				clickOnGoToPublish();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			break;
+		}));
 
-		case "recon":
-			if (connectionType.equalsIgnoreCase("Database")) {
-				uploadingFiles("Recon.xlsx");
-			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				uploadingFiles("Recon - Redshift.xlsx");
-			} else if (connectionType.equalsIgnoreCase("File")) {
-				uploadingFiles("Recon - Flat File-SQL.xlsx");
-			}
-			break;
+	    // Step 12: Verify Published Rule
+	    stopIfFailed(executeStep("Click On Published Rule", this::clickOnPublishedRule));
 
-		case "validation":
-			if (connectionType.equalsIgnoreCase("Database")) {
-				uploadingFiles("Validation.xlsx");
-			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				uploadingFiles("Validation - Redshift.xlsx");
-			} else if (connectionType.equalsIgnoreCase("File")) {
-				uploadingFiles("Validation - Flat File-SQL.xlsx");
-			}
-			break;
-
-		case "pushdown":
-			if (connectionType.equalsIgnoreCase("Database")) {
-				uploadingFiles("Pushdown.xlsx");
-			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				uploadingFiles("Pushdown - Redshift.xlsx");
-			} else if (connectionType.equalsIgnoreCase("File")) {
-				uploadingFiles("Pushdown - Flat File-SQL.xlsx");
-			}
-			break;
-
-		default:
-			throw new IllegalArgumentException("Invalid rule type: " + ruleType);
-		}
-
-		gotoImportSQLNextbtn(); // Next Buttons
-
-		clickOnGenerate(); // 8. Generate → Preview → Publish
-		clickOnGoToPreview();
-		selectGeneratedEntity();
-		clickOnPublish();
-		clickOnGoToPublish();
-		clickOnPublishedRule();
-
-		navigatHomePage(); // 9. Navigate Data Testing
+	    // Step 13: Navigate to Home Page for next flow
+	    navigatHomePage();
 	}
+
+
 
 	// ============================
 	// Page method
@@ -453,8 +572,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	public boolean gotoRuleMetadataNextbtn() {
 		return executeStep("Click the Next button of 'Define Rule Metadata' page.", () -> {
-			validateElementIsVisible(driver, clickNextButtonmetadataNextbtn,
-					"Next button of 'Define Rule Metadata' page ");
+			//validateElementIsVisible(driver, clickNextButtonmetadataNextbtn,"Next button of 'Define Rule Metadata' page ");
 			clickOnElement(driver, clickNextButtonmetadataNextbtn, "next button of 'Define Rule Metadata' page", 20);
 			ExtentManager.logInfo("Next button of 'Define Rule Metadata' page is clickable.");
 			// Base.extentReportFail(driver, "gotoRuleMetadataNextbtn","Next button of
@@ -464,8 +582,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	public boolean gotoCheckMetadataNextbtn() {
 		return executeStep("Click the Next button of 'Define Rule Metadata' page.", () -> {
-			validateElementIsVisible(driver, clickNextButtoncheckNextbtn,
-					"Next button of 'Define Rule Metadata' page ");
+			//validateElementIsVisible(driver, clickNextButtoncheckNextbtn,"Next button of 'Define Rule Metadata' page ");
 			clickOnElement(driver, clickNextButtoncheckNextbtn, "next button of 'Define Check Metadata' page", 20);
 			ExtentManager.logInfo("Next button of 'Define Check Metadata' page is clickable.");
 			// Base.extentReportFail(driver, "gotoCheckMetadataNextbtn","Next button of
@@ -475,8 +592,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	public boolean gotoNotificationNextbtn() {
 		return executeStep("Click the Next button of 'Configure Notifications' page.", () -> {
-			validateElementIsVisible(driver, clickNextButtonnotificationNextbtn,
-					"Next button of 'Configure Notifications' page ");
+			//validateElementIsVisible(driver, clickNextButtonnotificationNextbtn,"Next button of 'Configure Notifications' page ");
 			clickOnElement(driver, clickNextButtonnotificationNextbtn, "next button of 'Configure Notifications' page",
 					20);
 			ExtentManager.logInfo("Next button of 'Configure Notifications' page is clickable.");
@@ -498,6 +614,8 @@ public class TestGeneratorPage extends PageUtil {
 			clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select source connection type.", 30);
 
 			if (connectionType.equalsIgnoreCase("Database")) {
+				
+				//validateElementIsVisible(driver, ClickNextButtonimportSQLNextbtn, schemaName);
 
 				clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
 
@@ -537,9 +655,9 @@ public class TestGeneratorPage extends PageUtil {
 			}
 
 			// Schema selection
-			validateElementIsVisible(driver, clickSourceSchemaDropdown, "schemaName dropdown");
+			//validateElementIsVisible(driver, clickSourceSchemaDropdown, "schemaName dropdown");
 
-			clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 40);
+			clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 20);
 
 			sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
 
@@ -571,46 +689,56 @@ public class TestGeneratorPage extends PageUtil {
 
 		
 
-	public void selectionSourceDatasetForImport(String connectionType, String connectionName)
-			throws InterruptedException {
-		// Click on the source connection type.
-		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", 30);
+	public boolean selectionSourceDatasetForImport(String connectionType, String connectionName) {
 
-		// Select "Database"
+		if (!executeStep("Click Source Dataset Connection Type Dropdown", () -> clickOnElement(driver,
+				clickSourcedatasetConnectionTypeDropdown, "select connection type.", 30))) {
+			return false;
+		}
+
 		if (connectionType.equalsIgnoreCase("Database")) {
-			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
 
-			// Click Source Connection
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
-
-			// Enter connection name
-			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			if (!executeStep("Select Source Database Connection Type",
+					() -> clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20))) {
+				return false;
+			}
 
 		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source database connection.", 20);
 
-			// Click Source Connection
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+			if (!executeStep("Select Source Cloud Data Warehouse Connection Type", () -> clickOnElement(driver,
+					selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.", 20))) {
+				return false;
+			}
 
-			// Enter connection name
-			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+		} else if (connectionType.equalsIgnoreCase("File")) {
 
+			if (!executeStep("Select Source File Connection Type",
+					() -> clickOnElement(driver, selectFileConnectionType, "source file connection.", 20))) {
+				return false;
+			}
+
+		} else {
+			throw new IllegalArgumentException("Invalid connection type: " + connectionType);
 		}
 
-		else if (connectionType.equalsIgnoreCase("File")) {
-			clickOnElement(driver, selectFileConnectionType, "source database connection.", 20);
-
-			// Click the target connection.
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
-
-			// Entering the target connection name
-			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
-			Thread.sleep(500);
+		if (!executeStep("Click Source Dataset Connection Dropdown", () -> clickOnElement(driver,
+				clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20))) {
+			return false;
 		}
+
+		if (!executeStep("Enter Source Connection Name",
+				() -> sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName))) {
+			return false;
+		}
+
+		if (!executeStep("Confirm Source Connection Name",
+				() -> sendkeysToEnter(driver, enterSourceConnectionName, "source connection name"))) {
+			return false;
+		}
+
+		return true;
 	}
+
 
 	/// ********* Select the target dataset ********** ///
 ///// *******************************/////
@@ -624,6 +752,8 @@ public class TestGeneratorPage extends PageUtil {
 			clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type.", 30);
 
 			if (connectionType.equalsIgnoreCase("Database")) {
+				
+				//validateElementIsVisible(driver, selectDatabaseConnectionType, "database dropdown");
 
 				clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 20);
 
@@ -663,9 +793,9 @@ public class TestGeneratorPage extends PageUtil {
 			}
 
 			// Schema selection
-			validateElementIsVisible(driver, clickTargetSchemaDropdown, "schemaName dropdown");
+			//validateElementIsVisible(driver, clickTargetSchemaDropdown, "schemaName dropdown");
 
-			clickOnElement(driver, clickTargetSchemaDropdown, "choose schema dropdown.", 40);
+			clickOnElement(driver, clickTargetSchemaDropdown, "choose schema dropdown.", 20);
 
 			sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
 
@@ -675,48 +805,56 @@ public class TestGeneratorPage extends PageUtil {
 		});
 	}
 
-	public void selectionTargetDatasetForImport(String connectionType, String connectionName)
-			throws InterruptedException {
-		/// Click on the target connection type.
-		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select connection type.", 30);
+	public boolean selectionTargetDatasetForImport(String connectionType, String connectionName) {
 
-		// Select the target connection type as database.
-		if (connectionType.equalsIgnoreCase("Database")) {
-			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
-
-			// Click the target connection.
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
-
-			// Entering the target connection name
-			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-
-			Thread.sleep(500);
-
-		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "target database connection.", 20);
-
-			// Click the target connection.
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
-
-			// Entering the target connection name
-			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-			Thread.sleep(500);
-
-		} else if (connectionType.equalsIgnoreCase("File")) {
-			clickOnElement(driver, selectFileConnectionType, "target database connection.", 20);
-
-			// Click the target connection.
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20);
-
-			// Entering the target connection name
-			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-			Thread.sleep(500);
+		if (!executeStep("Click Target Dataset Connection Type Dropdown", () -> clickOnElement(driver,
+				clickTargetdatasetConnectionTypeDropdown, "select connection type.", 30))) {
+			return false;
 		}
 
+		if (connectionType.equalsIgnoreCase("Database")) {
+
+			if (!executeStep("Select Target Database Connection Type",
+					() -> clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 20))) {
+				return false;
+			}
+
+		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+
+			if (!executeStep("Select Target Cloud Data Warehouse Connection Type", () -> clickOnElement(driver,
+					selectCloudDataWarehouseConnectionType, "target cloud data warehouse connection.", 20))) {
+				return false;
+			}
+
+		} else if (connectionType.equalsIgnoreCase("File")) {
+
+			if (!executeStep("Select Target File Connection Type",
+					() -> clickOnElement(driver, selectFileConnectionType, "target file connection.", 20))) {
+				return false;
+			}
+
+		} else {
+			throw new IllegalArgumentException("Invalid connection type: " + connectionType);
+		}
+
+		if (!executeStep("Click Target Dataset Connection Dropdown", () -> clickOnElement(driver,
+				clickTargetdatasetConnectionDropdown, "select connection dropdown.", 20))) {
+			return false;
+		}
+
+		if (!executeStep("Enter Target Connection Name",
+				() -> sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName))) {
+			return false;
+		}
+
+		if (!executeStep("Confirm Target Connection Name",
+				() -> sendkeysToEnter(driver, enterTargetConnectionName, "target connection name"))) {
+			return false;
+		}
+
+		return true;
 	}
+
 
 	// Import SQL Files
 	public boolean uploadingFiles(String fileName) throws InterruptedException {
@@ -738,7 +876,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the next button of 'select dataset' page.
 	public boolean gotoDatasetNextbtn() {
 		return executeStep("Click the Next button of 'Select Dataset' page", () -> {
-			validateElementIsVisible(driver, clickNextButtondatasetNextbtn, "Next button of 'Select Dataset' page ");
+			//validateElementIsVisible(driver, clickNextButtondatasetNextbtn, "Next button of 'Select Dataset' page ");
 			clickOnElement(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page.", 20);
 			ExtentManager.logInfo("Next button of 'Select Dataset' page is clickable.");
 		});	
@@ -762,7 +900,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the next button of 'select table' page.
 	public boolean gotoSelettableNextbtn() {
 		return executeStep("Click the Next button of 'Select Dataset' page.", () -> {
-			validateElementIsVisible(driver, clickNextButtonSelettableNextbtn, "Next button of 'Select Dataset' page ");
+			//validateElementIsVisible(driver, clickNextButtonSelettableNextbtn, "Next button of 'Select Dataset' page ");
 
 			clickOnElement(driver, clickNextButtonSelettableNextbtn, "next button of 'Select Teables' page", 20);
 			ExtentManager.logInfo("Next button of 'Select Teables' page is clickable.");
@@ -774,7 +912,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the next button of 'select table' page.
 	public boolean gotoImportSQLNextbtn() {
 		return executeStep("Click the Next button of 'Import SQL' page.", () -> {
-			validateElementIsVisible(driver, ClickNextButtonimportSQLNextbtn, "Next button of 'Import SQL' page ");
+			//validateElementIsVisible(driver, ClickNextButtonimportSQLNextbtn, "Next button of 'Import SQL' page ");
 
 			clickOnElement(driver, ClickNextButtonimportSQLNextbtn, "next button of 'Import SQL' page.", 20);
 			ExtentManager.logInfo("Next button of 'Import SQL' page is clickable.");
@@ -786,7 +924,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the 'Generate' button.
 	public boolean clickOnGenerate() {
 		return executeStep("Click the Generate button.", () -> {
-			validateElementIsVisible(driver, clickGenerateButton, "'Generate' button ");
+			//validateElementIsVisible(driver, clickGenerateButton, "'Generate' button ");
 			clickOnElement(driver, clickGenerateButton, "generate button.", 20);
 			ExtentManager.logInfo("Generate button is clickable.");
 			// Base.extentReportFail(driver, "clickOnGenerate", "Generate button is not
@@ -797,7 +935,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the 'Go To Preview' button.
 	public boolean clickOnGoToPreview() {
 		return executeStep("Click the Go To Preview button.", () -> {
-			validateElementIsVisible(driver, clickGoToPreviewButton, "'Go To Preview' button ");
+			//validateElementIsVisible(driver, clickGoToPreviewButton, "'Go To Preview' button ");
 			clickOnElement(driver, clickGoToPreviewButton, "go to preview button", 20);
 			ExtentManager.logInfo("Go To Preview button is clickable.");
 			// Base.extentReportFail(driver, "clickOnGoToPreview","Go To Preview button is
@@ -809,14 +947,14 @@ public class TestGeneratorPage extends PageUtil {
 	public boolean selectGeneratedEntity() {
 		return executeStep("Select the entity form the preview page.", () -> {
 			clickOnElement(driver, selectEntity, "checkbox for entity selection.", 20);
-			validateElementIsVisible(driver, selectEntity, "The selected entity ");
+			//validateElementIsVisible(driver, selectEntity, "The selected entity ");
 		});
 	}
 
 	// Click on the 'Publish' button.
 	public boolean clickOnPublish() {
 		return executeStep("Click the Publish button.", () -> {
-			validateElementIsVisible(driver, clikPublishButton, "Publish button ");
+			//validateElementIsVisible(driver, clikPublishButton, "Publish button ");
 			clickOnElement(driver, clikPublishButton, "publish button.", 10);
 		});
 	}
@@ -824,7 +962,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the 'Go To Publish' button.
 	public boolean clickOnGoToPublish() throws InterruptedException {
 		return executeStep("Click the Go To Publish button.", () -> {
-			validateElementIsVisible(driver, clickGoToPublishButton, "'Go To Publish' button ");
+			//validateElementIsVisible(driver, clickGoToPublishButton, "'Go To Publish' button ");
 			clickOnElement(driver, clickGoToPublishButton, "go to publish button.", 50);
 			ExtentManager.logInfo("Go To Publish button is clickable.");
 			// Base.extentReportFail(driver,"clickOnGoToPublish", "Go To Publish button is

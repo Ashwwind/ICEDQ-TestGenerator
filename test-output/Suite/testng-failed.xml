@@ -12,15 +12,4 @@
       </class> <!-- com.qa.tests.HomePageTest -->
     </classes>
   </test> <!-- Home Page Tests(failed) -->
-  <test thread-count="5" name="Test Generator Page Tests(failed)">
-    <classes>
-      <class name="com.qa.tests.TestGeneratorTest">
-        <methods>
-          <include name="endSuite"/>
-          <include name="startSuite"/>
-          <include name="createRuleUsingDynamicTemplate" invocation-numbers="0 1 2 3"/>
-        </methods>
-      </class> <!-- com.qa.tests.TestGeneratorTest -->
-    </classes>
-  </test> <!-- Test Generator Page Tests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

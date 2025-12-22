@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.Set;
@@ -33,7 +34,7 @@ import com.qa.extentreportlistener.ExtentManager;
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 50;
+	public static final int SHOTW = 30;
 	private static WebDriverWait wait;
 	public static Properties prop;
 
@@ -128,6 +129,9 @@ public class PageUtil extends Base {
 			// Check if element is displayed
 			boolean state = isDisplayed(driver, by, timeout);
 			if (state) {
+				// Validate the element
+				validateElementIsVisible(driver, by, label);
+				
 				// Log before clicking
 				ExtentManager.logInfo("Clicking on " + label);
 
@@ -161,10 +165,10 @@ public class PageUtil extends Base {
 //	}
 
 	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
-		boolean isVisible = isDisplayed(driver, locator, 10);
+		boolean isVisible = isDisplayed(driver, locator, 100);
 
 		if (isVisible) {
-			ExtentManager.logPass(label + " is visible.");
+			ExtentManager.logInfo(label + " is visible.");
 		} else {
 			ExtentManager.logFail(label + " is NOT visible.");
 		}
@@ -180,9 +184,11 @@ public class PageUtil extends Base {
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		try {
+			validateElementIsVisible(driver, locator, label);
 			ExtentManager.logInfo("Entering value on " + label + " input : " + input);
-			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
-			
+			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
+					.sendKeys(input);
+
 		} catch (Exception e) {
 			ExtentManager.logFail("Failed to enter value on " + label + " input : " + input);
 		}
@@ -192,11 +198,12 @@ public class PageUtil extends Base {
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
 		try {
 			ExtentManager.logInfo("Pressing ENTER on " + label);
-			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(Keys.ENTER);
-		
+			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
+					.sendKeys(Keys.ENTER);
+
 		} catch (Exception e) {
 			ExtentManager.logFail("Failed to press ENTER on " + label);
-			captureUIErrorIfPresent();
+			// captureUIErrorIfPresent();
 		}
 	}
 
@@ -292,7 +299,7 @@ public class PageUtil extends Base {
 			System.out.println("✅ Uploaded file: " + fullPath);
 		} catch (Exception e) {
 			throw new RuntimeException("File upload failed: " + e.getMessage());
-			
+
 		}
 	}
 
@@ -376,7 +383,7 @@ public class PageUtil extends Base {
 		return flag;
 
 	}
-	
+
 	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
 		boolean flag = true;
 		try {
@@ -390,8 +397,7 @@ public class PageUtil extends Base {
 				clickOnElement(driver, locator, fieldName, 20);
 
 				// Send keys
-				waitForElements(driver, 50)
-						.until(ExpectedConditions.visibilityOfElementLocated(locator))
+				waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator))
 						.sendKeys(input);
 
 				ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
@@ -406,41 +412,53 @@ public class PageUtil extends Base {
 		return flag;
 	}
 
-	// 	Error Capture
-	public static void captureUIErrorIfPresent() {
-		By errorLocator = By.xpath("//div[contains(@class,'error') or contains(@class,'toast') or @role='alert']");
+	// Error Capture Utility
+	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast-content')]");
 
+	// Check if any error toast is present
+	public static boolean isErrorToastPresent(WebDriver driver) {
 		try {
-			// Wait a short time for the toast to appear
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			WebElement errorElement = wait.until(ExpectedConditions.presenceOfElementLocated(errorLocator));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+			List<WebElement> toasts = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TOAST_MESSAGE));
+			return !toasts.isEmpty();
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
 
-			// Get the text immediately
-			String errorText = errorElement.getText().trim();
+	// Capture UI errors if present
+	public static String captureUIErrorIfPresent(WebDriver driver) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+			List<WebElement> toasts = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(TOAST_MESSAGE));
 
-			if (!errorText.isEmpty()) {
-				System.out.println("❌ UI ERROR MESSAGE: " + errorText);
-				ExtentManager.logError("UI Error Message: " + errorText);
+			StringBuilder errorMessages = new StringBuilder();
+
+			for (WebElement toast : toasts) {
+				String msg = toast.getText().trim();
+				if (!msg.isEmpty()) {
+					errorMessages.append(msg).append(" | ");
+
+					// Log immediately
+					ExtentManager.logFail("UI Toast Error: " + msg);
+					System.out.println("UI Toast Error: " + msg);
+				}
 			}
 
-			// Optional: highlight element for screenshot
-			((JavascriptExecutor) driver).executeScript("arguments[0].style.border='2px solid red'", errorElement);
+			// Screenshot ONCE
+			ExtentManager.captureScreenshot("UI_Toast_Error");
 
-			// Small wait for visibility in screenshot
-			Thread.sleep(500);
+			return errorMessages.toString().trim();
 
 		} catch (TimeoutException e) {
-			// No toast appeared – safe to ignore
-		} catch (Exception e) {
-			System.out.println("Error while capturing UI error: " + e.getMessage());
+			return null; // No toast found
 		}
 	}
 
 
 	// UI validation
-	public void validateElement(WebDriver driver, By locator, String lable, String type)
-	{
-		
+	public void validateElement(WebDriver driver, By locator, String lable, String type) {
+
 	}
 
 }

@@ -7,7 +7,6 @@ import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.pages.TestGeneratorPage;
 import com.qa.utils.ExcelReader;
-import com.qa.utils.PageUtil;
 import com.qa.extentreportlistener.ExtentReportListener;
 
 
@@ -39,7 +38,7 @@ public class TestGeneratorTest extends Base {
 			}
 			else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse"))
 			{
-				//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName, schemaName, tableName);
+				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType,connectionName, schemaName, tableName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);;
