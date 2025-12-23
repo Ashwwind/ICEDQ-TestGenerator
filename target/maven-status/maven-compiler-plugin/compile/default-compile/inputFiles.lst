@@ -1,6 +1,11 @@
-D:\Eclipse\ICEDQ\TestGenerator\src\main\java\pages\DashboardPage.java
-D:\Eclipse\ICEDQ\TestGenerator\src\main\java\config\ConfigReader.java
-D:\Eclipse\ICEDQ\TestGenerator\src\main\java\pages\LoginPage.java
-D:\Eclipse\ICEDQ\TestGenerator\src\main\java\base\Base.java
-D:\Eclipse\ICEDQ\TestGenerator\src\main\java\utils\DriverSetup.java
-D:\Eclipse\ICEDQ\TestGenerator\src\main\java\pages\TestGenratorPgae.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\LoginPage.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\extentreportlistener\ExtentReportListener.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\base\Base.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\config\ConfigReader.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\extentreportlistener\ExtentManager.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\ExcelReader.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\HomePage.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\DriverSetup.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\PageUtil.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\Demo.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\TestGeneratorPage.java

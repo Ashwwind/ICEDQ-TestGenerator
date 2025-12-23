@@ -2,6 +2,8 @@ package com.qa.pages;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -174,22 +176,28 @@ public class HomePage extends PageUtil {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		for (String icon : expectedHyperlinkIcons) {
+			try {
+				WebElement hyperlink = wait
+						.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@title='" + icon + "']")));
 
-			String expectedIcon = icon;
+				// Scroll into view in case it is off-screen
+				scrollToElement(driver, hyperlink);
 
-			WebElement hyperlink = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='" + icon + "']")));
+				if (hyperlink.isDisplayed()) {
+					String actualIcon = hyperlink.getAttribute("title");
+					System.out.println("Hyperlink displayed: " + actualIcon);
+					ExtentManager.logPass("Hyperlink displayed: " + actualIcon);
+				} else {
+					System.out.println("Hyperlink NOT displayed (hidden): " + icon);
+					ExtentManager.logFail("Hyperlink NOT displayed (hidden) | Expected: " + icon);
+				}
 
-			// check point
-			if (hyperlink.isDisplayed()) {
-				String actualIcon = hyperlink.getAttribute("title");
-				System.out.println("Hyperlink displayed: " + actualIcon);
-				ExtentManager.logPass("Hyperlink displayed: " + actualIcon);
-			} else {
-				System.out.println("Hyperlink NOT displayed: " + expectedIcon);
-				ExtentManager.logFail("Hyperlink NOT displayed | Expected: " + expectedIcon);
+			} catch (TimeoutException e) {
+				System.out.println("Hyperlink NOT found in DOM: " + icon);
+				ExtentManager.logFail("Hyperlink NOT found in DOM | Expected: " + icon);
 			}
 		}
 	}
+
 
 }

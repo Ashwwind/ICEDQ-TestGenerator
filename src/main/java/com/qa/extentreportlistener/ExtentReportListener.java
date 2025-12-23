@@ -5,6 +5,10 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 public class ExtentReportListener implements ITestListener {
+	
+	public static int passedCount = 0;
+	public static int failedCount = 0;
+	public static int skippedCount = 0;
 
     @Override
     public void onStart(ITestContext context) {

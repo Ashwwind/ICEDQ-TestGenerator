@@ -21,4 +21,29 @@ public class ConfigReader {
 	public static String getProperty(String key) {
 		return props.getProperty(key);
 	}
+	
+	public String emailHost() {
+		return props.getProperty("EmailHost");
+	}
+	
+	public String mailPort() {
+		return props.getProperty("MailPort");
+	}
+	
+	public String mailUserName() {
+		return props.getProperty("MailUserName");
+	}
+	
+	public String mailPassword() {
+		return props.getProperty("MailPassword");
+	}
+	
+	
+	public String mailTo() {
+		return props.getProperty("MailTo");
+	}
+	
+	public String mailCc() {
+		return props.getProperty("MailCC");
+	}
 }

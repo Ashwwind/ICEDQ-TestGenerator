@@ -126,27 +126,24 @@ public class PageUtil extends Base {
 
 	public static void clickOnElement(WebDriver driver, By by, String label, int timeout) {
 		try {
-			// Check if element is displayed
-			boolean state = isDisplayed(driver, by, timeout);
-			if (state) {
-				// Validate the element
-				validateElementIsVisible(driver, by, label);
-				
-				// Log before clicking
-				ExtentManager.logInfo("Clicking on " + label);
-
-				// Wait until clickable and click
-				waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
-
-				// Log after clicking
-				ExtentManager.logPass("Clicked on " + label);
-			} else {
-				ExtentManager.logFail("Element not visible: " + label);
+			if (!isDisplayed(driver, by, timeout)) {
+				throw new RuntimeException("Element not visible");
 			}
+
+			validateElementIsVisible(driver, by, label);
+
+			ExtentManager.logInfo("Clicking on " + label);
+
+			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
+
+			ExtentManager.logPass("Clicked on " + label);
+
 		} catch (Exception e) {
-			ExtentManager.logFail("Element is not clickable: " + label + " ➝ Exception: " + e.getMessage());
+			ExtentManager.logFail("Failed to click on " + label + " ➝ " + e.getMessage());
+			throw e; // 🔥 VERY IMPORTANT — let executeStep handle screenshot
 		}
 	}
+
 
 	// Validate the element is visible or not.
 
@@ -172,7 +169,6 @@ public class PageUtil extends Base {
 		} else {
 			ExtentManager.logFail(label + " is NOT visible.");
 		}
-
 		return isVisible;
 	}
 
@@ -185,26 +181,37 @@ public class PageUtil extends Base {
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		try {
 			validateElementIsVisible(driver, locator, label);
-			ExtentManager.logInfo("Entering value on " + label + " input : " + input);
+
+			ExtentManager.logInfo("Entering value on " + label + " input: " + input);
+
 			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
 					.sendKeys(input);
 
+			ExtentManager.logPass("Entered value on " + label);
+
 		} catch (Exception e) {
-			ExtentManager.logFail("Failed to enter value on " + label + " input : " + input);
+			ExtentManager.logFail("Failed to enter value on " + label + " ➝ " + e.getMessage());
+			throw e; // 🔥 MUST rethrow so executeStep can capture screenshot & fail
 		}
 	}
 
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
-		try {
-			ExtentManager.logInfo("Pressing ENTER on " + label);
-			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
-					.sendKeys(Keys.ENTER);
+	    try {
+	        ExtentManager.logInfo("Pressing ENTER on " + label);
 
-		} catch (Exception e) {
-			ExtentManager.logFail("Failed to press ENTER on " + label);
-			// captureUIErrorIfPresent();
-		}
+	        waitForElements(driver, SHOTW)
+	                .until(ExpectedConditions.visibilityOfElementLocated(locator))
+	                .sendKeys(Keys.ENTER);
+
+	        ExtentManager.logPass("Pressed ENTER on " + label);
+
+	    } catch (Exception e) {
+	        ExtentManager.logFail(
+	                "Failed to press ENTER on " + label + " ➝ " + e.getMessage()
+	        );
+	        throw e; // 🔥 Rethrow so executeStep handles screenshot & toast
+	    }
 	}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {
@@ -429,35 +436,40 @@ public class PageUtil extends Base {
 	// Capture UI errors if present
 	public static String captureUIErrorIfPresent(WebDriver driver) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-			List<WebElement> toasts = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(TOAST_MESSAGE));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 
-			StringBuilder errorMessages = new StringBuilder();
+			List<WebElement> toasts = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TOAST_MESSAGE));
+
+			StringBuilder errors = new StringBuilder();
 
 			for (WebElement toast : toasts) {
 				String msg = toast.getText().trim();
 				if (!msg.isEmpty()) {
-					errorMessages.append(msg).append(" | ");
-
-					// Log immediately
+					errors.append(msg).append(" | ");
 					ExtentManager.logFail("UI Toast Error: " + msg);
-					System.out.println("UI Toast Error: " + msg);
 				}
 			}
 
-			// Screenshot ONCE
+			// 📸 Screenshot ONLY if toast exists
 			ExtentManager.captureScreenshot("UI_Toast_Error");
 
-			return errorMessages.toString().trim();
+			return errors.toString();
 
 		} catch (TimeoutException e) {
-			return null; // No toast found
+			return null; // No toast appeared
 		}
 	}
 
+	// Scrolls the page
+	public void scrollToElement(WebDriver driver, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 
 	// UI validation
 	public void validateElement(WebDriver driver, By locator, String lable, String type) {
+		
+		validateElementIsVisible(driver, locator, type);
 
 	}
 
