@@ -3,6 +3,7 @@ com\qa\pages\LoginPage.class
 com\qa\utils\PageUtil.class
 com\qa\pages\Demo.class
 com\qa\extentreportlistener\ExtentReportListener.class
+com\qa\sendmail\SendMail.class
 com\qa\pages\HomePage.class
 com\qa\pages\TestGeneratorPage$FlowAbortException.class
 com\qa\base\Base.class
@@ -10,3 +11,4 @@ com\qa\config\ConfigReader.class
 com\qa\utils\ExcelReader.class
 com\qa\utils\DriverSetup.class
 com\qa\pages\TestGeneratorPage.class
+com\qa\sendmail\SendMail$1.class

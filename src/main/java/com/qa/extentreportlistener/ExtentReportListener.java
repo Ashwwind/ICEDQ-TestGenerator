@@ -32,15 +32,18 @@ public class ExtentReportListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         ExtentManager.logPass("Test Passed: " + result.getMethod().getMethodName());
+        passedCount++;
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         ExtentManager.logFail("Test FAILED: " + result.getMethod().getMethodName());
+        failedCount++;
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
         ExtentManager.logSkip("Test SKIPPED: " + result.getMethod().getMethodName());
+        skippedCount++;
     }
 }

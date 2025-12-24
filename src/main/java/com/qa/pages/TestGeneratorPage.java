@@ -287,9 +287,54 @@ public class TestGeneratorPage extends PageUtil {
 	// ============================
 
 	private void uploadFileByRuleAndConnection(String ruleType, String connectionType) {
-		// TODO Auto-generated method stub
-		
+
+		String fileName = resolveImportFileName(ruleType, connectionType);
+
+		if (fileName == null) {
+			throw new IllegalArgumentException(
+					"No import file found for RuleType: " + ruleType + ", ConnectionType: " + connectionType);
+		}
+
+		uploadingFiles(fileName);
 	}
+
+	
+	private String resolveImportFileName(String ruleType, String connectionType) {
+
+		switch (ruleType.toLowerCase()) {
+
+		case "checksum":
+			return resolveByConnection(connectionType, "Checksum.xlsx", "Checksum - Redshift.xlsx", "Checksum - Flat File-SQL.xlsx");
+
+		case "recon":
+			return resolveByConnection(connectionType, "Recon.xlsx", "Recon - Redshift.xlsx", "Recon - Flat File-SQL.xlsx");
+
+		case "validation":
+			return resolveByConnection(connectionType, "Validation.xlsx", "Validation - Redshift.xlsx", "Validation - Flat File-SQL.xlsx");
+
+		case "pushdown":
+			return resolveByConnection(connectionType, "Pushdown.xlsx", "Pushdown - Redshift.xlsx", "Pushdown - Flat File-SQL.xlsx");
+
+		default:
+			throw new IllegalArgumentException("Invalid rule type: " + ruleType);
+		}
+	}
+	
+	private String resolveByConnection(String connectionType, String databaseFile, String cloudFile, String fileFile) {
+
+		if (connectionType.equalsIgnoreCase("Database")) {
+			return databaseFile;
+		}
+		if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
+			return cloudFile;
+		}
+		if (connectionType.equalsIgnoreCase("File")) {
+			return fileFile;
+		}
+
+		throw new IllegalArgumentException("Invalid connection type: " + connectionType);
+	}
+
 
 	public boolean clickTestGenerator() {
 
@@ -343,48 +388,6 @@ public class TestGeneratorPage extends PageUtil {
 		return clickOnField(driver, locator, ruleType + " rule type", "tab");
 
 	}
-
-//		// validate URl
-//		String expectedUrl = "https://qa.onprem.icedq.com/rulegen-ui/#/wizard/checksum";
-//		String actualUrl = driver.getCurrentUrl();
-//
-//		if (actualUrl.equals(expectedUrl)) {
-//			ExtentManager.logPass( "URL matched: " + actualUrl);
-//		} else {
-//			Base.extentReportFail(driver,"", "URL mismatch. Actual: " + actualUrl);
-//		}
-//
-//		// Validate page title
-//
-//		WebElement title = driver.findElement(By.xpath("/html/body/app-root/div[2]/div/app-rule/div[2]/span[normalize-space(text())='Checksum Rule Wizard']"));
-//
-//		if (title.isDisplayed()) {
-//			ExtentManager.logPass( "Page title displayed: " + title.getText());
-//		} else {
-//			Base.extentReportFail(driver,"", "Page title not displayed");
-//		}
-//
-//		// Validate search field
-//		WebElement searchInput = driver.findElement(By.xpath("//input[contains(@placeholder,'Search template')]"));
-//
-//		if (searchInput.isDisplayed()) {
-//			ExtentManager.logPass( "Search field is displayed.");
-//		} else {
-//			Base.extentReportFail(driver,"", "Search field not visible.");
-//		}
-//
-//		// Validate table columns
-//		List<String> expectedHeaders = Arrays.asList("Name", "Description", "Type", "Last Updated");
-//
-//		List<WebElement> headers = driver.findElements(By.xpath("//table//th"));
-//
-//		for (int i = 0; i < expectedHeaders.size(); i++) {
-//			if (headers.get(i).getText().equals(expectedHeaders.get(i))) {
-//				ExtentManager.logPass( "Header matched: " + headers.get(i).getText());
-//			} else {
-//				Base.extentReportFail(driver,"", "Header mismatch!");
-//			}
-//		}
 
 	// Click the Recon rule type from the wizard page.
 	public boolean clickOnRecon() {
@@ -719,7 +722,7 @@ public class TestGeneratorPage extends PageUtil {
 
 
 	// Import SQL Files
-	public void uploadingFiles(String fileName) throws InterruptedException {
+	public void uploadingFiles(String fileName) {
 		// Upload file
 		uploadFile(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), fileName);
 
@@ -845,6 +848,12 @@ public class TestGeneratorPage extends PageUtil {
 			}
 
 			ExtentManager.logPass("Rule Name validated successfully.");
+			
+			// Run the published rule
+			runPublishRule();
+			
+			// Validate Instance ID
+			validateInstanceID();
 
 			// Close child window and return to parent
 			closeChildAndReturn(driver, child, parent);
@@ -873,5 +882,23 @@ public class TestGeneratorPage extends PageUtil {
 		}
 		
 
+	// Run the publish rule on the Data Testing module.
+		public void runPublishRule()
+		{
+			// Click on the Run button.
+			clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[1]"), "run button", 10);
+			
+		}
+		
+	// Validate instance ID
+		public void validateInstanceID()
+		{
+			// Click on the Recent runs button.
+			clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]"), "recent runs button", 10);
+			
+			
+			// Click on the Refresh button.
+			clickOnElement(driver, By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button"), "refresh button", 10);
+		}
 
 }

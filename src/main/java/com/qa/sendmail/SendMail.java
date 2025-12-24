@@ -48,7 +48,7 @@ public class SendMail {
 				+ "<td style='color: red; font-weight: bold;'>" + ExtentReportListener.failedCount + "</td>"
 				+ "<td style='color: blue; font-weight: bold;'>" + ExtentReportListener.skippedCount + "</td>" + "</tr>"
 
-				+ "</table>" + "<br/>" + "<p>Regards,<br/>Automation Team</p>" + "</body></html>";
+				+ "</table>" + "<br/>" + "<p>Regards,<br/>Ashwin Doye</p>" + "</body></html>";
 	}
 
 

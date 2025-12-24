@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="12" passed="7" failed="4" skipped="0">
+<testng-results ignored="0" total="23" passed="19" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-23T19:31:53 IST" name="Suite" finished-at="2025-12-23T19:37:25 IST" duration-ms="332105">
+  <suite started-at="2025-12-24T15:37:54 IST" name="Suite" finished-at="2025-12-24T16:28:08 IST" duration-ms="3014345">
     <groups>
     </groups>
-    <test started-at="2025-12-23T19:31:53 IST" name="Login Tests" finished-at="2025-12-23T19:31:56 IST" duration-ms="3129">
+    <test started-at="2025-12-24T15:37:54 IST" name="Login Tests" finished-at="2025-12-24T15:37:57 IST" duration-ms="3331">
       <class name="com.qa.tests.LoginTest">
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-23T19:31:53 IST" name="validateLoginPage" finished-at="2025-12-23T19:31:54 IST" duration-ms="1391" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-24T15:37:54 IST" name="validateLoginPage" finished-at="2025-12-24T15:37:55 IST" duration-ms="1109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-23T19:31:54 IST" name="Login" finished-at="2025-12-23T19:31:56 IST" duration-ms="1691" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-24T15:37:55 IST" name="Login" finished-at="2025-12-24T15:37:57 IST" duration-ms="2191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
       </class> <!-- com.qa.tests.LoginTest -->
     </test> <!-- Login Tests -->
-    <test started-at="2025-12-23T19:31:56 IST" name="Home Page Tests" finished-at="2025-12-23T19:31:58 IST" duration-ms="1427">
+    <test started-at="2025-12-24T15:37:58 IST" name="Home Page Tests" finished-at="2025-12-24T15:37:59 IST" duration-ms="1003">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2025-12-23T19:31:56 IST" name="validateHomePage" finished-at="2025-12-23T19:31:58 IST" duration-ms="1417" status="PASS">
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2025-12-24T15:37:58 IST" name="validateHomePage" finished-at="2025-12-24T15:37:59 IST" duration-ms="1000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
     </test> <!-- Home Page Tests -->
-    <test started-at="2025-12-23T19:31:58 IST" name="Test Generator Page Tests" finished-at="2025-12-23T19:37:25 IST" duration-ms="326868">
+    <test started-at="2025-12-24T15:37:59 IST" name="Test Generator Page Tests" finished-at="2025-12-24T16:28:08 IST" duration-ms="3009611">
       <class name="com.qa.tests.TestGeneratorTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:31:47 IST" name="startSuite" finished-at="2025-12-23T19:31:53 IST" duration-ms="5037" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:37:50 IST" name="startSuite" finished-at="2025-12-24T15:37:54 IST" duration-ms="4274" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:31:59 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:33:01 IST" duration-ms="62518" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:37:59 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:39:52 IST" duration-ms="113180" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -50,7 +50,7 @@
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -109,8 +109,11 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:109)
+Caused by: java.lang.RuntimeException: Element not visible
+at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
+at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:526)
+at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
 ... 28 more
 ]]>
             </full-stacktrace>
@@ -118,7 +121,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:109)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:33:02 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:33:59 IST" duration-ms="57655" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:39:53 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:40:58 IST" duration-ms="64903" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -137,7 +140,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:109)
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -196,8 +199,31 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:109)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.169)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [79c4650791b57cfd17415b07f1c49974, sendKeysToElement {value=[Ljava.lang.CharSequence;@41dcfd0, id=f.95B1E997C43AFC492AC591B3DD01DF76.d.9D3A267D0B30FA7E1A25B09F996367ED.e.429}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.169, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65143}, goog:processID: 108340, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65143/devtoo..., se:cdpVersion: 143.0.7499.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (79c4650791b57cfd17415b07f1c49974)] -> xpath: //ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: 79c4650791b57cfd17415b07f1c49974
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:188)
+at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:567)
+at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
 ... 28 more
 ]]>
             </full-stacktrace>
@@ -205,7 +231,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:109)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:33:59 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:35:42 IST" duration-ms="102172" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:40:58 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:43:02 IST" duration-ms="124137" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -224,7 +250,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:109)
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -248,54 +274,10 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:109)
               </value>
             </param>
           </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
-            <message>
-              <![CDATA[Flow aborted: Select Workspace: Test_Generator-WIP]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Workspace: Test_Generator-WIP
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:159)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Element not visible
-at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-at com.qa.pages.TestGeneratorPage.clickOnWorkspaceField(TestGeneratorPage.java:435)
-at com.qa.pages.TestGeneratorPage.lambda$3(TestGeneratorPage.java:159)
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:35:42 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:37:24 IST" duration-ms="102289" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:43:02 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:45:43 IST" duration-ms="160913" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -314,7 +296,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -340,12 +322,12 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           </params>
           <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
             <message>
-              <![CDATA[Flow aborted: Select Workspace: Test_Generator-WIP]]>
+              <![CDATA[Flow aborted: Select Generated Entity]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Workspace: Test_Generator-WIP
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
 at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:159)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
 at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -375,8 +357,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Caused by: java.lang.RuntimeException: Element not visible
 at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-at com.qa.pages.TestGeneratorPage.clickOnWorkspaceField(TestGeneratorPage.java:435)
-at com.qa.pages.TestGeneratorPage.lambda$3(TestGeneratorPage.java:159)
+at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
 at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
 ... 28 more
 ]]>
@@ -385,7 +366,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:37:25 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:37:25 IST" duration-ms="1" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:45:43 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:48:56 IST" duration-ms="193057" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -404,7 +385,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -428,10 +409,53 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Generated Entity]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:41)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: Element not visible
+at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
+at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:37:25 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:37:25 IST" duration-ms="2" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:48:57 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:52:19 IST" duration-ms="202539" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -450,7 +474,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -477,7 +501,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:37:25 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:37:25 IST" duration-ms="1" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:52:19 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:54:47 IST" duration-ms="148270" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -496,7 +520,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -523,7 +547,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:37:25 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-23T19:37:25 IST" duration-ms="1" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:54:47 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:57:21 IST" duration-ms="153900" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -542,7 +566,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[TestGenerator]]>
+                <![CDATA[7-3-1]]>
               </value>
             </param>
             <param index="4">
@@ -569,7 +593,439 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-23T19:37:25 IST" name="endSuite" finished-at="2025-12-23T19:37:35 IST" duration-ms="10286" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:57:21 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T15:59:25 IST" duration-ms="123254" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:59:25 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:01:29 IST" duration-ms="123948" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:01:29 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:03:29 IST" duration-ms="120628" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:03:29 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:05:38 IST" duration-ms="129053" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:05:38 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:07:36 IST" duration-ms="117342" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-with-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:07:36 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:10:37 IST" duration-ms="181690" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-with-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:10:37 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:13:02 IST" duration-ms="144130" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-with-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:13:02 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:15:58 IST" duration-ms="176463" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-with-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:15:58 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:19:34 IST" duration-ms="215658" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:19:34 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:23:25 IST" duration-ms="231288" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:23:25 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:26:27 IST" duration-ms="181983" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:26:27 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:28:08 IST" duration-ms="101265" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-3-1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-Sysonn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:28:08 IST" name="endSuite" finished-at="2025-12-24T16:28:18 IST" duration-ms="9397" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->

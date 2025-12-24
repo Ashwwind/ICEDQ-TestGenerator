@@ -6,6 +6,7 @@ D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\extentreportlistener\ExtentM
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\ExcelReader.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\HomePage.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\DriverSetup.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\sendmail\SendMail.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\PageUtil.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\Demo.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\TestGeneratorPage.java
