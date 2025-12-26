@@ -34,7 +34,7 @@ import com.qa.extentreportlistener.ExtentManager;
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 30;
+	public static final int SHOTW = 10;
 	private static WebDriverWait wait;
 	public static Properties prop;
 
@@ -99,7 +99,7 @@ public class PageUtil extends Base {
 		} catch (TimeoutException te) {
 			// Fallback: extra wait
 			try {
-				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
+				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 30))
 						.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
 			} catch (Exception e) {
 				ExtentManager.logInfo("Element not visible after extended wait: " + by);
@@ -124,6 +124,7 @@ public class PageUtil extends Base {
 //		}
 //	}
 
+	// Click on the web element
 	public static void clickOnElement(WebDriver driver, By by, String label, int timeout) {
 		try {
 			if (!isDisplayed(driver, by, timeout)) {
@@ -143,6 +144,7 @@ public class PageUtil extends Base {
 			throw e; // 🔥 VERY IMPORTANT — let executeStep handle screenshot
 		}
 	}
+	
 
 
 	// Validate the element is visible or not.

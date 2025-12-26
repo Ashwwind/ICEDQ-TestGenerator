@@ -1,6 +1,7 @@
 package com.qa.pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -562,7 +563,7 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Schema selection
-		clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 20);
+		clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 50);
 
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
 
@@ -570,26 +571,6 @@ public class TestGeneratorPage extends PageUtil {
 
 		ExtentManager.logInfo("Schema selected successfully.");
 	}
-
-	public boolean selectionSourceDataset1(String connectionType,String connectionName,String schemaName) {
-		boolean flag = true;
-
-		try {
-			clickOnElement(driver, selectDatabaseConnectionType,"source database connection.", 20);
-
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown,"select connection dropdown.", 20);
-
-			sendkeysToElement(driver, enterSourceConnectionName,"source connection name", connectionName);
-
-			sendkeysToEnter(driver, enterSourceConnectionName,"source connection name");
-
-		} catch (Exception e) {
-			ExtentManager.logFail("selectionSourceDataset1 failed: " + e.toString());
-			flag = false;
-		}
-
-		return flag;
-	}	
 
 	public void selectionSourceDatasetForImport(String connectionType, String connectionName) {
 
@@ -676,7 +657,7 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Schema selection
-		clickOnElement(driver, clickTargetSchemaDropdown, "choose target schema dropdown.", 20);
+		clickOnElement(driver, clickTargetSchemaDropdown, "choose target schema dropdown.", 50);
 
 		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
 
@@ -890,15 +871,16 @@ public class TestGeneratorPage extends PageUtil {
 			
 		}
 		
-	// Validate instance ID
-		public void validateInstanceID()
-		{
+		// Validate instance ID
+		public void validateInstanceID() {
 			// Click on the Recent runs button.
 			clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]"), "recent runs button", 10);
-			
-			
+			isInvisibleLoader(driver, loader);
+
 			// Click on the Refresh button.
 			clickOnElement(driver, By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button"), "refresh button", 10);
+			isInvisibleLoader(driver, loader);
+
 		}
 
 }
