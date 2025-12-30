@@ -11,6 +11,7 @@ import com.qa.extentreportlistener.ExtentReportListener;
 
 @Listeners(ExtentReportListener.class)
 public class TestGeneratorTest extends Base {
+	
 	// Use Data provider for Dynamic
 
 	@DataProvider(name = "ruleDataForDynamicTemplate")
@@ -45,6 +46,39 @@ public class TestGeneratorTest extends Base {
 			throw e;
 		}
 	}
+	
+	// **************************************************************************** 
+	
+	@DataProvider(name = "ruleDataForWorkflowCreation")
+	public Object[][] ruleDataProviderWorkflow() {
+		return ExcelReader.readExcel("./src/test/resources/Database/ruleData.xlsx", "Workflow");
+	}
+
+	@Test(dataProvider = "ruleDataForWorkflowCreation")
+
+	public void createWorkflowUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
+			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
+			String schemaName, String tableName) throws Exception {
+		ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType
+				+ " connection.");
+
+		TestGeneratorPage page = new TestGeneratorPage(driver);
+
+		try {
+			if (connectionType.equalsIgnoreCase("Database")) {
+				page.createWorkflowUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+			}
+
+			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
+
+		} catch (Exception e) {
+			ExtentManager.captureScreenshot("Failure_" + ruleType);
+			ExtentManager.logFail("Rule creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
+			throw e;
+		}
+	}
+	
+	
 
 	////// ************************** //////
 

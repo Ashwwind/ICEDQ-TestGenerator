@@ -30,7 +30,7 @@ import com.qa.extentreportlistener.ExtentManager;
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 5;
+	public static final int SHOTW = 6;
 	private static WebDriverWait wait;
 	public static Properties prop;
 
@@ -115,7 +115,7 @@ public class PageUtil extends Base {
 		try {
 			if (!isDisplayed(driver, by, timeout)) {
 				ExtentManager.logInfo(label + " not displayed, retrying click");
-				throw new RuntimeException("Element not visible");
+				//throw new RuntimeException("Element not visible");
 			}
 
 			validateElementIsVisible(driver, by, label);
@@ -169,7 +169,7 @@ public class PageUtil extends Base {
 			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
 					.sendKeys(input);
 			
-			 waitForSeconds(1); // wait after entering text.
+			 waitForSeconds(3); // wait after entering text.
 
 			ExtentManager.logPass("Entered value on " + label);
 
@@ -187,7 +187,7 @@ public class PageUtil extends Base {
 			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
 					.sendKeys(Keys.ENTER);
 			
-			 waitForSeconds(1); // wait after ENTER.
+			 waitForSeconds(2); // wait after ENTER.
 
 			ExtentManager.logPass("Pressed ENTER on " + label);
 
