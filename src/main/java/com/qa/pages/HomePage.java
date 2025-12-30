@@ -2,7 +2,6 @@ package com.qa.pages;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -177,8 +176,8 @@ public class HomePage extends PageUtil {
 
 		for (String icon : expectedHyperlinkIcons) {
 			try {
-				WebElement hyperlink = wait
-						.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@title='" + icon + "']")));
+				WebElement hyperlink = wait.until(ExpectedConditions
+						.presenceOfElementLocated(By.xpath("//div[@class='help-text']//a[@title='" + icon + "']")));
 
 				// Scroll into view in case it is off-screen
 				scrollToElement(driver, hyperlink);
@@ -198,6 +197,5 @@ public class HomePage extends PageUtil {
 			}
 		}
 	}
-
 
 }

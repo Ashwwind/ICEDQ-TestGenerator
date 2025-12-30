@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test Generator Page Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>16/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/10/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 24 15:37:59 IST 2025</td>
+<td>Started on:</td><td>Mon Dec 29 19:22:33 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>3009 seconds (3009611 ms)</td>
+<tr><td>Total time:</td><td>4320 seconds (4320868 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,176 +75,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Dynamic SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL, public, staff</td>
-<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/postgreSQL/public
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:170)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.lang.RuntimeException: Element not visible
-	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:526)
-	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-	... 28 more
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1464233911", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1464233911'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/postgreSQL/public
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:170)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Element not visible
-	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:526)
-	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-	... 28 more
-</pre></div></td>
-<td>113</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Dynamic SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
-<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:41)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.lang.RuntimeException: Element not visible
-	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-	at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-	... 28 more
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2015852902", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2015852902'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:41)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Element not visible
-	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-	at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-	... 28 more
-</pre></div></td>
-<td>193</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Dynamic SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL, public, staff</td>
-<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.lang.RuntimeException: Element not visible
-	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-	at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-	... 28 more
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace472254691", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace472254691'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Element not visible
-	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-	at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-	... 28 more
-</pre></div></td>
-<td>160</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Specify Column for Diff - Full Data Compare Dynamic SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL, public, staff</td>
-<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/postgreSQL/public
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:170)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Specify Column for Diff - Full Data Compare Dynamic SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=143.0.7499.169)
+  (Session info: chrome=143.0.7499.170)
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c4650791b57cfd17415b07f1c49974, sendKeysToElement {value=[Ljava.lang.CharSequence;@41dcfd0, id=f.95B1E997C43AFC492AC591B3DD01DF76.d.9D3A267D0B30FA7E1A25B09F996367ED.e.429}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.169, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65143}, goog:processID: 108340, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65143/devtoo..., se:cdpVersion: 143.0.7499.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (79c4650791b57cfd17415b07f1c49974)] -&gt; xpath: //ejs-dropdownlist[@placeholder=&apos;Choose Schema&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
-Session ID: 79c4650791b57cfd17415b07f1c49974
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.BDF4C8DBD5AF8EF3680CC9E633E686E8.e.2448, value=[Ljava.lang.CharSequence;@d45bf2b}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -254,16 +99,16 @@ Session ID: 79c4650791b57cfd17415b07f1c49974
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
-	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:188)
-	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:567)
-	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:554)
+	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:165)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
 	... 28 more
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2057588642", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2057588642'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/postgreSQL/public
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:170)
-	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1920274565", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1920274565'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -291,14 +136,14 @@ Session ID: 79c4650791b57cfd17415b07f1c49974
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=143.0.7499.169)
+  (Session info: chrome=143.0.7499.170)
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c4650791b57cfd17415b07f1c49974, sendKeysToElement {value=[Ljava.lang.CharSequence;@41dcfd0, id=f.95B1E997C43AFC492AC591B3DD01DF76.d.9D3A267D0B30FA7E1A25B09F996367ED.e.429}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.169, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65143}, goog:processID: 108340, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65143/devtoo..., se:cdpVersion: 143.0.7499.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (79c4650791b57cfd17415b07f1c49974)] -&gt; xpath: //ejs-dropdownlist[@placeholder=&apos;Choose Schema&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
-Session ID: 79c4650791b57cfd17415b07f1c49974
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.BDF4C8DBD5AF8EF3680CC9E633E686E8.e.2448, value=[Ljava.lang.CharSequence;@d45bf2b}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -311,13 +156,712 @@ Session ID: 79c4650791b57cfd17415b07f1c49974
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
-	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:188)
-	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:567)
-	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
-	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:554)
+	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:165)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
 	... 28 more
 </pre></div></td>
-<td>64</td>
+<td>58</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Dynamic SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+	... 28 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace585313171", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace585313171'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+	... 28 more
+</pre></div></td>
+<td>54</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.9EBBB41BC77F0EA6478474C6B4877AB2.e.5065, value=[Ljava.lang.CharSequence;@2283bfec}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace374607909", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace374607909'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.9EBBB41BC77F0EA6478474C6B4877AB2.e.5065, value=[Ljava.lang.CharSequence;@2283bfec}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+</pre></div></td>
+<td>51</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, AD-Test, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:76)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.2A4BC2FFB06AEA62C7BE38552579B82D.e.6166, value=[Ljava.lang.CharSequence;@6110a369}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1695155528", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1695155528'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.2A4BC2FFB06AEA62C7BE38552579B82D.e.6166, value=[Ljava.lang.CharSequence;@6110a369}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+</pre></div></td>
+<td>51</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Go To Preview
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:257)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[normalize-space()= &apos;Go To Preview&apos;] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:125)
+	at com.qa.pages.TestGeneratorPage.clickOnGoToPreview(TestGeneratorPage.java:765)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace413185716", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace413185716'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Go To Preview
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:257)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[normalize-space()= &apos;Go To Preview&apos;] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:125)
+	at com.qa.pages.TestGeneratorPage.clickOnGoToPreview(TestGeneratorPage.java:765)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+</pre></div></td>
+<td>2288</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Dynamic SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.3BD554C64B268E6DE26FE1823829AEFE.e.2248, value=[Ljava.lang.CharSequence;@48e31fa0}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:554)
+	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:165)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1754782754", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1754782754'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.3BD554C64B268E6DE26FE1823829AEFE.e.2248, value=[Ljava.lang.CharSequence;@48e31fa0}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:554)
+	at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:165)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+</pre></div></td>
+<td>56</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, AD-Test, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:76)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.D73DAB0D79AE2327A1027CFDD107ABE0.e.6348, value=[Ljava.lang.CharSequence;@3fa5792a}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1157574185", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1157574185'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.D73DAB0D79AE2327A1027CFDD107ABE0.e.6348, value=[Ljava.lang.CharSequence;@3fa5792a}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+</pre></div></td>
+<td>50</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Target Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:240)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.FF58190F2000068B9011AC3F52DF0355.e.4874, value=[Ljava.lang.CharSequence;@3af122e7}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionTargetDatasetForImport(TestGeneratorPage.java:702)
+	at com.qa.pages.TestGeneratorPage.lambda$30(TestGeneratorPage.java:241)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace780745443", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace780745443'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Target Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:240)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.FF58190F2000068B9011AC3F52DF0355.e.4874, value=[Ljava.lang.CharSequence;@3af122e7}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionTargetDatasetForImport(TestGeneratorPage.java:702)
+	at com.qa.pages.TestGeneratorPage.lambda$30(TestGeneratorPage.java:241)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+</pre></div></td>
+<td>60</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Dynamic SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+	... 28 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1383890657", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1383890657'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+	... 28 more
+</pre></div></td>
+<td>56</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Import SQL, Test_Generator-WIP, AD-Test, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
+<td><div><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.7BDB749A5033BD3BA6450ADB3CDC1CBF.e.5487, value=[Ljava.lang.CharSequence;@24b3cce8}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace403866924", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace403866924'><pre>com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+	at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+	at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.7BDB749A5033BD3BA6450ADB3CDC1CBF.e.5487, value=[Ljava.lang.CharSequence;@24b3cce8}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -&gt; xpath: //*[@placeholder=&apos;Select connection&apos;]/following::div[contains(@class,&apos;e-popup&apos;)]//input[@type=&apos;text&apos;]]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+	at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+	at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+	at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+	... 28 more
+</pre></div></td>
+<td>49</td>
 <td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -328,84 +872,54 @@ Session ID: 79c4650791b57cfd17415b07f1c49974
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, 7-3-1, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL</td>
 <td></td>
-<td>215</td>
+<td>130</td>
 <td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL</td>
-<td></td>
-<td>123</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
-<td></td>
-<td>181</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Dynamic SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL, public, staff</td>
-<td></td>
-<td>124</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL</td>
-<td></td>
-<td>120</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Import SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL</td>
-<td></td>
-<td>129</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Dynamic SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
-<td></td>
-<td>153</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, 7-3-1, Database, postgreSQL</td>
-<td></td>
-<td>123</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Specify Column for Diff - Full Data Compare Dynamic SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
-<td></td>
-<td>202</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Import SQL, Test_Generator-WIP, 7-3-1, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
-<td></td>
-<td>101</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
-<td></td>
-<td>117</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Import SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
-<td></td>
-<td>176</td>
-<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
-<tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn</td>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL</td>
 <td></td>
 <td>144</td>
 <td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Dynamic SQL, Test_Generator-WIP, 7-3-1, Cloud Data Warehouse, Redshift-with-jdbc-UserConn, regression_database, staff</td>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Dynamic SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL, public, staff</td>
 <td></td>
-<td>148</td>
+<td>130</td>
 <td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Diff and Expression based on Column Position - Import SQL, Test_Generator-WIP, 7-3-1, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Dynamic SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL, public, staff</td>
 <td></td>
-<td>231</td>
+<td>140</td>
 <td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
 <tr>
-<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, 7-3-1, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: validation, Data Validation - Import SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL</td>
 <td></td>
-<td>181</td>
+<td>138</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: checksum, Compare Record Counts - Import SQL, Test_Generator-WIP, AD-Test, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
+<td></td>
+<td>223</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: recon, Specify Column for Diff - Full Data Compare Dynamic SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL, public, staff</td>
+<td></td>
+<td>174</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Import SQL, Test_Generator-WIP, AD-Test, File, FlatFileSQL-S3-AWS-IAM-Sysonn</td>
+<td></td>
+<td>192</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate()'><b>createRuleUsingDynamicTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Dynamic SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL, public, staff</td>
+<td></td>
+<td>133</td>
+<td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
+<tr>
+<td title='com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate()'><b>createRuleUsingImportTemplate</b><br>Test class: com.qa.tests.TestGeneratorTest<br>Parameters: pushdown, Data Pushdown Validation - Import SQL, Test_Generator-WIP, AD-Test, Database, postgreSQL</td>
+<td></td>
+<td>132</td>
 <td>com.qa.tests.TestGeneratorTest@6771beb3</td></tr>
 </table><p>
 </body>

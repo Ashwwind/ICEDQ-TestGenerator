@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.Set;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -23,18 +22,15 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.aventstack.extentreports.Status;
 import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
 
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 10;
+	public static final int SHOTW = 5;
 	private static WebDriverWait wait;
 	public static Properties prop;
 
@@ -91,6 +87,8 @@ public class PageUtil extends Base {
 			// Wait for any loader to disappear (only once)
 			isInvisibleLoader(driver,
 					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+			isInvisibleLoader(driver,
+					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
 
 			// Wait for element to be visible
 			return waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by))
@@ -99,7 +97,7 @@ public class PageUtil extends Base {
 		} catch (TimeoutException te) {
 			// Fallback: extra wait
 			try {
-				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 30))
+				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 50))
 						.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
 			} catch (Exception e) {
 				ExtentManager.logInfo("Element not visible after extended wait: " + by);
@@ -112,22 +110,11 @@ public class PageUtil extends Base {
 		}
 	}
 
-	// Wait for the element to be clickable.
-//	public static void waitForTheElementToBeClickable(WebDriver driver, By by, String label) {
-//		try {
-//			wait.until(ExpectedConditions.elementToBeClickable(by));
-//			ExtentListener.test.get().log(Status.INFO, "Clicking on " + label);
-//			driver.findElement(by).click();
-//			ExtentListener.test.get().log(Status.INFO, "Clicked on " + label);
-//		} catch (Exception e) {
-//			ExtentListener.test.get().log(Status.INFO, "Element is not clickable :" + by);
-//		}
-//	}
-
 	// Click on the web element
 	public static void clickOnElement(WebDriver driver, By by, String label, int timeout) {
 		try {
 			if (!isDisplayed(driver, by, timeout)) {
+				ExtentManager.logInfo(label + " not displayed, retrying click");
 				throw new RuntimeException("Element not visible");
 			}
 
@@ -144,24 +131,7 @@ public class PageUtil extends Base {
 			throw e; // 🔥 VERY IMPORTANT — let executeStep handle screenshot
 		}
 	}
-	
 
-
-	// Validate the element is visible or not.
-
-//	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label, boolean expected) {
-//		boolean flag = true;
-//
-//		if (isDisplayed(driver, locator, 10) && expected) {
-//			ExtentListener.test.get().log(Status.PASS, label + " is visible as expected : " + expected);
-//		} else if (expected) {
-//			ExtentListener.test.get().log(Status.FAIL, label + " is not visible as expected : " + expected);
-//			flag = false;
-//		} else {
-//			ExtentListener.test.get().log(Status.FAIL, label + " is not visible as expected : " + expected);
-//		}
-//		return flag;
-//	}
 
 	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
 		boolean isVisible = isDisplayed(driver, locator, 100);
@@ -179,6 +149,16 @@ public class PageUtil extends Base {
 		waitForElements(driver, 120).until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 
+	
+	// Wait for just seconds
+	public static void waitForSeconds(long seconds) {
+	    try {
+	        Thread.sleep(seconds * 50);
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	    }
+	}
+
 	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		try {
@@ -188,6 +168,8 @@ public class PageUtil extends Base {
 
 			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
 					.sendKeys(input);
+			
+			 waitForSeconds(1); // wait after entering text.
 
 			ExtentManager.logPass("Entered value on " + label);
 
@@ -199,21 +181,20 @@ public class PageUtil extends Base {
 
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
-	    try {
-	        ExtentManager.logInfo("Pressing ENTER on " + label);
+		try {
+			ExtentManager.logInfo("Pressing ENTER on " + label);
 
-	        waitForElements(driver, SHOTW)
-	                .until(ExpectedConditions.visibilityOfElementLocated(locator))
-	                .sendKeys(Keys.ENTER);
+			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
+					.sendKeys(Keys.ENTER);
+			
+			 waitForSeconds(1); // wait after ENTER.
 
-	        ExtentManager.logPass("Pressed ENTER on " + label);
+			ExtentManager.logPass("Pressed ENTER on " + label);
 
-	    } catch (Exception e) {
-	        ExtentManager.logFail(
-	                "Failed to press ENTER on " + label + " ➝ " + e.getMessage()
-	        );
-	        throw e; // 🔥 Rethrow so executeStep handles screenshot & toast
-	    }
+		} catch (Exception e) {
+			ExtentManager.logFail("Failed to press ENTER on " + label + " ➝ " + e.getMessage());
+			throw e; // 🔥 Rethrow so executeStep handles screenshot & toast
+		}
 	}
 
 	public static WebDriverWait waitMethod(WebDriver driver) {
@@ -274,11 +255,6 @@ public class PageUtil extends Base {
 	public void refresh() {
 		driver.navigate().refresh();
 	}
-
-//	// Read the Import File
-//	public String getImportFilePath(String fileName) {
-//	    return System.getProperty("user.dir") + "/ImportFiles/Database" + fileName;
-//	}
 
 	/**
 	 * Upload a file stored in the project folder.
@@ -438,7 +414,7 @@ public class PageUtil extends Base {
 	// Capture UI errors if present
 	public static String captureUIErrorIfPresent(WebDriver driver) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 
 			List<WebElement> toasts = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TOAST_MESSAGE));
 
@@ -464,15 +440,25 @@ public class PageUtil extends Base {
 
 	// Scrolls the page
 	public void scrollToElement(WebDriver driver, WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-    }
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
 
 	// UI validation
 	public void validateElement(WebDriver driver, By locator, String lable, String type) {
-		
+
 		validateElementIsVisible(driver, locator, type);
 
+	}
+
+	public boolean isElementDisplayed(WebDriver driver, By locator, int timeout) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
 	}
 
 }

@@ -15,7 +15,7 @@ public class LoginTest extends Base {
 	@Test
 	public void validateLoginPage() {
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginPageValidation();	
+		loginPage.loginPageValidation();
 	}
 
 	@Test()

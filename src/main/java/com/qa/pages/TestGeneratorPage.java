@@ -1,23 +1,18 @@
 package com.qa.pages;
 
 import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.aventstack.extentreports.Status;
-import com.qa.base.Base;
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 
 public class TestGeneratorPage extends PageUtil {
 	private WebDriver driver;
+	public static final int waitTime = 5; //Global wait time
 
 	// Locator
 	By testGeneratorModue = getElementLocator(prop.getProperty("home.testgenerator"));
@@ -101,46 +96,44 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public void executeStep(String stepName, Runnable action) {
-	    try {
-	        action.run();
+		try {
+			action.run();
 
-	        // 🔍 Detect toast AFTER action
-	        String uiError = captureUIErrorIfPresent(driver);
-	        if (uiError != null && !uiError.isEmpty()) {
-	            throw new RuntimeException(uiError);
-	        }
+			// 🔍 Detect toast AFTER action
+			String uiError = captureUIErrorIfPresent(driver);
+			if (uiError != null && !uiError.isEmpty()) {
+				throw new RuntimeException(uiError);
+			}
 
-	        ExtentManager.logPass(stepName + " ➝ PASSED");
+			ExtentManager.logPass(stepName + " ➝ PASSED");
 
-	    } catch (Throwable e) {
+		} catch (Throwable e) {
 
-	        ExtentManager.logFail(stepName + " ➝ FAILED due to: " + e.getMessage());
+			ExtentManager.logFail(stepName + " ➝ FAILED due to: " + e.getMessage());
 
-	        // 📸 Screenshot (once per failure)
-	        ExtentManager.captureScreenshot("Step_Failure");
+			// 📸 Screenshot (once per failure)
+			ExtentManager.captureScreenshot("Step_Failure");
 
-	        // 🚪 Exit current flow
-	        navigatHomePage();
+			// 🚪 Exit current flow
+			navigatHomePage();
 
-	        // 🔥 STOP FLOW IMMEDIATELY
-	        throw new FlowAbortException("Flow aborted: " + stepName, e);
-	    }
+			// 🔥 STOP FLOW IMMEDIATELY
+			throw new FlowAbortException("Flow aborted: " + stepName, e);
+		}
 	}
 
 	public static class FlowAbortException extends RuntimeException {
-	    public FlowAbortException(String message, Throwable cause) {
-	        super(message, cause);
-	    }
+		public FlowAbortException(String message, Throwable cause) {
+			super(message, cause);
+		}
 	}
-
-
 
 	/// ************* ///
 	// Default Dynamic Template
 	/// ************* ///
 
 	public void createRuleUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String connectionName, String schemaName, String tableName)
+			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName, String schemaName, String tableName)
 			throws InterruptedException {
 
 		// Step 1: Click Test Generator
@@ -168,14 +161,14 @@ public class TestGeneratorPage extends PageUtil {
 		executeStep("Notification Next", this::gotoNotificationNextbtn);
 
 		// Step 6: Source Dataset selection
-		executeStep("Select Source Dataset: " + connectionType + "/" + connectionName + "/" + schemaName,
-				() -> selectionSourceDataset(connectionType, connectionName, schemaName));
+		executeStep("Select Source Dataset: " + connectionType + "/" + SourceConnectionName + "/" + schemaName,
+				() -> selectionSourceDataset(connectionType, SourceConnectionName, schemaName));
 
 		// Step 7: Target Dataset (only for applicable rule types)
 		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
 
-			executeStep("Select Target Dataset: " + connectionType + "/" + connectionName + "/" + schemaName,
-					() -> selectionTargetDataset(connectionType, connectionName, schemaName));
+			executeStep("Select Target Dataset: " + connectionType + "/" + TargetConnectionName + "/" + schemaName,
+					() -> selectionTargetDataset(connectionType, TargetConnectionName, schemaName));
 		}
 
 		// Step 8: Dataset & Table selection
@@ -206,14 +199,12 @@ public class TestGeneratorPage extends PageUtil {
 		navigatHomePage();
 	}
 
-
-
 	// ============================
 	// Default Import Template
 	// ============================
 
 	public void createRuleUsingDefaultImportTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String connectionName) throws InterruptedException {
+			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName) throws InterruptedException {
 
 		boolean isReconOrChecksum = ruleType.equalsIgnoreCase("checksum") || ruleType.equalsIgnoreCase("recon");
 
@@ -241,13 +232,13 @@ public class TestGeneratorPage extends PageUtil {
 		executeStep("Notification Next", this::gotoNotificationNextbtn);
 
 		// Step 6: Source Dataset
-		executeStep("Select Source Dataset for Import: " + connectionType + "/" + connectionName,
-				() -> selectionSourceDatasetForImport(connectionType, connectionName));
+		executeStep("Select Source Dataset for Import: " + connectionType + "/" + SourceConnectionName,
+				() -> selectionSourceDatasetForImport(connectionType, SourceConnectionName));
 
 		// Step 7: Target Dataset (checksum/recon only)
 		if (isReconOrChecksum) {
-			executeStep("Select Target Dataset for Import: " + connectionType + "/" + connectionName,
-					() -> selectionTargetDatasetForImport(connectionType, connectionName));
+			executeStep("Select Target Dataset for Import: " + connectionType + "/" + TargetConnectionName,
+					() -> selectionTargetDatasetForImport(connectionType, TargetConnectionName));
 		}
 
 		// Step 8: Dataset Next
@@ -282,7 +273,6 @@ public class TestGeneratorPage extends PageUtil {
 		navigatHomePage();
 	}
 
-
 	// ============================
 	// Page method
 	// ============================
@@ -299,28 +289,31 @@ public class TestGeneratorPage extends PageUtil {
 		uploadingFiles(fileName);
 	}
 
-	
 	private String resolveImportFileName(String ruleType, String connectionType) {
 
 		switch (ruleType.toLowerCase()) {
 
 		case "checksum":
-			return resolveByConnection(connectionType, "Checksum.xlsx", "Checksum - Redshift.xlsx", "Checksum - Flat File-SQL.xlsx");
+			return resolveByConnection(connectionType, "Checksum.xlsx", "Checksum - Redshift.xlsx",
+					"Checksum - Flat File-SQL.xlsx");
 
 		case "recon":
-			return resolveByConnection(connectionType, "Recon.xlsx", "Recon - Redshift.xlsx", "Recon - Flat File-SQL.xlsx");
+			return resolveByConnection(connectionType, "Recon.xlsx", "Recon - Redshift.xlsx",
+					"Recon - Flat File-SQL.xlsx");
 
 		case "validation":
-			return resolveByConnection(connectionType, "Validation.xlsx", "Validation - Redshift.xlsx", "Validation - Flat File-SQL.xlsx");
+			return resolveByConnection(connectionType, "Validation.xlsx", "Validation - Redshift.xlsx",
+					"Validation - Flat File-SQL.xlsx");
 
 		case "pushdown":
-			return resolveByConnection(connectionType, "Pushdown.xlsx", "Pushdown - Redshift.xlsx", "Pushdown - Flat File-SQL.xlsx");
+			return resolveByConnection(connectionType, "Pushdown.xlsx", "Pushdown - Redshift.xlsx",
+					"Pushdown - Flat File-SQL.xlsx");
 
 		default:
 			throw new IllegalArgumentException("Invalid rule type: " + ruleType);
 		}
 	}
-	
+
 	private String resolveByConnection(String connectionType, String databaseFile, String cloudFile, String fileFile) {
 
 		if (connectionType.equalsIgnoreCase("Database")) {
@@ -336,29 +329,28 @@ public class TestGeneratorPage extends PageUtil {
 		throw new IllegalArgumentException("Invalid connection type: " + connectionType);
 	}
 
-
 	public boolean clickTestGenerator() {
 
 		return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
 	}
 
 	// Click the Checksum rule type from the wizard page.
-//	public boolean clickOnChecksum() {
-//
-//		return clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab");
-//	}
-	
+	// public boolean clickOnChecksum() {
+	//
+	// return clickOnField(driver, selectChecksumWizard, "Checksum rule type",
+	// "tab");
+	// }
+
 	public boolean clickOnChecksum1() {
-		boolean flag=true;
-		
+		boolean flag = true;
+
 		try {
-			if (flag)
-			{
+			if (flag) {
 				clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab");
 			}
 		} catch (Exception e) {
 			ExtentManager.logFail(e + " clickOnChecksum1 :: " + e.toString());
-			flag=false;
+			flag = false;
 		}
 		return flag;
 	}
@@ -436,11 +428,11 @@ public class TestGeneratorPage extends PageUtil {
 		isInvisibleLoader(driver, loader);
 
 		// Open workspace dropdown
-		clickOnElement(driver, clickOnWorkspaceDropdown, "select workspace dropdown.", 30);
+		clickOnElement(driver, clickOnWorkspaceDropdown, "select workspace dropdown.", waitTime);
 		ExtentManager.logInfo("Workspace dropdown opened.");
 
 		// Click search field
-		clickOnElement(driver, selectSearchWorkspace, "searched workspace.", 30);
+		clickOnElement(driver, selectSearchWorkspace, "searched workspace.", waitTime);
 
 		// Enter workspace name and press ENTER
 		sendkeysToElement(driver, selectSearchWorkspace, "Select workspace field", workspaceName);
@@ -451,7 +443,6 @@ public class TestGeneratorPage extends PageUtil {
 		ExtentManager.logPass("Workspace name selected: " + workspaceName);
 	}
 
-
 	// Click on the Folder selector field
 
 	public void clickOnFolderField(String folderName) {
@@ -459,19 +450,19 @@ public class TestGeneratorPage extends PageUtil {
 		isInvisibleLoader(driver, loader);
 
 		// Open folder dropdown
-		clickOnElement(driver, clickOnFolderDropdown, "Folder dropdown", 30);
+		clickOnElement(driver, clickOnFolderDropdown, "Folder dropdown", waitTime);
 		ExtentManager.logInfo("Folder dropdown opened.");
 
 		// Search folder
 		sendkeysToElement(driver, searchFolderName, "searching folder name", folderName);
 
 		// Click search icon
-		clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), "Search folder", 30);
+		clickOnElement(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), "Search folder", waitTime);
 
 		isInvisibleLoader(driver, loader);
 
 		// Select folder from results
-		clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), "Folder result", 10);
+		clickOnElement(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), "Folder result", waitTime);
 
 		clickOnElement(driver, By.xpath("//span[@class='e-icons e-check']//parent::button"), "Selected folder name",
 				10);
@@ -482,55 +473,57 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public boolean gotoWorkspaceNextbtn() {
-		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page","button");
+		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page",
+				"button");
 	}
 
 	public void gotoRuleMetadataNextbtn() {
-		
+
 		// Validate 'Define Rule Metadata' page.
-		//validateDefineRuleMetadataPage();
-		
+		// validateDefineRuleMetadataPage();
+
 		// Click Next button on Rule Metadata page
-		clickOnElement(driver, clickNextButtonmetadataNextbtn, "next button of 'Define Rule Metadata' page", 20);
+		clickOnElement(driver, clickNextButtonmetadataNextbtn, "next button of 'Define Rule Metadata' page", waitTime);
 		ExtentManager.logInfo("Next button of 'Define Rule Metadata' page is clickable.");
 	}
 
 	public void gotoCheckMetadataNextbtn() {
-		
+
 		// Validate 'Define Check Metadata' page.
-		//validateDefineCheckMetadataPage();
-		
+		// validateDefineCheckMetadataPage();
+
 		// Click Next button on Check Metadata page
-		clickOnElement(driver, clickNextButtoncheckNextbtn, "next button of 'Define Check Metadata' page", 20);
+		clickOnElement(driver, clickNextButtoncheckNextbtn, "next button of 'Define Check Metadata' page", waitTime);
 		ExtentManager.logInfo("Next button of 'Define Check Metadata' page is clickable.");
 	}
 
 	public void gotoNotificationNextbtn() {
 		// Click Next button on Configure Notifications page
-		clickOnElement(driver, clickNextButtonnotificationNextbtn, "next button of 'Configure Notifications' page", 20);
+		clickOnElement(driver, clickNextButtonnotificationNextbtn, "next button of 'Configure Notifications' page", waitTime);
 		ExtentManager.logInfo("Next button of 'Configure Notifications' page is clickable.");
 	}
 
-
 	/// ********* Select the source dataset ********** ///
-///// *******************************/////
-/////////////// ********************************* ////////////////
-///// *******************************/////
+	///// *******************************/////
+	/////////////// ********************************* ////////////////
+	///// *******************************/////
 
 	public void selectionSourceDataset(String connectionType, String connectionName, String schemaName) {
 
 		// Click on the source connection type dropdown
-		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select source connection type.", 30);
+		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select source connection type.", waitTime);
 
 		if (connectionType.equalsIgnoreCase("Database")) {
 
-			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
+			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", waitTime);
+			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", waitTime);
 
 			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
 			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			isInvisibleLoader(driver, loader);
 
 			ExtentManager.logInfo("Database connection name selected successfully.");
 
@@ -538,19 +531,28 @@ public class TestGeneratorPage extends PageUtil {
 
 			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",
 					20);
+			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", waitTime);
 
 			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
 			sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
+			isInvisibleLoader(driver, loader);
 
 			ExtentManager.logInfo("Cloud warehouse connection name selected successfully.");
+			
+			By UseMetadataCache = By.xpath("//*[@id='e-content-element_5']/div/div[2]/div[1]/form/div[2]/div[3]/div/ejs-checkbox/label/span[2]");
+			
+			clickOnElement(driver, UseMetadataCache, "Use Metadata Cache check box", waitTime);
+			
+			isInvisibleLoader(driver, loader);
 
 			// Click database dropdown
 			clickOnElement(driver, By.xpath(
 					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
-					"database dropdown.", 20);
+					"database dropdown.", waitTime);
+			isInvisibleLoader(driver, loader);
 
 			By databaseInput = By.xpath(
 					"//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']");
@@ -558,12 +560,15 @@ public class TestGeneratorPage extends PageUtil {
 			sendkeysToElement(driver, databaseInput, "source database name", "icedqrs");
 
 			sendkeysToEnter(driver, databaseInput, "source database name");
+			isInvisibleLoader(driver, loader);
 
 			ExtentManager.logInfo("Database name selected successfully.");
 		}
 
 		// Schema selection
-		clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 50);
+		clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", waitTime);
+
+		isInvisibleLoader(driver, loader);
 
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
 
@@ -575,21 +580,20 @@ public class TestGeneratorPage extends PageUtil {
 	public void selectionSourceDatasetForImport(String connectionType, String connectionName) {
 
 		// Click Source Dataset Connection Type Dropdown
-		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", 30);
+		clickOnElement(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", waitTime);
 
 		// Select connection type
 		switch (connectionType.toLowerCase()) {
 		case "database":
-			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 20);
+			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", waitTime);
 			break;
 
 		case "cloud data warehouse":
-			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",
-					20);
+			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.", waitTime);
 			break;
 
 		case "file":
-			clickOnElement(driver, selectFileConnectionType, "source file connection.", 20);
+			clickOnElement(driver, selectFileConnectionType, "source file connection.", waitTime);
 			break;
 
 		default:
@@ -597,7 +601,7 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Click Source Dataset Connection Dropdown
-		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 20);
+		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", waitTime);
 
 		// Enter and confirm connection name
 		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
@@ -606,25 +610,26 @@ public class TestGeneratorPage extends PageUtil {
 		ExtentManager.logInfo("Source dataset selected successfully: " + connectionType + " / " + connectionName);
 	}
 
-
 	/// ********* Select the target dataset ********** ///
-///// *******************************/////
-/////////////// ********************************* ////////////////
-///// *******************************/////
+	///// *******************************/////
+	/////////////// ********************************* ////////////////
+	///// *******************************/////
 	public void selectionTargetDataset(String connectionType, String connectionName, String schemaName) {
 
 		// Click target connection type dropdown
-		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", 30);
+		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", waitTime);
 
 		if (connectionType.equalsIgnoreCase("Database")) {
 
-			clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 20);
+			clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", waitTime);
+			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 20);
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", waitTime);
 
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
 			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+			isInvisibleLoader(driver, loader);
 
 			ExtentManager.logInfo("Target database connection selected successfully.");
 
@@ -632,19 +637,23 @@ public class TestGeneratorPage extends PageUtil {
 
 			clickOnElement(driver, selectCloudDataWarehouseConnectionType, "target cloud data warehouse connection.",
 					20);
+			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 20);
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", waitTime);
 
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
 			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
+			isInvisibleLoader(driver, loader);
 
 			ExtentManager.logInfo("Target cloud connection selected successfully.");
+			
 
 			// Click database dropdown
 			clickOnElement(driver, By.xpath(
 					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
-					"database dropdown.", 20);
+					"database dropdown.", waitTime);
+			isInvisibleLoader(driver, loader);
 
 			By databaseInput = By.xpath(
 					"//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']");
@@ -652,12 +661,15 @@ public class TestGeneratorPage extends PageUtil {
 			sendkeysToElement(driver, databaseInput, "target database name", "icedqrs");
 
 			sendkeysToEnter(driver, databaseInput, "target database name");
+			isInvisibleLoader(driver, loader);
 
 			ExtentManager.logInfo("Target database selected successfully.");
 		}
 
 		// Schema selection
-		clickOnElement(driver, clickTargetSchemaDropdown, "choose target schema dropdown.", 50);
+		clickOnElement(driver, clickTargetSchemaDropdown, "choose target schema dropdown.", waitTime);
+
+		isInvisibleLoader(driver, loader);
 
 		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
 
@@ -668,12 +680,12 @@ public class TestGeneratorPage extends PageUtil {
 
 	public void selectionTargetDatasetForImport(String connectionType, String connectionName) {
 		// Click Target Dataset Connection Type Dropdown
-		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", 30);
+		clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", waitTime);
 
 		// Select connection type
 		switch (connectionType.toLowerCase()) {
 		case "database":
-			clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 20);
+			clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", waitTime);
 			break;
 
 		case "cloud data warehouse":
@@ -682,7 +694,7 @@ public class TestGeneratorPage extends PageUtil {
 			break;
 
 		case "file":
-			clickOnElement(driver, selectFileConnectionType, "target file connection.", 20);
+			clickOnElement(driver, selectFileConnectionType, "target file connection.", waitTime);
 			break;
 
 		default:
@@ -690,7 +702,7 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Click Target Dataset Connection Dropdown
-		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 20);
+		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", waitTime);
 
 		// Enter and confirm connection name
 		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
@@ -699,8 +711,6 @@ public class TestGeneratorPage extends PageUtil {
 
 		ExtentManager.logInfo("Target dataset selected successfully: " + connectionType + " / " + connectionName);
 	}
-
-
 
 	// Import SQL Files
 	public void uploadingFiles(String fileName) {
@@ -716,7 +726,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	// Click on the Next button of 'Select Dataset' page
 	public void gotoDatasetNextbtn() {
-		clickOnElement(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page.", 20);
+		clickOnElement(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page.", waitTime);
 		ExtentManager.logInfo("Next button of 'Select Dataset' page is clickable.");
 	}
 
@@ -724,68 +734,64 @@ public class TestGeneratorPage extends PageUtil {
 
 	public void selectionAvailableTable(String tableName) {
 		// Click on the available table search field
-		clickOnElement(driver, clickAvailableTable, "search available table.", 20);
+		clickOnElement(driver, clickAvailableTable, "search available table.", waitTime);
 
 		// Enter the table name
 		sendkeysToElement(driver, clickAvailableTable, "available table name", tableName);
 
 		// Select the table checkbox from the list
-		clickOnElement(driver, selectAvailableTable, "table checkbox", 20);
+		clickOnElement(driver, selectAvailableTable, "table checkbox", waitTime);
 
 		// Click on the 'Move to' button
-		clickOnElement(driver, clickMoveToButton, "'Move to' button", 20);
+		clickOnElement(driver, clickMoveToButton, "'Move to' button", waitTime);
 
 		ExtentManager.logInfo("Table '" + tableName + "' selected successfully.");
 	}
 
-
 	// Click on the Next button of 'Select Table' page
 	public void gotoSelettableNextbtn() {
-	    clickOnElement(driver, clickNextButtonSelettableNextbtn, "Next button of 'Select Tables' page", 20);
-	    ExtentManager.logInfo("Next button of 'Select Tables' page is clickable.");
+		clickOnElement(driver, clickNextButtonSelettableNextbtn, "Next button of 'Select Tables' page", waitTime);
+		ExtentManager.logInfo("Next button of 'Select Tables' page is clickable.");
 	}
-
 
 	// Click on the Next button of 'Import SQL' page
 	public void gotoImportSQLNextbtn() {
-	    clickOnElement(driver, ClickNextButtonimportSQLNextbtn, "Next button of 'Import SQL' page", 20);
-	    ExtentManager.logInfo("Next button of 'Import SQL' page is clickable.");
+		clickOnElement(driver, ClickNextButtonimportSQLNextbtn, "Next button of 'Import SQL' page", waitTime);
+		ExtentManager.logInfo("Next button of 'Import SQL' page is clickable.");
 	}
-
 
 	// Click on the 'Generate' button
 	public void clickOnGenerate() {
-	    clickOnElement(driver, clickGenerateButton, "Generate button", 20);
-	    ExtentManager.logInfo("Generate button is clickable.");
+		clickOnElement(driver, clickGenerateButton, "Generate button", waitTime);
+		ExtentManager.logInfo("Generate button is clickable.");
 	}
-
 
 	// Click on the 'Go To Preview' button
 	public void clickOnGoToPreview() {
-	    clickOnElement(driver, clickGoToPreviewButton, "Go To Preview button", 20);
-	    ExtentManager.logInfo("Go To Preview button is clickable.");
+		clickOnElement(driver, clickGoToPreviewButton, "Go To Preview button", waitTime);
+		ExtentManager.logInfo("Go To Preview button is clickable.");
 	}
 
 	// Select the generated entity from the 'Preview' page
 	public void selectGeneratedEntity() {
-	    clickOnElement(driver, selectEntity, "Checkbox for entity selection", 20);
-	    ExtentManager.logInfo("Generated entity selected successfully.");
+		clickOnElement(driver, selectEntity, "Checkbox for entity selection", waitTime);
+		ExtentManager.logInfo("Generated entity selected successfully.");
 	}
 
 	// Click on the 'Publish' button
 	public void clickOnPublish() {
-	    clickOnElement(driver, clikPublishButton, "Publish button", 10);
-	    ExtentManager.logInfo("Publish button is clickable.");
+		clickOnElement(driver, clikPublishButton, "Publish button", waitTime);
+		ExtentManager.logInfo("Publish button is clickable.");
 	}
 
 	// Click on the 'Go To Publish' button
 	public void clickOnGoToPublish() throws InterruptedException {
-	    clickOnElement(driver, clickGoToPublishButton, "Go To Publish button", 50);
-	    ExtentManager.logInfo("Go To Publish button is clickable.");
+		clickOnElement(driver, clickGoToPublishButton, "Go To Publish button", waitTime);
+		ExtentManager.logInfo("Go To Publish button is clickable.");
 	}
 
-
-	// Click on the hyperlink of the published rule to navigate to the Data Testing page
+	// Click on the hyperlink of the published rule to navigate to the Data Testing
+	// page
 	public void clickOnPublishedRule() {
 		executeStep("Validate published rule and navigate to Data Testing page.", () -> {
 			try {
@@ -808,7 +814,7 @@ public class TestGeneratorPage extends PageUtil {
 			ExtentManager.logInfo("Rule Name from Published Page: " + ruleNamePublishPage);
 
 			// Click hyperlink to navigate to Data Testing
-			clickOnElement(driver, clickHyperlinkPublishRule, "Published Rule", 60);
+			clickOnElement(driver, clickHyperlinkPublishRule, "Published Rule", waitTime);
 
 			// Switch to child window
 			String child = switchToNewWindow(driver, parent, 30);
@@ -829,12 +835,17 @@ public class TestGeneratorPage extends PageUtil {
 			}
 
 			ExtentManager.logPass("Rule Name validated successfully.");
-			
+
 			// Run the published rule
 			runPublishRule();
-			
+
 			// Validate Instance ID
 			validateInstanceID();
+			try {
+				waitForInstanceIdAndFinalStatus(driver);
+			} catch (InterruptedException e) {
+				System.out.println("Instance ID is generated.. " + e.getMessage());
+			}
 
 			// Close child window and return to parent
 			closeChildAndReturn(driver, child, parent);
@@ -845,42 +856,87 @@ public class TestGeneratorPage extends PageUtil {
 	public void navigatHomePage() {
 		goTo(ConfigReader.getProperty("homePageUrl"));
 	}
-	
+
 	// Define Rule Metadata
-	public void validateDefineRuleMetadataPage()
-	{
-		//validateElement(driver, ClickNextButtonimportSQLNextbtn, null, null); // Name field
-		 WebElement RuleProperty = driver.findElement(By.xpath("//*[@id=\\\"acrdn_header_11\\\"]/div[1]/div"));
+	public void validateDefineRuleMetadataPage() {
+		// validateElement(driver, ClickNextButtonimportSQLNextbtn, null, null); // Name
+		// field
+		WebElement RuleProperty = driver.findElement(By.xpath("//*[@id=\\\"acrdn_header_11\\\"]/div[1]/div"));
 		scrollToElement(driver, RuleProperty);
 	}
-	
+
 	// Define Check Metadata
-		public void 	validateDefineCheckMetadataPage()
-		{
-			//validateElement(driver, ClickNextButtonimportSQLNextbtn, null, null); // Name field
-			 WebElement RuleProperty = driver.findElement(By.xpath("//*[@id=\\\"acrdn_header_11\\\"]/div[1]/div"));
-			scrollToElement(driver, RuleProperty);
-		}
-		
+	public void validateDefineCheckMetadataPage() {
+		// validateElement(driver, ClickNextButtonimportSQLNextbtn, null, null); // Name
+		// field
+		WebElement RuleProperty = driver.findElement(By.xpath("//*[@id=\\\"acrdn_header_11\\\"]/div[1]/div"));
+		scrollToElement(driver, RuleProperty);
+	}
 
 	// Run the publish rule on the Data Testing module.
-		public void runPublishRule()
-		{
-			// Click on the Run button.
-			clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[1]"), "run button", 10);
+	public void runPublishRule() {
+		// Click on the Run button.
+		clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[1]"), "run button", waitTime);
+
+	}
+
+	// Validate instance ID
+	public void validateInstanceID() {
+		// Click on the Recent runs button.
+		clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]"),
+				"recent runs button", 10);
+		isInvisibleLoader(driver, loader);
+
+		// Click on the Refresh button.
+		// clickOnElement(driver,
+		// By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button"),
+		// "refresh button", 10);
+		// isInvisibleLoader(driver, loader);
+		//
+		// validateElementIsVisible(driver,
+		// By.xpath("//*[@id=\"parentGrid_content_table\"]/tbody/tr/td[3]"), "Instance
+		// ID");
+		//
+		// ExtentManager.logInfo("The instance ID is generated successfully : " +
+		// "Instance ID");
+
+	}
+
+	public void waitForInstanceIdAndFinalStatus(WebDriver driver) throws InterruptedException {
+
+		By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
+		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
+		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
+
+		int maxRetries = 10;
+		int retryCount = 0;
+
+		while (retryCount < maxRetries) {
+
+			clickOnElement(driver, refreshBtn, "Refresh button", waitTime);
 			
-		}
-		
-		// Validate instance ID
-		public void validateInstanceID() {
-			// Click on the Recent runs button.
-			clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]"), "recent runs button", 10);
-			isInvisibleLoader(driver, loader);
+			waitForSeconds(1);
 
-			// Click on the Refresh button.
-			clickOnElement(driver, By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button"), "refresh button", 10);
-			isInvisibleLoader(driver, loader);
+			if (isElementDisplayed(driver, instanceIdLocator, 5)) {
 
+				String instanceId = driver.findElement(instanceIdLocator).getText();
+				String status = driver.findElement(statusLocator).getText().trim();
+
+				ExtentManager.logInfo("Instance ID: " + instanceId);
+				ExtentManager.logInfo("Current Status: " + status);
+
+				// Keep waiting while status is Submitted or Running
+				if (!status.equalsIgnoreCase("Submitted") && !status.equalsIgnoreCase("Running")) {
+
+					ExtentManager.logInfo("Final execution status: " + status);
+					return; // exit once proper status is reached
+				}
+			}
+
+			retryCount++;
 		}
+
+		throw new RuntimeException("Status did not change from Submitted/Running after retries");
+	}
 
 }

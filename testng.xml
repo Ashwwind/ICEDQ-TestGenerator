@@ -12,7 +12,7 @@
 	<test name="Login Tests">
 		<classes>
 			<class name="com.qa.tests.LoginTest">
-				<methods>
+				<methods> 
 					<include name="validateLoginPage" />
 					<include name="Login" />
 				</methods>

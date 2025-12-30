@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="23" passed="19" failed="4" skipped="0">
+<testng-results ignored="0" total="23" passed="13" failed="10" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-24T15:37:54 IST" name="Suite" finished-at="2025-12-24T16:28:08 IST" duration-ms="3014345">
+  <suite started-at="2025-12-29T19:22:28 IST" name="Suite" finished-at="2025-12-29T20:34:34 IST" duration-ms="4325945">
     <groups>
     </groups>
-    <test started-at="2025-12-24T15:37:54 IST" name="Login Tests" finished-at="2025-12-24T15:37:57 IST" duration-ms="3331">
+    <test started-at="2025-12-29T19:22:28 IST" name="Login Tests" finished-at="2025-12-29T19:22:33 IST" duration-ms="4355">
       <class name="com.qa.tests.LoginTest">
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-24T15:37:54 IST" name="validateLoginPage" finished-at="2025-12-24T15:37:55 IST" duration-ms="1109" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-29T19:22:28 IST" name="validateLoginPage" finished-at="2025-12-29T19:22:29 IST" duration-ms="997" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-24T15:37:55 IST" name="Login" finished-at="2025-12-24T15:37:57 IST" duration-ms="2191" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2025-12-29T19:22:29 IST" name="Login" finished-at="2025-12-29T19:22:32 IST" duration-ms="3324" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
       </class> <!-- com.qa.tests.LoginTest -->
     </test> <!-- Login Tests -->
-    <test started-at="2025-12-24T15:37:58 IST" name="Home Page Tests" finished-at="2025-12-24T15:37:59 IST" duration-ms="1003">
+    <test started-at="2025-12-29T19:22:33 IST" name="Home Page Tests" finished-at="2025-12-29T19:22:33 IST" duration-ms="448">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2025-12-24T15:37:58 IST" name="validateHomePage" finished-at="2025-12-24T15:37:59 IST" duration-ms="1000" status="PASS">
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2025-12-29T19:22:33 IST" name="validateHomePage" finished-at="2025-12-29T19:22:33 IST" duration-ms="448" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
     </test> <!-- Home Page Tests -->
-    <test started-at="2025-12-24T15:37:59 IST" name="Test Generator Page Tests" finished-at="2025-12-24T16:28:08 IST" duration-ms="3009611">
+    <test started-at="2025-12-29T19:22:33 IST" name="Test Generator Page Tests" finished-at="2025-12-29T20:34:34 IST" duration-ms="4320868">
       <class name="com.qa.tests.TestGeneratorTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:37:50 IST" name="startSuite" finished-at="2025-12-24T15:37:54 IST" duration-ms="4274" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:22:24 IST" name="startSuite" finished-at="2025-12-29T19:22:28 IST" duration-ms="4174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:37:59 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:39:52 IST" duration-ms="113180" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:22:34 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:24:45 IST" duration-ms="130869" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,7 +50,7 @@
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -74,54 +74,10 @@
               </value>
             </param>
           </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
-            <message>
-              <![CDATA[Flow aborted: Select Source Dataset: Database/postgreSQL/public]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/postgreSQL/public
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:170)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Element not visible
-at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:526)
-at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:39:53 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:40:58 IST" duration-ms="64903" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:24:45 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:27:39 IST" duration-ms="174670" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -140,7 +96,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -164,15 +120,153 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:27:39 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:30:00 IST" duration-ms="140652" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AD-Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[public]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[staff]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:30:00 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:32:13 IST" duration-ms="133006" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AD-Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[postgreSQL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[public]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[staff]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingDynamicTemplate -->
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:32:13 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:33:09 IST" duration-ms="56169" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AD-Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-with-jdbc-UserConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[regression_database]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[staff]]>
+              </value>
+            </param>
+          </params>
           <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
             <message>
-              <![CDATA[Flow aborted: Select Source Dataset: Database/postgreSQL/public]]>
+              <![CDATA[Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/postgreSQL/public
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:170)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -200,14 +294,14 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=143.0.7499.169)
+  (Session info: chrome=143.0.7499.170)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79c4650791b57cfd17415b07f1c49974, sendKeysToElement {value=[Ljava.lang.CharSequence;@41dcfd0, id=f.95B1E997C43AFC492AC591B3DD01DF76.d.9D3A267D0B30FA7E1A25B09F996367ED.e.429}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.169, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65143}, goog:processID: 108340, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65143/devtoo..., se:cdpVersion: 143.0.7499.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (79c4650791b57cfd17415b07f1c49974)] -> xpath: //ejs-dropdownlist[@placeholder='Choose Schema']/following::div[contains(@class,'e-popup')]//input[@type='text']]
-Session ID: 79c4650791b57cfd17415b07f1c49974
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.3BD554C64B268E6DE26FE1823829AEFE.e.2248, value=[Ljava.lang.CharSequence;@48e31fa0}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -220,10 +314,10 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
-at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:188)
-at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:567)
-at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:171)
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:554)
+at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:165)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
 ... 28 more
 ]]>
             </full-stacktrace>
@@ -231,231 +325,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:40:58 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:43:02 IST" duration-ms="124137" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[7-3-1]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:43:02 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:45:43 IST" duration-ms="160913" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pushdown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[7-3-1]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[postgreSQL]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-          </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
-            <message>
-              <![CDATA[Flow aborted: Select Generated Entity]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:37)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Element not visible
-at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:45:43 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:48:56 IST" duration-ms="193057" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[7-3-1]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-with-jdbc-UserConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[regression_database]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-          </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
-            <message>
-              <![CDATA[Flow aborted: Select Generated Entity]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Generated Entity
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:125)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:188)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:41)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Element not visible
-at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:130)
-at com.qa.pages.TestGeneratorPage.selectGeneratedEntity(TestGeneratorPage.java:790)
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:48:57 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:52:19 IST" duration-ms="202539" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:33:09 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:34:08 IST" duration-ms="58897" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -474,7 +344,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -498,10 +368,74 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.BDF4C8DBD5AF8EF3680CC9E633E686E8.e.2448, value=[Ljava.lang.CharSequence;@d45bf2b}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionSourceDataset(TestGeneratorPage.java:554)
+at com.qa.pages.TestGeneratorPage.lambda$9(TestGeneratorPage.java:165)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:52:19 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:54:47 IST" duration-ms="148270" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:34:08 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:35:03 IST" duration-ms="54704" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -520,7 +454,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -544,10 +478,51 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:54:47 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-24T15:57:21 IST" duration-ms="153900" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:35:03 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2025-12-29T19:36:00 IST" duration-ms="56191" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -566,7 +541,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -590,10 +565,51 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Cloud Data Warehouse/Redshift-with-jdbc-UserConn/regression_database
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:164)
+at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:57:21 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T15:59:25 IST" duration-ms="123254" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:36:00 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T19:38:11 IST" duration-ms="130937" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -612,7 +628,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -629,7 +645,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T15:59:25 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:01:29 IST" duration-ms="123948" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:38:11 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T19:40:35 IST" duration-ms="144259" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -648,7 +664,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -665,7 +681,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:01:29 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:03:29 IST" duration-ms="120628" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:40:35 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T19:42:54 IST" duration-ms="138579" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -684,7 +700,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -701,7 +717,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:03:29 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:05:38 IST" duration-ms="129053" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:42:54 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T19:45:06 IST" duration-ms="132546" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -720,7 +736,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -737,7 +753,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:05:38 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:07:36 IST" duration-ms="117342" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:45:06 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T19:46:07 IST" duration-ms="60375" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -756,7 +772,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -770,10 +786,74 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Target Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Target Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:240)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.FF58190F2000068B9011AC3F52DF0355.e.4874, value=[Ljava.lang.CharSequence;@3af122e7}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionTargetDatasetForImport(TestGeneratorPage.java:702)
+at com.qa.pages.TestGeneratorPage.lambda$30(TestGeneratorPage.java:241)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:07:36 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:10:37 IST" duration-ms="181690" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:46:07 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T19:46:58 IST" duration-ms="51404" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -792,7 +872,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -806,10 +886,74 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.9EBBB41BC77F0EA6478474C6B4877AB2.e.5065, value=[Ljava.lang.CharSequence;@2283bfec}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:10:37 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:13:02 IST" duration-ms="144130" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T19:46:59 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T20:25:07 IST" duration-ms="2288460" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -828,7 +972,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -842,10 +986,60 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Go To Preview]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Go To Preview
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:257)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[normalize-space()= 'Go To Preview'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.utils.PageUtil.clickOnElement(PageUtil.java:125)
+at com.qa.pages.TestGeneratorPage.clickOnGoToPreview(TestGeneratorPage.java:765)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:13:02 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:15:58 IST" duration-ms="176463" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T20:25:07 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T20:25:56 IST" duration-ms="49026" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -864,7 +1058,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -878,10 +1072,74 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: Cloud Data Warehouse/Redshift-with-jdbc-UserConn
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:73)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.7BDB749A5033BD3BA6450ADB3CDC1CBF.e.5487, value=[Ljava.lang.CharSequence;@24b3cce8}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:15:58 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:19:34 IST" duration-ms="215658" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T20:25:57 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T20:29:40 IST" duration-ms="223136" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -900,7 +1158,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -917,7 +1175,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:19:34 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:23:25 IST" duration-ms="231288" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T20:29:40 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T20:30:31 IST" duration-ms="51239" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -936,7 +1194,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -950,10 +1208,74 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.2A4BC2FFB06AEA62C7BE38552579B82D.e.6166, value=[Ljava.lang.CharSequence;@6110a369}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:23:25 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:26:27 IST" duration-ms="181983" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T20:30:31 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T20:31:22 IST" duration-ms="50610" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -972,7 +1294,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -986,10 +1308,74 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset for Import: File/FlatFileSQL-S3-AWS-IAM-Sysonn
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:121)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:235)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa1cd9b3a6f4327cc131d5e7d64963f9, sendKeysToElement {id=f.D7310733052F04DCECBEB5723F24DA10.d.D73DAB0D79AE2327A1027CFDD107ABE0.e.6348, value=[Ljava.lang.CharSequence;@3fa5792a}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60279}, goog:processID: 74732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60279/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa1cd9b3a6f4327cc131d5e7d64963f9)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: aa1cd9b3a6f4327cc131d5e7d64963f9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionSourceDatasetForImport(TestGeneratorPage.java:602)
+at com.qa.pages.TestGeneratorPage.lambda$29(TestGeneratorPage.java:236)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:100)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:26:27 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-24T16:28:08 IST" duration-ms="101265" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T20:31:22 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2025-12-29T20:34:34 IST" duration-ms="192004" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1008,7 +1394,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
             </param>
             <param index="3">
               <value>
-                <![CDATA[7-3-1]]>
+                <![CDATA[AD-Test]]>
               </value>
             </param>
             <param index="4">
@@ -1025,7 +1411,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:104)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingImportTemplate -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-24T16:28:08 IST" name="endSuite" finished-at="2025-12-24T16:28:18 IST" duration-ms="9397" status="PASS">
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6771beb3]" started-at="2025-12-29T20:34:34 IST" name="endSuite" finished-at="2025-12-29T20:34:44 IST" duration-ms="9350" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->
