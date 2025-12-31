@@ -11,7 +11,7 @@ import com.qa.extentreportlistener.ExtentReportListener;
 
 @Listeners(ExtentReportListener.class)
 public class TestGeneratorTest extends Base {
-	
+
 	// Use Data provider for Dynamic
 
 	@DataProvider(name = "ruleDataForDynamicTemplate")
@@ -23,8 +23,8 @@ public class TestGeneratorTest extends Base {
 
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName, String schemaName, String tableName)
-			throws InterruptedException {
+			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
+			String schemaName, String tableName) throws InterruptedException {
 
 		ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType
 				+ " connection.");
@@ -33,9 +33,11 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,
+						connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,
+						connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
@@ -46,9 +48,9 @@ public class TestGeneratorTest extends Base {
 			throw e;
 		}
 	}
-	
-	// **************************************************************************** 
-	
+
+	// ****************************************************************************
+
 	@DataProvider(name = "ruleDataForWorkflowCreation")
 	public Object[][] ruleDataProviderWorkflow() {
 		return ExcelReader.readExcel("./src/test/resources/Database/ruleData.xlsx", "Workflow");
@@ -66,7 +68,8 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createWorkflowUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				page.createWorkflowUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,
+						connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
@@ -77,8 +80,6 @@ public class TestGeneratorTest extends Base {
 			throw e;
 		}
 	}
-	
-	
 
 	////// ************************** //////
 
@@ -91,7 +92,8 @@ public class TestGeneratorTest extends Base {
 
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName) throws InterruptedException {
+			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName)
+			throws InterruptedException {
 		ExtentManager.startTest("Create rule using default Import template for - " + ruleType + " | " + connectionType
 				+ " connection.");
 
@@ -99,11 +101,14 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,
+						connectionType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,
+						connectionType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("File")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,
+						connectionType, SourceConnectionName, TargetConnectionName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);

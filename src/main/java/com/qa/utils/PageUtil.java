@@ -87,8 +87,6 @@ public class PageUtil extends Base {
 			// Wait for any loader to disappear (only once)
 			isInvisibleLoader(driver,
 					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
-			isInvisibleLoader(driver,
-					By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
 
 			// Wait for element to be visible
 			return waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by))
@@ -123,6 +121,8 @@ public class PageUtil extends Base {
 			ExtentManager.logInfo("Clicking on " + label);
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
+			
+			waitForSeconds(1);
 
 			ExtentManager.logPass("Clicked on " + label);
 
@@ -134,10 +134,11 @@ public class PageUtil extends Base {
 
 
 	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
-		boolean isVisible = isDisplayed(driver, locator, 100);
+		boolean isVisible = isDisplayed(driver, locator, SHOTW);
 
 		if (isVisible) {
 			ExtentManager.logInfo(label + " is visible.");
+			waitForSeconds(1);
 		} else {
 			ExtentManager.logFail(label + " is NOT visible.");
 		}
@@ -182,6 +183,8 @@ public class PageUtil extends Base {
 	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
 		try {
+			validateElementIsVisible(driver, locator, label);
+			
 			ExtentManager.logInfo("Pressing ENTER on " + label);
 
 			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
@@ -358,12 +361,14 @@ public class PageUtil extends Base {
 			if (validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
 
 				clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
+
 				ExtentManager.logInfo(fieldName + " " + fieldType + " is validated...");
 			} else {
 				flag = false;
 			}
 		} catch (Exception e) {
 			ExtentManager.logError("error occured while :" + fieldName + " " + fieldType);
+			ExtentManager.logFail("error occured while :" + fieldName + " " + fieldType);
 		}
 		return flag;
 
@@ -384,6 +389,8 @@ public class PageUtil extends Base {
 				// Send keys
 				waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator))
 						.sendKeys(input);
+				
+				waitForSeconds(3); // wait to ENTER
 
 				ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
 			} else {
@@ -393,9 +400,42 @@ public class PageUtil extends Base {
 		} catch (Exception e) {
 			flag = false;
 			ExtentManager.logError("Error occurred while entering value on " + fieldName + " : " + e.getMessage());
+			ExtentManager.logFail("Error occurred while entering value on " + fieldName + " : " + e.getMessage());
 		}
 		return flag;
 	}
+	
+	public boolean sendKeysEnterToElement2(WebDriver driver, By locator, String fieldName) {
+		boolean flag = true;
+		try {
+			// Wait for loader to disappear
+			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+
+			// Validate element visibility
+			if (validateElementIsVisible(driver, locator, fieldName)) {
+
+				// Click before pressing ENTER
+				clickOnElement(driver, locator, fieldName, 20);
+
+				// Press ENTER
+				waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
+						.sendKeys(Keys.ENTER);
+
+				waitForSeconds(2); // wait after ENTER
+
+				ExtentManager.logInfo("Pressed ENTER on " + fieldName);
+			} else {
+				flag = false;
+			}
+
+		} catch (Exception e) {
+			flag = false;
+			ExtentManager.logError("Error occurred while pressing ENTER on " + fieldName + " : " + e.getMessage());
+			ExtentManager.logFail("Error occurred while pressing ENTER on " + fieldName + " : " + e.getMessage());
+		}
+		return flag;
+	}
+
 
 	// Error Capture Utility
 	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast-content')]");
@@ -451,14 +491,20 @@ public class PageUtil extends Base {
 
 	}
 
-	public boolean isElementDisplayed(WebDriver driver, By locator, int timeout) {
+	// 
+	public boolean isElementDisplayed(WebDriver driver, By locator, int timeoutInSeconds) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+			wait.pollingEvery(Duration.ofSeconds(60)); // check every 1 second
+			wait.ignoring(NoSuchElementException.class);
+
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 			return true;
+
 		} catch (TimeoutException e) {
 			return false;
 		}
 	}
+
 
 }

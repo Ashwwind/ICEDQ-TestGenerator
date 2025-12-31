@@ -34,9 +34,9 @@
 		<classes>
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
-					<exclude name="createRuleUsingDynamicTemplate" />
-					<exclude name="createRuleUsingImportTemplate" />
-					<include name="createWorkflowUsingDefaultDynamicTemplate"></include>
+					<include name="createRuleUsingDynamicTemplate" />
+					<include name="createRuleUsingImportTemplate" />
+					<include name="createWorkflowUsingDefaultDynamicTemplate" />
 				</methods>
 			</class>
 		</classes>
