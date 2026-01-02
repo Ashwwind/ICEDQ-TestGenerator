@@ -1,6 +1,7 @@
 com\qa\extentreportlistener\ExtentManager.class
 com\qa\pages\LoginPage.class
 com\qa\utils\PageUtil.class
+com\qa\pages\Test1.class
 com\qa\pages\Demo.class
 com\qa\extentreportlistener\ExtentReportListener.class
 com\qa\sendmail\SendMail.class

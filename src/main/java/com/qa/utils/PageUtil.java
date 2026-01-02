@@ -495,7 +495,7 @@ public class PageUtil extends Base {
 	public boolean isElementDisplayed(WebDriver driver, By locator, int timeoutInSeconds) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-			wait.pollingEvery(Duration.ofSeconds(60)); // check every 1 second
+			wait.pollingEvery(Duration.ofSeconds(40)); // check every 1 second
 			wait.ignoring(NoSuchElementException.class);
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

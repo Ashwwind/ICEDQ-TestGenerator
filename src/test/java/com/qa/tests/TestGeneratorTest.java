@@ -7,6 +7,9 @@ import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.pages.TestGeneratorPage;
 import com.qa.utils.ExcelReader;
+
+import annotations.XrayTest;
+
 import com.qa.extentreportlistener.ExtentReportListener;
 
 @Listeners(ExtentReportListener.class)
@@ -21,6 +24,7 @@ public class TestGeneratorTest extends Base {
 
 	// Creating a rule using default dynamic template
 
+	@XrayTest("NRR-41671")
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
