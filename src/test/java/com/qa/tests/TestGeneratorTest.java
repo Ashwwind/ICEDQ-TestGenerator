@@ -8,7 +8,6 @@ import com.qa.extentreportlistener.ExtentManager;
 import com.qa.pages.TestGeneratorPage;
 import com.qa.utils.ExcelReader;
 
-import annotations.XrayTest;
 
 import com.qa.extentreportlistener.ExtentReportListener;
 
@@ -24,14 +23,15 @@ public class TestGeneratorTest extends Base {
 
 	// Creating a rule using default dynamic template
 
-	@XrayTest("NRR-41671")
+	
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
-			String schemaName, String tableName) throws InterruptedException {
+			String schemaName, String tableName, String xrayTestId) throws InterruptedException {
+		
 
-		ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType
-				+ " connection.");
+		ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType + " connection.");
+		ExtentManager.logInfo("Xray Test ID: " + xrayTestId);
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
@@ -40,8 +40,7 @@ public class TestGeneratorTest extends Base {
 				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,
 						connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,
-						connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);

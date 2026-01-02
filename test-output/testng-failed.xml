@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Home Page Tests(failed)">
+    <classes>
+      <class name="com.qa.tests.HomePageTest">
+        <methods>
+          <include name="endSuite"/>
+          <include name="startSuite"/>
+          <include name="validateHomePage"/>
+        </methods>
+      </class> <!-- com.qa.tests.HomePageTest -->
+    </classes>
+  </test> <!-- Home Page Tests(failed) -->
   <test thread-count="5" name="Test Generator Page Tests(failed)">
     <classes>
       <class name="com.qa.tests.TestGeneratorTest">
         <methods>
           <include name="endSuite"/>
           <include name="startSuite"/>
-          <include name="createWorkflowUsingDefaultDynamicTemplate" invocation-numbers="0"/>
+          <include name="createRuleUsingDynamicTemplate" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- com.qa.tests.TestGeneratorTest -->
     </classes>

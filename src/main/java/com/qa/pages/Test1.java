@@ -161,14 +161,31 @@ public class Test1 extends PageUtil {
 	// Page method
 	// ============================
 
-	public boolean clickTestGenerator() {
+	
+	public boolean clickTestGenerator() { /// Clicking on Test Generator Module
 
-		return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
+		try {
+
+			return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
+
+		} catch (Exception e) {
+			ExtentManager.logFail("Element is not clicable. " + testGeneratorModue + e.getMessage());
+			return false;
+		}
+
 	}
 
 	public boolean clickOnRuleType(String ruleType) {
-		By locator = null;
-		switch (ruleType.toLowerCase()) {
+
+		if (ruleType == null || ruleType.trim().isEmpty()) {
+			ExtentManager.logFail("Rule type is null or empty");
+			return false;
+		}
+
+		By locator;
+
+		switch (ruleType.trim().toLowerCase()) {
+
 		case "checksum":
 			locator = selectChecksumWizard;
 			break;
@@ -186,44 +203,77 @@ public class Test1 extends PageUtil {
 			break;
 
 		default:
-			throw new IllegalArgumentException("InvaRule Type: " + ruleType);
+			ExtentManager.logFail("Invalid Rule Type provided: " + ruleType);
+			return false;
 		}
 
-		return clickOnField(driver, locator, ruleType + " rule type", "tab");
+		boolean isClicked = clickOnField(driver, locator, ruleType + " rule type", "tab");
 
+		if (!isClicked) {
+			ExtentManager.logFail("Failed to click on rule type: " + ruleType);
+		}
+
+		return isClicked;
 	}
 
 	// Click on the search field box
-	public boolean clickOnSearchField() {
-
-		return clickOnField(driver, clickSearchTemplateField, "'Search template' search field ", "search field");
+	public boolean clickOnSearchField() { /// Clicking on Search Template Field
+	    try {
+	        return clickOnField(driver, clickSearchTemplateField,
+	                "'Search template' search field", "search field");
+	    } catch (Exception e) {
+	        ExtentManager.logFail("Element is not clickable. "
+	                + clickSearchTemplateField + e.getMessage());
+	        return false;
+	    }
 	}
+
 
 	// Enter the data on the search field
 	public boolean enterOnSearchField(String templateName) {
 
-	    boolean flag = true;  // control whether to perform the search actions
-	    boolean isTextEntered = false;
-	    boolean isSearchClicked = false;
+		try {
+			boolean isTextEntered = sendkeysToElement1(driver, enterTemplateName, "Search template field", templateName);
 
-	    try {
-	        if (flag) { // only perform actions if flag is true
-	            isTextEntered = sendkeysToElement1(driver, enterTemplateName, templateName, templateName);
-	            isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "search button icon", "search button icon");
-	        }
-	    } catch (Exception e) {
-	        System.out.println("Entering wrong template name. " + e.getMessage());
-	        flag = false; // set flag false if exception occurs
-	    }
+			if (!isTextEntered) {
+				ExtentManager.logFail("Failed to enter template name: " + templateName);
+				return false;
+			}
 
-	    // Return true only if both actions succeed and flag is still true
-	    return flag && isTextEntered && isSearchClicked;
+			boolean isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "Search button icon", "button");
+
+			if (!isSearchClicked) {
+				ExtentManager.logFail("Failed to click Search button icon");
+				return false;
+			}
+
+			ExtentManager.logInfo("Search performed successfully for template: " + templateName);
+			return true;
+
+		} catch (Exception e) {
+			ExtentManager.logFail(
+					"Exception while performing search for template '" + templateName + "' : " + e.getMessage());
+			return false;
+		}
 	}
+
 
 	// Select the existing template form the list
 	public boolean selectExistingChecksumTemplate() {
 
-		return clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item", "serarch item");
+		try {
+			boolean flag = clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item",
+					"search item");
+
+			if (!flag) {
+				ExtentManager.logFail("Searched template item is not clickable.");
+			}
+			return flag;
+
+		} catch (Exception e) {
+			ExtentManager.logFail("Exception while selecting searched template item: " + e.getMessage());
+			return false;
+		}
 	}
 
 	public boolean clickOnWorkspaceField(String workspaceName) {

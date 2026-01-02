@@ -13,8 +13,14 @@ import com.qa.utils.PageUtil;
 public class TestGeneratorPage extends PageUtil {
 	private WebDriver driver;
 	public static final int waitTime = 6; // Global wait time
+	
+	public TestGeneratorPage(WebDriver driver) {
+		this.driver = driver;
+	}
 
-	// Locator
+	/** ----------------------  By locators ---------------------------------- **/
+	
+	
 	By testGeneratorModue = getElementLocator(prop.getProperty("home.testgenerator"));
 	// Checksum Rule
 	By selectChecksumWizard = getElementLocator(prop.getProperty("wizard.checksumRule"));
@@ -91,9 +97,6 @@ public class TestGeneratorPage extends PageUtil {
 
 	By loader = getElementLocator(prop.getProperty("loderIsDisplayed"));
 
-	public TestGeneratorPage(WebDriver driver) {
-		this.driver = driver;
-	}
 
 	public void executeStep(String stepName, Runnable action) {
 		try {

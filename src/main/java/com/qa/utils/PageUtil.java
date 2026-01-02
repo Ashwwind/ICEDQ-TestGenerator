@@ -109,11 +109,11 @@ public class PageUtil extends Base {
 	}
 
 	// Click on the web element
-	public static void clickOnElement(WebDriver driver, By by, String label, int timeout) {
+	public static boolean clickOnElement(WebDriver driver, By by, String label, int timeout) {
 		try {
 			if (!isDisplayed(driver, by, timeout)) {
 				ExtentManager.logInfo(label + " not displayed, retrying click");
-				//throw new RuntimeException("Element not visible");
+				return false;
 			}
 
 			validateElementIsVisible(driver, by, label);
@@ -121,17 +121,18 @@ public class PageUtil extends Base {
 			ExtentManager.logInfo("Clicking on " + label);
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
-			
+
 			waitForSeconds(1);
 
 			ExtentManager.logPass("Clicked on " + label);
 
+			return true;
+
 		} catch (Exception e) {
 			ExtentManager.logFail("Failed to click on " + label + " ➝ " + e.getMessage());
-			throw e; // 🔥 VERY IMPORTANT — let executeStep handle screenshot
+			return false;
 		}
 	}
-
 
 	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
 		boolean isVisible = isDisplayed(driver, locator, SHOTW);
@@ -354,88 +355,95 @@ public class PageUtil extends Base {
 
 	// Click the Checksum rule type from the wizard page.
 	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
-		boolean flag = true;
+
 		try {
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
 			if (validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
-
-				clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
-
-				ExtentManager.logInfo(fieldName + " " + fieldType + " is validated...");
-			} else {
-				flag = false;
+				return clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
+				
+			}else {
+				return false;
 			}
-		} catch (Exception e) {
-			ExtentManager.logError("error occured while :" + fieldName + " " + fieldType);
-			ExtentManager.logFail("error occured while :" + fieldName + " " + fieldType);
-		}
-		return flag;
+				
 
+		} catch (Exception e) {
+			ExtentManager.logError("Error while clicking " + fieldName + " " + fieldType + ": " + e.getMessage());
+			return false;
+		}
 	}
 
+
 	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
-		boolean flag = true;
 		try {
 			// Wait for loader to disappear
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
 			// Validate element visibility
-			if (validateElementIsVisible(driver, locator, fieldName)) {
+			if (!validateElementIsVisible(driver, locator, fieldName)) {
+	            ExtentManager.logInfo(fieldName + " is not visible");
+	            return false;
+	        }
 
-				// Click before sending keys
-				clickOnElement(driver, locator, fieldName, 20);
-
-				// Send keys
-				waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator))
-						.sendKeys(input);
-				
-				waitForSeconds(3); // wait to ENTER
-
-				ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
-			} else {
-				flag = false;
+			// Click before sending keys
+			boolean clicked = clickOnElement(driver, locator, fieldName, 20);
+			if (!clicked) {
+				ExtentManager.logInfo("Failed to click on " + fieldName);
+				return false;
 			}
 
+			// Send keys
+			waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
+
+			waitForSeconds(3); // wait to ENTER
+
+			ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
+			return true;
+
 		} catch (Exception e) {
-			flag = false;
-			ExtentManager.logError("Error occurred while entering value on " + fieldName + " : " + e.getMessage());
-			ExtentManager.logFail("Error occurred while entering value on " + fieldName + " : " + e.getMessage());
+			ExtentManager.logError("Exception while entering value on " + fieldName + " : " + e.getMessage());
+			return false;
 		}
-		return flag;
 	}
 	
 	public boolean sendKeysEnterToElement2(WebDriver driver, By locator, String fieldName) {
-		boolean flag = true;
+
 		try {
 			// Wait for loader to disappear
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
 			// Validate element visibility
-			if (validateElementIsVisible(driver, locator, fieldName)) {
-
-				// Click before pressing ENTER
-				clickOnElement(driver, locator, fieldName, 20);
-
-				// Press ENTER
-				waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
-						.sendKeys(Keys.ENTER);
-
-				waitForSeconds(2); // wait after ENTER
-
-				ExtentManager.logInfo("Pressed ENTER on " + fieldName);
-			} else {
-				flag = false;
+			if (!validateElementIsVisible(driver, locator, fieldName)) {
+				ExtentManager.logInfo(fieldName + " is not visible");
+				return false;
 			}
 
+			// Click before pressing ENTER
+			boolean clicked = clickOnElement(driver, locator, fieldName, 20);
+			if (!clicked) {
+				ExtentManager.logInfo("Failed to click on " + fieldName);
+				return false;
+
+			}
+
+			// Press ENTER
+			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
+			.sendKeys(Keys.ENTER);
+
+			waitForSeconds(2); // wait after ENTER
+
+
+			ExtentManager.logInfo("Pressed ENTER on " + fieldName);
+
+			return true;
+
 		} catch (Exception e) {
-			flag = false;
-			ExtentManager.logError("Error occurred while pressing ENTER on " + fieldName + " : " + e.getMessage());
-			ExtentManager.logFail("Error occurred while pressing ENTER on " + fieldName + " : " + e.getMessage());
+			ExtentManager.logError("Exception while pressing ENTER on " + fieldName + " : " + e.getMessage());
+			return false;
 		}
-		return flag;
 	}
 
+	
 
 	// Error Capture Utility
 	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast-content')]");
