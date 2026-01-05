@@ -32,7 +32,7 @@
 
 	<test name="Test Generator Page Tests">
 		<classes>
-			<class name="com.qa.tests.TestGeneratorTest">
+			<class name="com.qa.tests.Test123">
 				<methods>
 					<include name="createRuleUsingDynamicTemplate" />
 					<exclude name="createRuleUsingImportTemplate" />

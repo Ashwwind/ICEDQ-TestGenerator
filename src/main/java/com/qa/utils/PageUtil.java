@@ -360,6 +360,7 @@ public class PageUtil extends Base {
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
 			if (validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
+				
 				return clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
 				
 			}else {

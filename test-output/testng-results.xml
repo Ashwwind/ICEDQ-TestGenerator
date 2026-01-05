@@ -1,105 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="13" passed="6" failed="5" skipped="0">
+<testng-results ignored="0" total="11" passed="10" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-02T18:19:35 IST" name="Suite" finished-at="2026-01-02T18:22:56 IST" duration-ms="200546">
+  <suite started-at="2026-01-05T19:35:06 IST" name="Suite" finished-at="2026-01-05T19:39:22 IST" duration-ms="255926">
     <groups>
     </groups>
-    <test started-at="2026-01-02T18:19:35 IST" name="Login Tests" finished-at="2026-01-02T18:19:39 IST" duration-ms="3681">
+    <test started-at="2026-01-05T19:35:06 IST" name="Login Tests" finished-at="2026-01-05T19:35:09 IST" duration-ms="2701">
       <class name="com.qa.tests.LoginTest">
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-02T18:19:35 IST" name="validateLoginPage" finished-at="2026-01-02T18:19:36 IST" duration-ms="659" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-05T19:35:06 IST" name="validateLoginPage" finished-at="2026-01-05T19:35:07 IST" duration-ms="568" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-02T18:19:36 IST" name="Login" finished-at="2026-01-02T18:19:39 IST" duration-ms="2974" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-05T19:35:07 IST" name="Login" finished-at="2026-01-05T19:35:09 IST" duration-ms="2101" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
       </class> <!-- com.qa.tests.LoginTest -->
     </test> <!-- Login Tests -->
-    <test started-at="2026-01-02T18:19:39 IST" name="Home Page Tests" finished-at="2026-01-02T18:19:40 IST" duration-ms="326">
+    <test started-at="2026-01-05T19:35:09 IST" name="Home Page Tests" finished-at="2026-01-05T19:35:10 IST" duration-ms="469">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-01-02T18:19:39 IST" name="validateHomePage" finished-at="2026-01-02T18:19:39 IST" duration-ms="36" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"}
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2e666287e0f678ed90790752b134bdf1, findElement {using=xpath, value=//img[contains(@src,'logo') or contains(@alt,'iceDQ')]}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52862}, goog:processID: 334048, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52862/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2e666287e0f678ed90790752b134bdf1]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//img[contains(@src,'logo') or contains(@alt,'iceDQ')]"}
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2e666287e0f678ed90790752b134bdf1, findElement {using=xpath, value=//img[contains(@src,'logo') or contains(@alt,'iceDQ')]}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52862}, goog:processID: 334048, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52862/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2e666287e0f678ed90790752b134bdf1
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-at com.qa.pages.HomePage.verifyLogoIsDisplayed(HomePage.java:90)
-at com.qa.pages.HomePage.homepageValidation(HomePage.java:31)
-at com.qa.tests.HomePageTest.validateHomePage(HomePageTest.java:15)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-01-05T19:35:09 IST" name="validateHomePage" finished-at="2026-01-05T19:35:10 IST" duration-ms="467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
     </test> <!-- Home Page Tests -->
-    <test started-at="2026-01-02T18:19:40 IST" name="Test Generator Page Tests" finished-at="2026-01-02T18:22:56 IST" duration-ms="196208">
-      <class name="com.qa.tests.TestGeneratorTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:19:31 IST" name="startSuite" finished-at="2026-01-02T18:19:35 IST" duration-ms="4434" status="PASS">
+    <test started-at="2026-01-05T19:35:10 IST" name="Test Generator Page Tests" finished-at="2026-01-05T19:39:22 IST" duration-ms="252441">
+      <class name="com.qa.tests.Test123">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:35:03 IST" name="startSuite" finished-at="2026-01-05T19:35:06 IST" duration-ms="3385" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:19:40 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:20:29 IST" duration-ms="48376" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:35:10 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:36:11 IST" duration-ms="60960" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -152,51 +84,10 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
-            <message>
-              <![CDATA[Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:124)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:40)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:20:29 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:21:18 IST" duration-ms="49096" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:36:11 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:37:20 IST" duration-ms="68318" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -249,51 +140,10 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
               </value>
             </param>
           </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
-            <message>
-              <![CDATA[Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:124)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:40)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:21:18 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:22:04 IST" duration-ms="45398" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:37:20 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:38:15 IST" duration-ms="55405" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -346,51 +196,10 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
               </value>
             </param>
           </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
-            <message>
-              <![CDATA[Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:124)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:40)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
-... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:22:04 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:22:55 IST" duration-ms="51449" status="FAIL">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:38:15 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:39:22 IST" duration-ms="66902" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -443,15 +252,15 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
               </value>
             </param>
           </params>
-          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public]]>
+              <![CDATA[Rule name mismatch. Expected: PUSHDOWN_brg.staff but found: PUSHDOWN_brg staff]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Source Dataset: Database/Postgresql-without-jdbc-SysConn/public
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:124)
-at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultDynamicTemplate(TestGeneratorPage.java:167)
-at com.qa.tests.TestGeneratorTest.createRuleUsingDynamicTemplate(TestGeneratorTest.java:40)
+              <![CDATA[java.lang.AssertionError: Rule name mismatch. Expected: PUSHDOWN_brg.staff but found: PUSHDOWN_brg staff
+at com.qa.pages.Test1.clickOnPublishedRule(Test1.java:699)
+at com.qa.pages.Test1.createRuleUsingDefaultDynamicTemplate(Test1.java:154)
+at com.qa.tests.Test123.createRuleUsingDynamicTemplate(Test123.java:36)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -478,16 +287,13 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.RuntimeException: Cannot fetch the schema for inactive connection | No crawl data found for this connector. | 
-at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
-... 28 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:22:56 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:22:56 IST" duration-ms="2" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:39:22 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:39:22 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -543,7 +349,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:22:56 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:22:56 IST" duration-ms="2" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:39:22 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:39:22 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -599,7 +405,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:22:56 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:22:56 IST" duration-ms="11" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:39:22 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:39:22 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -655,7 +461,7 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:22:56 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-02T18:22:56 IST" duration-ms="1" status="PASS">
+        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:39:22 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-05T19:39:22 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -711,11 +517,11 @@ at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:108)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-02T18:22:56 IST" name="endSuite" finished-at="2026-01-02T18:23:11 IST" duration-ms="15568" status="PASS">
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.Test123@30c15d8b]" started-at="2026-01-05T19:39:22 IST" name="endSuite" finished-at="2026-01-05T19:39:31 IST" duration-ms="8674" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->
-      </class> <!-- com.qa.tests.TestGeneratorTest -->
+      </class> <!-- com.qa.tests.Test123 -->
     </test> <!-- Test Generator Page Tests -->
   </suite> <!-- Suite -->
 </testng-results>
