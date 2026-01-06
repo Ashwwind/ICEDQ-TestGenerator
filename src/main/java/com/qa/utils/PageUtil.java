@@ -26,6 +26,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
+import com.qa.pages.Test1;
+import com.qa.pages.TestGeneratorPage.FlowAbortException;
 
 public class PageUtil extends Base {
 
@@ -116,7 +118,7 @@ public class PageUtil extends Base {
 				return false;
 			}
 
-			validateElementIsVisible(driver, by, label);
+			//validateElementIsVisible(driver, by, label);
 
 			ExtentManager.logInfo("Clicking on " + label);
 
@@ -241,7 +243,7 @@ public class PageUtil extends Base {
 	}
 
 	// Navigate to any URL
-	public void goTo(String url) {
+	public static void goTo(String url) {
 		driver.navigate().to(url);
 	}
 
@@ -354,25 +356,68 @@ public class PageUtil extends Base {
 	}
 
 	// Click the Checksum rule type from the wizard page.
-	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
 
+	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
+		String label = fieldName + " " + fieldType;
 		try {
+			// 0) Pre-action error guard (in case page already has a blocking error)
+			//guardAndAbortOnUiError(driver, "Pre-Click: " + label);
+
+			// 1) Wait for loaders/spinners to disappear
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
-			if (validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
-				
-				return clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
-				
-			}else {
+			// 2) Validate visibility of element
+			if (!validateElementIsVisible(driver, locator, label)) {
+				ExtentManager.logError(label + " is not visible on the page.");
+				// Check if a toast appeared explaining why it's not visible
+				guardAndAbortOnUiError(driver, "Visibility Check: " + label);
 				return false;
 			}
-				
 
+			// 3) Click with retries/timeouts
+			boolean clicked = clickOnElement(driver, locator, label, 50);
+			if (!clicked) {
+				// If click failed, see if an error toast told us why
+				guardAndAbortOnUiError(driver, "Click Failure: " + label);
+				ExtentManager.logError("Failed to click " + label);
+				return false;
+			}
+
+			// 4) Post-action error guard (e.g., wizard returns a toast error)
+			guardAndAbortOnUiError(driver, "Post-Click: " + label);
+
+			return true;
+
+		} catch (FlowAbortException fae) {
+			// Already handled and aborted
+			throw fae;
 		} catch (Exception e) {
-			ExtentManager.logError("Error while clicking " + fieldName + " " + fieldType + ": " + e.getMessage());
+			ExtentManager.logError("Error while clicking " + label + ": " + e.getMessage());
+			// Final safety net—if any toast appeared during unexpected exception
+			guardAndAbortOnUiError(driver, "Exception during Click: " + label);
 			return false;
 		}
 	}
+	
+	/**
+	 * Checks for any UI error toast(s). If found: - logs each error, - captures a
+	 * screenshot, - navigates to Home (optional), - aborts the entire flow.
+	 */
+	
+	public void guardAndAbortOnUiError(WebDriver driver, String methodName) {
+		String errors = captureUIErrorIfPresent(driver);
+		if (errors != null && !errors.trim().isEmpty()) {
+			// 📸 Screenshot included in captureUIErrorIfPresent only if toast exists
+			ExtentManager.logFail("Error detected during: " + methodName + " | Errors: " + errors);
+
+			// 🚪 Optional: navigate to home, if this is your reset strategy
+			Test1.navigatHomePage();
+
+			// 🔥 STOP FLOW
+			throw new FlowAbortException("Flow aborted at '" + methodName + "' due to UI errors: " + errors, null);
+		}
+	}
+
 
 
 	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
@@ -394,7 +439,14 @@ public class PageUtil extends Base {
 			}
 
 			// Send keys
-			waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
+			//waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
+			
+			// Wait until the element is visible and enabled
+	        WebElement inputField = waitForElements(driver, 50).until(ExpectedConditions.elementToBeClickable(locator));
+
+	        // Clear any existing text before entering new text
+	        inputField.clear();
+	        inputField.sendKeys(input);
 
 			waitForSeconds(3); // wait to ENTER
 
@@ -428,8 +480,11 @@ public class PageUtil extends Base {
 			}
 
 			// Press ENTER
-			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
-			.sendKeys(Keys.ENTER);
+//			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
+//			.sendKeys(Keys.ENTER);
+			// Wait until the element is clickable, then press ENTER
+	        WebElement element = waitForElements(driver, 50).until(ExpectedConditions.elementToBeClickable(locator));
+	        element.sendKeys(Keys.ENTER);
 
 			waitForSeconds(2); // wait after ENTER
 
@@ -443,32 +498,38 @@ public class PageUtil extends Base {
 			return false;
 		}
 	}
+///////////////////////////////////////////////////////////
 
-	
-
-	// Error Capture Utility
+	// Toast locator (same as yours)
 	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast-content')]");
 
-	// Check if any error toast is present
+	// Non-throwing check: returns true if any toast is visible within 1s
 	public static boolean isErrorToastPresent(WebDriver driver) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 			List<WebElement> toasts = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TOAST_MESSAGE));
-			return !toasts.isEmpty();
+			return toasts != null && !toasts.isEmpty();
 		} catch (TimeoutException e) {
+			return false;
+		} catch (Exception e) {
+			ExtentManager.logError("Error while checking toast presence: " + e.getMessage());
 			return false;
 		}
 	}
 
-	// Capture UI errors if present
+	/**
+	 * Captures UI error toast(s) text if present within 3s. Returns error string if
+	 * found, otherwise null. Takes screenshot ONLY when toast(s) appear.
+	 */
 	public static String captureUIErrorIfPresent(WebDriver driver) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-
 			List<WebElement> toasts = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TOAST_MESSAGE));
+			if (toasts == null || toasts.isEmpty()) {
+				return null;
+			}
 
 			StringBuilder errors = new StringBuilder();
-
 			for (WebElement toast : toasts) {
 				String msg = toast.getText().trim();
 				if (!msg.isEmpty()) {
@@ -484,8 +545,12 @@ public class PageUtil extends Base {
 
 		} catch (TimeoutException e) {
 			return null; // No toast appeared
+		} catch (Exception e) {
+			ExtentManager.logError("Error while capturing UI toast: " + e.getMessage());
+			return null;
 		}
 	}
+
 
 	// Scrolls the page
 	public void scrollToElement(WebDriver driver, WebElement element) {
@@ -500,7 +565,7 @@ public class PageUtil extends Base {
 
 	}
 
-	// 
+	// Calling again after buffer time.
 	public boolean isElementDisplayed(WebDriver driver, By locator, int timeoutInSeconds) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));

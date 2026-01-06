@@ -1,8 +1,6 @@
 package com.qa.pages;
 
 import java.time.Duration;
-
-import org.apache.commons.collections4.functors.CatchAndRethrowClosure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
+import com.qa.pages.TestGeneratorPage.FlowAbortException;
 import com.qa.utils.PageUtil;
 
 public class Test1 extends PageUtil {
@@ -96,6 +95,39 @@ public class Test1 extends PageUtil {
 	public Test1(WebDriver driver) {
 		this.driver = driver;
 	}
+	
+	/// Common Method ///
+	
+	// Common method for take screenshot and navigate the home page.
+	
+
+	public void abortCurrentFlow(String methodName, Exception e) {
+		try {
+			// Attempt to capture toast (if any)
+			String errors = captureUIErrorIfPresent(driver);
+			if (errors != null && !errors.trim().isEmpty()) {
+				ExtentManager.logFail("UI Error(s) during abort: " + errors);
+				// Screenshot already taken inside captureUIErrorIfPresent
+			} else {
+				// 📸 fallback screenshot for non-toast failures
+				ExtentManager.captureScreenshot(methodName.replace(" ", "_") + "_Failure");
+			}
+		} catch (Exception capEx) {
+			ExtentManager.logError("Failed to capture UI error during abort: " + capEx.getMessage());
+			ExtentManager.captureScreenshot(methodName.replace(" ", "_") + "_Failure_Fallback");
+		}
+
+		// 🚪 Navigate to Home (if this is your reset strategy)
+		try {
+			navigatHomePage();
+		} catch (Exception navEx) {
+			ExtentManager.logError("Navigation to Home failed during abort: " + navEx.getMessage());
+		}
+
+		// 🔥 STOP FLOW IMMEDIATELY
+		throw new FlowAbortException("Flow aborted: " + methodName, e);
+	}
+
 
 	/// ************* ///
 	// Default Dynamic Template
@@ -162,18 +194,37 @@ public class Test1 extends PageUtil {
 	// ============================
 
 	
-	public boolean clickTestGenerator() { /// Clicking on Test Generator Module
 
+	public boolean clickTestGenerator() { // Clicking on Test Generator Module
+		final String method = "clickTestGenerator";
 		try {
+			// Optional: pre-guard for existing errors on the page
+			guardAndAbortOnUiError(driver, method + " (Pre)");
 
-			return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
+			boolean ok = clickOnField(driver, testGeneratorModue, "Test Generator", "button");
+			if (!ok) {
+				ExtentManager.logFail("Element is not clickable. " + testGeneratorModue);
+				// Final check if toast appeared
+				guardAndAbortOnUiError(driver, method + " (Click Failed)");
+				return false;
+			}
 
+			// Optional: post-guard for any immediate toast after navigation
+			guardAndAbortOnUiError(driver, method + " (Post)");
+
+			return true;
+
+		} catch (FlowAbortException e) {
+			// 📸 already captured in guard, and navigated (if you call navigatHomePage in guard)
+			abortCurrentFlow(method + " Error: " + testGeneratorModue, e); // keeps your existing flow
+			return false;
 		} catch (Exception e) {
-			ExtentManager.logFail("Element is not clicable. " + testGeneratorModue + e.getMessage());
+			ExtentManager.logFail("Unexpected error. " + testGeneratorModue + " | " + e.getMessage());
+			abortCurrentFlow(method + " Error: " + testGeneratorModue, e);
 			return false;
 		}
-
 	}
+
 
 	public boolean clickOnRuleType(String ruleType) {
 
@@ -463,6 +514,9 @@ public class Test1 extends PageUtil {
 
 		} catch (Exception e) {
 			ExtentManager.logFail("Failed to select source dataset: " + e.getMessage());
+			
+			abortCurrentFlow("selectionSourceDataset", e);
+	
 			return false;
 		}
 
@@ -696,7 +750,7 @@ public class Test1 extends PageUtil {
 			
 			waitForSeconds(2);
 
-			// Validation
+			// Rule name validation
 			if (!ruleNamePublishPage.equals(ruleNameDataTestingPage)) {
 				throw new AssertionError("Rule name mismatch. Expected: " + ruleNamePublishPage
 						+ " but found: " + ruleNameDataTestingPage);
@@ -725,7 +779,7 @@ public class Test1 extends PageUtil {
 	}
 
 	// Go to the Data Testing
-	public void navigatHomePage() { // Go to the Data Testing
+	public static void navigatHomePage() { // Go to the Data Testing
 		goTo(ConfigReader.getProperty("homePageUrl"));
 	}
 	
