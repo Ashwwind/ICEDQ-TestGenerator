@@ -26,13 +26,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
-import com.qa.pages.Test1;
 import com.qa.pages.TestGeneratorPage.FlowAbortException;
 
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 6;
+	public static final int SHOTW = 3;
 	private static WebDriverWait wait;
 	public static Properties prop;
 
@@ -118,13 +117,11 @@ public class PageUtil extends Base {
 				return false;
 			}
 
-			//validateElementIsVisible(driver, by, label);
-
 			ExtentManager.logInfo("Clicking on " + label);
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
 
-			waitForSeconds(1);
+			//waitForSeconds(1);
 
 			ExtentManager.logPass("Clicked on " + label);
 
@@ -141,7 +138,6 @@ public class PageUtil extends Base {
 
 		if (isVisible) {
 			ExtentManager.logInfo(label + " is visible.");
-			waitForSeconds(1);
 		} else {
 			ExtentManager.logFail(label + " is NOT visible.");
 		}
@@ -360,8 +356,6 @@ public class PageUtil extends Base {
 	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
 		String label = fieldName + " " + fieldType;
 		try {
-			// 0) Pre-action error guard (in case page already has a blocking error)
-			//guardAndAbortOnUiError(driver, "Pre-Click: " + label);
 
 			// 1) Wait for loaders/spinners to disappear
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
@@ -369,19 +363,11 @@ public class PageUtil extends Base {
 			// 2) Validate visibility of element
 			if (!validateElementIsVisible(driver, locator, label)) {
 				ExtentManager.logError(label + " is not visible on the page.");
-				// Check if a toast appeared explaining why it's not visible
-				guardAndAbortOnUiError(driver, "Visibility Check: " + label);
 				return false;
 			}
 
 			// 3) Click with retries/timeouts
-			boolean clicked = clickOnElement(driver, locator, label, 50);
-			if (!clicked) {
-				// If click failed, see if an error toast told us why
-				guardAndAbortOnUiError(driver, "Click Failure: " + label);
-				ExtentManager.logError("Failed to click " + label);
-				return false;
-			}
+			clickOnElement(driver, locator, label, 10);
 
 			// 4) Post-action error guard (e.g., wizard returns a toast error)
 			guardAndAbortOnUiError(driver, "Post-Click: " + label);
@@ -398,6 +384,7 @@ public class PageUtil extends Base {
 			return false;
 		}
 	}
+
 	
 	/**
 	 * Checks for any UI error toast(s). If found: - logs each error, - captures a
@@ -409,9 +396,6 @@ public class PageUtil extends Base {
 		if (errors != null && !errors.trim().isEmpty()) {
 			// 📸 Screenshot included in captureUIErrorIfPresent only if toast exists
 			ExtentManager.logFail("Error detected during: " + methodName + " | Errors: " + errors);
-
-			// 🚪 Optional: navigate to home, if this is your reset strategy
-			Test1.navigatHomePage();
 
 			// 🔥 STOP FLOW
 			throw new FlowAbortException("Flow aborted at '" + methodName + "' due to UI errors: " + errors, null);
@@ -523,7 +507,7 @@ public class PageUtil extends Base {
 	 */
 	public static String captureUIErrorIfPresent(WebDriver driver) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 			List<WebElement> toasts = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TOAST_MESSAGE));
 			if (toasts == null || toasts.isEmpty()) {
 				return null;

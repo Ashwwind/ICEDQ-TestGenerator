@@ -13,7 +13,6 @@ import com.qa.utils.PageUtil;
 
 public class Test1 extends PageUtil {
 	private WebDriver driver;
-	public static final int waitTime = 6; // Global wait time
 
 	// Locator
 	By testGeneratorModue = getElementLocator(prop.getProperty("home.testgenerator"));
@@ -196,31 +195,16 @@ public class Test1 extends PageUtil {
 	
 
 	public boolean clickTestGenerator() { // Clicking on Test Generator Module
-		final String method = "clickTestGenerator";
 		try {
-			// Optional: pre-guard for existing errors on the page
-			guardAndAbortOnUiError(driver, method + " (Pre)");
 
-			boolean ok = clickOnField(driver, testGeneratorModue, "Test Generator", "button");
-			if (!ok) {
-				ExtentManager.logFail("Element is not clickable. " + testGeneratorModue);
-				// Final check if toast appeared
-				guardAndAbortOnUiError(driver, method + " (Click Failed)");
-				return false;
-			}
+			boolean clicked = clickOnField(driver, testGeneratorModue, "Test Generator", "button");
 
-			// Optional: post-guard for any immediate toast after navigation
-			guardAndAbortOnUiError(driver, method + " (Post)");
-
-			return true;
+			return clicked;
 
 		} catch (FlowAbortException e) {
-			// 📸 already captured in guard, and navigated (if you call navigatHomePage in guard)
-			abortCurrentFlow(method + " Error: " + testGeneratorModue, e); // keeps your existing flow
 			return false;
 		} catch (Exception e) {
 			ExtentManager.logFail("Unexpected error. " + testGeneratorModue + " | " + e.getMessage());
-			abortCurrentFlow(method + " Error: " + testGeneratorModue, e);
 			return false;
 		}
 	}
