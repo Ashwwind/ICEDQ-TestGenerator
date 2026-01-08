@@ -357,30 +357,58 @@ public class PageUtil extends Base {
 		String label = fieldName + " " + fieldType;
 		try {
 
-			// 1) Wait for loaders/spinners to disappear
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
-			// 2) Validate visibility of element
 			if (!validateElementIsVisible(driver, locator, label)) {
 				ExtentManager.logError(label + " is not visible on the page.");
 				return false;
 			}
 
-			// 3) Click with retries/timeouts
 			clickOnElement(driver, locator, label, 10);
 
-			// 4) Post-action error guard (e.g., wizard returns a toast error)
+			
 			guardAndAbortOnUiError(driver, "Post-Click: " + label);
 
 			return true;
 
 		} catch (FlowAbortException fae) {
-			// Already handled and aborted
 			throw fae;
 		} catch (Exception e) {
 			ExtentManager.logError("Error while clicking " + label + ": " + e.getMessage());
 			// Final safety net—if any toast appeared during unexpected exception
-			guardAndAbortOnUiError(driver, "Exception during Click: " + label);
+			//guardAndAbortOnUiError(driver, "Exception during Click: " + label);
+			return false;
+		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean clickOnField1(WebDriver driver, By locator, String fieldName, String fieldType, boolean expected) {
+		String label = fieldName + " " + fieldType;
+		try {
+
+			// Check the loader
+			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+
+			// Wait for the element to be visible
+			if (!validateElementIsVisible(driver, locator, label) || expected) {
+				ExtentManager.logError(label + " is not visible on the page.");
+				return false;
+			}
+
+			clickOnElement(driver, locator, label, 10);
+
+			
+			guardAndAbortOnUiError(driver, "Post-Click: " + label);
+
+			return true;
+
+		} catch (FlowAbortException fae) {
+			throw fae;
+		} catch (Exception e) {
+			ExtentManager.logError("Error while clicking " + label + ": " + e.getMessage());
+			// Final safety net—if any toast appeared during unexpected exception
+			//guardAndAbortOnUiError(driver, "Exception during Click: " + label);
 			return false;
 		}
 	}

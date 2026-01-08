@@ -15,6 +15,7 @@ public class LoginPage extends PageUtil {
 	By passwordField = PageUtil.getElementLocator(prop.getProperty("login.password"));
 	By loginButton = PageUtil.getElementLocator(prop.getProperty("login.submit"));
 
+
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
