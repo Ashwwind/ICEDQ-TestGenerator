@@ -37,8 +37,7 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,
-						connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
 				//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			}

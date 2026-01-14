@@ -27,6 +27,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
 
+
+
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
@@ -355,22 +357,33 @@ public class PageUtil extends Base {
 
 	// Click the Checksum rule type from the wizard page.
 	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
+	    try {
+	        // 1️⃣ Wait for any initial loader to disappear
+	        By loader = By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div");
+	        isInvisibleLoader(driver, loader);
 
-		try {
-			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+	        // 2️⃣ Validate element is visible
+	        if (!validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
+	            ExtentManager.logError(fieldName + " " + fieldType + " is not visible.");
+	            return false;
+	        }
 
-			if (validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
-				return clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
-				
-			}else {
-				return false;
-			}
-				
+	        // 3️⃣ Click the element
+	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
+	        if (!isClicked) {
+	            ExtentManager.logError("Failed to click " + fieldName + " " + fieldType);
+	            return false;
+	        }
 
-		} catch (Exception e) {
-			ExtentManager.logError("Error while clicking " + fieldName + " " + fieldType + ": " + e.getMessage());
-			return false;
-		}
+	        // 4️⃣ Wait for loader after click
+	        isInvisibleLoader(driver, loader);
+
+	        return true;
+
+	    } catch (Exception e) {
+	        ExtentManager.logError("Error while clicking " + fieldName + " " + fieldType + ": " + e.getMessage());
+	        return false;
+	    }
 	}
 
 
