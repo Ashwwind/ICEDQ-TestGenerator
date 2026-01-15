@@ -28,7 +28,6 @@ import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
 
 
-
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);

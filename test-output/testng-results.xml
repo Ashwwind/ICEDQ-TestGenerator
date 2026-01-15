@@ -1,493 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="14" passed="12" failed="0" skipped="0">
+<testng-results ignored="4" total="11" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-14T17:47:03 IST" name="Suite" finished-at="2026-01-14T17:47:24 IST" duration-ms="20578">
+  <suite started-at="2026-01-15T12:54:46 IST" name="Suite" finished-at="2026-01-15T12:56:52 IST" duration-ms="125630">
     <groups>
     </groups>
-    <test started-at="2026-01-14T17:47:03 IST" name="Login Tests" finished-at="2026-01-14T17:47:05 IST" duration-ms="2435">
+    <test started-at="2026-01-15T12:54:46 IST" name="Login Tests" finished-at="2026-01-15T12:54:49 IST" duration-ms="2559">
       <class name="com.qa.tests.LoginTest">
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-14T17:47:03 IST" name="validateLoginPage" finished-at="2026-01-14T17:47:04 IST" duration-ms="561" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-15T12:54:46 IST" name="validateLoginPage" finished-at="2026-01-15T12:54:47 IST" duration-ms="757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-14T17:47:04 IST" name="Login" finished-at="2026-01-14T17:47:05 IST" duration-ms="1841" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-15T12:54:47 IST" name="Login" finished-at="2026-01-15T12:54:49 IST" duration-ms="1776" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
       </class> <!-- com.qa.tests.LoginTest -->
     </test> <!-- Login Tests -->
-    <test started-at="2026-01-14T17:47:06 IST" name="Home Page Tests" finished-at="2026-01-14T17:47:06 IST" duration-ms="458">
+    <test started-at="2026-01-15T12:54:49 IST" name="Home Page Tests" finished-at="2026-01-15T12:54:49 IST" duration-ms="456">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-01-14T17:47:06 IST" name="validateHomePage" finished-at="2026-01-14T17:47:06 IST" duration-ms="456" status="PASS">
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-01-15T12:54:49 IST" name="validateHomePage" finished-at="2026-01-15T12:54:49 IST" duration-ms="454" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
     </test> <!-- Home Page Tests -->
-    <test started-at="2026-01-14T17:47:06 IST" name="Test Generator Page Tests" finished-at="2026-01-14T17:47:07 IST" duration-ms="492">
-      <class name="com.qa.tests.TestGeneratorTest">
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-UserConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41671]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[recon]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Specify Column for Diff - Full Data Compare Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-UserConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41672]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41673]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pushdown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Database]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Postgresql-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[public]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41674]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[checksum]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Compare Record Counts - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Redshift-without-jdbc-UserConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[regression_database]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41675]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[recon]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Specify Column for Diff - Full Data Compare Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Redshift-without-jdbc-UserConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[regression_database]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41676]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validation]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Redshift-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[regression_database]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41677]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-        <test-method signature="createRuleUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@6b2ea799]" started-at="2026-01-14T17:47:07 IST" name="createRuleUsingDynamicTemplate" data-provider="ruleDataForDynamicTemplate" finished-at="2026-01-14T17:47:07 IST" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pushdown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test_Generator-WIP]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AD-Test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Cloud Data Warehouse]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Redshift-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Redshift-without-jdbc-SysConn]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[regression_database]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[staff]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[NRR-41678]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRuleUsingDynamicTemplate -->
-      </class> <!-- com.qa.tests.TestGeneratorTest -->
+    <test started-at="2026-01-15T12:54:49 IST" name="Test Generator Page Tests" finished-at="2026-01-15T12:54:49 IST" duration-ms="1">
     </test> <!-- Test Generator Page Tests -->
-    <test started-at="2026-01-14T17:47:07 IST" name="Template Page Tests" finished-at="2026-01-14T17:47:24 IST" duration-ms="16890">
+    <test started-at="2026-01-15T12:54:49 IST" name="Template Page Tests" finished-at="2026-01-15T12:56:52 IST" duration-ms="122334">
       <class name="com.qa.tests.TemplatePageTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@1d296da]" started-at="2026-01-14T17:47:00 IST" name="startSuite" finished-at="2026-01-14T17:47:03 IST" duration-ms="3514" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:54:36 IST" name="startSuite" finished-at="2026-01-15T12:54:46 IST" duration-ms="10575" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="createTemplate()[pri:0, instance:com.qa.tests.TemplatePageTest@1d296da]" started-at="2026-01-14T17:47:07 IST" name="createTemplate" finished-at="2026-01-14T17:47:24 IST" duration-ms="16888" status="PASS">
+        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:54:50 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:55:24 IST" duration-ms="33820" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Dynamic]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Checksum]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Compare Record Counts - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Checksum template - using dynamic template]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My default dynamic template]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createTemplate -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@1d296da]" started-at="2026-01-14T17:47:24 IST" name="endSuite" finished-at="2026-01-14T17:47:32 IST" duration-ms="8209" status="PASS">
+        </test-method> <!-- createTemplateUsingDynamicTemplate -->
+        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:55:24 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:55:51 IST" duration-ms="27743" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Dynamic]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Recon]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Specify Column for Diff - Full Data Compare Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Recon template - using dynamic template]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My default dynamic template]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTemplateUsingDynamicTemplate -->
+        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:55:51 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:56:24 IST" duration-ms="32515" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Dynamic]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Validation]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data Validation - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Validation template - using dynamic template]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My default dynamic template]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTemplateUsingDynamicTemplate -->
+        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:56:24 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:56:52 IST" duration-ms="27806" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Dynamic]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pushdown]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Pushdown template - using dynamic template]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My default dynamic template]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTemplateUsingDynamicTemplate -->
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:56:52 IST" name="endSuite" finished-at="2026-01-15T12:57:02 IST" duration-ms="10257" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->

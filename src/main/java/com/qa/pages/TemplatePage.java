@@ -7,6 +7,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.qa.config.ConfigReader;
+import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 
 public class TemplatePage extends PageUtil {
@@ -93,7 +95,7 @@ public class TemplatePage extends PageUtil {
 		return false;
 	}
 
-	public boolean clickOnRuleTypeField() {
+	public boolean clickOnRuleTypeField(String ruleType) {
 
 		boolean isClicked = clickOnField(driver, ruleTypeField, "Rule type", "Dropdown field");
 		if (!isClicked) {
@@ -102,7 +104,7 @@ public class TemplatePage extends PageUtil {
 		List<WebElement> list = driver.findElements(ruleTypeList);
 
 		for (WebElement element : list) {
-			if (element.getText().equalsIgnoreCase("Checksum")) {
+			if (element.getText().equalsIgnoreCase(ruleType)) {
 				element.click();
 				return true;
 			}
@@ -139,7 +141,7 @@ public class TemplatePage extends PageUtil {
 	    }
 	}
 
-	public boolean clickOnNameField() {
+	public boolean clickOnNameField(String ruleName) {
 		try {
 			// Click on Name field
 			boolean isClicked = clickOnField(driver, nameField, "Name", "Text field");
@@ -152,7 +154,7 @@ public class TemplatePage extends PageUtil {
 			element.sendKeys(Keys.CONTROL + "a");
 			element.sendKeys(Keys.DELETE);
 
-			boolean isEnter = sendkeysToElement1(driver, nameField, "Text field", "My default template");
+			boolean isEnter = sendkeysToElement1(driver, nameField, "Text field", ruleName);
 			
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, nameField, "Text field");
 			return isEnterPressed;
@@ -162,7 +164,7 @@ public class TemplatePage extends PageUtil {
 		}
 	}
 
-	public boolean clickOnDescriptionField() {
+	public boolean clickOnDescriptionField(String ruleDescription) {
 		try {
 			// Click on Description field
 			boolean isClicked = clickOnField(driver, descriptionField, "Description", "Text field");
@@ -177,7 +179,7 @@ public class TemplatePage extends PageUtil {
 			element.sendKeys(Keys.DELETE);
 
 			// Press Enter
-			boolean isEnter = sendkeysToElement1(driver, descriptionField, "Text field", "My default template");
+			boolean isEnter = sendkeysToElement1(driver, descriptionField, "Text field", ruleDescription);
 			
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, descriptionField, "Text field");
 			return isEnterPressed;
@@ -192,29 +194,93 @@ public class TemplatePage extends PageUtil {
 
 	}
 	
+	public boolean validateCreatedTemplateName(String templateName) {
+
+		clickOnSearchFieldOfSearchTemplate();
+		searchTemplateName(templateName);
+		clickOnSearchIcopnOfSearchTemplate();
+
+		// Locate the template name element
+		WebElement templateElement = driver.findElement(By.xpath("//a[@class='link dib']"));
+		waitForSeconds(1);
+
+		// Get text from UI
+		String actualTemplateName = templateElement.getText();
+		waitForSeconds(1);
+
+		// Compare expected vs actual
+		if (templateName.equals(actualTemplateName)) {
+			System.out.println("Template created successfully.");
+			ExtentManager.logInfo("Template created successfully.");
+			return true;
+		} else {
+			System.out.println("Template creation failed.");
+			ExtentManager.logFail("Template creation failed.");
+			return false;
+		}
+	}
+
+	
+	public void navigatHomePage() {
+		goTo(ConfigReader.getProperty("homePageUrl"));
+		waitForSeconds(1);
+	}
+	
 //******************************************************************************//
 	// Create a new Template //
 	
-	public boolean createNewTemplate() {
+	public boolean createNewTemplate(String ruleType, String templateName, String ruleName, String ruleDescription) {
 		
 		if (!clickTestGenerator()) return false;
 	    if (!clickTemplateTab()) return false;
 	    if (!clickOnSearchFieldOfSearchTemplate()) return false;
-	    if (!searchTemplateName("Data Validation - Dynamic SQL")) return false;
+	    if (!searchTemplateName(templateName)) return false;
 	    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
 	    if (!selectSearchItemSelectFromList()) return false;
 	    if (!clickOnCopyButton()) return false;
 	    if (!clickTemplateTab()) return false;
 	    if (!clickOnNewTemplateButton()) return false;
 	    if (!clickOnAccountField()) return false;
-	    if (!clickOnRuleTypeField()) return false;
+	    if (!clickOnRuleTypeField(ruleType)) return false;
 	    if (!clickOnJSONField()) return false;
-	    if (!clickOnNameField()) return false;
-	    if (!clickOnDescriptionField()) return false;
-	    if (!clickOnSaveButton()) return false;
-
+	    if (!clickOnNameField(ruleName)) return false;
+	    if (!clickOnDescriptionField(ruleDescription)) return false;
+	    if (!clickOnSaveButton()) return false;  
+	    clickTemplateTab();
+	    validateCreatedTemplateName(templateName);
+	    navigatHomePage();
+	    waitForSeconds(1);
 	    return true;
+
 	}
+	
+	
+	//******************************************************************************//
+		// Update the Template //
+		
+		public boolean updateTemplate(String ruleType, String templateName, String ruleName, String ruleDescription) {
+			
+			if (!clickTestGenerator()) return false;
+		    if (!clickTemplateTab()) return false;
+		    if (!clickOnSearchFieldOfSearchTemplate()) return false;
+		    if (!searchTemplateName(templateName)) return false;
+		    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
+		    if (!selectSearchItemSelectFromList()) return false;
+		    if (!clickOnCopyButton()) return false;
+		    if (!clickTemplateTab()) return false;
+		    if (!clickOnNewTemplateButton()) return false;
+		    if (!clickOnAccountField()) return false;
+		    if (!clickOnRuleTypeField(ruleType)) return false;
+		    if (!clickOnJSONField()) return false;
+		    if (!clickOnNameField(ruleName)) return false;
+		    if (!clickOnDescriptionField(ruleDescription)) return false;
+		    if (!clickOnSaveButton()) return false;  
+		    clickTemplateTab();
+		    validateCreatedTemplateName(templateName);
+		    navigatHomePage();
+		    waitForSeconds(1);
+		    return true;
 
-
+		}
+	
 }
