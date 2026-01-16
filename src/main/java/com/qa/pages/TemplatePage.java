@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
@@ -69,8 +68,11 @@ public class TemplatePage extends PageUtil {
 	}
 
 	public boolean clickOnCopyButton() {
-		return clickOnField(driver, copyButton, "Copy", "Button");
+	    boolean result = clickOnField(driver, copyButton, "Copy", "Button");
+	    waitForSeconds(2);
+	    return result;
 	}
+
 
 	public boolean clickOnNewTemplateButton() {
 		return clickOnField(driver, newTemplateButton, "New Template", "Button");
@@ -132,6 +134,8 @@ public class TemplatePage extends PageUtil {
 
 	        // 5️⃣ Enter new JSON
 	        input.sendKeys(Keys.chord(Keys.CONTROL, "v"));
+	        
+	        waitForSeconds(1);
 
 	        return true;
 
@@ -157,6 +161,7 @@ public class TemplatePage extends PageUtil {
 			boolean isEnter = sendkeysToElement1(driver, nameField, "Text field", ruleName);
 			
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, nameField, "Text field");
+			waitForSeconds(1);
 			return isEnterPressed;
 
 		} catch (Exception e) {
@@ -174,14 +179,13 @@ public class TemplatePage extends PageUtil {
 
 			WebElement element = driver.findElement(descriptionField);
 
-			// Clear existing data (Ctrl + A + Delete)
 			element.sendKeys(Keys.CONTROL + "a");
 			element.sendKeys(Keys.DELETE);
 
-			// Press Enter
 			boolean isEnter = sendkeysToElement1(driver, descriptionField, "Text field", ruleDescription);
 			
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, descriptionField, "Text field");
+			waitForSeconds(1);
 			return isEnterPressed;
 
 		} catch (Exception e) {
@@ -219,6 +223,34 @@ public class TemplatePage extends PageUtil {
 			return false;
 		}
 	}
+	
+	public boolean validateUpdatedTemplateName(String updatedTemplateName) {
+
+		clickOnSearchFieldOfSearchTemplate();
+		searchTemplateName(updatedTemplateName);
+		clickOnSearchIcopnOfSearchTemplate();
+
+		// Locate the template name element
+		WebElement templateElement = driver.findElement(By.xpath("//a[@class='link dib']"));
+		waitForSeconds(1);
+
+		// Get text from UI
+		String actualTemplateName = templateElement.getText();
+		waitForSeconds(1);
+
+		// Compare expected vs actual
+		if (updatedTemplateName.equals(actualTemplateName)) {
+			System.out.println("Template updated successfully.");
+			ExtentManager.logInfo("Template updated successfully.");
+			return true;
+		} else {
+			System.out.println("Template updation failed.");
+			ExtentManager.logFail("Template updation failed.");
+			return false;
+		}
+	}
+	
+	public void selectCheck
 
 	
 	public void navigatHomePage() {
@@ -258,7 +290,7 @@ public class TemplatePage extends PageUtil {
 	//******************************************************************************//
 		// Update the Template //
 		
-		public boolean updateTemplate(String ruleType, String templateName, String ruleName, String ruleDescription) {
+		public boolean updateExistingTemplate(String ruleType, String templateName, String updatedTemplateName, String updatedTemplateDescription) {
 			
 			if (!clickTestGenerator()) return false;
 		    if (!clickTemplateTab()) return false;
@@ -266,17 +298,34 @@ public class TemplatePage extends PageUtil {
 		    if (!searchTemplateName(templateName)) return false;
 		    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
 		    if (!selectSearchItemSelectFromList()) return false;
-		    if (!clickOnCopyButton()) return false;
-		    if (!clickTemplateTab()) return false;
-		    if (!clickOnNewTemplateButton()) return false;
-		    if (!clickOnAccountField()) return false;
-		    if (!clickOnRuleTypeField(ruleType)) return false;
-		    if (!clickOnJSONField()) return false;
-		    if (!clickOnNameField(ruleName)) return false;
-		    if (!clickOnDescriptionField(ruleDescription)) return false;
+		    if (!clickOnNameField(updatedTemplateName)) return false;
+		    if (!clickOnDescriptionField(updatedTemplateDescription)) return false;
 		    if (!clickOnSaveButton()) return false;  
 		    clickTemplateTab();
-		    validateCreatedTemplateName(templateName);
+		    validateUpdatedTemplateName(updatedTemplateName);
+		    navigatHomePage();
+		    waitForSeconds(1);
+		    return true;
+
+		}
+		
+		
+		//******************************************************************************//
+		// Update the Template //
+		
+		public boolean deleteExistingTemplate(String ruleType, String templateName) {
+			
+			if (!clickTestGenerator()) return false;
+		    if (!clickTemplateTab()) return false;
+		    if (!clickOnSearchFieldOfSearchTemplate()) return false;
+		    if (!searchTemplateName(templateName)) return false;
+		    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
+		    if (!selectSearchItemSelectFromList()) return false;
+		    if (!clickOnNameField(updatedTemplateName)) return false;
+		    if (!clickOnDescriptionField(updatedTemplateDescription)) return false;
+		    if (!clickOnSaveButton()) return false;  
+		    clickTemplateTab();
+		    validateUpdatedTemplateName(updatedTemplateName);
 		    navigatHomePage();
 		    waitForSeconds(1);
 		    return true;

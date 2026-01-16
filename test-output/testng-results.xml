@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="11" passed="7" failed="0" skipped="0">
+<testng-results ignored="4" total="15" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-15T12:54:46 IST" name="Suite" finished-at="2026-01-15T12:56:52 IST" duration-ms="125630">
+  <suite started-at="2026-01-16T18:27:02 IST" name="Suite" finished-at="2026-01-16T18:30:31 IST" duration-ms="208217">
     <groups>
     </groups>
-    <test started-at="2026-01-15T12:54:46 IST" name="Login Tests" finished-at="2026-01-15T12:54:49 IST" duration-ms="2559">
+    <test started-at="2026-01-16T18:27:02 IST" name="Login Tests" finished-at="2026-01-16T18:27:05 IST" duration-ms="2788">
       <class name="com.qa.tests.LoginTest">
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-15T12:54:46 IST" name="validateLoginPage" finished-at="2026-01-15T12:54:47 IST" duration-ms="757" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-16T18:27:03 IST" name="validateLoginPage" finished-at="2026-01-16T18:27:03 IST" duration-ms="617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-15T12:54:47 IST" name="Login" finished-at="2026-01-15T12:54:49 IST" duration-ms="1776" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-01-16T18:27:03 IST" name="Login" finished-at="2026-01-16T18:27:05 IST" duration-ms="2143" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
       </class> <!-- com.qa.tests.LoginTest -->
     </test> <!-- Login Tests -->
-    <test started-at="2026-01-15T12:54:49 IST" name="Home Page Tests" finished-at="2026-01-15T12:54:49 IST" duration-ms="456">
+    <test started-at="2026-01-16T18:27:06 IST" name="Home Page Tests" finished-at="2026-01-16T18:27:06 IST" duration-ms="527">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-01-15T12:54:49 IST" name="validateHomePage" finished-at="2026-01-15T12:54:49 IST" duration-ms="454" status="PASS">
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-01-16T18:27:06 IST" name="validateHomePage" finished-at="2026-01-16T18:27:06 IST" duration-ms="523" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
     </test> <!-- Home Page Tests -->
-    <test started-at="2026-01-15T12:54:49 IST" name="Test Generator Page Tests" finished-at="2026-01-15T12:54:49 IST" duration-ms="1">
+    <test started-at="2026-01-16T18:27:06 IST" name="Test Generator Page Tests" finished-at="2026-01-16T18:27:06 IST" duration-ms="0">
     </test> <!-- Test Generator Page Tests -->
-    <test started-at="2026-01-15T12:54:49 IST" name="Template Page Tests" finished-at="2026-01-15T12:56:52 IST" duration-ms="122334">
+    <test started-at="2026-01-16T18:27:06 IST" name="Template Page Tests" finished-at="2026-01-16T18:30:31 IST" duration-ms="204545">
       <class name="com.qa.tests.TemplatePageTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:54:36 IST" name="startSuite" finished-at="2026-01-15T12:54:46 IST" duration-ms="10575" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:26:58 IST" name="startSuite" finished-at="2026-01-16T18:27:02 IST" duration-ms="4190" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:54:50 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:55:24 IST" duration-ms="33820" status="PASS">
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:27:07 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:27:32 IST" duration-ms="25241" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,24 +47,24 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Compare Record Counts - Dynamic SQL]]>
+                <![CDATA[My Checksum template - using dynamic template]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[My Checksum template - using dynamic template]]>
+                <![CDATA[My Checksum template - using dynamic template_Updated]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[My default dynamic template]]>
+                <![CDATA[My dynamic template_Updated]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createTemplateUsingDynamicTemplate -->
-        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:55:24 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:55:51 IST" duration-ms="27743" status="PASS">
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:27:32 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:27:56 IST" duration-ms="24469" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -78,24 +78,24 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Specify Column for Diff - Full Data Compare Dynamic SQL]]>
+                <![CDATA[My Recon template - using dynamic template]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[My Recon template - using dynamic template]]>
+                <![CDATA[My Recon template - using dynamic template_Updated]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[My default dynamic template]]>
+                <![CDATA[My dynamic template_Updated]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createTemplateUsingDynamicTemplate -->
-        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:55:51 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:56:24 IST" duration-ms="32515" status="PASS">
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:27:56 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:28:23 IST" duration-ms="26872" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -109,24 +109,24 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Data Validation - Dynamic SQL]]>
+                <![CDATA[My Validation template - using dynamic template]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[My Validation template - using dynamic template]]>
+                <![CDATA[My Validation template - using dynamic template_Updated]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[My default dynamic template]]>
+                <![CDATA[My dynamic template_Updated]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createTemplateUsingDynamicTemplate -->
-        <test-method signature="createTemplateUsingDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:56:24 IST" name="createTemplateUsingDynamicTemplate" data-provider="createTemplate" finished-at="2026-01-15T12:56:52 IST" duration-ms="27806" status="PASS">
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:28:23 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:28:51 IST" duration-ms="27870" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -140,24 +140,148 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Data Pushdown Validation - Dynamic SQL]]>
+                <![CDATA[My Pushdown template - using dynamic template]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[My Pushdown template - using dynamic template]]>
+                <![CDATA[My Pushdown template - using dynamic template_Updated]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[My default dynamic template]]>
+                <![CDATA[My dynamic template_Updated]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createTemplateUsingDynamicTemplate -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@7c7a06ec]" started-at="2026-01-15T12:56:52 IST" name="endSuite" finished-at="2026-01-15T12:57:02 IST" duration-ms="10257" status="PASS">
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:28:51 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:29:15 IST" duration-ms="24211" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Import]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Checksum]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[My Checksum template - using import template]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Checksum template - using import template_Updated]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My import template_Updated]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:29:15 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:29:40 IST" duration-ms="24916" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Import]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Recon]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[My Recon template - using import template]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Recon template - using import template_Updated]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My import template_Updated]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:29:40 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:30:06 IST" duration-ms="25770" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Import]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Validation]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[My Validation template - using import template]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Validation template - using import template_Updated]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My import template_Updated]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method signature="updateTemplateUsingExistingTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:30:06 IST" name="updateTemplateUsingExistingTemplate" data-provider="updateTemplate" finished-at="2026-01-16T18:30:31 IST" duration-ms="24640" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Import]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pushdown]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[My Pushdown template - using import template]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[My Pushdown template - using import template_Updated]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[My import template_Updated]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTemplateUsingExistingTemplate -->
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@557caf28]" started-at="2026-01-16T18:30:31 IST" name="endSuite" finished-at="2026-01-16T18:30:40 IST" duration-ms="9324" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->
