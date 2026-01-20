@@ -46,8 +46,9 @@
 		<classes>
 			<class name="com.qa.tests.TemplatePageTest">
 				<methods>
-					<include name="createTemplateUsingDynamicTemplate" />
-					<include name="updateTemplateUsingExistingTemplate" />
+					<exclude name="createTemplateUsingDynamicTemplate" />
+					<exclude name="updateTemplateUsingExistingTemplate" />
+					<include name="deleteTemplateUsingExistingTemplateFromList" />
 				</methods>
 			</class>
 		</classes>

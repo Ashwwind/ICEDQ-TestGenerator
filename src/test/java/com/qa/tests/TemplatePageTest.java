@@ -80,15 +80,15 @@ public class TemplatePageTest extends Base {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	@DataProvider(name = "deleteTemplate")
+	@DataProvider(name = "deleteTemplateList")
 	public Object[][] deleteTemplateDataProviderExcel() {
 		return ExcelReader.readExcel("./src/test/resources/Templates/templateData.xlsx", "Delete template");
 	}
 
 	/****** Deleting the template from the list *************/
 
-	@Test(dataProvider = "deleteTemplate")
-	public void deleteTemplateUsingExistingTemplate(String templateType, String ruleType, String templateName) {
+	@Test(dataProvider = "deleteTemplateList")
+	public void deleteTemplateUsingExistingTemplateFromList(String templateType, String ruleType, String templateName) {
 
 		ExtentManager.startTest("Delete the template for - " + ruleType);
 
@@ -96,9 +96,9 @@ public class TemplatePageTest extends Base {
 
 		try {
 			if ("Dynamic".equalsIgnoreCase(templateType)) {
-				templatePage.deleteExistingTemplate(ruleType, templateName);
+				templatePage.deleteExistingTemplateFromList(ruleType, templateName);
 			} else if ("Import".equalsIgnoreCase(templateType)) {
-				templatePage.deleteExistingTemplate(ruleType, templateName);
+				templatePage.deleteExistingTemplateFromList(ruleType, templateName);
 			}
 			ExtentManager.logPass("Template deleted successfully for rule type: " + ruleType);
 

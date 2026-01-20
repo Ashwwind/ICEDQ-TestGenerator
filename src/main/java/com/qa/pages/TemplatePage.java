@@ -2,6 +2,7 @@ package com.qa.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -250,7 +251,50 @@ public class TemplatePage extends PageUtil {
 		}
 	}
 	
-	public void selectCheck
+	public void selectIntity()
+	{
+		By entitySelection = By.xpath("//*/thead/tr/th[1]/div[1]/div/span[1]");
+		
+		clickOnField(driver, entitySelection, "Entity selection", "Checkbox");
+		
+		 waitForSeconds(1);
+		
+		By moreButton = By.xpath("//*[@aria-label='More']");
+		
+		clickOnField(driver, moreButton, "More button", "Button");
+		
+		By deleteButton = By.xpath("//*[@aria-label='Delete']");
+		
+		clickOnField(driver, deleteButton, "Delete button", "Button");
+		
+		 waitForSeconds(1);
+		
+		// Switch diver to handle popup message
+		
+		Alert aletDelete = driver.switchTo().alert();
+		
+		
+		String alertBoxTitleMessage = aletDelete.getText();
+	    System.out.println("Alert message: " + alertBoxTitleMessage);
+	    ExtentManager.logInfo("Alert message: " + alertBoxTitleMessage);
+	    
+	    String alertBoxMessage = aletDelete.getText();
+	    System.out.println("Alert message: " + alertBoxMessage);
+	    ExtentManager.logInfo("Alert message: " + alertBoxMessage);
+	    
+	    waitForSeconds(1);
+	    
+	    aletDelete.accept();   // Click OK
+	    
+	    waitForSeconds(1);
+		
+	    By clickOnCancelButton = By.xpath("//*[contains(normalize-space(text()), 'Cancel')]");
+	    
+	    clickOnField(driver, clickOnCancelButton, "Cancel button", "Button");
+	    
+	    waitForSeconds(1);
+		
+	}
 
 	
 	public void navigatHomePage() {
@@ -313,20 +357,14 @@ public class TemplatePage extends PageUtil {
 		//******************************************************************************//
 		// Update the Template //
 		
-		public boolean deleteExistingTemplate(String ruleType, String templateName) {
+		public boolean deleteExistingTemplateFromList(String ruleType, String templateName) {
 			
 			if (!clickTestGenerator()) return false;
 		    if (!clickTemplateTab()) return false;
 		    if (!clickOnSearchFieldOfSearchTemplate()) return false;
 		    if (!searchTemplateName(templateName)) return false;
 		    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
-		    if (!selectSearchItemSelectFromList()) return false;
-		    if (!clickOnNameField(updatedTemplateName)) return false;
-		    if (!clickOnDescriptionField(updatedTemplateDescription)) return false;
-		    if (!clickOnSaveButton()) return false;  
-		    clickTemplateTab();
-		    validateUpdatedTemplateName(updatedTemplateName);
-		    navigatHomePage();
+		    selectIntity();
 		    waitForSeconds(1);
 		    return true;
 
