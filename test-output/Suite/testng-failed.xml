@@ -5,8 +5,8 @@
     <classes>
       <class name="com.qa.tests.TemplatePageTest">
         <methods>
-          <include name="createTemplate"/>
           <include name="endSuite"/>
+          <include name="deleteTemplateUsingExistingTemplateFromDetails"/>
           <include name="startSuite"/>
         </methods>
       </class> <!-- com.qa.tests.TemplatePageTest -->

@@ -35,17 +35,18 @@ public class TemplatePage extends PageUtil {
 	By descriptionField = getElementLocator(prop.getProperty("description"));
 	By jsonField = getElementLocator(prop.getProperty("json"));
 	By saveButton = getElementLocator(prop.getProperty("saveButton"));
-	
+
 	By testGeneratorModue = getElementLocator(prop.getProperty("home.testgenerator"));
-	
+
 	By loader = getElementLocator(prop.getProperty("loderIsDisplayed"));
 
-	// *****************************************Page Method*******************************//
-	
+	// *****************************************Page
+	// Method*******************************//
+
 	public boolean clickTestGenerator() {
 
 		return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
-	
+
 	}
 
 	public boolean clickTemplateTab() {
@@ -55,7 +56,7 @@ public class TemplatePage extends PageUtil {
 	public boolean clickOnSearchFieldOfSearchTemplate() {
 		return clickOnField(driver, searchFieldOfSearchTemplate, "Search template", "Search field");
 	}
-	
+
 	public boolean searchTemplateName(String templateName) {
 		return sendkeysToElement1(driver, searchFieldOfSearchTemplate, "Template Name", templateName);
 	}
@@ -69,11 +70,10 @@ public class TemplatePage extends PageUtil {
 	}
 
 	public boolean clickOnCopyButton() {
-	    boolean result = clickOnField(driver, copyButton, "Copy", "Button");
-	    waitForSeconds(2);
-	    return result;
+		boolean result = clickOnField(driver, copyButton, "Copy", "Button");
+		waitForSeconds(2);
+		return result;
 	}
-
 
 	public boolean clickOnNewTemplateButton() {
 		return clickOnField(driver, newTemplateButton, "New Template", "Button");
@@ -118,32 +118,32 @@ public class TemplatePage extends PageUtil {
 
 	public boolean clickOnJSONField() {
 		try {
-			 // 1️⃣ Click the editor container to focus
-	        By jsonEditorContainer = By.xpath("//div[contains(@class,'ace_editor')]");
-	        WebElement editor = driver.findElement(jsonEditorContainer);
-	        editor.click();
+			// 1️⃣ Click the editor container to focus
+			By jsonEditorContainer = By.xpath("//div[contains(@class,'ace_editor')]");
+			WebElement editor = driver.findElement(jsonEditorContainer);
+			editor.click();
 
-	        // 2️⃣ Target the hidden ACE textarea
-	        By jsonInput = By.xpath("//textarea[contains(@class,'ace_text-input')]");
-	        WebElement input = driver.findElement(jsonInput);
+			// 2️⃣ Target the hidden ACE textarea
+			By jsonInput = By.xpath("//textarea[contains(@class,'ace_text-input')]");
+			WebElement input = driver.findElement(jsonInput);
 
-	        // 3️⃣ Select all existing content
-	        input.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+			// 3️⃣ Select all existing content
+			input.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 
-	        // 4️⃣ Delete existing JSON
-	        input.sendKeys(Keys.DELETE);
+			// 4️⃣ Delete existing JSON
+			input.sendKeys(Keys.DELETE);
 
-	        // 5️⃣ Enter new JSON
-	        input.sendKeys(Keys.chord(Keys.CONTROL, "v"));
-	        
-	        waitForSeconds(1);
+			// 5️⃣ Enter new JSON
+			input.sendKeys(Keys.chord(Keys.CONTROL, "v"));
 
-	        return true;
+			waitForSeconds(1);
 
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return false;
-	    }
+			return true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	public boolean clickOnNameField(String ruleName) {
@@ -160,7 +160,7 @@ public class TemplatePage extends PageUtil {
 			element.sendKeys(Keys.DELETE);
 
 			boolean isEnter = sendkeysToElement1(driver, nameField, "Text field", ruleName);
-			
+
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, nameField, "Text field");
 			waitForSeconds(1);
 			return isEnterPressed;
@@ -184,7 +184,7 @@ public class TemplatePage extends PageUtil {
 			element.sendKeys(Keys.DELETE);
 
 			boolean isEnter = sendkeysToElement1(driver, descriptionField, "Text field", ruleDescription);
-			
+
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, descriptionField, "Text field");
 			waitForSeconds(1);
 			return isEnterPressed;
@@ -198,7 +198,7 @@ public class TemplatePage extends PageUtil {
 		return clickOnField(driver, saveButton, "Save", "Button");
 
 	}
-	
+
 	public boolean validateCreatedTemplateName(String templateName) {
 
 		clickOnSearchFieldOfSearchTemplate();
@@ -224,7 +224,7 @@ public class TemplatePage extends PageUtil {
 			return false;
 		}
 	}
-	
+
 	public boolean validateUpdatedTemplateName(String updatedTemplateName) {
 
 		clickOnSearchFieldOfSearchTemplate();
@@ -250,124 +250,196 @@ public class TemplatePage extends PageUtil {
 			return false;
 		}
 	}
-	
-	public void selectIntity()
-	{
+
+	public void selectIntity() {
 		By entitySelection = By.xpath("//*/thead/tr/th[1]/div[1]/div/span[1]");
-		
+
 		clickOnField(driver, entitySelection, "Entity selection", "Checkbox");
-		
-		 waitForSeconds(1);
-		
+
+		waitForSeconds(1);
+
 		By moreButton = By.xpath("//*[@aria-label='More']");
-		
+
 		clickOnField(driver, moreButton, "More button", "Button");
-		
+
 		By deleteButton = By.xpath("//*[@aria-label='Delete']");
-		
+
 		clickOnField(driver, deleteButton, "Delete button", "Button");
-		
-		 waitForSeconds(1);
-		
+
+		waitForSeconds(1);
+
 		// Switch diver to handle popup message
-		
-		Alert aletDelete = driver.switchTo().alert();
-		
-		
-		String alertBoxTitleMessage = aletDelete.getText();
-	    System.out.println("Alert message: " + alertBoxTitleMessage);
-	    ExtentManager.logInfo("Alert message: " + alertBoxTitleMessage);
-	    
-	    String alertBoxMessage = aletDelete.getText();
-	    System.out.println("Alert message: " + alertBoxMessage);
-	    ExtentManager.logInfo("Alert message: " + alertBoxMessage);
-	    
-	    waitForSeconds(1);
-	    
-	    aletDelete.accept();   // Click OK
-	    
-	    waitForSeconds(1);
-		
-	    By clickOnCancelButton = By.xpath("//*[contains(normalize-space(text()), 'Cancel')]");
-	    
-	    clickOnField(driver, clickOnCancelButton, "Cancel button", "Button");
-	    
-	    waitForSeconds(1);
-		
+
+		By deleteButtonOfConfornmationBox = By.xpath("//*[@role='dialog']//button[contains(text(),'Delete')]");
+
+		waitForSeconds(1);
+
+		clickOnField(driver, deleteButtonOfConfornmationBox, "Delete button", "Button");
+
+		waitForSeconds(1);
+
+		By clickOnCancelButton = By.xpath("//*[contains(normalize-space(text()), 'Cancel')]");
+
+		clickOnField(driver, clickOnCancelButton, "Cancel button", "Button");
+
+		waitForSeconds(1);
+
 	}
 
+	// Entity deletion from the details page.
+
+	public void deleteTemplateFromDetailsPage() {
+		By deleteButton = By.xpath("//*[@title='Delete']");
+
+		clickOnField(driver, deleteButton, "Delete button", "Button");
+		waitForSeconds(1);
+
+		By deleteButtonOfConfornmationBox = By.xpath("//*[@role='dialog']//button[contains(text(),'Delete')]");
+
+		waitForSeconds(1);
+
+		clickOnField(driver, deleteButtonOfConfornmationBox, "Delete button", "Button");
+
+		waitForSeconds(1);
+
+	}
 	
+	// Validate toast message
+	public void validateToastMessage()
+	{
+		captureUIErrorIfPresent(driver);
+	}
+
 	public void navigatHomePage() {
 		goTo(ConfigReader.getProperty("homePageUrl"));
 		waitForSeconds(1);
 	}
-	
-//******************************************************************************//
+
+	// ******************************************************************************//
 	// Create a new Template //
-	
+
 	public boolean createNewTemplate(String ruleType, String templateName, String ruleName, String ruleDescription) {
-		
-		if (!clickTestGenerator()) return false;
-	    if (!clickTemplateTab()) return false;
-	    if (!clickOnSearchFieldOfSearchTemplate()) return false;
-	    if (!searchTemplateName(templateName)) return false;
-	    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
-	    if (!selectSearchItemSelectFromList()) return false;
-	    if (!clickOnCopyButton()) return false;
-	    if (!clickTemplateTab()) return false;
-	    if (!clickOnNewTemplateButton()) return false;
-	    if (!clickOnAccountField()) return false;
-	    if (!clickOnRuleTypeField(ruleType)) return false;
-	    if (!clickOnJSONField()) return false;
-	    if (!clickOnNameField(ruleName)) return false;
-	    if (!clickOnDescriptionField(ruleDescription)) return false;
-	    if (!clickOnSaveButton()) return false;  
-	    clickTemplateTab();
-	    validateCreatedTemplateName(templateName);
-	    navigatHomePage();
-	    waitForSeconds(1);
-	    return true;
+
+		if (!clickTestGenerator())
+			return false;
+		if (!clickTemplateTab())
+			return false;
+		if (!clickOnSearchFieldOfSearchTemplate())
+			return false;
+		if (!searchTemplateName(templateName))
+			return false;
+		if (!clickOnSearchIcopnOfSearchTemplate())
+			return false;
+		if (!selectSearchItemSelectFromList())
+			return false;
+		if (!clickOnCopyButton())
+			return false;
+		if (!clickTemplateTab())
+			return false;
+		if (!clickOnNewTemplateButton())
+			return false;
+		if (!clickOnAccountField())
+			return false;
+		if (!clickOnRuleTypeField(ruleType))
+			return false;
+		if (!clickOnJSONField())
+			return false;
+		if (!clickOnNameField(ruleName))
+			return false;
+		if (!clickOnDescriptionField(ruleDescription))
+			return false;
+		if (!clickOnSaveButton())
+			return false;
+		clickTemplateTab();
+		validateCreatedTemplateName(templateName);
+		navigatHomePage();
+		waitForSeconds(1);
+		return true;
 
 	}
-	
-	
-	//******************************************************************************//
-		// Update the Template //
-		
-		public boolean updateExistingTemplate(String ruleType, String templateName, String updatedTemplateName, String updatedTemplateDescription) {
-			
-			if (!clickTestGenerator()) return false;
-		    if (!clickTemplateTab()) return false;
-		    if (!clickOnSearchFieldOfSearchTemplate()) return false;
-		    if (!searchTemplateName(templateName)) return false;
-		    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
-		    if (!selectSearchItemSelectFromList()) return false;
-		    if (!clickOnNameField(updatedTemplateName)) return false;
-		    if (!clickOnDescriptionField(updatedTemplateDescription)) return false;
-		    if (!clickOnSaveButton()) return false;  
-		    clickTemplateTab();
-		    validateUpdatedTemplateName(updatedTemplateName);
-		    navigatHomePage();
-		    waitForSeconds(1);
-		    return true;
 
-		}
-		
-		
-		//******************************************************************************//
-		// Update the Template //
-		
-		public boolean deleteExistingTemplateFromList(String ruleType, String templateName) {
-			
-			if (!clickTestGenerator()) return false;
-		    if (!clickTemplateTab()) return false;
-		    if (!clickOnSearchFieldOfSearchTemplate()) return false;
-		    if (!searchTemplateName(templateName)) return false;
-		    if (!clickOnSearchIcopnOfSearchTemplate()) return false;
-		    selectIntity();
-		    waitForSeconds(1);
-		    return true;
+	// ******************************************************************************//
+	// Update the Template //
 
-		}
-	
+	public boolean updateExistingTemplate(String ruleType, String templateName, String updatedTemplateName,
+			String updatedTemplateDescription) {
+
+		if (!clickTestGenerator())
+			return false;
+		if (!clickTemplateTab())
+			return false;
+		if (!clickOnSearchFieldOfSearchTemplate())
+			return false;
+		if (!searchTemplateName(templateName))
+			return false;
+		if (!clickOnSearchIcopnOfSearchTemplate())
+			return false;
+		if (!selectSearchItemSelectFromList())
+			return false;
+		if (!clickOnNameField(updatedTemplateName))
+			return false;
+		if (!clickOnDescriptionField(updatedTemplateDescription))
+			return false;
+		if (!clickOnSaveButton())
+			return false;
+		clickTemplateTab();
+		validateUpdatedTemplateName(updatedTemplateName);
+		waitForSeconds(1);
+		navigatHomePage();
+		waitForSeconds(1);
+		return true;
+
+	}
+
+	// ******************************************************************************//
+	// Delete the Template form the listing page //
+
+	public boolean deleteExistingTemplateFromList(String ruleType, String templateName) {
+
+		if (!clickTestGenerator())
+			return false;
+		if (!clickTemplateTab())
+			return false;
+		if (!clickOnSearchFieldOfSearchTemplate())
+			return false;
+		if (!searchTemplateName(templateName))
+			return false;
+		if (!clickOnSearchIcopnOfSearchTemplate())
+			return false;
+		selectIntity();
+		waitForSeconds(1);
+		navigatHomePage();
+		waitForSeconds(1);
+		return true;
+
+	}
+
+	// ******************************************************************************//
+	// Delete the Template form the details page //
+
+	public boolean deleteTemplateDetailsPage(String ruleType, String templateName) {
+
+		if (!clickTestGenerator())
+			return false;
+		if (!clickTemplateTab())
+			return false;
+		if (!clickOnSearchFieldOfSearchTemplate())
+			return false;
+		if (!searchTemplateName(templateName))
+			return false;
+		if (!clickOnSearchIcopnOfSearchTemplate())
+			return false;
+		if (!selectSearchItemSelectFromList())
+			return false;
+
+		deleteTemplateFromDetailsPage();
+		validateToastMessage();
+		waitForSeconds(1);
+		navigatHomePage();
+		waitForSeconds(1);
+		
+		return true;
+
+	}
+
 }

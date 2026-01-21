@@ -18,10 +18,11 @@ public class TemplatePageTest extends Base {
 		return ExcelReader.readExcel("./src/test/resources/Templates/templateData.xlsx", "Create template");
 	}
 
-	/****** Creating a template using default template  *************/
-	
+	/****** Creating a template using default template *************/
+
 	@Test(dataProvider = "createTemplate")
-	public void createTemplateUsingDynamicTemplate(String templateType, String ruleType, String templateName, String ruleName, String ruleDescription) {
+	public void createTemplateUsingDynamicTemplate(String templateType, String ruleType, String templateName,
+			String ruleName, String ruleDescription) {
 
 		ExtentManager.startTest("Create template using default Template for - " + ruleType);
 
@@ -30,30 +31,30 @@ public class TemplatePageTest extends Base {
 		try {
 			if ("Dynamic".equalsIgnoreCase(templateType)) {
 				templatePage.createNewTemplate(ruleType, templateName, ruleName, ruleDescription);
-			}
-			else if("Import".equalsIgnoreCase(templateType))
-			{
+			} else if ("Import".equalsIgnoreCase(templateType)) {
 				templatePage.createNewTemplate(ruleType, templateName, ruleName, ruleDescription);
 			}
-				ExtentManager.logPass("Template created successfully for rule type: " + ruleType);
+			ExtentManager.logPass("Template created successfully for rule type: " + ruleType);
 		} catch (Exception e) {
 			ExtentManager.captureScreenshot("Failure_" + ruleType);
-			ExtentManager.logFail("Template creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
+			ExtentManager
+					.logFail("Template creation failed for rule type: " + ruleType + " | Error: " + e.getMessage());
 			throw e;
 		}
 	}
-	
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
+
 	@DataProvider(name = "updateTemplate")
 	public Object[][] updateTemplateDataProviderExcel() {
 		return ExcelReader.readExcel("./src/test/resources/Templates/templateData.xlsx", "Update template");
 	}
 
-	/****** Updating a template using default template  *************/
-	
+	/****** Updating a template using default template *************/
+
 	@Test(dataProvider = "updateTemplate")
-	public void updateTemplateUsingExistingTemplate(String templateType, String ruleType, String templateName, String updatedTemplateName, String updatedTemplateDescription) {
+	public void updateTemplateUsingExistingTemplate(String templateType, String ruleType, String templateName,
+			String updatedTemplateName, String updatedTemplateDescription) {
 
 		ExtentManager.startTest("Update the template using existing Template for - " + ruleType);
 
@@ -61,14 +62,14 @@ public class TemplatePageTest extends Base {
 
 		try {
 			if ("Dynamic".equalsIgnoreCase(templateType)) {
-				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName, updatedTemplateDescription);
+				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName,
+						updatedTemplateDescription);
+			} else if ("Import".equalsIgnoreCase(templateType)) {
+				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName,
+						updatedTemplateDescription);
 			}
-			else if ("Import".equalsIgnoreCase(templateType))
-			{
-				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName, updatedTemplateDescription);
-			}
-				ExtentManager.logPass("Template updated successfully for rule type: " + ruleType);
-			
+			ExtentManager.logPass("Template updated successfully for rule type: " + ruleType);
+
 		} catch (Exception e) {
 			ExtentManager.captureScreenshot("Failure_" + ruleType);
 			ExtentManager
@@ -76,18 +77,17 @@ public class TemplatePageTest extends Base {
 			throw e;
 		}
 	}
-	
-	
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	@DataProvider(name = "deleteTemplateList")
+	@DataProvider(name = "deleteTemplateListingPage")
 	public Object[][] deleteTemplateDataProviderExcel() {
-		return ExcelReader.readExcel("./src/test/resources/Templates/templateData.xlsx", "Delete template");
+		return ExcelReader.readExcel("./src/test/resources/Templates/templateData.xlsx", "Delete template - List");
 	}
 
-	/****** Deleting the template from the list *************/
+	/****** Deleting the template from the listing page *************/
 
-	@Test(dataProvider = "deleteTemplateList")
+	@Test(dataProvider = "deleteTemplateListingPage")
 	public void deleteTemplateUsingExistingTemplateFromList(String templateType, String ruleType, String templateName) {
 
 		ExtentManager.startTest("Delete the template for - " + ruleType);
@@ -109,5 +109,37 @@ public class TemplatePageTest extends Base {
 			throw e;
 		}
 	}
-	
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@DataProvider(name = "deleteTemplateDetailsPage")
+	public Object[][] deleteTemplateDataProviderExcel111() {
+		return ExcelReader.readExcel("./src/test/resources/Templates/templateData.xlsx", "Delete template - Details");
+	}
+
+	/****** Deleting the template from the details page *************/
+
+	@Test(dataProvider = "deleteTemplateDetailsPage")
+	public void deleteTemplateUsingExistingTemplateFromDetails(String templateType, String ruleType, String templateName) {
+
+		ExtentManager.startTest("Delete the template for - " + ruleType);
+
+		TemplatePage templatePage = new TemplatePage(driver);
+
+		try {
+			if ("Dynamic".equalsIgnoreCase(templateType)) {
+				templatePage.deleteTemplateDetailsPage(ruleType, templateName);
+			} else if ("Import".equalsIgnoreCase(templateType)) {
+				templatePage.deleteTemplateDetailsPage(ruleType, templateName);
+			}
+			ExtentManager.logPass("Template deleted successfully for rule type: " + ruleType);
+
+		} catch (Exception e) {
+			ExtentManager.captureScreenshot("Failure_" + ruleType);
+			ExtentManager
+					.logFail("Template deletion failed for rule type: " + ruleType + " | Error: " + e.getMessage());
+			throw e;
+		}
+	}
+
 }

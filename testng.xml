@@ -48,7 +48,8 @@
 				<methods>
 					<exclude name="createTemplateUsingDynamicTemplate" />
 					<exclude name="updateTemplateUsingExistingTemplate" />
-					<include name="deleteTemplateUsingExistingTemplateFromList" />
+					<exclude name="deleteTemplateUsingExistingTemplateFromList" />
+					<include name="deleteTemplateUsingExistingTemplateFromDetails" />
 				</methods>
 			</class>
 		</classes>
