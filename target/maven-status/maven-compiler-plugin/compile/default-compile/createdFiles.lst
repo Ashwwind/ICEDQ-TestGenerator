@@ -3,8 +3,11 @@ com\qa\pages\LoginPage.class
 com\qa\utils\PageUtil.class
 com\qa\pages\Test1.class
 com\qa\pages\Demo.class
+annotations\XrayTest.class
 com\qa\extentreportlistener\ExtentReportListener.class
+annotations\XrayResultStore.class
 com\qa\sendmail\SendMail.class
+com\qa\pages\TemplatePage.class
 com\qa\pages\HomePage.class
 com\qa\pages\TestGeneratorPage$FlowAbortException.class
 com\qa\base\Base.class

@@ -2,11 +2,12 @@ package com.qa.pages;
 
 import java.util.List;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
@@ -75,6 +76,47 @@ public class TemplatePage extends PageUtil {
 		return result;
 	}
 
+	// Read the JSON and stored in the varible
+	private String prettyJson;
+
+	public void jsonReadAndStore() {
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			// 1️⃣ Read raw JSON from the ACE editor
+			String rawJson = (String) js
+					.executeScript("return ace.edit(document.querySelector('.ace_editor')).getValue();");
+
+			// 2️⃣ Use Jackson to pretty‑print the JSON
+			ObjectMapper objectMapper = new ObjectMapper();
+			Object jsonObject = objectMapper.readValue(rawJson, Object.class);
+
+			prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObject)
+					.replace("\r\n", "\n").trim();
+
+			System.out.println(prettyJson);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean setJsonAndLockEditor() {
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			js.executeScript("var editor = ace.edit(document.querySelector('.ace_editor'));"
+					+ "editor.session.setUseWorker(false);" + "editor.setValue(arguments[0], -1);"
+					+ "editor.clearSelection();" + "editor.blur();", prettyJson);
+
+			waitForSeconds(1);
+			return true;
+
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	public boolean clickOnNewTemplateButton() {
 		return clickOnField(driver, newTemplateButton, "New Template", "Button");
 	}
@@ -118,23 +160,21 @@ public class TemplatePage extends PageUtil {
 
 	public boolean clickOnJSONField() {
 		try {
-			// 1️⃣ Click the editor container to focus
+			// 1️⃣ Focus the ACE editor
 			By jsonEditorContainer = By.xpath("//div[contains(@class,'ace_editor')]");
 			WebElement editor = driver.findElement(jsonEditorContainer);
 			editor.click();
 
-			// 2️⃣ Target the hidden ACE textarea
-			By jsonInput = By.xpath("//textarea[contains(@class,'ace_text-input')]");
-			WebElement input = driver.findElement(jsonInput);
+			// 2️⃣ Locate the hidden input area
+			By jsonInputLocator = By.xpath("//textarea[contains(@class,'ace_text-input')]");
+			WebElement input = driver.findElement(jsonInputLocator);
 
-			// 3️⃣ Select all existing content
+			// 3️⃣ Clear existing content
 			input.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-
-			// 4️⃣ Delete existing JSON
 			input.sendKeys(Keys.DELETE);
 
-			// 5️⃣ Enter new JSON
-			input.sendKeys(Keys.chord(Keys.CONTROL, "v"));
+			// 4️⃣ Enter the pretty JSON
+			input.sendKeys(prettyJson);
 
 			waitForSeconds(1);
 
@@ -148,6 +188,8 @@ public class TemplatePage extends PageUtil {
 
 	public boolean clickOnNameField(String ruleName) {
 		try {
+			waitForSeconds(1);
+
 			// Click on Name field
 			boolean isClicked = clickOnField(driver, nameField, "Name", "Text field");
 			if (!isClicked) {
@@ -280,7 +322,7 @@ public class TemplatePage extends PageUtil {
 
 		By clickOnCancelButton = By.xpath("//*[contains(normalize-space(text()), 'Cancel')]");
 
-		clickOnField(driver, clickOnCancelButton, "Cancel button", "Button");
+		clickOnField(driver, clickOnCancelButton, "Delete button", "Button");
 
 		waitForSeconds(1);
 
@@ -303,10 +345,9 @@ public class TemplatePage extends PageUtil {
 		waitForSeconds(1);
 
 	}
-	
+
 	// Validate toast message
-	public void validateToastMessage()
-	{
+	public void validateToastMessage() {
 		captureUIErrorIfPresent(driver);
 	}
 
@@ -334,6 +375,10 @@ public class TemplatePage extends PageUtil {
 			return false;
 		if (!clickOnCopyButton())
 			return false;
+
+		jsonReadAndStore();
+		waitForSeconds(1);
+
 		if (!clickTemplateTab())
 			return false;
 		if (!clickOnNewTemplateButton())
@@ -344,6 +389,9 @@ public class TemplatePage extends PageUtil {
 			return false;
 		if (!clickOnJSONField())
 			return false;
+
+		setJsonAndLockEditor();
+
 		if (!clickOnNameField(ruleName))
 			return false;
 		if (!clickOnDescriptionField(ruleDescription))
@@ -437,7 +485,7 @@ public class TemplatePage extends PageUtil {
 		waitForSeconds(1);
 		navigatHomePage();
 		waitForSeconds(1);
-		
+
 		return true;
 
 	}

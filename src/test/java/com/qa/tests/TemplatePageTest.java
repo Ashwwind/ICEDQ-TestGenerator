@@ -120,7 +120,8 @@ public class TemplatePageTest extends Base {
 	/****** Deleting the template from the details page *************/
 
 	@Test(dataProvider = "deleteTemplateDetailsPage")
-	public void deleteTemplateUsingExistingTemplateFromDetails(String templateType, String ruleType, String templateName) {
+	public void deleteTemplateUsingExistingTemplateFromDetails(String templateType, String ruleType,
+			String templateName) {
 
 		ExtentManager.startTest("Delete the template for - " + ruleType);
 
