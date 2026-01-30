@@ -74,6 +74,8 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
 		</dependency>
+		
+		
 
 		<dependency>
 			<groupId>com.sun.mail</groupId>
@@ -108,4 +110,6 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	
 </project>

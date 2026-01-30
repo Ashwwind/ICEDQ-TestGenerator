@@ -91,10 +91,9 @@ public class TemplatePage extends PageUtil {
 			ObjectMapper objectMapper = new ObjectMapper();
 			Object jsonObject = objectMapper.readValue(rawJson, Object.class);
 
-			prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObject)
-					.replace("\r\n", "\n").trim();
+			prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObject).replace("\r\n", "\n").trim();
 
-			System.out.println(prettyJson);
+			//System.out.println(prettyJson);
 
 		} catch (Exception e) {
 			e.printStackTrace();

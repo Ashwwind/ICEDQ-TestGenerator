@@ -24,7 +24,7 @@ public class TemplatePageTest extends Base {
 	public void createTemplateUsingDynamicTemplate(String templateType, String ruleType, String templateName,
 			String ruleName, String ruleDescription) {
 
-		ExtentManager.startTest("Create template using default Template for - " + ruleType);
+		ExtentManager.startTest("Create Template Using Default Dynamic Template for - " + ruleType);
 
 		TemplatePage templatePage = new TemplatePage(driver);
 
@@ -56,7 +56,7 @@ public class TemplatePageTest extends Base {
 	public void updateTemplateUsingExistingTemplate(String templateType, String ruleType, String templateName,
 			String updatedTemplateName, String updatedTemplateDescription) {
 
-		ExtentManager.startTest("Update the template using existing Template for - " + ruleType);
+		ExtentManager.startTest("Update Template Using Default Dynamic Template for - " + ruleType);
 
 		TemplatePage templatePage = new TemplatePage(driver);
 
@@ -90,7 +90,7 @@ public class TemplatePageTest extends Base {
 	@Test(dataProvider = "deleteTemplateListingPage")
 	public void deleteTemplateUsingExistingTemplateFromList(String templateType, String ruleType, String templateName) {
 
-		ExtentManager.startTest("Delete the template for - " + ruleType);
+		ExtentManager.startTest("Delete the template from listing page for - " + ruleType);
 
 		TemplatePage templatePage = new TemplatePage(driver);
 
@@ -123,7 +123,7 @@ public class TemplatePageTest extends Base {
 	public void deleteTemplateUsingExistingTemplateFromDetails(String templateType, String ruleType,
 			String templateName) {
 
-		ExtentManager.startTest("Delete the template for - " + ruleType);
+		ExtentManager.startTest("Delete the template from the details page for - " + ruleType);
 
 		TemplatePage templatePage = new TemplatePage(driver);
 

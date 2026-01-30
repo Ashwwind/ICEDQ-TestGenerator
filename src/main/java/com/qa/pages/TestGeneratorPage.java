@@ -12,7 +12,7 @@ import com.qa.utils.PageUtil;
 
 public class TestGeneratorPage extends PageUtil {
 	private WebDriver driver;
-	public static final int waitTime = 6; // Global wait time
+	public static final int waitTime = 2; // Global wait time
 	
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
@@ -552,30 +552,18 @@ public class TestGeneratorPage extends PageUtil {
 				"button");
 	}
 
-	public void gotoRuleMetadataNextbtn() {
-
-		// Validate 'Define Rule Metadata' page.
-		// validateDefineRuleMetadataPage();
-
-		// Click Next button on Rule Metadata page
+	public void gotoRuleMetadataNextbtn() {// Click Next button on Rule Metadata page
 		clickOnElement(driver, clickNextButtonmetadataNextbtn, "next button of 'Define Rule Metadata' page", waitTime);
 		ExtentManager.logInfo("Next button of 'Define Rule Metadata' page is clickable.");
 	}
 
-	public void gotoCheckMetadataNextbtn() {
-
-		// Validate 'Define Check Metadata' page.
-		// validateDefineCheckMetadataPage();
-
-		// Click Next button on Check Metadata page
+	public void gotoCheckMetadataNextbtn() {// Click Next button on Check Metadata page
 		clickOnElement(driver, clickNextButtoncheckNextbtn, "next button of 'Define Check Metadata' page", waitTime);
 		ExtentManager.logInfo("Next button of 'Define Check Metadata' page is clickable.");
 	}
 
-	public void gotoNotificationNextbtn() {
-		// Click Next button on Configure Notifications page
-		clickOnElement(driver, clickNextButtonnotificationNextbtn, "next button of 'Configure Notifications' page",
-				waitTime);
+	public void gotoNotificationNextbtn() {// Click Next button on Configure Notifications page
+		clickOnElement(driver, clickNextButtonnotificationNextbtn, "next button of 'Configure Notifications' page", waitTime);
 		ExtentManager.logInfo("Next button of 'Configure Notifications' page is clickable.");
 	}
 
