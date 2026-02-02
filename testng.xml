@@ -18,7 +18,7 @@
 		<classes>
 			<class name="com.qa.tests.HomePageTest">
 				<methods>
-					<exclude name="validateHomePage" />
+					<include name="validateHomePage" />
 				</methods>
 			</class>
 		</classes>
@@ -29,7 +29,7 @@
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
 					<exclude name="createRuleUsingDynamicTemplate" />
-					<exclude name="createRuleUsingImportTemplate" />
+					<include name="createRuleUsingImportTemplate" />
 					<exclude name="createWorkflowUsingDefaultDynamicTemplate" />
 				</methods>
 			</class>

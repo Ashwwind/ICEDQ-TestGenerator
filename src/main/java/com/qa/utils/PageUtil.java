@@ -96,7 +96,7 @@ public class PageUtil extends Base {
 		} catch (TimeoutException te) {
 			// Fallback: extra wait
 			try {
-				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 50))
+				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 10))
 						.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
 			} catch (Exception e) {
 				ExtentManager.logInfo("Element not visible after extended wait: " + by);
@@ -117,13 +117,13 @@ public class PageUtil extends Base {
 				return false;
 			}
 
-			validateElementIsVisible(driver, by, label);
+			//validateElementIsVisible(driver, by, label);
 
 			ExtentManager.logInfo("Clicking on " + label);
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
 
-			waitForSeconds(1);
+			//waitForSeconds(1);
 
 			ExtentManager.logPass("Clicked on " + label);
 
@@ -140,7 +140,6 @@ public class PageUtil extends Base {
 
 		if (isVisible) {
 			ExtentManager.logInfo(label + " is visible.");
-			waitForSeconds(1);
 		} else {
 			ExtentManager.logFail(label + " is NOT visible.");
 		}
@@ -358,8 +357,8 @@ public class PageUtil extends Base {
 	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
 	    try {
 	        // 1️⃣ Wait for any initial loader to disappear
-	        By loader = By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div");
-	        isInvisibleLoader(driver, loader);
+	        //By loader = By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div");
+	      //  isInvisibleLoader(driver, loader);
 
 	        // 2️⃣ Validate element is visible
 	        if (!validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
@@ -368,14 +367,14 @@ public class PageUtil extends Base {
 	        }
 
 	        // 3️⃣ Click the element
-	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 50);
+	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 30);
 	        if (!isClicked) {
 	            ExtentManager.logError("Failed to click " + fieldName + " " + fieldType);
 	            return false;
 	        }
 
 	        // 4️⃣ Wait for loader after click
-	        isInvisibleLoader(driver, loader);
+	       // isInvisibleLoader(driver, loader);
 
 	        return true;
 
