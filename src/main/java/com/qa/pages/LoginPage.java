@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
+import com.qa.factory.DriverFactory;
 import com.qa.utils.PageUtil;
 
 public class LoginPage extends PageUtil {
@@ -18,6 +19,7 @@ public class LoginPage extends PageUtil {
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
+	
 
 	public void enterUsername(String username) {
 		clickOnElement(driver, usernameField, "username or email field.", 10);

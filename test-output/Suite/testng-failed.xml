@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test Generator Page Tests(failed)">
+  <test thread-count="5" name="Login Tests(failed)">
     <classes>
-      <class name="com.qa.tests.TestGeneratorTest">
+      <class name="com.qa.tests.LoginTest">
         <methods>
           <include name="endSuite"/>
+          <include name="validateLoginPage"/>
+          <include name="Login"/>
           <include name="startSuite"/>
-          <include name="createRuleUsingDynamicTemplate" invocation-numbers="7"/>
-          <include name="createRuleUsingImportTemplate" invocation-numbers="0 1 2 3"/>
         </methods>
-      </class> <!-- com.qa.tests.TestGeneratorTest -->
+      </class> <!-- com.qa.tests.LoginTest -->
     </classes>
-  </test> <!-- Test Generator Page Tests(failed) -->
+  </test> <!-- Login Tests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

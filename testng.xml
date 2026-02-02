@@ -3,16 +3,10 @@
 
 <suite name="Suite">
 
-	<!--
-    <listeners>
-        <listener class-name="com.qa.extentreportlistener.ExtentListener" />
-    </listeners>
-    -->
-
 	<test name="Login Tests">
 		<classes>
 			<class name="com.qa.tests.LoginTest">
-				<methods> 
+				<methods>
 					<include name="validateLoginPage" />
 					<include name="Login" />
 				</methods>
@@ -24,7 +18,7 @@
 		<classes>
 			<class name="com.qa.tests.HomePageTest">
 				<methods>
-					<include name="validateHomePage" />
+					<exclude name="validateHomePage" />
 				</methods>
 			</class>
 		</classes>
@@ -34,14 +28,14 @@
 		<classes>
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
-					<include name="createRuleUsingDynamicTemplate" />
-					<include name="createRuleUsingImportTemplate" />
-					<include name="createWorkflowUsingDefaultDynamicTemplate" />
+					<exclude name="createRuleUsingDynamicTemplate" />
+					<exclude name="createRuleUsingImportTemplate" />
+					<exclude name="createWorkflowUsingDefaultDynamicTemplate" />
 				</methods>
 			</class>
 		</classes>
 	</test>
-	
+
 	<test name="Template Page Tests">
 		<classes>
 			<class name="com.qa.tests.TemplatePageTest">

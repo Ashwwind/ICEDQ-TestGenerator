@@ -10,6 +10,7 @@ import org.testng.annotations.AfterSuite;
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.extentreportlistener.ExtentReportListener;
+import com.qa.factory.DriverFactory;
 import com.qa.sendmail.SendMail;
 import com.qa.utils.DriverSetup;
 import com.qa.utils.PageUtil;
@@ -27,6 +28,9 @@ public class Base {
 
 		// Load locators once for the suite
 		PageUtil.locatotFind();
+		
+		// Driver setup
+		 DriverFactory.setDriver(driver);
 
 		// Initialize report
 		ExtentManager.getExtentReports();
