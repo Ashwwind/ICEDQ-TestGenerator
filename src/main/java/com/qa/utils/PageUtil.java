@@ -96,7 +96,7 @@ public class PageUtil extends Base {
 		} catch (TimeoutException te) {
 			// Fallback: extra wait
 			try {
-				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 10))
+				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
 						.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
 			} catch (Exception e) {
 				ExtentManager.logInfo("Element not visible after extended wait: " + by);
@@ -123,7 +123,7 @@ public class PageUtil extends Base {
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
 
-			//waitForSeconds(1);
+			waitForSeconds(1);
 
 			ExtentManager.logPass("Clicked on " + label);
 
@@ -155,7 +155,7 @@ public class PageUtil extends Base {
 	// Wait for just seconds
 	public static void waitForSeconds(long seconds) {
 	    try {
-	        Thread.sleep(seconds * 50);
+	        Thread.sleep(seconds * 20);
 	    } catch (InterruptedException e) {
 	        Thread.currentThread().interrupt();
 	    }
@@ -367,7 +367,7 @@ public class PageUtil extends Base {
 	        }
 
 	        // 3️⃣ Click the element
-	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 30);
+	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 20);
 	        if (!isClicked) {
 	            ExtentManager.logError("Failed to click " + fieldName + " " + fieldType);
 	            return false;

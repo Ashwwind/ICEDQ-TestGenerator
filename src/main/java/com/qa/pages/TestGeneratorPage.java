@@ -1083,6 +1083,7 @@ public class TestGeneratorPage extends PageUtil {
 	public void validateRuleInstanceID(WebDriver driver) throws InterruptedException {
 
 		By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
+								  //*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button       
 		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
 		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
 
