@@ -31,6 +31,7 @@
 					<exclude name="createRuleUsingDynamicTemplate" />
 					<exclude name="createRuleUsingImportTemplate" />
 					<exclude name="createWorkflowUsingDefaultDynamicTemplate" />
+					<include name="existingWorkflowUsingDefaultDynamicTemplate"/>
 				</methods>
 			</class>
 		</classes>
@@ -40,10 +41,10 @@
 		<classes>
 			<class name="com.qa.tests.TemplatePageTest">
 				<methods>
-					<include name="createTemplateUsingDynamicTemplate" />
-					<include name="updateTemplateUsingExistingTemplate" />
-					<include name="deleteTemplateUsingExistingTemplateFromList" />
-					<include name="deleteTemplateUsingExistingTemplateFromDetails" />
+					<exclude name="createTemplateUsingDynamicTemplate" />
+					<exclude name="updateTemplateUsingExistingTemplate" />
+					<exclude name="deleteTemplateUsingExistingTemplateFromList" />
+					<exclude name="deleteTemplateUsingExistingTemplateFromDetails" />
 				</methods>
 			</class>
 		</classes>

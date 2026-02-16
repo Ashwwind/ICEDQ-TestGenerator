@@ -2,6 +2,8 @@ package com.qa.pages;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -283,7 +285,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	public void createWorkflowUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
-			String schemaName, String tableName) throws InterruptedException {
+			String schemaName, String tableName, String workflowName) throws InterruptedException {
 
 		// Step 1: Click Test Generator
 		executeStep("Click Test Generator", this::clickTestGenerator);
@@ -331,7 +333,78 @@ public class TestGeneratorPage extends PageUtil {
 		executeStep("Select Generated Entity", this::selectGeneratedEntity);
 
 		// Step 10: Publish the Workflow
-		executeStep("Publish Workflow : " + folderName, () -> clickOnPublishTheWorkflow(folderName));
+		executeStep("Publish Workflow : " + folderName, () -> clickOnPublishTheWorkflow(folderName,workflowName));
+
+		executeStep("Go To Publish", () -> {
+			try {
+				clickOnGoToPublish();
+			} catch (InterruptedException e) {
+				throw new RuntimeException(e);
+			}
+		});
+
+		// Step 11: Verify Published Rule
+		executeStep("Click On Published Rule", this::clickOnPublishedWorkflow);
+
+		// Step 12: Navigate home after successful flow
+		navigatHomePage();
+	}
+	
+	/// ************* ///
+	// Existing workflow
+	/// ************* ///
+
+	public void existingWorkflowUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
+			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
+			String schemaName, String tableName, String workflowName) throws InterruptedException {
+
+		// Step 1: Click Test Generator
+		executeStep("Click Test Generator", this::clickTestGenerator);
+
+		// Step 2: Click on Rule Type
+		executeStep("Click On Rule Type: " + ruleType, () -> clickOnRuleType(ruleType));
+
+		// Step 3: Search and select template
+		executeStep("Search Template: " + templateName, () -> {
+			clickOnSearchField();
+			enterOnSearchField(templateName);
+			selectExistingChecksumTemplate();
+		});
+
+		// Step 4: Workspace & Folder selection
+		executeStep("Select Workspace: " + workspaceName, () -> clickOnWorkspaceField(workspaceName));
+
+		executeStep("Select Folder: " + folderName, () -> clickOnFolderField(folderName));
+
+		// Step 5: Navigate Next buttons
+		executeStep("Workspace Next", this::gotoWorkspaceNextbtn);
+		executeStep("Rule Metadata Next", this::gotoRuleMetadataNextbtn);
+		executeStep("Check Metadata Next", this::gotoCheckMetadataNextbtn);
+		executeStep("Notification Next", this::gotoNotificationNextbtn);
+
+		// Step 6: Source Dataset selection
+		executeStep("Select Source Dataset: " + connectionType + "/" + SourceConnectionName + "/" + schemaName,
+				() -> selectionSourceDataset(connectionType, SourceConnectionName, schemaName));
+
+		// Step 7: Target Dataset (only for applicable rule types)
+		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
+
+			executeStep("Select Target Dataset: " + connectionType + "/" + TargetConnectionName + "/" + schemaName,
+					() -> selectionTargetDataset(connectionType, TargetConnectionName, schemaName));
+		}
+
+		// Step 8: Dataset & Table selection
+		executeStep("Dataset Next", this::gotoDatasetNextbtn);
+		executeStep("Select Available Table: " + tableName, () -> selectionAvailableTable(tableName));
+		executeStep("Table Next", this::gotoSelettableNextbtn);
+
+		// Step 9: Generate & Preview
+		executeStep("Click Generate", this::clickOnGenerate);
+		executeStep("Go To Preview", this::clickOnGoToPreview);
+		executeStep("Select Generated Entity", this::selectGeneratedEntity);
+
+		// Step 10: Publish the Workflow
+		executeStep("Publish Workflow : " + folderName, () -> clickOnPublishTheExistingWorkflow(folderName, workflowName));
 
 		executeStep("Go To Publish", () -> {
 			try {
@@ -854,8 +927,8 @@ public class TestGeneratorPage extends PageUtil {
 		ExtentManager.logInfo("Publish button is clickable.");
 	}
 
-	// Click on the 'Publish' button
-	public void clickOnPublishTheWorkflow(String folderName) {
+	// Click on the Workflow 'Publish' button
+	public void clickOnPublishTheWorkflow(String folderName, String workflowName) {
 
 		By clickWorkflowPublishButton = By.xpath("//*[@id='publish_item']");
 		By selectWorkflow = By.xpath("//*[@id='publish_item-popup']/ul/li[contains(text(), 'Workflow')]");
@@ -863,6 +936,7 @@ public class TestGeneratorPage extends PageUtil {
 		By searchFolderField = By.xpath("//*[@placeholder='Search folder']");
 		By clickOnFolderName = By.xpath("//*[@id='ruleListRighttreeView_active']/div[2]/span/div");
 		By selectFolder = By.xpath("//*[@id='ruleListRighttreeView_active']/div[2]/span/div/div/button[1]/span");
+		By clickOnNameField = By.xpath("//input[@placeholder='Enter Name']");
 		By clickOnCreate = By.xpath("//*[@id='publishRW']/div[3]/button[2]");
 
 		clickOnElement(driver, clickWorkflowPublishButton, "publish item button", waitTime);
@@ -879,12 +953,69 @@ public class TestGeneratorPage extends PageUtil {
 		clickOnElement(driver, clickOnFolderName, "searched folder", waitTime);
 		clickOnElement(driver, selectFolder, "to select the folder", waitTime);
 		isInvisibleLoader(driver, loader);
+		
+		clickOnElement(driver, clickOnNameField, "Name field - workflow name", waitTime);
+		
+		WebElement element = driver.findElement(clickOnNameField);
+		element.sendKeys(Keys.CONTROL + "a");
+		element.sendKeys(Keys.DELETE);
+		
+		sendkeysToElement(driver, clickOnNameField, "Name field - workflow name", workflowName);
+		sendkeysToEnter(driver, clickOnNameField, workflowName);
+		
 
 		clickOnElement(driver, clickOnCreate, "create button", waitTime);
 		isInvisibleLoader(driver, loader);
 
 		ExtentManager.logInfo("Workflow is created successfully...");
 	}
+	
+	// Click on the Existing Workflow 'Publish' button
+		public void clickOnPublishTheExistingWorkflow(String folderName, String workflowName) {
+
+			By clickWorkflowPublishButton = By.xpath("//*[@id='publish_item']");
+			By selectWorkflow = By.xpath("//*[@id='publish_item-popup']/ul/li[contains(text(), 'Workflow')]");
+			By clickAddToExistingWorkflow = By.xpath("//*[contains(text(),'Add to Existing Workflow')]");
+			By clickFolderDropdown = By.xpath("//*[@id='publishRW']/div[2]/div[1]/div[2]/div[2]/div/div[1]");
+			By searchFolderField = By.xpath("//*[@placeholder='Search folder']");
+			By clickOnFolderName = By.xpath("//*[@id='ruleListRighttreeView_active']/div[2]/span/div");
+			By selectFolder = By.xpath("//*[@id='ruleListRighttreeView_active']/div[2]/span/div/div/button[1]/span");
+			By clickWorkflowDropdown = By.xpath("//*[@placeholder='Workflow Name']/span");
+			By searchOnWorkfloName = By.xpath("//*[@aria-label='workflowDropdown']/span/span/input");
+			
+			By clickOnAdd = By.xpath("//button[contains(normalize-space(text()), 'Add')]");
+
+			clickOnElement(driver, clickWorkflowPublishButton, "publish item button", waitTime);
+
+			clickOnElement(driver, selectWorkflow, "workflow button", waitTime);
+			isInvisibleLoader(driver, loader);
+			
+			clickOnElement(driver, clickAddToExistingWorkflow, "Add to Existing Workflow", waitTime);
+			isInvisibleLoader(driver, loader);
+			
+			clickOnElement(driver, clickFolderDropdown, "folder dropdown", waitTime);
+			clickOnElement(driver, searchFolderField, "search folder field", waitTime);
+			
+			sendkeysToElement(driver, searchFolderField, "search folder field", folderName);
+			sendkeysToEnter(driver, searchFolderField, folderName);
+			isInvisibleLoader(driver, loader);
+
+			clickOnElement(driver, clickOnFolderName, "searched folder", waitTime);
+			clickOnElement(driver, selectFolder, "to select the folder", waitTime);
+			isInvisibleLoader(driver, loader);
+
+			// add Workflow logic.
+			
+			clickOnElement(driver, clickWorkflowDropdown, "Workflow dropdown field", waitTime);
+			clickOnElement(driver, searchOnWorkfloName, "Search field - workflow ", waitTime);
+			sendkeysToElement(driver, searchOnWorkfloName, "Search field - workflow ", workflowName);
+			sendkeysToEnter(driver, searchOnWorkfloName, workflowName);
+			
+			clickOnElement(driver, clickOnAdd, "Add button", waitTime);
+
+			ExtentManager.logInfo("Rules are add successfully in the existing Workflow...");
+		}
+
 
 	// Click on the 'Go To Publish' button
 	public void clickOnGoToPublish() throws InterruptedException {
@@ -1063,8 +1194,9 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the Rule Recent runs button.
 	public void clickOnRuleRecentrun() {
 		// Click on the Recent runs button.
-		clickOnElement(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]"),
-				"recent runs button", 10);
+		By recentRunsButton = By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]");
+		clickOnElement(driver,recentRunsButton, "recent runs button", 10);
+		
 		waitForSeconds(1);
 
 	}
@@ -1072,9 +1204,9 @@ public class TestGeneratorPage extends PageUtil {
 	// Click on the Workflow Recent runs button.
 	public void clickOnWorkflowRecentrun() {
 		// Click on the Recent runs button.
-		clickOnElement(driver, By.xpath(
-				"//*[@id='imaster']/app-workflow-orchestrator/div[2]/div[1]/app-workflows/app-custom-workflow/div[1]/div/div[2]/ejs-tooltip/button[3]/span"),
-				"recent runs button", 10);
+		By recentRunsButton = By.xpath("//*[@id='imaster']/app-workflow-orchestrator/div[2]/div[1]/app-workflows/app-custom-workflow/div[1]/div/div[2]/ejs-tooltip/button[3]/span");
+		clickOnElement(driver, recentRunsButton, "recent runs button", waitTime);
+		
 		waitForSeconds(1);
 
 	}
@@ -1082,8 +1214,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Validate Rule Instance ID...
 	public void validateRuleInstanceID(WebDriver driver) throws InterruptedException {
 
-		By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
-								  //*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button       
+		By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");  
 		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
 		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
 
@@ -1091,9 +1222,17 @@ public class TestGeneratorPage extends PageUtil {
 		int retryCount = 0;
 
 		while (retryCount < maxRetries) {
+			
+			validateElementIsVisible(driver, refreshBtn, "Refresh Button");
+			
+			WebElement element = driver.findElement(refreshBtn);
+
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", element);
+			waitForSeconds(2);
+
 
 			clickOnElement(driver, refreshBtn, "Refresh button", waitTime);
-
 			waitForSeconds(1);
 
 			if (isElementDisplayed(driver, instanceIdLocator, 5)) {
@@ -1129,9 +1268,16 @@ public class TestGeneratorPage extends PageUtil {
 		int retryCount = 0;
 
 		while (retryCount < maxRetries) {
+			
+			validateElementIsVisible(driver, refreshBtn, "Refresh Button");
+			
+			WebElement element = driver.findElement(refreshBtn);
+
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", element);
+			waitForSeconds(2);
 
 			clickOnElement(driver, refreshBtn, "Refresh button", waitTime);
-
 			waitForSeconds(1);
 
 			if (isElementDisplayed(driver, instanceIdLocator, 5)) {

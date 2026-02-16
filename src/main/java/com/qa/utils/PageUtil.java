@@ -117,8 +117,6 @@ public class PageUtil extends Base {
 				return false;
 			}
 
-			//validateElementIsVisible(driver, by, label);
-
 			ExtentManager.logInfo("Clicking on " + label);
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();

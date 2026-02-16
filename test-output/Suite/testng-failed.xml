@@ -1,41 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Login Tests(failed)">
+  <test thread-count="5" name="Test Generator Page Tests(failed)">
     <classes>
-      <class name="com.qa.tests.LoginTest">
-        <methods>
-          <include name="endSuite"/>
-          <include name="validateLoginPage"/>
-          <include name="Login"/>
-          <include name="startSuite"/>
-        </methods>
-      </class> <!-- com.qa.tests.LoginTest -->
-    </classes>
-  </test> <!-- Login Tests(failed) -->
-  <test thread-count="5" name="Home Page Tests(failed)">
-    <classes>
-      <class name="com.qa.tests.HomePageTest">
+      <class name="com.qa.tests.TestGeneratorTest">
         <methods>
           <include name="endSuite"/>
           <include name="startSuite"/>
-          <include name="validateHomePage"/>
+          <include name="createWorkflowUsingDefaultDynamicTemplate" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.qa.tests.HomePageTest -->
+      </class> <!-- com.qa.tests.TestGeneratorTest -->
     </classes>
-  </test> <!-- Home Page Tests(failed) -->
-  <test thread-count="5" name="Template Page Tests(failed)">
-    <classes>
-      <class name="com.qa.tests.TemplatePageTest">
-        <methods>
-          <include name="endSuite"/>
-          <include name="deleteTemplateUsingExistingTemplateFromDetails"/>
-          <include name="startSuite"/>
-          <include name="updateTemplateUsingExistingTemplate"/>
-          <include name="deleteTemplateUsingExistingTemplateFromList"/>
-          <include name="createTemplateUsingDynamicTemplate"/>
-        </methods>
-      </class> <!-- com.qa.tests.TemplatePageTest -->
-    </classes>
-  </test> <!-- Template Page Tests(failed) -->
+  </test> <!-- Test Generator Page Tests(failed) -->
 </suite> <!-- Failed suite [Suite] -->
