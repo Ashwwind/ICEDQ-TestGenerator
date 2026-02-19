@@ -24,7 +24,7 @@ public class TemplatePageTest extends Base {
 	public void createTemplateUsingDynamicTemplate(String templateType, String ruleType, String templateName,
 			String ruleName, String ruleDescription) {
 
-		ExtentManager.startTest("Create Template Using Default Dynamic Template for - " + ruleType);
+		ExtentManager.startTest("Create Template Using Default "+ templateType +"Template for - " + ruleType);
 
 		TemplatePage templatePage = new TemplatePage(driver);
 

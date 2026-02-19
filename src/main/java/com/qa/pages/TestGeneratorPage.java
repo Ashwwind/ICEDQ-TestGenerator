@@ -443,26 +443,26 @@ public class TestGeneratorPage extends PageUtil {
 
 		case "checksum":
 			return resolveByConnection(connectionType, "Checksum.xlsx", "Checksum - Redshift.xlsx",
-					"Checksum - Flat File-SQL.xlsx");
+					"Checksum - Flat File-SQL.xlsx","Checksum - Excel.xlsx");
 
 		case "recon":
 			return resolveByConnection(connectionType, "Recon.xlsx", "Recon - Redshift.xlsx",
-					"Recon - Flat File-SQL.xlsx");
+					"Recon - Flat File-SQL.xlsx", "Recon - Excel.xlsx");
 
 		case "validation":
 			return resolveByConnection(connectionType, "Validation.xlsx", "Validation - Redshift.xlsx",
-					"Validation - Flat File-SQL.xlsx");
+					"Validation - Flat File-SQL.xlsx","Validation - Excel.xlsx");
 
 		case "pushdown":
 			return resolveByConnection(connectionType, "Pushdown.xlsx", "Pushdown - Redshift.xlsx",
-					"Pushdown - Flat File-SQL.xlsx");
+					"Pushdown - Flat File-SQL.xlsx", "Pushdown - Excel.xlsx");
 
 		default:
 			throw new IllegalArgumentException("Invalid rule type: " + ruleType);
 		}
 	}
 
-	private String resolveByConnection(String connectionType, String databaseFile, String cloudFile, String fileFile) {
+	private String resolveByConnection(String connectionType, String databaseFile, String cloudFile, String fileFile, String fileFile1) {
 
 		if (connectionType.equalsIgnoreCase("Database")) {
 			return databaseFile;
@@ -472,6 +472,9 @@ public class TestGeneratorPage extends PageUtil {
 		}
 		if (connectionType.equalsIgnoreCase("File")) {
 			return fileFile;
+		}
+		if (connectionType.equalsIgnoreCase("File")) {
+			return fileFile1;
 		}
 
 		throw new IllegalArgumentException("Invalid connection type: " + connectionType);
