@@ -128,9 +128,9 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				//page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				//page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("File")) {
 				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
 			}
