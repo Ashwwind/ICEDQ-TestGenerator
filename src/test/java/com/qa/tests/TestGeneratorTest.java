@@ -121,18 +121,18 @@ public class TestGeneratorTest extends Base {
 
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName) throws InterruptedException {
+			String folderName, String connectionType, String fileType, String SourceConnectionName, String TargetConnectionName) throws InterruptedException {
 		ExtentManager.startTest("Create rule using default Import template for - " + ruleType + " | " + connectionType + " connection.");
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("File")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);

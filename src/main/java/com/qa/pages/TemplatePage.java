@@ -123,6 +123,7 @@ public class TemplatePage extends PageUtil {
 	public boolean clickOnAccountField() {
 
 		boolean isClicked = clickOnField(driver, accountNameField, "Account", "Dropdown field");
+		waitForSeconds(2);
 		if (!isClicked) {
 			return false;
 		}

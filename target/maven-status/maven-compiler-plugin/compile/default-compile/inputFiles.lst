@@ -3,6 +3,7 @@ D:\Eclipse\ICEDQ\TestGenerator\src\main\java\annotations\XrayTest.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\annotations\XrayResultStore.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\base\Base.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\config\ConfigReader.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\factory\DriverFactory.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\ExcelReader.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\HomePage.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\DriverSetup.java

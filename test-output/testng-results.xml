@@ -1,33 +1,1765 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="11" passed="4" failed="0" skipped="0">
+<testng-results ignored="5" total="26" passed="3" failed="18" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-16T18:29:35 IST" name="Suite" finished-at="2026-02-16T18:31:08 IST" duration-ms="92951">
+  <suite started-at="2026-02-24T12:42:26 IST" name="Suite" finished-at="2026-02-24T13:15:01 IST" duration-ms="1954311">
     <groups>
     </groups>
-    <test started-at="2026-02-16T18:29:35 IST" name="Login Tests" finished-at="2026-02-16T18:29:38 IST" duration-ms="2573">
+    <test started-at="2026-02-24T12:42:26 IST" name="Login Tests" finished-at="2026-02-24T12:42:29 IST" duration-ms="2164">
       <class name="com.qa.tests.LoginTest">
-        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-02-16T18:29:35 IST" name="validateLoginPage" finished-at="2026-02-16T18:29:36 IST" duration-ms="1065" status="PASS">
+        <test-method signature="validateLoginPage()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-02-24T12:42:26 IST" name="validateLoginPage" finished-at="2026-02-24T12:42:27 IST" duration-ms="643" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-02-16T18:29:36 IST" name="Login" finished-at="2026-02-16T18:29:38 IST" duration-ms="1478" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.qa.tests.LoginTest@436813f3]" started-at="2026-02-24T12:42:27 IST" name="Login" finished-at="2026-02-24T12:42:29 IST" duration-ms="1493" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
       </class> <!-- com.qa.tests.LoginTest -->
     </test> <!-- Login Tests -->
-    <test started-at="2026-02-16T18:29:38 IST" name="Home Page Tests" finished-at="2026-02-16T18:29:39 IST" duration-ms="686">
+    <test started-at="2026-02-24T12:42:29 IST" name="Home Page Tests" finished-at="2026-02-24T12:42:29 IST" duration-ms="557">
       <class name="com.qa.tests.HomePageTest">
-        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-02-16T18:29:38 IST" name="validateHomePage" finished-at="2026-02-16T18:29:39 IST" duration-ms="683" status="PASS">
+        <test-method signature="validateHomePage()[pri:0, instance:com.qa.tests.HomePageTest@14cd1699]" started-at="2026-02-24T12:42:29 IST" name="validateHomePage" finished-at="2026-02-24T12:42:29 IST" duration-ms="556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomePage -->
       </class> <!-- com.qa.tests.HomePageTest -->
     </test> <!-- Home Page Tests -->
-    <test started-at="2026-02-16T18:29:39 IST" name="Test Generator Page Tests" finished-at="2026-02-16T18:31:08 IST" duration-ms="89099">
+    <test started-at="2026-02-24T12:42:29 IST" name="Test Generator Page Tests" finished-at="2026-02-24T13:15:00 IST" duration-ms="1950944">
       <class name="com.qa.tests.TestGeneratorTest">
-        <test-method signature="existingWorkflowUsingDefaultDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-16T18:29:40 IST" name="existingWorkflowUsingDefaultDynamicTemplate" data-provider="ruleDataForExistingWorkflowCreation" finished-at="2026-02-16T18:31:08 IST" duration-ms="88444" status="PASS">
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:42:30 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:44:29 IST" duration-ms="119197" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Mysql-with-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Mysql-with-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: java.lang.RuntimeException: Status did not change from Submitted/Running after retries
+at com.qa.pages.TestGeneratorPage.validateRuleInstanceID(TestGeneratorPage.java:1259)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1079)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:44:29 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:46:14 IST" duration-ms="104110" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Mysql-with-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Mysql-with-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1059)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@placeholder='Enter rule name']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=xpath, value=//*[@placeholder='Enter rule name']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:46:14 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:47:55 IST" duration-ms="101350" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Mysql-with-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Mysql-with-jdbc-SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1059)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@placeholder='Enter rule name']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=xpath, value=//*[@placeholder='Enter rule name']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:47:55 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:49:35 IST" duration-ms="99952" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Mysql-with-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Mysql-with-jdbc-SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1059)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@placeholder='Enter rule name']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=xpath, value=//*[@placeholder='Enter rule name']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:49:36 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:51:21 IST" duration-ms="105767" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-without-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Redshift-without-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:133)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1059)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@placeholder='Enter rule name']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=xpath, value=//*[@placeholder='Enter rule name']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:51:22 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:52:04 IST" duration-ms="42081" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-without-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Redshift-without-jdbc-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Select Target Dataset for Import: Cloud Data Warehouse/Redshift-without-jdbc-UserConn]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Select Target Dataset for Import: Cloud Data Warehouse/Redshift-without-jdbc-UserConn
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:246)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:133)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=145.0.7632.110)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, sendKeysToElement {id=f.CBDD71DDF0EB75177728CC3B3F3BD040.d.9FAA9B9C27B43BBA59002A8F420FE260.e.2436, value=[Ljava.lang.CharSequence;@4515ab2}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (25c5a869a669d7990c9d764b053c1522)] -> xpath: //*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']]
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at com.qa.utils.PageUtil.sendkeysToElement(PageUtil.java:170)
+at com.qa.pages.TestGeneratorPage.selectionTargetDatasetForImport(TestGeneratorPage.java:852)
+at com.qa.pages.TestGeneratorPage.lambda$30(TestGeneratorPage.java:247)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:52:04 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:54:36 IST" duration-ms="152330" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-without-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Redshift-without-jdbc-SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:133)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: java.lang.RuntimeException: Status did not change from Submitted/Running after retries
+at com.qa.pages.TestGeneratorPage.validateRuleInstanceID(TestGeneratorPage.java:1259)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1079)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:54:37 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:56:54 IST" duration-ms="137620" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cloud Data Warehouse]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Redshift-without-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Redshift-without-jdbc-SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:133)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: java.lang.RuntimeException: Status did not change from Submitted/Running after retries
+at com.qa.pages.TestGeneratorPage.validateRuleInstanceID(TestGeneratorPage.java:1259)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1079)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:56:54 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T12:59:17 IST" duration-ms="142846" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1059)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@placeholder='Enter rule name']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=xpath, value=//*[@placeholder='Enter rule name']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T12:59:18 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T13:02:44 IST" duration-ms="206377" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: java.lang.RuntimeException: Status did not change from Submitted/Running after retries
+at com.qa.pages.TestGeneratorPage.validateRuleInstanceID(TestGeneratorPage.java:1259)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1079)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:02:44 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T13:04:55 IST" duration-ms="130907" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: java.lang.RuntimeException: Status did not change from Submitted/Running after retries
+at com.qa.pages.TestGeneratorPage.validateRuleInstanceID(TestGeneratorPage.java:1259)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1079)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:04:55 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T13:06:56 IST" duration-ms="120623" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[FlatFileSQL-S3-AWS-IAM-SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:276)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedRule(TestGeneratorPage.java:1030)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@placeholder='Enter rule name'] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.pages.TestGeneratorPage.lambda$80(TestGeneratorPage.java:1059)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@placeholder='Enter rule name']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=xpath, value=//*[@placeholder='Enter rule name']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:06:56 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T13:07:49 IST" duration-ms="52504" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Upload Files for Rule Type: checksum]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Upload Files for Rule Type: checksum
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:254)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='file'][name='UploadFiles']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=css selector, value=input[type='file'][name='UploadFiles']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at com.qa.utils.PageUtil.uploadFile(PageUtil.java:288)
+at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:863)
+at com.qa.pages.TestGeneratorPage.uploadFileByRuleAndConnection(TestGeneratorPage.java:437)
+at com.qa.pages.TestGeneratorPage.lambda$32(TestGeneratorPage.java:255)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:07:49 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T13:08:41 IST" duration-ms="52190" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[recon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Diff and Expression based on Column Position - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--UserConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Upload Files for Rule Type: recon]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Upload Files for Rule Type: recon
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:254)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='file'][name='UploadFiles']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=css selector, value=input[type='file'][name='UploadFiles']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at com.qa.utils.PageUtil.uploadFile(PageUtil.java:288)
+at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:863)
+at com.qa.pages.TestGeneratorPage.uploadFileByRuleAndConnection(TestGeneratorPage.java:437)
+at com.qa.pages.TestGeneratorPage.lambda$32(TestGeneratorPage.java:255)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:08:42 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T13:09:30 IST" duration-ms="48684" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[validation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Upload Files for Rule Type: validation]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Upload Files for Rule Type: validation
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:254)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='file'][name='UploadFiles']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=css selector, value=input[type='file'][name='UploadFiles']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at com.qa.utils.PageUtil.uploadFile(PageUtil.java:288)
+at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:863)
+at com.qa.pages.TestGeneratorPage.uploadFileByRuleAndConnection(TestGeneratorPage.java:437)
+at com.qa.pages.TestGeneratorPage.lambda$32(TestGeneratorPage.java:255)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createRuleUsingImportTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:09:30 IST" name="createRuleUsingImportTemplate" data-provider="ruleDataForImportTemplate" finished-at="2026-02-24T13:10:18 IST" duration-ms="47616" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pushdown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Data Pushdown Validation - Import SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7-5-0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[File]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Excel_Azure_Location_Azure_Access_Key--SysConn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Upload Files for Rule Type: pushdown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Upload Files for Rule Type: pushdown
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createRuleUsingDefaultImportTemplate(TestGeneratorPage.java:254)
+at com.qa.tests.TestGeneratorTest.createRuleUsingImportTemplate(TestGeneratorTest.java:135)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: File upload failed: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='file'][name='UploadFiles']"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=css selector, value=input[type='file'][name='UploadFiles']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at com.qa.utils.PageUtil.uploadFile(PageUtil.java:288)
+at com.qa.pages.TestGeneratorPage.uploadingFiles(TestGeneratorPage.java:863)
+at com.qa.pages.TestGeneratorPage.uploadFileByRuleAndConnection(TestGeneratorPage.java:437)
+at com.qa.pages.TestGeneratorPage.lambda$32(TestGeneratorPage.java:255)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRuleUsingImportTemplate -->
+        <test-method signature="createWorkflowUsingDefaultDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:10:18 IST" name="createWorkflowUsingDefaultDynamicTemplate" data-provider="ruleDataForWorkflowCreation" finished-at="2026-02-24T13:12:41 IST" duration-ms="142673" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[checksum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Compare Record Counts - Dynamic SQL]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test_Generator-WIP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AD-Workflow]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Database]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Mysql-with-jdbc-SysConn]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Mysql-with-jdbc-UserConn]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[icedq]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[staff]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Workflow - All rules type]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.createWorkflowUsingDefaultDynamicTemplate(TestGeneratorPage.java:347)
+at com.qa.tests.TestGeneratorTest.createWorkflowUsingDefaultDynamicTemplate(TestGeneratorTest.java:71)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedWorkflow(TestGeneratorPage.java:1093)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: java.lang.RuntimeException: Status did not change from Submitted/Running after retries
+at com.qa.pages.TestGeneratorPage.validateWorkflowInstanceID(TestGeneratorPage.java:1304)
+at com.qa.pages.TestGeneratorPage.lambda$83(TestGeneratorPage.java:1145)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWorkflowUsingDefaultDynamicTemplate -->
+        <test-method signature="existingWorkflowUsingDefaultDynamicTemplate(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.TestGeneratorTest@2b71e916]" started-at="2026-02-24T13:12:41 IST" name="existingWorkflowUsingDefaultDynamicTemplate" data-provider="ruleDataForExistingWorkflowCreation" finished-at="2026-02-24T13:15:00 IST" duration-ms="138615" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -80,18 +1812,94 @@
               </value>
             </param>
           </params>
+          <exception class="com.qa.pages.TestGeneratorPage$FlowAbortException">
+            <message>
+              <![CDATA[Flow aborted: Click On Published Rule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Click On Published Rule
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.existingWorkflowUsingDefaultDynamicTemplate(TestGeneratorPage.java:418)
+at com.qa.tests.TestGeneratorTest.existingWorkflowUsingDefaultDynamicTemplate(TestGeneratorTest.java:101)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.qa.pages.TestGeneratorPage$FlowAbortException: Flow aborted: Validate published rule and navigate to Data Testing page.
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:126)
+at com.qa.pages.TestGeneratorPage.clickOnPublishedWorkflow(TestGeneratorPage.java:1093)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: inputWorkflowName (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.qa.pages.TestGeneratorPage.lambda$83(TestGeneratorPage.java:1125)
+at com.qa.pages.TestGeneratorPage.executeStep(TestGeneratorPage.java:105)
+... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#inputWorkflowName"}
+  (Session info: chrome=145.0.7632.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25c5a869a669d7990c9d764b053c1522, findElement {using=id, value=inputWorkflowName}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.110, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\ASHWIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59864}, goog:processID: 224028, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59864/devtoo..., se:cdpVersion: 145.0.7632.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25c5a869a669d7990c9d764b053c1522
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.qa.pages.TestGeneratorPage$FlowAbortException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- existingWorkflowUsingDefaultDynamicTemplate -->
       </class> <!-- com.qa.tests.TestGeneratorTest -->
     </test> <!-- Test Generator Page Tests -->
-    <test started-at="2026-02-16T18:31:08 IST" name="Template Page Tests" finished-at="2026-02-16T18:31:08 IST" duration-ms="1">
+    <test started-at="2026-02-24T13:15:01 IST" name="Template Page Tests" finished-at="2026-02-24T13:15:01 IST" duration-ms="2">
       <class name="com.qa.tests.TemplatePageTest">
-        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@292b08d6]" started-at="2026-02-16T18:29:31 IST" name="startSuite" finished-at="2026-02-16T18:29:35 IST" duration-ms="4183" status="PASS">
+        <test-method is-config="true" signature="startSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@292b08d6]" started-at="2026-02-24T12:42:23 IST" name="startSuite" finished-at="2026-02-24T12:42:26 IST" duration-ms="3376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSuite -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@292b08d6]" started-at="2026-02-16T18:31:08 IST" name="endSuite" finished-at="2026-02-16T18:31:16 IST" duration-ms="7537" status="PASS">
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:com.qa.tests.TemplatePageTest@292b08d6]" started-at="2026-02-24T13:15:01 IST" name="endSuite" finished-at="2026-02-24T13:15:12 IST" duration-ms="11584" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->

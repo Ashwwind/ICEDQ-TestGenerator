@@ -31,7 +31,7 @@ import com.qa.extentreportlistener.ExtentManager;
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 2;
+	public static final int SHOTW = 50;
 	private static WebDriverWait wait;
 	public static Properties prop;
 
