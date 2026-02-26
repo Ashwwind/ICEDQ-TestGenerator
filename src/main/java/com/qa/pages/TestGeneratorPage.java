@@ -14,7 +14,7 @@ import com.qa.utils.PageUtil;
 
 public class TestGeneratorPage extends PageUtil {
 	private WebDriver driver;
-	public static final int waitTime = 10; // Global wait time
+	public static final int waitTime = 15; // Global wait time
 
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;
@@ -668,7 +668,7 @@ public class TestGeneratorPage extends PageUtil {
 			clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", waitTime);
 			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", waitTime);
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 40);
 
 			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
@@ -683,7 +683,7 @@ public class TestGeneratorPage extends PageUtil {
 					waitTime);
 			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", waitTime);
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 40);
 
 			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
@@ -708,6 +708,7 @@ public class TestGeneratorPage extends PageUtil {
 					"//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']");
 
 			sendkeysToElement(driver, databaseInput, "source database name", "icedqrs");
+			isInvisibleLoader(driver, loader);
 
 			sendkeysToEnter(driver, databaseInput, "source database name");
 			isInvisibleLoader(driver, loader);
@@ -716,10 +717,11 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Schema selection
-		clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", waitTime);
+		clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 40);
 		isInvisibleLoader(driver, loader);
 
 		sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
+		isInvisibleLoader(driver, loader);
 
 		sendkeysToEnter(driver, enterSourceSchemaName, "source schema name");
 		isInvisibleLoader(driver, loader);
@@ -777,8 +779,7 @@ public class TestGeneratorPage extends PageUtil {
 			clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", waitTime);
 			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.",
-					waitTime);
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 40);
 
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
@@ -793,8 +794,7 @@ public class TestGeneratorPage extends PageUtil {
 					waitTime);
 			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.",
-					waitTime);
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 40);
 
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
@@ -821,7 +821,7 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Schema selection
-		clickOnElement(driver, clickTargetSchemaDropdown, "choose target schema dropdown.", waitTime);
+		clickOnElement(driver, clickTargetSchemaDropdown, "choose target schema dropdown.", 40);
 		isInvisibleLoader(driver, loader);
 
 		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
@@ -856,7 +856,7 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Click Target Dataset Connection Dropdown
-		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", waitTime);
+		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 40);
 		isInvisibleLoader(driver, loader);
 
 		// Enter and confirm connection name
@@ -1226,48 +1226,45 @@ public class TestGeneratorPage extends PageUtil {
 	// Validate Rule Instance ID...
 	public void validateRuleInstanceID(WebDriver driver) throws InterruptedException {
 
-		By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
-		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
-		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
+	    By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
+	    By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
+	    By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
 
-		int maxRetries = 10;
-		int retryCount = 0;
+	    int maxRetries = 10;
 
-		while (retryCount < maxRetries) {
+	    for (int retryCount = 0; retryCount < maxRetries; retryCount++) {
 
-			validateElementIsVisible(driver, refreshBtn, "Refresh Button");
+	        // 🔹 Wait 5 seconds before clicking refresh
+	        Thread.sleep(5000);
 
-			WebElement element = driver.findElement(refreshBtn);
+	        validateElementIsVisible(driver, refreshBtn, "Refresh Button");
 
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView(true);", element);
-			waitForSeconds(2);
+	        WebElement element = driver.findElement(refreshBtn);
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
-			clickOnElement(driver, refreshBtn, "Refresh button", waitTime);
-			isInvisibleLoader(driver, loader);
-			waitForSeconds(1);
-			isInvisibleLoader(driver, loader);
+	        clickOnElement(driver, refreshBtn, "Refresh button", waitTime);
 
-			if (isElementDisplayed(driver, instanceIdLocator, 5)) {
+	        isInvisibleLoader(driver, loader);
 
-				String instanceId = driver.findElement(instanceIdLocator).getText();
-				String status = driver.findElement(statusLocator).getText().trim();
+	        if (isElementDisplayed(driver, instanceIdLocator, 10)) {
 
-				ExtentManager.logInfo("Instance ID: " + instanceId);
-				ExtentManager.logInfo("Current Status: " + status);
+	            String instanceId = driver.findElement(instanceIdLocator).getText();
+	            String status = driver.findElement(statusLocator).getText().trim();
 
-				// Keep waiting while status is Submitted or Running
-				if (!status.equalsIgnoreCase("Submitted") && !status.equalsIgnoreCase("Running")) {
+	            ExtentManager.logInfo("Instance ID: " + instanceId);
+	            ExtentManager.logInfo("Current Status: " + status);
 
-					ExtentManager.logInfo("Final execution status: " + status);
-					return; // exit once proper status is reached
-				}
-			}
+	            // Exit loop if status is NOT Submitted or Running
+	            if (!status.equalsIgnoreCase("Submitted") &&
+	                !status.equalsIgnoreCase("Running")) {
 
-			retryCount++;
-		}
+	                ExtentManager.logInfo("Final execution status: " + status);
+	                return;
+	            }
+	        }
+	    }
 
-		throw new RuntimeException("Status did not change from Submitted/Running after retries");
+	    throw new RuntimeException("Status did not change from Submitted/Running after retries");
 	}
 
 	// Validate Workflow Instance ID

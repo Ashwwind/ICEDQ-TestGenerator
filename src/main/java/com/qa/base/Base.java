@@ -5,9 +5,7 @@ import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
-import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
-
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.extentreportlistener.ExtentReportListener;
@@ -46,27 +44,14 @@ public class Base {
 	}
 
 	@AfterSuite(alwaysRun = true)
-	public void endSuite(ITestContext context) {
+	public void endSuite() {
 
 		// Initialize end timestamp
 		endTime = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
 		System.out.println("Suite ended at: " + endTime);
 		
-		System.out.println("Finished Test Block: " + context.getName());
-
-	    if (context.getName().equals("Test Generator Page Tests")) {
-
-	        // Flush Extent Report ONLY after first <test>
-	        ExtentManager.flushReport();
-	        
-
-			// Send Email with Extent Report
-			String latestReport = SendMail.getLatestExtentReportPath();
-			SendMail.sendExecutionReport(latestReport);
-	    }
-	    
 		// Flush Extent Report
-		//ExtentManager.flushReport();
+		ExtentManager.flushReport();
 
 		// Close browser
 		if (driver != null) {
@@ -74,8 +59,8 @@ public class Base {
 		}
 
 		// Send Email with Extent Report
-		//String latestReport = SendMail.getLatestExtentReportPath();
-		//SendMail.sendExecutionReport(latestReport);
+		String latestReport = SendMail.getLatestExtentReportPath();
+		SendMail.sendExecutionReport(latestReport);
 		
 		System.out.println("Passed: " + ExtentReportListener.passedCount);
 	    System.out.println("Failed: " + ExtentReportListener.failedCount);

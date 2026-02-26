@@ -32,8 +32,10 @@ public class SendMail {
 	
 
 	private static String getMailBody() {
-		return "<html><body style='font-family: Arial;'>" + "<p>Hi Team,</p>"
-				+ "<p>Automation execution has completed. Please find the Extent Report attached.</p>"
+		return "<html><body style='font-family: Arial;'>" + "<p>Hi <b>Team</b>,</p>"
+				+ "<tr></tr>"
+				+ "<p>This automation test suite has been executed on the machine: TORANA-L106. Please find the summary of the test results below:</p>"
+				
 				+ "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse: collapse; width: 100%;'>"
 
 				// Header row with blue background and white text

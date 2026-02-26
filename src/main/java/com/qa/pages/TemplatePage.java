@@ -254,6 +254,9 @@ public class TemplatePage extends PageUtil {
 		// Get text from UI
 		String actualTemplateName = templateElement.getText();
 		waitForSeconds(1);
+		
+		ExtentManager.logInfo("Given template name: "+ templateName);
+		ExtentManager.logInfo("Created template name: "+ actualTemplateName);
 
 		// Compare expected vs actual
 		if (templateName.equals(actualTemplateName)) {
@@ -280,6 +283,9 @@ public class TemplatePage extends PageUtil {
 		// Get text from UI
 		String actualTemplateName = templateElement.getText();
 		waitForSeconds(1);
+		
+		ExtentManager.logInfo("Given template name: "+ updatedTemplateName);
+		ExtentManager.logInfo("Updated template name: "+ actualTemplateName);
 
 		// Compare expected vs actual
 		if (updatedTemplateName.equals(actualTemplateName)) {
@@ -325,6 +331,10 @@ public class TemplatePage extends PageUtil {
 		clickOnField(driver, clickOnCancelButton, "Delete button", "Button");
 
 		waitForSeconds(1);
+		
+		System.out.println("Template deleted successfully from listing page.");
+		ExtentManager.logInfo("Template deleted successfully from listing page.");
+
 
 	}
 
@@ -343,6 +353,9 @@ public class TemplatePage extends PageUtil {
 		clickOnField(driver, deleteButtonOfConfornmationBox, "Delete button", "Button");
 
 		waitForSeconds(1);
+		
+		System.out.println("Template deleted successfully from details page.");
+		ExtentManager.logInfo("Template deleted successfully from details page.");
 
 	}
 
