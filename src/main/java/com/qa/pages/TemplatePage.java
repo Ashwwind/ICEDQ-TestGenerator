@@ -36,6 +36,13 @@ public class TemplatePage extends PageUtil {
 	By descriptionField = getElementLocator(prop.getProperty("description"));
 	By jsonField = getElementLocator(prop.getProperty("json"));
 	By saveButton = getElementLocator(prop.getProperty("saveButton"));
+	By checkboxSelection = getElementLocator(prop.getProperty("masterCheckbox"));
+	By moreButtonSelection = getElementLocator(prop.getProperty("moreButton"));
+	By moreDeleteButttonSelection = getElementLocator(prop.getProperty("more.deleteButton"));
+	By deleteconfirmationBoxSelection = getElementLocator(prop.getProperty("deleteConfirmationBox"));
+	By deleteButtonOfconfirmationBox = getElementLocator(prop.getProperty("deleteButtonInConfirmationBox"));
+	By cancelButtonOfLogMessagePane = getElementLocator(prop.getProperty("cancelButton"));
+	By deleteButtonOfListingPage = getElementLocator(prop.getProperty("deleteButtonInListingPage"));
 
 	By testGeneratorModue = getElementLocator(prop.getProperty("home.testgenerator"));
 
@@ -300,35 +307,27 @@ public class TemplatePage extends PageUtil {
 	}
 
 	public void selectIntity() {
-		By entitySelection = By.xpath("//*/thead/tr/th[1]/div[1]/div/span[1]");
-
-		clickOnField(driver, entitySelection, "Entity selection", "Checkbox");
+		
+		clickOnField(driver, checkboxSelection, "Entity selection", "Checkbox"); // Select the master checkbox
 
 		waitForSeconds(1);
 
-		By moreButton = By.xpath("//*[@aria-label='More']");
+		clickOnField(driver, moreButtonSelection, "More button", "Button"); // Select the more button option
 
-		clickOnField(driver, moreButton, "More button", "Button");
 
-		By deleteButton = By.xpath("//*[@aria-label='Delete']");
-
-		clickOnField(driver, deleteButton, "Delete button", "Button");
+		clickOnField(driver, moreDeleteButttonSelection, "Delete button", "Button"); // Select the delete button from more button option
 
 		waitForSeconds(1);
 
 		// Switch diver to handle popup message
 
-		By deleteButtonOfConfornmationBox = By.xpath("//*[@role='dialog']//button[contains(text(),'Delete')]");
+		waitForSeconds(1);
+
+		clickOnField(driver, deleteconfirmationBoxSelection, "Delete button", "Button");
 
 		waitForSeconds(1);
 
-		clickOnField(driver, deleteButtonOfConfornmationBox, "Delete button", "Button");
-
-		waitForSeconds(1);
-
-		By clickOnCancelButton = By.xpath("//*[contains(normalize-space(text()), 'Cancel')]");
-
-		clickOnField(driver, clickOnCancelButton, "Delete button", "Button");
+		clickOnField(driver, cancelButtonOfLogMessagePane, "Cancel button", "Button");
 
 		waitForSeconds(1);
 		
@@ -341,16 +340,11 @@ public class TemplatePage extends PageUtil {
 	// Entity deletion from the details page.
 
 	public void deleteTemplateFromDetailsPage() {
-		By deleteButton = By.xpath("//*[@title='Delete']");
 
-		clickOnField(driver, deleteButton, "Delete button", "Button");
+		clickOnField(driver, deleteButtonOfListingPage, "Delete button", "Button");
 		waitForSeconds(1);
 
-		By deleteButtonOfConfornmationBox = By.xpath("//*[@role='dialog']//button[contains(text(),'Delete')]");
-
-		waitForSeconds(1);
-
-		clickOnField(driver, deleteButtonOfConfornmationBox, "Delete button", "Button");
+		clickOnField(driver, deleteconfirmationBoxSelection, "Delete button", "Button");
 
 		waitForSeconds(1);
 		
@@ -364,11 +358,15 @@ public class TemplatePage extends PageUtil {
 		captureUIErrorIfPresent(driver);
 	}
 
-	public void navigatHomePage() {
-		goTo(ConfigReader.getProperty("homePageUrl"));
-		waitForSeconds(1);
-	}
+//	public void navigatHomePage() {
+//		goTo(ConfigReader.getProperty("homePageUrl"));
+//		waitForSeconds(1);
+//	}
 
+	public void navigatHomePage() {
+		goTo(homePageUrl);
+	}
+	
 	// ******************************************************************************//
 	// Create a new Template //
 

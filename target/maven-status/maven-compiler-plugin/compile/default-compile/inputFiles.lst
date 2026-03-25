@@ -8,10 +8,17 @@ D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\ExcelReader.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\HomePage.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\DriverSetup.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\sendmail\SendMail.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\api\base\Base.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\api\pages\LoginAPI.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\api\utils\TokenManager.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\TestGeneratorPage.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\api\utils\ConfigReader.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\TemplatePage.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\extentreportlistener\ExtentReportListener.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\Test1.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\extentreportlistener\ExtentManager.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\api\pages\UserAPI.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\utils\PageUtil.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\api\utils\PayloadBuilder.java
 D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\qa\pages\Demo.java
+D:\Eclipse\ICEDQ\TestGenerator\src\main\java\com\api\client\APIClient.java

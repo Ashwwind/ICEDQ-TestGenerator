@@ -62,11 +62,9 @@ public class TemplatePageTest extends Base {
 
 		try {
 			if ("Dynamic".equalsIgnoreCase(templateType)) {
-				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName,
-						updatedTemplateDescription);
+				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName,updatedTemplateDescription);
 			} else if ("Import".equalsIgnoreCase(templateType)) {
-				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName,
-						updatedTemplateDescription);
+				templatePage.updateExistingTemplate(ruleType, templateName, updatedTemplateName,updatedTemplateDescription);
 			}
 			ExtentManager.logPass("Template updated successfully for rule type: " + ruleType);
 

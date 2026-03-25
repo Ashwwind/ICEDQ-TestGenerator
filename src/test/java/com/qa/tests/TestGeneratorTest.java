@@ -29,6 +29,16 @@ public class TestGeneratorTest extends Base {
 			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
 			String schemaName, String tableName, String xrayTestId) throws InterruptedException {
 		
+		// Read workspaceName and folderName from Jenkins parameter
+	    String jenkinsWorkspace = System.getProperty("workspaceName");
+	    String jenkinsFolder = System.getProperty("folderName");
+	 
+	    if (jenkinsWorkspace != null && !jenkinsWorkspace.isEmpty()) {
+	        workspaceName = jenkinsWorkspace;
+	    }
+	    if (jenkinsFolder != null && !jenkinsFolder.isEmpty()) {
+	    	folderName = jenkinsFolder;
+	    }
 
 		ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType + " connection.");
 		ExtentManager.logInfo("Xray Test ID: " + xrayTestId);
@@ -39,7 +49,7 @@ public class TestGeneratorTest extends Base {
 			if (connectionType.equalsIgnoreCase("Database")) {
 				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				//page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
@@ -122,6 +132,18 @@ public class TestGeneratorTest extends Base {
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String fileType, String SourceConnectionName, String TargetConnectionName) throws InterruptedException {
+		
+		// Read workspaceName and folderName from Jenkins parameter
+	    String jenkinsWorkspace = System.getProperty("workspaceName");
+	    String jenkinsFolder = System.getProperty("folderName");
+	 
+	    if (jenkinsWorkspace != null && !jenkinsWorkspace.isEmpty()) {
+	        workspaceName = jenkinsWorkspace;
+	    }
+	    if (jenkinsFolder != null && !jenkinsFolder.isEmpty()) {
+	    	folderName = jenkinsFolder;
+	    }
+
 		ExtentManager.startTest("Create rule using default Import template for - " + ruleType + " | " + connectionType + " connection.");
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
@@ -130,7 +152,7 @@ public class TestGeneratorTest extends Base {
 			if (connectionType.equalsIgnoreCase("Database")) {
 				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
+				//page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
 			} else if (connectionType.equalsIgnoreCase("File")) {
 				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
 			}

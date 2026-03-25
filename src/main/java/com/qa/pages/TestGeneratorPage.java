@@ -1163,9 +1163,16 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	// Go to the Data Testing
+//	public void navigatHomePage() {
+//		goTo(ConfigReader.getProperty("homePageUrl"));
+//	}
+	
 	public void navigatHomePage() {
-		goTo(ConfigReader.getProperty("homePageUrl"));
-	}
+	        // Jenkins runtime
+	        goTo(homePageUrl);
+	        //goTo(ConfigReader.getProperty("homePageUrl"));
+	        ExtentManager.logInfo("Home page URL " + homePageUrl );
+	    }
 
 	// Define Rule Metadata
 	public void validateDefineRuleMetadataPage() {
