@@ -121,7 +121,7 @@ public class PageUtil extends Base {
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
 
-			//waitForSeconds(1);
+			waitForSeconds(1);
 
 			ExtentManager.logPass("Clicked on " + label);
 
