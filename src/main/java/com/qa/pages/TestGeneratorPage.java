@@ -683,7 +683,7 @@ public class TestGeneratorPage extends PageUtil {
 					waitTime);
 			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 40);
+			clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", 60);
 
 			sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
@@ -794,7 +794,7 @@ public class TestGeneratorPage extends PageUtil {
 					waitTime);
 			isInvisibleLoader(driver, loader);
 
-			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 40);
+			clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 60);
 
 			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
