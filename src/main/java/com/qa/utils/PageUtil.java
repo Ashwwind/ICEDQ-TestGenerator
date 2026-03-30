@@ -28,6 +28,7 @@ import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.pages.TestGeneratorPage.FlowAbortException;
 
+
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
@@ -96,7 +97,7 @@ public class PageUtil extends Base {
 		} catch (TimeoutException te) {
 			// Fallback: extra wait
 			try {
-				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 50))
+				return new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
 						.until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
 			} catch (Exception e) {
 				ExtentManager.logInfo("Element not visible after extended wait: " + by);
@@ -121,7 +122,9 @@ public class PageUtil extends Base {
 
 			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
 
-			//waitForSeconds(1);
+
+			waitForSeconds(2);
+
 
 			ExtentManager.logPass("Clicked on " + label);
 
@@ -153,7 +156,7 @@ public class PageUtil extends Base {
 	// Wait for just seconds
 	public static void waitForSeconds(long seconds) {
 	    try {
-	        Thread.sleep(seconds * 50);
+	        Thread.sleep(seconds * 20);
 	    } catch (InterruptedException e) {
 	        Thread.currentThread().interrupt();
 	    }
@@ -354,31 +357,34 @@ public class PageUtil extends Base {
 	// Click the Checksum rule type from the wizard page.
 
 	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
-		String label = fieldName + " " + fieldType;
-		try {
+	    try {
+	        // 1️⃣ Wait for any initial loader to disappear
+	        //By loader = By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div");
+	      //  isInvisibleLoader(driver, loader);
 
-			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+	        // 2️⃣ Validate element is visible
+	        if (!validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
+	            ExtentManager.logError(fieldName + " " + fieldType + " is not visible.");
+	            return false;
+	        }
 
-			if (!validateElementIsVisible(driver, locator, label)) {
-				ExtentManager.logError(label + " is not visible on the page.");
-				return false;
-			}
+	        // 3️⃣ Click the element
+	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 20);
+	        if (!isClicked) {
+	            ExtentManager.logError("Failed to click " + fieldName + " " + fieldType);
+	            return false;
+	        }
 
-			clickOnElement(driver, locator, label, 10);
+	        // 4️⃣ Wait for loader after click
+	       // isInvisibleLoader(driver, loader);
 
-			
-			guardAndAbortOnUiError(driver, "Post-Click: " + label);
+	        return true;
 
-			return true;
+	    } catch (Exception e) {
+	        ExtentManager.logError("Error while clicking " + fieldName + " " + fieldType + ": " + e.getMessage());
+	        return false;
+	    }
 
-		} catch (FlowAbortException fae) {
-			throw fae;
-		} catch (Exception e) {
-			ExtentManager.logError("Error while clicking " + label + ": " + e.getMessage());
-			// Final safety net—if any toast appeared during unexpected exception
-			//guardAndAbortOnUiError(driver, "Exception during Click: " + label);
-			return false;
-		}
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////

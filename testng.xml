@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Suite">
-
-	<!--
-    <listeners>
-        <listener class-name="com.qa.extentreportlistener.ExtentListener" />
-    </listeners>
-    -->
+<suite name="Suite" parallel="tests" thread-count="1">
 
 	<test name="Login Tests">
 		<classes>
 			<class name="com.qa.tests.LoginTest">
-				<methods> 
+				<methods>
 					<include name="validateLoginPage" />
 					<include name="Login" />
 				</methods>
@@ -35,8 +29,22 @@
 			<class name="com.qa.tests.Test123">
 				<methods>
 					<include name="createRuleUsingDynamicTemplate" />
-					<exclude name="createRuleUsingImportTemplate" />
+					<include name="createRuleUsingImportTemplate" />
 					<exclude name="createWorkflowUsingDefaultDynamicTemplate" />
+					<exclude name="existingWorkflowUsingDefaultDynamicTemplate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Template Page Tests">
+		<classes>
+			<class name="com.qa.tests.TemplatePageTest">
+				<methods>
+					<include name="createTemplateUsingDynamicTemplate" />
+					<include name="updateTemplateUsingExistingTemplate" />
+					<include name="deleteTemplateUsingExistingTemplateFromList" />
+					<include name="deleteTemplateUsingExistingTemplateFromDetails" />
 				</methods>
 			</class>
 		</classes>

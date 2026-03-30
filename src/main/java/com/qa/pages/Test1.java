@@ -764,7 +764,7 @@ public class Test1 extends PageUtil {
 
 	// Go to the Data Testing
 	public static void navigatHomePage() { // Go to the Data Testing
-		goTo(ConfigReader.getProperty("homePageUrl"));
+		//goTo(ConfigReader.getProperty("homePageUrl"));
 	}
 	
 	
