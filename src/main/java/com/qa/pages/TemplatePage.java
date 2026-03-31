@@ -248,10 +248,10 @@ public class TemplatePage extends PageUtil {
 
 	}
 
-	public boolean validateCreatedTemplateName(String ruleName) {
+	public boolean validateCreatedTemplateName(String templateName) {
 
 		clickOnSearchFieldOfSearchTemplate();
-		searchTemplateName(ruleName);
+		searchTemplateName(templateName);
 		clickOnSearchIcopnOfSearchTemplate();
 
 		// Locate the template name element
@@ -262,11 +262,11 @@ public class TemplatePage extends PageUtil {
 		String actualTemplateName = templateElement.getText();
 		waitForSeconds(1);
 		
-		ExtentManager.logInfo("Given template name: "+ ruleName);
+		ExtentManager.logInfo("Given template name: "+ templateName);
 		ExtentManager.logInfo("Created template name: "+ actualTemplateName);
 
 		// Compare expected vs actual
-		if (ruleName.equals(actualTemplateName)) {
+		if (templateName.equals(actualTemplateName)) {
 			System.out.println("Template created successfully.");
 			ExtentManager.logInfo("Template created successfully.");
 			return true;
@@ -275,7 +275,6 @@ public class TemplatePage extends PageUtil {
 			ExtentManager.logFail("Template creation failed.");
 			return false;
 		}
-		
 	}
 
 	public boolean validateUpdatedTemplateName(String updatedTemplateName) {
@@ -411,7 +410,7 @@ public class TemplatePage extends PageUtil {
 		if (!clickOnSaveButton())
 			return false;
 		clickTemplateTab();
-		validateCreatedTemplateName(ruleName);
+		validateCreatedTemplateName(templateName);
 		navigatHomePage();
 		waitForSeconds(1);
 		return true;
@@ -493,6 +492,7 @@ public class TemplatePage extends PageUtil {
 			return false;
 
 		deleteTemplateFromDetailsPage();
+		validateToastMessage();
 		waitForSeconds(1);
 		navigatHomePage();
 		waitForSeconds(1);

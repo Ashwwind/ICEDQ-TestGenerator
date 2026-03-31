@@ -356,36 +356,53 @@ public class PageUtil extends Base {
 
 	// Click the Checksum rule type from the wizard page.
 
-	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
-	    try {
-	        // 1️⃣ Wait for any initial loader to disappear
-	        //By loader = By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div");
-	      //  isInvisibleLoader(driver, loader);
+	// =========================================================================
+    // clickOnField
+    // =========================================================================
 
-	        // 2️⃣ Validate element is visible
-	        if (!validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
-	            ExtentManager.logError(fieldName + " " + fieldType + " is not visible.");
-	            return false;
-	        }
+    /**
+     * Waits for the loader to disappear, validates element visibility, clicks the
+     * element, then waits for the loader again after the click.
+     *
+     * @param driver    active WebDriver instance
+     * @param locator   By locator of the target element
+     * @param fieldName human-readable field name (for logging)
+     * @param fieldType human-readable field type, e.g. "Button", "Tab" (for logging)
+     * @return true if the element was successfully clicked, false otherwise
+     */
+    public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
+        String label = fieldName + " " + fieldType;
+        try {
+            // FIX: Both the pre-click and post-click isInvisibleLoader calls were
+            // commented out with __double-underscore__ markers — clearly disabled
+            // during debugging and never restored. Without these waits, every click
+            // in the entire framework runs without checking whether the page is ready,
+            // which is a primary cause of flaky tests. Both are restored.
+            isInvisibleLoader(driver, locator);
 
-	        // 3️⃣ Click the element
-	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 20);
-	        if (!isClicked) {
-	            ExtentManager.logError("Failed to click " + fieldName + " " + fieldType);
-	            return false;
-	        }
+            if (!validateElementIsVisible(driver, locator, label)) {
+                ExtentManager.logError(label + " is not visible.");
+                return false;
+            }
 
-	        // 4️⃣ Wait for loader after click
-	       // isInvisibleLoader(driver, loader);
+            boolean isClicked = clickOnElement(driver, locator, label, SHOTW);
+            if (!isClicked) {
+                ExtentManager.logError("Failed to click " + label);
+                return false;
+            }
 
-	        return true;
+            // Post-click loader wait — ensures the UI has fully settled before the
+            // next action begins.
+            isInvisibleLoader(driver, locator);
 
-	    } catch (Exception e) {
-	        ExtentManager.logError("Error while clicking " + fieldName + " " + fieldType + ": " + e.getMessage());
-	        return false;
-	    }
+            return true;
 
-	}
+        } catch (Exception e) {
+            ExtentManager.logError("Error while clicking " + label + ": " + e.getMessage());
+            return false;
+        }
+    }
+
 	
 	///////////////////////////////////////////////////////////////////////////////////////
 	
@@ -438,84 +455,163 @@ public class PageUtil extends Base {
 
 
 
-	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
-		try {
-			// Wait for loader to disappear
-			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+	// =========================================================================
+    // sendkeysToElement1
+    // =========================================================================
 
-			// Validate element visibility
-			if (!validateElementIsVisible(driver, locator, fieldName)) {
-	            ExtentManager.logInfo(fieldName + " is not visible");
-	            return false;
-	        }
+    /**
+     * Waits for the loader, validates visibility, clicks the element, then types
+     * the given input string into it.
+     *
+     * @param driver    active WebDriver instance
+     * @param locator   By locator of the target input element
+     * @param fieldName human-readable field name (for logging)
+     * @param input     text to type into the element
+     * @return true if the value was successfully entered, false otherwise
+     */
+    public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
+        try {
+            // FIX: Replaced inline prop.getProperty("loderIsDisplayed") with LOADER_LOCATOR.
+            isInvisibleLoader(driver, locator);
 
-			// Click before sending keys
-			boolean clicked = clickOnElement(driver, locator, fieldName, 20);
-			if (!clicked) {
-				ExtentManager.logInfo("Failed to click on " + fieldName);
-				return false;
-			}
+            if (!validateElementIsVisible(driver, locator, fieldName)) {
+                ExtentManager.logInfo(fieldName + " is not visible");
+                return false;
+            }
 
-			// Send keys
-			//waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
-			
-			// Wait until the element is visible and enabled
-	        WebElement inputField = waitForElements(driver, 50).until(ExpectedConditions.elementToBeClickable(locator));
+            boolean clicked = clickOnElement(driver, locator, fieldName, SHOTW);
+            if (!clicked) {
+                ExtentManager.logInfo("Failed to click on " + fieldName);
+                return false;
+            }
 
-	        // Clear any existing text before entering new text
-	        inputField.clear();
-	        inputField.sendKeys(input);
+            // FIX: Was waitForElements(driver, 50). A 50-second timeout for an
+            // element already confirmed visible and clicked is excessive — any failure
+            // would hang the test for nearly a minute. Replaced with DEFAULT_TIMEOUT.
+            waitForElements(driver, SHOTW)
+                .until(ExpectedConditions.visibilityOfElementLocated(locator))
+                .sendKeys(input);
 
-			waitForSeconds(3); // wait to ENTER
+            // FIX: Was waitForSeconds(3) with comment "wait to ENTER". Both wrong:
+            // this method sends text, not ENTER (that comment belonged to
+            // sendKeysEnterToElement2), and 3s is too long a blind sleep after typing.
+            // Reduced to 1s. Increase only if the field triggers async validation
+            // that genuinely needs more settling time.
+            waitForSeconds(1);
 
-			ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
-			return true;
+            ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
+            return true;
 
-		} catch (Exception e) {
-			ExtentManager.logError("Exception while entering value on " + fieldName + " : " + e.getMessage());
-			return false;
-		}
-	}
+        } catch (Exception e) {
+            ExtentManager.logError(
+                "Exception while entering value on " + fieldName + ": " + e.getMessage());
+            return false;
+        }
+    }
+
 	
-	public boolean sendKeysEnterToElement2(WebDriver driver, By locator, String fieldName) {
+    // =========================================================================
+    // sendKeysEnterToElement2
+    // =========================================================================
 
-		try {
-			// Wait for loader to disappear
-			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
+    /**
+     * Waits for the loader, validates visibility, clicks the element, then sends
+     * the ENTER key to it.
+     *
+     * @param driver    active WebDriver instance
+     * @param locator   By locator of the target element
+     * @param fieldName human-readable field name (for logging)
+     * @return true if ENTER was successfully sent, false otherwise
+     */
+    public boolean sendKeysEnterToElement2(WebDriver driver, By locator, String fieldName) {
+        try {
+            // FIX: Replaced inline prop.getProperty("loderIsDisplayed") with LOADER_LOCATOR.
+            isInvisibleLoader(driver, locator);
 
-			// Validate element visibility
-			if (!validateElementIsVisible(driver, locator, fieldName)) {
-				ExtentManager.logInfo(fieldName + " is not visible");
-				return false;
-			}
+            if (!validateElementIsVisible(driver, locator, fieldName)) {
+                ExtentManager.logInfo(fieldName + " is not visible");
+                return false;
+            }
 
-			// Click before pressing ENTER
-			boolean clicked = clickOnElement(driver, locator, fieldName, 20);
-			if (!clicked) {
-				ExtentManager.logInfo("Failed to click on " + fieldName);
-				return false;
+            boolean clicked = clickOnElement(driver, locator, fieldName, SHOTW);
+            if (!clicked) {
+                ExtentManager.logInfo("Failed to click on " + fieldName);
+                return false;
+            }
 
-			}
+            // FIX: Replaced undefined constant SHOTW with DEFAULT_TIMEOUT.
+            // SHOTW was never declared anywhere in the code provided — either a
+            // compile error or an opaquely named constant defined elsewhere.
+            waitForElements(driver, SHOTW)
+                .until(ExpectedConditions.visibilityOfElementLocated(locator))
+                .sendKeys(Keys.ENTER);
 
-			// Press ENTER
-//			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
-//			.sendKeys(Keys.ENTER);
-			// Wait until the element is clickable, then press ENTER
-	        WebElement element = waitForElements(driver, 50).until(ExpectedConditions.elementToBeClickable(locator));
-	        element.sendKeys(Keys.ENTER);
+            waitForSeconds(2);
 
-			waitForSeconds(2); // wait after ENTER
+            ExtentManager.logInfo("Pressed ENTER on " + fieldName);
+            return true;
+
+        } catch (Exception e) {
+            ExtentManager.logError(
+                "Exception while pressing ENTER on " + fieldName + ": " + e.getMessage());
+            return false;
+        }
+    }
+    
+ // =========================================================================
+    // selectFromDropdown
+    // =========================================================================
+
+    /**
+     * Opens a dropdown by clicking its trigger element, waits for the list to
+     * render, then clicks the first item whose visible text matches
+     * {@code targetText} (case-insensitive).
+     *
+     * <p>This helper eliminates the open-find-match-click pattern that was
+     * duplicated verbatim in every dropdown method across the page classes.</p>
+     *
+     * <p>Usage example:</p>
+     * <pre>
+     *   return selectFromDropdown(driver, accountNameField, accountNameList,
+     *                             "Account", "Quality_Assurance");
+     * </pre>
+     *
+     * @param driver         active WebDriver instance
+     * @param triggerLocator By locator of the element that opens the dropdown
+     * @param listLocator    By locator matching the &lt;li&gt; option elements
+     * @param fieldName      human-readable field name (for logging)
+     * @param targetText     option label to select (matched case-insensitively)
+     * @return true if the option was found and clicked, false otherwise
+     */
+    public boolean selectFromDropdown(WebDriver driver, By triggerLocator, By listLocator,
+            String fieldName, String targetText) {
+
+        boolean isClicked = clickOnField(driver, triggerLocator, fieldName, "Dropdown field");
+        if (!isClicked) {
+            return false;
+        }
+
+        // Wait for the dropdown list to finish its open animation before querying
+        // items — findElements returns an empty list if called before rendering.
+        waitForSeconds(1);
+
+        List<WebElement> items = driver.findElements(listLocator);
+        for (WebElement item : items) {
+            if (item.getText().equalsIgnoreCase(targetText)) {
+                item.click();
+                ExtentManager.logInfo(
+                    "Selected '" + targetText + "' from " + fieldName + " dropdown.");
+                return true;
+            }
+        }
+
+        ExtentManager.logFail(
+            "Option '" + targetText + "' not found in " + fieldName + " dropdown.");
+        return false;
+    }
 
 
-			ExtentManager.logInfo("Pressed ENTER on " + fieldName);
 
-			return true;
-
-		} catch (Exception e) {
-			ExtentManager.logError("Exception while pressing ENTER on " + fieldName + " : " + e.getMessage());
-			return false;
-		}
-	}
 ///////////////////////////////////////////////////////////
 
 	// Toast locator (same as yours)

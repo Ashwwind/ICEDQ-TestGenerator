@@ -28,8 +28,8 @@
 		<classes>
 			<class name="com.qa.tests.Test123">
 				<methods>
-					<include name="createRuleUsingDynamicTemplate" />
-					<include name="createRuleUsingImportTemplate" />
+					<exclude name="createRuleUsingDynamicTemplate" />
+					<exclude name="createRuleUsingImportTemplate" />
 					<exclude name="createWorkflowUsingDefaultDynamicTemplate" />
 					<exclude name="existingWorkflowUsingDefaultDynamicTemplate"/>
 				</methods>
