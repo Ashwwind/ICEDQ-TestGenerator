@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.extentreportlistener.ExtentManager;
+import com.qa.pages.TestGeneratorPage.FlowAbortException;
 import com.qa.utils.PageUtil;
 
 public class TemplatePage extends PageUtil {
@@ -49,6 +50,39 @@ public class TemplatePage extends PageUtil {
 
 	// *****************************************Page
 	// Method*******************************//
+	
+	public void executeStep(String stepName, Runnable action) {
+		try {
+			action.run();
+
+			// 🔍 Detect toast AFTER action
+			String uiError = captureUIErrorIfPresent(driver);
+			if (uiError != null && !uiError.isEmpty()) {
+				throw new RuntimeException(uiError);
+			}
+
+			ExtentManager.logPass(stepName + " ➝ PASSED");
+
+		} catch (Throwable e) {
+
+			ExtentManager.logFail(stepName + " ➝ FAILED due to: " + e.getMessage());
+
+			// 📸 Screenshot (once per failure)
+			ExtentManager.captureScreenshot("Step_Failure");
+
+			// 🚪 Exit current flow
+			navigatHomePage();
+
+			// 🔥 STOP FLOW IMMEDIATELY
+			throw new FlowAbortException("Flow aborted: " + stepName, e);
+		}
+	}
+
+	public static class FlowAbortException extends RuntimeException {
+		public FlowAbortException(String message, Throwable cause) {
+			super(message, cause);
+		}
+	}
 
 	public boolean clickTestGenerator() {
 
@@ -78,7 +112,7 @@ public class TemplatePage extends PageUtil {
 
 	public boolean clickOnCopyButton() {
 		boolean result = clickOnField(driver, copyButton, "Copy", "Button");
-		waitForSeconds(2);
+		//waitForSeconds(2);
 		return result;
 	}
 
@@ -114,7 +148,7 @@ public class TemplatePage extends PageUtil {
 					+ "editor.session.setUseWorker(false);" + "editor.setValue(arguments[0], -1);"
 					+ "editor.clearSelection();" + "editor.blur();", prettyJson);
 
-			waitForSeconds(1);
+			//waitForSeconds(1);
 			return true;
 
 		} catch (Exception e) {
@@ -129,7 +163,7 @@ public class TemplatePage extends PageUtil {
 	public boolean clickOnAccountField() {
 
 		boolean isClicked = clickOnField(driver, accountNameField, "Account", "Dropdown field");
-		waitForSeconds(2);
+		//waitForSeconds(2);
 		if (!isClicked) {
 			return false;
 		}
@@ -182,7 +216,7 @@ public class TemplatePage extends PageUtil {
 			// 4️⃣ Enter the pretty JSON
 			input.sendKeys(prettyJson);
 
-			waitForSeconds(1);
+			//waitForSeconds(1);
 
 			return true;
 
@@ -194,7 +228,7 @@ public class TemplatePage extends PageUtil {
 
 	public boolean clickOnNameField(String ruleName) {
 		try {
-			waitForSeconds(1);
+			//waitForSeconds(1);
 
 			// Click on Name field
 			boolean isClicked = clickOnField(driver, nameField, "Name", "Text field");
@@ -210,7 +244,7 @@ public class TemplatePage extends PageUtil {
 			boolean isEnter = sendkeysToElement1(driver, nameField, "Text field", ruleName);
 
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, nameField, "Text field");
-			waitForSeconds(1);
+			//waitForSeconds(1);
 			return isEnterPressed;
 
 		} catch (Exception e) {
@@ -234,7 +268,7 @@ public class TemplatePage extends PageUtil {
 			boolean isEnter = sendkeysToElement1(driver, descriptionField, "Text field", ruleDescription);
 
 			boolean isEnterPressed = sendKeysEnterToElement2(driver, descriptionField, "Text field");
-			waitForSeconds(1);
+			//waitForSeconds(1);
 			return isEnterPressed;
 
 		} catch (Exception e) {
@@ -255,11 +289,11 @@ public class TemplatePage extends PageUtil {
 
 		// Locate the template name element
 		WebElement templateElement = driver.findElement(By.xpath("//a[@class='link dib']"));
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		// Get text from UI
 		String actualTemplateName = templateElement.getText();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		
 		ExtentManager.logInfo("Given template name: "+ ruleName);
 		ExtentManager.logInfo("Created template name: "+ actualTemplateName);
@@ -285,11 +319,11 @@ public class TemplatePage extends PageUtil {
 
 		// Locate the template name element
 		WebElement templateElement = driver.findElement(By.xpath("//a[@class='link dib']"));
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		// Get text from UI
 		String actualTemplateName = templateElement.getText();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		
 		ExtentManager.logInfo("Given template name: "+ updatedTemplateName);
 		ExtentManager.logInfo("Updated template name: "+ actualTemplateName);
@@ -310,26 +344,26 @@ public class TemplatePage extends PageUtil {
 		
 		clickOnField(driver, checkboxSelection, "Entity selection", "Checkbox"); // Select the master checkbox
 
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		clickOnField(driver, moreButtonSelection, "More button", "Button"); // Select the more button option
 
 
 		clickOnField(driver, moreDeleteButttonSelection, "Delete button", "Button"); // Select the delete button from more button option
 
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		// Switch diver to handle popup message
 
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		clickOnField(driver, deleteconfirmationBoxSelection, "Delete button", "Button");
 
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		clickOnField(driver, cancelButtonOfLogMessagePane, "Cancel button", "Button");
 
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		
 		System.out.println("Template deleted successfully from listing page.");
 		ExtentManager.logInfo("Template deleted successfully from listing page.");
@@ -342,11 +376,11 @@ public class TemplatePage extends PageUtil {
 	public void deleteTemplateFromDetailsPage() {
 
 		clickOnField(driver, deleteButtonOfListingPage, "Delete button", "Button");
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		clickOnField(driver, deleteconfirmationBoxSelection, "Delete button", "Button");
 
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		
 		System.out.println("Template deleted successfully from details page.");
 		ExtentManager.logInfo("Template deleted successfully from details page.");
@@ -388,7 +422,7 @@ public class TemplatePage extends PageUtil {
 			return false;
 
 		jsonReadAndStore();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		if (!clickTemplateTab())
 			return false;
@@ -412,7 +446,7 @@ public class TemplatePage extends PageUtil {
 		clickTemplateTab();
 		validateCreatedTemplateName(ruleName);
 		navigatHomePage();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		return true;
 
 	}
@@ -443,9 +477,9 @@ public class TemplatePage extends PageUtil {
 			return false;
 		clickTemplateTab();
 		validateUpdatedTemplateName(updatedTemplateName);
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		navigatHomePage();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		return true;
 
 	}
@@ -466,9 +500,9 @@ public class TemplatePage extends PageUtil {
 		if (!clickOnSearchIcopnOfSearchTemplate())
 			return false;
 		selectIntity();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		navigatHomePage();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		return true;
 
 	}
@@ -492,9 +526,9 @@ public class TemplatePage extends PageUtil {
 			return false;
 
 		deleteTemplateFromDetailsPage();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 		navigatHomePage();
-		waitForSeconds(1);
+		//waitForSeconds(1);
 
 		return true;
 

@@ -1033,24 +1033,19 @@ public class TestGeneratorPage extends PageUtil {
 		ExtentManager.logInfo("Go To Publish button is clickable.");
 	}
 
-	// Click on the hyperlink of the published rule to navigate to the Data Testing
 	public void clickOnPublishedRule() {
 		executeStep("Validate published rule and navigate to Data Testing page.", () -> {
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				Thread.currentThread().interrupt();
-			}
 
 			// Capture parent window
 			String parent = PageUtil.getParentWindow(driver);
 
-			isInvisibleLoader(driver, loader);
+			// Wait for loader to disappear
+			waitForLoaderToDisappear(driver, loader, 30);
 
+			// Wait for the published rule hyperlink to appear and have text
 			By ruleNameLocator1 = By.xpath("//tbody[@role='rowgroup']/tr/td/a");
-			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
-			WebElement ruleElement = wait1.until(ExpectedConditions.visibilityOfElementLocated(ruleNameLocator1));
-			wait1.until(d -> !ruleElement.getText().trim().isEmpty());
+			WebElement ruleElement = waitForElementVisible(driver, ruleNameLocator1, 60);
+			new WebDriverWait(driver, Duration.ofSeconds(60)).until(d -> !ruleElement.getText().trim().isEmpty());
 
 			String ruleNamePublishPage = ruleElement.getText();
 			ExtentManager.logInfo("Rule Name from Published Page: " + ruleNamePublishPage);
@@ -1060,12 +1055,12 @@ public class TestGeneratorPage extends PageUtil {
 
 			// Switch to child window
 			String child = switchToNewWindow(driver, parent, 30);
-			isInvisibleLoader(driver, loader);
+			waitForLoaderToDisappear(driver, loader, 30);
 
+			// Wait for the rule name input to be present and populated
 			By ruleNameLocator2 = By.xpath("//*[@placeholder='Enter rule name']");
-			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
-			WebElement ruleName2 = wait2.until(ExpectedConditions.presenceOfElementLocated(ruleNameLocator2));
-			wait2.until(d -> !ruleName2.getDomProperty("value").isEmpty());
+			WebElement ruleName2 = waitForElementVisible(driver, ruleNameLocator2, 30);
+			new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> !ruleName2.getDomProperty("value").isEmpty());
 
 			String ruleNameDataTestingPage = ruleName2.getDomProperty("value");
 			ExtentManager.logInfo("Rule Name from Data Testing Page: " + ruleNameDataTestingPage);
@@ -1083,11 +1078,7 @@ public class TestGeneratorPage extends PageUtil {
 
 			// Validate Instance ID
 			clickOnRuleRecentrun();
-			try {
-				validateRuleInstanceID(driver);
-			} catch (InterruptedException e) {
-				System.out.println("Instance ID is generated.. " + e.getMessage());
-			}
+			validateRuleInstanceID(driver); // No InterruptedException needed anymore
 
 			// Close child window and return to parent
 			closeChildAndReturn(driver, child, parent);
@@ -1098,45 +1089,46 @@ public class TestGeneratorPage extends PageUtil {
 	// Testing - workflow details page.
 	public void clickOnPublishedWorkflow() {
 
-		executeStep("Validate published rule and navigate to Data Testing page.", () -> {
+		executeStep("Validate published workflow and navigate to Workflow details page.", () -> {
 
-			// Capture parent window
+			// 1️⃣ Capture parent window
 			String parent = PageUtil.getParentWindow(driver);
 
-			isInvisibleLoader(driver, loader);
+			// 2️⃣ Wait for loader
+			waitForLoaderToDisappear(driver, loader, 30);
 
-			// Get workflow name from Published page
+			// 3️⃣ Get workflow name from Published page
 			By workflowNameLocator1 = By.xpath("//tbody[@role='rowgroup']/tr/td/a");
-			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
 
-			WebElement ruleElement = wait1.until(ExpectedConditions.visibilityOfElementLocated(workflowNameLocator1));
-			wait1.until(d -> !ruleElement.getText().trim().isEmpty());
+			WebElement ruleElement = waitForElementVisible(driver, workflowNameLocator1, 60);
+
+			new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> !ruleElement.getText().trim().isEmpty());
 
 			String workflowNamePublishPage = ruleElement.getText().trim();
 			ExtentManager.logInfo("Workflow Name from Published Page: " + workflowNamePublishPage);
 
-			// Click hyperlink to navigate to Data Testing page
+			// 4️⃣ Click hyperlink
 			clickOnElement(driver, clickHyperlinkPublishRule, "Published Workflow", waitTime);
 
-			// Switch to child window
+			// 5️⃣ Switch to child window
 			String child = switchToNewWindow(driver, parent, 30);
-			isInvisibleLoader(driver, loader);
+			waitForLoaderToDisappear(driver, loader, 30);
 
-			// Click Overview tab
+			// 6️⃣ Click Overview tab
 			By clickOnOverview = By.xpath("//*[@id='e-item-ej2Tab_0']/div/div/div/div");
-			clickOnElement(driver, clickOnOverview, "Overview tab section", waitTime);
+			clickOnElement(driver, clickOnOverview, "Overview tab", waitTime);
 
-			// Get workflow name from Data Testing page
+			// 7️⃣ Get workflow name from details page
 			By workflowNameLocator2 = By.id("inputWorkflowName");
-			WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-			WebElement ruleName2 = wait2.until(ExpectedConditions.presenceOfElementLocated(workflowNameLocator2));
-			wait2.until(d -> !ruleName2.getDomProperty("value").trim().isEmpty());
+			WebElement ruleName2 = waitForElementVisible(driver, workflowNameLocator2, 30);
+
+			new WebDriverWait(driver, Duration.ofSeconds(20))
+					.until(d -> !ruleName2.getDomProperty("value").trim().isEmpty());
 
 			String workflowNameDataTestingPage = ruleName2.getDomProperty("value").trim();
-			ExtentManager.logInfo("Workflow Name from Workflow details Page: " + workflowNameDataTestingPage);
+			ExtentManager.logInfo("Workflow Name from Workflow Details Page: " + workflowNameDataTestingPage);
 
-			// Validation
 			if (!workflowNamePublishPage.equals(workflowNameDataTestingPage)) {
 				throw new AssertionError("Workflow name mismatch. Expected: " + workflowNamePublishPage + " but found: "
 						+ workflowNameDataTestingPage);
@@ -1144,19 +1136,14 @@ public class TestGeneratorPage extends PageUtil {
 
 			ExtentManager.logPass("Workflow Name validated successfully.");
 
-			// Run the published workflow
+			// 9️⃣ Run workflow
 			runPublishWorkflow();
 
-			// Validate Instance ID
+			// 🔟 Validate Instance ID
 			clickOnWorkflowRecentrun();
-			try {
-				validateWorkflowInstanceID(driver);
-			} catch (InterruptedException e) {
-				Thread.currentThread().interrupt();
-				ExtentManager.logInfo("Instance ID validation interrupted: " + e.getMessage());
-			}
+			validateWorkflowInstanceID(driver);
 
-			// Close child window and return to parent
+			// 1️⃣1️⃣ Close child window
 			closeChildAndReturn(driver, child, parent);
 		});
 	}
@@ -1165,13 +1152,13 @@ public class TestGeneratorPage extends PageUtil {
 //	public void navigatHomePage() {
 //		goTo(ConfigReader.getProperty("homePageUrl"));
 //	}
-	
+
 	public void navigatHomePage() {
-	        // Jenkins runtime
-	        goTo(homePageUrl);
-	        //goTo(ConfigReader.getProperty("homePageUrl"));
-	        ExtentManager.logInfo("Home page URL " + homePageUrl );
-	    }
+		// Jenkins runtime
+		goTo(homePageUrl);
+		// goTo(ConfigReader.getProperty("homePageUrl"));
+		ExtentManager.logInfo("Home page URL " + homePageUrl);
+	}
 
 	// Define Rule Metadata
 	public void validateDefineRuleMetadataPage() {
@@ -1214,8 +1201,6 @@ public class TestGeneratorPage extends PageUtil {
 		By recentRunsButton = By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]");
 		clickOnElement(driver, recentRunsButton, "recent runs button", 10);
 
-		waitForSeconds(1);
-
 	}
 
 	// Click on the Workflow Recent runs button.
@@ -1225,96 +1210,115 @@ public class TestGeneratorPage extends PageUtil {
 				"//*[@id='imaster']/app-workflow-orchestrator/div[2]/div[1]/app-workflows/app-custom-workflow/div[1]/div/div[2]/ejs-tooltip/button[3]/span");
 		clickOnElement(driver, recentRunsButton, "recent runs button", waitTime);
 
-		waitForSeconds(1);
+		// waitForSeconds(1);
 
 	}
 
 	// Validate Rule Instance ID...
-	public void validateRuleInstanceID(WebDriver driver) throws InterruptedException {
+	public void validateRuleInstanceID(WebDriver driver) {
 
-	    By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
-	    By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
-	    By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
+		By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
+		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
+		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
 
-	    int maxRetries = 10;
+		int maxRetries = 10;
+		int waitBetweenRetries = 30; // seconds
 
-	    for (int retryCount = 0; retryCount < maxRetries; retryCount++) {
+		for (int retryCount = 0; retryCount < maxRetries; retryCount++) {
 
-	        // 🔹 Wait 5 seconds before clicking refresh
-	        Thread.sleep(5000);
+			try {
+				// 1️⃣ Wait for Refresh button to be clickable
+				WebElement refreshButton = waitForElementClickable(driver, refreshBtn, 20);
 
-	        validateElementIsVisible(driver, refreshBtn, "Refresh Button");
+				// Scroll into view
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", refreshButton);
 
-	        WebElement element = driver.findElement(refreshBtn);
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+				// Click refresh
+				clickOnElement(driver, refreshBtn, "Refresh Button", 20);
 
-	        clickOnElement(driver, refreshBtn, "Refresh button", waitTime);
+				// 2️⃣ Wait for loader to disappear
+				waitForLoaderToDisappear(driver, loader, 30);
 
-	        isInvisibleLoader(driver, loader);
+				// 3️⃣ Check if Instance ID row is displayed
+				if (isElementDisplayed(driver, instanceIdLocator, 10)) {
 
-	        if (isElementDisplayed(driver, instanceIdLocator, 10)) {
+					String instanceId = driver.findElement(instanceIdLocator).getText();
+					String status = driver.findElement(statusLocator).getText().trim();
 
-	            String instanceId = driver.findElement(instanceIdLocator).getText();
-	            String status = driver.findElement(statusLocator).getText().trim();
+					ExtentManager.logInfo("Instance ID: " + instanceId);
+					ExtentManager.logInfo("Current Status: " + status);
 
-	            ExtentManager.logInfo("Instance ID: " + instanceId);
-	            ExtentManager.logInfo("Current Status: " + status);
+					// Exit loop if status is NOT Submitted or Running
+					if (!status.equalsIgnoreCase("Submitted") && !status.equalsIgnoreCase("Running")) {
 
-	            // Exit loop if status is NOT Submitted or Running
-	            if (!status.equalsIgnoreCase("Submitted") &&
-	                !status.equalsIgnoreCase("Running")) {
+						ExtentManager.logInfo("Final execution status: " + status);
+						return;
+					}
+				}
 
-	                ExtentManager.logInfo("Final execution status: " + status);
-	                return;
-	            }
-	        }
-	    }
+				// 4️⃣ Wait between retries (non-blocking)
+				WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(waitBetweenRetries));
+				shortWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*"))); // dummy wait
 
-	    throw new RuntimeException("Status did not change from Submitted/Running after retries");
+			} catch (Exception e) {
+				ExtentManager.logInfo("Retry " + (retryCount + 1) + " failed: " + e.getMessage());
+			}
+		}
+
+		throw new RuntimeException("Status did not change from Submitted/Running after " + maxRetries + " retries");
 	}
 
-	// Validate Workflow Instance ID
-	public void validateWorkflowInstanceID(WebDriver driver) throws InterruptedException {
+	// Validate Workflow Instance ID...
+	public void validateWorkflowInstanceID(WebDriver driver) {
 
 		By refreshBtn = By.xpath("//*[@id='rrElement']/div/div/button");
 		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
 		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[5]");
 
 		int maxRetries = 10;
-		int retryCount = 0;
+		int waitBetweenRetries = 30; // seconds
 
-		while (retryCount < maxRetries) {
+		for (int retryCount = 0; retryCount < maxRetries; retryCount++) {
 
-			validateElementIsVisible(driver, refreshBtn, "Refresh Button");
+			try {
+				// 1️⃣ Wait for Refresh button to be clickable
+				WebElement refreshButton = waitForElementClickable(driver, refreshBtn, 20);
 
-			WebElement element = driver.findElement(refreshBtn);
+				// Scroll into view
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", refreshButton);
 
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView(true);", element);
-			waitForSeconds(2);
+				// Click refresh
+				clickOnElement(driver, refreshBtn, "Refresh Button", 20);
 
-			clickOnElement(driver, refreshBtn, "Refresh button", waitTime);
-			waitForSeconds(1);
+				// 2️⃣ Wait for loader to disappear
+				waitForLoaderToDisappear(driver, loader, 30);
 
-			if (isElementDisplayed(driver, instanceIdLocator, 5)) {
+				// 3️⃣ Check if Instance ID row is displayed
+				if (isElementDisplayed(driver, instanceIdLocator, 10)) {
 
-				String instanceId = driver.findElement(instanceIdLocator).getText();
-				String status = driver.findElement(statusLocator).getText().trim();
+					String instanceId = driver.findElement(instanceIdLocator).getText();
+					String status = driver.findElement(statusLocator).getText().trim();
 
-				ExtentManager.logInfo("Instance ID: " + instanceId);
-				ExtentManager.logInfo("Current Status: " + status);
+					ExtentManager.logInfo("Instance ID: " + instanceId);
+					ExtentManager.logInfo("Current Status: " + status);
 
-				// Keep waiting while status is Submitted or Running
-				if (!status.equalsIgnoreCase("Submitted") && !status.equalsIgnoreCase("Running")) {
+					// Exit loop if status is NOT Submitted or Running
+					if (!status.equalsIgnoreCase("Submitted") && !status.equalsIgnoreCase("Running")) {
 
-					ExtentManager.logInfo("Final execution status: " + status);
-					return; // exit once proper status is reached
+						ExtentManager.logInfo("Final execution status: " + status);
+						return;
+					}
 				}
-			}
 
-			retryCount++;
+				// 4️⃣ Wait between retries (non-blocking)
+				WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(waitBetweenRetries));
+				shortWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*"))); // dummy wait
+
+			} catch (Exception e) {
+				ExtentManager.logInfo("Retry " + (retryCount + 1) + " failed: " + e.getMessage());
+			}
 		}
 
-		throw new RuntimeException("Status did not change from Submitted/Running after retries");
+		throw new RuntimeException("Status did not change from Submitted/Running after " + maxRetries + " retries");
 	}
 }

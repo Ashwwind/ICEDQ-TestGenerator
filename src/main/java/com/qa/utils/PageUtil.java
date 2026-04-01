@@ -22,11 +22,11 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
-
 
 public class PageUtil extends Base {
 
@@ -82,6 +82,24 @@ public class PageUtil extends Base {
 		return wait;
 	}
 
+	// Wait until an element is clickable
+	public WebElement waitForElementClickable(WebDriver driver, By locator, int timeoutInSeconds) {
+		return new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+				.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+
+	// Wait until an element is visible
+	public WebElement waitForElementVisible(WebDriver driver, By locator, int timeoutInSeconds) {
+		return new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+				.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+
+	// Wait for loader to disappear
+	public void waitForLoaderToDisappear(WebDriver driver, By loaderLocator, int timeoutInSeconds) {
+		new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+				.until(ExpectedConditions.invisibilityOfElementLocated(loaderLocator));
+	}
+
 	// Wait for the element to be visible.
 	public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
 		try {
@@ -119,12 +137,28 @@ public class PageUtil extends Base {
 
 			ExtentManager.logInfo("Clicking on " + label);
 
-			waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by)).click();
+			WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by));
 
-			waitForSeconds(2);
+			try {
+				// Primary click
+				element.click();
+			} catch (Exception e1) {
+				ExtentManager.logInfo("Normal click failed, trying scroll + click");
+
+				try {
+					// Scroll into view and retry
+					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+
+					element.click();
+				} catch (Exception e2) {
+					ExtentManager.logInfo("Scroll click failed, trying JS click");
+
+					// Final fallback: JS click
+					((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+				}
+			}
 
 			ExtentManager.logPass("Clicked on " + label);
-
 			return true;
 
 		} catch (Exception e) {
@@ -134,14 +168,21 @@ public class PageUtil extends Base {
 	}
 
 	public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
-		boolean isVisible = isDisplayed(driver, locator, SHOTW);
+		try {
+			boolean isVisible = isDisplayed(driver, locator, SHOTW);
 
-		if (isVisible) {
-			ExtentManager.logInfo(label + " is visible.");
-		} else {
-			ExtentManager.logFail(label + " is NOT visible.");
+			if (isVisible) {
+				ExtentManager.logPass(label + " is visible.");
+			} else {
+				ExtentManager.logFail(label + " is NOT visible. Locator: " + locator);
+			}
+
+			return isVisible;
+
+		} catch (Exception e) {
+			ExtentManager.logFail("Exception while validating visibility of " + label + " ➝ " + e.getMessage());
+			return false;
 		}
-		return isVisible;
 	}
 
 	//
@@ -149,53 +190,88 @@ public class PageUtil extends Base {
 		waitForElements(driver, 120).until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 
-	
 	// Wait for just seconds
 	public static void waitForSeconds(long seconds) {
-	    try {
-	        Thread.sleep(seconds * 20);
-	    } catch (InterruptedException e) {
-	        Thread.currentThread().interrupt();
-	    }
+		try {
+			Thread.sleep(seconds * 20);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
 	}
 
-	// Enter data in the filed.
 	public static void sendkeysToElement(WebDriver driver, By locator, String label, String input) {
 		try {
-			validateElementIsVisible(driver, locator, label);
+			boolean isVisible = validateElementIsVisible(driver, locator, label);
+
+			if (!isVisible) {
+				throw new RuntimeException(label + " is not visible. Cannot enter value.");
+			}
 
 			ExtentManager.logInfo("Entering value on " + label + " input: " + input);
 
-			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
-					.sendKeys(input);
-			
-			 waitForSeconds(3); // wait after entering text.
+			WebElement element = waitForElements(driver, SHOTW)
+					.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+			try {
+				// Clear existing value
+				element.clear();
+
+				// Normal sendKeys
+				element.sendKeys(input);
+
+			} catch (Exception e1) {
+				ExtentManager.logInfo("Normal sendKeys failed, trying JS fallback");
+
+				// Fallback: JS set value
+				((JavascriptExecutor) driver).executeScript("arguments[0].value='" + input + "';", element);
+			}
 
 			ExtentManager.logPass("Entered value on " + label);
 
 		} catch (Exception e) {
 			ExtentManager.logFail("Failed to enter value on " + label + " ➝ " + e.getMessage());
-			throw e; // 🔥 MUST rethrow so executeStep can capture screenshot & fail
+			throw e; // keep this ✅
 		}
 	}
 
-	// Enter data in the filed.
 	public static void sendkeysToEnter(WebDriver driver, By locator, String label) {
 		try {
-			validateElementIsVisible(driver, locator, label);
-			
+			boolean isVisible = validateElementIsVisible(driver, locator, label);
+
+			if (!isVisible) {
+				throw new RuntimeException(label + " is not visible. Cannot press ENTER.");
+			}
+
 			ExtentManager.logInfo("Pressing ENTER on " + label);
 
-			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
-					.sendKeys(Keys.ENTER);
-			
-			 waitForSeconds(2); // wait after ENTER.
+			WebElement element = waitForElements(driver, SHOTW).until(ExpectedConditions.elementToBeClickable(locator));
+
+			try {
+				// Ensure focus before pressing ENTER
+				element.click();
+				element.sendKeys(Keys.ENTER);
+
+			} catch (Exception e1) {
+				ExtentManager.logInfo("Normal ENTER failed, trying Actions fallback");
+
+				try {
+					// Fallback: Actions class
+					new Actions(driver).moveToElement(element).click().sendKeys(Keys.ENTER).perform();
+
+				} catch (Exception e2) {
+					ExtentManager.logInfo("Actions ENTER failed, trying JS fallback");
+
+					// Final fallback: JS trigger
+					((JavascriptExecutor) driver).executeScript(
+							"arguments[0].dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));", element);
+				}
+			}
 
 			ExtentManager.logPass("Pressed ENTER on " + label);
 
 		} catch (Exception e) {
 			ExtentManager.logFail("Failed to press ENTER on " + label + " ➝ " + e.getMessage());
-			throw e; // 🔥 Rethrow so executeStep handles screenshot & toast
+			throw e; // keep this ✅
 		}
 	}
 
@@ -351,108 +427,110 @@ public class PageUtil extends Base {
 		throw new RuntimeException("Parent window not found after closing child!");
 	}
 
-	// Click the Checksum rule type from the wizard page.
+	///// This methods are used in the Template tab /////
+	//
+	// Template tab
+	//
+	//
 	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
-	    try {
-	        // 1️⃣ Wait for any initial loader to disappear
-	        //By loader = By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div");
-	      //  isInvisibleLoader(driver, loader);
+		String label = fieldName + " " + fieldType;
 
-	        // 2️⃣ Validate element is visible
-	        if (!validateElementIsVisible(driver, locator, fieldName + " " + fieldType)) {
-	            ExtentManager.logError(fieldName + " " + fieldType + " is not visible.");
-	            return false;
-	        }
+		try {
+			// Directly click (handles visibility + wait internally)
+			boolean isClicked = clickOnElement(driver, locator, label, 20);
 
-	        // 3️⃣ Click the element
-	        boolean isClicked = clickOnElement(driver, locator, fieldName + " " + fieldType, 20);
-	        if (!isClicked) {
-	            ExtentManager.logError("Failed to click " + fieldName + " " + fieldType);
-	            return false;
-	        }
+			if (!isClicked) {
+				ExtentManager.logFail("Failed to click " + label);
+				return false;
+			}
 
-	        // 4️⃣ Wait for loader after click
-	       // isInvisibleLoader(driver, loader);
+			return true;
 
-	        return true;
-
-	    } catch (Exception e) {
-	        ExtentManager.logError("Error while clicking " + fieldName + " " + fieldType + ": " + e.getMessage());
-	        return false;
-	    }
+		} catch (Exception e) {
+			ExtentManager.logFail("Error while clicking " + label + " ➝ " + e.getMessage());
+			return false;
+		}
 	}
-
 
 	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
 		try {
-			// Wait for loader to disappear
+			// 1️⃣ Wait for loader to disappear
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
-			// Validate element visibility
-			if (!validateElementIsVisible(driver, locator, fieldName)) {
-	            ExtentManager.logInfo(fieldName + " is not visible");
-	            return false;
-	        }
+			// 2️⃣ Ensure element is clickable/visible
+			WebElement element = waitForElements(driver, 50).until(ExpectedConditions.elementToBeClickable(locator));
 
-			// Click before sending keys
-			boolean clicked = clickOnElement(driver, locator, fieldName, 20);
-			if (!clicked) {
-				ExtentManager.logInfo("Failed to click on " + fieldName);
-				return false;
+			// 3️⃣ Click before typing
+			try {
+				element.click();
+			} catch (Exception e1) {
+				ExtentManager.logInfo("Click failed, trying JS click on " + fieldName);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 			}
 
-			// Send keys
-			waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(input);
+			// 4️⃣ Send keys normally
+			try {
+				element.clear(); // Clear existing value
+				element.sendKeys(input);
 
-			waitForSeconds(3); // wait to ENTER
+			} catch (Exception e2) {
+				ExtentManager.logInfo("Normal sendKeys failed, trying JS fallback for " + fieldName);
+				((JavascriptExecutor) driver).executeScript("arguments[0].value='" + input + "';", element);
+			}
 
-			ExtentManager.logInfo("Entered value '" + input + "' on " + fieldName);
+			// 5️⃣ Optional: verify value is set (avoids fixed sleep)
+			// waitForElements(driver, 5).until(d ->
+			// element.getAttribute("value").equals(input));
+
+			ExtentManager.logPass("Entered value '" + input + "' on " + fieldName);
 			return true;
 
 		} catch (Exception e) {
-			ExtentManager.logError("Exception while entering value on " + fieldName + " : " + e.getMessage());
+			ExtentManager.logFail("Exception while entering value on " + fieldName + " ➝ " + e.getMessage());
 			return false;
 		}
 	}
-	
+
 	public boolean sendKeysEnterToElement2(WebDriver driver, By locator, String fieldName) {
-
 		try {
-			// Wait for loader to disappear
+			// 1️⃣ Wait for loader to disappear
 			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
-			// Validate element visibility
-			if (!validateElementIsVisible(driver, locator, fieldName)) {
-				ExtentManager.logInfo(fieldName + " is not visible");
-				return false;
+			// 2️⃣ Wait for element to be clickable
+			WebElement element = waitForElements(driver, SHOTW).until(ExpectedConditions.elementToBeClickable(locator));
+
+			// 3️⃣ Click before pressing ENTER (with fallback)
+			try {
+				element.click();
+			} catch (Exception e1) {
+				ExtentManager.logInfo("Click failed, trying JS click on " + fieldName);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 			}
 
-			// Click before pressing ENTER
-			boolean clicked = clickOnElement(driver, locator, fieldName, 20);
-			if (!clicked) {
-				ExtentManager.logInfo("Failed to click on " + fieldName);
-				return false;
-
+			// 4️⃣ Press ENTER with fallback
+			try {
+				element.sendKeys(Keys.ENTER);
+			} catch (Exception e2) {
+				ExtentManager.logInfo("Normal ENTER failed, trying Actions fallback on " + fieldName);
+				new Actions(driver).moveToElement(element).click().sendKeys(Keys.ENTER).perform();
 			}
 
-			// Press ENTER
-			waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator))
-			.sendKeys(Keys.ENTER);
+			// 5️⃣ Optional: verify that ENTER had effect (replace fixed wait)
+			// waitForSeconds(1); // minimal wait; replace with actual verification if
+			// possible
 
-			waitForSeconds(2); // wait after ENTER
-
-
-			ExtentManager.logInfo("Pressed ENTER on " + fieldName);
-
+			ExtentManager.logPass("Pressed ENTER on " + fieldName);
 			return true;
 
 		} catch (Exception e) {
-			ExtentManager.logError("Exception while pressing ENTER on " + fieldName + " : " + e.getMessage());
+			ExtentManager.logFail("Exception while pressing ENTER on " + fieldName + " ➝ " + e.getMessage());
 			return false;
 		}
 	}
-
-	
+	//
+	// Template tab
+	//
+	//
 
 	// Error Capture Utility
 	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast-content')]");
@@ -471,7 +549,7 @@ public class PageUtil extends Base {
 	// Capture UI errors if present
 	public static String captureUIErrorIfPresent(WebDriver driver) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 			List<WebElement> toasts = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TOAST_MESSAGE));
 
@@ -508,7 +586,7 @@ public class PageUtil extends Base {
 
 	}
 
-	// 
+	//
 	public boolean isElementDisplayed(WebDriver driver, By locator, int timeoutInSeconds) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
@@ -522,6 +600,5 @@ public class PageUtil extends Base {
 			return false;
 		}
 	}
-
 
 }
