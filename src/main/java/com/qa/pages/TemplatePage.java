@@ -8,7 +8,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 

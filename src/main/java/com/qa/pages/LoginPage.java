@@ -3,9 +3,7 @@ package com.qa.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
-import com.qa.factory.DriverFactory;
 import com.qa.utils.PageUtil;
 
 public class LoginPage extends PageUtil {
@@ -42,7 +40,7 @@ public class LoginPage extends PageUtil {
 	}
 
 	public void loginPageValidation() {
-		driver.get(ConfigReader.getProperty("baseUrl"));
+		driver.get("baseUrl");
 
 		// URL validation
 		verifyUrlOfPage();
