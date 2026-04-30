@@ -490,7 +490,7 @@ public class TestGeneratorPage extends PageUtil {
 
 	public boolean clickTestGenerator() {
 
-		return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
+		return clickOnField(driver, testGeneratorModue, "Test Generator", "button", true);
 	}
 
 	// Click the Checksum rule type from the wizard page.
@@ -505,7 +505,7 @@ public class TestGeneratorPage extends PageUtil {
 
 		try {
 			if (flag) {
-				clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab");
+				clickOnField(driver, selectChecksumWizard, "Checksum rule type", "tab", true);
 			}
 		} catch (Exception e) {
 			ExtentManager.logFail(e + " clickOnChecksum1 :: " + e.toString());
@@ -537,32 +537,32 @@ public class TestGeneratorPage extends PageUtil {
 			throw new IllegalArgumentException("InvaRule Type: " + ruleType);
 		}
 
-		return clickOnField(driver, locator, ruleType + " rule type", "tab");
+		return clickOnField(driver, locator, ruleType + " rule type", "tab", true);
 
 	}
 
 	// Click the Recon rule type from the wizard page.
 	public boolean clickOnRecon() {
 
-		return clickOnField(driver, selectReconWizard, "Recon rule type", "tab");
+		return clickOnField(driver, selectReconWizard, "Recon rule type", "tab", true);
 	}
 
 	// Click the Validation rule type from the wizard page.
 	public boolean clickOnValidation() {
 
-		return clickOnField(driver, selectValidationWizard, "Validation rule type", "tab");
+		return clickOnField(driver, selectValidationWizard, "Validation rule type", "tab", true);
 	}
 
 	// Click the Pushdown rule type from the wizard page.
 	public boolean clickOnPushdown() {
 
-		return clickOnField(driver, selectPushdownWizard, "Pushdown rule type", "tab");
+		return clickOnField(driver, selectPushdownWizard, "Pushdown rule type", "tab", true);
 	}
 
 	// Click on the search field box
 	public boolean clickOnSearchField() {
 
-		return clickOnField(driver, clickSearchTemplateField, "'Search template' search field ", "search field");
+		return clickOnField(driver, clickSearchTemplateField, "'Search template' search field ", "search field", true);
 	}
 
 	// Enter the data on the search field
@@ -570,8 +570,7 @@ public class TestGeneratorPage extends PageUtil {
 
 		boolean isTextEntered = sendkeysToElement1(driver, enterTemplateName, templateName, templateName);
 
-		boolean isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "search button icon",
-				"search button icon");
+		boolean isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "search button icon","search button icon", true);
 
 		return isTextEntered && isSearchClicked;
 	}
@@ -579,7 +578,7 @@ public class TestGeneratorPage extends PageUtil {
 	// Select the existing template form the list
 	public boolean selectExistingChecksumTemplate() {
 
-		return clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item", "serarch item");
+		return clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item", "serarch item", true);
 	}
 
 	public void clickOnWorkspaceField(String workspaceName) {
@@ -632,8 +631,7 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public boolean gotoWorkspaceNextbtn() {
-		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page",
-				"button");
+		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page", "button", true);
 	}
 
 	public void gotoRuleMetadataNextbtn() {// Click Next button on Rule Metadata page

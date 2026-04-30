@@ -7,35 +7,9 @@
         <methods>
           <include name="endSuite"/>
           <include name="validateLoginPage"/>
-          <include name="Login"/>
           <include name="startSuite"/>
         </methods>
       </class> <!-- com.qa.tests.LoginTest -->
     </classes>
   </test> <!-- Login Tests(failed) -->
-  <test thread-count="1" parallel="tests" name="Home Page Tests(failed)">
-    <classes>
-      <class name="com.qa.tests.HomePageTest">
-        <methods>
-          <include name="endSuite"/>
-          <include name="startSuite"/>
-          <include name="validateHomePage"/>
-        </methods>
-      </class> <!-- com.qa.tests.HomePageTest -->
-    </classes>
-  </test> <!-- Home Page Tests(failed) -->
-  <test thread-count="1" parallel="tests" name="Template Page Tests(failed)">
-    <classes>
-      <class name="com.qa.tests.TemplatePageTest">
-        <methods>
-          <include name="endSuite"/>
-          <include name="deleteTemplateUsingExistingTemplateFromDetails"/>
-          <include name="startSuite"/>
-          <include name="updateTemplateUsingExistingTemplate"/>
-          <include name="deleteTemplateUsingExistingTemplateFromList"/>
-          <include name="createTemplateUsingDynamicTemplate"/>
-        </methods>
-      </class> <!-- com.qa.tests.TemplatePageTest -->
-    </classes>
-  </test> <!-- Template Page Tests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

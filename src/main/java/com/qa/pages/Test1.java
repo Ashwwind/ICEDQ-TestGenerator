@@ -1,1039 +1,542 @@
 package com.qa.pages;
 
-import java.time.Duration;
+import java.util.List;
 
-import org.apache.commons.collections4.functors.CatchAndRethrowClosure;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.qa.config.ConfigReader;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 
+/**
+ * Page Object for the Template module under the Test Generator section. All
+ * public flows use executeStep() for uniform logging, screenshots, and
+ * flow-abort behaviour on any failure.
+ */
 public class Test1 extends PageUtil {
-	private WebDriver driver;
-	public static final int waitTime = 6; // Global wait time
 
-	// Locator
-	By testGeneratorModue = getElementLocator(prop.getProperty("home.testgenerator"));
-	// Checksum Rule
-	By selectChecksumWizard = getElementLocator(prop.getProperty("wizard.checksumRule"));
-	// Recon Rule
-	By selectReconWizard = getElementLocator(prop.getProperty("wizard.reconRule"));
-	// Validation Rule
-	By selectValidationWizard = getElementLocator(prop.getProperty("wizard.validationRule"));
-	// Pushdown Rule
-	By selectPushdownWizard = getElementLocator(prop.getProperty("wizard.pushdownRule"));
+	private static final int DEFAULT_WAIT = 10;
 
-	By clickSearchTemplateField = getElementLocator(prop.getProperty("wizard.searchfield.tempatename"));
-	By enterTemplateName = getElementLocator(prop.getProperty("wizard.searchfield.enter.tempatename"));
-	By clickSearchButtonIcon = getElementLocator(prop.getProperty("wizard.searchfield.searchButtonIcon"));
-	By selectExistingDynamicChecksumTemplate = getElementLocator(prop.getProperty("wizard.existing.dymanic.template"));
-	By clickOnWorkspaceDropdown = getElementLocator(prop.getProperty("wizard.workspace.dropdown"));
-	By selectWorkspace = getElementLocator(prop.getProperty("select.Workspace"));
-	By selectSearchWorkspace = getElementLocator(prop.getProperty("select.searchedWorspace"));
-	By clickOnFolderDropdown = getElementLocator(prop.getProperty("wizard.folder.dropdown"));
-	By searchFolderName = getElementLocator(prop.getProperty("wizard.search.folderName"));
-	By selectSearchFolder = getElementLocator(prop.getProperty("select.searchedfolder"));
-	By clickNextButtonWorkspaceNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.workspaceNextbtn"));
-	By clickNextButtonmetadataNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.metadataNextbtn"));
-	By clickNextButtoncheckNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.checkNextbtn"));
-	By clickNextButtonnotificationNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.notificationNextbtn"));
+	private WebDriver driver = null;
 
-	// Source Dataset
-	By selectDatabaseConnectionType = getElementLocator(prop.getProperty("wizard.Database.connectionType"));
-	By selectCloudDataWarehouseConnectionType = getElementLocator(
-			prop.getProperty("wizard.CloudDataWarehouse.connectionType"));
-	By selectFileConnectionType = getElementLocator(prop.getProperty("wizard.File.connectionType"));
+	/** JSON copied from a source template; consumed when creating a new one. */
+	private String copiedPrettyJson;
 
-	By clickSourcedatasetConnectionTypeDropdown = getElementLocator(
-			prop.getProperty("wizard.click.sourceConnectionTypeDropdown"));
-	By clickSourcedatasetConnectionDropdown = getElementLocator(
-			prop.getProperty("wizard.click.sourceConnectionDropdown"));
-	By enterSourceConnectionName = getElementLocator(prop.getProperty("wizard.source.connection.input"));
-	By clickSourceSchemaDropdown = getElementLocator(prop.getProperty("wizard.source.schema.dropdown"));
-	By enterSourceSchemaName = getElementLocator(prop.getProperty("wizard.source.schema.input"));
+	// ─── Locators ────────────────────────────────────────────────────────────────
 
-	// Target Dataset
-	By clickTargetdatasetConnectionTypeDropdown = getElementLocator(
-			prop.getProperty("wizard.click.targetConnectionTypeDropdown"));
-	By clickTargetdatasetConnectionDropdown = getElementLocator(
-			prop.getProperty("wizard.click.targetConnectionDropdown"));
-	By enterTargetConnectionName = getElementLocator(prop.getProperty("wizard.target.connection.input"));
-	By clickTargetSchemaDropdown = getElementLocator(prop.getProperty("wizard.target.schema.dropdown"));
-	By enterTargetSchemaName = getElementLocator(prop.getProperty("wizard.target.schema.input"));
+	private final By testGeneratorModule = getElementLocator(prop.getProperty("home.testgenerator"));
+	private final By templateSubModule = getElementLocator(prop.getProperty("template.subModule"));
 
-	By clickNextButtondatasetNextbtn = getElementLocator(prop.getProperty("wizard.click.nextButton.datasetNextbtn"));
-	By ClickNextButtonimportSQLNextbtn = getElementLocator(
-			prop.getProperty("wizard.click.nextButton.importSQLNextbtn"));
+	private final By searchField = getElementLocator(prop.getProperty("searchField.searchTemplate"));
+	private final By searchIconButton = getElementLocator(prop.getProperty("searchButtonIcon.searchTemplate"));
+	private final By searchResultFirstItem = getElementLocator(prop.getProperty("searchItem.fromList"));
+	private final By templateNameLink = By.xpath("//a[@class='link dib']");
 
-	// Available Table
-	By clickAvailableTable = getElementLocator(prop.getProperty("availableTable.click"));
-	By selectAvailableTable = getElementLocator(prop.getProperty("availableTable.select.table"));
-	By clickMoveToButton = getElementLocator(prop.getProperty("availableTable.moveto.click"));
-	By clickNextButtonSelettableNextbtn = getElementLocator(
-			prop.getProperty("availableTable.click.nextButton.SelettableNextbtn"));
+	private final By copyButton = getElementLocator(prop.getProperty("copyButton"));
+	private final By newTemplateButton = getElementLocator(prop.getProperty("newTemplateButton"));
+	private final By saveButton = getElementLocator(prop.getProperty("saveButton"));
 
-	// Click on Generate
-	By clickGenerateButton = getElementLocator(prop.getProperty("generateButton.click"));
-	// Click on Go To Publish
-	By clickGoToPreviewButton = getElementLocator(prop.getProperty("goToPreviewButton.click"));
-	// Select the generated entity for publish
-	By selectEntity = getElementLocator(prop.getProperty("publishEntity.select"));
-	// Click on publish button to publish
-	By clikPublishButton = getElementLocator(prop.getProperty("published.click"));
-	// Click on Go To Publish
-	By clickGoToPublishButton = getElementLocator(prop.getProperty("goToPublishButton.click"));
-	// Click on hyperlink of publish entity
-	By clickHyperlinkPublishRule = getElementLocator(prop.getProperty("publishRuleHyperlink.click"));
+	private final By accountNameField = getElementLocator(prop.getProperty("accountName"));
+	private final By accountNameList = getElementLocator(prop.getProperty("accountNameList"));
+	private final By ruleTypeField = getElementLocator(prop.getProperty("ruleType"));
+	private final By ruleTypeList = getElementLocator(prop.getProperty("ruleTypeList"));
+	private final By nameField = getElementLocator(prop.getProperty("name"));
+	private final By descriptionField = getElementLocator(prop.getProperty("description"));
 
-	By loader = getElementLocator(prop.getProperty("loderIsDisplayed"));
+	private final By masterCheckbox = getElementLocator(prop.getProperty("masterCheckbox"));
+	private final By moreButton = getElementLocator(prop.getProperty("moreButton"));
+	private final By moreDeleteButton = getElementLocator(prop.getProperty("more.deleteButton"));
+	private final By deleteConfirmationBox = getElementLocator(prop.getProperty("deleteConfirmationBox"));
+	private final By cancelButtonInLogPane = getElementLocator(prop.getProperty("cancelButton"));
+	private final By deleteButtonOnDetailsPage = getElementLocator(prop.getProperty("deleteButtonInListingPage"));
 
+	// ─── Constructor ─────────────────────────────────────────────────────────────
+
+	// Right — remove the return type:
 	public Test1(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	/// ************* ///
-	// Default Dynamic Template
-	/// ************* ///
+	// ─── Flow Abort Infrastructure ───────────────────────────────────────────────
 
-	public void createRuleUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String sourceConnectionName, String targetConnectionName,
-			String schemaName, String tableName) throws InterruptedException {
+	/**
+	 * Executes {@code action}, then checks for a UI toast error.
+	 * <ul>
+	 * <li>On success → logs PASS to the Extent report.</li>
+	 * <li>On failure → logs FAIL, captures a screenshot, navigates home, and throws
+	 * {@link FlowAbortException} to stop the entire flow.</li>
+	 * </ul>
+	 *
+	 * @param stepName human-readable label shown in the report
+	 * @param action   the UI interaction to perform
+	 */
+	public void executeStep(String stepName, Runnable action) {
+		try {
+			action.run();
+			isInvisibleLoader(driver, getElementLocator(prop.getProperty("loderIsDisplayed")));
 
-		// Step 1
-		clickTestGenerator();
-
-		// Step 2
-		clickOnRuleType(ruleType);
-
-		// Step 3
-		clickOnSearchField();
-		enterOnSearchField(templateName);
-		selectExistingChecksumTemplate();
-
-		// Step 4
-		clickOnWorkspaceField(workspaceName);
-
-		
-		clickOnFolderField(folderName);
-
-		// Step 5
-		gotoWorkspaceNextbtn();
-		gotoRuleMetadataNextbtn();
-		gotoCheckMetadataNextbtn();
-		gotoNotificationNextbtn();
-
-		// Step 6
-		selectionSourceDataset(connectionType, sourceConnectionName, schemaName);
-
-//		// Step 7 (only for recon / checksum)
-//		if (!ruleType.equalsIgnoreCase("validation") && !ruleType.equalsIgnoreCase("pushdown")) {
-//			selectionTargetDataset(connectionType, targetConnectionName, schemaName);
-//		}
-//
-//		// Step 8
-//		gotoDatasetNextbtn();
-//		selectionAvailableTable(tableName);
-//		gotoSelettableNextbtn();
-//
-//		// Step 9
-//		clickOnGenerate();
-//		clickOnGoToPreview();
-//		selectGeneratedEntity();
-//
-//		// Step 10
-//		clickOnPublish();
-//		clickOnGoToPublish();
-//
-//		// Step 11
-//		clickOnPublishedRule();
-//
-//		// Step 12
-//		navigatHomePage();
+			String uiError = captureUIErrorIfPresent(driver);
+			if (uiError != null && !uiError.isEmpty()) {
+				throw new RuntimeException("UI error detected: " + uiError);
+			}
+			ExtentManager.logPass(stepName + " ➝ PASSED");
+		} catch (Throwable e) {
+			ExtentManager.logFail(stepName + " ➝ FAILED due to: " + e.getMessage());
+			ExtentManager.captureScreenshot("Step_Failure");
+			navigateToHomePage();
+			throw new FlowAbortException("Flow aborted at: [" + stepName + "]", e);
+		}
 	}
 
-	// ============================
-	// Page method
-	// ============================
+	/** Thrown by {@link #executeStep} to immediately stop the current test flow. */
+	public static class FlowAbortException extends RuntimeException {
+		public FlowAbortException(String message, Throwable cause) {
+			super(message, cause);
+		}
+	}
 
-	
-	public boolean clickTestGenerator() { /// Clicking on Test Generator Module
+	// ─── Navigation ──────────────────────────────────────────────────────────────
+
+	public void navigateToHomePage() {
+		goTo(homePageUrl);
+	}
+
+	// ─── Private Atomic Actions ──────────────────────────────────────────────────
+	// These are plain void methods — failures propagate as exceptions
+	// and are caught by executeStep().
+
+	private void doClickTestGenerator() {
+
+		if (!validateField(driver, testGeneratorModule, "Test Generator Button", 5)) {
+			throw new RuntimeException("Validation failed: Test Generator button not visible");
+		}
+
+		if (!clickOnElement(driver, testGeneratorModule, "Test Generator Button", 5)) {
+			throw new RuntimeException("Click failed: Test Generator button");
+		}
+	}
+
+	private void doClickTemplateTab() {
+		if (!validateField(driver, templateSubModule, "Template Tab", 5)) {
+			throw new RuntimeException("Template Tab not visible");
+		}
+		clickOnField(driver, templateSubModule, "Template", "Tab", true);
+	}
+
+	private void doClickSearchField() {
+		if (!validateField(driver, searchField, "Search Field", 5)) {
+			throw new RuntimeException("Search Field not visible");
+		}
+		clickOnField(driver, searchField, "Search Field", "Input", true);
+	}
+
+	private void doEnterSearchText(String templateName) {
+		if (!validateField(driver, searchField, "Search Field", 5)) {
+			throw new RuntimeException("Search Field not visible");
+		}
+		sendkeysToElement(driver, searchField, "Search Field", templateName);
+	}
+
+	private void doClickSearchIcon() {
+		if (!validateField(driver, searchIconButton, "Search Icon", 5)) {
+			throw new RuntimeException("Search Icon not visible");
+		}
+		clickOnField(driver, searchIconButton, "Search Icon", "Button", true);
+	}
+
+	private void doSelectFirstSearchResult() {
+		if (!validateField(driver, searchResultFirstItem, "First Search Result", 5)) {
+			throw new RuntimeException("Search result not visible");
+		}
+		clickOnField(driver, searchResultFirstItem, "First Search Result", "List item", true);
+	}
+
+	private void doClickCopyButton() {
+		if (!validateField(driver, copyButton, "Copy Button", 5)) {
+			throw new RuntimeException("Copy button not visible");
+		}
+		clickOnField(driver, copyButton, "Copy", "Button", true);
+	}
+
+	private void doClickNewTemplateButton() {
+		if (!validateField(driver, newTemplateButton, "New Template Button", 5)) {
+			throw new RuntimeException("New Template button not visible");
+		}
+		clickOnField(driver, newTemplateButton, "New Template", "Button", true);
+	}
+
+	private void doClickSaveButton() {
+		if (!validateField(driver, saveButton, "Save Button", 5)) {
+			throw new RuntimeException("Save button not visible");
+		}
+		clickOnField(driver, saveButton, "Save", "Button", true);
+	}
+
+	private void doSelectAccount() {
+
+		if (!validateField(driver, accountNameField, "Account Dropdown", 5)) {
+			throw new RuntimeException("Account dropdown not visible");
+		}
+
+		clickOnField(driver, accountNameField, "Account", "Dropdown", true);
+
+		waitForElements(driver, 100).until(ExpectedConditions.visibilityOfElementLocated(accountNameList));
+
+		selectFromDropdown(accountNameList, "Quality_Assurance");
+	}
+
+	private void doSelectRuleType(String ruleType) {
+
+		if (!validateField(driver, ruleTypeField, "Rule Type Dropdown", 5)) {
+			throw new RuntimeException("Rule Type dropdown not visible");
+		}
+
+		clickOnField(driver, ruleTypeField, "Rule Type", "Dropdown", true);
+
+		waitForElements(driver, 100).until(ExpectedConditions.visibilityOfElementLocated(ruleTypeList));
+
+		selectFromDropdown(ruleTypeList, ruleType);
+	}
+
+	private void doEnterName(String name) {
+		if (!validateField(driver, nameField, "Name Field", 5)) {
+			throw new RuntimeException("Name field not visible");
+		}
+		clearAndType(nameField, "Name", name);
+	}
+
+	private void doEnterDescription(String description) {
+		if (!validateField(driver, descriptionField, "Description Field", 5)) {
+			throw new RuntimeException("Description field not visible");
+		}
+		clearAndType(descriptionField, "Description", description);
+	}
+
+	// ─── Shared UI Helpers ───────────────────────────────────────────────────────
+
+	/**
+	 * Waits for the dropdown list to populate, finds the option matching
+	 * {@code value}, and clicks it.
+	 *
+	 * @param listLocator locator for the dropdown list items
+	 * @param value       the option text to select (case-insensitive)
+	 * @throws RuntimeException if the option is not found after waiting
+	 */
+	private void selectFromDropdown(By listLocator, String value) {
+		WebDriverWait wait = waitForElements(driver, DEFAULT_WAIT);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		// Step 1 — Wait for the listbox container to be visible
+		By listboxContainer = By.xpath("//*[@aria-label='listbox']");
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(listboxContainer));
+		} catch (TimeoutException e) {
+			throw new RuntimeException("Listbox container did not appear within " + DEFAULT_WAIT + "s");
+		}
+
+		// Step 2 — Wait for overlay/interceptor on TOP of the listbox to disappear
+		// (Even if no spinner — the dropdown animation itself can briefly block clicks)
+		try {
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(
+					By.xpath("//*[@aria-label='listbox']/preceding-sibling::*[contains(@class,'overlay') "
+							+ "or contains(@class,'backdrop') or contains(@class,'loading')]")));
+		} catch (TimeoutException ignored) {
+			// No overlay found — that's fine, continue
+		}
+
+		// Step 3 — Find and click the matching <li> by re-fetching on every retry
+		boolean selected = wait.until(driver -> {
+			try {
+				List<WebElement> items = driver.findElements(listLocator);
+
+				// Guard: wait until items are non-empty and fully rendered
+				if (items.isEmpty())
+					return false;
+
+				for (WebElement item : items) {
+					String text;
+					try {
+						text = item.getText().trim();
+					} catch (StaleElementReferenceException s) {
+						return false; // list re-rendered, retry outer lambda
+					}
+
+					if (text.equalsIgnoreCase(value)) {
+						try {
+							// Scroll into view first
+							js.executeScript("arguments[0].scrollIntoView({block:'center',inline:'nearest'});", item);
+
+							// Small yield — lets scroll settle and any CSS transition finish
+							Thread.sleep(100);
+
+							// Try normal click first
+							item.click();
+							ExtentManager.logInfo("Selected: '" + value + "'");
+							return true;
+
+						} catch (ElementClickInterceptedException e) {
+							// Something still on top — JS click bypasses the interceptor
+							try {
+								js.executeScript("arguments[0].click();", item);
+								ExtentManager.logInfo("Selected via JS click: '" + value + "'");
+								return true;
+							} catch (Exception jsEx) {
+								return false; // retry
+							}
+						} catch (StaleElementReferenceException s) {
+							return false; // retry
+						} catch (InterruptedException ie) {
+							Thread.currentThread().interrupt();
+							return false;
+						}
+					}
+				}
+
+				// Option not found yet in current render — log available for debug
+				List<String> available = items.stream().map(el -> {
+					try {
+						return el.getText().trim();
+					} catch (Exception e) {
+						return "";
+					}
+				}).filter(t -> !t.isEmpty()).collect(java.util.stream.Collectors.toList());
+
+				ExtentManager.logInfo("Option '" + value + "' not yet found. Available: " + available);
+				return false; // retry
+
+			} catch (StaleElementReferenceException e) {
+				return false; // full list went stale, retry
+			}
+		});
+
+		if (!selected) {
+			throw new RuntimeException("Failed to select '" + value + "' from listbox after " + DEFAULT_WAIT + "s");
+		}
+	}
+
+	/**
+	 * Clears a text field, types {@code value}, and confirms with ENTER. Throws on
+	 * any Selenium exception (caught by executeStep).
+	 */
+	private void clearAndType(By locator, String fieldLabel, String value) {
+		WebDriverWait wait = waitForElements(driver, DEFAULT_WAIT);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+		element.click();
+		element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		element.sendKeys(Keys.DELETE);
+		element.sendKeys(value);
+
+		// Wait until the field actually reflects the typed value before proceeding
+		wait.until(ExpectedConditions.attributeContains(locator, "value", value));
+		ExtentManager.logInfo("Typed '" + value + "' into " + fieldLabel);
+	}
+
+	// ─── ACE Editor Helpers ──────────────────────────────────────────────────────
+
+	/**
+	 * Reads JSON from the ACE editor, pretty-prints it, and stores it in
+	 * {@link #copiedPrettyJson}. Throws on parse failure (caught by executeStep).
+	 */
+	private void doReadJsonFromEditor() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String rawJson = (String) js
+				.executeScript("return ace.edit(document.querySelector('.ace_editor')).getValue();");
 
 		try {
-
-			return clickOnField(driver, testGeneratorModue, "Test Generator", "button");
-
+			ObjectMapper mapper = new ObjectMapper();
+			Object parsed = mapper.readValue(rawJson, Object.class);
+			copiedPrettyJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(parsed).replace("\r\n", "\n")
+					.trim();
 		} catch (Exception e) {
-			ExtentManager.logFail("Element is not clicable. " + testGeneratorModue + e.getMessage());
-			return false;
+			throw new RuntimeException("Failed to parse JSON from ACE editor: " + e.getMessage(), e);
 		}
-
 	}
 
-	public boolean clickOnRuleType(String ruleType) {
-
-		if (ruleType == null || ruleType.trim().isEmpty()) {
-			ExtentManager.logFail("Rule type is null or empty");
-			return false;
+	/**
+	 * Writes {@link #copiedPrettyJson} into the ACE editor via JavaScript. Throws
+	 * if no JSON is available or the script fails (caught by executeStep).
+	 */
+	private void doWriteJsonToEditor() {
+		if (copiedPrettyJson == null || copiedPrettyJson.isEmpty()) {
+			throw new RuntimeException("No JSON available to write — call read step first");
 		}
 
-		By locator;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		switch (ruleType.trim().toLowerCase()) {
-
-		case "checksum":
-			locator = selectChecksumWizard;
-			break;
-
-		case "recon":
-			locator = selectReconWizard;
-			break;
-
-		case "validation":
-			locator = selectValidationWizard;
-			break;
-
-		case "pushdown":
-			locator = selectPushdownWizard;
-			break;
-
-		default:
-			ExtentManager.logFail("Invalid Rule Type provided: " + ruleType);
-			return false;
-		}
-
-		boolean isClicked = clickOnField(driver, locator, ruleType + " rule type", "tab");
-
-		if (!isClicked) {
-			ExtentManager.logFail("Failed to click on rule type: " + ruleType);
-		}
-
-		return isClicked;
+		js.executeScript(
+				"var editor = ace.edit(document.querySelector('.ace_editor'));" + "editor.session.setUseWorker(false);"
+						+ "editor.setValue(arguments[0], -1);" + "editor.clearSelection();" + "editor.blur();",
+				copiedPrettyJson);
 	}
+	// ─── Validation ──────────────────────────────────────────────────────────────
 
-	// Click on the search field box
-	public boolean clickOnSearchField() { /// Clicking on Search Template Field
-	    try {
-	        return clickOnField(driver, clickSearchTemplateField,
-	                "'Search template' search field", "search field");
-	    } catch (Exception e) {
-	        ExtentManager.logFail("Element is not clickable. "
-	                + clickSearchTemplateField + e.getMessage());
-	        return false;
-	    }
-	}
+	/**
+	 * Searches for {@code expectedName} and asserts the first result matches. Run
+	 * outside executeStep so its own inner steps each get individual logging.
+	 */
+	private void validateTemplateName(String expectedName, String action) {
+		executeStep("Search for " + action + " template: " + expectedName, () -> {
+			doClickSearchField();
+			doEnterSearchText(expectedName);
+			doClickSearchIcon();
+		});
 
-
-	// Enter the data on the search field
-	public boolean enterOnSearchField(String templateName) {
-
-		try {
-			boolean isTextEntered = sendkeysToElement1(driver, enterTemplateName, "Search template field", templateName);
-
-			if (!isTextEntered) {
-				ExtentManager.logFail("Failed to enter template name: " + templateName);
-				return false;
+		executeStep("Validate " + action + " template name: " + expectedName, () -> {
+			String actualName = driver.findElement(templateNameLink).getText();
+			ExtentManager.logInfo("Expected : " + expectedName);
+			ExtentManager.logInfo("Actual   : " + actualName);
+			if (!expectedName.equals(actualName)) {
+				throw new RuntimeException(
+						"Name mismatch — expected: '" + expectedName + "', got: '" + actualName + "'");
 			}
-
-			boolean isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "Search button icon", "button");
-
-			if (!isSearchClicked) {
-				ExtentManager.logFail("Failed to click Search button icon");
-				return false;
-			}
-
-			ExtentManager.logInfo("Search performed successfully for template: " + templateName);
-			return true;
-
-		} catch (Exception e) {
-			ExtentManager.logFail(
-					"Exception while performing search for template '" + templateName + "' : " + e.getMessage());
-			return false;
-		}
+		});
 	}
 
+	// ─── Delete Step Groups ──────────────────────────────────────────────────────
 
-	// Select the existing template form the list
-	public boolean selectExistingChecksumTemplate() {
-
-		try {
-			boolean flag = clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item",
-					"search item");
-
-			if (!flag) {
-				ExtentManager.logFail("Searched template item is not clickable.");
-			}
-			return flag;
-
-		} catch (Exception e) {
-			ExtentManager.logFail("Exception while selecting searched template item: " + e.getMessage());
-			return false;
-		}
+	private void doDeleteFromListingPage() {
+		clickOnField(driver, masterCheckbox, "Master Checkbox", "Checkbox", true);
+		clickOnField(driver, moreButton, "More", "Button", true);
+		clickOnField(driver, moreDeleteButton, "Delete (More menu)", "Button", true);
+		clickOnField(driver, deleteConfirmationBox, "Confirm Delete", "Button", true);
+		clickOnField(driver, cancelButtonInLogPane, "Cancel Log Pane", "Button", true);
 	}
 
-	public boolean clickOnWorkspaceField(String workspaceName) {
-
-	    boolean flag = true; // controls whether to perform actions
-	    try {
-	        isInvisibleLoader(driver, loader);
-
-	        // Open workspace dropdown
-	        clickOnField(driver, clickOnWorkspaceDropdown, "select workspace dropdown.", "Workspace dropdown");
-	        ExtentManager.logInfo("Workspace dropdown opened.");
-
-	        // Click search field
-	        clickOnField(driver, selectSearchWorkspace, "searched workspace.", "Search button icon");
-
-	        // Enter workspace name and press ENTER
-	        sendkeysToElement1(driver, selectSearchWorkspace, "Select workspace field", workspaceName);
-	        sendKeysEnterToElement2(driver, selectSearchWorkspace, "Text Field");
-//	        sendkeysToElement(driver, selectSearchWorkspace, "Select workspace field", workspaceName);
-//	        sendkeysToEnter(driver, selectSearchWorkspace, "Select workspace field");
-
-	        isInvisibleLoader(driver, loader);
-
-	        ExtentManager.logPass("Workspace name selected: " + workspaceName);
-
-	    } catch (Exception e) {
-	        System.out.println("Error selecting workspace: " + e.getMessage());
-	        flag = false; // set flag to false if exception occurs
-	    }
-
-	    return flag; // return true if all actions succeeded, false otherwise
+	private void doDeleteFromDetailsPage() {
+		clickOnField(driver, deleteButtonOnDetailsPage, "Delete (Details Page)", "Button", true);
+		clickOnField(driver, deleteConfirmationBox, "Confirm Delete", "Button", true);
 	}
 
+	// ─── Public Flows ────────────────────────────────────────────────────────────
 
-	// Click on the Folder selector field
-	
-	public boolean clickOnFolderField(String folderName) {
+	/**
+	 * Copies JSON from {@code sourceTemplate}, then creates a new template with the
+	 * supplied rule type, name and description.
+	 * 
+	 * @throws InterruptedException
+	 */
+	public void createNewTemplate(String ruleType, String sourceTemplate, String newName, String newDescription)
+			throws InterruptedException {
 
-	    boolean flag = true; // indicates success or failure
+		// Step 1 — Navigate to module
+		executeStep("Click Test Generator", this::doClickTestGenerator);
+		executeStep("Click Template Tab", this::doClickTemplateTab);
 
-	    try {
-	        isInvisibleLoader(driver, loader);
+		// Step 2 — Find and copy source template
+		executeStep("Search Template: " + sourceTemplate, () -> {
+			doClickSearchField();
+			doEnterSearchText(sourceTemplate);
+			doClickSearchIcon();
+		});
+		executeStep("Select Source Template", this::doSelectFirstSearchResult);
+		executeStep("Click Copy Button", this::doClickCopyButton);
 
-	        // Open folder dropdown
-	       
-	        clickOnField(driver, clickOnFolderDropdown, "Folder dropdown", "Folder dropdown");
-	        
-	        ExtentManager.logInfo("Folder dropdown opened.");
+		// Step 3 — Capture editor JSON
+		executeStep("Read JSON from ACE Editor", this::doReadJsonFromEditor);
 
-	        // Search folder
-	        sendkeysToElement1(driver, searchFolderName, "searching folder name", folderName);
+		// Step 4 — Open new template form
+		executeStep("Click Template Tab", this::doClickTemplateTab);
+		executeStep("Click New Template Button", this::doClickNewTemplateButton);
 
-	        // Click search icon
-	        //clickOnField(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), "Search folder", waitTime);
-	        clickOnField(driver, By.xpath("//div[@id='pathtree']//span[@title='Search']"), "Search folder", "Search button icon");
+		// Step 5 — Fill in form fields
+		executeStep("Select Account", this::doSelectAccount);
+		executeStep("Select Rule Type: " + ruleType, () -> doSelectRuleType(ruleType));
+		Thread.sleep(DEFAULT_WAIT);
+		executeStep("Write JSON to ACE Editor", this::doWriteJsonToEditor);
+		executeStep("Enter Template Name: " + newName, () -> doEnterName(newName));
+		executeStep("Enter Description: " + newDescription, () -> doEnterDescription(newDescription));
 
-	        isInvisibleLoader(driver, loader);
+		// Step 6 — Save and validate
+		executeStep("Click Save Button", this::doClickSaveButton);
+		executeStep("Click Template Tab", this::doClickTemplateTab);
+		validateTemplateName(newName, "created");
 
-	        // Select folder from results
-	        clickOnField(driver, By.xpath("//div[contains(@class, 'e-text-content')]"), "Folder result", "Folder result");
-	      
-
-	        clickOnField(driver, By.xpath("//span[@class='e-icons e-check']//parent::button"), "Selected folder name", "List");
-
-	        isInvisibleLoader(driver, loader);
-
-	        ExtentManager.logPass("Folder name selected: " + folderName);
-
-	    } catch (Exception e) {
-	        System.out.println("Error selecting folder: " + e.getMessage());
-	        flag = false; // mark as failed
-	    }
-
-	    return flag; // true if all actions succeeded, false if any exception occurred
+		navigateToHomePage();
 	}
 
+	/**
+	 * Searches for {@code existingName}, then updates its name and description.
+	 */
+	public void updateExistingTemplate(String ruleType, String existingName, String updatedName,
+			String updatedDescription) {
 
-	public boolean gotoWorkspaceNextbtn() {
+		// Step 1 — Navigate to module
+		executeStep("Click Test Generator", this::doClickTestGenerator);
+		executeStep("Click Template Tab", this::doClickTemplateTab);
 
-	    boolean flag = true;
+		// Step 2 — Find the template
+		executeStep("Search Template: " + existingName, () -> {
+			doClickSearchField();
+			doEnterSearchText(existingName);
+			doClickSearchIcon();
+		});
+		executeStep("Open Template: " + existingName, this::doSelectFirstSearchResult);
 
-	    try {
-	        flag = clickOnField(driver, clickNextButtonWorkspaceNextbtn, 
-	                            "Next button of 'Select Container' page", "button");
-	        if (!flag) {
-	            ExtentManager.logInfo("Failed to click on Next button of 'Select Container' page.");
-	        }
-	    } catch (Exception e) {
-	        System.out.println("Error clicking Next button: " + e.getMessage());
-	        flag = false;
-	    }
+		// Step 3 — Update fields
+		executeStep("Update Name: " + updatedName, () -> doEnterName(updatedName));
+		executeStep("Update Description: " + updatedDescription, () -> doEnterDescription(updatedDescription));
 
-	    return flag;
+		// Step 4 — Save and validate
+		executeStep("Click Save Button", this::doClickSaveButton);
+		executeStep("Click Template Tab", this::doClickTemplateTab);
+		validateTemplateName(updatedName, "updated");
+
+		navigateToHomePage();
 	}
 
+	/**
+	 * Searches for {@code templateName} and deletes it from the listing page using
+	 * the More > Delete flow.
+	 */
+	public void deleteTemplateFromListingPage(String ruleType, String templateName) {
 
-	public boolean gotoRuleMetadataNextbtn() {
+		// Step 1 — Navigate to module
+		executeStep("Click Test Generator", this::doClickTestGenerator);
+		executeStep("Click Template Tab", this::doClickTemplateTab);
 
-	    boolean flag = true;
+		// Step 2 — Find the template
+		executeStep("Search Template: " + templateName, () -> {
+			doClickSearchField();
+			doEnterSearchText(templateName);
+			doClickSearchIcon();
+		});
 
-	    try {
-	        flag = clickOnField(driver, clickNextButtonmetadataNextbtn, 
-	                            "Next button of 'Define Rule Metadata' page", "Button");
-	        if (flag) {
-	            ExtentManager.logInfo("Next button of 'Define Rule Metadata' page is clickable.");
-	        } else {
-	            ExtentManager.logInfo("Failed to click Next button of 'Define Rule Metadata' page.");
-	        }
-	    } catch (Exception e) {
-	        System.out.println("Error clicking Next button: " + e.getMessage());
-	        flag = false;
-	    }
+		// Step 3 — Delete via listing-page More menu
+		executeStep("Delete Template from Listing Page: " + templateName, this::doDeleteFromListingPage);
 
-	    return flag;
+		navigateToHomePage();
 	}
 
-	public boolean gotoCheckMetadataNextbtn() {
+	/**
+	 * Searches for {@code templateName}, opens it, and deletes it from its details
+	 * page.
+	 */
+	public void deleteTemplateFromDetailsPage(String ruleType, String templateName) {
 
-	    boolean flag = true;
+		// Step 1 — Navigate to module
+		executeStep("Click Test Generator", this::doClickTestGenerator);
+		executeStep("Click Template Tab", this::doClickTemplateTab);
 
-	    try {
-	        flag = clickOnField(driver, clickNextButtoncheckNextbtn, 
-	                            "Next button of 'Define Check Metadata' page", "Button");
-	        if (flag) {
-	            ExtentManager.logInfo("Next button of 'Define Check Metadata' page is clickable.");
-	        } else {
-	            ExtentManager.logInfo("Failed to click Next button of 'Define Check Metadata' page.");
-	        }
-	    } catch (Exception e) {
-	        System.out.println("Error clicking Next button: " + e.getMessage());
-	        flag = false;
-	    }
+		// Step 2 — Find and open the template
+		executeStep("Search Template: " + templateName, () -> {
+			doClickSearchField();
+			doEnterSearchText(templateName);
+			doClickSearchIcon();
+		});
+		executeStep("Open Template: " + templateName, this::doSelectFirstSearchResult);
 
-	    return flag;
+		// Step 3 — Delete from details page
+		executeStep("Delete Template from Details Page: " + templateName, this::doDeleteFromDetailsPage);
+
+		navigateToHomePage();
 	}
-
-
-	public boolean gotoNotificationNextbtn() {
-
-	    boolean flag = true;
-
-	    try {
-	        flag = clickOnField(driver, clickNextButtonnotificationNextbtn, 
-	                            "Next button of 'Configure Notifications' page", "Button");
-	        if (flag) {
-	            ExtentManager.logInfo("Next button of 'Configure Notifications' page is clickable.");
-	        } else {
-	            ExtentManager.logInfo("Failed to click Next button of 'Configure Notifications' page.");
-	        }
-	    } catch (Exception e) {
-	        System.out.println("Error clicking Next button: " + e.getMessage());
-	        flag = false;
-	    }
-
-	    return flag;
-	}
-
-
-	/// ********* Select the source dataset ********** ///
-	///// *******************************/////
-	/////////////// ********************************* ////////////////
-	///// *******************************/////
-
-	public boolean selectionSourceDataset(String connectionType, String connectionName, String schemaName) {
-
-	    boolean flag = true;
-
-	    try {
-	        // Click on the source connection type dropdown
-	        clickOnField(driver, clickSourcedatasetConnectionTypeDropdown, "select source connection type.", "Dropdow field");
-
-	        if (connectionType.equalsIgnoreCase("Database")) {
-
-	            clickOnField(driver, selectDatabaseConnectionType, "source database connection.", "List");
-	            isInvisibleLoader(driver, loader);
-
-	            clickOnField(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", "List item");
-
-//	            sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-//	            sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
-	            sendkeysToElement1(driver, enterSourceConnectionName, "source connection name", connectionName);
-	            sendKeysEnterToElement2(driver, enterSourceConnectionName, "Text Field");
-	            isInvisibleLoader(driver, loader);
-
-	            ExtentManager.logInfo("Database connection name selected successfully.");
-
-	        } else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-
-	            clickOnField(driver, selectCloudDataWarehouseConnectionType, 
-	                         "source cloud data warehouse connection.", "Dropdow field");
-	            isInvisibleLoader(driver, loader);
-
-	            clickOnField(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", "List");
-
-//	            sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-//	            sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
-	            sendkeysToElement1(driver, enterSourceConnectionName, "source connection name", connectionName);
-	            sendKeysEnterToElement2(driver, enterSourceConnectionName, "Text Field");
-	            isInvisibleLoader(driver, loader);
-
-	            ExtentManager.logInfo("Cloud warehouse connection name selected successfully.");
-
-	            By UseMetadataCache = By.xpath(
-	                "//*[@id='e-content-element_5']/div/div[2]/div[1]/form/div[2]/div[3]/div/ejs-checkbox/label/span[2]");
-	            clickOnField(driver, UseMetadataCache, "Use Metadata Cache check box", "Checkbox");
-	            isInvisibleLoader(driver, loader);
-
-	            // Click database dropdown
-	            clickOnField(driver, By.xpath(
-	                "(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[1]"),
-	                "database dropdown.", "Dropdown Field");
-	            isInvisibleLoader(driver, loader);
-
-	            By databaseInput = By.xpath(
-	                "//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']");
-//	            sendkeysToElement(driver, databaseInput, "source database name", "icedqrs");
-//	            sendkeysToEnter(driver, databaseInput, "source database name");
-	            sendkeysToElement1(driver, databaseInput, "source database name", "icedqrs");
-	            sendKeysEnterToElement2(driver, databaseInput, "Text Field");
-	            isInvisibleLoader(driver, loader);
-
-	            ExtentManager.logInfo("Database name selected successfully.");
-	        }
-
-	        // Schema selection
-	        clickOnField(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", "Dropdown Field");
-	        isInvisibleLoader(driver, loader);
-
-//	        sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
-//	        sendkeysToEnter(driver, enterSourceSchemaName, "source schema name");
-	        sendkeysToElement1(driver, enterSourceSchemaName, "source schema name", schemaName);
-	        sendKeysEnterToElement2(driver, enterSourceSchemaName,"Text Field");
-	        isInvisibleLoader(driver, loader);
-
-	        ExtentManager.logInfo("Schema selected successfully.");
-
-	    } catch (Exception e) {
-	        System.out.println("Error selecting source dataset: " + e.getMessage());
-	        flag = false;
-	    }
-
-	    return flag;
-	}
-
 }
-
-
-//	public void selectionSourceDatasetForImport(String connectionType, String connectionName) {
-//
-//		// Click Source Dataset Connection Type Dropdown
-//		clickOnField(driver, clickSourcedatasetConnectionTypeDropdown, "select connection type.", waitTime);
-//
-//		// Select connection type
-//		switch (connectionType.toLowerCase()) {
-//		case "database":
-//			clickOnField(driver, selectDatabaseConnectionType, "source database connection.", waitTime);
-//			break;
-//
-//		case "cloud data warehouse":
-//			clickOnField(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.",
-//					waitTime);
-//			break;
-//
-//		case "file":
-//			clickOnField(driver, selectFileConnectionType, "source file connection.", waitTime);
-//			break;
-//
-//		default:
-//			throw new IllegalArgumentException("Invalid connection type: " + connectionType);
-//		}
-//
-//		// Click Source Dataset Connection Dropdown
-//		clickOnField(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//		// Enter and confirm connection name
-//		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
-//		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
-//		isInvisibleLoader(driver, loader);
-//
-//		ExtentManager.logInfo("Source dataset selected successfully: " + connectionType + " / " + connectionName);
-//	}
-//
-//	/// ********* Select the target dataset ********** ///
-//	///// *******************************/////
-//	/////////////// ********************************* ////////////////
-//	///// *******************************/////
-//	public void selectionTargetDataset(String connectionType, String connectionName, String schemaName) {
-//
-//		// Click target connection type dropdown
-//		clickOnField(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", waitTime);
-//
-//		if (connectionType.equalsIgnoreCase("Database")) {
-//
-//			clickOnField(driver, selectDatabaseConnectionType, "target database connection.", waitTime);
-//			isInvisibleLoader(driver, loader);
-//
-//			clickOnField(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.",
-//					waitTime);
-//
-//			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-//
-//			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-//			isInvisibleLoader(driver, loader);
-//
-//			ExtentManager.logInfo("Target database connection selected successfully.");
-//
-//		} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-//
-//			clickOnField(driver, selectCloudDataWarehouseConnectionType, "target cloud data warehouse connection.",
-//					waitTime);
-//			isInvisibleLoader(driver, loader);
-//
-//			clickOnField(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.",
-//					waitTime);
-//
-//			sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-//
-//			sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-//			isInvisibleLoader(driver, loader);
-//
-//			ExtentManager.logInfo("Target cloud connection selected successfully.");
-//
-//			// Click database dropdown
-//			clickOnField(driver, By.xpath(
-//					"(//div[contains(text(),'Source Dataset')]/parent::form//following::ejs-dropdownlist[@placeholder='Choose Database']//span[@formcontrolname='database'])[2]"),
-//					"database dropdown.", waitTime);
-//			isInvisibleLoader(driver, loader);
-//
-//			By databaseInput = By.xpath(
-//					"//*[@placeholder='Select connection']/following::div[contains(@class,'e-popup')]//input[@type='text']");
-//
-//			sendkeysToElement(driver, databaseInput, "target database name", "icedqrs");
-//
-//			sendkeysToEnter(driver, databaseInput, "target database name");
-//			isInvisibleLoader(driver, loader);
-//
-//			ExtentManager.logInfo("Target database selected successfully.");
-//		}
-//
-//		// Schema selection
-//		clickOnField(driver, clickTargetSchemaDropdown, "choose target schema dropdown.", waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//		sendkeysToElement(driver, enterSourceSchemaName, "target schema name", schemaName);
-//
-//		sendkeysToEnter(driver, enterSourceSchemaName, "target schema name");
-//		isInvisibleLoader(driver, loader);
-//
-//		ExtentManager.logInfo("Target schema selected successfully.");
-//	}
-//
-//	public void selectionTargetDatasetForImport(String connectionType, String connectionName) {
-//		// Click Target Dataset Connection Type Dropdown
-//		clickOnField(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", waitTime);
-//
-//		// Select connection type
-//		switch (connectionType.toLowerCase()) {
-//		case "database":
-//			clickOnField(driver, selectDatabaseConnectionType, "target database connection.", waitTime);
-//			break;
-//
-//		case "cloud data warehouse":
-//			clickOnField(driver, selectCloudDataWarehouseConnectionType, "target cloud data warehouse connection.",
-//					waitTime);
-//			break;
-//
-//		case "file":
-//			clickOnField(driver, selectFileConnectionType, "target file connection.", waitTime);
-//			break;
-//
-//		default:
-//			throw new IllegalArgumentException("Invalid connection type: " + connectionType);
-//		}
-//
-//		// Click Target Dataset Connection Dropdown
-//		clickOnField(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//		// Enter and confirm connection name
-//		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-//
-//		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
-//		isInvisibleLoader(driver, loader);
-//
-//		ExtentManager.logInfo("Target dataset selected successfully: " + connectionType + " / " + connectionName);
-//	}
-//
-//	// Import SQL Files
-//	public void uploadingFiles(String fileName) {
-//		// Upload file
-//		uploadFile(driver, By.cssSelector("input[type='file'][name='UploadFiles']"), fileName);
-//
-//		// Optional: verify the uploaded file appears in the list
-//		WebElement uploadedFileLabel = driver.findElement(By.cssSelector("li.e-upload-file-list"));
-//		String uploadedName = uploadedFileLabel.getAttribute("data-file-name");
-//
-//		ExtentManager.logInfo("✔ File shown in UI: " + uploadedName);
-//	}
-//
-//	// Click on the Next button of 'Select Dataset' page
-//	public void gotoDatasetNextbtn() {
-//		clickOnField(driver, clickNextButtondatasetNextbtn, "next button of 'Select Dataset' page.", waitTime);
-//		ExtentManager.logInfo("Next button of 'Select Dataset' page is clickable.");
-//	}
-//
-//	/// ********* Select the Available Table ********** ///.
-//
-//	public void selectionAvailableTable(String tableName) {
-//		// Click on the available table search field
-//		clickOnField(driver, clickAvailableTable, "search available table.", waitTime);
-//
-//		// Enter the table name
-//		sendkeysToElement(driver, clickAvailableTable, "available table name", tableName);
-//
-//		// Select the table checkbox from the list
-//		clickOnField(driver, selectAvailableTable, "table checkbox", waitTime);
-//
-//		// Click on the 'Move to' button
-//		clickOnField(driver, clickMoveToButton, "'Move to' button", waitTime);
-//
-//		ExtentManager.logInfo("Table '" + tableName + "' selected successfully.");
-//	}
-//
-//	// Click on the Next button of 'Select Table' page
-//	public void gotoSelettableNextbtn() {
-//		clickOnField(driver, clickNextButtonSelettableNextbtn, "Next button of 'Select Tables' page", waitTime);
-//		ExtentManager.logInfo("Next button of 'Select Tables' page is clickable.");
-//	}
-//
-//	// Click on the Next button of 'Import SQL' page
-//	public void gotoImportSQLNextbtn() {
-//		clickOnField(driver, ClickNextButtonimportSQLNextbtn, "Next button of 'Import SQL' page", waitTime);
-//		ExtentManager.logInfo("Next button of 'Import SQL' page is clickable.");
-//	}
-//
-//	// Click on the 'Generate' button
-//	public void clickOnGenerate() {
-//		clickOnField(driver, clickGenerateButton, "Generate button", waitTime);
-//		ExtentManager.logInfo("Generate button is clickable.");
-//	}
-//
-//	// Click on the 'Go To Preview' button
-//	public void clickOnGoToPreview() {
-//		clickOnField(driver, clickGoToPreviewButton, "Go To Preview button", waitTime);
-//		ExtentManager.logInfo("Go To Preview button is clickable.");
-//	}
-//
-//	// Select the generated entity from the 'Preview' page
-//	public void selectGeneratedEntity() {
-//		clickOnField(driver, selectEntity, "Checkbox for entity selection", waitTime);
-//		ExtentManager.logInfo("Generated entity selected successfully.");
-//	}
-//
-//	// Click on the 'Publish' button
-//	public void clickOnPublish() {
-//		clickOnField(driver, clikPublishButton, "Publish button", waitTime);
-//		ExtentManager.logInfo("Publish button is clickable.");
-//	}
-//
-//	// Click on the 'Publish' button
-//	public void clickOnPublishTheWorkflow(String folderName) {
-//
-//		By clickWorkflowPublishButton = By.xpath("//*[@id='publish_item']");
-//		By selectWorkflow = By.xpath("//*[@id='publish_item-popup']/ul/li[contains(text(), 'Workflow')]");
-//		By clickFolderDropdown = By.xpath("//*[@id='publishRW']/div[2]/div[1]/div[2]/div[2]/div/div[1]");
-//		By searchFolderField = By.xpath("//*[@placeholder='Search folder']");
-//		By clickOnFolderName = By.xpath("//*[@id='ruleListRighttreeView_active']/div[2]/span/div");
-//		By selectFolder = By.xpath("//*[@id='ruleListRighttreeView_active']/div[2]/span/div/div/button[1]/span");
-//		By clickOnCreate = By.xpath("//*[@id='publishRW']/div[3]/button[2]");
-//
-//		clickOnField(driver, clickWorkflowPublishButton, "publish item button", waitTime);
-//
-//		clickOnField(driver, selectWorkflow, "workflow button", waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//		clickOnField(driver, clickFolderDropdown, "folder dropdown", waitTime);
-//		clickOnField(driver, searchFolderField, "search folder field", waitTime);
-//		sendkeysToElement(driver, searchFolderField, "search folder field", folderName);
-//		sendkeysToEnter(driver, searchFolderField, folderName);
-//		isInvisibleLoader(driver, loader);
-//
-//		clickOnField(driver, clickOnFolderName, "searched folder", waitTime);
-//		clickOnField(driver, selectFolder, "to select the folder", waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//		clickOnField(driver, clickOnCreate, "create button", waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//		ExtentManager.logInfo("Workflow is created successfully...");
-//	}
-//
-//	// Click on the 'Go To Publish' button
-//	public void clickOnGoToPublish() throws InterruptedException {
-//		clickOnField(driver, clickGoToPublishButton, "Go To Publish button", waitTime);
-//		ExtentManager.logInfo("Go To Publish button is clickable.");
-//	}
-//
-//	// Click on the hyperlink of the published rule to navigate to the Data Testing
-//	public void clickOnPublishedRule() {
-//
-//		try {
-//			Thread.sleep(500);
-//		} catch (InterruptedException e) {
-//			Thread.currentThread().interrupt();
-//		}
-//
-//		// Capture parent window
-//		String parent = PageUtil.getParentWindow(driver);
-//
-//		isInvisibleLoader(driver, loader);
-//
-//		// Get rule name from Published page
-//		By ruleNameLocator1 = By.xpath("//tbody[@role='rowgroup']/tr/td/a");
-//		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
-//
-//		WebElement ruleElement = wait1.until(ExpectedConditions.visibilityOfElementLocated(ruleNameLocator1));
-//		wait1.until(d -> !ruleElement.getText().trim().isEmpty());
-//
-//		String ruleNamePublishPage = ruleElement.getText().trim();
-//		ExtentManager.logInfo("Rule Name from Published Page: " + ruleNamePublishPage);
-//
-//		// Click hyperlink
-//		clickOnField(driver, clickHyperlinkPublishRule, "Published Rule", waitTime);
-//
-//		// Switch to child window
-//		String child = switchToNewWindow(driver, parent, 30);
-//		isInvisibleLoader(driver, loader);
-//
-//		// Get rule name from Data Testing page
-//		By ruleNameLocator2 = By.xpath("//*[@placeholder='Enter rule name']");
-//		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
-//
-//		WebElement ruleName2 = wait2.until(ExpectedConditions.presenceOfElementLocated(ruleNameLocator2));
-//		wait2.until(d -> !ruleName2.getDomProperty("value").isEmpty());
-//
-//		String ruleNameDataTestingPage = ruleName2.getDomProperty("value").trim();
-//		ExtentManager.logInfo("Rule Name from Data Testing Page: " + ruleNameDataTestingPage);
-//
-//		// Validation
-//		if (!ruleNamePublishPage.equals(ruleNameDataTestingPage)) {
-//			throw new AssertionError(
-//					"Rule name mismatch. Expected: " + ruleNamePublishPage + " but found: " + ruleNameDataTestingPage);
-//		}
-//
-//		ExtentManager.logPass("Rule Name validated successfully.");
-//
-//		// Run rule
-//		runPublishRule();
-//
-//		// Validate instance ID
-//		clickOnRuleRecentrun();
-//		try {
-//			validateRuleInstanceID(driver);
-//		} catch (InterruptedException e) {
-//			Thread.currentThread().interrupt();
-//			ExtentManager.logInfo("Instance ID validation interrupted: " + e.getMessage());
-//		}
-//
-//		// Close child and return to parent
-//		closeChildAndReturn(driver, child, parent);
-//	}
-//
-//	// Click on the hyperlink of the published workflow to navigate to the Data
-//	// Testing - workflow details page.
-//	public void clickOnPublishedWorkflow() {
-//
-//		// Capture parent window
-//		String parent = PageUtil.getParentWindow(driver);
-//
-//		isInvisibleLoader(driver, loader);
-//
-//		// Get workflow name from Published page
-//		By workflowNameLocator1 = By.xpath("//tbody[@role='rowgroup']/tr/td/a");
-//		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
-//
-//		WebElement workflowElement = wait1.until(ExpectedConditions.visibilityOfElementLocated(workflowNameLocator1));
-//		wait1.until(d -> !workflowElement.getText().trim().isEmpty());
-//
-//		String workflowNamePublishPage = workflowElement.getText().trim();
-//		ExtentManager.logInfo("Workflow Name from Published Page: " + workflowNamePublishPage);
-//
-//		// Click hyperlink
-//		clickOnField(driver, clickHyperlinkPublishRule, "Published Workflow", waitTime);
-//
-//		// Switch to child window
-//		String child = switchToNewWindow(driver, parent, 30);
-//		isInvisibleLoader(driver, loader);
-//
-//		// Click Overview tab
-//		By clickOnOverview = By.xpath("//*[@id='e-item-ej2Tab_0']/div/div/div/div");
-//		clickOnField(driver, clickOnOverview, "Overview tab section", waitTime);
-//
-//		// Get workflow name from Data Testing page
-//		By workflowNameLocator2 = By.id("inputWorkflowName");
-//		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
-//
-//		WebElement workflowNameField = wait2.until(ExpectedConditions.presenceOfElementLocated(workflowNameLocator2));
-//		wait2.until(d -> !workflowNameField.getDomProperty("value").trim().isEmpty());
-//
-//		String workflowNameDataTestingPage = workflowNameField.getDomProperty("value").trim();
-//
-//		ExtentManager.logInfo("Workflow Name from Workflow details Page: " + workflowNameDataTestingPage);
-//
-//		// Validation
-//		if (!workflowNamePublishPage.equals(workflowNameDataTestingPage)) {
-//			throw new AssertionError("Workflow name mismatch. Expected: " + workflowNamePublishPage + " but found: "
-//					+ workflowNameDataTestingPage);
-//		}
-//
-//		ExtentManager.logPass("Workflow Name validated successfully.");
-//
-//		// Run workflow
-//		runPublishWorkflow();
-//
-//		// Validate instance ID
-//		clickOnWorkflowRecentrun();
-//		try {
-//			validateWorkflowInstanceID(driver);
-//		} catch (InterruptedException e) {
-//			Thread.currentThread().interrupt();
-//			ExtentManager.logInfo("Instance ID validation interrupted: " + e.getMessage());
-//		}
-//
-//		// Close child and return to parent
-//		closeChildAndReturn(driver, child, parent);
-//	}
-//
-//	// Go to the Data Testing
-//	public void navigatHomePage() {
-//		goTo(ConfigReader.getProperty("homePageUrl"));
-//	}
-//
-//	// Define Rule Metadata
-//	public void validateDefineRuleMetadataPage() {
-//		// validateElement(driver, ClickNextButtonimportSQLNextbtn, null, null); // Name
-//		// field
-//		WebElement RuleProperty = driver.findElement(By.xpath("//*[@id=\\\"acrdn_header_11\\\"]/div[1]/div"));
-//		scrollToElement(driver, RuleProperty);
-//	}
-//
-//	// Define Check Metadata
-//	public void validateDefineCheckMetadataPage() {
-//		// validateElement(driver, ClickNextButtonimportSQLNextbtn, null, null); // Name
-//		// field
-//		WebElement RuleProperty = driver.findElement(By.xpath("//*[@id=\\\"acrdn_header_11\\\"]/div[1]/div"));
-//		scrollToElement(driver, RuleProperty);
-//	}
-//
-//	// Run the publish rule on the Data Testing module.
-//	public void runPublishRule() {
-//		// Click on the Run button.
-//		clickOnField(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[1]"), "run button",
-//				waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//	}
-//
-//	// Run the publish workflow on the Data Testing module.
-//	public void runPublishWorkflow() {
-//		// Click on the Run button.
-//		clickOnField(driver, By.xpath(
-//				"//*[@id='imaster']/app-workflow-orchestrator/div[2]/div[1]/app-workflows/app-custom-workflow/div[1]/div/div[2]/ejs-tooltip/button[1]"),
-//				"run button", waitTime);
-//		isInvisibleLoader(driver, loader);
-//
-//	}
-//
-//	// Click on the Rule Recent runs button.
-//	public void clickOnRuleRecentrun() {
-//		// Click on the Recent runs button.
-//		clickOnField(driver, By.xpath("//*[@id='scrollPane']/app-flow-diagram/div[1]/button[3]"),
-//				"recent runs button", 10);
-//		waitForSeconds(1);
-//
-//	}
-//
-//	// Click on the Workflow Recent runs button.
-//	public void clickOnWorkflowRecentrun() {
-//		// Click on the Recent runs button.
-//		clickOnField(driver, By.xpath(
-//				"//*[@id='imaster']/app-workflow-orchestrator/div[2]/div[1]/app-workflows/app-custom-workflow/div[1]/div/div[2]/ejs-tooltip/button[3]/span"),
-//				"recent runs button", 10);
-//		waitForSeconds(1);
-//
-//	}
-//
-//	// Validate Rule Instance ID...
-//	public void validateRuleInstanceID(WebDriver driver) throws InterruptedException {
-//
-//		By refreshBtn = By.xpath("//*[@id='rrElement']/app-recent-run/div[1]/div[1]/div[2]/button");
-//		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
-//		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
-//
-//		int maxRetries = 10;
-//		int retryCount = 0;
-//
-//		while (retryCount < maxRetries) {
-//
-//			clickOnField(driver, refreshBtn, "Refresh button", waitTime);
-//
-//			waitForSeconds(1);
-//
-//			if (isElementDisplayed(driver, instanceIdLocator, 5)) {
-//
-//				String instanceId = driver.findElement(instanceIdLocator).getText();
-//				String status = driver.findElement(statusLocator).getText().trim();
-//
-//				ExtentManager.logInfo("Instance ID: " + instanceId);
-//				ExtentManager.logInfo("Current Status: " + status);
-//
-//				// Keep waiting while status is Submitted or Running
-//				if (!status.equalsIgnoreCase("Submitted") && !status.equalsIgnoreCase("Running")) {
-//
-//					ExtentManager.logInfo("Final execution status: " + status);
-//					return; // exit once proper status is reached
-//				}
-//			}
-//
-//			retryCount++;
-//		}
-//
-//		throw new RuntimeException("Status did not change from Submitted/Running after retries");
-//	}
-//
-//	// Validate Workflow Instance ID
-//	public void validateWorkflowInstanceID(WebDriver driver) throws InterruptedException {
-//
-//		By refreshBtn = By.xpath("//*[@id='rrElement']/div/div/button");
-//		By instanceIdLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[3]");
-//		By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[5]");
-//
-//		int maxRetries = 10;
-//		int retryCount = 0;
-//
-//		while (retryCount < maxRetries) {
-//
-//			clickOnField(driver, refreshBtn, "Refresh button", waitTime);
-//
-//			waitForSeconds(1);
-//
-//			if (isElementDisplayed(driver, instanceIdLocator, 5)) {
-//
-//				String instanceId = driver.findElement(instanceIdLocator).getText();
-//				String status = driver.findElement(statusLocator).getText().trim();
-//
-//				ExtentManager.logInfo("Instance ID: " + instanceId);
-//				ExtentManager.logInfo("Current Status: " + status);
-//
-//				// Keep waiting while status is Submitted or Running
-//				if (!status.equalsIgnoreCase("Submitted") && !status.equalsIgnoreCase("Running")) {
-//
-//					ExtentManager.logInfo("Final execution status: " + status);
-//					return; // exit once proper status is reached
-//				}
-//			}
-//
-//			retryCount++;
-//		}
-//
-//		throw new RuntimeException("Status did not change from Submitted/Running after retries");
-//	}
-//}

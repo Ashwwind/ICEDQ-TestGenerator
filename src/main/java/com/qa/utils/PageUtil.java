@@ -31,7 +31,7 @@ import com.qa.extentreportlistener.ExtentManager;
 public class PageUtil extends Base {
 
 	private static final Logger log = LogManager.getLogger(PageUtil.class);
-	public static final int SHOTW = 50;
+	public static final int SHOTW = 40;
 	private static WebDriverWait wait;
 	public static Properties prop;
 
@@ -432,24 +432,61 @@ public class PageUtil extends Base {
 	// Template tab
 	//
 	//
-	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
-		String label = fieldName + " " + fieldType;
+	
+	public static boolean validateField(WebDriver driver, By locator, String fieldName, int timeout) {
+	    try {
+	        WebDriverWait wait = waitForElements(driver, timeout);
 
-		try {
-			// Directly click (handles visibility + wait internally)
-			boolean isClicked = clickOnElement(driver, locator, label, 20);
+	        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
-			if (!isClicked) {
-				ExtentManager.logFail("Failed to click " + label);
-				return false;
-			}
+	        if (element.isDisplayed()) {
+	            ExtentManager.logInfo(fieldName + " is visible and validated");
+	            return true;
+	        } else {
+	            ExtentManager.logInfo(fieldName + " is not visible");
+	            return false;
+	        }
 
-			return true;
+	    } catch (TimeoutException e) {
+	        ExtentManager.logFail(fieldName + " not visible within " + timeout + " seconds");
+	        return false;
 
-		} catch (Exception e) {
-			ExtentManager.logFail("Error while clicking " + label + " ➝ " + e.getMessage());
-			return false;
-		}
+	    } catch (Exception e) {
+	        ExtentManager.logFail("Error validating " + fieldName + " ➝ " + e.getMessage());
+	        return false;
+	    }
+	}
+	
+	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType, boolean validateBeforeClick) {
+
+	    String label = fieldName + " " + fieldType;
+
+	    try {
+
+	        // 🔹 Optional validation
+//	        if (validateBeforeClick) {
+//	            boolean isValid = validateField(driver, locator, label, 10);
+//
+//	            if (!isValid) {
+//	                ExtentManager.logFail("Validation failed for " + label);
+//	                return false;
+//	            }
+//	        }
+
+	        // 🔹 Click action
+	        boolean isClicked = clickOnElement(driver, locator, label, 50);
+
+	        if (!isClicked) {
+	            ExtentManager.logFail("Failed to click " + label);
+	            return false;
+	        }
+
+	        return true;
+
+	    } catch (Exception e) {
+	        ExtentManager.logFail("Error while clicking " + label + " ➝ " + e.getMessage());
+	        return false;
+	    }
 	}
 
 	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
@@ -533,7 +570,7 @@ public class PageUtil extends Base {
 	//
 
 	// Error Capture Utility
-	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast-content')]");
+	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast') and contains(@class,'e-toast-error')]");
 
 	// Check if any error toast is present
 	public static boolean isErrorToastPresent(WebDriver driver) {
