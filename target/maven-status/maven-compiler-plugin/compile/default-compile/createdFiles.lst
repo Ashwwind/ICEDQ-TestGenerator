@@ -9,6 +9,7 @@ com\qa\pages\TemplatePage$FlowAbortException.class
 com\qa\config\ConfigReader.class
 com\qa\utils\ExcelReader.class
 com\api\utils\ConfigReader.class
+com\qa\pages\Test1$FlowAbortException.class
 com\api\base\Base.class
 com\qa\extentreportlistener\ExtentManager.class
 com\qa\utils\PageUtil.class

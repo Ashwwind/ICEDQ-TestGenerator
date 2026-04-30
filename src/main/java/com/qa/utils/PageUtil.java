@@ -463,16 +463,6 @@ public class PageUtil extends Base {
 
 	    try {
 
-	        // 🔹 Optional validation
-//	        if (validateBeforeClick) {
-//	            boolean isValid = validateField(driver, locator, label, 10);
-//
-//	            if (!isValid) {
-//	                ExtentManager.logFail("Validation failed for " + label);
-//	                return false;
-//	            }
-//	        }
-
 	        // 🔹 Click action
 	        boolean isClicked = clickOnElement(driver, locator, label, 50);
 

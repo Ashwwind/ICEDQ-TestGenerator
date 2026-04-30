@@ -28,10 +28,10 @@
 		<classes>
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
-					<exclude name="createRuleUsingDynamicTemplate" />
-					<exclude name="createRuleUsingImportTemplate" />
-					<exclude name="createWorkflowUsingDefaultDynamicTemplate" />
-					<exclude name="existingWorkflowUsingDefaultDynamicTemplate" />
+					<include name="createRuleUsingDynamicTemplate" />
+					<include name="createRuleUsingImportTemplate" />
+					<include name="createWorkflowUsingDefaultDynamicTemplate" />
+					<include name="existingWorkflowUsingDefaultDynamicTemplate" />
 				</methods>
 			</class>
 		</classes>
