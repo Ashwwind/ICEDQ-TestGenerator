@@ -432,51 +432,52 @@ public class PageUtil extends Base {
 	// Template tab
 	//
 	//
-	
+
 	public static boolean validateField(WebDriver driver, By locator, String fieldName, int timeout) {
-	    try {
-	        WebDriverWait wait = waitForElements(driver, timeout);
+		try {
+			WebDriverWait wait = waitForElements(driver, timeout);
 
-	        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
-	        if (element.isDisplayed()) {
-	            ExtentManager.logInfo(fieldName + " is visible and validated");
-	            return true;
-	        } else {
-	            ExtentManager.logInfo(fieldName + " is not visible");
-	            return false;
-	        }
+			if (element.isDisplayed()) {
+				ExtentManager.logInfo(fieldName + " is visible and validated");
+				return true;
+			} else {
+				ExtentManager.logInfo(fieldName + " is not visible");
+				return false;
+			}
 
-	    } catch (TimeoutException e) {
-	        ExtentManager.logFail(fieldName + " not visible within " + timeout + " seconds");
-	        return false;
+		} catch (TimeoutException e) {
+			ExtentManager.logFail(fieldName + " not visible within " + timeout + " seconds");
+			return false;
 
-	    } catch (Exception e) {
-	        ExtentManager.logFail("Error validating " + fieldName + " ➝ " + e.getMessage());
-	        return false;
-	    }
+		} catch (Exception e) {
+			ExtentManager.logFail("Error validating " + fieldName + " ➝ " + e.getMessage());
+			return false;
+		}
 	}
-	
-	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType, boolean validateBeforeClick) {
 
-	    String label = fieldName + " " + fieldType;
+	public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType,
+			boolean validateBeforeClick) {
 
-	    try {
+		String label = fieldName + " " + fieldType;
 
-	        // 🔹 Click action
-	        boolean isClicked = clickOnElement(driver, locator, label, 50);
+		try {
 
-	        if (!isClicked) {
-	            ExtentManager.logFail("Failed to click " + label);
-	            return false;
-	        }
+			// 🔹 Click action
+			boolean isClicked = clickOnElement(driver, locator, label, 50);
 
-	        return true;
+			if (!isClicked) {
+				ExtentManager.logFail("Failed to click " + label);
+				return false;
+			}
 
-	    } catch (Exception e) {
-	        ExtentManager.logFail("Error while clicking " + label + " ➝ " + e.getMessage());
-	        return false;
-	    }
+			return true;
+
+		} catch (Exception e) {
+			ExtentManager.logFail("Error while clicking " + label + " ➝ " + e.getMessage());
+			return false;
+		}
 	}
 
 	public boolean sendkeysToElement1(WebDriver driver, By locator, String fieldName, String input) {
@@ -560,7 +561,8 @@ public class PageUtil extends Base {
 	//
 
 	// Error Capture Utility
-	private static final By TOAST_MESSAGE = By.xpath("//div[contains(@class,'e-toast') and contains(@class,'e-toast-error')]");
+	private static final By TOAST_MESSAGE = By.xpath(
+			"//div[contains(@class,'e-toast') and (contains(@class,'e-toast-error') or contains(@class,'e-toast-danger'))]");
 
 	// Check if any error toast is present
 	public static boolean isErrorToastPresent(WebDriver driver) {
