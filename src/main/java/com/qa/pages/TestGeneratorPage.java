@@ -13,7 +13,7 @@ import com.qa.utils.PageUtil;
 
 public class TestGeneratorPage extends PageUtil {
 	private WebDriver driver;
-	public static final int waitTime = 15; // Global wait time
+	public static final int waitTime = 10; // Global wait time
 
 	public TestGeneratorPage(WebDriver driver) {
 		this.driver = driver;

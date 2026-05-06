@@ -24,7 +24,7 @@ import com.qa.utils.PageUtil;
  */
 public class TemplatePage extends PageUtil {
 
-	private static final int DEFAULT_WAIT = 10;
+	private static final int DEFAULT_WAIT = 5;
 
 	private WebDriver driver = null;
 
