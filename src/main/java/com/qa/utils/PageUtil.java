@@ -209,8 +209,7 @@ public class PageUtil extends Base {
 
 			ExtentManager.logInfo("Entering value on " + label + " input: " + input);
 
-			WebElement element = waitForElements(driver, SHOTW)
-					.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			WebElement element = waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator));
 
 			try {
 				// Clear existing value
@@ -249,7 +248,7 @@ public class PageUtil extends Base {
 			try {
 				// Ensure focus before pressing ENTER
 				element.click();
-				element.sendKeys(Keys.ENTER);
+				element.sendKeys(Keys.ENTER); 
 
 			} catch (Exception e1) {
 				ExtentManager.logInfo("Normal ENTER failed, trying Actions fallback");
@@ -465,7 +464,7 @@ public class PageUtil extends Base {
 		try {
 
 			// 🔹 Click action
-			boolean isClicked = clickOnElement(driver, locator, label, 50);
+			boolean isClicked = clickOnElement(driver, locator, label, 20);
 
 			if (!isClicked) {
 				ExtentManager.logFail("Failed to click " + label);

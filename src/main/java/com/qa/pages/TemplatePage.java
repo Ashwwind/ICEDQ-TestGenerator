@@ -17,11 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 
-/**
- * Page Object for the Template module under the Test Generator section. All
- * public flows use executeStep() for uniform logging, screenshots, and
- * flow-abort behaviour on any failure.
- */
+
 public class TemplatePage extends PageUtil {
 
 	private static final int DEFAULT_WAIT = 5;
@@ -67,18 +63,7 @@ public class TemplatePage extends PageUtil {
 	}
 
 	// ─── Flow Abort Infrastructure ───────────────────────────────────────────────
-
-	/**
-	 * Executes {@code action}, then checks for a UI toast error.
-	 * <ul>
-	 * <li>On success → logs PASS to the Extent report.</li>
-	 * <li>On failure → logs FAIL, captures a screenshot, navigates home, and throws
-	 * {@link FlowAbortException} to stop the entire flow.</li>
-	 * </ul>
-	 *
-	 * @param stepName human-readable label shown in the report
-	 * @param action   the UI interaction to perform
-	 */
+	
 	public void executeStep(String stepName, Runnable action) {
 		try {
 			action.run();
@@ -223,14 +208,6 @@ public class TemplatePage extends PageUtil {
 
 	// ─── Shared UI Helpers ───────────────────────────────────────────────────────
 
-	/**
-	 * Waits for the dropdown list to populate, finds the option matching
-	 * {@code value}, and clicks it.
-	 *
-	 * @param listLocator locator for the dropdown list items
-	 * @param value       the option text to select (case-insensitive)
-	 * @throws RuntimeException if the option is not found after waiting
-	 */
 	private void selectFromDropdown(By listLocator, String value) {
 		WebDriverWait wait = waitForElements(driver, DEFAULT_WAIT);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -323,10 +300,7 @@ public class TemplatePage extends PageUtil {
 		}
 	}
 
-	/**
-	 * Clears a text field, types {@code value}, and confirms with ENTER. Throws on
-	 * any Selenium exception (caught by executeStep).
-	 */
+
 	private void clearAndType(By locator, String fieldLabel, String value) {
 		WebDriverWait wait = waitForElements(driver, DEFAULT_WAIT);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -342,10 +316,7 @@ public class TemplatePage extends PageUtil {
 
 	// ─── ACE Editor Helpers ──────────────────────────────────────────────────────
 
-	/**
-	 * Reads JSON from the ACE editor, pretty-prints it, and stores it in
-	 * {@link #copiedPrettyJson}. Throws on parse failure (caught by executeStep).
-	 */
+
 	private void doReadJsonFromEditor() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String rawJson = (String) js
@@ -361,10 +332,7 @@ public class TemplatePage extends PageUtil {
 		}
 	}
 
-	/**
-	 * Writes {@link #copiedPrettyJson} into the ACE editor via JavaScript. Throws
-	 * if no JSON is available or the script fails (caught by executeStep).
-	 */
+	
 	private void doWriteJsonToEditor() {
 		if (copiedPrettyJson == null || copiedPrettyJson.isEmpty()) {
 			throw new RuntimeException("No JSON available to write — call read step first");
@@ -379,10 +347,7 @@ public class TemplatePage extends PageUtil {
 	}
 	// ─── Validation ──────────────────────────────────────────────────────────────
 
-	/**
-	 * Searches for {@code expectedName} and asserts the first result matches. Run
-	 * outside executeStep so its own inner steps each get individual logging.
-	 */
+
 	private void validateTemplateName(String expectedName, String action) {
 		executeStep("Search for " + action + " template: " + expectedName, () -> {
 			doClickSearchField();
@@ -418,12 +383,7 @@ public class TemplatePage extends PageUtil {
 
 	// ─── Public Flows ────────────────────────────────────────────────────────────
 
-	/**
-	 * Copies JSON from {@code sourceTemplate}, then creates a new template with the
-	 * supplied rule type, name and description.
-	 * 
-	 * @throws InterruptedException
-	 */
+
 	public void createNewTemplate(String ruleType, String sourceTemplate, String newName, String newDescription)
 			throws InterruptedException {
 
@@ -463,9 +423,7 @@ public class TemplatePage extends PageUtil {
 		navigateToHomePage();
 	}
 
-	/**
-	 * Searches for {@code existingName}, then updates its name and description.
-	 */
+
 	public void updateExistingTemplate(String ruleType, String existingName, String updatedName,
 			String updatedDescription) {
 
@@ -493,10 +451,7 @@ public class TemplatePage extends PageUtil {
 		navigateToHomePage();
 	}
 
-	/**
-	 * Searches for {@code templateName} and deletes it from the listing page using
-	 * the More > Delete flow.
-	 */
+
 	public void deleteTemplateFromListingPage(String ruleType, String templateName) {
 
 		// Step 1 — Navigate to module
@@ -516,10 +471,7 @@ public class TemplatePage extends PageUtil {
 		navigateToHomePage();
 	}
 
-	/**
-	 * Searches for {@code templateName}, opens it, and deletes it from its details
-	 * page.
-	 */
+
 	public void deleteTemplateFromDetailsPage(String ruleType, String templateName) {
 
 		// Step 1 — Navigate to module

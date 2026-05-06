@@ -570,7 +570,8 @@ public class TestGeneratorPage extends PageUtil {
 
 		boolean isTextEntered = sendkeysToElement1(driver, enterTemplateName, templateName, templateName);
 
-		boolean isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "search button icon","search button icon", true);
+		boolean isSearchClicked = clickOnField(driver, clickSearchButtonIcon, "search button icon",
+				"search button icon", true);
 
 		return isTextEntered && isSearchClicked;
 	}
@@ -578,7 +579,8 @@ public class TestGeneratorPage extends PageUtil {
 	// Select the existing template form the list
 	public boolean selectExistingChecksumTemplate() {
 
-		return clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item", "serarch item", true);
+		return clickOnField(driver, selectExistingDynamicChecksumTemplate, "select searched item", "serarch item",
+				true);
 	}
 
 	public void clickOnWorkspaceField(String workspaceName) {
@@ -631,7 +633,8 @@ public class TestGeneratorPage extends PageUtil {
 	}
 
 	public boolean gotoWorkspaceNextbtn() {
-		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page", "button", true);
+		return clickOnField(driver, clickNextButtonWorkspaceNextbtn, "Next button of 'Select Container' page", "button",
+				true);
 	}
 
 	public void gotoRuleMetadataNextbtn() {// Click Next button on Rule Metadata page
@@ -743,6 +746,7 @@ public class TestGeneratorPage extends PageUtil {
 			break;
 
 		case "file":
+			validateField(driver, selectFileConnectionType, "Connection Type", 5);
 			clickOnElement(driver, selectFileConnectionType, "source file connection.", waitTime);
 			break;
 
@@ -751,10 +755,12 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Click Source Dataset Connection Dropdown
+		validateField(driver, clickSourcedatasetConnectionDropdown, connectionName, 5);
 		clickOnElement(driver, clickSourcedatasetConnectionDropdown, "select connection dropdown.", waitTime);
 		isInvisibleLoader(driver, loader);
 
 		// Enter and confirm connection name
+		validateField(driver, enterSourceConnectionName, "Enter source connection name", 2);
 		sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 		sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
 		isInvisibleLoader(driver, loader);
@@ -845,6 +851,7 @@ public class TestGeneratorPage extends PageUtil {
 			break;
 
 		case "file":
+			validateField(driver, selectFileConnectionType, "Connection Type", 5);
 			clickOnElement(driver, selectFileConnectionType, "target file connection.", waitTime);
 			break;
 
@@ -853,12 +860,13 @@ public class TestGeneratorPage extends PageUtil {
 		}
 
 		// Click Target Dataset Connection Dropdown
+		validateField(driver, clickTargetdatasetConnectionDropdown, connectionName, 5);
 		clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 40);
 		isInvisibleLoader(driver, loader);
 
 		// Enter and confirm connection name
+		validateField(driver, enterTargetConnectionName, "Enter target connection name", 2);
 		sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
-
 		sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
 		isInvisibleLoader(driver, loader);
 

@@ -10,10 +10,7 @@ import com.qa.extentreportlistener.ExtentReportListener;
 import com.qa.pages.Test1;
 import com.qa.utils.ExcelReader;
 
-/**
- * Test suite for the Template module (create / update / delete flows). Data is
- * driven from templateData.xlsx; each sheet maps to one @DataProvider.
- */
+
 @Listeners(ExtentReportListener.class)
 public class TemplatePageTest extends Base {
 
@@ -41,12 +38,7 @@ public class TemplatePageTest extends Base {
 
 	// ─── Test Methods ────────────────────────────────────────────────────────────
 
-	/**
-	 * Creates a new template by copying JSON from an existing source template.
-	 * Columns: templateType | ruleType | sourceTemplateName | newName |
-	 * newDescription
-	 * @throws InterruptedException 
-	 */
+
 	@Test(dataProvider = "createTemplateData")
 	public void createTemplate(String templateType, String ruleType, String sourceTemplate, String newName,
 			String newDescription) throws InterruptedException {
@@ -56,10 +48,7 @@ public class TemplatePageTest extends Base {
 		new Test1(driver).createNewTemplate(ruleType, sourceTemplate, newName, newDescription);
 	}
 
-	/**
-	 * Updates the name and description of an existing template. Columns:
-	 * templateType | ruleType | existingName | updatedName | updatedDescription
-	 */
+
 	@Test(dataProvider = "updateTemplateData")
 	public void updateTemplate(String templateType, String ruleType, String existingName, String updatedName,
 			String updatedDescription) {
@@ -69,10 +58,7 @@ public class TemplatePageTest extends Base {
 		new Test1(driver).updateExistingTemplate(ruleType, existingName, updatedName, updatedDescription);
 	}
 
-	/**
-	 * Deletes a template via the listing-page More > Delete flow. Columns:
-	 * templateType | ruleType | templateName
-	 */
+
 	@Test(dataProvider = "deleteTemplateListData")
 	public void deleteTemplateFromListingPage(String templateType, String ruleType, String templateName) {
 
@@ -81,10 +67,7 @@ public class TemplatePageTest extends Base {
 		new Test1(driver).deleteTemplateFromListingPage(ruleType, templateName);
 	}
 
-	/**
-	 * Deletes a template from its own details page. Columns: templateType |
-	 * ruleType | templateName
-	 */
+
 	@Test(dataProvider = "deleteTemplateDetailsData")
 	public void deleteTemplateFromDetailsPage(String templateType, String ruleType, String templateName) {
 
