@@ -7,6 +7,8 @@ import com.qa.extentreportlistener.ExtentManager;
 import com.qa.utils.PageUtil;
 
 public class LoginPage extends PageUtil {
+	
+	//  Login Page  ////
 
 	private WebDriver driver;
 
