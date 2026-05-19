@@ -4,8 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
 import com.qa.config.ConfigReader;
 import com.qa.extentreportlistener.ExtentManager;
 import com.qa.extentreportlistener.ExtentReportListener;
@@ -16,112 +17,100 @@ import com.qa.utils.PageUtil;
 
 public class Base {
 
-	public static WebDriver driver;
-	public static String baseUrl;
+    public static WebDriver driver;
+
+    public static String baseUrl;
     public static String homePageUrl;
 
-	//public static String buildId = "";
-	public static String timesp; // Suite start time
-	public static String endTime; // Suite end time
+    // Time variables
+    public static long startTimeMillis;
+    public static long endTimeMillis;
 
-	@BeforeSuite(alwaysRun = true)
-	protected void startSuite() {
+    public static String timesp;
+    public static String endTime;
 
-		// Load locators once for the suite
-		PageUtil.locatotFind();
-		
-		// Driver setup
-		 DriverFactory.setDriver(driver);
+    @BeforeSuite(alwaysRun = true)
+    protected void startSuite() {
 
-		// Initialize report
-		ExtentManager.getExtentReports();
+        // Capture suite START time
+        startTimeMillis = System.currentTimeMillis();
 
-		// Launch browser
-		
-		//************************************************************************************//
-				//This will run on machine code.
-//		driver = DriverSetup.initDriver();
-//		driver.get(ConfigReader.getProperty("baseUrl"));
-		
-		// Launch browser
-		//************************************************************************************//
-				//This will run on Jenkins code.
-//	    driver = DriverSetup.initDriver();
-//
-//	    String host = System.getProperty("host");
-//	    String port = System.getProperty("port");
-//
-//	     baseUrl = "https://" + host + ":" + port + "/";
-//	     homePageUrl = "https://" + host + ":" + port + "/";
-//
-//	    System.out.println("Launching URL: " + baseUrl);
-//
-//	    driver.get(baseUrl);
-//	    driver.get(homePageUrl);
-//
-//		// Initialize start timestamp
-//		timesp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-//		System.out.println("Suite started at: " + timesp);
-		
-		
-		// Generic solution 
-		
-		driver = DriverSetup.initDriver();
+        timesp = new SimpleDateFormat("HH:mm:ss - dd/MM/yyyy")
+                .format(new Date(startTimeMillis));
 
-        // Generic: use Jenkins system properties if available, else fall back to config file
+        System.out.println("Suite started at: " + timesp);
+
+        // Load locators
+        PageUtil.locatotFind();
+
+        // Initialize report
+        ExtentManager.getExtentReports();
+
+        // Driver setup
+        driver = DriverSetup.initDriver();
+        DriverFactory.setDriver(driver);
+
+        // Jenkins / Local handling
         String host = System.getProperty("host");
         String port = System.getProperty("port");
 
         if (host != null && port != null) {
-            // Running via Jenkins — properties injected at runtime
-            baseUrl     = "https://" + host + ":" + port + "/";
+
+            baseUrl = "https://" + host + ":" + port + "/";
             homePageUrl = "https://" + host + ":" + port + "/";
+
             System.out.println("[Jenkins] Launching URL: " + baseUrl);
-            System.out.println("[Jenkins] Redirecting URL: " + homePageUrl);    
+            System.out.println("[Jenkins] Redirecting URL: " + homePageUrl);
+
         } else {
-            // Running locally — read from config.properties
-            baseUrl     = ConfigReader.getProperty("baseUrl");
+
+            baseUrl = ConfigReader.getProperty("baseUrl");
             homePageUrl = ConfigReader.getProperty("homePageUrl");
+
             System.out.println("[Local] Launching URL: " + baseUrl);
-            System.out.println("[Local] Redirecting URL: " + homePageUrl);  
+            System.out.println("[Local] Redirecting URL: " + homePageUrl);
         }
-        
+
         driver.get(baseUrl);
         driver.get(homePageUrl);
     }
 
+    @AfterSuite(alwaysRun = true)
+    public void endSuite() {
 
-	@AfterSuite(alwaysRun = true)
-	public void endSuite() {
+        // Capture suite END time
+        endTimeMillis = System.currentTimeMillis();
 
-		// Initialize end timestamp
-		endTime = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-		System.out.println("Suite ended at: " + endTime);
-		
-		// Flush Extent Report
-		ExtentManager.flushReport();
+        endTime = new SimpleDateFormat("HH:mm:ss - dd/MM/yyyy")
+                .format(new Date(endTimeMillis));
 
-		// Close browser
-		if (driver != null) {
-			driver.quit();
-		}
+        System.out.println("Suite ended at: " + endTime);
 
-		// Send Email with Extent Report
-		String latestReport = SendMail.getLatestExtentReportPath();
-		SendMail.sendExecutionReport(latestReport);
-		
-		System.out.println("Passed: " + ExtentReportListener.passedCount);
-	    System.out.println("Failed: " + ExtentReportListener.failedCount);
-	    System.out.println("Skipped: " + ExtentReportListener.skippedCount);
-	}
+        // Flush report
+        ExtentManager.flushReport();
 
-	// Get driver method
-	public WebDriver getDriver() {
-		return driver;
-	}
+        // Close browser
+        if (driver != null) {
+            driver.quit();
+        }
 
-	// Set driver method
-	public void setDriver(WebDriver driver) {
-		Base.driver = driver;
-	}
+        // Send Email
+        String latestReport = SendMail.getLatestExtentReportPath();
+        SendMail.sendExecutionReport(latestReport);
+
+        // Print counts
+        System.out.println("Passed: " + ExtentReportListener.passedCount);
+        System.out.println("Failed: " + ExtentReportListener.failedCount);
+        System.out.println("Skipped: " + ExtentReportListener.skippedCount);
+    }
+
+    // Get driver
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    // Set driver
+    public void setDriver(WebDriver driver) {
+        Base.driver = driver;
+    }
 }

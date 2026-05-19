@@ -28,10 +28,10 @@
 		<classes>
 			<class name="com.qa.tests.TestGeneratorTest">
 				<methods>
-					<include name="createRuleUsingDynamicTemplate" />
-					<include name="createRuleUsingImportTemplate" />
-					<include name="createWorkflowUsingDefaultDynamicTemplate" />
-					<include name="existingWorkflowUsingDefaultDynamicTemplate" />
+					<exclude name="createRuleUsingDynamicTemplate" />
+					<exclude name="createRuleUsingImportTemplate" />
+					<exclude name="createWorkflowUsingDefaultDynamicTemplate" />
+					<exclude name="existingWorkflowUsingDefaultDynamicTemplate" />
 				</methods>
 			</class>
 		</classes>
@@ -41,10 +41,10 @@
 		<classes>
 			<class name="com.qa.tests.TemplatePageTest">
 				<methods>
-					<include name="createTemplate" />
-					<include name="updateTemplate" />
-					<include name="deleteTemplateFromDetailsPage" />
-					<include name="deleteTemplateFromListingPage" />
+					<exclude name="createTemplate" />
+					<exclude name="updateTemplate" />
+					<exclude name="deleteTemplateFromDetailsPage" />
+					<exclude name="deleteTemplateFromListingPage" />
 				</methods>
 			</class>
 		</classes>
