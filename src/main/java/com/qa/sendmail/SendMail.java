@@ -43,6 +43,9 @@ public class SendMail {
 
     private static String getMailBody() throws Exception {
 
+        // App version
+        String jenkinsAppVersion = System.getProperty("AppVersion", "UNKNOWN_VERSION");
+
         // Total test cases
         int totalTestCases = ExtentReportListener.passedCount
                 + ExtentReportListener.failedCount
@@ -85,11 +88,11 @@ public class SendMail {
 
                 // logo
                 + "<div style='text-align: center; "
-                + "padding-top: 15px; "
-                + "padding-bottom: 15px;'>"
+                + "padding-top: 10px; "
+                + "padding-bottom: 10px;'>"
                 + "<img src='data:image/png;base64,"
                 + logoBase64
-                + "' width='40' "
+                + "' width='30' "
                 + "style='vertical-align: middle;'/>"
                 + "&nbsp;&nbsp;"
                 + "<span style='font-size: 20px; "
@@ -150,17 +153,24 @@ public class SendMail {
 
                 + "<p><b>About Execution:</b> "
                 +  "<I>This sanity suite execution performed on Latest build of # </I>"
+                + "<b>" + jenkinsAppVersion + "</b>"
                 + "</p>"
 
                 + "<p><b>Total Execution Time:</b> "
                 + totalExecutionTime
                 + "</p>"
 
+                + "<p>"
+                + "<b>Note:</b> This email was sent automatically by "
+                + "<span style='color:#138fed; font-weight:bold;'>NextGen iceDQ system</span>"
+                + ". Please do not reply."
+                + "</p>"
+
                 + "<br/><br/>"
 
                 // Signature Section
                 + "<p style='font-family: Arial; color: #808080; "
-                + "font-size: 16px; font-weight: bold;'>"
+                + "font-size: 15px; font-weight: bold;'>"
                 + "Thanks & Regards,"
                 + "</p>"
 
@@ -171,24 +181,24 @@ public class SendMail {
                 + "<td style='padding-right: 15px;'>"
                 + "<img src='data:image/png;base64,"
                 + logoBase64
-                + "' width='90' height='90'/>"
+                + "' width='50' height='50'/>"
                 + "</td>"
 
                 // Right side text
                 + "<td style='border-left: 3px solid #f4c20d; "
                 + "padding-left: 15px;'>"
 
-                + "<span style='font-size: 22px; "
+                + "<span style='font-size: 15px; "
                 + "color: #2F5FD0; font-weight: bold;'>"
                 + "QA <i>Automation</i>"
                 + "</span>"
 
-                + "<span style='font-size: 22px; "
+                + "<span style='font-size: 15px; "
                 + "font-weight: bold;'> Team</span>"
 
                 + "<br/>"
 
-                + "<span style='font-size: 18px; color: #555;'>"
+                + "<span style='font-size: 9px; color: #555;'>"
                 + "<i>Rethink Data Reliability!</i>"
                 + "</span>"
 

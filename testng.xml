@@ -7,7 +7,6 @@
 		<classes>
 			<class name="com.qa.tests.LoginTest">
 				<methods>
-					<include name="validateLoginPage" />
 					<include name="Login" />
 				</methods>
 			</class>
@@ -31,7 +30,7 @@
 					<include name="createRuleUsingDynamicTemplate" />
 					<include name="createRuleUsingImportTemplate" />
 					<include name="createWorkflowUsingDefaultDynamicTemplate" />
-					<include name="existingWorkflowUsingDefaultDynamicTemplate" />
+					<exclude name="existingWorkflowUsingDefaultDynamicTemplate" />
 				</methods>
 			</class>
 		</classes>

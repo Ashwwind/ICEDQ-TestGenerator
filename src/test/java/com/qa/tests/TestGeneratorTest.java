@@ -25,7 +25,7 @@ public class TestGeneratorTest extends Base {
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,
-			String schemaName, String tableName, String xrayTestId) throws InterruptedException {
+			String schemaName, String tableName, String xrayTestId, String accountName) throws InterruptedException {
 		
 		// Read workspaceName and folderName from Jenkins parameter
 	    String jenkinsWorkspace = System.getProperty("workspaceName");
@@ -45,9 +45,9 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName, accountName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName);
+				page.createRuleUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName, connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName, accountName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
@@ -69,14 +69,14 @@ public class TestGeneratorTest extends Base {
 	@Test(dataProvider = "ruleDataForWorkflowCreation")
 
 	public void createWorkflowUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName, String schemaName, String tableName, String workflowName) throws Exception {
+			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName, String schemaName, String tableName, String workflowName, String accountName) throws Exception {
 		ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType + " connection.");
 
 		TestGeneratorPage page = new TestGeneratorPage(driver);
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createWorkflowUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName, workflowName);
+				page.createWorkflowUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName, workflowName, accountName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
@@ -99,14 +99,14 @@ public class TestGeneratorTest extends Base {
 		@Test(dataProvider = "ruleDataForExistingWorkflowCreation")
 
 		public void existingWorkflowUsingDefaultDynamicTemplate(String ruleType, String templateName, String workspaceName,
-				String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName, String schemaName, String tableName, String workflowName) throws Exception {
+				String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName, String schemaName, String tableName, String workflowName, String accountName) throws Exception {
 			ExtentManager.startTest("Create rule using default Dynamic Template for - " + ruleType + " | " + connectionType + " connection.");
 
 			TestGeneratorPage page = new TestGeneratorPage(driver);
 
 			try {
 				if (connectionType.equalsIgnoreCase("Database")) {
-					page.existingWorkflowUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName, workflowName);
+					page.existingWorkflowUsingDefaultDynamicTemplate(ruleType, templateName, workspaceName, folderName,connectionType, SourceConnectionName, TargetConnectionName, schemaName, tableName, workflowName, accountName);
 				}
 
 				ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
@@ -129,7 +129,7 @@ public class TestGeneratorTest extends Base {
 
 	@Test(dataProvider = "ruleDataForImportTemplate")
 	public void createRuleUsingImportTemplate(String ruleType, String templateName, String workspaceName,
-			String folderName, String connectionType, String fileType, String SourceConnectionName, String TargetConnectionName) throws InterruptedException {
+			String folderName, String connectionType, String fileType, String SourceConnectionName, String TargetConnectionName, String accountName) throws InterruptedException {
 		
 		// Read workspaceName and folderName from Jenkins parameter
 	    String jenkinsWorkspace = System.getProperty("workspaceName");
@@ -148,11 +148,11 @@ public class TestGeneratorTest extends Base {
 
 		try {
 			if (connectionType.equalsIgnoreCase("Database")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName, accountName);
 			} else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName, accountName);
 			} else if (connectionType.equalsIgnoreCase("File")) {
-				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName);
+				page.createRuleUsingDefaultImportTemplate(ruleType, templateName, workspaceName, folderName,connectionType, fileType, SourceConnectionName, TargetConnectionName, accountName);
 			}
 
 			ExtentManager.logPass("Rule created successfully for rule type: " + ruleType);
