@@ -22,6 +22,7 @@ public class TestGeneratorTest extends Base {
 	}
 
 	// Creating a rule using default dynamic template
+
 	@Test(dataProvider = "ruleDataForDynamicTemplate")
 	public void createRuleUsingDynamicTemplate(String ruleType, String templateName, String workspaceName,
 			String folderName, String connectionType, String SourceConnectionName, String TargetConnectionName,

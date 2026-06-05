@@ -1,6 +1,7 @@
 package com.qa.pages;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -37,7 +38,7 @@ public class TestGeneratorPage extends PageUtil {
     By clickSearchTemplateField = getElementLocator(prop.getProperty("wizard.searchfield.tempatename"));
     By enterTemplateName = getElementLocator(prop.getProperty("wizard.searchfield.enter.tempatename"));
     By clickSearchButtonIcon = getElementLocator(prop.getProperty("wizard.searchfield.searchButtonIcon"));
-    By selectExistingDynamicChecksumTemplate = getElementLocator(prop.getProperty("wizard.existing.dymanic.template"));
+    By selectExistingDynamicChecksumTemplate = getElementLocator(prop.getProperty("wizard.existing.dynamic.template"));
     By clickOnWorkspaceDropdown = getElementLocator(prop.getProperty("wizard.workspace.dropdown"));
     By selectWorkspace = getElementLocator(prop.getProperty("select.Workspace"));
     By selectSearchWorkspace = getElementLocator(prop.getProperty("select.searchedWorkspace"));
@@ -98,7 +99,9 @@ public class TestGeneratorPage extends PageUtil {
     // Click on hyperlink of publish entity
     By clickHyperlinkPublishRule = getElementLocator(prop.getProperty("publishRuleHyperlink.click"));
     // Click on source UseMetaDataCache
-    By UseMetadataCache = getElementLocator(prop.getProperty("source.metaDataCache"));
+    By sourceUseMetadataCache = getElementLocator(prop.getProperty("source.metaDataCache"));
+    // Click on target UseMetaDataCache
+    By targetUseMetadataCache = getElementLocator(prop.getProperty("target.metaDataCache"));
     // Click on the Source Database dropdown
     By clickSourceDatabaseDropdown = getElementLocator(prop.getProperty("source.database.dropdown"));
     // Enter source database name
@@ -114,6 +117,18 @@ public class TestGeneratorPage extends PageUtil {
     By selectWorkflowOption = getElementLocator(prop.getProperty("workflow.publish.option"));
     By clickFolderDropdown = getElementLocator(prop.getProperty("workflow.folder.dropdown"));
     By searchFolderField = getElementLocator(prop.getProperty("workflow.folder.search.field"));
+
+    ///  Preview Page  ////
+    // Click on the search button icon
+    By clickOnSearchIconPreview = getElementLocator(prop.getProperty("preview.search.icon"));
+    // Select the searched entity from the list
+    By entityIsDisplayedPreview = getElementLocator(prop.getProperty("preview.searchEntity.display"));
+
+    ///  published Page  ////
+    // Click on the search button icon
+    By clickOnSearchIconPublished = getElementLocator(prop.getProperty("published.search.icon"));
+    // Select the searched entity from the list
+    By entityIsDisplayedPublished = getElementLocator(prop.getProperty("published.searchEntity.display"));
 
     By loader = getElementLocator(prop.getProperty("loderIsDisplayed"));
 
@@ -754,6 +769,8 @@ public class TestGeneratorPage extends PageUtil {
             sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
             isInvisibleLoader(driver, loader);
 
+            clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", waitTime);
+
             ExtentManager.logInfo("Database connection name selected successfully.");
 
         } else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
@@ -770,10 +787,8 @@ public class TestGeneratorPage extends PageUtil {
 
             ExtentManager.logInfo("Cloud warehouse connection name selected successfully.");
 
-//			By UseMetadataCache = By.xpath(
-//					"//*[@id='e-content-element_5']/div/div[2]/div[1]/form/div[2]/div[3]/div/ejs-checkbox/label/span[2]");
-
-            clickOnElement(driver, UseMetadataCache, "Use Metadata Cache check box", waitTime);
+            // Click source UseMetadataCache
+            clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", waitTime);
             isInvisibleLoader(driver, loader);
 
             // Click database dropdown
@@ -837,6 +852,9 @@ public class TestGeneratorPage extends PageUtil {
         sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
         isInvisibleLoader(driver, loader);
 
+        // Click source UseMetadataCache
+        clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", waitTime);
+
         ExtentManager.logInfo("Source dataset selected successfully: " + connectionType + " / " + connectionName);
     }
 
@@ -861,6 +879,8 @@ public class TestGeneratorPage extends PageUtil {
             sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
             isInvisibleLoader(driver, loader);
 
+            clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", waitTime);
+
             ExtentManager.logInfo("Target database connection selected successfully.");
 
         } else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
@@ -876,6 +896,10 @@ public class TestGeneratorPage extends PageUtil {
             isInvisibleLoader(driver, loader);
 
             ExtentManager.logInfo("Target cloud connection selected successfully.");
+
+            // Click target UseMetadataCache
+            clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", waitTime);
+            isInvisibleLoader(driver, loader);
 
             // Click database dropdown
             clickOnElement(driver, clickTargetDatabaseDropdown, "database dropdown.", waitTime);
@@ -934,6 +958,9 @@ public class TestGeneratorPage extends PageUtil {
         sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
         sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
         isInvisibleLoader(driver, loader);
+
+        // Click target UseMetadataCache
+        clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", waitTime);
 
         ExtentManager.logInfo("Target dataset selected successfully: " + connectionType + " / " + connectionName);
     }
@@ -1000,6 +1027,10 @@ public class TestGeneratorPage extends PageUtil {
 
     // Select the generated entity from the 'Preview' page
     public void selectGeneratedEntity() {
+
+        // Validate the preview rule is displayed or not in the list
+        searchEntityUntilIsDisplayedOnPreview();
+
         clickOnElement(driver, selectEntity, "Checkbox for entity selection", waitTime);
         ExtentManager.logInfo("Generated entity selected successfully.");
     }
@@ -1105,6 +1136,10 @@ public class TestGeneratorPage extends PageUtil {
     }
 
     public void clickOnPublishedRule() {
+
+        // Validate the published rule is displayed or not in the list.
+        searchEntityUntilIsDisplayedOnPublished();
+
         executeStep("Validate published rule and navigate to Data Testing page.", () -> {
 
             // Capture parent window
@@ -1158,6 +1193,9 @@ public class TestGeneratorPage extends PageUtil {
     // Click on the hyperlink of the published workflow to navigate to the Data
     // Testing - workflow details page.
     public void clickOnPublishedWorkflow() {
+
+        // Validate the published workflow is displayed or not in the list.
+        searchEntityUntilIsDisplayedOnPublished();
 
         executeStep("Validate published workflow and navigate to Workflow details page.", () -> {
 
@@ -1286,7 +1324,7 @@ public class TestGeneratorPage extends PageUtil {
         By statusLocator = By.xpath("//*[@id='parentGrid_content_table']/tbody/tr/td[4]");
 
         int maxRetries = 10;
-        int waitBetweenRetries = 30; // seconds
+        int waitBetweenRetries = 50; // seconds
 
         for (int retryCount = 0; retryCount < maxRetries; retryCount++) {
 
@@ -1384,5 +1422,103 @@ public class TestGeneratorPage extends PageUtil {
         }
 
         throw new RuntimeException("Status did not change from Submitted/Running after " + maxRetries + " retries");
+    }
+
+    // Search the entity until is displayed for the Preview page.
+    public void searchEntityUntilIsDisplayedOnPreview() {
+
+        int maxAttempts = 5;
+
+        for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+
+            ExtentManager.logInfo("Search Attempt: " + attempt);
+
+            clickOnElement(driver, clickOnSearchIconPreview, "Search Icon", 20);
+
+            // Wait for loader to disappear
+            waitForLoaderToDisappear(driver, loader, 30);
+
+            try {
+
+                WebElement row = driver.findElement(entityIsDisplayedPreview);
+                String rowText = row.getText().trim();
+
+                ExtentManager.logInfo("Grid Row Text: " + rowText);
+
+                // Valid data found
+                if (!rowText.equalsIgnoreCase("No records to display")) {
+                    ExtentManager.logInfo("Entity found.");
+                    return;
+                }
+
+                ExtentManager.logInfo("No records found.");
+
+            } catch (NoSuchElementException e) {
+                ExtentManager.logInfo("Grid row not found.");
+            }
+
+            if (attempt < maxAttempts) {
+
+                ExtentManager.logInfo("Entity not found. Waiting 1 minute before retry.");
+
+                try {
+                    Thread.sleep(Duration.ofMinutes(1).toMillis());
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+            }
+        }
+
+        ExtentManager.logInfo("Entity not found after " + maxAttempts + " attempts.");
+    }
+
+    // Search the entity until is displayed for the published page.
+    public void searchEntityUntilIsDisplayedOnPublished() {
+
+        int maxAttempts = 5;
+
+        for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+
+            ExtentManager.logInfo("Search Attempt: " + attempt);
+
+            clickOnElement(driver, clickOnSearchIconPublished, "Search Icon", 20);
+
+            // Wait for loader to disappear
+            waitForLoaderToDisappear(driver, loader, 30);
+
+            try {
+
+                WebElement row = driver.findElement(entityIsDisplayedPublished);
+                String rowText = row.getText().trim();
+
+                ExtentManager.logInfo("Grid Row Text: " + rowText);
+
+                // Valid data found
+                if (!rowText.equalsIgnoreCase("No records to display")) {
+                    ExtentManager.logInfo("Entity found.");
+                    return;
+                }
+
+                ExtentManager.logInfo("No records found.");
+
+            } catch (NoSuchElementException e) {
+                ExtentManager.logInfo("Grid row not found.");
+            }
+
+            if (attempt < maxAttempts) {
+
+                ExtentManager.logInfo("Entity not found. Waiting 1 minute before retry.");
+
+                try {
+                    Thread.sleep(Duration.ofMinutes(1).toMillis());
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+            }
+        }
+
+        ExtentManager.logInfo("Entity not found after " + maxAttempts + " attempts.");
     }
 }

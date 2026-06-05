@@ -30,7 +30,7 @@
 					<include name="createRuleUsingDynamicTemplate" />
 					<include name="createRuleUsingImportTemplate" />
 					<include name="createWorkflowUsingDefaultDynamicTemplate" />
-					<exclude name="existingWorkflowUsingDefaultDynamicTemplate" />
+					<include name="existingWorkflowUsingDefaultDynamicTemplate" />
 				</methods>
 			</class>
 		</classes>

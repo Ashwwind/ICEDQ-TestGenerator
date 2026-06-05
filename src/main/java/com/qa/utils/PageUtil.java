@@ -105,11 +105,11 @@ public class PageUtil extends Base {
     public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
         try {
 
-            WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.presenceOfElementLocated(by));
-
             // Wait for any loader to disappear (only once)
             isInvisibleLoader(driver,
                     By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+
+            WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by));
 
             // Scroll element into view
             ((JavascriptExecutor) driver)
@@ -122,13 +122,13 @@ public class PageUtil extends Base {
         } catch (TimeoutException te) {
             // Fallback: extra wait
             try {
-                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
-                        .until(ExpectedConditions.presenceOfElementLocated(by));
+                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 10))
+                        .until(ExpectedConditions.visibilityOfElementLocated(by));
 
                 ((JavascriptExecutor) driver)
                         .executeScript("arguments[0].scrollIntoView({block:'center'});", element);
 
-                return new WebDriverWait(driver, Duration.ofSeconds(timeout + 20))
+                return new WebDriverWait(driver, Duration.ofSeconds(timeout + 10))
                         .until(ExpectedConditions.visibilityOfElementLocated(by)).isDisplayed();
             } catch (Exception e) {
                 ExtentManager.logInfo("Element not visible after extended wait: " + by);
@@ -149,7 +149,7 @@ public class PageUtil extends Base {
                 return false;
             }
 
-            ExtentManager.logInfo("Clicking on " + label);
+            ExtentManager.logInfo("Clicking on " + label + " ➝ " + by);
 
             WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by));
 
@@ -257,7 +257,7 @@ public class PageUtil extends Base {
                 throw new RuntimeException(label + " is not visible. Cannot press ENTER.");
             }
 
-            ExtentManager.logInfo("Pressing ENTER on " + label);
+            ExtentManager.logInfo("Pressing ENTER on " + label + "->" + locator);
 
             WebElement element = waitForElements(driver, SHOTW).until(ExpectedConditions.elementToBeClickable(locator));
 
@@ -632,7 +632,7 @@ public class PageUtil extends Base {
     public boolean isElementDisplayed(WebDriver driver, By locator, int timeoutInSeconds) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-            wait.pollingEvery(Duration.ofSeconds(40)); // check every 1 second
+            wait.pollingEvery(Duration.ofSeconds(10)); // check every 1 second
             wait.ignoring(NoSuchElementException.class);
 
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
