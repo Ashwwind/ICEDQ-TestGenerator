@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "timestamp": 1782112192962,
+  "projectRoot": "d:\\Automation\\ICEDQ-TestGenerator",
+  "entries": [
+    {
+      "path": "target\\classes\\com\\qa\\pages\\DemoApplication.class",
+      "mtime": 1782112192546.4414,
+      "size": 695
+    }
+  ]
+}

@@ -1,18 +1,24 @@
 package com.qa.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.qa.base.Base;
 import com.qa.extentreportlistener.ExtentManager;
-import com.qa.extentreportlistener.ExtentReportListener;
-import com.qa.pages.Test1;
+import com.qa.pages.TemplatePage;
 import com.qa.utils.ExcelReader;
 
-
-@Listeners(ExtentReportListener.class)
+/** Listener is declared in testng.xml — no @Listeners annotation needed here. */
 public class TemplatePageTest extends Base {
+
+    // ✅ Declare once as a field and initialise in @BeforeMethod
+    private TemplatePage templatePage;
+
+    @BeforeMethod
+    public void setUpPage() {
+        templatePage = new TemplatePage(driver);
+    }
+
 
 	// ─── Data Providers ──────────────────────────────────────────────────────────
 
@@ -40,39 +46,41 @@ public class TemplatePageTest extends Base {
 
 
 	@Test(dataProvider = "createTemplateData")
+
+
 	public void createTemplate(String templateType, String ruleType, String sourceTemplate, String newName,
-			String newDescription) throws InterruptedException {
+			String newDescription, String accountName) {
 
-		ExtentManager.startTest("Create Template [" + templateType + "] for rule type: " + ruleType);
+		ExtentManager.startTest(STR."Create Template [\{templateType}] for rule type: \{ruleType}");
 
-		new Test1(driver).createNewTemplate(ruleType, sourceTemplate, newName, newDescription);
+        templatePage.createNewTemplate(ruleType, sourceTemplate, newName, newDescription,accountName);
 	}
 
 
 	@Test(dataProvider = "updateTemplateData")
 	public void updateTemplate(String templateType, String ruleType, String existingName, String updatedName,
-			String updatedDescription) {
+			String updatedDescription, String accountName) {
 
-		ExtentManager.startTest("Update Template [" + templateType + "] for rule type: " + ruleType);
+		ExtentManager.startTest(STR."Update Template [\{templateType}] for rule type: \{ruleType}");
 
-		new Test1(driver).updateExistingTemplate(ruleType, existingName, updatedName, updatedDescription);
+        templatePage.updateExistingTemplate(ruleType, existingName, updatedName, updatedDescription, accountName);
 	}
 
 
 	@Test(dataProvider = "deleteTemplateListData")
-	public void deleteTemplateFromListingPage(String templateType, String ruleType, String templateName) {
+	public void deleteTemplateFromListingPage(String templateType, String ruleType, String templateName, String accountName) {
 
-		ExtentManager.startTest("Delete Template from Listing Page [" + templateType + "] for rule type: " + ruleType);
+		ExtentManager.startTest(STR."Delete Template from Listing Page [\{templateType}] for rule type: \{ruleType}");
 
-		new Test1(driver).deleteTemplateFromListingPage(ruleType, templateName);
+        templatePage.deleteTemplateFromListingPage(ruleType, templateName, accountName);
 	}
 
 
 	@Test(dataProvider = "deleteTemplateDetailsData")
-	public void deleteTemplateFromDetailsPage(String templateType, String ruleType, String templateName) {
+	public void deleteTemplateFromDetailsPage(String templateType, String ruleType, String templateName, String accountName) {
 
-		ExtentManager.startTest("Delete Template from Details Page [" + templateType + "] for rule type: " + ruleType);
+		ExtentManager.startTest(STR."Delete Template from Details Page [\{templateType}] for rule type: \{ruleType}");
 
-		new Test1(driver).deleteTemplateFromDetailsPage(ruleType, templateName);
+        templatePage.deleteTemplateFromDetailsPage(ruleType, templateName, accountName);
 	}
 }

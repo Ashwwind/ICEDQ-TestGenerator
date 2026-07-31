@@ -53,13 +53,14 @@ public class HomePage extends PageUtil {
 		String actualUrl = driver.getCurrentUrl();
 
 		// check point
-		if (actualUrl.contains(expectedUrl)) {
+        assert actualUrl != null;
+        if (actualUrl.contains(expectedUrl)) {
 			System.out.println("The actual URL is correct.");
-			ExtentManager.logPass("The actual URL is correct: " + actualUrl);
+			ExtentManager.logPass(STR."The actual URL is correct: \{actualUrl}");
 		} else {
 			System.out.println("The actual URL is incorrect.");
 			ExtentManager.logFail(
-					"The actual URL is incorrect. Expected to contain: " + expectedUrl + " | Actual URL: " + actualUrl);
+                    STR."The actual URL is incorrect. Expected to contain: \{expectedUrl} | Actual URL: \{actualUrl}");
 		}
 	}
 
@@ -72,13 +73,13 @@ public class HomePage extends PageUtil {
 		String actualTitle = driver.getTitle();
 
 		// check point
-		if (actualTitle.contains(expectedTitle)) {
+        assert actualTitle != null;
+        if (actualTitle.contains(expectedTitle)) {
 			System.out.println("The page title is correct.");
-			ExtentManager.logPass("The page title is correct: " + actualTitle);
+			ExtentManager.logPass(STR."The page title is correct: \{actualTitle}");
 		} else {
 			System.out.println("The page title is incorrect.");
-			ExtentManager.logFail("The page title is incorrect. Expected to contain: " + expectedTitle
-					+ " | Actual title: " + actualTitle);
+			ExtentManager.logFail(STR."The page title is incorrect. Expected to contain: \{expectedTitle} | Actual title: \{actualTitle}");
 		}
 	}
 
@@ -96,7 +97,7 @@ public class HomePage extends PageUtil {
 			ExtentManager.logPass("Logo is displayed.");
 		} else {
 			System.out.println("Logo is NOT displayed.");
-			ExtentManager.logFail("Logo is NOT displayed | Expected: " + expectedLogo);
+			ExtentManager.logFail(STR."Logo is NOT displayed | Expected: \{expectedLogo}");
 		}
 	}
 
@@ -110,12 +111,12 @@ public class HomePage extends PageUtil {
 
 		// check point
 		if (welcomeMessage.isDisplayed() && welcomeMessage.getText().contains(expectedMessagePart)) {
-			System.out.println("Welcome message is displayed: " + welcomeMessage.getText());
-			ExtentManager.logPass("Welcome message is displayed: " + welcomeMessage.getText());
+			System.out.println(STR."Welcome message is displayed: \{welcomeMessage.getText()}");
+			ExtentManager.logPass(STR."Welcome message is displayed: \{welcomeMessage.getText()}");
 		} else {
 			System.out.println("Welcome message is NOT displayed or text is incorrect.");
 			ExtentManager.logFail(
-					"Welcome message is NOT displayed or does not contain expected text: " + expectedMessagePart);
+                    STR."Welcome message is NOT displayed or does not contain expected text: \{expectedMessagePart}");
 		}
 	}
 
@@ -133,7 +134,7 @@ public class HomePage extends PageUtil {
 			ExtentManager.logPass("Profile icon is displayed.");
 		} else {
 			System.out.println("Profile icon is NOT displayed.");
-			ExtentManager.logFail("Profile icon NOT displayed | Expected: " + expectedProfile);
+			ExtentManager.logFail(STR."Profile icon NOT displayed | Expected: \{expectedProfile}");
 		}
 	}
 
@@ -147,21 +148,20 @@ public class HomePage extends PageUtil {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		for (String module : expectedModules) {
+		for (String expectedModule : expectedModules) {
 
-			String expectedModule = module;
-
-			WebElement moduleElement = wait.until(
-					ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'" + module + "')]")));
+            WebElement moduleElement = wait.until(
+					ExpectedConditions.visibilityOfElementLocated(By.xpath(STR."//h2[contains(text(),'\{expectedModule}')]")));
 
 			// check point
-			if (moduleElement.isDisplayed()) {
+            assert moduleElement != null;
+            if (moduleElement.isDisplayed()) {
 				String actualModule = moduleElement.getText();
-				System.out.println("Module displayed: " + actualModule);
-				ExtentManager.logPass("Module displayed: " + actualModule);
+				System.out.println(STR."Module displayed: \{actualModule}");
+				ExtentManager.logPass(STR."Module displayed: \{actualModule}");
 			} else {
-				System.out.println("Module NOT displayed: " + expectedModule);
-				ExtentManager.logFail("Module NOT displayed | Expected: " + expectedModule);
+				System.out.println(STR."Module NOT displayed: \{expectedModule}");
+				ExtentManager.logFail(STR."Module NOT displayed | Expected: \{expectedModule}");
 			}
 		}
 	}
@@ -177,23 +177,23 @@ public class HomePage extends PageUtil {
 		for (String icon : expectedHyperlinkIcons) {
 			try {
 				WebElement hyperlink = wait.until(ExpectedConditions
-						.presenceOfElementLocated(By.xpath("//div[@class='help-text']//a[@title='" + icon + "']")));
+						.presenceOfElementLocated(By.xpath(STR."//div[@class='help-text']//a[@title='\{icon}']")));
 
 				// Scroll into view in case it is off-screen
 				scrollToElement(driver, hyperlink);
 
 				if (hyperlink.isDisplayed()) {
 					String actualIcon = hyperlink.getAttribute("title");
-					System.out.println("Hyperlink displayed: " + actualIcon);
-					ExtentManager.logPass("Hyperlink displayed: " + actualIcon);
+					System.out.println(STR."Hyperlink displayed: \{actualIcon}");
+					ExtentManager.logPass(STR."Hyperlink displayed: \{actualIcon}");
 				} else {
-					System.out.println("Hyperlink NOT displayed (hidden): " + icon);
-					ExtentManager.logFail("Hyperlink NOT displayed (hidden) | Expected: " + icon);
+					System.out.println(STR."Hyperlink NOT displayed (hidden): \{icon}");
+					ExtentManager.logFail(STR."Hyperlink NOT displayed (hidden) | Expected: \{icon}");
 				}
 
 			} catch (TimeoutException e) {
-				System.out.println("Hyperlink NOT found in DOM: " + icon);
-				ExtentManager.logFail("Hyperlink NOT found in DOM | Expected: " + icon);
+				System.out.println(STR."Hyperlink NOT found in DOM: \{icon}");
+				ExtentManager.logFail(STR."Hyperlink NOT found in DOM | Expected: \{icon}");
 			}
 		}
 	}

@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Suite" parallel="tests" thread-count="1">
+<suite name="ICEDQ-TestGenerator Suite"
+       parallel="none"
+       verbose="2">
 
-	<test name="Login Tests">
-		<classes>
-			<class name="com.qa.tests.LoginTest">
-				<methods>
-					<include name="Login" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+    <listeners>
+        <listener class-name="com.qa.extentreportlistener.ExtentReportListener"/>
+    </listeners>
 
-	<test name="Home Page Tests">
-		<classes>
-			<class name="com.qa.tests.HomePageTest">
-				<methods>
-					<include name="validateHomePage" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+    <test name="ICEDQ End-to-End Tests" preserve-order="true">
 
-	<test name="Test Generator Page Tests">
-		<classes>
-			<class name="com.qa.tests.TestGeneratorTest">
-				<methods>
-					<include name="createRuleUsingDynamicTemplate" />
-					<include name="createRuleUsingImportTemplate" />
-					<include name="createWorkflowUsingDefaultDynamicTemplate" />
-					<include name="existingWorkflowUsingDefaultDynamicTemplate" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+        <classes>
 
-	<test name="Template Page Tests">
-		<classes>
-			<class name="com.qa.tests.TemplatePageTest">
-				<methods>
-					<include name="createTemplate" />
-					<include name="updateTemplate" />
-					<include name="deleteTemplateFromDetailsPage" />
-					<include name="deleteTemplateFromListingPage" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+            <!-- Login -->
+            <class name="com.qa.tests.LoginTest">
+                <methods>
+                    <include name="validateLoginPage"/>
+                    <include name="Login"/>
+                </methods>
+            </class>
+
+            <!-- Home -->
+            <class name="com.qa.tests.HomePageTest">
+                <methods>
+                    <include name="validateHomePage"/>
+                </methods>
+            </class>
+
+            <!-- Test Generator -->
+            <class name="com.qa.tests.TestGeneratorTest">
+                <methods>
+                    <include name="createRuleUsingDynamicTemplate"/>
+                    <include name="createRuleUsingImportTemplate"/>
+                    <include name="createWorkflowUsingDefaultDynamicTemplate"/>
+                    <include name="existingWorkflowUsingDefaultDynamicTemplate"/>
+                </methods>
+            </class>
+
+            <!-- Template -->
+            <class name="com.qa.tests.TemplatePageTest">
+                <methods>
+                    <include name="createTemplate"/>
+                    <include name="updateTemplate"/>
+                    <include name="deleteTemplateFromDetailsPage"/>
+                    <include name="deleteTemplateFromListingPage"/>
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
 
 </suite>

@@ -1,8 +1,6 @@
 package com.qa.extentreportlistener;
 
 import com.aventstack.extentreports.*;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.qa.base.Base;
@@ -10,11 +8,13 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 
 import java.io.File;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.Date;
 
 public class ExtentManager {
@@ -33,8 +33,7 @@ public class ExtentManager {
 
         if (extent == null) {
 
-            String reportPath = Paths.get("").toAbsolutePath()
-                    + "/reports/" + buildId + "/ExtentReport-" + System.currentTimeMillis() + ".html";
+            String reportPath = STR."\{Paths.get("").toAbsolutePath()}/reports/\{buildId}/TestGenerator Test Execution-Suite-\{System.currentTimeMillis()}.html";
 
             File reportFile = new File(reportPath);
             reportFile.getParentFile().mkdirs();
@@ -54,11 +53,10 @@ public class ExtentManager {
     }
 
     // ===================== START TEST =====================
-    public static ExtentTest startTest(String testName) {
+    public static void startTest(String testName) {
         ExtentTest extentTest = getExtentReports().createTest(testName);
         test.set(extentTest);
-        System.out.println("▶ Starting Test: " + testName);
-        return extentTest;
+        System.out.println(STR."▶ Starting Test: \{testName}");
     }
 
     // ===================== FLUSH =====================
@@ -69,50 +67,51 @@ public class ExtentManager {
     }
 
     // ===================== SCREENSHOT =====================
-	public static String captureScreenshot(String name) {
-		try {
-			// Sanitize name to remove invalid file characters
-			String safeName = name.replaceAll("[\\\\/:*?\"<>|]", "_");
+    public static String captureScreenshot(String name) {
+        try {
+            // Sanitize name
+            String safeName = name.replaceAll("[\\\\/:*?\"<>|]", "_");
 
-			// Timestamp for uniqueness
-			String timestamp = new SimpleDateFormat("HH.mm.ss-dd-MM-yyyy").format(new Date());
+            // Timestamp
+            String timestamp = new SimpleDateFormat("HH.mm.ss-dd-MM-yyyy").format(new Date());
 
-			// Take screenshot as BASE64
-			TakesScreenshot ts = (TakesScreenshot) Base.driver;
-			String base64 = ts.getScreenshotAs(OutputType.BASE64);
+            TakesScreenshot ts = (TakesScreenshot) Base.driver;
 
-			// Take screenshot as FILE
-			File src = ts.getScreenshotAs(OutputType.FILE);
+            // ✅ Take screenshot ONLY ONCE
+            File src = ts.getScreenshotAs(OutputType.FILE);
 
-			// Build folder path in an OS-independent way
-			Path folderPath = Paths.get("", "reports", buildId, "Screenshots", safeName);
-			File folder = folderPath.toFile();
-			if (!folder.exists())
-				folder.mkdirs();
+            // Build folder path
+            Path folderPath = Paths.get("reports", buildId, "Screenshots", safeName);
+            File folder = folderPath.toFile();
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
 
-			// Build file path
-			File dest = folderPath.resolve(safeName + "-" + timestamp + ".png").toFile();
+            // Build destination file
+            File destination = folderPath.resolve(STR."\{safeName}-\{timestamp}.png").toFile();
 
-			// Copy screenshot file
-			FileUtils.copyFile(src, dest);
+            // Copy file
+            FileUtils.copyFile(src, destination);
 
-			return base64;
+            // ✅ Convert file to Base64 (no second screenshot)
+            byte[] fileContent = Files.readAllBytes(destination.toPath());
 
-		} catch (Exception e) {
-			System.out.println("Screenshot capture failed: " + e.getMessage());
-			return null;
-		}
-	}
+            return Base64.getEncoder().encodeToString(fileContent);
 
+        } catch (Exception e) {
+            System.out.println(STR."Screenshot capture failed: \{e.getMessage()}");
+            return null;
+        }
+    }
 
     // ===================== LOG INFO =====================
 	public static void logInfo(String message) {
 
 		// Extent → ONLY message
-		 test.get().info("<span style='color:black'>" + message + "</span>");
+		 test.get().info(STR."<span style='color:black'>\{message}</span>");
 
 		// Console → full details
-		System.out.println("[" + consoleTimestamp() + "] INFO " + Thread.currentThread().getStackTrace()[2].getClassName() + " - " + message);
+		System.out.println(STR."[\{consoleTimestamp()}] INFO \{Thread.currentThread().getStackTrace()[2].getClassName()} - \{message}");
 	}
 
 
@@ -120,28 +119,23 @@ public class ExtentManager {
 
 	// ===================== LOG PASS =====================
 	public static void logPass(String message) {
-		String html = "<span style='" + "background-color: #a8e6a1;" + "color:#000;" + "padding:0.25em 0.6em;" 																																																																								
-				+ "border-radius:0.4em;" // rounded corners relative to font
-				+ "font-weight:500;" + "line-height:1.2;" // compact vertical height
-				+ "display:inline-block;" // box hugs text, no full-row width
-				+ "max-width:100%;" + "white-space:normal;" + "word-break:break-word;'>" + message + "</span>";
+        // rounded corners relative to font
+        // compact vertical height
+        // box hugs text, no full-row width
+        String html = STR."<span style='background-color: #a8e6a1;color:#000;padding:0.25em 0.6em;border-radius:0.4em;font-weight:500;line-height:1.2;display:inline-block;max-width:100%;white-space:normal;word-break:break-word;'>\{message}</span>";
 
 		test.get().pass(html);
 
-		System.out.println("[" + consoleTimestamp() + "] PASS "
-				+ Thread.currentThread().getStackTrace()[2].getClassName() + " - " + message);
+		System.out.println(STR."[\{consoleTimestamp()}] PASS \{Thread.currentThread().getStackTrace()[2].getClassName()} - \{message}");
 	}
 
 	// ===================== LOG FAIL =====================
 	public static void logFail(String message) {
-		String html = "<span style='" + "background-color:#dc3545;" + "color:#000;" + "padding:0.25em 0.6em;"
-				+ "border-radius:0.4em;" + "font-weight:500;" + "line-height:1.2;" + "display:inline-block;"
-				+ "max-width:100%;" + "white-space:normal;" + "word-break:break-word;'>" + message + "</span>";
+		String html = STR."<span style='background-color:#dc3545;color:#000;padding:0.25em 0.6em;border-radius:0.4em;font-weight:500;line-height:1.2;display:inline-block;max-width:100%;white-space:normal;word-break:break-word;'>\{message}</span>";
 
 		test.get().fail(html);
 
-		System.out.println("[" + consoleTimestamp() + "] FAIL "
-				+ Thread.currentThread().getStackTrace()[2].getClassName() + " - " + message);
+		System.out.println(STR."[\{consoleTimestamp()}] FAIL \{Thread.currentThread().getStackTrace()[2].getClassName()} - \{message}");
 
 		String screenshot = captureScreenshot(test.get().getModel().getName());
 		if (screenshot != null) {
@@ -155,10 +149,10 @@ public class ExtentManager {
 		String className = Thread.currentThread().getStackTrace()[2].getClassName();
 
 		// Extent → message only (standard size)
-		test.get().skip("<span style='color:gray; font-weight:normal;'>" + message + "</span>");
+		test.get().skip(STR."<span style='color:gray; font-weight:normal;'>\{message}</span>");
 
 		// Console → timestamp + status + class
-		System.out.println("[" + consoleTimestamp() + "] SKIP  " + className + " - " + message);
+		System.out.println(STR."[\{consoleTimestamp()}] SKIP  \{className} - \{message}");
 	}
 
 	// ===================== LOG UI ERROR =====================
@@ -167,10 +161,10 @@ public class ExtentManager {
 		String className = Thread.currentThread().getStackTrace()[2].getClassName();
 
 		// Extent → message only (standard size)
-		test.get().warning("<span style='color:orange; font-weight:normal;'>" + message + "</span>");
+		test.get().warning(STR."<span style='color:orange; font-weight:normal;'>\{message}</span>");
 
 		// Console → timestamp + status + class
-		System.out.println("[" + consoleTimestamp() + "] ERROR " + className + " - " + message);
+		System.out.println(STR."[\{consoleTimestamp()}] ERROR \{className} - \{message}");
 	}
 
 }

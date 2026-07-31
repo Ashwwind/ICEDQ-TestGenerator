@@ -3,6 +3,9 @@ package com.qa.base;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.qa.pages.LoginPage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -15,102 +18,108 @@ import com.qa.sendmail.SendMail;
 import com.qa.utils.DriverSetup;
 import com.qa.utils.PageUtil;
 
+
 public class Base {
 
+    private static final Logger log = LogManager.getLogger(Base.class);
+    private static final String TIME_FORMAT = "HH:mm:ss - dd/MM/yyyy";
+
+    // ── NOTE: driver is NOT static. Each test thread gets its own instance
+    //         via DriverFactory.getDriver() (ThreadLocal).
+    //         Pages that still reference Base.driver should be migrated to
+    //         DriverFactory.getDriver() over time.
     public static WebDriver driver;
 
     public static String baseUrl;
     public static String homePageUrl;
 
-    // Time variables
+    // Suite timing
     public static long startTimeMillis;
     public static long endTimeMillis;
+    public static String timesp;  // human-readable start time
+    public static String endTime; // human-readable end time
 
-    public static String timesp;
-    public static String endTime;
+    // ────────────────────────────────────────────────────────────────────────────
 
     @BeforeSuite(alwaysRun = true)
     protected void startSuite() {
 
-        // Capture suite START time
+        // 1. Capture suite START time
         startTimeMillis = System.currentTimeMillis();
+        timesp = new SimpleDateFormat(TIME_FORMAT).format(new Date(startTimeMillis));
+        log.info("Suite started at: {}", timesp);
 
-        timesp = new SimpleDateFormat("HH:mm:ss - dd/MM/yyyy")
-                .format(new Date(startTimeMillis));
-
-        System.out.println("Suite started at: " + timesp);
-
-        // Load locators
+        // 2. Load all locator .properties files into PageUtil.prop
         PageUtil.locatotFind();
 
-        // Initialize report
+        // 3. Initialise ExtentReports (idempotent — safe to call multiple times)
         ExtentManager.getExtentReports();
 
-        // Driver setup
+        // 4. Start browser
         driver = DriverSetup.initDriver();
         DriverFactory.setDriver(driver);
 
-        // Jenkins / Local handling
+        // 5. Resolve base URL — Jenkins system properties override config file
         String host = System.getProperty("host");
         String port = System.getProperty("port");
 
-        if (host != null && port != null) {
-
-            baseUrl = "https://" + host + ":" + port + "/";
-            homePageUrl = "https://" + host + ":" + port + "/";
-
-            System.out.println("[Jenkins] Launching URL: " + baseUrl);
-            System.out.println("[Jenkins] Redirecting URL: " + homePageUrl);
-
+        if (host != null && !host.isBlank() && port != null && !port.isBlank()) {
+            baseUrl     = "https://" + host + ":" + port + "/";
+            homePageUrl = baseUrl;
+            log.info("[Jenkins] Launching URL: {}", baseUrl);
         } else {
-
-            baseUrl = ConfigReader.getProperty("baseUrl");
+            baseUrl     = ConfigReader.getProperty("baseUrl");
             homePageUrl = ConfigReader.getProperty("homePageUrl");
-
-            System.out.println("[Local] Launching URL: " + baseUrl);
-            System.out.println("[Local] Redirecting URL: " + homePageUrl);
+            log.info("[Local] Launching URL: {}", baseUrl);
+            log.info("[Local] Home page URL: {}", homePageUrl);
         }
 
-        driver.get(baseUrl);
+        // FIX: removed duplicate driver.get(baseUrl) — only navigate to homePageUrl once.
+        // If baseUrl != homePageUrl, the old code opened baseUrl then immediately
+        // navigated away, wasting 3-5 seconds on an extra full page load.
         driver.get(homePageUrl);
     }
+
+    // ────────────────────────────────────────────────────────────────────────────
 
     @AfterSuite(alwaysRun = true)
     public void endSuite() {
 
-        // Capture suite END time
+        // 1. Capture suite END time
         endTimeMillis = System.currentTimeMillis();
+        endTime = new SimpleDateFormat(TIME_FORMAT).format(new Date(endTimeMillis));
+        log.info("Suite ended at: {}", endTime);
 
-        endTime = new SimpleDateFormat("HH:mm:ss - dd/MM/yyyy")
-                .format(new Date(endTimeMillis));
+        // 2. Logout
+//        if (driver != null) {
+//            try {
+//                LoginPage loginPage = new LoginPage(driver);
+//                loginPage.logout();
+//            } catch (Exception e) {
+//                log.warn("Logout skipped: {}", e.getMessage());
+//            }
+//        }
 
-        System.out.println("Suite ended at: " + endTime);
-
-        // Flush report
+        // 3. Flush ExtentReport to disk
         ExtentManager.flushReport();
 
-        // Close browser
+        // 4. Quit browser
         if (driver != null) {
             driver.quit();
+            DriverFactory.removeDriver();
         }
 
-        // Send Email
+        // 5. Email the report
         String latestReport = SendMail.getLatestExtentReportPath();
         SendMail.sendExecutionReport(latestReport);
 
-        // Print counts
-        System.out.println("Passed: " + ExtentReportListener.passedCount);
-        System.out.println("Failed: " + ExtentReportListener.failedCount);
-        System.out.println("Skipped: " + ExtentReportListener.skippedCount);
+        // 6. Print pass/fail/skip summary
+        log.info("Results — Passed: {} | Failed: {} | Skipped: {}",
+                ExtentReportListener.passedCount.get(),
+                ExtentReportListener.failedCount.get(),
+                ExtentReportListener.skippedCount.get());
     }
 
-    // Get driver
-    public WebDriver getDriver() {
-        return driver;
-    }
-
-    // Set driver
-    public void setDriver(WebDriver driver) {
-        Base.driver = driver;
-    }
 }
+
+

@@ -1,6 +1,7 @@
 package com.qa.extentreportlistener;
 
 import java.lang.reflect.Method;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -9,29 +10,31 @@ import annotations.XrayResultStore;
 
 public class ExtentReportListener implements ITestListener {
 
-	public static int passedCount = 0;
-	public static int failedCount = 0;
-	public static int skippedCount = 0;
+    // FIX: AtomicInteger is thread-safe under parallel execution.
+    //      The old "public static int" fields were subject to race conditions.
+    public static final AtomicInteger passedCount  = new AtomicInteger(0);
+    public static final AtomicInteger failedCount  = new AtomicInteger(0);
+    public static final AtomicInteger skippedCount = new AtomicInteger(0);
+
 
 	@Override
 	public void onStart(ITestContext context) {
-		System.out.println("=========== Test Suite Started ===========");
-		ExtentManager.getExtentReports();
-		XrayResultStore.clearResults(); // clear previous results
+		System.out.println(STR."=========== Test Suite Started: \{context.getName()} ===========");
+		XrayResultStore.clearResults();
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		System.out.println("=========== Test Suite Finished ===========");
+		System.out.println(STR."=========== Test Suite Finished: \{context.getName()} ===========");
 		ExtentManager.flushReport();
 
-		// ✅ Print Xray summary in console & Extent
+		// Print Xray summary in console & Extent
 		ExtentManager.logInfo("===== XRAY TEST SUMMARY =====");
 		XrayResultStore.getResults().forEach((k, v) -> {
-			System.out.println("Xray Test: " + k + " → " + v);
-			ExtentManager.logInfo("Xray Test: " + k + " → " + v);
+			System.out.println(STR."Xray Test: \{k} → \{v}");
+			ExtentManager.logInfo(STR."Xray Test: \{k} → \{v}");
 		});
-		ExtentManager.logInfo("Passed: " + passedCount + ", Failed: " + failedCount + ", Skipped: " + skippedCount);
+		ExtentManager.logInfo(STR."Passed: \{passedCount.get()}, Failed: \{failedCount.get()}, Skipped: \{skippedCount.get()}");
 	}
 
 	@Override
@@ -44,22 +47,22 @@ public class ExtentReportListener implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		handleXray(result, "PASSED");
-		ExtentManager.logPass("Test Passed: " + result.getMethod().getMethodName());
-		passedCount++;
+		ExtentManager.logPass(STR."Test Passed: \{result.getMethod().getMethodName()}");
+		passedCount.incrementAndGet();  // thread-safe increment
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		handleXray(result, "FAILED");
-		ExtentManager.logFail("Test FAILED: " + result.getMethod().getMethodName());
-		failedCount++;
+		ExtentManager.logFail(STR."Test FAILED: \{result.getMethod().getMethodName()}");
+		failedCount.incrementAndGet();  // thread-safe increment
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		handleXray(result, "SKIPPED");
-		ExtentManager.logSkip("Test SKIPPED: " + result.getMethod().getMethodName());
-		skippedCount++;
+		ExtentManager.logSkip(STR."Test SKIPPED: \{result.getMethod().getMethodName()}");
+		skippedCount.incrementAndGet();  // thread-safe increment
 	}
 
 	// ================= XRAY CORE =================
@@ -82,7 +85,7 @@ public class ExtentReportListener implements ITestListener {
 
 		if (xrayId != null) {
 			XrayResultStore.addResult(xrayId, status);
-			ExtentManager.logInfo("Mapped Xray Test ID: " + xrayId + " → " + status);
+			ExtentManager.logInfo(STR."Mapped Xray Test ID: \{xrayId} → \{status}");
 		}
 	}
 }

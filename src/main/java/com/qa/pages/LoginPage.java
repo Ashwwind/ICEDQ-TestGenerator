@@ -10,11 +10,15 @@ public class LoginPage extends PageUtil {
 	
 	//  Login Page  ////
 
-	private WebDriver driver;
+	private final WebDriver driver;
 
-	By usernameField = PageUtil.getElementLocator(prop.getProperty("login.username"));
-	By passwordField = PageUtil.getElementLocator(prop.getProperty("login.password"));
-	By loginButton = PageUtil.getElementLocator(prop.getProperty("login.submit"));
+	By usernameField = getElementLocator(prop.getProperty("login.username"));
+	By passwordField = getElementLocator(prop.getProperty("login.password"));
+	By loginButton = getElementLocator(prop.getProperty("login.submit"));
+    By profileMenuItemButton = getElementLocator(prop.getProperty("logout.profileMenuItem"));
+    By logOutButton = getElementLocator(prop.getProperty("logout.button"));
+
+    By loader = getElementLocator(prop.getProperty("loaderIsDisplayed"));
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -42,7 +46,7 @@ public class LoginPage extends PageUtil {
 	}
 
 	public void loginPageValidation() {
-		driver.get("baseUrl");
+		driver.get(com.qa.base.Base.baseUrl);
 
 		// URL validation
 		verifyUrlOfPage();
@@ -69,11 +73,12 @@ public class LoginPage extends PageUtil {
 		String expectedUrlPart = "icedq";
 		String currentUrl = driver.getCurrentUrl();
 
-		if (currentUrl.contains(expectedUrlPart)) {
-			ExtentManager.logPass("Page URL is correct: " + currentUrl);
+        assert currentUrl != null;
+        if (currentUrl.contains(expectedUrlPart)) {
+			ExtentManager.logPass(STR."Page URL is correct: \{currentUrl}");
 		} else {
 			ExtentManager.logFail(
-					"Page URL is incorrect. Expected to contain: " + expectedUrlPart + ", but found: " + currentUrl);
+                    STR."Page URL is incorrect. Expected to contain: \{expectedUrlPart}, but found: \{currentUrl}");
 		}
 	}
 
@@ -83,12 +88,13 @@ public class LoginPage extends PageUtil {
 		String actualTitle = driver.getTitle();
 
 		// check point
-		if (actualTitle.equals(expectedTitle)) {
+        assert actualTitle != null;
+        if (actualTitle.equals(expectedTitle)) {
 			System.out.println("The getting page title is correct.");
-			ExtentManager.logInfo("The getting page title is correct: " + actualTitle);
+			ExtentManager.logInfo(STR."The getting page title is correct: \{actualTitle}");
 		} else {
-			System.out.println("The getting page title is incorrect. Error: " + actualTitle);
-			ExtentManager.logFail("The getting page title is incorrect. Actual title: " + actualTitle);
+			System.out.println(STR."The getting page title is incorrect. Error: \{actualTitle}");
+			ExtentManager.logFail(STR."The getting page title is incorrect. Actual title: \{actualTitle}");
 		}
 	}
 
@@ -153,4 +159,15 @@ public class LoginPage extends PageUtil {
 		}
 	}
 
+    // Logout
+    public void logout()
+    {
+        isInvisibleLoader(driver, loader);
+
+        // Click on the profile menuItem
+        clickOnElement(driver, profileMenuItemButton,"Profile menuItem", 2);
+
+        // Click on the logout button
+        clickOnElement(driver, logOutButton,"logout button", 2);
+    }
 }
