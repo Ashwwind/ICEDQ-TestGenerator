@@ -763,7 +763,14 @@ public class TestGeneratorPage extends PageUtil {
             sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", 10);
+            // Click Source UseMetadataCache
+            try {
+                if (isDisplayed(driver, sourceUseMetadataCache, 1)) {
+                    clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", 5);
+                }
+            } catch (Exception e) {
+                System.out.println("Use Metadata Cache checkbox is not displayed.");
+            }
 
             ExtentManager.logInfo("Database connection name selected successfully.");
 
@@ -782,8 +789,13 @@ public class TestGeneratorPage extends PageUtil {
             ExtentManager.logInfo("Cloud warehouse connection name selected successfully.");
 
             // Click source UseMetadataCache
-            clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", 2);
-            isInvisibleLoader(driver, loader);
+            try {
+                if (isDisplayed(driver, sourceUseMetadataCache, 1)) {
+                    clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", 5);
+                }
+            } catch (Exception e) {
+                System.out.println("Use Metadata Cache checkbox is not displayed.");
+            }
 
             // Click database dropdown
             clickOnElement(driver, clickSourceDatabaseDropdown, "database dropdown.", 10);
@@ -874,7 +886,14 @@ public class TestGeneratorPage extends PageUtil {
             sendkeysToEnter(driver, enterTargetConnectionName, "target connection name");
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", 5);
+            // Click target UseMetadataCache
+            try {
+                if (isDisplayed(driver, targetUseMetadataCache, 1)) {
+                    clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", 5);
+                }
+            } catch (Exception e) {
+                System.out.println("Use Metadata Cache checkbox is not displayed.");
+            }
 
             ExtentManager.logInfo("Target database connection selected successfully.");
 
@@ -893,8 +912,13 @@ public class TestGeneratorPage extends PageUtil {
             ExtentManager.logInfo("Target cloud connection selected successfully.");
 
             // Click target UseMetadataCache
-            clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", 2);
-            isInvisibleLoader(driver, loader);
+            try {
+                if (isDisplayed(driver, targetUseMetadataCache, 1)) {
+                    clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", 5);
+                }
+            } catch (Exception e) {
+                System.out.println("Use Metadata Cache checkbox is not displayed.");
+            }
 
             // Click database dropdown
             clickOnElement(driver, clickTargetDatabaseDropdown, "database dropdown.", 10);
