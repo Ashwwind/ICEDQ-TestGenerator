@@ -7,7 +7,7 @@ import com.qa.extentreportlistener.ExtentManager;
 import com.qa.pages.TestGeneratorPage;
 import com.qa.utils.ExcelReader;
 
-/** Listener is declared in testng.xml — no @Listeners annotation needed here. */
+/** Listener is declared in Wizard.xml — no @Listeners annotation needed here. */
 public class TestGeneratorTest extends Base {
 
 	@DataProvider(name = "ruleDataForDynamicTemplate")

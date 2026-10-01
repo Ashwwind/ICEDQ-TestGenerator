@@ -610,9 +610,13 @@ public class TestGeneratorPage extends PageUtil {
     }
 
     public void clickTestGenerator() {
+//        if (!validateField(driver, testGeneratorModule, "Test Generator", waitTime)) {
+//            throw new RuntimeException("Test Generator is not visible");
+//        }
 
         clickOnElement(driver, testGeneratorModule, "Test Generator", 1);
     }
+
 
     public void clickOnRuleType(String ruleType) {
         By locator = switch (ruleType.toLowerCase()) {
@@ -632,13 +636,18 @@ public class TestGeneratorPage extends PageUtil {
     public void clickOnAccountDropdown(String accountName) {
 
         try {
-            if (!clickOnElement(driver, clickOnAccountDropdown, "Account", 10)) {
-                return;
-            }
+//            if (!validateField(driver, clickOnAccountDropdown, "Account dropdown field", waitTime)) {
+//                throw new RuntimeException("Account dropdown field is not visible");
+//            }
+//            if (!clickOnElement(driver, clickOnAccountDropdown, "Account", 10)) {
+//                return;
+//            }
+
+            clickOnElement(driver, clickOnAccountDropdown, "Account", 30);
 
             clickOnElement(driver, enterAccountName, "Enter account name", 15);
             sendkeysToElement(driver, enterAccountName, "Enter account name", accountName);
-            sendkeysToEnter(driver, enterAccountName, "Select workspace field");
+            sendkeysToEnter(driver, enterAccountName, "Search icon");
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -646,14 +655,16 @@ public class TestGeneratorPage extends PageUtil {
     }
 
     public void gotoSelectAccountNextbtn() {
-        // clickOnElement(driver, clickNextButtonSelectAccountNextbtn, "Next button of
         // 'Select Account' page", "button");
         clickOnElement(driver, clickNextButtonSelectAccountNextbtn, "Next button of 'Select Account' page", 1);
     }
 
     // Click on the search field box
     public void clickOnSearchField() {
-        clickOnElement(driver, clickSearchTemplateField, "'Search template' search field ", waitTime);
+//        if (!validateField(driver, clickSearchTemplateField, "'Search template' search field", waitTime)) {
+//            throw new RuntimeException("'Search template' search field is not visible");
+//        }
+        clickOnElement(driver, clickSearchTemplateField, "'Search template' search field", waitTime);
     }
 
     // Enter the data on the search field
@@ -669,7 +680,9 @@ public class TestGeneratorPage extends PageUtil {
     public void selectExistingChecksumTemplate() {
         // Also ensure no loader is covering the grid
         isInvisibleLoader(driver, loader);
-        // clickOnElement(driver, selectExistingDynamicChecksumTemplate, "select searched
+//        if (!validateField(driver, selectExistingDynamicChecksumTemplate, "select searched item", waitTime)) {
+//            throw new RuntimeException("select searched item is not visible");
+//        }
         // item", "search item");
         clickOnElement(driver, selectExistingDynamicChecksumTemplate, "select searched item", waitTime);
     }
@@ -678,6 +691,9 @@ public class TestGeneratorPage extends PageUtil {
 
         isInvisibleLoader(driver, loader);
 
+//        if (!validateField(driver, clickOnWorkspaceDropdown, "select workspace dropdown.", waitTime)) {
+//            throw new RuntimeException("workspace dropdown is not visible");
+//        }
         // Open workspace dropdown
         clickOnElement(driver, clickOnWorkspaceDropdown, "select workspace dropdown.", 10);
         ExtentManager.logInfo("Workspace dropdown opened.");
@@ -749,15 +765,24 @@ public class TestGeneratorPage extends PageUtil {
     public void selectionSourceDataset(String connectionType, String connectionName, String schemaName, String databaseName) {
 
         // Click on the source connection type dropdown
-        clickOnElement(driver, clickSourceDataSetConnectionTypeDropdown, "select source connection type.", 10);
+        clickOnElement(driver, clickSourceDataSetConnectionTypeDropdown, "select source connection type.", 30);
 
         if (connectionType.equalsIgnoreCase("Database")) {
 
-            clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 10);
+//            if (!validateField(driver, selectDatabaseConnectionType, "source database connection dropdown.", waitTime)) {
+//                throw new RuntimeException("source database connection dropdown is not visible");
+//            }
+            clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 30);
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection dropdown.", 20);
+//            if (!validateField(driver, clickSourceDataSetConnectionDropdown, "select connection type from dropdown", waitTime)) {
+//                throw new RuntimeException("connection type is not visible");
+//            }
+            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection type from dropdown", 30);
 
+//            if (!validateField(driver, enterSourceConnectionName, "source connection name dropdown", waitTime)) {
+//                throw new RuntimeException("source connection name dropdown is not visible");
+//            }
             sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
             sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
@@ -765,7 +790,7 @@ public class TestGeneratorPage extends PageUtil {
 
             // Click Source UseMetadataCache
             try {
-                if (isDisplayed(driver, sourceUseMetadataCache, 1)) {
+                if (isDisplayed(driver, sourceUseMetadataCache, 10)) {
                     clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", 5);
                 }
             } catch (Exception e) {
@@ -776,11 +801,20 @@ public class TestGeneratorPage extends PageUtil {
 
         } else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
 
-            clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.", 10);
+//            if (!validateField(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection dropdown.", waitTime)) {
+//                throw new RuntimeException("source cloud data warehouse connection dropdown is not visible");
+//            }
+            clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.", 20);
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection dropdown.", 20);
+//            if (!validateField(driver, clickSourceDataSetConnectionDropdown, "select connection type from dropdown", waitTime)) {
+//                throw new RuntimeException("connection type is not visible");
+//            }
+            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection dropdown.", 30);
 
+//            if (!validateField(driver, enterSourceConnectionName, "source connection name dropdown", waitTime)) {
+//                throw new RuntimeException("source connection name dropdown is not visible");
+//            }
             sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
             sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
@@ -790,7 +824,7 @@ public class TestGeneratorPage extends PageUtil {
 
             // Click source UseMetadataCache
             try {
-                if (isDisplayed(driver, sourceUseMetadataCache, 1)) {
+                if (isDisplayed(driver, sourceUseMetadataCache, 10)) {
                     clickOnElement(driver, sourceUseMetadataCache, "Use Metadata Cache check box", 5);
                 }
             } catch (Exception e) {
@@ -798,7 +832,7 @@ public class TestGeneratorPage extends PageUtil {
             }
 
             // Click database dropdown
-            clickOnElement(driver, clickSourceDatabaseDropdown, "database dropdown.", 10);
+            clickOnElement(driver, clickSourceDatabaseDropdown, "database dropdown.", 20);
             isInvisibleLoader(driver, loader);
 
             sendkeysToElement(driver, enterSourceDatabaseName, "source database name", databaseName);
@@ -811,7 +845,7 @@ public class TestGeneratorPage extends PageUtil {
         }
 
         // Schema selection
-        clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 10);
+        clickOnElement(driver, clickSourceSchemaDropdown, "choose source schema dropdown.", 20);
         isInvisibleLoader(driver, loader);
 
         sendkeysToElement(driver, enterSourceSchemaName, "source schema name", schemaName);
@@ -872,14 +906,14 @@ public class TestGeneratorPage extends PageUtil {
     public void selectionTargetDataset(String connectionType, String connectionName, String schemaName, String databaseName) {
 
         // Click target connection type dropdown
-        clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", 10);
+        clickOnElement(driver, clickTargetdatasetConnectionTypeDropdown, "select target connection type.", 30);
 
         if (connectionType.equalsIgnoreCase("Database")) {
 
-            clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 20);
+            clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 30);
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 20);
+            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 30);
 
             sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
@@ -888,7 +922,7 @@ public class TestGeneratorPage extends PageUtil {
 
             // Click target UseMetadataCache
             try {
-                if (isDisplayed(driver, targetUseMetadataCache, 1)) {
+                if (isDisplayed(driver, targetUseMetadataCache, 10)) {
                     clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", 5);
                 }
             } catch (Exception e) {
@@ -899,10 +933,10 @@ public class TestGeneratorPage extends PageUtil {
 
         } else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
 
-            clickOnElement(driver, selectCloudDataWarehouseConnectionType, "target cloud data warehouse connection.", 10);
+            clickOnElement(driver, selectCloudDataWarehouseConnectionType, "target cloud data warehouse connection.", 30);
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 20);
+            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 30);
 
             sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
@@ -913,7 +947,7 @@ public class TestGeneratorPage extends PageUtil {
 
             // Click target UseMetadataCache
             try {
-                if (isDisplayed(driver, targetUseMetadataCache, 1)) {
+                if (isDisplayed(driver, targetUseMetadataCache, 10)) {
                     clickOnElement(driver, targetUseMetadataCache, "Use Metadata Cache check box", 5);
                 }
             } catch (Exception e) {

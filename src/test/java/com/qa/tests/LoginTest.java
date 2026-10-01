@@ -8,7 +8,7 @@ import com.qa.pages.LoginPage;
 
 /**
  * Login test scenarios.
- * Listener is declared in testng.xml — no @Listeners annotation needed here.
+ * Listener is declared in Wizard.xml — no @Listeners annotation needed here.
  */
 public class LoginTest extends Base {
 

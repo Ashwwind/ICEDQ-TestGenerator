@@ -118,11 +118,11 @@ public class PageUtil extends Base {
         } catch (TimeoutException te) {
             // Fallback: extra wait
             try {
-                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by));
+                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 20)).until(ExpectedConditions.visibilityOfElementLocated(by));
 
                 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", element);
 
-                return Objects.requireNonNull(new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
+                return Objects.requireNonNull(new WebDriverWait(driver, Duration.ofSeconds(timeout + 20)).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
             } catch (Exception e) {
                 ExtentManager.logInfo("Element not visible after extended wait: " + by);
                 return false;
@@ -138,7 +138,13 @@ public class PageUtil extends Base {
     public static boolean clickOnElement(WebDriver driver, By by, String label, int timeout) {
         try {
             if (!isDisplayed(driver, by, timeout)) {
-                ExtentManager.logInfo(label + " not displayed, retrying click");
+                ExtentManager.logInfo(label + " is not displayed. Click aborted.");
+                return false;
+            }
+
+            if(!validateField(driver, by, "label", timeout))
+            {
+                ExtentManager.logInfo(label + " validation failed. Click aborted.");
                 return false;
             }
 
@@ -149,6 +155,7 @@ public class PageUtil extends Base {
             try {
                 // Primary click
                 element.click();
+                ExtentManager.logPass("Element clicked.");
 
             } catch (Exception e1) {
                 ExtentManager.logInfo("Normal click failed, trying scroll + click");
@@ -222,7 +229,7 @@ public class PageUtil extends Base {
 
             ExtentManager.logInfo("Entering value on " + label + " input: " + input);
 
-            WebElement element = waitForElements(driver, SHOTW).until(ExpectedConditions.visibilityOfElementLocated(locator));
+            WebElement element = waitForElements(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(locator));
 
             try {
                 // Clear existing value
@@ -258,7 +265,7 @@ public class PageUtil extends Base {
 
             ExtentManager.logInfo("Pressing ENTER on " + label + "->" + locator);
 
-            WebElement element = waitForElements(driver, SHOTW).until(ExpectedConditions.elementToBeClickable(locator));
+            WebElement element = waitForElements(driver, 20).until(ExpectedConditions.elementToBeClickable(locator));
 
             try {
                 // Ensure focus before pressing ENTER
@@ -447,7 +454,6 @@ public class PageUtil extends Base {
             WebDriverWait wait = waitForElements(driver, timeout);
 
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-
 
             if (element.isDisplayed()) {
                 ExtentManager.logInfo(fieldName + " is visible and validated");

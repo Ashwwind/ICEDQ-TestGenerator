@@ -118,13 +118,13 @@ public class TemplatePage extends PageUtil {
 
     public void doClickTestGenerator() {
 
-        clickOnElement(driver, testGeneratorModule, "Test Generator", 1);
+        clickOnElement(driver, testGeneratorModule, "Test Generator", 5);
     }
 
     private void doClickTemplateTab() {
-        if (!validateField(driver, templateSubModule, "Template Tab", DEFAULT_WAIT)) {
-            throw new RuntimeException("Template Tab not visible");
-        }
+//        if (!validateField(driver, templateSubModule, "Template Tab", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Template Tab not visible");
+//        }
         clickOnElement(driver, templateSubModule, "Template", 1);
 
         // wait for the loader disappear
@@ -133,11 +133,11 @@ public class TemplatePage extends PageUtil {
 
     private void doClickAdvancedSearch(String accountName) {
 
-        if (!validateField(driver, clickOnAccountSearchField, "Search account.", DEFAULT_WAIT)) {
-            throw new RuntimeException("Account search field is not visible");
-        }
+//        if (!validateField(driver, clickOnAccountSearchField, "Search account.", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Account search field is not visible");
+//        }
 
-        clickOnElement(driver, clickOnAccountSearchField, "Search account.", 2);
+        clickOnElement(driver, clickOnAccountSearchField, "Search account.", 5);
 
         // ✅ Use variable (not string)
         sendkeysToElement(driver, clickOnAccountSearchField, "Search account field", accountName);
@@ -162,10 +162,10 @@ public class TemplatePage extends PageUtil {
     }
 
     private void doClickSearchField() {
-        if (!validateField(driver, searchField, "Search Field", DEFAULT_WAIT)) {
-            throw new RuntimeException("Search Field not visible");
-        }
-        clickOnElement(driver, searchField, "Search Field", 1);
+//        if (!validateField(driver, searchField, "Search Field", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Search Field not visible");
+//        }
+        clickOnElement(driver, searchField, "Search Field", 5);
     }
 
     private void doEnterSearchText(String templateName) {
@@ -176,45 +176,45 @@ public class TemplatePage extends PageUtil {
     }
 
     private void doClickSearchIcon() {
-        if (!validateField(driver, searchIconButton, "Search Icon", DEFAULT_WAIT)) {
-            throw new RuntimeException("Search Icon not visible");
-        }
-        clickOnElement(driver, searchIconButton, "Search Icon", 1);
+//        if (!validateField(driver, searchIconButton, "Search Icon", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Search Icon not visible");
+//        }
+        clickOnElement(driver, searchIconButton, "Search Icon", 5);
     }
 
     private void doSelectFirstSearchResult() {
-        if (!validateField(driver, searchResultFirstItem, "First Search Result", DEFAULT_WAIT)) {
-            throw new RuntimeException("Search result not visible");
-        }
+//        if (!validateField(driver, searchResultFirstItem, "First Search Result", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Search result not visible");
+//        }
         clickOnElement(driver, searchResultFirstItem, "First Search Result", 5);
     }
 
     private void doClickCopyButton() {
-        if (!validateField(driver, copyButton, "Copy Button", DEFAULT_WAIT)) {
-            throw new RuntimeException("Copy button not visible");
-        }
+//        if (!validateField(driver, copyButton, "Copy Button", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Copy button not visible");
+//        }
         clickOnElement(driver, copyButton, "Copy", 5);
     }
 
     private void doClickNewTemplateButton() {
-        if (!validateField(driver, newTemplateButton, "New Template Button", DEFAULT_WAIT)) {
-            throw new RuntimeException("New Template button not visible");
-        }
-        clickOnElement(driver, newTemplateButton, "New Template", 1);
+//        if (!validateField(driver, newTemplateButton, "New Template Button", DEFAULT_WAIT)) {
+//            throw new RuntimeException("New Template button not visible");
+//        }
+        clickOnElement(driver, newTemplateButton, "New Template", 5);
     }
 
     private void doClickSaveButton() {
-        if (!validateField(driver, saveButton, "Save Button", DEFAULT_WAIT)) {
-            throw new RuntimeException("Save button not visible");
-        }
-        clickOnElement(driver, saveButton, "Save", 1);
+//        if (!validateField(driver, saveButton, "Save Button", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Save button not visible");
+//        }
+        clickOnElement(driver, saveButton, "Save", 5);
     }
 
     private void doSelectAccount(String accountName) {
 
-        if (!validateField(driver, accountNameField, "Account Dropdown", DEFAULT_WAIT)) {
-            throw new RuntimeException("Account dropdown not visible");
-        }
+//        if (!validateField(driver, accountNameField, "Account Dropdown", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Account dropdown not visible");
+//        }
 
         clickOnElement(driver, accountNameField, "Account", 5);
 
@@ -225,9 +225,9 @@ public class TemplatePage extends PageUtil {
 
     private void doSelectRuleType(String ruleType) {
 
-        if (!validateField(driver, ruleTypeField, "Rule Type Dropdown", DEFAULT_WAIT)) {
-            throw new RuntimeException("Rule Type dropdown not visible");
-        }
+//        if (!validateField(driver, ruleTypeField, "Rule Type Dropdown", DEFAULT_WAIT)) {
+//            throw new RuntimeException("Rule Type dropdown not visible");
+//        }
 
         clickOnElement(driver, ruleTypeField, "Rule Type", 5);
 

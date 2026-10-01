@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import com.qa.base.Base;
 import com.qa.pages.HomePage;
 
-/** Listener is declared in testng.xml — no @Listeners annotation needed here. */
+/** Listener is declared in Wizard.xml — no @Listeners annotation needed here. */
 public class HomePageTest extends Base {
 
     @Test
