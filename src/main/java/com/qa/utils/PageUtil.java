@@ -118,11 +118,11 @@ public class PageUtil extends Base {
         } catch (TimeoutException te) {
             // Fallback: extra wait
             try {
-                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 20)).until(ExpectedConditions.visibilityOfElementLocated(by));
+                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by));
 
                 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", element);
 
-                return Objects.requireNonNull(new WebDriverWait(driver, Duration.ofSeconds(timeout + 20)).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
+                return Objects.requireNonNull(new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
             } catch (Exception e) {
                 ExtentManager.logInfo("Element not visible after extended wait: " + by);
                 return false;
@@ -229,7 +229,7 @@ public class PageUtil extends Base {
 
             ExtentManager.logInfo("Entering value on " + label + " input: " + input);
 
-            WebElement element = waitForElements(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(locator));
+            WebElement element = waitForElements(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(locator));
 
             try {
                 // Clear existing value
@@ -265,7 +265,7 @@ public class PageUtil extends Base {
 
             ExtentManager.logInfo("Pressing ENTER on " + label + "->" + locator);
 
-            WebElement element = waitForElements(driver, 20).until(ExpectedConditions.elementToBeClickable(locator));
+            WebElement element = waitForElements(driver, 40).until(ExpectedConditions.elementToBeClickable(locator));
 
             try {
                 // Ensure focus before pressing ENTER

@@ -769,20 +769,14 @@ public class TestGeneratorPage extends PageUtil {
 
         if (connectionType.equalsIgnoreCase("Database")) {
 
-//            if (!validateField(driver, selectDatabaseConnectionType, "source database connection dropdown.", waitTime)) {
-//                throw new RuntimeException("source database connection dropdown is not visible");
-//            }
+
             clickOnElement(driver, selectDatabaseConnectionType, "source database connection.", 30);
+
             isInvisibleLoader(driver, loader);
 
-//            if (!validateField(driver, clickSourceDataSetConnectionDropdown, "select connection type from dropdown", waitTime)) {
-//                throw new RuntimeException("connection type is not visible");
-//            }
-            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection type from dropdown", 30);
+            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection type from dropdown", 50);
+            isInvisibleLoader(driver, loader);
 
-//            if (!validateField(driver, enterSourceConnectionName, "source connection name dropdown", waitTime)) {
-//                throw new RuntimeException("source connection name dropdown is not visible");
-//            }
             sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
             sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
@@ -801,20 +795,14 @@ public class TestGeneratorPage extends PageUtil {
 
         } else if (connectionType.equalsIgnoreCase("Cloud Data Warehouse")) {
 
-//            if (!validateField(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection dropdown.", waitTime)) {
-//                throw new RuntimeException("source cloud data warehouse connection dropdown is not visible");
-//            }
+
             clickOnElement(driver, selectCloudDataWarehouseConnectionType, "source cloud data warehouse connection.", 20);
             isInvisibleLoader(driver, loader);
 
-//            if (!validateField(driver, clickSourceDataSetConnectionDropdown, "select connection type from dropdown", waitTime)) {
-//                throw new RuntimeException("connection type is not visible");
-//            }
-            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection dropdown.", 30);
 
-//            if (!validateField(driver, enterSourceConnectionName, "source connection name dropdown", waitTime)) {
-//                throw new RuntimeException("source connection name dropdown is not visible");
-//            }
+            clickOnElement(driver, clickSourceDataSetConnectionDropdown, "select connection dropdown.", 50);
+            isInvisibleLoader(driver, loader);
+
             sendkeysToElement(driver, enterSourceConnectionName, "source connection name", connectionName);
 
             sendkeysToEnter(driver, enterSourceConnectionName, "source connection name");
@@ -913,7 +901,8 @@ public class TestGeneratorPage extends PageUtil {
             clickOnElement(driver, selectDatabaseConnectionType, "target database connection.", 30);
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 30);
+            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 50);
+            isInvisibleLoader(driver, loader);
 
             sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
@@ -936,7 +925,8 @@ public class TestGeneratorPage extends PageUtil {
             clickOnElement(driver, selectCloudDataWarehouseConnectionType, "target cloud data warehouse connection.", 30);
             isInvisibleLoader(driver, loader);
 
-            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 30);
+            clickOnElement(driver, clickTargetdatasetConnectionDropdown, "select target connection dropdown.", 50);
+            isInvisibleLoader(driver, loader);
 
             sendkeysToElement(driver, enterTargetConnectionName, "target connection name", connectionName);
 
