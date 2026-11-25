@@ -69,7 +69,7 @@ public class TemplatePage extends PageUtil {
 
 
     // ─── Constructor ─────────────────────────────────────────────────────────────
-    
+
     private final WebDriver driver;
 
     public TemplatePage(WebDriver driver) {
@@ -118,14 +118,12 @@ public class TemplatePage extends PageUtil {
 
     public void doClickTestGenerator() {
 
-        clickOnElement(driver, testGeneratorModule, "Test Generator", 5);
+        clickOnElement(driver, testGeneratorModule, "Test Generator", 5,true);
     }
 
     private void doClickTemplateTab() {
-//        if (!validateField(driver, templateSubModule, "Template Tab", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Template Tab not visible");
-//        }
-        clickOnElement(driver, templateSubModule, "Template", 1);
+
+        clickOnElement(driver, templateSubModule, "Template", 1,true);
 
         // wait for the loader disappear
         isInvisibleLoader(driver, loader);
@@ -133,15 +131,13 @@ public class TemplatePage extends PageUtil {
 
     private void doClickAdvancedSearch(String accountName) {
 
-//        if (!validateField(driver, clickOnAccountSearchField, "Search account.", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Account search field is not visible");
-//        }
-
-        clickOnElement(driver, clickOnAccountSearchField, "Search account.", 5);
+        clickOnElement(driver, clickOnAccountSearchField, "Search account.", 5,true);
 
         // ✅ Use variable (not string)
         sendkeysToElement(driver, clickOnAccountSearchField, "Search account field", accountName);
+        waitForSeconds(2);
         sendkeysToEnter(driver, clickOnAccountSearchField, "Search account field.");
+        waitForSeconds(2);
 
         // ✅ Get all list items
         List<WebElement> accounts = driver.findElements(accountFilterList);
@@ -162,89 +158,79 @@ public class TemplatePage extends PageUtil {
     }
 
     private void doClickSearchField() {
-//        if (!validateField(driver, searchField, "Search Field", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Search Field not visible");
-//        }
-        clickOnElement(driver, searchField, "Search Field", 5);
+
+        clickOnElement(driver, searchField, "Search Field", 5, true);
     }
 
     private void doEnterSearchText(String templateName) {
-        if (!validateField(driver, searchField, "Search Field", DEFAULT_WAIT)) {
+        if (!validateField(driver, searchField, "Search Field", DEFAULT_WAIT, true)) {
             throw new RuntimeException("Search Field not visible");
         }
         sendkeysToElement(driver, searchField, "Search Field", templateName);
+        waitForSeconds(2);
     }
 
     private void doClickSearchIcon() {
 //        if (!validateField(driver, searchIconButton, "Search Icon", DEFAULT_WAIT)) {
 //            throw new RuntimeException("Search Icon not visible");
 //        }
-        clickOnElement(driver, searchIconButton, "Search Icon", 5);
+        clickOnElement(driver, searchIconButton, "Search Icon", 5, true);
     }
 
     private void doSelectFirstSearchResult() {
-//        if (!validateField(driver, searchResultFirstItem, "First Search Result", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Search result not visible");
-//        }
-        clickOnElement(driver, searchResultFirstItem, "First Search Result", 5);
+
+        waitForSeconds(2);
+        clickOnElement(driver, searchResultFirstItem, "First Search Result", 5, true);
     }
 
     private void doClickCopyButton() {
-//        if (!validateField(driver, copyButton, "Copy Button", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Copy button not visible");
-//        }
-        clickOnElement(driver, copyButton, "Copy", 5);
+
+        clickOnElement(driver, copyButton, "Copy", 5, true);
     }
 
     private void doClickNewTemplateButton() {
-//        if (!validateField(driver, newTemplateButton, "New Template Button", DEFAULT_WAIT)) {
-//            throw new RuntimeException("New Template button not visible");
-//        }
-        clickOnElement(driver, newTemplateButton, "New Template", 5);
+
+        clickOnElement(driver, newTemplateButton, "New Template", 5, true);
     }
 
     private void doClickSaveButton() {
-//        if (!validateField(driver, saveButton, "Save Button", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Save button not visible");
-//        }
-        clickOnElement(driver, saveButton, "Save", 5);
+
+        clickOnElement(driver, saveButton, "Save", 5, true);
     }
 
     private void doSelectAccount(String accountName) {
 
-//        if (!validateField(driver, accountNameField, "Account Dropdown", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Account dropdown not visible");
-//        }
-
-        clickOnElement(driver, accountNameField, "Account", 5);
+        clickOnElement(driver, accountNameField, "Account", 5, true);
 
         waitForElements(driver, 100).until(ExpectedConditions.visibilityOfElementLocated(accountNameList));
 
+        waitForSeconds(2);
+
         selectFromDropdown(accountNameList, accountName);
+
+        waitForSeconds(2);
     }
 
     private void doSelectRuleType(String ruleType) {
 
-//        if (!validateField(driver, ruleTypeField, "Rule Type Dropdown", DEFAULT_WAIT)) {
-//            throw new RuntimeException("Rule Type dropdown not visible");
-//        }
-
-        clickOnElement(driver, ruleTypeField, "Rule Type", 5);
+        clickOnElement(driver, ruleTypeField, "Rule Type", 5, true);
 
         waitForElements(driver, 100).until(ExpectedConditions.visibilityOfElementLocated(ruleTypeList));
 
         selectFromDropdown(ruleTypeList, ruleType);
+
+        waitForSeconds(5);
     }
 
     private void doEnterName(String name) {
-        if (!validateField(driver, nameField, "Name Field", DEFAULT_WAIT)) {
+        if (!validateField(driver, nameField, "Name Field", DEFAULT_WAIT, true)) {
             throw new RuntimeException("Name field not visible");
         }
         clearAndType(nameField, "Name", name);
     }
 
     private void doEnterDescription(String description) {
-        if (!validateField(driver, descriptionField, "Description Field", DEFAULT_WAIT)) {
+        if (!validateField(driver, descriptionField, "Description Field", DEFAULT_WAIT,true)) {
             throw new RuntimeException("Description field not visible");
         }
         clearAndType(descriptionField, "Description", description);
@@ -363,6 +349,7 @@ public class TemplatePage extends PageUtil {
             ObjectMapper mapper = new ObjectMapper();
             Object parsed = mapper.readValue(rawJson, Object.class);
             copiedPrettyJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(parsed).replace("\r\n", "\n").trim();
+            waitForSeconds(5);
         } catch (Exception e) {
             throw new RuntimeException(STR."Failed to parse JSON from ACE editor: \{e.getMessage()}", e);
         }
@@ -408,16 +395,16 @@ public class TemplatePage extends PageUtil {
     // ─── Delete Step Groups ──────────────────────────────────────────────────────
 
     private void doDeleteFromListingPage() {
-        clickOnElement(driver, masterCheckbox, "Master Checkbox", 1);
-        clickOnElement(driver, moreButton, "More", 2);
-        clickOnElement(driver, moreDeleteButton, "Delete (More menu)", 2);
-        clickOnElement(driver, deleteConfirmationBox, "Confirm Delete", 5);
-        clickOnElement(driver, cancelButtonInLogPane, "Cancel Log Pane", 2);
+        clickOnElement(driver, masterCheckbox, "Master Checkbox", 1, true);
+        clickOnElement(driver, moreButton, "More", 2, true);
+        clickOnElement(driver, moreDeleteButton, "Delete (More menu)", 2,true);
+        clickOnElement(driver, deleteConfirmationBox, "Confirm Delete", 5, true);
+        clickOnElement(driver, cancelButtonInLogPane, "Cancel Log Pane", 2, true);
     }
 
     private void doDeleteFromDetailsPage() {
-        clickOnElement(driver, deleteButtonOnDetailsPage, "Delete (Details Page)", 5);
-        clickOnElement(driver, deleteConfirmationBox, "Confirm Delete", 5);
+        clickOnElement(driver, deleteButtonOnDetailsPage, "Delete (Details Page)", 5,true);
+        clickOnElement(driver, deleteConfirmationBox, "Confirm Delete", 5, true);
     }
 
     // ─── Public Flows ────────────────────────────────────────────────────────────

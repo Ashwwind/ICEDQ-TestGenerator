@@ -26,17 +26,17 @@ public class LoginPage extends PageUtil {
 	
 
 	public void enterUsername(String username) {
-		clickOnElement(driver, usernameField, "username or email field.", 10);
+		clickOnElement(driver, usernameField, "username or email field.", 10,true);
 		sendkeysToElement(driver, usernameField, "Username", username);
 	}
 
 	public void enterPassword(String password) {
-		clickOnElement(driver, passwordField, "password field.", 10);
+		clickOnElement(driver, passwordField, "password field.", 10,true);
 		sendkeysToElement(driver, passwordField, "password", password);
 	}
 
 	public void clickLogin() {
-		clickOnElement(driver, loginButton, "SingIn button.", 10);
+		clickOnElement(driver, loginButton, "SingIn button.", 10,true);
 	}
 
 	public void login(String username, String password) {
@@ -165,9 +165,9 @@ public class LoginPage extends PageUtil {
         isInvisibleLoader(driver, loader);
 
         // Click on the profile menuItem
-        clickOnElement(driver, profileMenuItemButton,"Profile menuItem", 2);
+        clickOnElement(driver, profileMenuItemButton,"Profile menuItem", 2,true);
 
         // Click on the logout button
-        clickOnElement(driver, logOutButton,"logout button", 2);
+        clickOnElement(driver, logOutButton,"logout button", 2,true);
     }
 }

@@ -101,59 +101,151 @@ public class PageUtil extends Base {
     }
 
     // Wait for the element to be visible.
-    public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
+//    public static boolean isDisplayed(WebDriver driver, By by, int timeout) {
+//        try {
+//
+//            // Wait for any loader to disappear (only once)
+//            isInvisibleLoader(driver, By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+//
+//            WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by));
+//
+//            // Scroll element into view
+//            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+//
+//            // Wait for element to be visible
+//            return Objects.requireNonNull(waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
+//
+//        } catch (TimeoutException te) {
+//            // Fallback: extra wait
+//            try {
+//                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by));
+//
+//                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+//
+//                return Objects.requireNonNull(new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
+//            } catch (Exception e) {
+//                ExtentManager.logInfo("Element not visible after extended wait: " + by);
+//                return false;
+//            }
+//
+//        } catch (Exception e) {
+//            ExtentManager.logInfo("Error while checking visibility of element: " + by + " ➝ " + e.getMessage());
+//            return false;
+//        }
+//    }
+
+    // Wait for the element to be visible
+    public static boolean isDisplayed(WebDriver driver, By by, int timeout, boolean waitForLoader) {
         try {
 
-            // Wait for any loader to disappear (only once)
-            isInvisibleLoader(driver, By.xpath("//div[@id=\"sp-container\"]//div[@class='e-spinner-pane e-spin-show']//div"));
+            // Wait for loader only if flag is true
+            if (waitForLoader) {
+                isInvisibleLoader(driver,
+                        By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div"));
+            }
 
             WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by));
 
             // Scroll element into view
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+            ((JavascriptExecutor) driver).executeScript(
+                    "arguments[0].scrollIntoView({block:'center'});", element);
 
-            // Wait for element to be visible
-            return Objects.requireNonNull(waitForElements(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
+            return waitForElements(driver, timeout)
+                    .until(ExpectedConditions.visibilityOfElementLocated(by))
+                    .isDisplayed();
 
         } catch (TimeoutException te) {
-            // Fallback: extra wait
             try {
-                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by));
+                WebElement element = new WebDriverWait(driver, Duration.ofSeconds(timeout + 10))
+                        .until(ExpectedConditions.visibilityOfElementLocated(by));
 
-                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+                ((JavascriptExecutor) driver).executeScript(
+                        "arguments[0].scrollIntoView({block:'center'});", element);
 
-                return Objects.requireNonNull(new WebDriverWait(driver, Duration.ofSeconds(timeout + 10)).until(ExpectedConditions.visibilityOfElementLocated(by))).isDisplayed();
+                return new WebDriverWait(driver, Duration.ofSeconds(timeout + 10))
+                        .until(ExpectedConditions.visibilityOfElementLocated(by))
+                        .isDisplayed();
+
             } catch (Exception e) {
                 ExtentManager.logInfo("Element not visible after extended wait: " + by);
                 return false;
             }
 
         } catch (Exception e) {
-            ExtentManager.logInfo("Error while checking visibility of element: " + by + " ➝ " + e.getMessage());
+            ExtentManager.logInfo("Error while checking visibility of element: "
+                    + by + " ➝ " + e.getMessage());
             return false;
         }
     }
 
+
     // Click on the web element
-    public static boolean clickOnElement(WebDriver driver, By by, String label, int timeout) {
+//    public static boolean clickOnElement(WebDriver driver, By by, String label, int timeout) {
+//        try {
+//            if (!isDisplayed(driver, by, 50)) {
+//                ExtentManager.logInfo(label + " is not displayed. Click aborted.");
+//                return false;
+//            }
+//
+//            if(!validateField(driver, by, "label", 50))
+//            {
+//                ExtentManager.logInfo(label + " validation failed. Click aborted.");
+//                return false;
+//            }
+//
+//            ExtentManager.logInfo("Clicking on " + label + " ➝ " + by);
+//
+//            WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by));
+//
+//            try {
+//                // Primary click
+//                element.click();
+//                ExtentManager.logPass("Element clicked.");
+//
+//            } catch (Exception e1) {
+//                ExtentManager.logInfo("Normal click failed, trying scroll + click");
+//
+//                try {
+//                    // Scroll into view and retry
+//                    JavascriptExecutor js = (JavascriptExecutor) driver;
+//                    js.executeScript("arguments[0].scrollIntoView(true);", element);
+//                    js.executeScript("arguments[0].click();", element);
+//
+//                } catch (Exception e2) {
+//                    ExtentManager.logInfo("Scroll click failed, trying JS click");
+//                    return false;
+//                }
+//            }
+//            ExtentManager.logPass("Clicked on " + label);
+//            return true;
+//
+//        } catch (Exception e) {
+//            ExtentManager.logFail("Failed to click on " + label + " ➝ " + e.getMessage());
+//            return false;
+//        }
+//    }
+
+    public static boolean clickOnElement(
+            WebDriver driver, By by, String label, int timeout, boolean waitForLoader) {
+
         try {
-            if (!isDisplayed(driver, by, timeout)) {
+            if (!isDisplayed(driver, by, 50, waitForLoader)) {
                 ExtentManager.logInfo(label + " is not displayed. Click aborted.");
                 return false;
             }
 
-            if(!validateField(driver, by, "label", timeout))
-            {
+            // Loader already handled by isDisplayed()
+            if (!validateField(driver, by, "label", 50, false)) {
                 ExtentManager.logInfo(label + " validation failed. Click aborted.");
                 return false;
             }
 
             ExtentManager.logInfo("Clicking on " + label + " ➝ " + by);
 
-            WebElement element = waitForElements(driver, timeout).until(ExpectedConditions.elementToBeClickable(by));
+            WebElement element = waitForElements(driver, timeout)
+                    .until(ExpectedConditions.elementToBeClickable(by));
 
             try {
-                // Primary click
                 element.click();
                 ExtentManager.logPass("Element clicked.");
 
@@ -161,7 +253,6 @@ public class PageUtil extends Base {
                 ExtentManager.logInfo("Normal click failed, trying scroll + click");
 
                 try {
-                    // Scroll into view and retry
                     JavascriptExecutor js = (JavascriptExecutor) driver;
                     js.executeScript("arguments[0].scrollIntoView(true);", element);
                     js.executeScript("arguments[0].click();", element);
@@ -171,6 +262,7 @@ public class PageUtil extends Base {
                     return false;
                 }
             }
+
             ExtentManager.logPass("Clicked on " + label);
             return true;
 
@@ -182,7 +274,7 @@ public class PageUtil extends Base {
 
     public static boolean validateElementIsVisible(WebDriver driver, By locator, String label) {
         try {
-            boolean isVisible = isDisplayed(driver, locator, SHOTW);
+            boolean isVisible = isDisplayed(driver, locator, SHOTW, true);
 
             if (isVisible) {
                 ExtentManager.logPass(label + " is visible.");
@@ -449,11 +541,44 @@ public class PageUtil extends Base {
     // Template tab
     //
     //
-    public static boolean validateField(WebDriver driver, By locator, String fieldName, int timeout) {
+//    public static boolean validateField(WebDriver driver, By locator, String fieldName, int timeout) {
+//        try {
+//            WebDriverWait wait = waitForElements(driver, timeout);
+//
+//            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+//
+//            if (element.isDisplayed()) {
+//                ExtentManager.logInfo(fieldName + " is visible and validated");
+//                return true;
+//            } else {
+//                ExtentManager.logInfo(fieldName + " is not visible");
+//                return false;
+//            }
+//
+//        } catch (TimeoutException e) {
+//            ExtentManager.logFail(fieldName + " not visible within " + timeout + " seconds");
+//            return false;
+//
+//        } catch (Exception e) {
+//            ExtentManager.logFail("Error validating " + fieldName + " ➝ " + e.getMessage());
+//            return false;
+//        }
+//    }
+
+    public static boolean validateField(
+            WebDriver driver, By locator, String fieldName, int timeout, boolean waitForLoader) {
+
         try {
+            // Wait for loader only if flag is true
+            if (waitForLoader) {
+                isInvisibleLoader(driver,
+                        By.xpath("//div[@id='sp-container']//div[@class='e-spinner-pane e-spin-show']//div"));
+            }
+
             WebDriverWait wait = waitForElements(driver, timeout);
 
-            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            WebElement element = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(locator));
 
             if (element.isDisplayed()) {
                 ExtentManager.logInfo(fieldName + " is visible and validated");
@@ -482,7 +607,7 @@ public class PageUtil extends Base {
     public boolean clickOnField(WebDriver driver, By locator, String fieldName, String fieldType) {
         String label = fieldName + " " + fieldType;
         try {
-            boolean isClicked = clickOnElement(driver, locator, label, DEFAULT_TIMEOUT_SECONDS);
+            boolean isClicked = clickOnElement(driver, locator, label, DEFAULT_TIMEOUT_SECONDS, true);
             if (!isClicked) {
                 ExtentManager.logFail("Failed to click " + label);
                 return false;
